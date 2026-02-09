@@ -3,6 +3,8 @@
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Link from 'next/link';
+import { ClientConfigManager } from '@/lib/client-config';
+import { SiteConfig } from '@/lib/types';
 
 export default function NewSitePage() {
     const router = useRouter();
@@ -15,31 +17,37 @@ export default function NewSitePage() {
         excludePatterns: '',
     });
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleSubmit = (e: React.FormEvent) => {
         e.preventDefault();
         setLoading(true);
 
         try {
-            const response = await fetch('/api/sites', {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    ...formData,
-                    excludePatterns: formData.excludePatterns
-                        .split('\n')
-                        .map((p) => p.trim())
-                        .filter((p) => p),
-                }),
-            });
+            const newSite: SiteConfig = {
+                id: ClientConfigManager.generateSiteId(),
+                name: formData.name,
+                rootUrl: formData.rootUrl,
+                crawlIntervalDays: formData.crawlIntervalDays,
+                lastCrawlTimestamp: null,
+                maxPages: formData.maxPages,
+                excludePatterns: formData.excludePatterns
+                    .split('\n')
+                    .map((p) => p.trim())
+                    .filter((p) => p),
+                guidelines: {
+                    global: {
+                        referenceImages: [],
+                        specs: {},
+                        rules: [],
+                    },
+                    pageTypes: {},
+                },
+            };
 
-            if (response.ok) {
-                router.push('/admin');
-            } else {
-                alert('Failed to create site');
-            }
+            ClientConfigManager.addSite(newSite);
+            router.push('/admin');
         } catch (error) {
             console.error('Error creating site:', error);
-            alert('Failed to create site');
+            alert('Failed to create site: ' + (error as Error).message);
         } finally {
             setLoading(false);
         }

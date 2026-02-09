@@ -4,6 +4,7 @@ import { useEffect, useState } from 'react';
 import { useParams, useRouter } from 'next/navigation';
 import Link from 'next/link';
 import { SiteConfig } from '@/lib/types';
+import { ClientConfigManager } from '@/lib/client-config';
 
 export default function SiteDetailPage() {
     const params = useParams();
@@ -19,18 +20,13 @@ export default function SiteDetailPage() {
         fetchSiteData();
     }, [siteId]);
 
-    const fetchSiteData = async () => {
+    const fetchSiteData = () => {
         try {
-            const [siteResponse, crawlsResponse] = await Promise.all([
-                fetch(`/api/sites/${siteId}`),
-                fetch(`/api/sites/${siteId}/crawls`),
-            ]);
+            const siteData = ClientConfigManager.getSite(siteId);
+            setSite(siteData);
 
-            const siteData = await siteResponse.json();
-            const crawlsData = await crawlsResponse.json();
-
-            setSite(siteData.site);
-            setCrawls(crawlsData.crawls);
+            // Crawls will be empty for now since we don't have the crawl engine yet
+            setCrawls([]);
         } catch (error) {
             console.error('Error fetching site data:', error);
         } finally {
@@ -38,11 +34,10 @@ export default function SiteDetailPage() {
         }
     };
 
-    const handleCrawl = async () => {
+    const handleCrawl = () => {
         setCrawling(true);
         try {
-            await fetch(`/api/sites/${siteId}/crawls`, { method: 'POST' });
-            alert('Crawl triggered! (Note: Crawl engine not yet implemented)');
+            alert('Crawl engine not yet implemented. This will be added in Phase 2!');
         } catch (error) {
             console.error('Error triggering crawl:', error);
             alert('Failed to trigger crawl');

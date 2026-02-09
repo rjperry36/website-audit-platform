@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { SiteConfig } from '@/lib/types';
+import { ClientConfigManager } from '@/lib/client-config';
 
 export default function AdminPage() {
     const [sites, setSites] = useState<SiteConfig[]>([]);
@@ -12,11 +13,10 @@ export default function AdminPage() {
         fetchSites();
     }, []);
 
-    const fetchSites = async () => {
+    const fetchSites = () => {
         try {
-            const response = await fetch('/api/sites');
-            const data = await response.json();
-            setSites(data.sites);
+            const allSites = ClientConfigManager.getSites();
+            setSites(allSites);
         } catch (error) {
             console.error('Error fetching sites:', error);
         } finally {
@@ -24,11 +24,11 @@ export default function AdminPage() {
         }
     };
 
-    const handleDelete = async (siteId: string) => {
+    const handleDelete = (siteId: string) => {
         if (!confirm('Are you sure you want to delete this site?')) return;
 
         try {
-            await fetch(`/api/sites/${siteId}`, { method: 'DELETE' });
+            ClientConfigManager.deleteSite(siteId);
             fetchSites();
         } catch (error) {
             console.error('Error deleting site:', error);
