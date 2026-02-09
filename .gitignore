@@ -19,3 +19,11 @@ coverage/
 *.swp
 *.swo
 *~
+
+# Next.js
+.next/
+out/
+next-env.d.ts
+
+# TypeScript
+*.tsbuildinfo
