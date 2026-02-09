@@ -1,5 +1,9 @@
 # Website Audit Platform
 
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/rjperry36/website-audit-platform)
+
+🚀 **[View Live Demo](https://website-audit-platform.vercel.app)** (Deployment in progress)
+
 An autonomous website auditing platform powered by Google Antigravity that crawls websites, captures screenshots, performs multi-dimensional audits, and presents findings through a local web dashboard.
 
 ## Overview
@@ -47,6 +51,22 @@ An autonomous website auditing platform powered by Google Antigravity that crawl
 
 See [`SYSTEM_PROMPT.md`](./SYSTEM_PROMPT.md) for the complete system prompt and detailed implementation specifications.
 
+### Local Development
+
+```bash
+# Clone the repository
+git clone https://github.com/rjperry36/website-audit-platform.git
+cd website-audit-platform
+
+# Install dependencies
+npm install
+
+# Run the development server
+npm run dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) to view the landing page.
+
 ### Quick Start Commands
 
 - `setup` — Configure a new site for auditing
@@ -81,9 +101,12 @@ All audit data is stored locally in a structured format:
 
 ## Technology Stack
 
+- **Framework**: Next.js 14 with App Router
+- **Frontend**: React 18 with TypeScript
+- **Styling**: Tailwind CSS
+- **Deployment**: Vercel
 - **Crawling**: Playwright/Puppeteer with Google Antigravity browser agent
-- **Frontend**: React with Tailwind CSS
-- **Backend**: Node.js Express server
+- **Backend**: Node.js Express server (for audit engine)
 - **Storage**: File-based JSON (no external database required)
 
 ## License
