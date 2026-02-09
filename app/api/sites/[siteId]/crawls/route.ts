@@ -1,5 +1,7 @@
 import { NextResponse } from 'next/server';
 import { StorageManager } from '@/lib/storage';
+import { ClientConfigManager } from '@/lib/client-config';
+import { Crawler } from '@/lib/crawl/crawler';
 
 /**
  * GET /api/sites/[siteId]/crawls
@@ -43,13 +45,45 @@ export async function POST(
     { params }: { params: { siteId: string } }
 ) {
     try {
-        // TODO: Implement crawl trigger logic
-        // This will be implemented in Phase 3 when we build the crawl engine
+        // This needs to run on the client side since Vercel serverless can't write files
+        // For now, return a message that crawling should be done locally
 
         return NextResponse.json(
-            { message: 'Crawl triggered', siteId: params.siteId },
-            { status: 202 }
+            {
+                message: 'Crawling must be run locally due to Vercel filesystem limitations',
+                instructions: 'Run `npm run crawl` locally to execute crawls',
+                siteId: params.siteId
+            },
+            { status: 200 }
         );
+
+        /* 
+        // This code would work locally:
+        const site = ClientConfigManager.getSite(params.siteId);
+        
+        if (!site) {
+          return NextResponse.json(
+            { error: 'Site not found' },
+            { status: 404 }
+          );
+        }
+    
+        // Initialize crawler
+        const crawler = new Crawler(site);
+        
+        // Run crawl (this would be async in production)
+        const report = await crawler.crawl();
+        
+        // Update last crawl timestamp
+        ClientConfigManager.updateSite(params.siteId, {
+          lastCrawlTimestamp: new Date().toISOString(),
+        });
+    
+        return NextResponse.json(
+          { message: 'Crawl complete', report },
+          { status: 200 }
+        );
+        */
     } catch (error) {
         console.error('Error triggering crawl:', error);
         return NextResponse.json(
