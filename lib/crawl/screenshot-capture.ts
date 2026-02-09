@@ -1,7 +1,6 @@
-import { chromium, Browser, Page } from 'playwright';
+import { Client, TakeOptions } from 'screenshotone-api-sdk';
 import { logger } from '../logger';
 import { getDomainSlug, generatePageSlug } from './url-utils';
-import { format } from 'date-fns';
 
 interface ScreenshotOptions {
     url: string;
@@ -17,11 +16,53 @@ interface ScreenshotResult {
     mobileFilename: string;
 }
 
+// Lazy-initialize ScreenshotOne API client to ensure env vars are loaded
+let clientInstance: Client | null = null;
+function getClient(): Client {
+    if (!clientInstance) {
+        const accessKey = process.env.SCREENSHOTONE_ACCESS_KEY;
+        const secretKey = process.env.SCREENSHOTONE_SECRET_KEY;
+
+        if (!accessKey || !secretKey) {
+            throw new Error('SCREENSHOTONE_ACCESS_KEY and SCREENSHOTONE_SECRET_KEY must be set in environment variables');
+        }
+
+        clientInstance = new Client(accessKey, secretKey);
+    }
+    return clientInstance;
+}
+
+/**
+ * Retry a function with exponential backoff
+ */
+async function retryWithBackoff<T>(
+    fn: () => Promise<T>,
+    maxRetries: number = 3,
+    initialDelay: number = 1000
+): Promise<T> {
+    let lastError: Error | undefined;
+
+    for (let attempt = 0; attempt < maxRetries; attempt++) {
+        try {
+            return await fn();
+        } catch (error) {
+            lastError = error as Error;
+
+            if (attempt < maxRetries - 1) {
+                const delay = initialDelay * Math.pow(2, attempt);
+                logger.warn(`Attempt ${attempt + 1} failed: ${lastError.message}. Retrying in ${delay}ms...`);
+                await new Promise(resolve => setTimeout(resolve, delay));
+            }
+        }
+    }
+
+    throw lastError || new Error('All retry attempts failed');
+}
+
 /**
  * Capture desktop and mobile screenshots of a page
  */
 export async function captureScreenshots(
-    browser: Browser,
     options: ScreenshotOptions
 ): Promise<ScreenshotResult | null> {
     const { url, crawlDate, title } = options;
@@ -33,19 +74,17 @@ export async function captureScreenshots(
         const desktopFilename = `${domainSlug}-${crawlDate}-desktop-${pageSlug}.png`;
         const mobileFilename = `${domainSlug}-${crawlDate}-mobile-${pageSlug}.png`;
 
-        // Capture desktop screenshot
+        // Capture desktop screenshot with retry logic
         logger.info(`Capturing desktop screenshot: ${url}`);
-        const desktopBuffer = await captureScreenshot(browser, url, {
-            width: 1920,
-            height: 1080,
-        });
+        const desktopBuffer = await retryWithBackoff(() =>
+            captureDesktopScreenshot(url)
+        );
 
-        // Capture mobile screenshot
+        // Capture mobile screenshot with retry logic
         logger.info(`Capturing mobile screenshot: ${url}`);
-        const mobileBuffer = await captureScreenshot(browser, url, {
-            width: 390,
-            height: 844,
-        });
+        const mobileBuffer = await retryWithBackoff(() =>
+            captureMobileScreenshot(url)
+        );
 
         return {
             desktop: desktopBuffer,
@@ -61,80 +100,73 @@ export async function captureScreenshots(
 }
 
 /**
- * Capture a single screenshot with specified viewport
+ * Capture desktop screenshot with proper configuration
  */
-async function captureScreenshot(
-    browser: Browser,
-    url: string,
-    viewport: { width: number; height: number }
-): Promise<Buffer> {
-    const page = await browser.newPage({
-        viewport,
-    });
+async function captureDesktopScreenshot(url: string): Promise<Buffer> {
+    const options = TakeOptions.url(url)
+        .viewportWidth(1920)
+        .viewportHeight(1080)
+        .fullPage(true)
+        .format('png')
+        .blockAds(true)
+        .blockCookieBanners(true)
+        .blockTrackers(true)
+        .delay(3); // Wait 3 seconds for dynamic content
 
-    try {
-        // Navigate to page with timeout
-        await page.goto(url, {
-            waitUntil: 'networkidle',
-            timeout: 30000,
-        });
-
-        // Wait a bit for any animations to settle
-        await page.waitForTimeout(1000);
-
-        // Capture full page screenshot
-        const screenshot = await page.screenshot({
-            fullPage: true,
-            type: 'png',
-        });
-
-        return screenshot;
-
-    } finally {
-        await page.close();
-    }
+    const imageBlob = await getClient().take(options);
+    const arrayBuffer = await imageBlob.arrayBuffer();
+    return Buffer.from(arrayBuffer);
 }
 
 /**
- * Initialize a Playwright browser instance
+ * Capture mobile screenshot with proper device emulation
  */
-export async function initBrowser(): Promise<Browser> {
-    logger.info('Initializing Playwright browser');
+async function captureMobileScreenshot(url: string): Promise<Buffer> {
+    // iPhone 13 dimensions
+    const options = TakeOptions.url(url)
+        .viewportWidth(390)
+        .viewportHeight(844)
+        .deviceScaleFactor(3) // iPhone 13 has 3x scale factor
+        .fullPage(true)
+        .format('png')
+        .blockAds(true)
+        .blockCookieBanners(true)
+        .blockTrackers(true)
+        .delay(3); // Wait 3 seconds for dynamic content
 
-    const browser = await chromium.launch({
-        headless: true,
-    });
-
-    return browser;
-}
-
-/**
- * Close the browser instance
- */
-export async function closeBrowser(browser: Browser): Promise<void> {
-    logger.info('Closing browser');
-    await browser.close();
+    const imageBlob = await getClient().take(options);
+    const arrayBuffer = await imageBlob.arrayBuffer();
+    return Buffer.from(arrayBuffer);
 }
 
 /**
  * Extract page title from HTML
  */
-export async function extractPageTitle(browser: Browser, url: string): Promise<string | null> {
-    const page = await browser.newPage();
-
+export async function extractPageTitle(url: string): Promise<string | null> {
     try {
-        await page.goto(url, {
-            waitUntil: 'domcontentloaded',
-            timeout: 30000,
+        const response = await fetch(url, {
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+            }
         });
 
-        const title = await page.title();
-        return title || null;
+        if (!response.ok) {
+            logger.warn(`Failed to fetch ${url} for title extraction: ${response.status}`);
+            return null;
+        }
+
+        const html = await response.text();
+
+        // Extract title using regex
+        const titleMatch = html.match(/<title[^>]*>([^<]+)<\/title>/i);
+        if (titleMatch && titleMatch[1]) {
+            return titleMatch[1].trim();
+        }
+
+        return null;
 
     } catch (error) {
         logger.error(`Failed to extract title from ${url}`, error as Error);
         return null;
-    } finally {
-        await page.close();
     }
 }

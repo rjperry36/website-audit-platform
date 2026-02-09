@@ -1,10 +1,9 @@
-import { Browser } from 'playwright';
 import { SiteConfig, CrawlReport, PageAudit, CrawlResult } from '../types';
 import { logger } from '../logger';
 import { StorageManager } from '../storage';
 import { parseSitemap } from './sitemap-parser';
 import { crawlLinks } from './link-crawler';
-import { initBrowser, closeBrowser, captureScreenshots, extractPageTitle } from './screenshot-capture';
+import { captureScreenshots, extractPageTitle } from './screenshot-capture';
 import { normalizeUrl, matchesExcludePattern } from './url-utils';
 import { format } from 'date-fns';
 
@@ -20,7 +19,6 @@ interface CrawlerProgress {
  */
 export class Crawler {
     private site: SiteConfig;
-    private browser: Browser | null = null;
     private progress: CrawlerProgress = {
         total: 0,
         completed: 0,
@@ -42,9 +40,6 @@ export class Crawler {
         logger.info(`Starting crawl for ${this.site.name} (${this.site.rootUrl})`);
 
         try {
-            // Initialize browser
-            this.browser = await initBrowser();
-
             // Create crawl directory
             await StorageManager.createCrawlDirectory(this.site.id, crawlDate);
 
@@ -83,11 +78,9 @@ export class Crawler {
 
             return report;
 
-        } finally {
-            // Clean up browser
-            if (this.browser) {
-                await closeBrowser(this.browser);
-            }
+        } catch (error) {
+            logger.error('Crawl failed', error as Error);
+            throw error;
         }
     }
 
@@ -145,15 +138,11 @@ export class Crawler {
         try {
             logger.progress(this.progress.completed, this.progress.total, url);
 
-            if (!this.browser) {
-                throw new Error('Browser not initialized');
-            }
-
             // Extract page title
-            const title = await extractPageTitle(this.browser, url);
+            const title = await extractPageTitle(url);
 
             // Capture screenshots
-            const screenshots = await captureScreenshots(this.browser, {
+            const screenshots = await captureScreenshots({
                 url,
                 siteId: this.site.id,
                 crawlDate,
