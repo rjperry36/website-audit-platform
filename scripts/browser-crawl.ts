@@ -55,7 +55,7 @@ async function crawlSite() {
         logger.info('\n=== MANUAL CRAWL INSTRUCTIONS ===');
         logger.info('This script needs to be run with browser automation.');
         logger.info('The browser will:');
-        logger.info('1. Navigate to:', site.rootUrl);
+        logger.info(`1. Navigate to: ${site.rootUrl}`);
         logger.info('2. Capture desktop screenshot (1920x1080)');
         logger.info('3. Extract page HTML');
         logger.info('4. Resize to mobile (375x667)');
