@@ -6,7 +6,7 @@ function Skeleton({
 }: React.HTMLAttributes<HTMLDivElement>) {
     return (
         <div
-            className={cn("animate-pulse rounded-md bg-gray-200", className)}
+            className={cn("animate-pulse rounded-md bg-white/5 shimmer", className)}
             {...props}
         />
     )
@@ -14,7 +14,7 @@ function Skeleton({
 
 function SkeletonCard() {
     return (
-        <div className="rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
+        <div className="rounded-xl border border-white/10 glass p-6 shadow-lg content-layer">
             <div className="space-y-3">
                 <Skeleton className="h-4 w-[250px]" />
                 <Skeleton className="h-4 w-[200px]" />

@@ -16,21 +16,21 @@ export function formatPercentage(value: number): string {
 }
 
 /**
- * Get color class based on score
+ * Get color class based on score (dark theme)
  */
 export function getScoreColor(score: number): string {
-    if (score >= 90) return 'text-green-600'
-    if (score >= 70) return 'text-yellow-600'
-    return 'text-red-600'
+    if (score >= 90) return 'text-green-400'
+    if (score >= 70) return 'text-yellow-400'
+    return 'text-red-400'
 }
 
 /**
- * Get background color class based on score
+ * Get background color class based on score (dark theme)
  */
 export function getScoreBgColor(score: number): string {
-    if (score >= 90) return 'bg-green-50 border-green-200'
-    if (score >= 70) return 'bg-yellow-50 border-yellow-200'
-    return 'bg-red-50 border-red-200'
+    if (score >= 90) return 'bg-green-500/10 border-green-500/30'
+    if (score >= 70) return 'bg-yellow-500/10 border-yellow-500/30'
+    return 'bg-red-500/10 border-red-500/30'
 }
 
 /**

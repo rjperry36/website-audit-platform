@@ -3,13 +3,13 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const cardVariants = cva(
-    "rounded-xl border bg-white text-gray-900 shadow-sm transition-all duration-200",
+    "rounded-xl border text-white shadow-lg transition-all duration-300 glass content-layer",
     {
         variants: {
             variant: {
-                default: "border-gray-200",
-                elevated: "border-gray-200 shadow-md hover:shadow-lg",
-                interactive: "border-gray-200 hover:border-primary-300 hover:shadow-md cursor-pointer",
+                default: "border-white/10",
+                elevated: "border-white/10 glass-hover",
+                interactive: "border-white/10 glass-hover cursor-pointer hover:glow-blue",
             },
         },
         defaultVariants: {
@@ -51,7 +51,7 @@ const CardTitle = React.forwardRef<
 >(({ className, ...props }, ref) => (
     <h3
         ref={ref}
-        className={cn("text-2xl font-semibold leading-none tracking-tight", className)}
+        className={cn("text-2xl font-semibold leading-none tracking-tight text-white", className)}
         {...props}
     />
 ))
@@ -63,7 +63,7 @@ const CardDescription = React.forwardRef<
 >(({ className, ...props }, ref) => (
     <p
         ref={ref}
-        className={cn("text-sm text-gray-500", className)}
+        className={cn("text-sm text-neutral-400", className)}
         {...props}
     />
 ))
