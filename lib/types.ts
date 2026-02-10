@@ -112,9 +112,11 @@ export interface Finding {
     description: string;
     level: 'mandatory' | 'advisory' | 'acceptable';
     status: 'pass' | 'fail' | 'warning';
-    value?: string;
+    details?: string; // Detailed information about the finding
+    impact?: string; // Impact of the finding on users
+    value?: string; // Legacy field
     recommendation?: string | null;
-    evidence?: string;
+    evidence?: string; // Legacy field
 }
 
 export interface CrawlResult {

@@ -12,6 +12,7 @@ import { StorageManager } from '../lib/storage';
 import { logger } from '../lib/logger';
 import { extractSEOData, extractAEOData, auditSEO, auditAEO } from '../lib/audit/seo-analyzer';
 import { extractGEOData, auditGEO } from '../lib/audit/geo-analyzer';
+import { extractUXData, auditAccessibility, auditMobileUsability, calculateUXScore } from '../lib/audit/ux-analyzer';
 import { TEST_SITE_CONFIG } from '../lib/client-config';
 
 interface CrawlResult {
@@ -114,11 +115,19 @@ export async function processCrawlResults(siteId: string, crawlDate: string, res
         const geoData = extractGEOData(result.html);
         const geoFindings = auditGEO(geoData);
 
+        // Extract UX data
+        logger.info('Analyzing UX...');
+        const uxData = extractUXData(result.html);
+        const accessibilityFindings = auditAccessibility(uxData, seoData);
+        const mobileFindings = auditMobileUsability(uxData);
+        const allUXFindings = [...accessibilityFindings, ...mobileFindings];
+
         // Calculate scores
         const seoScore = calculateScore(seoFindings);
         const aeoScore = calculateScore(aeoFindings);
         const geoScore = calculateScore(geoFindings);
-        const overallScore = Math.round((seoScore + aeoScore + geoScore) / 3);
+        const uxScore = calculateUXScore(allUXFindings);
+        const overallScore = Math.round((seoScore + aeoScore + geoScore + uxScore) / 4);
 
         // Create audit report
         const report = {
@@ -131,11 +140,16 @@ export async function processCrawlResults(siteId: string, crawlDate: string, res
                 seo: seoScore,
                 aeo: aeoScore,
                 geo: geoScore,
+                ux: uxScore,
             },
             findings: {
                 seo: seoFindings,
                 aeo: aeoFindings,
                 geo: geoFindings,
+                ux: {
+                    accessibility: accessibilityFindings,
+                    mobile: mobileFindings,
+                },
             },
             metadata: {
                 title: seoData.title,
@@ -157,7 +171,7 @@ export async function processCrawlResults(siteId: string, crawlDate: string, res
 
         logger.success('✓ Crawl completed successfully!');
         logger.info(`Overall Score: ${overallScore}/100`);
-        logger.info(`SEO: ${seoScore}/100 | AEO: ${aeoScore}/100 | GEO: ${geoScore}/100`);
+        logger.info(`SEO: ${seoScore}/100 | AEO: ${aeoScore}/100 | GEO: ${geoScore}/100 | UX: ${uxScore}/100`);
         logger.info(`Report: ${reportPath}`);
 
         return report;
@@ -175,9 +189,9 @@ function calculateScore(findings: any[]): number {
     if (findings.length === 0) return 100;
 
     const weights = {
-        Mandatory: 3,
-        Advisory: 2,
-        Acceptable: 1,
+        mandatory: 3,
+        advisory: 2,
+        acceptable: 1,
     };
 
     let totalWeight = 0;
