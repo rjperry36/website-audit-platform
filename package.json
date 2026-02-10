@@ -12,12 +12,18 @@
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
     "date-fns": "^3.3.1",
     "dotenv": "^17.2.4",
+    "framer-motion": "^12.34.0",
+    "lucide-react": "^0.563.0",
     "next": "^14.2.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
+    "recharts": "^3.7.0",
     "screenshotone-api-sdk": "^1.1.21",
+    "tailwind-merge": "^3.4.0",
     "xml2js": "^0.6.2"
   },
   "devDependencies": {
