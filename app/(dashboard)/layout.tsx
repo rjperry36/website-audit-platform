@@ -3,7 +3,7 @@ import { TabNavigation } from '@/components/layout/tab-navigation'
 export default function DashboardLayout({
     children,
 }: {
-    children: React.Node
+    children: React.ReactNode
 }) {
     return (
         <div className="min-h-screen">
