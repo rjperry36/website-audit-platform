@@ -5,6 +5,7 @@ import { parseSitemap } from './sitemap-parser';
 import { crawlLinks } from './link-crawler';
 import { captureScreenshots, extractPageTitle } from './screenshot-capture';
 import { normalizeUrl, matchesExcludePattern } from './url-utils';
+import { auditSEO } from '../audit/seo-audit';
 import { format } from 'date-fns';
 
 interface CrawlerProgress {
@@ -138,6 +139,13 @@ export class Crawler {
         try {
             logger.progress(this.progress.completed, this.progress.total, url);
 
+            // Fetch HTML content
+            const html = await this.fetchHTML(url);
+            if (!html) {
+                this.progress.errors.push(`Failed to fetch HTML: ${url}`);
+                return null;
+            }
+
             // Extract page title
             const title = await extractPageTitle(url);
 
@@ -171,7 +179,10 @@ export class Crawler {
                 screenshots.mobile
             );
 
-            // Create page audit (audits will be added in Phase 3)
+            // Run SEO audit (includes traditional SEO, AEO, and GEO)
+            const seoAudit = await auditSEO(url, html);
+
+            // Create page audit
             const pageAudit: PageAudit = {
                 url,
                 title: title || 'Untitled',
@@ -181,7 +192,7 @@ export class Crawler {
                     mobile: screenshots.mobileFilename,
                 },
                 audits: {
-                    seo: { score: 0, findings: [] },
+                    seo: seoAudit.overall, // Overall score combines traditional + AEO + GEO
                     accessibility: { score: 0, findings: [] },
                     performance: { score: 0, findings: [] },
                     brandCompliance: { score: 0, findings: [] },
@@ -221,6 +232,29 @@ export class Crawler {
      */
     private delay(ms: number): Promise<void> {
         return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    /**
+     * Fetch HTML content from URL
+     */
+    private async fetchHTML(url: string): Promise<string | null> {
+        try {
+            const response = await fetch(url, {
+                headers: {
+                    'User-Agent': 'Mozilla/5.0 (compatible; WEBChecker/1.0; +https://webchecker.io)',
+                },
+            });
+
+            if (!response.ok) {
+                logger.error(`HTTP ${response.status} for ${url}`);
+                return null;
+            }
+
+            return await response.text();
+        } catch (error) {
+            logger.error(`Failed to fetch ${url}`, error as Error);
+            return null;
+        }
     }
 
     /**

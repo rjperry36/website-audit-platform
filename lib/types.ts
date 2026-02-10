@@ -38,7 +38,7 @@ export interface GuidelineRule {
     id: string;
     description: string;
     level: 'mandatory' | 'advisory' | 'acceptable';
-    category: 'brand-visual' | 'seo' | 'accessibility' | 'performance';
+    category: 'brand-visual' | 'seo' | 'seo-aeo' | 'seo-geo' | 'accessibility' | 'performance';
 }
 
 export interface AuditConfig {
