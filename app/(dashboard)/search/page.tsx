@@ -1,6 +1,7 @@
 'use client'
 
 import { motion } from 'framer-motion'
+import Link from 'next/link'
 import { ScoreCard } from '@/components/dashboard/score-card'
 import { AuditCategoryCard } from '@/components/dashboard/audit-category-card'
 import { SkeletonCard } from '@/components/ui/skeleton'
@@ -137,36 +138,42 @@ export default function DashboardPage() {
                                 Audit Categories
                             </h2>
                             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-                                <AuditCategoryCard
-                                    title="Traditional SEO"
-                                    description="Meta tags, headings, and URL structure"
-                                    score={mockData.traditional.score}
-                                    findings={mockData.traditional.findings}
-                                    icon={Search}
-                                    color="bg-primary-500"
-                                    delay={0.1}
-                                    onClick={() => console.log('View Traditional SEO details')}
-                                />
-                                <AuditCategoryCard
-                                    title="Answer Engine Optimization"
-                                    description="Schema markup, FAQ structure, and direct answers"
-                                    score={mockData.aeo.score}
-                                    findings={mockData.aeo.findings}
-                                    icon={Bot}
-                                    color="bg-purple-500"
-                                    delay={0.2}
-                                    onClick={() => console.log('View AEO details')}
-                                />
-                                <AuditCategoryCard
-                                    title="Generative Engine Optimization"
-                                    description="AI-ready content, citations, and E-E-A-T signals"
-                                    score={mockData.geo.score}
-                                    findings={mockData.geo.findings}
-                                    icon={Sparkles}
-                                    color="bg-pink-500"
-                                    delay={0.3}
-                                    onClick={() => console.log('View GEO details')}
-                                />
+                                <Link href="/search/seo">
+                                    <AuditCategoryCard
+                                        title="Traditional SEO"
+                                        description="Meta tags, headings, and URL structure"
+                                        score={mockData.traditional.score}
+                                        findings={mockData.traditional.findings}
+                                        icon={Search}
+                                        color="bg-primary-500"
+                                        delay={0.1}
+                                        onClick={() => { }}
+                                    />
+                                </Link>
+                                <Link href="/search/aeo">
+                                    <AuditCategoryCard
+                                        title="Answer Engine Optimization"
+                                        description="Schema markup, FAQ structure, and direct answers"
+                                        score={mockData.aeo.score}
+                                        findings={mockData.aeo.findings}
+                                        icon={Bot}
+                                        color="bg-purple-500"
+                                        delay={0.2}
+                                        onClick={() => { }}
+                                    />
+                                </Link>
+                                <Link href="/search/geo">
+                                    <AuditCategoryCard
+                                        title="Generative Engine Optimization"
+                                        description="AI-ready content, citations, and E-E-A-T signals"
+                                        score={mockData.geo.score}
+                                        findings={mockData.geo.findings}
+                                        icon={Sparkles}
+                                        color="bg-pink-500"
+                                        delay={0.3}
+                                        onClick={() => { }}
+                                    />
+                                </Link>
                             </div>
                         </section>
 
