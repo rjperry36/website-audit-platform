@@ -5,7 +5,7 @@
       "name": "The Branding Journal",
       "rootUrl": "https://www.thebrandingjournal.com/",
       "crawlIntervalDays": 3,
-      "lastCrawlTimestamp": null,
+      "lastCrawlTimestamp": "2026-02-10T17:30:12.335Z",
       "maxPages": 1,
       "excludePatterns": [
         "*"

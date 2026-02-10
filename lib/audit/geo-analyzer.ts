@@ -28,13 +28,10 @@ export function extractGEOData(html: string): GEOData {
     const hasAuthorInfo = !!(authorMeta || authorByline);
     const authorName = authorMeta || authorByline || null;
 
-    // Count external links
+    // Count external links (links that start with http/https are considered external)
     let externalLinksCount = 0;
     $('a[href^="http"]').each((_, el) => {
-        const href = $(el).attr('href') || '';
-        if (!href.includes(window?.location?.hostname || '')) {
-            externalLinksCount++;
-        }
+        externalLinksCount++;
     });
 
     // Check for statistics (numbers in content)
