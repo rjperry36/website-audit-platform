@@ -57,40 +57,40 @@ export default function POSPage() {
                             </div>
                         </CardHeader>
                         <CardContent>
-                            <CardDescription">
-                            AI-powered analysis of in-store photos to verify brand guideline adherence
-                        </CardDescription>
-                    </CardContent>
-                </Card>
+                            <CardDescription>
+                                AI-powered analysis of in-store photos to verify brand guideline adherence
+                            </CardDescription>
+                        </CardContent>
+                    </Card>
 
-                <Card variant="elevated">
-                    <CardHeader>
-                        <div className="flex items-center gap-3">
-                            <div className="rounded-lg bg-purple-500/20 p-2 border border-purple-500/30">
-                                <Store className="h-5 w-5 text-purple-400" />
+                    <Card variant="elevated">
+                        <CardHeader>
+                            <div className="flex items-center gap-3">
+                                <div className="rounded-lg bg-purple-500/20 p-2 border border-purple-500/30">
+                                    <Store className="h-5 w-5 text-purple-400" />
+                                </div>
+                                <CardTitle className="text-lg">Multi-Location Tracking</CardTitle>
                             </div>
-                            <CardTitle className="text-lg">Multi-Location Tracking</CardTitle>
-                        </div>
-                    </CardHeader>
-                    <CardContent>
-                        <CardDescription>
-                            Compare brand presentation across multiple retail locations and regions
-                        </CardDescription>
-                    </CardContent>
-                </Card>
-        </div>
+                        </CardHeader>
+                        <CardContent>
+                            <CardDescription>
+                                Compare brand presentation across multiple retail locations and regions
+                            </CardDescription>
+                        </CardContent>
+                    </Card>
+                </div>
 
-        {/* Notify Me */ }
-    <div className="glass rounded-xl border border-white/10 p-8 text-center content-layer mt-12">
-        <h3 className="text-2xl font-bold text-white mb-2">Get Early Access</h3>
-        <p className="text-neutral-400 mb-6">
-            Be the first to know when POS analytics launches
-        </p>
-        <button className="px-6 py-3 rounded-lg bg-primary-500 hover:bg-primary-600 text-white font-medium transition-colors">
-            Notify Me
-        </button>
-    </div>
-      </motion.div >
-    </div >
-  )
+                {/* Notify Me */}
+                <div className="glass rounded-xl border border-white/10 p-8 text-center content-layer mt-12">
+                    <h3 className="text-2xl font-bold text-white mb-2">Get Early Access</h3>
+                    <p className="text-neutral-400 mb-6">
+                        Be the first to know when POS analytics launches
+                    </p>
+                    <button className="px-6 py-3 rounded-lg bg-primary-500 hover:bg-primary-600 text-white font-medium transition-colors">
+                        Notify Me
+                    </button>
+                </div>
+            </motion.div >
+        </div >
+    )
 }
