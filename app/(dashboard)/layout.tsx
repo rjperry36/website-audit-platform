@@ -1,4 +1,5 @@
 import { TabNavigation } from '@/components/layout/tab-navigation'
+import { TEST_SITE_CONFIG } from '@/lib/client-config'
 
 export default function DashboardLayout({
     children,
@@ -20,9 +21,9 @@ export default function DashboardLayout({
                             </p>
                         </div>
                         <div className="flex items-center gap-4">
-                            <select className="glass rounded-lg border border-white/20 px-4 py-2 text-sm text-white focus:border-primary-500 focus:outline-none focus:ring-2 focus:ring-primary-500/20">
-                                <option className="bg-slate-900">example.com</option>
-                            </select>
+                            <div className="glass rounded-lg border border-white/20 px-4 py-2 text-sm text-white">
+                                {TEST_SITE_CONFIG.name}
+                            </div>
                         </div>
                     </div>
                 </div>

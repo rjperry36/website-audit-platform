@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "crawl": "tsx scripts/crawl.ts",
-    "test-crawl": "tsx scripts/test-crawl.ts"
+    "test-crawl": "tsx scripts/test-crawl.ts",
+    "init-test-site": "tsx scripts/init-test-site.ts"
   },
   "dependencies": {
     "cheerio": "^1.0.0-rc.12",

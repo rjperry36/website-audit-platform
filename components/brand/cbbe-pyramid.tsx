@@ -123,22 +123,30 @@ export function CBBEPyramid({ levels }: CBBEPyramidProps) {
             </div>
 
             {/* Pyramid Labels */}
-            <div className="mt-8 grid grid-cols-2 gap-4 text-xs text-neutral-400">
+            <div className="mt-8 grid grid-cols-3 gap-4 text-xs text-neutral-400">
                 <div>
-                    <div className="font-semibold text-white mb-1">Level 4: Relationships</div>
+                    <div className="font-semibold text-white mb-1">Resonance</div>
                     <div>Intense, active loyalty</div>
                 </div>
                 <div>
-                    <div className="font-semibold text-white mb-1">Level 3: Response</div>
-                    <div>Rational & emotional reactions</div>
+                    <div className="font-semibold text-white mb-1">Judgments</div>
+                    <div>Quality & credibility</div>
                 </div>
                 <div>
-                    <div className="font-semibold text-white mb-1">Level 2: Meaning</div>
-                    <div>What the brand represents</div>
+                    <div className="font-semibold text-white mb-1">Feelings</div>
+                    <div>Emotional reactions</div>
                 </div>
                 <div>
-                    <div className="font-semibold text-white mb-1">Level 1: Identity</div>
-                    <div>Who you are</div>
+                    <div className="font-semibold text-white mb-1">Performance</div>
+                    <div>Functional benefits</div>
+                </div>
+                <div>
+                    <div className="font-semibold text-white mb-1">Imagery</div>
+                    <div>Brand personality</div>
+                </div>
+                <div>
+                    <div className="font-semibold text-white mb-1">Salience</div>
+                    <div>Brand awareness</div>
                 </div>
             </div>
         </div>

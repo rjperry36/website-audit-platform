@@ -1,3 +1,23 @@
 {
-    "sites": []
+  "sites": [
+    {
+      "id": "site-thebrandingjournal",
+      "name": "The Branding Journal",
+      "rootUrl": "https://www.thebrandingjournal.com/",
+      "crawlIntervalDays": 3,
+      "lastCrawlTimestamp": null,
+      "maxPages": 1,
+      "excludePatterns": [
+        "*"
+      ],
+      "guidelines": {
+        "global": {
+          "referenceImages": [],
+          "specs": {},
+          "rules": []
+        },
+        "pageTypes": {}
+      }
+    }
+  ]
 }

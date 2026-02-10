@@ -3,6 +3,38 @@
 
 import { AuditConfig, SiteConfig } from './types';
 
+/**
+ * Static test site configuration
+ */
+export const TEST_SITE_CONFIG = {
+    id: 'site-thebrandingjournal',
+    name: 'The Branding Journal',
+    rootUrl: 'https://www.thebrandingjournal.com/',
+    crawlIntervalDays: 3,
+    maxPages: 1,
+} as const;
+
+/**
+ * Get the test site ID
+ */
+export function getTestSiteId(): string {
+    return TEST_SITE_CONFIG.id;
+}
+
+/**
+ * Get the test site name
+ */
+export function getTestSiteName(): string {
+    return TEST_SITE_CONFIG.name;
+}
+
+/**
+ * Get the test site URL
+ */
+export function getTestSiteUrl(): string {
+    return TEST_SITE_CONFIG.rootUrl;
+}
+
 const STORAGE_KEY = 'audit-config';
 
 const DEFAULT_CONFIG: AuditConfig = {
