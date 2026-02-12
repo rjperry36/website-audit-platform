@@ -7,6 +7,11 @@
 
 import { promises as fs } from 'fs';
 import path from 'path';
+import dotenv from 'dotenv';
+
+// Load environment variables from .env.local
+dotenv.config({ path: '.env.local' });
+
 import { ConfigManager } from '../lib/config';
 import { StorageManager } from '../lib/storage';
 import { logger } from '../lib/logger';
@@ -20,6 +25,7 @@ interface CrawlResult {
     mobileScreenshot: string; // base64
     html: string;
     url: string;
+    screenshotPath?: string; // Path to desktop screenshot for AI analysis
 }
 
 /**
@@ -34,47 +40,53 @@ async function crawlSite() {
             throw new Error(`Site ${siteId} not found`);
         }
 
-        logger.info(`Starting browser crawl for ${site.name}...`);
+        logger.info(`Starting local crawl for ${site.name}...`);
         logger.info(`URL: ${site.rootUrl}`);
 
         // Create crawl directory
         const crawlDate = StorageManager.getTodaysCrawlDate();
-        const crawlDir = await StorageManager.createCrawlDirectory(siteId, crawlDate);
+        await StorageManager.createCrawlDirectory(siteId, crawlDate);
 
-        logger.info(`Crawl directory: ${crawlDir}`);
+        // 1. Capture Screenshots
+        const { captureScreenshots, extractPageTitle } = await import('../lib/crawl/screenshot-capture');
 
-        // NOTE: This script is designed to be run manually with browser subagent
-        // The browser subagent will:
-        // 1. Navigate to the URL
-        // 2. Capture desktop screenshot (1920x1080)
-        // 3. Get page HTML
-        // 4. Resize to mobile (375x667)
-        // 5. Capture mobile screenshot
-        // 6. Return all data
+        logger.info('Capturing screenshots...');
+        const title = await extractPageTitle(site.rootUrl);
 
-        logger.info('\n=== MANUAL CRAWL INSTRUCTIONS ===');
-        logger.info('This script needs to be run with browser automation.');
-        logger.info('The browser will:');
-        logger.info(`1. Navigate to: ${site.rootUrl}`);
-        logger.info('2. Capture desktop screenshot (1920x1080)');
-        logger.info('3. Extract page HTML');
-        logger.info('4. Resize to mobile (375x667)');
-        logger.info('5. Capture mobile screenshot');
-        logger.info('\nPlease run the browser crawl manually or wait for automation.');
-        logger.info('===================================\n');
+        const screenshots = await captureScreenshots({
+            url: site.rootUrl,
+            siteId,
+            crawlDate,
+            title
+        });
 
-        // For now, create placeholder structure
-        const screenshotsDir = path.join(crawlDir, 'screenshots');
-        const desktopDir = path.join(screenshotsDir, 'desktop');
-        const mobileDir = path.join(screenshotsDir, 'mobile');
-        const reportsDir = path.join(crawlDir, 'reports');
+        if (!screenshots) {
+            throw new Error('Failed to capture screenshots');
+        }
 
-        await fs.mkdir(desktopDir, { recursive: true });
-        await fs.mkdir(mobileDir, { recursive: true });
-        await fs.mkdir(reportsDir, { recursive: true });
+        // 2. Get HTML
+        logger.info('Fetching page HTML...');
+        const response = await fetch(site.rootUrl, {
+            headers: {
+                'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36'
+            }
+        });
+        const html = await response.text();
 
-        logger.success('Crawl directory structure created');
-        logger.info('Ready for browser automation');
+        // 3. Process Results
+        // Construct the expected path so we can pass it
+        const crawlDir = path.join(process.cwd(), 'audit-data', siteId, 'crawls', crawlDate);
+        const desktopPath = path.join(crawlDir, 'screenshots', 'desktop', 'homepage.png');
+
+        const result: CrawlResult = {
+            desktopScreenshot: screenshots.desktop.toString('base64'),
+            mobileScreenshot: screenshots.mobile.toString('base64'),
+            html,
+            url: site.rootUrl,
+            screenshotPath: desktopPath
+        };
+
+        await processCrawlResults(siteId, crawlDate, result);
 
     } catch (error) {
         logger.error('Crawl failed', error as Error);
@@ -94,6 +106,11 @@ export async function processCrawlResults(siteId: string, crawlDate: string, res
         // Save screenshots
         const desktopPath = path.join(crawlDir, 'screenshots', 'desktop', 'homepage.png');
         const mobilePath = path.join(crawlDir, 'screenshots', 'mobile', 'homepage.png');
+
+        // Ensure directories exist (processCrawlResults might be called independently)
+        await fs.mkdir(path.dirname(desktopPath), { recursive: true });
+        await fs.mkdir(path.dirname(mobilePath), { recursive: true });
+        await fs.mkdir(path.join(crawlDir, 'reports'), { recursive: true });
 
         await fs.writeFile(desktopPath, Buffer.from(result.desktopScreenshot, 'base64'));
         await fs.writeFile(mobilePath, Buffer.from(result.mobileScreenshot, 'base64'));
@@ -120,7 +137,42 @@ export async function processCrawlResults(siteId: string, crawlDate: string, res
         const uxData = extractUXData(result.html);
         const accessibilityFindings = auditAccessibility(uxData, seoData);
         const mobileFindings = auditMobileUsability(uxData);
-        const allUXFindings = [...accessibilityFindings, ...mobileFindings];
+
+
+        // AI Visual Analysis
+        let visualFindings: any[] = [];
+        let experienceFindings: any[] = [];
+        let personaFindings: any[] = [];
+        let cialdiniFindings: any[] = [];
+
+        if (process.env.OPENAI_API_KEY && result.screenshotPath) {
+            try {
+                logger.info('Running AI Visual Analysis on desktop screenshot...');
+
+                // Dynamic import to avoid issues if module missing
+                const { auditVisualDesign } = await import('../lib/audit/visual-analyzer');
+
+                const aiFindings = await auditVisualDesign(result.screenshotPath);
+
+                // Split findings into categories based on rule ID
+                visualFindings = aiFindings.filter(f => f.ruleId.startsWith('UX-VIS'));
+                experienceFindings = aiFindings.filter(f => f.ruleId.startsWith('UX-EXP') || f.ruleId === 'UX-AI-ERROR');
+                personaFindings = aiFindings.filter(f => f.ruleId.startsWith('UX-PERSONA'));
+                cialdiniFindings = aiFindings.filter(f => f.ruleId.startsWith('UX-CIALDINI'));
+
+            } catch (error) {
+                logger.error(`AI Visual Analysis failed: ${(error as Error).message}`);
+            }
+        }
+
+        const allUXFindings = [
+            ...accessibilityFindings,
+            ...mobileFindings,
+            ...visualFindings,
+            ...experienceFindings,
+            ...personaFindings,
+            ...cialdiniFindings
+        ];
 
         // Calculate scores
         const seoScore = calculateScore(seoFindings);
@@ -149,6 +201,10 @@ export async function processCrawlResults(siteId: string, crawlDate: string, res
                 ux: {
                     accessibility: accessibilityFindings,
                     mobile: mobileFindings,
+                    visualDesign: visualFindings,
+                    userExperience: experienceFindings,
+                    personas: personaFindings,
+                    cialdini: cialdiniFindings,
                 },
             },
             metadata: {
@@ -156,6 +212,10 @@ export async function processCrawlResults(siteId: string, crawlDate: string, res
                 description: seoData.metaDescription,
                 h1: seoData.h1Tags[0] || null,
             },
+            screenshots: {
+                desktop: desktopPath,
+                mobile: mobilePath
+            }
         };
 
         // Save report

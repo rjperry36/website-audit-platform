@@ -1,0 +1,40 @@
+{
+    "principles": [
+        {
+            "id": "reciprocity",
+            "name": "Reciprocity",
+            "description": "People feel obliged to give back to others who have given to them.",
+            "focus": "Does the site offer value upfront (e.g., free guides, templates, valuable content) before asking for anything (email, purchase)? Is the 'ask' balanced with the 'give'?"
+        },
+        {
+            "id": "commitment",
+            "name": "Commitment & Consistency",
+            "description": "Once people make a choice/take a stand, they encounter personal and interpersonal pressures to behave consistently with that commitment.",
+            "focus": "Does the site ask for small initial commitments (e.g., 'Read more', 'Sign up for newsletter') that lead to larger ones? Are there opportunities for users to publicly support or engage?"
+        },
+        {
+            "id": "social_proof",
+            "name": "Social Proof",
+            "description": "People look to others to determine what is correct, especially when they are uncertain.",
+            "focus": "Are there testimonials, reviews, case studies, subscriber counts, or 'As seen in' logos? Is the social proof specific and credible?"
+        },
+        {
+            "id": "authority",
+            "name": "Authority",
+            "description": "People respect authority and want to follow the lead of real experts.",
+            "focus": "Does the content demonstrate expertise? Are author credentials, awards, certifications, or partnerships visible? Is the tone authoritative and confident?"
+        },
+        {
+            "id": "liking",
+            "name": "Liking",
+            "description": "People prefer to say yes to those that they like.",
+            "focus": "Is the brand voice relatable and human? Is the 'About Us' page engaging? excellent design and aesthetics? Do the images show real people?"
+        },
+        {
+            "id": "scarcity",
+            "name": "Scarcity",
+            "description": "The thought of losing something motivates people more than the thought of gaining something of equal value.",
+            "focus": "Are there limited-time offers, exclusive content, or indications of high demand? Is scarcity used ethically to encourage action?"
+        }
+    ]
+}

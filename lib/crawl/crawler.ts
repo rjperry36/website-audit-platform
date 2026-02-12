@@ -6,6 +6,7 @@ import { crawlLinks } from './link-crawler';
 import { captureScreenshots, extractPageTitle } from './screenshot-capture';
 import { normalizeUrl, matchesExcludePattern } from './url-utils';
 import { auditSEO } from '../audit/seo-audit';
+import { auditSecurity } from '../audit/security-audit';
 import { format } from 'date-fns';
 
 interface CrawlerProgress {
@@ -139,12 +140,13 @@ export class Crawler {
         try {
             logger.progress(this.progress.completed, this.progress.total, url);
 
-            // Fetch HTML content
-            const html = await this.fetchHTML(url);
-            if (!html) {
+            // Fetch HTML content and headers
+            const fetchResult = await this.fetchHTML(url);
+            if (!fetchResult) {
                 this.progress.errors.push(`Failed to fetch HTML: ${url}`);
                 return null;
             }
+            const { html, headers } = fetchResult;
 
             // Extract page title
             const title = await extractPageTitle(url);
@@ -182,6 +184,9 @@ export class Crawler {
             // Run SEO audit (includes traditional SEO, AEO, and GEO)
             const seoAudit = await auditSEO(url, html);
 
+            // Run Security audit
+            const securityAudit = auditSecurity(url, html, headers);
+
             // Create page audit
             const pageAudit: PageAudit = {
                 url,
@@ -196,6 +201,7 @@ export class Crawler {
                     accessibility: { score: 0, findings: [] },
                     performance: { score: 0, findings: [] },
                     brandCompliance: { score: 0, findings: [] },
+                    security: securityAudit,
                 },
             };
 
@@ -235,9 +241,9 @@ export class Crawler {
     }
 
     /**
-     * Fetch HTML content from URL
+     * Fetch HTML content and headers from URL
      */
-    private async fetchHTML(url: string): Promise<string | null> {
+    private async fetchHTML(url: string): Promise<{ html: string; headers: Headers } | null> {
         try {
             const response = await fetch(url, {
                 headers: {
@@ -250,7 +256,8 @@ export class Crawler {
                 return null;
             }
 
-            return await response.text();
+            const html = await response.text();
+            return { html, headers: response.headers };
         } catch (error) {
             logger.error(`Failed to fetch ${url}`, error as Error);
             return null;

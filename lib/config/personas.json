@@ -1,0 +1,65 @@
+{
+    "personas": [
+        {
+            "id": "learner",
+            "name": "The Learner",
+            "role": "Aspiring Brand Strategist / Student",
+            "goal": "Understand fundamental branding concepts and terminology.",
+            "frustrations": [
+                "Confusing jargon without definitions",
+                "Overwhelming density of information",
+                "Lack of clear 'getting started' paths"
+            ],
+            "focus": "Clarity, educational value, glossaries, clear headings, easy navigation."
+        },
+        {
+            "id": "academic",
+            "name": "The Academic",
+            "role": "Intern / Graduate Researcher",
+            "goal": "Find rigorous, cited sources for research papers and projects.",
+            "frustrations": [
+                "Uncited claims",
+                "Lack of dates/authorship",
+                "Superficial content",
+                "Broken external links"
+            ],
+            "focus": "Citations, authorship, publication dates, depth of analysis, methodology."
+        },
+        {
+            "id": "manager",
+            "name": "The Manager",
+            "role": "Middle Management",
+            "goal": "Apply branding concepts to current business challenges.",
+            "frustrations": [
+                "Too much theory, not enough practice",
+                "Lack of concrete examples/case studies",
+                "Content that doesn't justify ROI"
+            ],
+            "focus": "Case studies, practical frameworks, ROI arguments, implementation guides."
+        },
+        {
+            "id": "consultant",
+            "name": "The Consultant",
+            "role": "Senior Brand Consultant",
+            "goal": "Stay ahead of trends and find data to support client recommendations.",
+            "frustrations": [
+                "Outdated information",
+                "Generic/obvious advice",
+                "Lack of unique data/proprietary research"
+            ],
+            "focus": "Unique insights, latest trends, proprietary data, expert opinions, white papers."
+        },
+        {
+            "id": "brand_manager",
+            "name": "The Brand Manager",
+            "role": "In-house Brand Manager",
+            "goal": "Find tools and strategies to manage and grow their specific brand.",
+            "frustrations": [
+                "Abstract concepts that don't translate to daily work",
+                "Lack of templates or actionable tools",
+                "Disconnect from current market reality"
+            ],
+            "focus": "Templates, tools, actionable strategies, community insights, competitor analysis."
+        }
+    ]
+}
