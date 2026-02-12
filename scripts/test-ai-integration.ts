@@ -1,5 +1,5 @@
 
-import { processCrawlResults } from './browser-crawl.ts';
+import { processCrawlResults } from './browser-crawl';
 import { promises as fs } from 'fs';
 import path from 'path';
 import { TEST_SITE_CONFIG } from '../lib/client-config';
