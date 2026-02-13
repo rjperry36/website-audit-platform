@@ -1,0 +1,30 @@
+{
+    "architecture": {
+        "SEC-ARCH-001": {
+            "id": "SEC-ARCH-001",
+            "name": "HTTPS Usage",
+            "description": "Site uses HTTPS for secure communication",
+            "level": "mandatory",
+            "impact": "Data transmitted in cleartext can be intercepted",
+            "recommendation": "Enforce HTTPS for all connections"
+        }
+    },
+    "headers": {
+        "SEC-HEAD-001": {
+            "id": "SEC-HEAD-001",
+            "name": "Strict-Transport-Security",
+            "description": "HSTS header is present and valid",
+            "level": "mandatory",
+            "impact": "Users vulnerable to downgrade attacks",
+            "recommendation": "Add 'Strict-Transport-Security' header"
+        },
+        "SEC-HEAD-002": {
+            "id": "SEC-HEAD-002",
+            "name": "Content-Security-Policy",
+            "description": "CSP header is present to prevent XSS",
+            "level": "mandatory",
+            "impact": "Site vulnerable to Cross-Site Scripting (XSS) attacks",
+            "recommendation": "Add a robust 'Content-Security-Policy' header"
+        }
+    }
+}

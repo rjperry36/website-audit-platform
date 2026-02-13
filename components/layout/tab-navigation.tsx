@@ -11,7 +11,8 @@ import {
     Share2,
     ShoppingCart,
     Store,
-    TrendingUp
+    TrendingUp,
+    Eye
 } from 'lucide-react'
 
 interface Tab {
@@ -32,6 +33,11 @@ const tabs: Tab[] = [
         name: 'Search',
         href: '/search',
         icon: Search,
+    },
+    {
+        name: 'UX',
+        href: '/ux',
+        icon: Eye,
     },
     {
         name: 'eCRM',

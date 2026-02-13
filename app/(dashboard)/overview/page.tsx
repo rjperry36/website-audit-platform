@@ -97,13 +97,63 @@ export default function OverviewPage() {
                 <section>
                     <div className="mb-6">
                         <h2 className="text-xl font-semibold text-white">
-                            Customer-Based Brand Equity Pyramid
+                            Customer-Based Brand Equity (CBBE)
                         </h2>
-                        <p className="text-sm text-neutral-400 mt-1">
-                            Kevin Lane Keller's framework for building strong brands through deep customer relationships
-                        </p>
                     </div>
-                    <CBBEPyramid levels={mockData.cbbeLevels} />
+
+                    <div className="grid md:grid-cols-12 gap-8 items-start">
+                        {/* Left Column: Description */}
+                        <div className="md:col-span-4 space-y-6">
+                            <div className="glass rounded-xl border border-white/10 p-6 content-layer">
+                                <h3 className="text-lg font-semibold text-white mb-3">About the Framework</h3>
+                                <p className="text-neutral-300 leading-relaxed mb-4">
+                                    The <strong>Customer-Based Brand Equity (CBBE)</strong> model, developed by Kevin Lane Keller, maps the journey of building a strong brand.
+                                </p>
+                                <p className="text-neutral-300 leading-relaxed">
+                                    It visualizes the four steps of brand building: establishing identity (Salience), creating meaning (Performance & Imagery), eliciting positive responses (Judgments & Feelings), and ultimately achieving deep relationships (Resonance).
+                                </p>
+                            </div>
+
+                            <div className="glass rounded-xl border border-white/10 p-6 content-layer">
+                                <h3 className="text-lg font-semibold text-white mb-3">Key Stages</h3>
+                                <ul className="space-y-3">
+                                    <li className="flex items-start gap-3">
+                                        <div className="mt-1 h-2 w-2 rounded-full bg-purple-500 shrink-0" />
+                                        <div>
+                                            <span className="text-white font-medium block">4. Relationships</span>
+                                            <span className="text-sm text-neutral-400">Resonance: intense, active loyalty.</span>
+                                        </div>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <div className="mt-1 h-2 w-2 rounded-full bg-blue-500 shrink-0" />
+                                        <div>
+                                            <span className="text-white font-medium block">3. Response</span>
+                                            <span className="text-sm text-neutral-400">Judgments & Feelings: reactions to the brand.</span>
+                                        </div>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <div className="mt-1 h-2 w-2 rounded-full bg-yellow-500 shrink-0" />
+                                        <div>
+                                            <span className="text-white font-medium block">2. Meaning</span>
+                                            <span className="text-sm text-neutral-400">Performance & Imagery: what the brand is.</span>
+                                        </div>
+                                    </li>
+                                    <li className="flex items-start gap-3">
+                                        <div className="mt-1 h-2 w-2 rounded-full bg-primary-500 shrink-0" />
+                                        <div>
+                                            <span className="text-white font-medium block">1. Identity</span>
+                                            <span className="text-sm text-neutral-400">Salience: category identification.</span>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        {/* Right Column: Pyramid */}
+                        <div className="md:col-span-8">
+                            <CBBEPyramid levels={mockData.cbbeLevels} />
+                        </div>
+                    </div>
                 </section>
 
                 {/* Channel Contribution */}

@@ -144,161 +144,95 @@ export function extractUXData(html: string): UXData {
     };
 }
 
+import uxRules from '../config/rules/ux.json';
+
+// Helper to get rule config
+function getRule(category: keyof typeof uxRules, ruleId: string) {
+    // @ts-ignore - straightforward access for now
+    return uxRules[category][ruleId];
+}
+
 /**
  * Audit UX data - Accessibility rules
  */
 export function auditAccessibility(data: UXData, seoData: any): Finding[] {
     const findings: Finding[] = [];
+    const cat = 'accessibility';
 
-    // UX-A11Y-001: Color Contrast (placeholder - would need image analysis)
+    // UX-A11Y-001: Color Contrast
+    const r001 = getRule(cat, 'UX-A11Y-001');
     findings.push({
-        ruleId: 'UX-A11Y-001',
-        description: 'Color contrast ratio',
-        level: 'mandatory',
+        ruleId: r001.id,
+        description: r001.name,
+        level: r001.level as any,
         status: 'pass', // Placeholder
         details: 'Color contrast analysis requires screenshot processing',
-        impact: 'Critical for users with visual impairments',
-        recommendation: 'Ensure text has 4.5:1 contrast ratio (3:1 for large text)',
+        impact: r001.impact,
+        recommendation: r001.recommendation,
     });
 
-    // UX-A11Y-002: Touch Target Size (placeholder - would need screenshot analysis)
+    // UX-A11Y-002: Touch Target Size
+    const r002 = getRule(cat, 'UX-A11Y-002');
     findings.push({
-        ruleId: 'UX-A11Y-002',
-        description: 'Touch target size (mobile)',
-        level: 'mandatory',
+        ruleId: r002.id,
+        description: r002.name,
+        level: r002.level as any,
         status: 'pass', // Placeholder
         details: 'Touch target analysis requires screenshot processing',
-        impact: 'Users with motor impairments struggle with small targets',
-        recommendation: 'Minimum 44x44px for all tappable elements',
-    });
-
-    // UX-A11Y-003: Focus Indicators (placeholder)
-    findings.push({
-        ruleId: 'UX-A11Y-003',
-        description: 'Focus indicators',
-        level: 'mandatory',
-        status: 'pass', // Placeholder
-        details: 'Focus indicator testing requires browser interaction',
-        impact: 'Keyboard users cannot navigate without focus indicators',
-        recommendation: 'Use :focus styles with clear visual indicators',
+        impact: r002.impact,
+        recommendation: r002.recommendation,
     });
 
     // UX-A11Y-004: Form Labels
+    const r004 = getRule(cat, 'UX-A11Y-004');
     findings.push({
-        ruleId: 'UX-A11Y-004',
-        description: 'Form labels',
-        level: 'mandatory',
+        ruleId: r004.id,
+        description: r004.name,
+        level: r004.level as any,
         status: data.formLabels.total === 0 ? 'pass' :
             data.formLabels.labeled === data.formLabels.total ? 'pass' : 'fail',
         details: `${data.formLabels.labeled} of ${data.formLabels.total} inputs have labels`,
-        impact: data.formLabels.labeled < data.formLabels.total
-            ? 'Screen readers cannot identify unlabeled input purposes'
-            : 'All form inputs are properly labeled',
-        recommendation: data.formLabels.labeled === data.formLabels.total
-            ? 'Form labels are properly implemented'
-            : 'Add <label> elements or aria-label to all form inputs',
-    });
-
-    // UX-A11Y-005: Alt Text (reference SEO check)
-    findings.push({
-        ruleId: 'UX-A11Y-005',
-        description: 'Image alt text',
-        level: 'mandatory',
-        status: 'pass', // Checked in SEO-007
-        details: 'See SEO-007 for detailed image alt text analysis',
-        impact: 'Screen readers cannot describe images without alt text',
-        recommendation: 'Refer to SEO audit for image accessibility details',
-    });
-
-    // UX-A11Y-006: Heading Structure (reference SEO check)
-    findings.push({
-        ruleId: 'UX-A11Y-006',
-        description: 'Heading structure',
-        level: 'mandatory',
-        status: 'pass', // Checked in SEO-006
-        details: 'See SEO-006 for heading hierarchy analysis',
-        impact: 'Screen readers use headings for navigation',
-        recommendation: 'Refer to SEO audit for heading structure details',
+        impact: r004.impact,
+        recommendation: r004.recommendation,
     });
 
     // UX-A11Y-007: ARIA Landmarks
+    const r007 = getRule(cat, 'UX-A11Y-007');
+    const minLandmarks = r007.thresholds?.minLandmarks || 3;
     findings.push({
-        ruleId: 'UX-A11Y-007',
-        description: 'ARIA landmarks',
-        level: 'advisory',
-        status: data.ariaLandmarks.length >= 3 ? 'pass' : 'warning',
+        ruleId: r007.id,
+        description: r007.name,
+        level: r007.level as any,
+        status: data.ariaLandmarks.length >= minLandmarks ? 'pass' : 'warning',
         details: `Found ${data.ariaLandmarks.length} landmark(s): ${data.ariaLandmarks.join(', ')}`,
-        impact: data.ariaLandmarks.length >= 3
-            ? 'Screen readers can quickly navigate page sections'
-            : 'Missing landmarks make navigation harder for screen reader users',
-        recommendation: data.ariaLandmarks.length >= 3
-            ? 'ARIA landmarks are properly implemented'
-            : 'Add semantic HTML5 elements (nav, main, footer) or ARIA roles',
+        impact: r007.impact,
+        recommendation: r007.recommendation,
     });
 
     // UX-A11Y-008: Skip to Content Link
+    const r008 = getRule(cat, 'UX-A11Y-008');
     findings.push({
-        ruleId: 'UX-A11Y-008',
-        description: 'Skip to content link',
-        level: 'advisory',
+        ruleId: r008.id,
+        description: r008.name,
+        level: r008.level as any,
         status: data.hasSkipLink ? 'pass' : 'warning',
         details: data.hasSkipLink ? 'Skip link detected' : 'No skip link found',
-        impact: data.hasSkipLink
-            ? 'Keyboard users can skip navigation'
-            : 'Keyboard users must tab through entire nav on every page',
-        recommendation: data.hasSkipLink
-            ? 'Skip link is present'
-            : 'Add a "skip to main content" link as the first focusable element',
-    });
-
-    // UX-A11Y-009: Text Resize Support (placeholder)
-    findings.push({
-        ruleId: 'UX-A11Y-009',
-        description: 'Text resize support',
-        level: 'advisory',
-        status: 'pass', // Would need testing
-        details: 'Text resize testing requires browser interaction',
-        impact: 'Users with low vision need to resize text',
-        recommendation: 'Use relative units (rem, em) instead of fixed px',
-    });
-
-    // UX-A11Y-010: Color Not Sole Indicator (placeholder)
-    findings.push({
-        ruleId: 'UX-A11Y-010',
-        description: 'Color not sole indicator',
-        level: 'advisory',
-        status: 'pass', // Would need visual analysis
-        details: 'Color usage analysis requires visual inspection',
-        impact: 'Color-blind users cannot distinguish color-only indicators',
-        recommendation: 'Use icons, underlines, or text in addition to color',
-    });
-
-    // UX-A11Y-011: Video/Audio Captions (placeholder)
-    findings.push({
-        ruleId: 'UX-A11Y-011',
-        description: 'Video/audio captions',
-        level: 'mandatory',
-        status: 'pass', // Would need media detection
-        details: 'Media caption analysis requires content inspection',
-        impact: 'Deaf/hard-of-hearing users cannot access media without captions',
-        recommendation: 'Provide captions for all video/audio content',
+        impact: r008.impact,
+        recommendation: r008.recommendation,
     });
 
     // UX-A11Y-012: Language Declaration
+    const r012 = getRule(cat, 'UX-A11Y-012');
     findings.push({
-        ruleId: 'UX-A11Y-012',
-        description: 'Language declaration',
-        level: 'mandatory',
+        ruleId: r012.id,
+        description: r012.name,
+        level: r012.level as any,
         status: data.hasLangAttribute ? 'pass' : 'fail',
         details: data.hasLangAttribute
             ? `Language set to: ${data.langValue}`
             : 'No lang attribute on <html> tag',
-        impact: data.hasLangAttribute
-            ? 'Screen readers can pronounce text correctly'
-            : 'Screen readers cannot determine correct pronunciation',
-        recommendation: data.hasLangAttribute
-            ? 'Language declaration is present'
-            : 'Add lang attribute to <html> tag (e.g., <html lang="en">)',
+        impact: r012.impact,
+        recommendation: r012.recommendation,
     });
 
     return findings;
@@ -309,131 +243,59 @@ export function auditAccessibility(data: UXData, seoData: any): Finding[] {
  */
 export function auditMobileUsability(data: UXData): Finding[] {
     const findings: Finding[] = [];
+    const cat = 'mobile';
 
     // UX-MOB-001: Viewport Meta Tag
+    const r001 = getRule(cat, 'UX-MOB-001');
     findings.push({
-        ruleId: 'UX-MOB-001',
-        description: 'Viewport meta tag',
-        level: 'mandatory',
+        ruleId: r001.id,
+        description: r001.name,
+        level: r001.level as any,
         status: data.hasViewportMeta ? 'pass' : 'fail',
         details: data.hasViewportMeta
             ? `Viewport: ${data.viewportContent}`
             : 'No viewport meta tag found',
-        impact: data.hasViewportMeta
-            ? 'Page is mobile-responsive'
-            : 'Page will not be mobile-responsive without viewport tag',
-        recommendation: data.hasViewportMeta
-            ? 'Viewport meta tag is properly set'
-            : 'Add <meta name="viewport" content="width=device-width, initial-scale=1">',
+        impact: r001.impact,
+        recommendation: r001.recommendation,
     });
 
-    // UX-MOB-002: Mobile-Friendly Layout (placeholder)
+    // UX-MOB-002: Mobile-Friendly Layout
+    const r002 = getRule(cat, 'UX-MOB-002');
     findings.push({
-        ruleId: 'UX-MOB-002',
-        description: 'Mobile-friendly layout',
-        level: 'mandatory',
+        ruleId: r002.id,
+        description: r002.name,
+        level: r002.level as any,
         status: data.isMobileFriendly ? 'pass' : 'warning',
         details: 'Mobile layout analysis requires screenshot comparison',
-        impact: 'Users must scroll horizontally to read content',
-        recommendation: 'Use responsive design with max-width: 100%',
+        impact: r002.impact,
+        recommendation: r002.recommendation,
     });
 
     // UX-MOB-003: Text Readability
+    const r003 = getRule(cat, 'UX-MOB-003');
+    const minFontSize = r003.thresholds?.minFontSize || 16;
     findings.push({
-        ruleId: 'UX-MOB-003',
-        description: 'Text readability (mobile)',
-        level: 'mandatory',
-        status: data.baseFontSize >= 16 ? 'pass' : 'warning',
+        ruleId: r003.id,
+        description: r003.name,
+        level: r003.level as any,
+        status: data.baseFontSize >= minFontSize ? 'pass' : 'warning',
         details: `Base font size: ${data.baseFontSize}px`,
-        impact: data.baseFontSize >= 16
-            ? 'Text is readable on mobile devices'
-            : 'Small text is difficult to read on mobile',
-        recommendation: data.baseFontSize >= 16
-            ? 'Font size is appropriate for mobile'
-            : 'Increase base font size to at least 16px',
+        impact: r003.impact,
+        recommendation: r003.recommendation,
     });
 
-    // UX-MOB-004: Tap Target Spacing (placeholder)
+    // UX-MOB-010: Mobile CTA Visibility
+    const r010 = getRule(cat, 'UX-MOB-010');
     findings.push({
-        ruleId: 'UX-MOB-004',
-        description: 'Tap target spacing',
-        level: 'mandatory',
-        status: 'pass', // Would need screenshot analysis
-        details: 'Tap target spacing analysis requires screenshot processing',
-        impact: 'Users accidentally tap wrong element',
-        recommendation: 'Maintain 8px spacing between tappable elements',
-    });
-
-    // UX-MOB-005: Hamburger Menu (placeholder)
-    findings.push({
-        ruleId: 'UX-MOB-005',
-        description: 'Hamburger menu (mobile)',
-        level: 'advisory',
-        status: 'pass', // Would need screenshot detection
-        details: 'Mobile navigation pattern requires screenshot analysis',
-        impact: 'Navigation takes up too much screen space',
-        recommendation: 'Use collapsible navigation on mobile',
-    });
-
-    // UX-MOB-006: Form Input Types (placeholder)
-    findings.push({
-        ruleId: 'UX-MOB-006',
-        description: 'Form input types',
-        level: 'advisory',
-        status: 'pass', // Would need form analysis
-        details: 'Form input type analysis requires detailed inspection',
-        impact: 'Mobile keyboard doesn\'t optimize for input type',
-        recommendation: 'Use type="email", type="tel", etc. for appropriate fields',
-    });
-
-    // UX-MOB-007: Sticky Headers (placeholder)
-    findings.push({
-        ruleId: 'UX-MOB-007',
-        description: 'Sticky headers',
-        level: 'acceptable',
-        status: 'pass', // Would need screenshot measurement
-        details: 'Sticky header analysis requires screenshot processing',
-        impact: 'Sticky headers reduce usable screen space',
-        recommendation: 'Keep sticky headers under 60px on mobile',
-    });
-
-    // UX-MOB-008: Image Optimization (placeholder)
-    findings.push({
-        ruleId: 'UX-MOB-008',
-        description: 'Image optimization',
-        level: 'advisory',
-        status: 'pass', // Would need image analysis
-        details: 'Image optimization requires srcset/sizes analysis',
-        impact: 'Large images slow down mobile page load',
-        recommendation: 'Use responsive images with srcset attribute',
-    });
-
-    // UX-MOB-009: Orientation Support (placeholder)
-    findings.push({
-        ruleId: 'UX-MOB-009',
-        description: 'Orientation support',
-        level: 'advisory',
-        status: 'pass', // Would need testing
-        details: 'Orientation testing requires device testing',
-        impact: 'Users cannot use device in preferred orientation',
-        recommendation: 'Support both portrait and landscape orientations',
-    });
-
-    // UX-MOB-010: Mobile CTA Visibility (placeholder)
-    findings.push({
-        ruleId: 'UX-MOB-010',
-        description: 'Mobile CTA visibility',
-        level: 'mandatory',
+        ruleId: r010.id,
+        description: r010.name,
+        level: r010.level as any,
         status: data.hasPrimaryCTA ? 'pass' : 'warning',
         details: data.hasPrimaryCTA
             ? 'Primary CTA detected'
             : 'No clear primary CTA found',
-        impact: data.hasPrimaryCTA
-            ? 'Users can see primary action'
-            : 'Users don\'t see primary action',
-        recommendation: data.hasPrimaryCTA
-            ? 'Primary CTA is present'
-            : 'Place primary CTA above the fold on mobile',
+        impact: r010.impact,
+        recommendation: r010.recommendation,
     });
 
     return findings;

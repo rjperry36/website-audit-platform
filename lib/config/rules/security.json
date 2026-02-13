@@ -1,0 +1,98 @@
+{
+    "architecture": {
+        "SEC-ARCH-001": {
+            "id": "SEC-ARCH-001",
+            "name": "HTTPS Usage",
+            "description": "Site uses HTTPS for secure communication",
+            "level": "mandatory",
+            "impact": "Data transmitted in cleartext can be intercepted",
+            "recommendation": "Enforce HTTPS for all connections"
+        }
+    },
+    "headers": {
+        "SEC-HEAD-001": {
+            "id": "SEC-HEAD-001",
+            "name": "Strict-Transport-Security",
+            "description": "HSTS header is present and valid",
+            "level": "mandatory",
+            "impact": "Users vulnerable to downgrade attacks",
+            "recommendation": "Add 'Strict-Transport-Security' header with max-age set (e.g., max-age=31536000; includeSubDomains)"
+        },
+        "SEC-HEAD-002": {
+            "id": "SEC-HEAD-002",
+            "name": "Content-Security-Policy",
+            "description": "CSP header is present to prevent XSS",
+            "level": "mandatory",
+            "impact": "Site vulnerable to Cross-Site Scripting (XSS) attacks",
+            "recommendation": "Add a robust 'Content-Security-Policy' header"
+        },
+        "SEC-HEAD-003": {
+            "id": "SEC-HEAD-003",
+            "name": "X-Frame-Options",
+            "description": "X-Frame-Options header prevents clickjacking",
+            "level": "mandatory",
+            "impact": "Site vulnerable to Clickjacking attacks",
+            "recommendation": "Add 'X-Frame-Options: SAMEORIGIN' or 'DENY'"
+        },
+        "SEC-HEAD-004": {
+            "id": "SEC-HEAD-004",
+            "name": "X-Content-Type-Options",
+            "description": "Prevents MIME-sniffing",
+            "level": "mandatory",
+            "impact": "Browser may execute non-executable files as scripts",
+            "recommendation": "Add 'X-Content-Type-Options: nosniff'"
+        },
+        "SEC-HEAD-005": {
+            "id": "SEC-HEAD-005",
+            "name": "Referrer-Policy",
+            "description": "Controls referrer information sent to other sites",
+            "level": "advisory",
+            "impact": "May leak sensitive information in URL to third parties",
+            "recommendation": "Add 'Referrer-Policy: strict-origin-when-cross-origin'"
+        },
+        "SEC-HEAD-006": {
+            "id": "SEC-HEAD-006",
+            "name": "Permissions-Policy",
+            "description": "Controls browser features available to the page",
+            "level": "advisory",
+            "impact": "Unnecessary browser features enabled (e.g., camera, mic)",
+            "recommendation": "Add 'Permissions-Policy' to restrict feature usage"
+        }
+    },
+    "inputs": {
+        "SEC-INP-001": {
+            "id": "SEC-INP-001",
+            "name": "External Links Safety",
+            "description": "External links use rel='noopener'",
+            "level": "mandatory",
+            "impact": "External pages can access window.opener (Tabnabbing)",
+            "recommendation": "Add rel='noopener' or rel='noreferrer' to all external links (target='_blank')"
+        },
+        "SEC-INP-002": {
+            "id": "SEC-INP-002",
+            "name": "Mixed Content",
+            "description": "Page does not load insecure (HTTP) resources",
+            "level": "mandatory",
+            "impact": "Insecure resources compromise the security of the HTTPS page",
+            "recommendation": "Ensure all resources (scripts, images, styles) are loaded via HTTPS"
+        }
+    },
+    "disclosure": {
+        "SEC-DISC-001": {
+            "id": "SEC-DISC-001",
+            "name": "Server Header",
+            "description": "Server header does not leak detailed version info",
+            "level": "advisory",
+            "impact": "Reveulating server version helps attackers target specific vulnerabilities",
+            "recommendation": "Remove or obscure 'Server' header"
+        },
+        "SEC-DISC-002": {
+            "id": "SEC-DISC-002",
+            "name": "X-Powered-By",
+            "description": "X-Powered-By header is not present",
+            "level": "advisory",
+            "impact": "Reveals technology stack details to attackers",
+            "recommendation": "Remove 'X-Powered-By' header"
+        }
+    }
+}

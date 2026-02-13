@@ -1,0 +1,192 @@
+{
+    "accessibility": {
+        "UX-A11Y-001": {
+            "id": "UX-A11Y-001",
+            "name": "Color Contrast Ratio",
+            "description": "Text-to-background contrast meets WCAG AA standards",
+            "level": "mandatory",
+            "impact": "Critical for users with visual impairments",
+            "recommendation": "Ensure text has 4.5:1 contrast ratio (3:1 for large text)",
+            "thresholds": {
+                "normal": 4.5,
+                "large": 3.0
+            }
+        },
+        "UX-A11Y-002": {
+            "id": "UX-A11Y-002",
+            "name": "Touch Target Size",
+            "description": "Interactive elements meet minimum size requirements",
+            "level": "mandatory",
+            "impact": "Users with motor impairments struggle with small targets",
+            "recommendation": "Minimum 44x44px for all tappable elements",
+            "thresholds": {
+                "minWidth": 44,
+                "minHeight": 44
+            }
+        },
+        "UX-A11Y-004": {
+            "id": "UX-A11Y-004",
+            "name": "Form Labels",
+            "description": "All form inputs have associated labels",
+            "level": "mandatory",
+            "impact": "Screen readers cannot identify unlabeled input purposes",
+            "recommendation": "Add <label> elements or aria-label to all form inputs"
+        },
+        "UX-A11Y-007": {
+            "id": "UX-A11Y-007",
+            "name": "ARIA Landmarks",
+            "description": "Page uses semantic HTML5 or ARIA landmarks",
+            "level": "advisory",
+            "impact": "Screen readers can quickly navigate page sections",
+            "recommendation": "Add semantic HTML5 elements (nav, main, footer) or ARIA roles",
+            "thresholds": {
+                "minLandmarks": 3
+            }
+        },
+        "UX-A11Y-008": {
+            "id": "UX-A11Y-008",
+            "name": "Skip to Content Link",
+            "description": "Page has 'skip to main content' link",
+            "level": "advisory",
+            "impact": "Keyboard users must tab through entire nav on every page",
+            "recommendation": "Add a 'skip to main content' link as the first focusable element"
+        },
+        "UX-A11Y-012": {
+            "id": "UX-A11Y-012",
+            "name": "Language Declaration",
+            "description": "HTML tag has a lang attribute",
+            "level": "mandatory",
+            "impact": "Screen readers cannot determine correct pronunciation",
+            "recommendation": "Add lang attribute to <html> tag (e.g., <html lang='en'>)"
+        }
+    },
+    "mobile": {
+        "UX-MOB-001": {
+            "id": "UX-MOB-001",
+            "name": "Viewport Meta Tag",
+            "description": "Page has proper viewport meta tag for mobile responsiveness",
+            "level": "mandatory",
+            "impact": "Page will not be mobile-responsive without viewport tag",
+            "recommendation": "Add <meta name='viewport' content='width=device-width, initial-scale=1'>"
+        },
+        "UX-MOB-002": {
+            "id": "UX-MOB-002",
+            "name": "Mobile-Friendly Layout",
+            "description": "Content fits within mobile viewport without horizontal scrolling",
+            "level": "mandatory",
+            "impact": "Users must scroll horizontally to read content",
+            "recommendation": "Use responsive design with max-width: 100%"
+        },
+        "UX-MOB-003": {
+            "id": "UX-MOB-003",
+            "name": "Text Readability",
+            "description": "Base font size is large enough for mobile reading",
+            "level": "mandatory",
+            "impact": "Small text is difficult to read on mobile",
+            "recommendation": "Increase base font size to at least 16px",
+            "thresholds": {
+                "minFontSize": 16
+            }
+        },
+        "UX-MOB-010": {
+            "id": "UX-MOB-010",
+            "name": "Mobile CTA Visibility",
+            "description": "Primary Call-to-Action is visible above the fold on mobile",
+            "level": "mandatory",
+            "impact": "Users don't see primary action immediately",
+            "recommendation": "Place primary CTA above the fold on mobile"
+        }
+    },
+    "visual": {
+        "UX-VIS-001": {
+            "id": "UX-VIS-001",
+            "name": "Visual Hierarchy",
+            "description": "Clear visual hierarchy guides user attention",
+            "level": "advisory",
+            "impact": "Users cannot quickly scan and understand content",
+            "recommendation": "Use size, color, and spacing to create clear hierarchy"
+        },
+        "UX-VIS-002": {
+            "id": "UX-VIS-002",
+            "name": "Whitespace Usage",
+            "description": "Layout uses adequate whitespace to prevent clutter",
+            "level": "advisory",
+            "impact": "Cramped design is hard to read and scan",
+            "recommendation": "Increase whitespace between sections (min 40px)"
+        },
+        "UX-VIS-003": {
+            "id": "UX-VIS-003",
+            "name": "Typography Consistency",
+            "description": "Limited font families and consistent styles",
+            "level": "advisory",
+            "impact": "Too many fonts create visual chaos",
+            "recommendation": "Limit to 2-3 font families max"
+        },
+        "UX-VIS-004": {
+            "id": "UX-VIS-004",
+            "name": "Color Palette",
+            "description": "Consistent color palette supports brand identity",
+            "level": "advisory",
+            "impact": "Inconsistent colors confuse users and dilute brand",
+            "recommendation": "Use a consistent palette of 3-5 primary colors"
+        },
+        "UX-VIS-009": {
+            "id": "UX-VIS-009",
+            "name": "Grid Alignment",
+            "description": "Elements align to a logical grid system",
+            "level": "advisory",
+            "impact": "Misaligned elements look unprofessional",
+            "recommendation": "Align elements using a grid system"
+        },
+        "UX-VIS-010": {
+            "id": "UX-VIS-010",
+            "name": "Visual Balance",
+            "description": "Layout feels balanced and stable",
+            "level": "advisory",
+            "impact": "Unbalanced layouts feel awkward and unfinished",
+            "recommendation": "Distribute visual weight evenly across the page"
+        }
+    },
+    "experience": {
+        "UX-EXP-001": {
+            "id": "UX-EXP-001",
+            "name": "Above-the-Fold Content",
+            "description": "Key content is visible without scrolling",
+            "level": "mandatory",
+            "impact": "Users might leave if they don't see value immediately",
+            "recommendation": "Place value proposition and CTA above the fold"
+        },
+        "UX-EXP-002": {
+            "id": "UX-EXP-002",
+            "name": "Value Proposition",
+            "description": "Homepage clearly states what the site offers",
+            "level": "mandatory",
+            "impact": "Users don't understand what you offer",
+            "recommendation": "Add a clear headline explaining your value proposition"
+        },
+        "UX-EXP-003": {
+            "id": "UX-EXP-003",
+            "name": "CTA Prominence",
+            "description": "Primary calls-to-action stand out",
+            "level": "mandatory",
+            "impact": "Users don't know what action to take",
+            "recommendation": "Make primary CTA distinctive (color, size)"
+        },
+        "UX-EXP-004": {
+            "id": "UX-EXP-004",
+            "name": "Navigation Clarity",
+            "description": "Navigation labels are clear and descriptive",
+            "level": "mandatory",
+            "impact": "Users cannot find what they're looking for",
+            "recommendation": "Use simple, descriptive labels for navigation"
+        },
+        "UX-EXP-007": {
+            "id": "UX-EXP-007",
+            "name": "Trust Indicators",
+            "description": "Site displays trust elements (testimonials, logos, etc.)",
+            "level": "advisory",
+            "impact": "Users may not trust the site without social proof",
+            "recommendation": "Add testimonials, partner logos, or trust seals"
+        }
+    }
+}
