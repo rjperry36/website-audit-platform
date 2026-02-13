@@ -67,13 +67,14 @@ export const staticEvents: PlannerEvent[] = [
         outcome: 'Expected +5% engagement on social channels.',
         tags: ['Community', 'Social', 'Brand'],
         resources: mockResources,
-        imageUrl: '/placeholder-campaign.jpg'
+        imageUrl: '/images/planner/womens-day.png'
     },
     {
         id: '101', title: "Summer Kickoff", startWeek: 22, durationWeeks: 3, type: 'LOCAL', rowId: 'row1',
         description: 'Local activation events for the start of the summer season.',
         outcome: 'Drive +10% footfall to retail locations.',
-        tags: ['Retail', 'Summer', 'Activation']
+        tags: ['Retail', 'Summer', 'Activation'],
+        imageUrl: '/images/planner/retail-sales.png'
     },
     { id: '102', title: "Store Opening: London", startWeek: 35, durationWeeks: 4, type: 'LOCAL', rowId: 'row1' },
     { id: '103', title: "Winter Festival", startWeek: 48, durationWeeks: 5, type: 'LOCAL', rowId: 'row1' },
@@ -84,7 +85,8 @@ export const staticEvents: PlannerEvent[] = [
         description: 'Major annual sales event across all digital channels.',
         outcome: 'Target: $2.5M Revenue (+15% YoY)',
         tags: ['Sales', 'Global', 'High Impact'],
-        resources: mockResources
+        resources: mockResources,
+        imageUrl: '/images/planner/retail-sales.png'
     },
     { id: '202', title: "Summer Sale", startWeek: 26, durationWeeks: 4, type: 'PROMOTION', rowId: 'row2' },
     { id: '203', title: "Spring Flash Sale", startWeek: 40, durationWeeks: 1, type: 'PROMOTION', rowId: 'row2' },
@@ -113,7 +115,7 @@ export const staticEvents: PlannerEvent[] = [
     { id: '404', title: "Core Web Vitals Sprint", startWeek: 52, durationWeeks: 4, type: 'SEO', rowId: 'row4' },
 
     // --- ROW 5: Social & Articles ---
-    { id: '501', title: "Sustainability Report", startWeek: 16, durationWeeks: 2, type: 'ARTICLE', rowId: 'row5' },
+    { id: '501', title: "Sustainability Report", startWeek: 16, durationWeeks: 2, type: 'ARTICLE', rowId: 'row5', imageUrl: '/images/planner/sustainability.png' },
     {
         id: '502', title: "Influencer Summer Camp", startWeek: 24, durationWeeks: 8, type: 'SOCIAL', rowId: 'row5',
         description: 'Partnership with 50 top lifestyle influencers for summer content creation.',
@@ -140,7 +142,8 @@ export const staticEvents: PlannerEvent[] = [
         description: 'Implementation of the new unified design language across all platforms.',
         outcome: 'Improve dev velocity by 20% and brand consistency.',
         tags: ['Design', 'Tech', 'Infrastructure'],
-        resources: mockResources
+        resources: mockResources,
+        imageUrl: '/images/planner/design-system.png'
     },
     { id: '802', title: "Dark Mode Update", startWeek: 32, durationWeeks: 4, type: 'DES_RELEASE', rowId: 'row8' },
     { id: '803', title: "Alpha Platform Launch", startWeek: 50, durationWeeks: 6, type: 'LAUNCH', rowId: 'row8' },

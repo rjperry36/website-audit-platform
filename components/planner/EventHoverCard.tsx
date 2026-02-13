@@ -26,11 +26,21 @@ export const EventHoverCard = ({ event }: EventHoverCardProps) => {
         >
             {/* Image Header */}
             <div className="h-32 w-full bg-neutral-800 relative">
-                {/* Placeholder Image or actual if provided */}
-                <div
-                    className="absolute inset-0 opacity-50 bg-gradient-to-br from-neutral-700 to-neutral-900"
-                    style={{ backgroundColor: style.color }} // Tint with initiative color
-                />
+                {event.imageUrl ? (
+                    <img
+                        src={event.imageUrl}
+                        alt={event.title}
+                        className="w-full h-full object-cover"
+                    />
+                ) : (
+                    <div
+                        className="absolute inset-0 opacity-50 bg-gradient-to-br from-neutral-700 to-neutral-900"
+                        style={{ backgroundColor: style.color }} // Tint with initiative color
+                    />
+                )}
+
+                {/* Tint Overlay for text reliability if needed, or just keep it clean */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1a1a24] to-transparent opacity-80" />
 
                 {/* Type Badge */}
                 <div className="absolute top-3 left-3 px-2 py-1 bg-black/40 backdrop-blur-md rounded-md border border-white/10 text-[10px] font-bold text-white uppercase tracking-wider">
