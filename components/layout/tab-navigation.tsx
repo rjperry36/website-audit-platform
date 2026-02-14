@@ -12,7 +12,8 @@ import {
     ShoppingCart,
     Store,
     TrendingUp,
-    Eye
+    Eye,
+    Calendar
 } from 'lucide-react'
 
 interface Tab {
@@ -56,6 +57,11 @@ const tabs: Tab[] = [
         href: '/ecommerce',
         icon: ShoppingCart,
         comingSoon: true,
+    },
+    {
+        name: 'Planner',
+        href: '/planner',
+        icon: Calendar,
     },
     {
         name: 'POS',
