@@ -8,7 +8,8 @@ import { TimelineFilter } from "./TimelineFilter";
 import { INITIATIVE_CONFIG } from "@/lib/initiatives";
 import { PlannerEvent } from "@/lib/planner-data";
 import clsx from "clsx";
-import { Calendar, CalendarDays, CalendarRange } from "lucide-react";
+import { Calendar, CalendarDays, CalendarRange, ChevronRight, ChevronDown } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 type ViewDuration = 3 | 6 | 12;
 
@@ -29,6 +30,17 @@ export const Timeline = () => {
 
     const handleSelectAll = () => setSelectedTypes(allTypes);
     const handleClearAll = () => setSelectedTypes([]);
+
+    // Collapsed State
+    const [collapsedTypes, setCollapsedTypes] = useState<string[]>([]);
+
+    const handleToggleCollapse = (type: string) => {
+        if (collapsedTypes.includes(type)) {
+            setCollapsedTypes(collapsedTypes.filter(t => t !== type));
+        } else {
+            setCollapsedTypes([...collapsedTypes, type]);
+        }
+    };
 
     // Logic to slice data based on view duration
     // 3 Months: Index 0-2
@@ -127,6 +139,8 @@ export const Timeline = () => {
 
                             if (typeEvents.length === 0) return null;
 
+                            const isCollapsed = collapsedTypes.includes(type);
+
                             // Sort events by start time
                             const sortedEvents = [...typeEvents].sort((a, b) => a.startWeek - b.startWeek);
 
@@ -150,21 +164,41 @@ export const Timeline = () => {
                             return (
                                 <div key={type} className="relative group">
                                     {/* Type Header / Label */}
-                                    <div className="px-4 py-2 text-xs font-bold text-white/50 bg-white/5 border-y border-white/5 flex items-center gap-2">
+                                    <button
+                                        onClick={() => handleToggleCollapse(type)}
+                                        className="w-full px-4 py-2 text-xs font-bold text-white/50 bg-white/5 border-y border-white/5 flex items-center gap-2 hover:bg-white/10 transition-colors"
+                                    >
+                                        {isCollapsed ? (
+                                            <ChevronRight className="w-3 h-3" />
+                                        ) : (
+                                            <ChevronDown className="w-3 h-3" />
+                                        )}
                                         <div className="w-2 h-2 rounded-full" style={{ backgroundColor: typeConfig.color }} />
                                         {typeConfig.label}
-                                    </div>
+                                        <span className="ml-auto text-[10px] opacity-50">
+                                            {sortedEvents.length} events
+                                        </span>
+                                    </button>
 
                                     {/* Render Lanes for this Type */}
-                                    {lanes.map((laneEvents, laneIndex) => (
-                                        <TimelineRow
-                                            key={`${type}-lane-${laneIndex}`}
-                                            row={{ id: `${type}-${laneIndex}` }} // Dynamic row ID
-                                            events={laneEvents}
-                                            totalColumns={totalColumns}
-                                            viewStartWeek={startWeek}
-                                        />
-                                    ))}
+                                    {!isCollapsed && sortedEvents.length > 0 && (
+                                        <motion.div
+                                            initial={{ height: 0, opacity: 0 }}
+                                            animate={{ height: "auto", opacity: 1 }}
+                                            exit={{ height: 0, opacity: 0 }}
+                                            transition={{ duration: 0.2 }}
+                                        >
+                                            {lanes.map((laneEvents, laneIndex) => (
+                                                <TimelineRow
+                                                    key={`${type}-lane-${laneIndex}`}
+                                                    row={{ id: `${type}-${laneIndex}` }} // Dynamic row ID
+                                                    events={laneEvents}
+                                                    totalColumns={totalColumns}
+                                                    viewStartWeek={startWeek}
+                                                />
+                                            ))}
+                                        </motion.div>
+                                    )}
                                 </div>
                             );
                         })}
