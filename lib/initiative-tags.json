@@ -1,0 +1,32 @@
+[
+    {
+        "id": "LIFECYCLE",
+        "label": "LIFECYCLE",
+        "color": "#14B8A6"
+    },
+    {
+        "id": "LOCAL",
+        "label": "LOCAL",
+        "color": "#F59E0B"
+    },
+    {
+        "id": "GLOBAL",
+        "label": "GLOBAL",
+        "color": "#3B82F6"
+    },
+    {
+        "id": "CLUB",
+        "label": "CLUB",
+        "color": "#6366F1"
+    },
+    {
+        "id": "LOYALTY",
+        "label": "LOYALTY",
+        "color": "#8B5CF6"
+    },
+    {
+        "id": "PROMOTION",
+        "label": "PROMOTION",
+        "color": "#10B981"
+    }
+]

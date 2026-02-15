@@ -1,10 +1,10 @@
 ---
-description: Smart Git commit workflow - auto-decides branch vs direct commit
+description: Smart Git commit workflow - auto-decides branch vs direct commit vs fork
 ---
 
 # Smart Git Commit Workflow
 
-This workflow automatically decides whether to create a feature branch or commit directly to main based on the scope of changes.
+This workflow automatically decides whether to create a feature branch, commit directly to main, or create a fork based on permissions and scope.
 
 ## Decision Criteria
 
@@ -20,33 +20,44 @@ The workflow will **commit directly to main** if ALL of these are true:
 - Only documentation, tests, or scripts changed
 - Minor bug fixes or typos
 - Single logical change
+- **Write access to origin/main confirmed**
+
+The workflow will suggest a **Fork Strategy** if ANY of these are true:
+- **No write access** to `origin` repository
+- Experimental changes that shouldn't pollute the main repo yet
+- Contributing to open source projects
 
 ## Steps
 
-### 1. Check Git Status
+### 1. Check Git Status & Remote
 // turbo
 ```bash
 git status --short
+git remote -v
 ```
 
-### 2. Analyze Changes
+### 2. Analyze Changes & Permissions
 
-Count the number of modified files and check if new directories were created:
+Count modified files and check permissions (simulated check):
 ```bash
 # Count modified files
 git status --short | wc -l
 
 # Check for new directories
 git status --short | grep "^??" | grep "/$"
+
+# Check if push is likely allowed (basic check)
+git remote show origin | grep "Push  URL"
 ```
 
 ### 3. Determine Strategy
 
 Based on the analysis:
+- If **No Write Access** (or uncertain): Use Fork Strategy
 - If **3+ files** OR **new directories** OR **lib/ changes**: Use feature branch
 - Otherwise: Direct commit to main
 
-### 4a. Feature Branch Strategy (for significant changes)
+### 4a. Feature Branch Strategy (Standard)
 
 ```bash
 # Ensure we're on main and up to date
@@ -54,30 +65,21 @@ git checkout main
 git pull origin main
 
 # Create descriptive feature branch
-# Format: feature/short-description or fix/short-description
 git checkout -b feature/[DESCRIPTION]
 
 # Stage all changes
 git add .
 
 # Commit with descriptive message
-# Format: type(scope): description
-# Types: feat, fix, docs, test, refactor, chore
 git commit -m "[COMMIT_MESSAGE]"
 
 # Push to remote
 git push -u origin feature/[DESCRIPTION]
 
-# Output next steps
 echo "✅ Feature branch created and pushed"
-echo "📝 Next steps:"
-echo "   1. Create a Pull Request on GitHub/GitLab"
-echo "   2. Request code review if needed"
-echo "   3. Merge after approval"
-echo "   4. Delete branch: git branch -d feature/[DESCRIPTION]"
 ```
 
-### 4b. Direct Commit Strategy (for minor changes)
+### 4b. Direct Commit Strategy (Minor Changes)
 
 // turbo
 ```bash
@@ -88,69 +90,36 @@ git pull origin main
 # Stage all changes
 git add .
 
-# Commit with descriptive message
+# Commit
 git commit -m "[COMMIT_MESSAGE]"
 
-# Push to remote
+# Push
 git push origin main
 
 echo "✅ Changes committed directly to main"
 ```
 
-## Usage Examples
+### 4c. Fork Strategy (No Access / External Contributor)
 
-**Example 1: Major Feature (SEO Audit Engine)**
-- Files changed: 5+ (lib/audit/seo-audit.ts, lib/crawl/crawler.ts, lib/types.ts, scripts/test-seo-audit.ts, docs/)
-- Decision: **Feature branch** → `feature/seo-audit-aeo-geo`
-- Commit message: `feat(audit): add SEO audit engine with AEO and GEO criteria`
+```bash
+# 1. Create a Fork (using GitHub CLI if available)
+gh repo fork --clone=false --remote=true
 
-**Example 2: Documentation Update**
-- Files changed: 1 (README.md)
-- Decision: **Direct commit**
-- Commit message: `docs: update installation instructions`
+# 2. Create a feature branch on your fork
+git checkout -b feature/[DESCRIPTION]
 
-**Example 3: Bug Fix**
-- Files changed: 1 (lib/crawler.ts)
-- Decision: Could go either way, but if it's a critical fix: **Direct commit**
-- Commit message: `fix(crawler): handle null response in fetchHTML`
+# 3. Stage and Commit
+git add .
+git commit -m "[COMMIT_MESSAGE]"
 
-**Example 4: New Feature Module**
-- Files changed: 3+ with new directory (lib/analytics/)
-- Decision: **Feature branch** → `feature/analytics-module`
-- Commit message: `feat(analytics): add page analytics tracking`
+# 4. Push to YOUR fork (usually named 'origin' in a fresh clone, or 'my-fork')
+# Check remotes first
+git remote -v
+git push -u origin feature/[DESCRIPTION]
+
+echo "✅ Pushed to fork. Please create a Pull Request from your fork to the upstream repository."
+```
 
 ## Commit Message Convention
 
-Follow Conventional Commits format:
-
-```
-<type>(<scope>): <description>
-
-[optional body]
-
-[optional footer]
-```
-
-**Types:**
-- `feat`: New feature
-- `fix`: Bug fix
-- `docs`: Documentation only
-- `test`: Adding or updating tests
-- `refactor`: Code change that neither fixes a bug nor adds a feature
-- `chore`: Maintenance tasks, dependency updates
-- `perf`: Performance improvements
-
-**Examples:**
-- `feat(audit): add AEO and GEO criteria to SEO audit`
-- `fix(crawler): prevent null pointer in HTML fetch`
-- `docs(readme): add SEO audit documentation`
-- `test(audit): add comprehensive SEO audit tests`
-- `refactor(types): extract audit types to separate file`
-
-## Notes
-
-- Always pull before creating a branch or committing
-- Use descriptive branch names and commit messages
-- For feature branches, create a PR for code review
-- Delete feature branches after merging
-- If unsure, prefer feature branch over direct commit
+Follow Conventional Commits format: `type(scope): description`

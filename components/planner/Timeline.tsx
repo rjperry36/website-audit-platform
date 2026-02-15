@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { staticEvents, staticRows, months, weeks } from "@/lib/planner-data";
+import channelTypes from "@/lib/channel-initiative-types.json";
 import { TimelineHeader } from "./TimelineHeader";
 import { TimelineRow } from "./TimelineRow";
 import { TimelineFilter } from "./TimelineFilter";
@@ -13,11 +14,27 @@ import { motion, AnimatePresence } from "framer-motion";
 
 type ViewDuration = 3 | 6 | 12;
 
+/**
+ * Timeline Component
+ *
+ * The primary visualization for the Market Planner.
+ *
+ * @component
+ * @description
+ * Renders a Gantt-style timeline for marketing initiatives.
+ * Features:
+ * - View switching (3k/6/12 month views)
+ * - Strict filtering by Channel type (sourced from channel-initiative-types.json)
+ * - Collapsible project rows with progress tracking
+ * - "X-Ray" mode for highlighting specific projects
+ *
+ * @returns {JSX.Element} The rendered Timeline dashboard
+ */
 export const Timeline = () => {
     const [viewDuration, setViewDuration] = useState<ViewDuration>(3);
 
     // Filter State
-    const allTypes = Object.keys(INITIATIVE_CONFIG).filter(key => key === key.toUpperCase());
+    const allTypes = channelTypes.map(c => c.id);
     const [selectedTypes, setSelectedTypes] = useState<string[]>(allTypes);
 
     const handleToggleType = (type: string) => {
@@ -41,6 +58,9 @@ export const Timeline = () => {
             setCollapsedTypes([...collapsedTypes, type]);
         }
     };
+
+    // Project Hover State
+    const [hoveredProjectId, setHoveredProjectId] = useState<string | null>(null);
 
     // Logic to slice data based on view duration
     // 3 Months: Index 0-2
@@ -195,6 +215,8 @@ export const Timeline = () => {
                                                     events={laneEvents}
                                                     totalColumns={totalColumns}
                                                     viewStartWeek={startWeek}
+                                                    hoveredProjectId={hoveredProjectId}
+                                                    onHoverProject={setHoveredProjectId}
                                                 />
                                             ))}
                                         </motion.div>

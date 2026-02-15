@@ -1,0 +1,68 @@
+[
+    {
+        "id": "SEO",
+        "label": "SEO",
+        "color": "#0284C7",
+        "description": "Search Engine Optimization"
+    },
+    {
+        "id": "PAID_MEDIA",
+        "label": "PAID MEDIA",
+        "color": "#D97706",
+        "description": "Paid advertising across search and social"
+    },
+    {
+        "id": "SOCIAL_MEDIA",
+        "label": "SOCIAL MEDIA",
+        "color": "#DB2777",
+        "description": "Organic social media content"
+    },
+    {
+        "id": "ECRM",
+        "label": "ECRM",
+        "color": "#0891B2",
+        "description": "Email & Customer Relationship Management"
+    },
+    {
+        "id": "D2C",
+        "label": "D2C",
+        "color": "#059669",
+        "description": "Direct to Consumer (Ecommerce)"
+    },
+    {
+        "id": "B2B",
+        "label": "B2B",
+        "color": "#4F46E5",
+        "description": "Business to Business"
+    },
+    {
+        "id": "B2B2C",
+        "label": "B2B2C",
+        "color": "#9333EA",
+        "description": "Business to Business to Consumer"
+    },
+    {
+        "id": "POSM",
+        "label": "POSM",
+        "color": "#F97316",
+        "description": "Point of Sale Materials"
+    },
+    {
+        "id": "OOH",
+        "label": "OOH",
+        "color": "#DC2626",
+        "description": "Out of Home Advertising"
+    },
+    {
+        "id": "RESEARCH",
+        "label": "RESEARCH",
+        "color": "#475569",
+        "description": "Market Research & Insights"
+    },
+    {
+        "id": "EVENT",
+        "label": "EVENT",
+        "color": "#2563EB",
+        "description": "Physical & Virtual Events"
+    }
+]

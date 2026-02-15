@@ -1,7 +1,7 @@
 'use client'
 
 import { PlannerEvent } from "@/lib/planner-data";
-import { getInitiativeStyle } from "@/lib/initiatives";
+import { getInitiativeStyle, getTagStyle } from "@/lib/initiatives";
 import { motion } from "framer-motion";
 import { ArrowUpRight, FileText, Target, Hash, Link as LinkIcon } from "lucide-react";
 
@@ -55,11 +55,18 @@ export const EventHoverCard = ({ event }: EventHoverCardProps) => {
                         {event.title}
                     </h4>
                     <div className="flex flex-wrap gap-2 text-[10px] text-neutral-400">
-                        {event.tags?.map(tag => (
-                            <span key={tag} className="bg-white/5 px-1.5 py-0.5 rounded flex items-center gap-1">
-                                <Hash className="w-2.5 h-2.5" /> {tag}
-                            </span>
-                        ))}
+                        {event.tags?.map(tag => {
+                            const tagStyle = getTagStyle(tag);
+                            return (
+                                <span
+                                    key={tag}
+                                    className="px-1.5 py-0.5 rounded flex items-center gap-1 font-medium text-white shadow-sm border border-white/10"
+                                    style={{ backgroundColor: tagStyle.color }}
+                                >
+                                    <Hash className="w-2.5 h-2.5 opacity-70" /> {tagStyle.label}
+                                </span>
+                            );
+                        })}
                     </div>
                 </div>
 

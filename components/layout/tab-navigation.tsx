@@ -1,86 +1,180 @@
 'use client'
 
+import React, { useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { motion } from 'framer-motion'
+import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/utils'
+import channelTypes from '@/lib/channel-initiative-types.json'
 import {
     LayoutDashboard,
-    Search,
-    Mail,
-    Share2,
-    ShoppingCart,
-    Store,
-    TrendingUp,
-    Eye,
-    Calendar
+    Calendar,
+    ChevronDown,
+    Layers
 } from 'lucide-react'
+
+// Map Channel IDs to Routes (Best Effort / Placeholder)
+const getChannelRoute = (channelId: string) => {
+    switch (channelId) {
+        case 'SEO': return '/search/seo';
+        case 'PAID_MEDIA': return '/search'; // Placeholder
+        case 'SOCIAL_MEDIA': return '/social';
+        case 'ECRM': return '/ecrm';
+        case 'D2C': return '/ecommerce';
+        case 'B2B': return '/overview'; // Placeholder
+        case 'POSM': return '/pos';
+        case 'UX': return '/ux';
+        default: return '/overview'; // Safety fallback
+    }
+};
 
 interface Tab {
     name: string
     href: string
     icon: React.ElementType
-    badge?: number
-    comingSoon?: boolean
+    isDropdown?: boolean
+    children?: {
+        name: string;
+        href: string;
+        color: string;
+        comingSoon?: boolean;
+    }[]
 }
 
-const tabs: Tab[] = [
-    {
-        name: 'Overview',
-        href: '/overview',
-        icon: LayoutDashboard,
-    },
-    {
-        name: 'Search',
-        href: '/search',
-        icon: Search,
-    },
-    {
-        name: 'UX',
-        href: '/ux',
-        icon: Eye,
-    },
-    {
-        name: 'eCRM',
-        href: '/ecrm',
-        icon: Mail,
-        comingSoon: true,
-    },
-    {
-        name: 'Social',
-        href: '/social',
-        icon: Share2,
-        comingSoon: true,
-    },
-    {
-        name: 'eCommerce',
-        href: '/ecommerce',
-        icon: ShoppingCart,
-        comingSoon: true,
-    },
-    {
-        name: 'Planner',
-        href: '/planner',
-        icon: Calendar,
-    },
-    {
-        name: 'POS',
-        href: '/pos',
-        icon: Store,
-        comingSoon: true,
-    },
-]
-
+/**
+ * TabNavigation Component
+ *
+ * Main application navigation bar.
+ *
+ * @component
+ * @description
+ * Implements the top-level navigation including:
+ * - "Overview": Dropdown with links to various dashboard views (Brand, Commercial, C-Suite)
+ * - "Channels": Dynamic dropdown generated from `channel-initiative-types.json`
+ * - "Planner": Direct link to the timeline view
+ *
+ * Uses Framer Motion for smooth dropdown animations and `usePathname` for active state highlighting.
+ *
+ * @returns {JSX.Element} The navigation bar
+ */
 export function TabNavigation() {
     const pathname = usePathname()
+    const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+
+    const tabs: Tab[] = [
+        {
+            name: 'Overview',
+            href: '#',
+            icon: LayoutDashboard,
+            isDropdown: true,
+            children: [
+                {
+                    name: 'Brand Dashboard',
+                    href: '/overview',
+                    color: '#3B82F6',
+                },
+                {
+                    name: 'Commercial Metrics',
+                    href: '#',
+                    color: '#6B7280',
+                    comingSoon: true
+                },
+                {
+                    name: 'C-Suite Dashboard',
+                    href: '#',
+                    color: '#6B7280',
+                    comingSoon: true
+                }
+            ]
+        },
+        {
+            name: 'Channels',
+            href: '#', // Dropdown trigger
+            icon: Layers,
+            isDropdown: true,
+            children: channelTypes.map(c => ({
+                name: c.label,
+                href: getChannelRoute(c.id),
+                color: c.color
+            }))
+        },
+        {
+            name: 'Planner',
+            href: '/planner',
+            icon: Calendar,
+        },
+    ]
 
     return (
-        <nav className="border-b border-white/10 glass content-layer">
+        <nav className="border-b border-white/10 glass relative z-50">
             <div className="container mx-auto px-4">
-                <div className="flex items-center gap-1 overflow-x-auto">
+                <div className="flex items-center gap-1">
                     {tabs.map((tab) => {
-                        const isActive = pathname.startsWith(tab.href)
+                        const isActive = pathname.startsWith(tab.href) && tab.href !== '#';
                         const Icon = tab.icon
+                        const isOpen = openDropdown === tab.name;
+
+                        if (tab.isDropdown) {
+                            return (
+                                <div
+                                    key={tab.name}
+                                    className="relative"
+                                    onMouseEnter={() => setOpenDropdown(tab.name)}
+                                    onMouseLeave={() => setOpenDropdown(null)}
+                                >
+                                    <button
+                                        className={cn(
+                                            "relative flex items-center gap-2 px-4 py-4 text-sm font-medium transition-all duration-300 whitespace-nowrap outline-none",
+                                            isOpen || (pathname.startsWith('/overview') && tab.name === 'Overview') || (pathname !== '/planner' && pathname !== '/overview' && tab.name === 'Channels')
+                                                ? "text-white"
+                                                : "text-neutral-400 hover:text-white"
+                                        )}
+                                    >
+                                        <Icon className="h-4 w-4" />
+                                        <span>{tab.name}</span>
+                                        <ChevronDown className={cn("h-3 w-3 transition-transform duration-200", isOpen && "rotate-180")} />
+                                    </button>
+
+                                    {/* Dropdown Menu */}
+                                    <AnimatePresence>
+                                        {isOpen && (
+                                            <motion.div
+                                                initial={{ opacity: 0, y: 10 }}
+                                                animate={{ opacity: 1, y: 0 }}
+                                                exit={{ opacity: 0, y: 10 }}
+                                                transition={{ duration: 0.15 }}
+                                                className="absolute top-full left-0 w-64 bg-[#1a1a2e] border border-white/10 rounded-xl shadow-2xl p-2 grid gap-1 z-50 transform"
+                                            >
+                                                {tab.children?.map((child) => (
+                                                    <Link
+                                                        key={child.name}
+                                                        href={child.href}
+                                                        className={cn(
+                                                            "flex items-center gap-3 px-3 py-2 rounded-lg hover:bg-white/10 transition-colors group",
+                                                            child.comingSoon && "opacity-60 cursor-not-allowed"
+                                                        )}
+                                                        onClick={(e) => child.comingSoon && e.preventDefault()}
+                                                    >
+                                                        <div
+                                                            className="w-2 h-2 rounded-full ring-2 ring-white/10 group-hover:ring-white/30 transition-all"
+                                                            style={{ backgroundColor: child.color }}
+                                                        />
+                                                        <span className="text-sm text-neutral-300 group-hover:text-white font-medium">
+                                                            {child.name}
+                                                        </span>
+                                                        {child.comingSoon && (
+                                                            <span className="ml-auto text-[10px] uppercase font-bold text-neutral-500 bg-white/5 px-1.5 py-0.5 rounded border border-white/5">
+                                                                Soon
+                                                            </span>
+                                                        )}
+                                                    </Link>
+                                                ))}
+                                            </motion.div>
+                                        )}
+                                    </AnimatePresence>
+                                </div>
+                            )
+                        }
 
                         return (
                             <Link
@@ -90,24 +184,11 @@ export function TabNavigation() {
                                     "relative flex items-center gap-2 px-4 py-4 text-sm font-medium transition-all duration-300 whitespace-nowrap",
                                     isActive
                                         ? "text-white"
-                                        : "text-neutral-400 hover:text-white",
-                                    tab.comingSoon && "opacity-60"
+                                        : "text-neutral-400 hover:text-white"
                                 )}
                             >
                                 <Icon className="h-4 w-4" />
                                 <span>{tab.name}</span>
-
-                                {tab.comingSoon && (
-                                    <span className="ml-1 rounded-full bg-primary-500/20 border border-primary-500/30 px-2 py-0.5 text-xs text-primary-400">
-                                        Soon
-                                    </span>
-                                )}
-
-                                {tab.badge !== undefined && (
-                                    <span className="ml-1 flex h-5 w-5 items-center justify-center rounded-full bg-red-500/20 border border-red-500/30 text-xs text-red-400">
-                                        {tab.badge}
-                                    </span>
-                                )}
 
                                 {/* Active indicator */}
                                 {isActive && (
@@ -121,13 +202,6 @@ export function TabNavigation() {
                                             damping: 30,
                                         }}
                                     />
-                                )}
-
-                                {/* Hover glow effect */}
-                                {!isActive && (
-                                    <div className="absolute inset-0 opacity-0 hover:opacity-100 transition-opacity duration-300">
-                                        <div className="absolute inset-0 bg-white/5 rounded-t-lg" />
-                                    </div>
                                 )}
                             </Link>
                         )

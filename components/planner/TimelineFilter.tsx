@@ -1,6 +1,6 @@
 'use client'
 
-import { INITIATIVE_CONFIG } from "@/lib/initiatives";
+import channelTypes from "@/lib/channel-initiative-types.json";
 import { Check } from "lucide-react";
 import clsx from "clsx";
 
@@ -12,8 +12,8 @@ interface TimelineFilterProps {
 }
 
 export const TimelineFilter = ({ selectedTypes, onToggle, onSelectAll, onClearAll }: TimelineFilterProps) => {
-    // Only show the core types (uppercase keys) to avoid legacy duplicates
-    const availableTypes = Object.entries(INITIATIVE_CONFIG).filter(([key]) => key === key.toUpperCase());
+    // Strictly use channel types from JSON source
+    const availableTypes = channelTypes;
 
     return (
         <div className="flex flex-wrap items-center gap-2 mb-6">
@@ -32,13 +32,13 @@ export const TimelineFilter = ({ selectedTypes, onToggle, onSelectAll, onClearAl
                 Clear
             </button>
 
-            {availableTypes.map(([type, config]) => {
-                const isSelected = selectedTypes.includes(type);
+            {availableTypes.map((config) => {
+                const isSelected = selectedTypes.includes(config.id);
 
                 return (
                     <button
-                        key={type}
-                        onClick={() => onToggle(type)}
+                        key={config.id}
+                        onClick={() => onToggle(config.id)}
                         className={clsx(
                             "pl-2 pr-3 py-1 rounded-full text-xs font-bold flex items-center gap-1.5 transition-all duration-200 border",
                             isSelected

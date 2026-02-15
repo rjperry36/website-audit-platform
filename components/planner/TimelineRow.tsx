@@ -6,9 +6,11 @@ interface TimelineRowProps {
     events: PlannerEvent[];
     totalColumns: number;
     viewStartWeek: number;
+    hoveredProjectId: string | null;
+    onHoverProject: (id: string | null) => void;
 }
 
-export const TimelineRow = ({ row, events, totalColumns, viewStartWeek }: TimelineRowProps) => {
+export const TimelineRow = ({ row, events, totalColumns, viewStartWeek, hoveredProjectId, onHoverProject }: TimelineRowProps) => {
     return (
         <div className="relative border-b border-white/5 w-full group">
 
@@ -26,7 +28,13 @@ export const TimelineRow = ({ row, events, totalColumns, viewStartWeek }: Timeli
                     // (Simple check: end of event > view start)
                     // But strict filtering ensures we don't render way off-screen events negatively
                     (event.startWeek + event.durationWeeks > viewStartWeek) && (
-                        <EventBar key={event.id} event={event} viewStartWeek={viewStartWeek} />
+                        <EventBar
+                            key={event.id}
+                            event={event}
+                            viewStartWeek={viewStartWeek}
+                            hoveredProjectId={hoveredProjectId}
+                            onHoverProject={onHoverProject}
+                        />
                     )
                 ))}
             </div>
