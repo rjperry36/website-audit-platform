@@ -99,11 +99,7 @@ export function TabNavigation() {
                 color: c.color
             }))
         },
-        {
-            name: 'Planner',
-            href: '/planner',
-            icon: Calendar,
-        },
+
         {
             name: 'New Brief',
             href: '/briefing',

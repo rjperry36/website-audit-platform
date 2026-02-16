@@ -90,7 +90,8 @@ export function BriefingForm() {
             setSubmitStatus('success');
             // Redirect after delay
             setTimeout(() => {
-                router.push('/planner'); // Redirect to planner or dashboard
+                const redirectMarket = selectedMarkets[0] || 'UK';
+                router.push(`/planner/${redirectMarket}`);
             }, 1500);
 
         } catch (error: any) {
