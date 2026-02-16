@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import { InitiativeType } from './initiatives';
-import projectsData from './projects.json';
+// import projectsData from './projects.json'; // DELETED
 import channelTypes from './channel-initiative-types.json';
 
 export interface PlannerResource {
@@ -64,34 +64,11 @@ export const weeks = Array.from({ length: 52 }, (_, i) => i + 1);
 /**
  * Generates Timeline Events from Project Data
  *
- * Transforms the hierarchical Project -> Initiative structure from `projects.json`
- * into a flat array of `PlannerEvent` objects suitable for the Timeline visualization.
- *
  * @returns {PlannerEvent[]} Flattened array of events ready for rendering
  */
 const generateEvents = (): PlannerEvent[] => {
-    const events: PlannerEvent[] = [];
-
-    projectsData.forEach(project => {
-        project.initiatives.forEach((init, index) => {
-            events.push({
-                id: `${project.id}-${index}`, // Unique event ID
-                title: init.title,
-                startWeek: init.startWeek, // Note: Existing data might use Aug-based offsets, might need migration if important
-                durationWeeks: init.duration,
-                type: init.channelId, // Channel is now the primary type
-                rowId: init.channelId,
-                description: project.description,
-                tags: project.tags,
-                owner: project.owner,
-                projectId: project.id,
-                // Add mock resources/outcome if needed for demo
-                outcome: 'Campaign Outcome TBD'
-            });
-        });
-    });
-
-    return events;
+    // Legacy static data removed. Now data should initiate from Supabase or API.
+    return [];
 };
 
 export const staticEvents: PlannerEvent[] = generateEvents();

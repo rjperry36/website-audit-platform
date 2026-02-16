@@ -3,7 +3,7 @@
 import { useState } from "react"
 
 import { staticEvents, weeks } from "@/lib/planner-data"
-import projects from "@/lib/projects.json"
+// import projects from "@/lib/projects.json" // DELETED
 import { getInitiativeStyle, getTagStyle } from "@/lib/initiatives"
 import { Calendar, Tag, ChevronRight } from "lucide-react"
 import clsx from "clsx"
@@ -15,10 +15,9 @@ const ProjectCard = ({ projectId, events }: { projectId: string, events: typeof 
 
     // Find project metadata
     const firstEvent = events[0];
-    const projectData = projects.find(p => p.id === projectId);
 
-    // Use project title if available, otherwise fallback to event title (for Briefs), or ID cleanup
-    const projectTitle = projectData?.title || firstEvent?.title || projectId.replace(/^(proj_|brief_)/, '').replace(/_/g, ' ').toUpperCase();
+    // Derived project title from events or ID
+    const projectTitle = firstEvent?.title || projectId.replace(/^(proj_|brief_)/, '').replace(/_/g, ' ').toUpperCase();
 
     const sortedInitiatives = [...events].sort((a, b) => a.startWeek - b.startWeek);
 
