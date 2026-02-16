@@ -12,7 +12,7 @@ export interface PlannerResource {
 export interface PlannerEvent {
     id: string;
     title: string;
-    startWeek: number; // Global week number (e.g., 8 to 60)
+    startWeek: number; // Week number (1-52)
     durationWeeks: number;
     type: InitiativeType | string; // Now maps to Channel ID
     rowId: string; // Deprecated but kept for type compatibility
@@ -24,6 +24,7 @@ export interface PlannerEvent {
     imageUrl?: string;
     projectId?: string; // Link back to parent project
     owner?: string;
+    status?: 'planning' | 'planned' | 'active' | 'completed' | 'delayed';
 }
 
 export interface PlannerRow {
@@ -37,24 +38,27 @@ export interface MonthData {
     endWeek: number;
 }
 
-// 12 Months of data starting from AUG (Week 8)
+// Standard Calendar Year (Jan - Dec)
+// Assuming standard 4-4-5 or similar distribution for simplicity:
+// Jan: 1-4, Feb: 5-8, Mar: 9-13
+// This is a rough approximation for visualization
 export const months: MonthData[] = [
-    { name: 'AUG', startWeek: 8, endWeek: 11 },
-    { name: 'SEP', startWeek: 12, endWeek: 16 },
-    { name: 'OCT', startWeek: 17, endWeek: 20 },
-    { name: 'NOV', startWeek: 21, endWeek: 24 },
-    { name: 'DEC', startWeek: 25, endWeek: 29 },
-    { name: 'JAN', startWeek: 30, endWeek: 33 },
-    { name: 'FEB', startWeek: 34, endWeek: 37 },
-    { name: 'MAR', startWeek: 38, endWeek: 42 },
-    { name: 'APR', startWeek: 43, endWeek: 46 },
-    { name: 'MAY', startWeek: 47, endWeek: 51 },
-    { name: 'JUN', startWeek: 52, endWeek: 55 },
-    { name: 'JUL', startWeek: 56, endWeek: 59 },
+    { name: 'JAN', startWeek: 1, endWeek: 4 },
+    { name: 'FEB', startWeek: 5, endWeek: 8 },
+    { name: 'MAR', startWeek: 9, endWeek: 13 },
+    { name: 'APR', startWeek: 14, endWeek: 17 },
+    { name: 'MAY', startWeek: 18, endWeek: 21 },
+    { name: 'JUN', startWeek: 22, endWeek: 26 },
+    { name: 'JUL', startWeek: 27, endWeek: 30 },
+    { name: 'AUG', startWeek: 31, endWeek: 34 },
+    { name: 'SEP', startWeek: 35, endWeek: 39 },
+    { name: 'OCT', startWeek: 40, endWeek: 43 },
+    { name: 'NOV', startWeek: 44, endWeek: 47 },
+    { name: 'DEC', startWeek: 48, endWeek: 52 },
 ];
 
-// Generate weeks from start of Aug (8) to end of July (59)
-export const weeks = Array.from({ length: 59 - 8 + 1 }, (_, i) => i + 8);
+// Generate weeks from 1 to 52
+export const weeks = Array.from({ length: 52 }, (_, i) => i + 1);
 
 // Transform Projects into Timeline Events
 /**
@@ -73,7 +77,7 @@ const generateEvents = (): PlannerEvent[] => {
             events.push({
                 id: `${project.id}-${index}`, // Unique event ID
                 title: init.title,
-                startWeek: init.startWeek,
+                startWeek: init.startWeek, // Note: Existing data might use Aug-based offsets, might need migration if important
                 durationWeeks: init.duration,
                 type: init.channelId, // Channel is now the primary type
                 rowId: init.channelId,

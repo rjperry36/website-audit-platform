@@ -30,7 +30,13 @@ type ViewDuration = 3 | 6 | 12;
  *
  * @returns {JSX.Element} The rendered Timeline dashboard
  */
-export const Timeline = () => {
+
+interface TimelineProps {
+    events?: PlannerEvent[];
+    market?: string;
+}
+
+export const Timeline = ({ events = staticEvents, market }: TimelineProps) => {
     const [viewDuration, setViewDuration] = useState<ViewDuration>(3);
 
     // Filter State
@@ -63,19 +69,49 @@ export const Timeline = () => {
     const [hoveredProjectId, setHoveredProjectId] = useState<string | null>(null);
 
     // Logic to slice data based on view duration
-    // 3 Months: Index 0-2
-    // 6 Months: Index 0-5
-    // 12 Months: Index 0-11
-    const visibleMonths = months.slice(0, viewDuration);
+    // 3 Months: Start from CURRENT month
+    // 6 Months: Start from CURRENT month
+    // 12 Months: Start from JAN (Index 0)
+
+    // We need to determine the start index in the `months` array.
+    // `months` array is now JAN...DEC (0...11)
+
+    const getCurrentMonthIndex = () => {
+        const now = new Date();
+        return now.getMonth(); // 0 = Jan, 1 = Feb, etc.
+    };
+
+    const getStartIndex = () => {
+        if (viewDuration === 12) return 0; // Always start Jan
+        return getCurrentMonthIndex(); // Start current month
+    };
+
+    const startIndex = getStartIndex();
+    // Safety check: if start index + duration > 12, we might stick to end?
+    // Or just show what we have. 
+    // If we are in Dec and show 3 months, do we wrap? 
+    // The current `months` array only has 12 items.
+    // For MVP, let's clamp or show available.
+    // If wrapping is needed, we'd need next year's data. 
+    // Let's assume non-wrapping simple view for now, or just slice safely.
+
+    const visibleMonths = months.slice(
+        startIndex,
+        Math.min(startIndex + viewDuration, months.length)
+    );
+
+    // If we run out of months (e.g. start Nov, view 3), we only show Nov-Dec. 
+    // Ideally we'd wrap to Jan next year but that requires data support.
 
     // Calculate visible weeks
-    // Start is always first week of first month (Aug startWeek = 8)
+    if (visibleMonths.length === 0) return null; // Safety
+
+    // Start is first week of first visible month
+    const startWeek = visibleMonths[0].startWeek;
     // End is last week of last visible month
-    const startWeek = months[0].startWeek;
     const endWeek = visibleMonths[visibleMonths.length - 1].endWeek;
 
     // Slice the weeks array to match range [startWeek, endWeek]
-    // We can filter our generated weeks array
     const visibleWeeks = weeks.filter(w => w >= startWeek && w <= endWeek);
 
     const totalColumns = visibleWeeks.length;
@@ -153,7 +189,7 @@ export const Timeline = () => {
                         {selectedTypes.map(type => {
                             const typeConfig = INITIATIVE_CONFIG[type];
                             // Get events for this type
-                            const typeEvents = staticEvents.filter(e =>
+                            const typeEvents = events.filter(e =>
                                 (e.type === type) || (e.type.toUpperCase() === type)
                             );
 

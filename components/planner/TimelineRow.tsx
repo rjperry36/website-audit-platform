@@ -1,5 +1,6 @@
 import { PlannerEvent, PlannerRow } from "@/lib/planner-data";
 import { EventBar } from "./EventBar";
+import { PlanningMarker } from "./PlanningMarker";
 
 interface TimelineRowProps {
     row: PlannerRow;
@@ -13,9 +14,6 @@ interface TimelineRowProps {
 export const TimelineRow = ({ row, events, totalColumns, viewStartWeek, hoveredProjectId, onHoverProject }: TimelineRowProps) => {
     return (
         <div className="relative border-b border-white/5 w-full group">
-
-
-
             {/* Row Content (Grid Container) */}
             <div
                 className="relative w-full grid py-1"
@@ -23,11 +21,25 @@ export const TimelineRow = ({ row, events, totalColumns, viewStartWeek, hoveredP
                     gridTemplateColumns: `repeat(${totalColumns}, minmax(0, 1fr))`
                 }}
             >
-                {events.map((event) => (
+                {events.map((event) => {
                     // Only render event if it falls within the current view
-                    // (Simple check: end of event > view start)
-                    // But strict filtering ensures we don't render way off-screen events negatively
-                    (event.startWeek + event.durationWeeks > viewStartWeek) && (
+                    if (event.startWeek + event.durationWeeks <= viewStartWeek) return null;
+
+                    // Render Planning Marker
+                    if ((event.status === 'planning') || (!event.durationWeeks && !event.status)) {
+                        return (
+                            <PlanningMarker
+                                key={event.id}
+                                event={event}
+                                viewStartWeek={viewStartWeek}
+                                hoveredProjectId={hoveredProjectId}
+                                onHoverProject={onHoverProject}
+                            />
+                        );
+                    }
+
+                    // Render Standard Event Bar
+                    return (
                         <EventBar
                             key={event.id}
                             event={event}
@@ -35,8 +47,8 @@ export const TimelineRow = ({ row, events, totalColumns, viewStartWeek, hoveredP
                             hoveredProjectId={hoveredProjectId}
                             onHoverProject={onHoverProject}
                         />
-                    )
-                ))}
+                    );
+                })}
             </div>
         </div>
     );

@@ -8,7 +8,7 @@ import { getInitiativeStyle, getTagStyle } from "@/lib/initiatives"
 import { Calendar, Tag, ChevronRight } from "lucide-react"
 import clsx from "clsx"
 
-const CURRENT_WEEK = 20; // Mock current week for progress calculation
+const CURRENT_WEEK = 7; // Mock current week (mid-Feb)
 
 const ProjectCard = ({ projectId, events }: { projectId: string, events: typeof staticEvents }) => {
     const [isOpen, setIsOpen] = useState(false);
@@ -16,7 +16,10 @@ const ProjectCard = ({ projectId, events }: { projectId: string, events: typeof 
     // Find project metadata
     const firstEvent = events[0];
     const projectData = projects.find(p => p.id === projectId);
-    const projectTitle = projectData ? projectData.title : projectId.replace('proj_', '').replace('_', ' ').toUpperCase();
+
+    // Use project title if available, otherwise fallback to event title (for Briefs), or ID cleanup
+    const projectTitle = projectData?.title || firstEvent?.title || projectId.replace(/^(proj_|brief_)/, '').replace(/_/g, ' ').toUpperCase();
+
     const sortedInitiatives = [...events].sort((a, b) => a.startWeek - b.startWeek);
 
     // Calculate Progress
@@ -39,8 +42,12 @@ const ProjectCard = ({ projectId, events }: { projectId: string, events: typeof 
 
     // Helper for month
     const getMonthForWeek = (week: number) => {
-        const monthIndex = Math.floor((week - 8) / 4.3);
-        const monthNames = ['AUG', 'SEP', 'OCT', 'NOV', 'DEC', 'JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL'];
+        // Simple approximation: Week 1-4 = Jan, 5-8 = Feb, etc.
+        // Array of month names
+        const monthNames = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+
+        // Avg weeks per month = 52/12 = 4.33
+        const monthIndex = Math.floor((week - 1) / 4.33);
         return monthNames[Math.max(0, Math.min(monthIndex, 11))] || 'N/A';
     }
 
@@ -155,12 +162,16 @@ const ProjectCard = ({ projectId, events }: { projectId: string, events: typeof 
     );
 };
 
-export const PlannerListView = () => {
+export interface PlannerListViewProps {
+    events?: typeof staticEvents;
+}
+
+export const PlannerListView = ({ events = staticEvents }: PlannerListViewProps) => {
     // Group events by Project ID
     const groupedEvents: Record<string, typeof staticEvents> = {};
     const noProjectEvents: typeof staticEvents = [];
 
-    staticEvents.forEach(event => {
+    events.forEach(event => {
         if (event.projectId) {
             if (!groupedEvents[event.projectId]) {
                 groupedEvents[event.projectId] = [];

@@ -10,7 +10,9 @@ import {
     LayoutDashboard,
     Calendar,
     ChevronDown,
-    Layers
+    Layers,
+    PlusCircle,
+    Globe
 } from 'lucide-react'
 
 // Map Channel IDs to Routes (Best Effort / Placeholder)
@@ -41,22 +43,6 @@ interface Tab {
     }[]
 }
 
-/**
- * TabNavigation Component
- *
- * Main application navigation bar.
- *
- * @component
- * @description
- * Implements the top-level navigation including:
- * - "Overview": Dropdown with links to various dashboard views (Brand, Commercial, C-Suite)
- * - "Channels": Dynamic dropdown generated from `channel-initiative-types.json`
- * - "Planner": Direct link to the timeline view
- *
- * Uses Framer Motion for smooth dropdown animations and `usePathname` for active state highlighting.
- *
- * @returns {JSX.Element} The navigation bar
- */
 export function TabNavigation() {
     const pathname = usePathname()
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -88,6 +74,21 @@ export function TabNavigation() {
             ]
         },
         {
+            name: 'Markets',
+            href: '#',
+            icon: Globe,
+            isDropdown: true,
+            children: [
+                { name: 'United Kingdom', href: '/planner/UK', color: '#EF4444' },
+                { name: 'United States', href: '/planner/US', color: '#3B82F6' },
+                { name: 'Germany', href: '/planner/DE', color: '#F59E0B' },
+                { name: 'France', href: '/planner/FR', color: '#10B981' },
+                { name: 'Japan', href: '/planner/JP', color: '#EC4899' },
+                { name: 'China', href: '/planner/CN', color: '#8B5CF6' },
+            ]
+
+        },
+        {
             name: 'Channels',
             href: '#', // Dropdown trigger
             icon: Layers,
@@ -102,6 +103,11 @@ export function TabNavigation() {
             name: 'Planner',
             href: '/planner',
             icon: Calendar,
+        },
+        {
+            name: 'New Brief',
+            href: '/briefing',
+            icon: PlusCircle,
         },
     ]
 
@@ -209,5 +215,6 @@ export function TabNavigation() {
                 </div>
             </div>
         </nav>
+
     )
 }
