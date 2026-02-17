@@ -43,3 +43,13 @@ CREATE TABLE IF NOT EXISTS brief_objectives (
     kpi TEXT,
     target TEXT
 );
+
+-- Brief Channel Scopes Table (Step 2: Scoping)
+CREATE TABLE IF NOT EXISTS brief_channel_scopes (
+    id TEXT PRIMARY KEY,
+    brief_id TEXT REFERENCES briefs(id) ON DELETE CASCADE,
+    channel_id TEXT NOT NULL,
+    responses JSONB NOT NULL, -- Structure: { "questionId": "Answer text" }
+    created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW(),
+    UNIQUE(brief_id, channel_id) -- Ensure one scope per channel per brief
+);

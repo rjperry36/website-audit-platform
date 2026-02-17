@@ -5,7 +5,6 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { cn } from '@/lib/utils'
-import channelTypes from '@/lib/channel-initiative-types.json'
 import {
     LayoutDashboard,
     Calendar,
@@ -46,6 +45,23 @@ interface Tab {
 export function TabNavigation() {
     const pathname = usePathname()
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+    const [channels, setChannels] = React.useState<any[]>([]);
+
+    React.useEffect(() => {
+        const fetchChannels = async () => {
+            // Dynamic import to avoid server-side issues if Supabase not configured there? 
+            // Actually tab-navigation is 'use client'.
+            const { supabase } = await import('@/lib/supabase');
+            const { data } = await supabase.from('channels').select('*').eq('is_active', true);
+            if (data) setChannels(data);
+            else {
+                // Fallback to JSON if DB empty/fails (during migration period)
+                const fallback = await import('@/lib/channel-initiative-types.json');
+                setChannels(fallback.default);
+            }
+        };
+        fetchChannels();
+    }, []);
 
     const tabs: Tab[] = [
         {
@@ -93,7 +109,7 @@ export function TabNavigation() {
             href: '#', // Dropdown trigger
             icon: Layers,
             isDropdown: true,
-            children: channelTypes.map(c => ({
+            children: channels.map(c => ({
                 name: c.label,
                 href: getChannelRoute(c.id),
                 color: c.color

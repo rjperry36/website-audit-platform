@@ -64,5 +64,11 @@
         "label": "EVENT",
         "color": "#2563EB",
         "description": "Physical & Virtual Events"
+    },
+    {
+        "id": "UX",
+        "label": "UX",
+        "color": "#8B5CF6",
+        "description": "User Experience & Design"
     }
 ]

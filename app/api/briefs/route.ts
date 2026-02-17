@@ -61,6 +61,26 @@ export async function POST(req: NextRequest) {
             }
         }
 
+        // 3. Insert Channel Scopes (Step 2 Data)
+        const { scopes } = body;
+        if (scopes && Object.keys(scopes).length > 0) {
+            const scopesData = Object.entries(scopes).map(([channelId, responses]) => ({
+                id: `scope_${briefId}_${channelId}`,
+                brief_id: briefId,
+                channel_id: channelId,
+                responses: responses // JSONB
+            }));
+
+            const { error: scopeError } = await supabase
+                .from('brief_channel_scopes')
+                .insert(scopesData);
+
+            if (scopeError) {
+                console.error('Supabase Scope Error:', scopeError);
+                return NextResponse.json({ error: 'Brief created but channel scopes failed: ' + scopeError.message }, { status: 500 });
+            }
+        }
+
         return NextResponse.json({
             success: true,
             message: 'Brief created successfully',

@@ -4,10 +4,11 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
-import { Calendar, Upload, Check, AlertCircle, Loader2 } from 'lucide-react'
-import channelTypes from '@/lib/channel-initiative-types.json'
+import { Calendar, Upload, Check, AlertCircle, Loader2, ChevronRight } from 'lucide-react'
+import { supabase } from '@/lib/supabase'
 import { ProjectBrief, Market, BriefObjective } from '@/lib/planner-types'
 import { ObjectiveList } from './ObjectiveList'
+import { ChannelScoping } from './ChannelScoping'
 import { cn } from '@/lib/utils'
 
 const MARKETS: { id: Market; label: string }[] = [
@@ -19,8 +20,45 @@ const MARKETS: { id: Market; label: string }[] = [
     { id: 'CN', label: 'China' },
 ]
 
+// Interface for Channel (matches DB schema)
+interface Channel {
+    id: string;
+    label: string;
+    color: string;
+    description: string;
+}
+
 export function BriefingForm() {
     const router = useRouter();
+    const [step, setStep] = useState(1);
+
+    // Data State
+    const [availableChannels, setAvailableChannels] = useState<Channel[]>([]);
+    const [isLoadingChannels, setIsLoadingChannels] = useState(true);
+
+    // Fetch channels on mount
+    React.useEffect(() => {
+        const fetchChannels = async () => {
+            try {
+                const { data, error } = await supabase
+                    .from('channels')
+                    .select('*')
+                    .eq('is_active', true)
+                    .order('label');
+
+                if (error) throw error;
+                if (data) setAvailableChannels(data);
+            } catch (err) {
+                console.error('Error fetching channels:', err);
+                // Fallback to JSON if DB fails (e.g. table missing)
+                const fallback = await import('@/lib/channel-initiative-types.json');
+                setAvailableChannels(fallback.default);
+            } finally {
+                setIsLoadingChannels(false);
+            }
+        };
+        fetchChannels();
+    }, []);
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
     const [errorMessage, setErrorMessage] = useState('');
@@ -32,7 +70,7 @@ export function BriefingForm() {
     const [startDate, setStartDate] = useState('');
     const [endDate, setEndDate] = useState('');
     const [objectives, setObjectives] = useState<BriefObjective[]>([]);
-    const [tags, setTags] = useState(''); // Comma separated string
+    const [tags, setTags] = useState('');
     const [briefFile, setBriefFile] = useState<File | null>(null);
 
     const toggleChannel = (id: string) => {
@@ -53,27 +91,36 @@ export function BriefingForm() {
         }
     };
 
-    const handleSubmit = async (e: React.FormEvent) => {
+    const handleStep1Submit = (e: React.FormEvent) => {
         e.preventDefault();
-        setIsSubmitting(true);
         setErrorMessage('');
 
         try {
-            // Validate required fields
             if (!title) throw new Error('Project Title is required');
             if (!startDate) throw new Error('Start Date is required');
             if (selectedMarkets.length === 0) throw new Error('Please select at least one market');
             if (selectedChannels.length === 0) throw new Error('Please select at least one channel');
 
-            const payload: Partial<ProjectBrief> = {
+            setStep(2);
+        } catch (error: any) {
+            setErrorMessage(error.message);
+        }
+    };
+
+    const handleFinalSubmit = async (scopingData: Record<string, any>) => {
+        setIsSubmitting(true);
+        setErrorMessage('');
+
+        try {
+            const payload: Partial<ProjectBrief> & { scopes?: Record<string, any> } = {
                 title,
                 channelTypes: selectedChannels,
                 markets: selectedMarkets,
                 startDate,
-                endDate: endDate || undefined, // Send undefined if empty to trigger 'planning' logic
+                endDate: endDate || undefined,
                 objectives,
                 tags: tags.split(',').map(t => t.trim()).filter(Boolean),
-                // clientBriefUrl: briefFile ? URL.createObjectURL(briefFile) : undefined, // Mock upload
+                scopes: scopingData // Pass scoping data to API
             };
 
             const response = await fetch('/api/briefs', {
@@ -88,7 +135,6 @@ export function BriefingForm() {
             }
 
             setSubmitStatus('success');
-            // Redirect after delay
             setTimeout(() => {
                 const redirectMarket = selectedMarkets[0] || 'UK';
                 router.push(`/planner/${redirectMarket}`);
@@ -109,17 +155,33 @@ export function BriefingForm() {
                     <Check className="h-8 w-8" />
                 </div>
                 <h2 className="text-2xl font-bold text-white mb-2">Brief Submitted!</h2>
-                <p className="text-neutral-400">Your project has been created successfully.</p>
+                <p className="text-neutral-400">Your specific channel requirements have been captured.</p>
             </div>
         );
     }
 
+    if (step === 2) {
+        return (
+            <ChannelScoping
+                selectedChannels={selectedChannels}
+                onBack={() => setStep(1)}
+                onSubmit={handleFinalSubmit}
+                isSubmitting={isSubmitting}
+            />
+        );
+    }
+
     return (
-        <form onSubmit={handleSubmit} className="space-y-8 max-w-4xl mx-auto">
+        <form onSubmit={handleStep1Submit} className="space-y-8 max-w-4xl mx-auto">
             {/* Header */}
             <div>
-                <h1 className="text-3xl font-bold text-white mb-2">New Project Brief</h1>
-                <p className="text-neutral-400">Define the core requirements for your new campaign or project.</p>
+                <div className="flex items-center justify-between">
+                    <div>
+                        <h1 className="text-3xl font-bold text-white mb-2">New Project Brief</h1>
+                        <p className="text-neutral-400">Define the core requirements for your new campaign.</p>
+                    </div>
+                    <div className="text-neutral-500 font-mono text-sm">Step 1 of 2</div>
+                </div>
             </div>
 
             {errorMessage && (
@@ -184,7 +246,6 @@ export function BriefingForm() {
                                     onChange={(e) => setStartDate(e.target.value)}
                                     className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-neutral-500 focus:border-primary-500 outline-none scheme-dark"
                                 />
-                                {/* <Calendar className="absolute right-3 top-3 h-5 w-5 text-neutral-500 pointer-events-none" /> */}
                             </div>
                         </div>
                         <div className="space-y-2">
@@ -241,25 +302,33 @@ export function BriefingForm() {
                             Channels <span className="text-red-500">*</span>
                         </label>
                         <div className="grid grid-cols-2 gap-2">
-                            {channelTypes.map((channel) => (
-                                <button
-                                    key={channel.id}
-                                    type="button"
-                                    onClick={() => toggleChannel(channel.id)}
-                                    className={cn(
-                                        "flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-left border transition-all",
-                                        selectedChannels.includes(channel.id)
-                                            ? "bg-white/10 border-white/30 text-white"
-                                            : "bg-white/5 border-white/10 text-neutral-400 hover:bg-white/10"
-                                    )}
-                                >
-                                    <div
-                                        className="w-2 h-2 rounded-full"
-                                        style={{ backgroundColor: channel.color }}
-                                    />
-                                    {channel.label}
-                                </button>
-                            ))}
+                            {isLoadingChannels ? (
+                                <div className="col-span-2 text-center text-neutral-500 py-4">Loading channels...</div>
+                            ) : availableChannels.length > 0 ? (
+                                availableChannels.map((channel) => (
+                                    <button
+                                        key={channel.id}
+                                        type="button"
+                                        onClick={() => toggleChannel(channel.id)}
+                                        className={cn(
+                                            "flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-left border transition-all",
+                                            selectedChannels.includes(channel.id)
+                                                ? "bg-white/10 border-white/30 text-white"
+                                                : "bg-white/5 border-white/10 text-neutral-400 hover:bg-white/10"
+                                        )}
+                                    >
+                                        <div
+                                            className="w-2 h-2 rounded-full"
+                                            style={{ backgroundColor: channel.color }}
+                                        />
+                                        {channel.label}
+                                    </button>
+                                ))
+                            ) : (
+                                <div className="col-span-2 text-center text-red-400 py-4 border border-red-500/20 bg-red-500/10 rounded-lg">
+                                    No channels found relative to database connection.
+                                </div>
+                            )}
                         </div>
                     </div>
 
@@ -293,11 +362,10 @@ export function BriefingForm() {
                 </button>
                 <button
                     type="submit"
-                    disabled={isSubmitting}
-                    className="px-8 py-2 rounded-lg bg-primary-600 hover:bg-primary-500 text-white text-sm font-medium transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
+                    className="px-8 py-2 rounded-lg bg-primary-600 hover:bg-primary-500 text-white text-sm font-medium transition-colors flex items-center gap-2"
                 >
-                    {isSubmitting && <Loader2 className="h-4 w-4 animate-spin" />}
-                    Create Brief
+                    Next: Channel Scoping
+                    <ChevronRight className="h-4 w-4" />
                 </button>
             </div>
         </form>
