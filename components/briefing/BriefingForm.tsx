@@ -6,19 +6,10 @@ import { useRouter } from 'next/navigation'
 import { motion } from 'framer-motion'
 import { Calendar, Upload, Check, AlertCircle, Loader2, ChevronRight } from 'lucide-react'
 import { supabase } from '@/lib/supabase'
-import { ProjectBrief, Market, BriefObjective } from '@/lib/planner-types'
+import { ProjectBrief, Market, BriefObjective, MarketConfig, StandardObjective } from '@/lib/planner-types'
 import { ObjectiveList } from './ObjectiveList'
 import { ChannelScoping } from './ChannelScoping'
 import { cn } from '@/lib/utils'
-
-const MARKETS: { id: Market; label: string }[] = [
-    { id: 'UK', label: 'United Kingdom' },
-    { id: 'US', label: 'United States' },
-    { id: 'DE', label: 'Germany' },
-    { id: 'FR', label: 'France' },
-    { id: 'JP', label: 'Japan' },
-    { id: 'CN', label: 'China' },
-]
 
 // Interface for Channel (matches DB schema)
 interface Channel {
@@ -34,31 +25,57 @@ export function BriefingForm() {
 
     // Data State
     const [availableChannels, setAvailableChannels] = useState<Channel[]>([]);
-    const [isLoadingChannels, setIsLoadingChannels] = useState(true);
+    const [availableMarkets, setAvailableMarkets] = useState<MarketConfig[]>([]);
+    const [standardObjectives, setStandardObjectives] = useState<StandardObjective[]>([]);
+    const [isLoadingData, setIsLoadingData] = useState(true);
 
-    // Fetch channels on mount
+    // Fetch initial data on mount
     React.useEffect(() => {
-        const fetchChannels = async () => {
+        const fetchInitialData = async () => {
             try {
-                const { data, error } = await supabase
+                // Fetch Channels
+                const channelsPromise = supabase
                     .from('channels')
                     .select('*')
                     .eq('is_active', true)
                     .order('label');
 
-                if (error) throw error;
-                if (data) setAvailableChannels(data);
+                // Fetch Markets
+                const marketsPromise = supabase
+                    .from('markets')
+                    .select('*')
+                    .eq('is_active', true)
+                    .order('label');
+
+                // Fetch Standard Objectives
+                const objectivesPromise = supabase
+                    .from('standard_objectives')
+                    .select('*')
+                    .eq('is_active', true)
+                    .order('label');
+
+                const [channelsRes, marketsRes, objectivesRes] = await Promise.all([
+                    channelsPromise,
+                    marketsPromise,
+                    objectivesPromise
+                ]);
+
+                if (channelsRes.data) setAvailableChannels(channelsRes.data);
+                if (marketsRes.data) setAvailableMarkets(marketsRes.data);
+                if (objectivesRes.data) setStandardObjectives(objectivesRes.data);
+
             } catch (err) {
-                console.error('Error fetching channels:', err);
-                // Fallback to JSON if DB fails (e.g. table missing)
+                console.error('Error fetching data:', err);
+                // Fallback for channels if needed
                 const fallback = await import('@/lib/channel-initiative-types.json');
                 setAvailableChannels(fallback.default);
             } finally {
-                setIsLoadingChannels(false);
+                setIsLoadingData(false);
             }
         };
-        fetchChannels();
+        fetchInitialData();
     }, []);
+
     const [isSubmitting, setIsSubmitting] = useState(false);
     const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
     const [errorMessage, setErrorMessage] = useState('');
@@ -215,18 +232,21 @@ export function BriefingForm() {
                             Markets <span className="text-red-500">*</span>
                         </label>
                         <div className="grid grid-cols-2 lg:grid-cols-3 gap-2">
-                            {MARKETS.map((market) => (
+                            {isLoadingData ? (
+                                <div className="col-span-3 text-center text-xs text-neutral-500 py-2">Loading markets...</div>
+                            ) : availableMarkets.map((market) => (
                                 <button
                                     key={market.id}
                                     type="button"
                                     onClick={() => toggleMarket(market.id)}
                                     className={cn(
-                                        "px-3 py-2 rounded-lg text-sm text-center border transition-all",
+                                        "px-3 py-2 rounded-lg text-sm text-center border transition-all flex items-center justify-center gap-2",
                                         selectedMarkets.includes(market.id)
                                             ? "bg-primary-500/20 border-primary-500/50 text-white"
                                             : "bg-white/5 border-white/10 text-neutral-400 hover:bg-white/10"
                                     )}
                                 >
+                                    <span>{market.flag_icon}</span>
                                     {market.label}
                                 </button>
                             ))}
@@ -302,7 +322,7 @@ export function BriefingForm() {
                             Channels <span className="text-red-500">*</span>
                         </label>
                         <div className="grid grid-cols-2 gap-2">
-                            {isLoadingChannels ? (
+                            {isLoadingData ? (
                                 <div className="col-span-2 text-center text-neutral-500 py-4">Loading channels...</div>
                             ) : availableChannels.length > 0 ? (
                                 availableChannels.map((channel) => (
@@ -333,7 +353,11 @@ export function BriefingForm() {
                     </div>
 
                     {/* Objectives */}
-                    <ObjectiveList objectives={objectives} onChange={setObjectives} />
+                    <ObjectiveList
+                        objectives={objectives}
+                        onChange={setObjectives}
+                        standardObjectives={standardObjectives}
+                    />
 
                     {/* Tags */}
                     <div className="space-y-2">

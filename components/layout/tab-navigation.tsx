@@ -29,39 +29,46 @@ const getChannelRoute = (channelId: string) => {
     }
 };
 
-interface Tab {
-    name: string
-    href: string
-    icon: React.ElementType
-    isDropdown?: boolean
-    children?: {
-        name: string;
-        href: string;
-        color: string;
-        comingSoon?: boolean;
-    }[]
+// ... imports
+
+interface Market {
+    id: string;
+    label: string;
+    flag_icon: string;
 }
 
-export function TabNavigation() {
+interface TabChild {
+    name: string;
+    href: string;
+    color?: string;
+    icon?: string;
+    comingSoon?: boolean;
+}
+
+interface Tab {
+    name: string;
+    href: string;
+    icon: React.ElementType;
+    isDropdown?: boolean;
+    children?: TabChild[];
+}
+
+interface Channel {
+    id: string;
+    label: string;
+    color: string;
+}
+
+interface TabNavigationProps {
+    markets?: Market[];
+    channels?: Channel[];
+}
+
+export function TabNavigation({ markets = [], channels = [] }: TabNavigationProps) {
     const pathname = usePathname()
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-    const [channels, setChannels] = React.useState<any[]>([]);
 
-    React.useEffect(() => {
-        const fetchChannels = async () => {
-            // Dynamic import to avoid server-side issues if Supabase not configured there? 
-            // Actually tab-navigation is 'use client'.
-            const { supabase } = await import('@/lib/supabase');
-            const { data } = await supabase.from('channels').select('*').eq('is_active', true);
-            if (data) setChannels(data);
-            else {
-                // Fallback to JSON if DB empty/fails (during migration period)
-                const fallback = await import('@/lib/channel-initiative-types.json');
-                setChannels(fallback.default);
-            }
-        };
-        fetchChannels();
-    }, []);
+    // Removed internal fetching useEffect
 
     const tabs: Tab[] = [
         {
@@ -94,15 +101,12 @@ export function TabNavigation() {
             href: '#',
             icon: Globe,
             isDropdown: true,
-            children: [
-                { name: 'United Kingdom', href: '/planner/UK', color: '#EF4444' },
-                { name: 'United States', href: '/planner/US', color: '#3B82F6' },
-                { name: 'Germany', href: '/planner/DE', color: '#F59E0B' },
-                { name: 'France', href: '/planner/FR', color: '#10B981' },
-                { name: 'Japan', href: '/planner/JP', color: '#EC4899' },
-                { name: 'China', href: '/planner/CN', color: '#8B5CF6' },
-            ]
-
+            children: markets.map(m => ({
+                name: m.label,
+                href: `/planner/${m.id}`,
+                // Use flag as icon
+                icon: m.flag_icon
+            }))
         },
         {
             name: 'Channels',
@@ -115,13 +119,13 @@ export function TabNavigation() {
                 color: c.color
             }))
         },
-
         {
             name: 'New Brief',
             href: '/briefing',
             icon: PlusCircle,
         },
     ]
+
 
     return (
         <nav className="border-b border-white/10 glass relative z-50">
@@ -173,10 +177,14 @@ export function TabNavigation() {
                                                         )}
                                                         onClick={(e) => child.comingSoon && e.preventDefault()}
                                                     >
-                                                        <div
-                                                            className="w-2 h-2 rounded-full ring-2 ring-white/10 group-hover:ring-white/30 transition-all"
-                                                            style={{ backgroundColor: child.color }}
-                                                        />
+                                                        {child.icon ? (
+                                                            <span className="text-base">{child.icon}</span>
+                                                        ) : (
+                                                            <div
+                                                                className="w-2 h-2 rounded-full ring-2 ring-white/10 group-hover:ring-white/30 transition-all"
+                                                                style={{ backgroundColor: child.color }}
+                                                            />
+                                                        )}
                                                         <span className="text-sm text-neutral-300 group-hover:text-white font-medium">
                                                             {child.name}
                                                         </span>

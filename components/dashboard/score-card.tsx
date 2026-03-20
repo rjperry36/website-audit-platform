@@ -1,18 +1,18 @@
 'use client'
 
+import { isValidElement } from 'react'
 import { motion } from 'framer-motion'
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card'
 import { AnimatedNumber } from '@/components/ui/animated-number'
 import { TrendIndicator } from './trend-indicator'
 import { fadeInUp } from '@/lib/animations'
 import { cn, getScoreColor, getScoreBgColor } from '@/lib/utils'
-import { LucideIcon } from 'lucide-react'
 
 interface ScoreCardProps {
     title: string
     score: number
     previousScore?: number
-    icon: LucideIcon
+    icon: React.ReactNode | React.ElementType
     description?: string
     delay?: number
 }
@@ -21,10 +21,21 @@ export function ScoreCard({
     title,
     score,
     previousScore,
-    icon: Icon,
+    icon,
     description,
     delay = 0
 }: ScoreCardProps) {
+    // Helper to render icon correctly whether it's an element or component
+    const renderIcon = () => {
+        if (isValidElement(icon)) {
+            return icon
+        }
+
+        // It's a component
+        const Icon = icon as React.ElementType
+        return <Icon className="h-4 w-4 text-gray-400" />
+    }
+
     return (
         <motion.div
             variants={fadeInUp}
@@ -38,7 +49,7 @@ export function ScoreCard({
                     <CardTitle className="text-sm font-medium text-gray-600">
                         {title}
                     </CardTitle>
-                    <Icon className="h-4 w-4 text-gray-400" />
+                    {renderIcon()}
                 </CardHeader>
                 <CardContent>
                     <div className="flex items-baseline gap-2">

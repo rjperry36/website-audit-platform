@@ -6,7 +6,8 @@ import { PlannerEvent } from "@/lib/planner-data";
 import { Metadata } from 'next';
 import { supabase } from '@/lib/supabase';
 
-const MARKETS = ['UK', 'US', 'DE', 'FR', 'JP', 'CN'];
+// Validate Market exists in DB (server-side)
+const MARKETS = ['UK', 'US', 'DE', 'FR', 'JP', 'CN']; // Fallback/Reference
 
 export const metadata: Metadata = {
     title: 'Market Planner | SiteAudit Agent',
@@ -28,7 +29,14 @@ const getWeekFromDate = (dateStr: string): number => {
 export default async function MarketPlannerPage({ params }: { params: { market: string } }) {
     const { market } = params;
 
-    if (!MARKETS.includes(market.toUpperCase())) {
+    // Validate Market exists in DB
+    const { data: marketData } = await supabase
+        .from('markets')
+        .select('id')
+        .eq('id', market.toUpperCase())
+        .single();
+
+    if (!marketData) {
         notFound();
     }
 

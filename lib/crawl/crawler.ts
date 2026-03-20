@@ -6,6 +6,7 @@ import { crawlLinks } from './link-crawler';
 import { captureScreenshots, extractPageTitle } from './screenshot-capture';
 import { normalizeUrl, matchesExcludePattern } from './url-utils';
 import { auditSEO } from '../audit/seo-audit';
+import { auditVisualDesign } from '../audit/visual-analyzer';
 import { auditSecurity } from '../audit/security-audit';
 import { format } from 'date-fns';
 
@@ -165,7 +166,7 @@ export class Crawler {
             }
 
             // Save screenshots
-            await StorageManager.saveScreenshot(
+            const desktopPath = await StorageManager.saveScreenshot(
                 this.site.id,
                 crawlDate,
                 'desktop',
@@ -187,6 +188,10 @@ export class Crawler {
             // Run Security audit
             const securityAudit = auditSecurity(url, html, headers);
 
+            // Run Visual Design audit
+            // We use the desktop screenshot for analysis
+            const visualAudit = await auditVisualDesign(desktopPath);
+
             // Create page audit
             const pageAudit: PageAudit = {
                 url,
@@ -201,6 +206,7 @@ export class Crawler {
                     accessibility: { score: 0, findings: [] },
                     performance: { score: 0, findings: [] },
                     brandCompliance: { score: 0, findings: [] },
+                    visual: visualAudit,
                     security: securityAudit,
                 },
             };

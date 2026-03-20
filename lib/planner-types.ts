@@ -31,6 +31,21 @@ export interface Project {
 
 // Briefing System Types
 
+export interface MarketConfig {
+    id: string;
+    label: string;
+    currency: string;
+    flag_icon: string;
+    is_active: boolean;
+}
+
+export interface StandardObjective {
+    id: string;
+    label: string;
+    default_kpi: string;
+    default_target: string;
+}
+
 export interface BriefObjective {
     id: string;
     objective: string;
@@ -38,7 +53,7 @@ export interface BriefObjective {
     target: string;
 }
 
-export type Market = 'UK' | 'US' | 'DE' | 'FR' | 'JP' | 'CN';
+export type Market = string; // Was union type, now dynamic string
 
 export interface ProjectBrief {
     id: string;

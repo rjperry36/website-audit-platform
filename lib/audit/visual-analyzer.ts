@@ -3,9 +3,10 @@ import OpenAI from 'openai';
 import { Finding } from '../types';
 import path from 'path';
 import { promises as fs } from 'fs';
-import uxRules from '../config/rules/ux.json';
+// import uxRules from '../config/rules/ux.json'; // Removed in favor of DB
 import personasConfig from '../config/personas.json';
 import cialdiniConfig from '../config/cialdini.json';
+import { supabase } from '../supabase';
 
 // Initialize OpenAI client
 const openai = new OpenAI({
@@ -38,11 +39,24 @@ interface AIAnalysisResult {
 /**
  * Perform AI Visual Analysis on a screenshot
  */
-export async function auditVisualDesign(screenshotPath: string): Promise<Finding[]> {
+export async function auditVisualDesign(screenshotPath: string): Promise<{ score: number; findings: Finding[] }> {
     const findings: Finding[] = [];
 
     try {
         console.log(`🤖 Starting AI Visual Analysis on: ${path.basename(screenshotPath)}`);
+
+        // 0. Fetch Rules from DB
+        const { data: rulesData, error: rulesError } = await supabase
+            .from('ai_rules')
+            .select('*')
+            .eq('is_active', true);
+
+        if (rulesError) {
+            console.error('Error fetching AI rules:', rulesError);
+        }
+
+        // Create lookup map: RuleID -> Rule
+        const rulesMap = new Map(rulesData?.map(r => [r.id, r]) || []);
 
         // 1. Read screenshot file
         const imageBuffer = await fs.readFile(screenshotPath);
@@ -127,7 +141,7 @@ export async function auditVisualDesign(screenshotPath: string): Promise<Finding
 
         const result: AIAnalysisResult = JSON.parse(content);
 
-        // 5. Map to Findings using ux.json rules
+        // 5. Map to Findings using DB rules
 
         // Helper to map score to status
         const getStatus = (score: number) => {
@@ -137,13 +151,14 @@ export async function auditVisualDesign(screenshotPath: string): Promise<Finding
         };
 
         // Helper to create finding object
-        const createFinding = (category: keyof typeof uxRules, ruleId: string, scoreData?: { score: number; reason: string }): Finding | null => {
-            // @ts-ignore
-            const rule = uxRules?.[category]?.[ruleId];
+        const createFinding = (category: string, ruleId: string, scoreData?: { score: number; reason: string }): Finding | null => {
+            const rule = rulesMap.get(ruleId);
 
-            // For dynamic persona/cialdini rules, we might not have them in ux.json yet
-            // So we'll create ad-hoc findings if rule is missing but we have data
-            if (!rule) return null; // Or handle dynamic creation
+            // If rule not in DB, return null (or fallback to code-defined default if you prefer)
+            if (!rule) {
+                // console.warn(`Rule ${ruleId} not found in DB`); // Optional logging
+                return null;
+            }
 
             if (!scoreData) return null;
 
@@ -151,8 +166,8 @@ export async function auditVisualDesign(screenshotPath: string): Promise<Finding
 
             return {
                 ruleId: rule.id,
-                description: rule.name,
-                level: rule.level as any,
+                description: rule.rule_name, // DB column is rule_name
+                level: rule.priority_level as any, // DB column is priority_level
                 status: status,
                 details: `Score: ${scoreData.score}/10. ${scoreData.reason}`,
                 impact: rule.impact,
@@ -235,5 +250,37 @@ export async function auditVisualDesign(screenshotPath: string): Promise<Finding
         });
     }
 
-    return findings;
+    const score = calculateScore(findings);
+
+    return {
+        score,
+        findings
+    };
+}
+
+/**
+ * Calculate score from findings
+ */
+function calculateScore(findings: Finding[]): number {
+    if (findings.length === 0) return 100;
+
+    let totalWeight = 0;
+    let earnedWeight = 0;
+
+    findings.forEach(finding => {
+        // Weight by level: mandatory = 3, advisory = 2, acceptable = 1
+        const weight = finding.level === 'mandatory' ? 3 :
+            finding.level === 'advisory' ? 2 : 1;
+
+        totalWeight += weight;
+
+        if (finding.status === 'pass') {
+            earnedWeight += weight;
+        } else if (finding.status === 'warning') {
+            earnedWeight += weight * 0.5; // Partial credit for warnings
+        }
+        // 'fail' gets 0 points
+    });
+
+    return Math.round((earnedWeight / totalWeight) * 100);
 }

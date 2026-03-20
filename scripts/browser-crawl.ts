@@ -7,6 +7,7 @@
 
 import { promises as fs } from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
 import dotenv from 'dotenv';
 
 // Load environment variables from .env.local
@@ -145,14 +146,15 @@ export async function processCrawlResults(siteId: string, crawlDate: string, res
         let personaFindings: any[] = [];
         let cialdiniFindings: any[] = [];
 
-        if (process.env.OPENAI_API_KEY && result.screenshotPath) {
+        if (process.env.OPENAI_API_KEY) {
             try {
                 logger.info('Running AI Visual Analysis on desktop screenshot...');
 
                 // Dynamic import to avoid issues if module missing
                 const { auditVisualDesign } = await import('../lib/audit/visual-analyzer');
 
-                const aiFindings = await auditVisualDesign(result.screenshotPath);
+                // Use the desktopPath we just saved to
+                const aiFindings = await auditVisualDesign(desktopPath);
 
                 // Split findings into categories based on rule ID
                 visualFindings = aiFindings.filter(f => f.ruleId.startsWith('UX-VIS'));
@@ -173,8 +175,6 @@ export async function processCrawlResults(siteId: string, crawlDate: string, res
             ...personaFindings,
             ...cialdiniFindings
         ];
-
-        // Calculate scores
         const seoScore = calculateScore(seoFindings);
         const aeoScore = calculateScore(aeoFindings);
         const geoScore = calculateScore(geoFindings);
@@ -272,5 +272,7 @@ function calculateScore(findings: any[]): number {
     return totalWeight > 0 ? Math.round((earnedWeight / totalWeight) * 100) : 100;
 }
 
-// Run crawl
-crawlSite();
+// Run crawl if main module
+if (process.argv[1] === fileURLToPath(import.meta.url)) {
+    crawlSite();
+}

@@ -1,22 +1,21 @@
 
-'use client'
-
 import React from 'react'
-import { BriefObjective } from '@/lib/planner-types'
-import { Plus, Trash2 } from 'lucide-react'
+import { BriefObjective, StandardObjective } from '@/lib/planner-types'
+import { Plus, Trash2, Sparkles } from 'lucide-react'
 
 interface ObjectiveListProps {
     objectives: BriefObjective[];
+    standardObjectives?: StandardObjective[];
     onChange: (objectives: BriefObjective[]) => void;
 }
 
-export function ObjectiveList({ objectives, onChange }: ObjectiveListProps) {
-    const addObjective = () => {
+export function ObjectiveList({ objectives, standardObjectives = [], onChange }: ObjectiveListProps) {
+    const addObjective = (base?: StandardObjective) => {
         const newObjective: BriefObjective = {
             id: `obj_${Date.now()}`,
-            objective: '',
-            kpi: '',
-            target: ''
+            objective: base?.label || '',
+            kpi: base?.default_kpi || '',
+            target: base?.default_target || ''
         };
         onChange([...objectives, newObjective]);
     };
@@ -37,14 +36,31 @@ export function ObjectiveList({ objectives, onChange }: ObjectiveListProps) {
                 <label className="block text-sm font-medium text-neutral-300">
                     Objectives & KPIs
                 </label>
-                <button
-                    type="button"
-                    onClick={addObjective}
-                    className="flex items-center gap-1 text-xs text-primary-400 hover:text-primary-300 transition-colors"
-                >
-                    <Plus className="h-3 w-3" />
-                    Add Objective
-                </button>
+                <div className="flex gap-2">
+                    {/* Standard Objectives Quick Add */}
+                    {standardObjectives.length > 0 && (
+                        <div className="flex gap-1">
+                            {standardObjectives.slice(0, 3).map(std => (
+                                <button
+                                    key={std.id}
+                                    type="button"
+                                    onClick={() => addObjective(std)}
+                                    className="text-[10px] px-2 py-1 bg-primary-500/10 border border-primary-500/20 rounded-full text-primary-400 hover:bg-primary-500/20 transition-colors"
+                                >
+                                    + {std.label}
+                                </button>
+                            ))}
+                        </div>
+                    )}
+                    <button
+                        type="button"
+                        onClick={() => addObjective()}
+                        className="flex items-center gap-1 text-xs text-primary-400 hover:text-primary-300 transition-colors ml-2"
+                    >
+                        <Plus className="h-3 w-3" />
+                        Custom
+                    </button>
+                </div>
             </div>
 
             <div className="space-y-3">
@@ -95,8 +111,23 @@ export function ObjectiveList({ objectives, onChange }: ObjectiveListProps) {
                 ))}
 
                 {objectives.length === 0 && (
-                    <div className="text-center py-6 border border-dashed border-white/10 rounded-lg text-neutral-500 text-sm">
-                        No objectives added yet.
+                    <div className="text-center py-6 border border-dashed border-white/10 rounded-lg text-neutral-500 text-sm flex flex-col items-center justify-center gap-2">
+                        <span>No objectives added yet.</span>
+                        {standardObjectives.length > 0 && (
+                            <div className="flex flex-wrap justify-center gap-2 mt-2 max-w-sm">
+                                {standardObjectives.map(std => (
+                                    <button
+                                        key={std.id}
+                                        type="button"
+                                        onClick={() => addObjective(std)}
+                                        className="flex items-center gap-1 text-xs px-2 py-1 bg-white/5 hover:bg-white/10 border border-white/10 rounded-full text-neutral-300 transition-colors"
+                                    >
+                                        <Sparkles className="h-3 w-3 text-yellow-500" />
+                                        {std.label}
+                                    </button>
+                                ))}
+                            </div>
+                        )}
                     </div>
                 )}
             </div>

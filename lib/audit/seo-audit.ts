@@ -574,7 +574,11 @@ function auditGEO($: cheerio.CheerioAPI): Finding[] {
     // GEO-005: External citations to authoritative sources
     const externalLinks = $('a[href^="http"]').filter((_, el) => {
         const href = $(el).attr('href') || '';
-        return !href.includes(new URL(href).hostname);
+        try {
+            return !href.includes(new URL(href).hostname);
+        } catch {
+            return false;
+        }
     });
 
     const hasExternalCitations = externalLinks.length >= 2;

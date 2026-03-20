@@ -106,12 +106,15 @@ export default function UXDashboardPage() {
                     <section>
                         <h2 className="mb-4 text-xl font-semibold text-white">
                             Executive Summary
+                            <span className="ml-2 text-sm font-normal text-neutral-500">
+                                ({new Date(data.crawlDate).toLocaleDateString()})
+                            </span>
                         </h2>
                         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
                             <ScoreCard
                                 title="Overall UX Score"
                                 score={uxScore}
-                                previousScore={0}
+                                previousScore={data.previousScores?.ux || 0}
                                 icon={Eye}
                                 description="Combined accessibility and mobile usability"
                                 delay={0}

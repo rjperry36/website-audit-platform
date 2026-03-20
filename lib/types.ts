@@ -80,6 +80,7 @@ export interface PageAudit {
         accessibility: CategoryAudit;
         performance: PerformanceAudit;
         brandCompliance: CategoryAudit;
+        visual: CategoryAudit;
         security: CategoryAudit;
     };
 }
@@ -132,9 +133,44 @@ export interface CrawlResult {
     timestamp: string;
 }
 
+
 export interface CrawlProgress {
     total: number;
     completed: number;
     current: string;
     errors: string[];
+}
+
+export interface ProductionCrawlReport {
+    siteId: string;
+    crawlDate: string;
+    url: string;
+    timestamp: string;
+    scores: {
+        overall: number;
+        seo: number;
+        aeo: number;
+        geo: number;
+        ux: number;
+        visual?: number;
+    };
+    findings: {
+        seo: any[];
+        aeo: any[];
+        geo: any[];
+        ux: {
+            accessibility: any[];
+            mobile: any[];
+        };
+        visual?: any[];
+    };
+    metadata: {
+        title: string;
+        description: string;
+        h1: string | null;
+    };
+    screenshots: {
+        desktop: string;
+        mobile: string;
+    };
 }

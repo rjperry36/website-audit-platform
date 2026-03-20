@@ -1,11 +1,19 @@
 import { TabNavigation } from '@/components/layout/tab-navigation'
 import { TEST_SITE_CONFIG } from '@/lib/client-config'
 
-export default function DashboardLayout({
+import { supabase } from '@/lib/supabase'
+
+export default async function DashboardLayout({
     children,
 }: {
     children: React.ReactNode
 }) {
+    // Fetch active markets and channels for navigation
+    const [{ data: markets }, { data: channels }] = await Promise.all([
+        supabase.from('markets').select('*').eq('is_active', true).order('label'),
+        supabase.from('channels').select('*').eq('is_active', true).order('label')
+    ]);
+
     return (
         <div className="min-h-screen">
             {/* Glass Header */}
@@ -30,7 +38,7 @@ export default function DashboardLayout({
             </header>
 
             {/* Tab Navigation */}
-            <TabNavigation />
+            <TabNavigation markets={markets || []} channels={channels || []} />
 
             {/* Page Content */}
             <main className="content-layer">
