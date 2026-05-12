@@ -21,10 +21,11 @@ async function verify() {
         const { auditVisualDesign } = await import('../lib/audit/visual-analyzer');
 
         console.log('🔍 Running auditVisualDesign...');
-        const findings = await auditVisualDesign(tempImagePath);
+        const result = await auditVisualDesign(tempImagePath);
+        const findings = result.findings;
 
         console.log('\n📊 Findings Result:');
-        console.log(JSON.stringify(findings, null, 2));
+        console.log(JSON.stringify(result, null, 2));
 
         if (findings.length > 0) {
             console.log(`\n✅ Success: Generated ${findings.length} findings.`);

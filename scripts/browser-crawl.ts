@@ -154,7 +154,8 @@ export async function processCrawlResults(siteId: string, crawlDate: string, res
                 const { auditVisualDesign } = await import('../lib/audit/visual-analyzer');
 
                 // Use the desktopPath we just saved to
-                const aiFindings = await auditVisualDesign(desktopPath);
+                const aiResult = await auditVisualDesign(desktopPath);
+                const aiFindings = aiResult.findings;
 
                 // Split findings into categories based on rule ID
                 visualFindings = aiFindings.filter(f => f.ruleId.startsWith('UX-VIS'));
