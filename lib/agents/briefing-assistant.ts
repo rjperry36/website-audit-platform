@@ -18,7 +18,9 @@ import {
     getMarkets,
     getChannels,
     getCostLines,
+    getAvailability,
     formatCurrency,
+    computeAvailablePctInWindow,
 } from '@/lib/kg/loader';
 
 // ===========================================================================
@@ -144,8 +146,8 @@ export async function adviseOnBrief(input: BriefInput): Promise<BriefRecommendat
     const openai = getOpenAI();
     const completion = await openai.chat.completions.create({
         model: 'gpt-4o',
-        temperature: 0.3,
-        max_tokens: 2200,
+        temperature: 0.2,
+        max_tokens: 2400,
         response_format: { type: 'json_object' },
         messages: [
             { role: 'system', content: systemPrompt },
@@ -164,10 +166,33 @@ export async function adviseOnBrief(input: BriefInput): Promise<BriefRecommendat
     }
 
     // 4. Validate + assemble final shape
+    // Budget sanity check — guard against model serialising 1.2 instead of 1200000
+    // for £1.2M. Any budget < £1000 is almost certainly a format slip.
+    const rawLow = num(parsed?.budget?.recommended_low_gbp, NaN);
+    const rawHigh = num(parsed?.budget?.recommended_high_gbp, NaN);
+    const budgetSane = Number.isFinite(rawLow) && Number.isFinite(rawHigh) && rawLow >= 1000 && rawHigh >= 1000;
+    // If the model wrote "1.2" meaning £1.2M, try to repair by multiplying.
+    // Common slips: values 0.5–50 likely mean "in millions"; 50–1000 likely "in thousands".
+    let repairedLow = rawLow;
+    let repairedHigh = rawHigh;
+    if (!budgetSane && Number.isFinite(rawLow) && Number.isFinite(rawHigh)) {
+        if (rawLow > 0 && rawLow < 50 && rawHigh > 0 && rawHigh < 50) {
+            repairedLow = rawLow * 1_000_000;
+            repairedHigh = rawHigh * 1_000_000;
+        } else if (rawLow >= 50 && rawLow < 1000 && rawHigh >= 50 && rawHigh < 1000) {
+            repairedLow = rawLow * 1_000;
+            repairedHigh = rawHigh * 1_000;
+        } else {
+            // Fall back to context-derived defaults
+            repairedLow = context.budgetStats.p25 || (input.budget_hint_gbp || 50000);
+            repairedHigh = context.budgetStats.p75 || (input.budget_hint_gbp ? input.budget_hint_gbp * 1.2 : 100000);
+        }
+    }
+
     const recommendation: BriefRecommendation = {
         budget: {
-            recommended_low_gbp: num(parsed?.budget?.recommended_low_gbp, context.budgetStats.p25),
-            recommended_high_gbp: num(parsed?.budget?.recommended_high_gbp, context.budgetStats.p75),
+            recommended_low_gbp: Math.round(repairedLow),
+            recommended_high_gbp: Math.round(repairedHigh),
             rationale: str(parsed?.budget?.rationale, 'Based on comparable historical campaigns.'),
             cited_campaigns: arr(parsed?.budget?.cited_campaigns)
                 .map((c: any) => ({
@@ -237,7 +262,7 @@ export async function adviseOnBrief(input: BriefInput): Promise<BriefRecommendat
 // ===========================================================================
 
 async function buildContext(input: BriefInput) {
-    const [allCampaigns, allExecutions, allApprovals, allPeople, allMarkets, allChannels, allTimeTracking, allCostLines] = await Promise.all([
+    const [allCampaigns, allExecutions, allApprovals, allPeople, allMarkets, allChannels, allTimeTracking, allCostLines, allAvailability] = await Promise.all([
         getCampaigns(),
         getExecutionsEnriched(),
         getApprovalSteps(),
@@ -246,6 +271,7 @@ async function buildContext(input: BriefInput) {
         getChannels(),
         getTimeTracking(),
         getCostLines(),
+        getAvailability(),
     ]);
 
     const inputMarketSet = new Set(input.market_ids);
@@ -393,10 +419,23 @@ async function buildContext(input: BriefInput) {
         const cap = p.properties.capacity_hours_per_week || 40;
         if (hours > cap * 1.25) overloadCount[personId] = (overloadCount[personId] || 0) + 1;
     }
-    const candidatePeopleWithLoad = candidatePeople.map((p) => ({
-        ...p,
-        recent_overload_weeks: overloadCount[p.id] || 0,
-    }));
+    // Compute the brief window for forward-looking availability:
+    // start_date through start_date + duration_weeks (default 8 weeks if unspecified).
+    const briefStart = input.start_date;
+    const weeksAhead = input.duration_weeks ?? 8;
+    const briefEndDate = new Date(briefStart);
+    briefEndDate.setUTCDate(briefEndDate.getUTCDate() + weeksAhead * 7);
+    const briefEnd = briefEndDate.toISOString().split('T')[0];
+
+    const candidatePeopleWithLoad = candidatePeople.map((p) => {
+        const availability = computeAvailablePctInWindow(allAvailability, p.id, briefStart, briefEnd);
+        return {
+            ...p,
+            recent_overload_weeks: overloadCount[p.id] || 0,
+            available_pct_in_window: availability.available_pct,
+            conflicting_blocks: availability.conflicting_blocks,
+        };
+    });
 
     return {
         similarCampaigns,
@@ -405,6 +444,7 @@ async function buildContext(input: BriefInput) {
         candidatePeople: candidatePeopleWithLoad,
         markets: allMarkets.filter((m) => inputMarketSet.has(m.id)),
         channels: allChannels.filter((c) => inputChannelSet.has(c.id)),
+        brief_window: { start: briefStart, end: briefEnd },
     };
 }
 
@@ -418,20 +458,79 @@ function buildPrompts(input: BriefInput, context: Awaited<ReturnType<typeof buil
 Your job: given a new brief from the client (Aurelune, a prestige skincare brand) and grounded historical context from Halo & Helix's knowledge graph, produce a STRUCTURED RECOMMENDATION for budget, timeline, team, and risks.
 
 GROUNDING RULES — non-negotiable:
-1. Every budget number must be defensible by the CITED CAMPAIGNS you reference.
+1. Every budget number must be defensible by the CITED CAMPAIGNS you reference AND match the apparent scope of the brief.
 2. Every team member you suggest MUST come from the CANDIDATE PEOPLE list in the context. Do not invent people.
-3. Every risk must cite a specific historical signal (campaign id, person id, approval pattern).
-4. Match scores (0–100) should reflect strength of relevant channel + category + skill match.
-5. If the historical signal is weak, say so — confidence over confidence-theatre.
+3. Every risk must cite a specific historical signal (campaign id, person id, approval pattern, or date concern).
+4. Match scores (0–100) reflect strength of relevant channel + category + skill match. Anchor: 90+ = clear specialist for the channel, 70–89 = strong fit, 50–69 = workable with stretch, <50 = stretch.
+5. If the historical signal is weak (few comparable campaigns, thin brief), say so explicitly — confidence over confidence-theatre.
+
+BRIEF SCOPE — read carefully before budget/team sizing:
+The brief summary tells you the SCOPE. Distinguish:
+- "Content piece / seasonal asset / blog series / always-on always-on tweak" → SMALL: typically £20k–£120k, 2–4 people, 4–8 weeks
+- "Campaign / activation / localisation push" → MEDIUM: typically £150k–£500k, 4–6 people, 8–14 weeks
+- "Hero launch / flagship / retail-partner activation / new market entry" → LARGE: typically £500k+, 6–8+ people, 14–20+ weeks
+
+DO NOT anchor the budget on the cited campaigns' raw averages if those campaigns are larger-scoped than the brief in front of you. The cited campaigns are useful for variance patterns and timing, not necessarily for absolute amounts.
+
+BUDGET RANGE WIDTH:
+- Recommended range should be ≤30% wide (high - low) / low. Tighter is better.
+- A range of £680k–£1.14M (67%) is unhelpful. Aim for something like £680k–£820k.
+
+BUDGET NUMBER FORMAT — CRITICAL:
+- recommended_low_gbp and recommended_high_gbp MUST be FULL GBP INTEGERS.
+- For £1.2 million, write 1200000. NOT 1.2. NOT 1200. NOT "1.2M".
+- For £85,000, write 85000.
+- For £42,500, write 42500.
+- Any number below 1000 is wrong by orders of magnitude. Double-check before returning.
+
+JUDGEMENT — challenge the brief if it doesn't add up:
+- If stated objectives don't fit the channel mix (e.g., "$5M sell-through" on a SEO-only content brief), call it out as a "Brief coherence" risk and recommend a clarification before scoping further.
+- If the start_date looks awkward (e.g., Christmas content launching Dec 22nd, summer launch starting in November), flag it as a "Timing" risk with a concrete suggestion.
+- If the budget_hint is very low or very high vs your recommended range, flag it.
+- If notes mention a specific persona (Performance Pip / Ritual Rina / Science Sven / Gentle Gemma), reflect that in your headline summary AND in at least one team member's rationale (e.g., "Pari Banerjee is the right copy lead for Performance Pip's evidence-driven preferences").
+
+TEAM SIZING — match team to scope:
+- Small brief: 2–3 people (typically channel specialist + PM + maybe creative)
+- Medium brief: 4–6 people (lead + strategy + creative + channel + PM)
+- Large brief: 6–8 people (full bench — incl. ECD/CD for hero work)
+DO NOT pad the team with directors if a brief is small — that increases day-rate burn without adding value.
+
+TEAM COMPOSITION — channel coverage matters more than seniority count:
+For MEDIUM and LARGE briefs, the team must include CHANNEL SPECIALISTS in proportion to the channels in scope:
+- For each channel beyond the first, include either a dedicated specialist or a senior channel expert who covers that channel.
+- A team of 4 directors with no channel specialists is WRONG for a 5-channel hero brief. Better: 1 senior lead (ECD or Strat Director) + 1 PM + 3-4 channel specialists who actually execute.
+- Look at the CANDIDATE PEOPLE list — the Channel Experts department has Channel Leads and Specialists. Use them for channel-heavy briefs.
+- Don't double up on directors when you could pair one director with two specialists.
+
+RISK SUFFICIENCY:
+- Large/hero briefs almost always have at least 2 risks: schedule + capacity (top candidates' recent_overload_weeks), plus possibly budget vs hint, partner-specific risk, or thin signal.
+- If the top candidates have 5+ recent_overload_weeks each, capacity is automatically a MEDIUM or HIGH risk.
+
+AVAILABILITY — non-negotiable filtering rule:
+Every candidate person has an AVAILABLE IN BRIEF WINDOW: X% value. Treat this as the dominant practical signal.
+
+- Available < 30% in the brief window: DO NOT propose this person, even if their match score is excellent. Pick a substitute and reflect this in the headline summary as "first-choice X is unavailable; using Y instead".
+- Available 30–69%: only acceptable if they're for a part-time / supporting role on the brief. In rationale, surface the constraint explicitly: "Maya is 40% available — proposed for strategic oversight only, not day-to-day delivery."
+- Available 70–100%: acceptable for any role.
+
+When a brilliant first-choice candidate is unavailable, name them in the headline summary and explain the substitution. This is one of the most valuable signals you can surface — DO NOT silently swap. The brand director needs to see "we wanted Maya, she's not available, here's Wen Liu instead and why she works."
+
+CRITICAL CONSISTENCY: If you name a specific person as a substitute in the headline summary ("X is unavailable, so Y will lead Z"), then person Y MUST appear in the team array with the role you described. Never reference a person in the summary who isn't in the team. Cross-check before returning the JSON.
+
+If 3+ of your team picks have availability < 70%, add a HIGH "Capacity overcommitment" risk citing the specific blocks (e.g. "Devon Ahmadi: parental leave Sep–Nov; Rachel Cohen: 60% on Sephora Y2 through Dec").
+
+When a person has a partial allocation block (e.g., 60% on another campaign), reflect that in their proposed_role_on_brief — they're realistically a part-time contributor, not a primary lead.
+
+Availability evidence — the FIRST item in the evidence array for each team member MUST be their availability formatted as "NN% available in window" (e.g. "85% available in window"). This drives the chip surfacing in the UI.
 
 OUTPUT FORMAT — return STRICT JSON with this exact shape:
 
 {
-  "summary": "2–3 sentence headline that a brand director can read in 10 seconds.",
+  "summary": "2–3 sentence headline. Name the brief scope plainly (e.g. 'a focused SEO content piece for DE', 'a hero global launch'). Reflect any persona note from the brief. A brand director should be able to read this in 10 seconds and know the shape of the recommendation.",
   "budget": {
     "recommended_low_gbp": number,
     "recommended_high_gbp": number,
-    "rationale": "1–2 sentences explaining the range citing past campaigns.",
+    "rationale": "1–2 sentences. Reference the brief's apparent scope FIRST, then the cited campaigns for variance/timing patterns.",
     "cited_campaigns": [
       { "id": "campaign:...", "name": "...", "planned_gbp": number, "actual_gbp": number, "variance_pct": number }
     ]
@@ -440,7 +539,7 @@ OUTPUT FORMAT — return STRICT JSON with this exact shape:
     "recommended_weeks": number,
     "internal_review_days_avg": number,
     "client_review_days_avg": number,
-    "rationale": "1–2 sentences."
+    "rationale": "1–2 sentences. Reference scope + approval patterns + any timing concerns."
   },
   "team": [
     {
@@ -450,33 +549,33 @@ OUTPUT FORMAT — return STRICT JSON with this exact shape:
       "proposed_role_on_brief": "Lead strategist",
       "seniority": "director",
       "daily_rate_gbp": 1380,
-      "rationale": "Why this person — 1–2 sentences specific to skills + experience.",
+      "rationale": "Why this person — be specific. 1–2 sentences citing concrete skills + experience + (if relevant) persona alignment.",
       "match_score": 87,
-      "evidence": ["7 years on SOCIAL_MEDIA", "9 years on category:beauty", "proficiency 5 on positioning"]
+      "evidence": ["85% available in window", "7 years on SOCIAL_MEDIA", "9 years on category:beauty", "proficiency 5 on positioning"]
     }
   ],
   "risks": [
     {
       "severity": "low" | "medium" | "high",
       "title": "Short title",
-      "description": "1–2 sentences.",
-      "cited_signals": ["campaign:...", "person:..."]
+      "description": "1–2 sentences with a concrete next step or mitigation.",
+      "cited_signals": ["campaign:...", "person:...", "date:2026-12-22"]
     }
   ],
   "comparable_campaigns": [
-    { "id": "campaign:...", "name": "...", "why_comparable": "1 sentence." }
+    { "id": "campaign:...", "name": "...", "why_comparable": "1 sentence — be specific about what makes it comparable (market overlap, channel overlap, brief shape)." }
   ]
 }
 
-TEAM SIZING:
-- Pick 3–6 people that cover: account lead, strategy/creative lead, channel specialist(s), project management.
-- Prefer people with high match scores AND low recent_overload_weeks.
+RISK CHECKLIST — flag any of these that apply, in priority order:
+1. Brief coherence — stated objectives don't fit the proposed channel mix or scope
+2. Timing — start date awkward for the brief (seasonal mismatch, too late, too early)
+3. Budget mismatch — recommended range differs significantly from budget_hint
+4. Schedule — approval timing pattern in this market is historically slow
+5. Capacity — top candidates have high recent_overload_weeks
+6. Thin historical signal — < 3 truly comparable past campaigns
 
-RISK CHECKLIST — flag any of these that apply:
-- Budget tight vs historical: range you recommend > budget_hint_gbp
-- Schedule risk: approval timing pattern in this market is historically slow
-- Capacity risk: top candidates have high recent_overload_weeks
-- Market-specific risk: regulation, channel mix, novel territory`;
+If there are no meaningful risks, return an empty risks array. Don't manufacture risks.`;
 
     const userPrompt = `BRIEF
 =====
@@ -514,6 +613,8 @@ Approval timing (for ${input.market_ids.join('+')} × ${input.channel_ids.join('
    Internal slip rate:  ${context.approvalStats.internalSlipPct}% of executions slip past 5 days
    Client slip rate:    ${context.approvalStats.clientSlipPct}% of executions slip past 3 days
 
+BRIEF WINDOW for availability checks: ${context.brief_window.start} → ${context.brief_window.end}
+
 CANDIDATE PEOPLE (top ${context.candidatePeople.length} by relevant skill + experience):
 ${context.candidatePeople.map((p, i) => `${i + 1}. ${p.id}
    ${p.properties.name} — ${p.role_name}, ${p.department_name}, ${p.properties.office}
@@ -522,7 +623,10 @@ ${context.candidatePeople.map((p, i) => `${i + 1}. ${p.id}
    Category experience (matching): ${p.category_match_years} years in beauty/skincare
    Top skills: ${p.top_skills.map((s) => `${s.skill_name} (${s.proficiency}/5)`).join(', ')}
    Channel experience detail: ${p.channel_experience.map((c) => `${c.channel_label}:${c.years}y`).join(', ')}
-   Recent overload weeks (last 6mo): ${p.recent_overload_weeks}`).join('\n\n')}
+   Recent overload weeks (last 6mo): ${p.recent_overload_weeks}
+   AVAILABLE IN BRIEF WINDOW: ${p.available_pct_in_window}%${p.conflicting_blocks.length > 0
+            ? ' — conflicts: ' + p.conflicting_blocks.map((b: any) => `${b.reason} ${b.start}→${b.end} (${b.allocation_pct}%)`).join('; ')
+            : ' — fully available'}`).join('\n\n')}
 
 Now produce the JSON recommendation following the system prompt. Stay grounded in the data above.`;
 
