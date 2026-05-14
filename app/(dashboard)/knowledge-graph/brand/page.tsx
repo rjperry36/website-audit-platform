@@ -116,30 +116,39 @@ export default async function BrandPage() {
                 <h2 className="text-lg font-semibold text-white mb-3">Consumer personas</h2>
                 <div className="grid md:grid-cols-2 gap-4">
                     {personas.map((p) => (
-                        <Card key={p.id} variant="elevated">
-                            <CardHeader>
-                                <div className="flex items-start justify-between">
-                                    <div>
-                                        <CardTitle className="text-base">{p.properties.name}</CardTitle>
-                                        <CardDescription className="mt-1">{p.properties.archetype}</CardDescription>
+                        <Link
+                            key={p.id}
+                            href={`/knowledge-graph/brand/personas/${encodeURIComponent(p.id)}`}
+                            className="block"
+                        >
+                            <Card variant="elevated" className="hover:border-primary-500/40 hover:bg-white/[0.02] transition-colors h-full">
+                                <CardHeader>
+                                    <div className="flex items-start justify-between gap-2">
+                                        <div className="min-w-0">
+                                            <CardTitle className="text-base">{p.properties.name}</CardTitle>
+                                            <CardDescription className="mt-1">{p.properties.archetype}</CardDescription>
+                                        </div>
+                                        <div className="flex items-center gap-1.5 flex-shrink-0">
+                                            <Badge variant="outline" className="text-xs">{p.properties.age_range}</Badge>
+                                            <ChevronRight className="h-4 w-4 text-neutral-500" />
+                                        </div>
                                     </div>
-                                    <Badge variant="outline" className="text-xs">{p.properties.age_range}</Badge>
-                                </div>
-                            </CardHeader>
-                            <CardContent>
-                                <dl className="text-sm space-y-1.5">
-                                    <div className="flex justify-between">
-                                        <dt className="text-neutral-400">Income band</dt>
-                                        <dd className="text-white">{p.properties.income_band}</dd>
-                                    </div>
-                                    <div>
-                                        <dt className="text-neutral-400 mb-1">Motivation</dt>
-                                        <dd className="text-neutral-200">{p.properties.primary_motivation}</dd>
-                                    </div>
-                                </dl>
-                                <p className="text-xs text-neutral-500 mt-3 font-mono">{p.properties.doc_path}</p>
-                            </CardContent>
-                        </Card>
+                                </CardHeader>
+                                <CardContent>
+                                    <dl className="text-sm space-y-1.5">
+                                        <div className="flex justify-between">
+                                            <dt className="text-neutral-400">Income band</dt>
+                                            <dd className="text-white">{p.properties.income_band}</dd>
+                                        </div>
+                                        <div>
+                                            <dt className="text-neutral-400 mb-1">Motivation</dt>
+                                            <dd className="text-neutral-200">{p.properties.primary_motivation}</dd>
+                                        </div>
+                                    </dl>
+                                    <p className="text-xs text-neutral-500 mt-3 font-mono">{p.properties.doc_path}</p>
+                                </CardContent>
+                            </Card>
+                        </Link>
                     ))}
                 </div>
             </section>
