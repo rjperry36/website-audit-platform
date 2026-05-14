@@ -1,0 +1,113 @@
+[
+    {
+        "id": "budget:aurelune-global-2024",
+        "type": "Budget",
+        "properties": { "name": "Aurelune Global 2024",        "year": 2024, "brand_team_id": "brand-team:aurelune-global", "allocated_amount": 4800000, "currency": "GBP", "spent_amount": 4920000, "notes": "Over by 2.5% — Sephora launch prep ran heavier than planned." }
+    },
+    {
+        "id": "budget:aurelune-global-2025",
+        "type": "Budget",
+        "properties": { "name": "Aurelune Global 2025",        "year": 2025, "brand_team_id": "brand-team:aurelune-global", "allocated_amount": 5200000, "currency": "GBP", "spent_amount": 5085000, "notes": "On budget — slight under." }
+    },
+    {
+        "id": "budget:aurelune-global-2026",
+        "type": "Budget",
+        "properties": { "name": "Aurelune Global 2026 (H1)",   "year": 2026, "brand_team_id": "brand-team:aurelune-global", "allocated_amount": 5500000, "currency": "GBP", "spent_amount": 2450000, "notes": "H1 actual through May 2026. Tracking on plan." }
+    },
+
+    {
+        "id": "budget:aurelune-uk-2024",
+        "type": "Budget",
+        "properties": { "name": "Aurelune UK 2024",            "year": 2024, "brand_team_id": "brand-team:aurelune-uk",     "allocated_amount": 900000,  "currency": "GBP", "spent_amount": 875000, "notes": "Under by 3%." }
+    },
+    {
+        "id": "budget:aurelune-uk-2025",
+        "type": "Budget",
+        "properties": { "name": "Aurelune UK 2025",            "year": 2025, "brand_team_id": "brand-team:aurelune-uk",     "allocated_amount": 1100000, "currency": "GBP", "spent_amount": 1148000, "notes": "Over by 4.4% — OOH flagship pulled forward." }
+    },
+    {
+        "id": "budget:aurelune-uk-2026",
+        "type": "Budget",
+        "properties": { "name": "Aurelune UK 2026 (H1)",       "year": 2026, "brand_team_id": "brand-team:aurelune-uk",     "allocated_amount": 1200000, "currency": "GBP", "spent_amount": 540000,  "notes": "H1 tracking on plan." }
+    },
+
+    {
+        "id": "budget:aurelune-us-2024",
+        "type": "Budget",
+        "properties": { "name": "Aurelune US 2024",            "year": 2024, "brand_team_id": "brand-team:aurelune-us",     "allocated_amount": 1200000, "currency": "GBP", "spent_amount": 1310000, "notes": "Over by 9% — accelerated US team build for Sephora pitch." }
+    },
+    {
+        "id": "budget:aurelune-us-2025",
+        "type": "Budget",
+        "properties": { "name": "Aurelune US 2025",            "year": 2025, "brand_team_id": "brand-team:aurelune-us",     "allocated_amount": 1500000, "currency": "GBP", "spent_amount": 1485000, "notes": "On budget." }
+    },
+    {
+        "id": "budget:aurelune-us-2026",
+        "type": "Budget",
+        "properties": { "name": "Aurelune US 2026 (H1)",       "year": 2026, "brand_team_id": "brand-team:aurelune-us",     "allocated_amount": 1700000, "currency": "GBP", "spent_amount": 790000,  "notes": "Tracking slightly hot." }
+    },
+
+    {
+        "id": "budget:aurelune-de-2024",
+        "type": "Budget",
+        "properties": { "name": "Aurelune DACH 2024",          "year": 2024, "brand_team_id": "brand-team:aurelune-de",     "allocated_amount": 600000,  "currency": "GBP", "spent_amount": 555000,  "notes": "Under by 7.5%." }
+    },
+    {
+        "id": "budget:aurelune-de-2025",
+        "type": "Budget",
+        "properties": { "name": "Aurelune DACH 2025",          "year": 2025, "brand_team_id": "brand-team:aurelune-de",     "allocated_amount": 750000,  "currency": "GBP", "spent_amount": 825000,  "notes": "Over by 10% — paid-media reset to fix Q2 dip." }
+    },
+    {
+        "id": "budget:aurelune-de-2026",
+        "type": "Budget",
+        "properties": { "name": "Aurelune DACH 2026 (H1)",     "year": 2026, "brand_team_id": "brand-team:aurelune-de",     "allocated_amount": 850000,  "currency": "GBP", "spent_amount": 410000, "notes": "Tracking on plan." }
+    },
+
+    {
+        "id": "budget:aurelune-fr-2024",
+        "type": "Budget",
+        "properties": { "name": "Aurelune France 2024",        "year": 2024, "brand_team_id": "brand-team:aurelune-fr",     "allocated_amount": 550000,  "currency": "GBP", "spent_amount": 540000,  "notes": "On budget." }
+    },
+    {
+        "id": "budget:aurelune-fr-2025",
+        "type": "Budget",
+        "properties": { "name": "Aurelune France 2025",        "year": 2025, "brand_team_id": "brand-team:aurelune-fr",     "allocated_amount": 700000,  "currency": "GBP", "spent_amount": 670000,  "notes": "Under by 4.3%." }
+    },
+    {
+        "id": "budget:aurelune-fr-2026",
+        "type": "Budget",
+        "properties": { "name": "Aurelune France 2026 (H1)",   "year": 2026, "brand_team_id": "brand-team:aurelune-fr",     "allocated_amount": 800000,  "currency": "GBP", "spent_amount": 360000,  "notes": "Tracking on plan." }
+    },
+
+    {
+        "id": "budget:aurelune-jp-2024",
+        "type": "Budget",
+        "properties": { "name": "Aurelune Japan 2024 (Apr-Dec)","year": 2024, "brand_team_id": "brand-team:aurelune-jp",    "allocated_amount": 450000,  "currency": "GBP", "spent_amount": 488000, "notes": "Over by 8.4% — launch costs ran higher; one OOH wave added late." }
+    },
+    {
+        "id": "budget:aurelune-jp-2025",
+        "type": "Budget",
+        "properties": { "name": "Aurelune Japan 2025",         "year": 2025, "brand_team_id": "brand-team:aurelune-jp",     "allocated_amount": 700000,  "currency": "GBP", "spent_amount": 720000, "notes": "Slight over." }
+    },
+    {
+        "id": "budget:aurelune-jp-2026",
+        "type": "Budget",
+        "properties": { "name": "Aurelune Japan 2026 (H1)",    "year": 2026, "brand_team_id": "brand-team:aurelune-jp",     "allocated_amount": 800000,  "currency": "GBP", "spent_amount": 350000, "notes": "Tracking on plan." }
+    },
+
+    {
+        "id": "budget:aurelune-cn-2024",
+        "type": "Budget",
+        "properties": { "name": "Aurelune CN 2024 (Sep-Dec)",  "year": 2024, "brand_team_id": "brand-team:aurelune-cn",     "allocated_amount": 180000,  "currency": "GBP", "spent_amount": 165000, "notes": "Under by 8% — first wave intentionally cautious." }
+    },
+    {
+        "id": "budget:aurelune-cn-2025",
+        "type": "Budget",
+        "properties": { "name": "Aurelune CN 2025",            "year": 2025, "brand_team_id": "brand-team:aurelune-cn",     "allocated_amount": 400000,  "currency": "GBP", "spent_amount": 432000, "notes": "Over by 8% — Xiaohongshu programme scaled faster than planned." }
+    },
+    {
+        "id": "budget:aurelune-cn-2026",
+        "type": "Budget",
+        "properties": { "name": "Aurelune CN 2026 (H1)",       "year": 2026, "brand_team_id": "brand-team:aurelune-cn",     "allocated_amount": 500000,  "currency": "GBP", "spent_amount": 220000, "notes": "Tracking on plan." }
+    }
+]

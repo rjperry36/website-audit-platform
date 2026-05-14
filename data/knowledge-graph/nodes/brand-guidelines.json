@@ -1,0 +1,92 @@
+[
+    {
+        "id": "brand-guideline:positioning",
+        "type": "BrandGuideline",
+        "properties": {
+            "name": "Positioning",
+            "doc_path": "brand-book/positioning.md",
+            "scope": "global",
+            "version": "1.0.0"
+        }
+    },
+    {
+        "id": "brand-guideline:tone-of-voice",
+        "type": "BrandGuideline",
+        "properties": {
+            "name": "Tone of Voice",
+            "doc_path": "brand-book/tone-of-voice.md",
+            "scope": "global",
+            "version": "1.0.0"
+        }
+    },
+    {
+        "id": "brand-guideline:visual-identity",
+        "type": "BrandGuideline",
+        "properties": {
+            "name": "Visual Identity",
+            "doc_path": "brand-book/visual-identity.md",
+            "scope": "global",
+            "version": "1.0.0"
+        }
+    },
+    {
+        "id": "brand-guideline:product-copy-framework",
+        "type": "BrandGuideline",
+        "properties": {
+            "name": "Product Copy Framework",
+            "doc_path": "brand-book/product-copy-framework.md",
+            "scope": "global",
+            "version": "1.0.0"
+        }
+    },
+    {
+        "id": "brand-guideline:image-generation-prompts",
+        "type": "BrandGuideline",
+        "properties": {
+            "name": "Image Generation Prompts",
+            "doc_path": "brand-book/image-generation-prompts.md",
+            "scope": "global",
+            "version": "1.0.0"
+        }
+    },
+    {
+        "id": "brand-guideline:channel-style-social",
+        "type": "BrandGuideline",
+        "properties": {
+            "name": "Channel Style — Social Media",
+            "doc_path": "brand-book/channel-style/social.md",
+            "scope": "channel:SOCIAL_MEDIA",
+            "version": "1.0.0"
+        }
+    },
+    {
+        "id": "brand-guideline:channel-style-ooh",
+        "type": "BrandGuideline",
+        "properties": {
+            "name": "Channel Style — OOH",
+            "doc_path": "brand-book/channel-style/ooh.md",
+            "scope": "channel:OOH",
+            "version": "1.0.0"
+        }
+    },
+    {
+        "id": "brand-guideline:channel-style-ecrm",
+        "type": "BrandGuideline",
+        "properties": {
+            "name": "Channel Style — ECRM",
+            "doc_path": "brand-book/channel-style/ecrm.md",
+            "scope": "channel:ECRM",
+            "version": "1.0.0"
+        }
+    },
+    {
+        "id": "brand-guideline:channel-style-d2c",
+        "type": "BrandGuideline",
+        "properties": {
+            "name": "Channel Style — D2C",
+            "doc_path": "brand-book/channel-style/d2c.md",
+            "scope": "channel:D2C",
+            "version": "1.0.0"
+        }
+    }
+]

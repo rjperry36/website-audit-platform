@@ -1,0 +1,43 @@
+[
+    { "id": "skill:brand-strategy",          "type": "Skill", "properties": { "name": "Brand Strategy", "domain": "strategy", "description": "Brand positioning, architecture, narrative strategy" } },
+    { "id": "skill:positioning",             "type": "Skill", "properties": { "name": "Positioning", "domain": "strategy", "description": "Defining differentiating positions in a competitive set" } },
+    { "id": "skill:audience-strategy",       "type": "Skill", "properties": { "name": "Audience Strategy", "domain": "strategy", "description": "Audience definition, segmentation, persona development" } },
+    { "id": "skill:campaign-strategy",       "type": "Skill", "properties": { "name": "Campaign Strategy", "domain": "strategy", "description": "Campaign idea + architecture across channels" } },
+    { "id": "skill:content-strategy",        "type": "Skill", "properties": { "name": "Content Strategy", "domain": "strategy", "description": "Editorial planning, content ecosystem design" } },
+
+    { "id": "skill:creative-direction",      "type": "Skill", "properties": { "name": "Creative Direction", "domain": "creative", "description": "Leading creative teams, holding the bar" } },
+    { "id": "skill:art-direction",           "type": "Skill", "properties": { "name": "Art Direction", "domain": "creative", "description": "Visual idea, composition, photographic direction" } },
+    { "id": "skill:graphic-design",          "type": "Skill", "properties": { "name": "Graphic Design", "domain": "creative", "description": "Layout, typography, brand systems" } },
+    { "id": "skill:motion-design",           "type": "Skill", "properties": { "name": "Motion Design", "domain": "creative", "description": "Motion graphics, brand animation, AE/Cinema 4D" } },
+    { "id": "skill:concept-development",     "type": "Skill", "properties": { "name": "Concept Development", "domain": "creative", "description": "Big-idea generation and articulation" } },
+    { "id": "skill:copywriting-long-form",   "type": "Skill", "properties": { "name": "Copywriting — Long Form", "domain": "creative", "description": "Editorial, white-papers, brand books, PDP body" } },
+    { "id": "skill:copywriting-short-form",  "type": "Skill", "properties": { "name": "Copywriting — Short Form", "domain": "creative", "description": "Headlines, captions, OOH, subject lines" } },
+
+    { "id": "skill:video-production",        "type": "Skill", "properties": { "name": "Video Production", "domain": "production", "description": "End-to-end video production management" } },
+    { "id": "skill:still-production",        "type": "Skill", "properties": { "name": "Still Production", "domain": "production", "description": "Photography production, studio + on-location" } },
+    { "id": "skill:retouching",              "type": "Skill", "properties": { "name": "Retouching", "domain": "production", "description": "Hi-end retouching, colour, finish — within brand rules" } },
+    { "id": "skill:print-production",        "type": "Skill", "properties": { "name": "Print Production", "domain": "production", "description": "OOH, packaging, point-of-sale print management" } },
+
+    { "id": "skill:paid-search",             "type": "Skill", "properties": { "name": "Paid Search", "domain": "channel", "description": "Google Ads, Bing, search bidding strategy" } },
+    { "id": "skill:paid-social",             "type": "Skill", "properties": { "name": "Paid Social", "domain": "channel", "description": "Meta, TikTok, Pinterest, LinkedIn paid" } },
+    { "id": "skill:programmatic",            "type": "Skill", "properties": { "name": "Programmatic", "domain": "channel", "description": "DSP buying, audience targeting, programmatic OOH" } },
+    { "id": "skill:seo-traditional",         "type": "Skill", "properties": { "name": "SEO — Traditional", "domain": "channel", "description": "Technical SEO, on-page, link strategy" } },
+    { "id": "skill:seo-aeo-geo",             "type": "Skill", "properties": { "name": "SEO — AEO & GEO", "domain": "channel", "description": "Answer-engine and generative-engine optimisation" } },
+    { "id": "skill:ecrm-architecture",       "type": "Skill", "properties": { "name": "ECRM Architecture", "domain": "channel", "description": "Lifecycle programmes, segmentation, automation flows" } },
+    { "id": "skill:ecrm-copy",               "type": "Skill", "properties": { "name": "ECRM Copy", "domain": "channel", "description": "Email and SMS lifecycle copy within brand voice" } },
+    { "id": "skill:social-organic",          "type": "Skill", "properties": { "name": "Organic Social", "domain": "channel", "description": "Editorial content for organic social channels" } },
+    { "id": "skill:influencer",              "type": "Skill", "properties": { "name": "Influencer", "domain": "channel", "description": "Talent identification, brief, contract, measurement" } },
+    { "id": "skill:ooh-planning",            "type": "Skill", "properties": { "name": "OOH Planning", "domain": "channel", "description": "Out-of-home media planning and buying" } },
+    { "id": "skill:posm-execution",          "type": "Skill", "properties": { "name": "POSM Execution", "domain": "channel", "description": "In-store visual merchandising production" } },
+    { "id": "skill:events-production",       "type": "Skill", "properties": { "name": "Events Production", "domain": "channel", "description": "Physical and virtual event production" } },
+
+    { "id": "skill:analytics",               "type": "Skill", "properties": { "name": "Analytics", "domain": "data", "description": "Performance measurement, dashboards, reporting" } },
+    { "id": "skill:experimentation",         "type": "Skill", "properties": { "name": "Experimentation", "domain": "data", "description": "A/B testing, conversion experiments" } },
+    { "id": "skill:attribution",             "type": "Skill", "properties": { "name": "Attribution", "domain": "data", "description": "Marketing attribution modelling" } },
+
+    { "id": "skill:negotiation",             "type": "Skill", "properties": { "name": "Negotiation", "domain": "commercial", "description": "Contract and rate negotiation" } },
+    { "id": "skill:new-business-pitching",   "type": "Skill", "properties": { "name": "New Business Pitching", "domain": "commercial", "description": "Leading pitch responses end-to-end" } },
+
+    { "id": "skill:project-management",      "type": "Skill", "properties": { "name": "Project Management", "domain": "delivery", "description": "Multi-stream project delivery, risk management" } },
+    { "id": "skill:resource-planning",       "type": "Skill", "properties": { "name": "Resource Planning", "domain": "delivery", "description": "Staffing, capacity planning, allocation" } }
+]

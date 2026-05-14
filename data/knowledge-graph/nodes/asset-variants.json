@@ -1,0 +1,2042 @@
+[
+  {
+    "id": "asset-variant:asset-2024-002-uk-2024-007",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-002 — UK variant",
+      "master_asset_id": "asset:asset-2024-002",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-002-uk-2024-007.png",
+      "localisation_type": "subtitled",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-008-uk-2024-008",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-008 — UK variant",
+      "master_asset_id": "asset:asset-2024-008",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-008-uk-2024-008.png",
+      "localisation_type": "copy_only",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-007-uk-2024-009",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-007 — UK variant",
+      "master_asset_id": "asset:asset-2024-007",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-007-uk-2024-009.png",
+      "localisation_type": "copy_only",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-005-uk-2024-010",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-005 — UK variant",
+      "master_asset_id": "asset:asset-2024-005",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-005-uk-2024-010.png",
+      "localisation_type": "claims_adapted",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-002-us-2024-012",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-002 — US variant",
+      "master_asset_id": "asset:asset-2024-002",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-002-us-2024-012.png",
+      "localisation_type": "subtitled",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-008-us-2024-013",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-008 — US variant",
+      "master_asset_id": "asset:asset-2024-008",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-008-us-2024-013.png",
+      "localisation_type": "copy_only",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-003-us-2024-014",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-003 — US variant",
+      "master_asset_id": "asset:asset-2024-003",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-003-us-2024-014.png",
+      "localisation_type": "copy_only",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-011-us-2024-015",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-011 — US variant",
+      "master_asset_id": "asset:asset-2024-011",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-011-us-2024-015.png",
+      "localisation_type": "claims_adapted",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-002-de-2024-017",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-002 — DE variant",
+      "master_asset_id": "asset:asset-2024-002",
+      "market_id": "market:DE",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-002-de-2024-017.png",
+      "localisation_type": "subtitled",
+      "language_code": "de-DE"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-008-de-2024-018",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-008 — DE variant",
+      "master_asset_id": "asset:asset-2024-008",
+      "market_id": "market:DE",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-008-de-2024-018.png",
+      "localisation_type": "subtitled",
+      "language_code": "de-DE"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-006-de-2024-019",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-006 — DE variant",
+      "master_asset_id": "asset:asset-2024-006",
+      "market_id": "market:DE",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-006-de-2024-019.png",
+      "localisation_type": "subtitled",
+      "language_code": "de-DE"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-011-de-2024-020",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-011 — DE variant",
+      "master_asset_id": "asset:asset-2024-011",
+      "market_id": "market:DE",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-011-de-2024-020.png",
+      "localisation_type": "subtitled",
+      "language_code": "de-DE"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-001-fr-2024-022",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-001 — FR variant",
+      "master_asset_id": "asset:asset-2024-001",
+      "market_id": "market:FR",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-001-fr-2024-022.png",
+      "localisation_type": "subtitled",
+      "language_code": "fr-FR"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-009-fr-2024-023",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-009 — FR variant",
+      "master_asset_id": "asset:asset-2024-009",
+      "market_id": "market:FR",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-009-fr-2024-023.png",
+      "localisation_type": "voiced_over",
+      "language_code": "fr-FR"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-007-fr-2024-024",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-007 — FR variant",
+      "master_asset_id": "asset:asset-2024-007",
+      "market_id": "market:FR",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-007-fr-2024-024.png",
+      "localisation_type": "copy_only",
+      "language_code": "fr-FR"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-004-fr-2024-025",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-004 — FR variant",
+      "master_asset_id": "asset:asset-2024-004",
+      "market_id": "market:FR",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-004-fr-2024-025.png",
+      "localisation_type": "copy_only",
+      "language_code": "fr-FR"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-016-uk-2024-031",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-016 — UK variant",
+      "master_asset_id": "asset:asset-2024-016",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-016-uk-2024-031.png",
+      "localisation_type": "copy_only",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-016-uk-2024-032",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-016 — UK variant",
+      "master_asset_id": "asset:asset-2024-016",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-016-uk-2024-032.png",
+      "localisation_type": "copy_only",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-016-uk-2024-033",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-016 — UK variant",
+      "master_asset_id": "asset:asset-2024-016",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-016-uk-2024-033.png",
+      "localisation_type": "claims_adapted",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-017-uk-2024-037",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-017 — UK variant",
+      "master_asset_id": "asset:asset-2024-017",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-017-uk-2024-037.png",
+      "localisation_type": "subtitled",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-014-uk-2024-038",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-014 — UK variant",
+      "master_asset_id": "asset:asset-2024-014",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-014-uk-2024-038.png",
+      "localisation_type": "subtitled",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-018-uk-2024-039",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-018 — UK variant",
+      "master_asset_id": "asset:asset-2024-018",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-018-uk-2024-039.png",
+      "localisation_type": "voiced_over",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-013-uk-2024-040",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-013 — UK variant",
+      "master_asset_id": "asset:asset-2024-013",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-013-uk-2024-040.png",
+      "localisation_type": "voiced_over",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-013-uk-2024-041",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-013 — UK variant",
+      "master_asset_id": "asset:asset-2024-013",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-013-uk-2024-041.png",
+      "localisation_type": "copy_only",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-012-uk-2024-042",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-012 — UK variant",
+      "master_asset_id": "asset:asset-2024-012",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-012-uk-2024-042.png",
+      "localisation_type": "subtitled",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-016-us-2024-043",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-016 — US variant",
+      "master_asset_id": "asset:asset-2024-016",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-016-us-2024-043.png",
+      "localisation_type": "copy_only",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-016-us-2024-044",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-016 — US variant",
+      "master_asset_id": "asset:asset-2024-016",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-016-us-2024-044.png",
+      "localisation_type": "voiced_over",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-016-us-2024-045",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-016 — US variant",
+      "master_asset_id": "asset:asset-2024-016",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-016-us-2024-045.png",
+      "localisation_type": "claims_adapted",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-017-us-2024-049",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-017 — US variant",
+      "master_asset_id": "asset:asset-2024-017",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-017-us-2024-049.png",
+      "localisation_type": "voiced_over",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-018-us-2024-050",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-018 — US variant",
+      "master_asset_id": "asset:asset-2024-018",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-018-us-2024-050.png",
+      "localisation_type": "subtitled",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-018-us-2024-051",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-018 — US variant",
+      "master_asset_id": "asset:asset-2024-018",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-018-us-2024-051.png",
+      "localisation_type": "copy_only",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-013-us-2024-052",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-013 — US variant",
+      "master_asset_id": "asset:asset-2024-013",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-013-us-2024-052.png",
+      "localisation_type": "voiced_over",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-012-us-2024-053",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-012 — US variant",
+      "master_asset_id": "asset:asset-2024-012",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-012-us-2024-053.png",
+      "localisation_type": "copy_only",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-012-us-2024-054",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-012 — US variant",
+      "master_asset_id": "asset:asset-2024-012",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-012-us-2024-054.png",
+      "localisation_type": "voiced_over",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-016-de-2024-055",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-016 — DE variant",
+      "master_asset_id": "asset:asset-2024-016",
+      "market_id": "market:DE",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-016-de-2024-055.png",
+      "localisation_type": "copy_only",
+      "language_code": "de-DE"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-016-de-2024-056",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-016 — DE variant",
+      "master_asset_id": "asset:asset-2024-016",
+      "market_id": "market:DE",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-016-de-2024-056.png",
+      "localisation_type": "subtitled",
+      "language_code": "de-DE"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-016-de-2024-057",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-016 — DE variant",
+      "master_asset_id": "asset:asset-2024-016",
+      "market_id": "market:DE",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-016-de-2024-057.png",
+      "localisation_type": "subtitled",
+      "language_code": "de-DE"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-015-de-2024-061",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-015 — DE variant",
+      "master_asset_id": "asset:asset-2024-015",
+      "market_id": "market:DE",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-015-de-2024-061.png",
+      "localisation_type": "full_reshoot",
+      "language_code": "de-DE"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-018-de-2024-062",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-018 — DE variant",
+      "master_asset_id": "asset:asset-2024-018",
+      "market_id": "market:DE",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-018-de-2024-062.png",
+      "localisation_type": "copy_only",
+      "language_code": "de-DE"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-017-de-2024-063",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-017 — DE variant",
+      "master_asset_id": "asset:asset-2024-017",
+      "market_id": "market:DE",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-017-de-2024-063.png",
+      "localisation_type": "copy_only",
+      "language_code": "de-DE"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-013-de-2024-064",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-013 — DE variant",
+      "master_asset_id": "asset:asset-2024-013",
+      "market_id": "market:DE",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-013-de-2024-064.png",
+      "localisation_type": "subtitled",
+      "language_code": "de-DE"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-013-de-2024-065",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-013 — DE variant",
+      "master_asset_id": "asset:asset-2024-013",
+      "market_id": "market:DE",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-013-de-2024-065.png",
+      "localisation_type": "subtitled",
+      "language_code": "de-DE"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-012-de-2024-066",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-012 — DE variant",
+      "master_asset_id": "asset:asset-2024-012",
+      "market_id": "market:DE",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-012-de-2024-066.png",
+      "localisation_type": "subtitled",
+      "language_code": "de-DE"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-016-fr-2024-067",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-016 — FR variant",
+      "master_asset_id": "asset:asset-2024-016",
+      "market_id": "market:FR",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-016-fr-2024-067.png",
+      "localisation_type": "copy_only",
+      "language_code": "fr-FR"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-016-fr-2024-068",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-016 — FR variant",
+      "master_asset_id": "asset:asset-2024-016",
+      "market_id": "market:FR",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-016-fr-2024-068.png",
+      "localisation_type": "voiced_over",
+      "language_code": "fr-FR"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-016-fr-2024-069",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-016 — FR variant",
+      "master_asset_id": "asset:asset-2024-016",
+      "market_id": "market:FR",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-016-fr-2024-069.png",
+      "localisation_type": "full_reshoot",
+      "language_code": "fr-FR"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-017-fr-2024-073",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-017 — FR variant",
+      "master_asset_id": "asset:asset-2024-017",
+      "market_id": "market:FR",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-017-fr-2024-073.png",
+      "localisation_type": "subtitled",
+      "language_code": "fr-FR"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-018-fr-2024-074",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-018 — FR variant",
+      "master_asset_id": "asset:asset-2024-018",
+      "market_id": "market:FR",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-018-fr-2024-074.png",
+      "localisation_type": "subtitled",
+      "language_code": "fr-FR"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-017-fr-2024-075",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-017 — FR variant",
+      "master_asset_id": "asset:asset-2024-017",
+      "market_id": "market:FR",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-017-fr-2024-075.png",
+      "localisation_type": "voiced_over",
+      "language_code": "fr-FR"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-012-fr-2024-076",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-012 — FR variant",
+      "master_asset_id": "asset:asset-2024-012",
+      "market_id": "market:FR",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-012-fr-2024-076.png",
+      "localisation_type": "subtitled",
+      "language_code": "fr-FR"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-013-fr-2024-077",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-013 — FR variant",
+      "master_asset_id": "asset:asset-2024-013",
+      "market_id": "market:FR",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-013-fr-2024-077.png",
+      "localisation_type": "subtitled",
+      "language_code": "fr-FR"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2024-012-fr-2024-078",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2024-012 — FR variant",
+      "master_asset_id": "asset:asset-2024-012",
+      "market_id": "market:FR",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-012-fr-2024-078.png",
+      "localisation_type": "subtitled",
+      "language_code": "fr-FR"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-020-uk-2025-052",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-020 — UK variant",
+      "master_asset_id": "asset:asset-2025-020",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-020-uk-2025-052.png",
+      "localisation_type": "claims_adapted",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-021-uk-2025-053",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-021 — UK variant",
+      "master_asset_id": "asset:asset-2025-021",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-021-uk-2025-053.png",
+      "localisation_type": "copy_only",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-022-uk-2025-056",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-022 — UK variant",
+      "master_asset_id": "asset:asset-2025-022",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-022-uk-2025-056.png",
+      "localisation_type": "subtitled",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-024-uk-2025-057",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-024 — UK variant",
+      "master_asset_id": "asset:asset-2025-024",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-024-uk-2025-057.png",
+      "localisation_type": "copy_only",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-028-uk-2025-060",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-028 — UK variant",
+      "master_asset_id": "asset:asset-2025-028",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-028-uk-2025-060.png",
+      "localisation_type": "voiced_over",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-026-uk-2025-061",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-026 — UK variant",
+      "master_asset_id": "asset:asset-2025-026",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-026-uk-2025-061.png",
+      "localisation_type": "claims_adapted",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-027-uk-2025-062",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-027 — UK variant",
+      "master_asset_id": "asset:asset-2025-027",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-027-uk-2025-062.png",
+      "localisation_type": "subtitled",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-027-uk-2025-063",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-027 — UK variant",
+      "master_asset_id": "asset:asset-2025-027",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-027-uk-2025-063.png",
+      "localisation_type": "copy_only",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-020-us-2025-064",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-020 — US variant",
+      "master_asset_id": "asset:asset-2025-020",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-020-us-2025-064.png",
+      "localisation_type": "subtitled",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-021-us-2025-065",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-021 — US variant",
+      "master_asset_id": "asset:asset-2025-021",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-021-us-2025-065.png",
+      "localisation_type": "voiced_over",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-024-us-2025-068",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-024 — US variant",
+      "master_asset_id": "asset:asset-2025-024",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-024-us-2025-068.png",
+      "localisation_type": "copy_only",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-022-us-2025-069",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-022 — US variant",
+      "master_asset_id": "asset:asset-2025-022",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-022-us-2025-069.png",
+      "localisation_type": "copy_only",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-028-us-2025-072",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-028 — US variant",
+      "master_asset_id": "asset:asset-2025-028",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-028-us-2025-072.png",
+      "localisation_type": "copy_only",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-026-us-2025-073",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-026 — US variant",
+      "master_asset_id": "asset:asset-2025-026",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-026-us-2025-073.png",
+      "localisation_type": "subtitled",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-027-us-2025-074",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-027 — US variant",
+      "master_asset_id": "asset:asset-2025-027",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-027-us-2025-074.png",
+      "localisation_type": "copy_only",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-027-us-2025-075",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-027 — US variant",
+      "master_asset_id": "asset:asset-2025-027",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-027-us-2025-075.png",
+      "localisation_type": "claims_adapted",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-020-de-2025-076",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-020 — DE variant",
+      "master_asset_id": "asset:asset-2025-020",
+      "market_id": "market:DE",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-020-de-2025-076.png",
+      "localisation_type": "copy_only",
+      "language_code": "de-DE"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-021-de-2025-077",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-021 — DE variant",
+      "master_asset_id": "asset:asset-2025-021",
+      "market_id": "market:DE",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-021-de-2025-077.png",
+      "localisation_type": "claims_adapted",
+      "language_code": "de-DE"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-024-de-2025-080",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-024 — DE variant",
+      "master_asset_id": "asset:asset-2025-024",
+      "market_id": "market:DE",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-024-de-2025-080.png",
+      "localisation_type": "subtitled",
+      "language_code": "de-DE"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-024-de-2025-081",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-024 — DE variant",
+      "master_asset_id": "asset:asset-2025-024",
+      "market_id": "market:DE",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-024-de-2025-081.png",
+      "localisation_type": "voiced_over",
+      "language_code": "de-DE"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-025-de-2025-084",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-025 — DE variant",
+      "master_asset_id": "asset:asset-2025-025",
+      "market_id": "market:DE",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-025-de-2025-084.png",
+      "localisation_type": "subtitled",
+      "language_code": "de-DE"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-025-de-2025-085",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-025 — DE variant",
+      "master_asset_id": "asset:asset-2025-025",
+      "market_id": "market:DE",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-025-de-2025-085.png",
+      "localisation_type": "full_reshoot",
+      "language_code": "de-DE"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-027-de-2025-086",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-027 — DE variant",
+      "master_asset_id": "asset:asset-2025-027",
+      "market_id": "market:DE",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-027-de-2025-086.png",
+      "localisation_type": "claims_adapted",
+      "language_code": "de-DE"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-027-de-2025-087",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-027 — DE variant",
+      "master_asset_id": "asset:asset-2025-027",
+      "market_id": "market:DE",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-027-de-2025-087.png",
+      "localisation_type": "voiced_over",
+      "language_code": "de-DE"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-021-fr-2025-088",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-021 — FR variant",
+      "master_asset_id": "asset:asset-2025-021",
+      "market_id": "market:FR",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-021-fr-2025-088.png",
+      "localisation_type": "subtitled",
+      "language_code": "fr-FR"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-021-fr-2025-089",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-021 — FR variant",
+      "master_asset_id": "asset:asset-2025-021",
+      "market_id": "market:FR",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-021-fr-2025-089.png",
+      "localisation_type": "subtitled",
+      "language_code": "fr-FR"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-024-fr-2025-092",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-024 — FR variant",
+      "master_asset_id": "asset:asset-2025-024",
+      "market_id": "market:FR",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-024-fr-2025-092.png",
+      "localisation_type": "copy_only",
+      "language_code": "fr-FR"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-024-fr-2025-093",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-024 — FR variant",
+      "master_asset_id": "asset:asset-2025-024",
+      "market_id": "market:FR",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-024-fr-2025-093.png",
+      "localisation_type": "copy_only",
+      "language_code": "fr-FR"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-025-fr-2025-096",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-025 — FR variant",
+      "master_asset_id": "asset:asset-2025-025",
+      "market_id": "market:FR",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-025-fr-2025-096.png",
+      "localisation_type": "copy_only",
+      "language_code": "fr-FR"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-025-fr-2025-097",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-025 — FR variant",
+      "master_asset_id": "asset:asset-2025-025",
+      "market_id": "market:FR",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-025-fr-2025-097.png",
+      "localisation_type": "subtitled",
+      "language_code": "fr-FR"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-027-fr-2025-098",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-027 — FR variant",
+      "master_asset_id": "asset:asset-2025-027",
+      "market_id": "market:FR",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-027-fr-2025-098.png",
+      "localisation_type": "subtitled",
+      "language_code": "fr-FR"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-027-fr-2025-099",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-027 — FR variant",
+      "master_asset_id": "asset:asset-2025-027",
+      "market_id": "market:FR",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-027-fr-2025-099.png",
+      "localisation_type": "subtitled",
+      "language_code": "fr-FR"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-021-jp-2025-100",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-021 — JP variant",
+      "master_asset_id": "asset:asset-2025-021",
+      "market_id": "market:JP",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-021-jp-2025-100.png",
+      "localisation_type": "copy_only",
+      "language_code": "ja-JP"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-021-jp-2025-101",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-021 — JP variant",
+      "master_asset_id": "asset:asset-2025-021",
+      "market_id": "market:JP",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-021-jp-2025-101.png",
+      "localisation_type": "claims_adapted",
+      "language_code": "ja-JP"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-023-jp-2025-104",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-023 — JP variant",
+      "master_asset_id": "asset:asset-2025-023",
+      "market_id": "market:JP",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-023-jp-2025-104.png",
+      "localisation_type": "copy_only",
+      "language_code": "ja-JP"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-024-jp-2025-105",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-024 — JP variant",
+      "master_asset_id": "asset:asset-2025-024",
+      "market_id": "market:JP",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-024-jp-2025-105.png",
+      "localisation_type": "copy_only",
+      "language_code": "ja-JP"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-028-jp-2025-108",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-028 — JP variant",
+      "master_asset_id": "asset:asset-2025-028",
+      "market_id": "market:JP",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-028-jp-2025-108.png",
+      "localisation_type": "voiced_over",
+      "language_code": "ja-JP"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-029-jp-2025-109",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-029 — JP variant",
+      "master_asset_id": "asset:asset-2025-029",
+      "market_id": "market:JP",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-029-jp-2025-109.png",
+      "localisation_type": "full_reshoot",
+      "language_code": "ja-JP"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-027-jp-2025-110",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-027 — JP variant",
+      "master_asset_id": "asset:asset-2025-027",
+      "market_id": "market:JP",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-027-jp-2025-110.png",
+      "localisation_type": "copy_only",
+      "language_code": "ja-JP"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-027-jp-2025-111",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-027 — JP variant",
+      "master_asset_id": "asset:asset-2025-027",
+      "market_id": "market:JP",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-027-jp-2025-111.png",
+      "localisation_type": "claims_adapted",
+      "language_code": "ja-JP"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-030-cn-2025-122",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-030 — CN variant",
+      "master_asset_id": "asset:asset-2025-030",
+      "market_id": "market:CN",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-030-cn-2025-122.png",
+      "localisation_type": "full_reshoot",
+      "language_code": "zh-CN"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-030-cn-2025-123",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-030 — CN variant",
+      "master_asset_id": "asset:asset-2025-030",
+      "market_id": "market:CN",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-030-cn-2025-123.png",
+      "localisation_type": "subtitled",
+      "language_code": "zh-CN"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-030-cn-2025-124",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-030 — CN variant",
+      "master_asset_id": "asset:asset-2025-030",
+      "market_id": "market:CN",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-030-cn-2025-124.png",
+      "localisation_type": "claims_adapted",
+      "language_code": "zh-CN"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-030-cn-2025-125",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-030 — CN variant",
+      "master_asset_id": "asset:asset-2025-030",
+      "market_id": "market:CN",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-030-cn-2025-125.png",
+      "localisation_type": "subtitled",
+      "language_code": "zh-CN"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-030-cn-2025-126",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-030 — CN variant",
+      "master_asset_id": "asset:asset-2025-030",
+      "market_id": "market:CN",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-030-cn-2025-126.png",
+      "localisation_type": "copy_only",
+      "language_code": "zh-CN"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-034-uk-2025-153",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-034 — UK variant",
+      "master_asset_id": "asset:asset-2025-034",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-034-uk-2025-153.png",
+      "localisation_type": "subtitled",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-035-uk-2025-154",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-035 — UK variant",
+      "master_asset_id": "asset:asset-2025-035",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-035-uk-2025-154.png",
+      "localisation_type": "copy_only",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-034-uk-2025-155",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-034 — UK variant",
+      "master_asset_id": "asset:asset-2025-034",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-034-uk-2025-155.png",
+      "localisation_type": "subtitled",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-031-uk-2025-159",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-031 — UK variant",
+      "master_asset_id": "asset:asset-2025-031",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-031-uk-2025-159.png",
+      "localisation_type": "subtitled",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-032-uk-2025-160",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-032 — UK variant",
+      "master_asset_id": "asset:asset-2025-032",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-032-uk-2025-160.png",
+      "localisation_type": "full_reshoot",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-032-uk-2025-161",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-032 — UK variant",
+      "master_asset_id": "asset:asset-2025-032",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-032-uk-2025-161.png",
+      "localisation_type": "claims_adapted",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-036-us-2025-165",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-036 — US variant",
+      "master_asset_id": "asset:asset-2025-036",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-036-us-2025-165.png",
+      "localisation_type": "full_reshoot",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-036-us-2025-166",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-036 — US variant",
+      "master_asset_id": "asset:asset-2025-036",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-036-us-2025-166.png",
+      "localisation_type": "claims_adapted",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-034-us-2025-167",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-034 — US variant",
+      "master_asset_id": "asset:asset-2025-034",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-034-us-2025-167.png",
+      "localisation_type": "full_reshoot",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-033-us-2025-171",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-033 — US variant",
+      "master_asset_id": "asset:asset-2025-033",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-033-us-2025-171.png",
+      "localisation_type": "full_reshoot",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-032-us-2025-172",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-032 — US variant",
+      "master_asset_id": "asset:asset-2025-032",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-032-us-2025-172.png",
+      "localisation_type": "subtitled",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-032-us-2025-173",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-032 — US variant",
+      "master_asset_id": "asset:asset-2025-032",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-032-us-2025-173.png",
+      "localisation_type": "subtitled",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-041-uk-2025-180",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-041 — UK variant",
+      "master_asset_id": "asset:asset-2025-041",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-041-uk-2025-180.png",
+      "localisation_type": "subtitled",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-041-uk-2025-181",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-041 — UK variant",
+      "master_asset_id": "asset:asset-2025-041",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-041-uk-2025-181.png",
+      "localisation_type": "copy_only",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-041-uk-2025-182",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-041 — UK variant",
+      "master_asset_id": "asset:asset-2025-041",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-041-uk-2025-182.png",
+      "localisation_type": "full_reshoot",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-038-uk-2025-186",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-038 — UK variant",
+      "master_asset_id": "asset:asset-2025-038",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-038-uk-2025-186.png",
+      "localisation_type": "voiced_over",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-038-uk-2025-187",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-038 — UK variant",
+      "master_asset_id": "asset:asset-2025-038",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-038-uk-2025-187.png",
+      "localisation_type": "subtitled",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-037-uk-2025-188",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-037 — UK variant",
+      "master_asset_id": "asset:asset-2025-037",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-037-uk-2025-188.png",
+      "localisation_type": "full_reshoot",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-044-uk-2025-189",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-044 — UK variant",
+      "master_asset_id": "asset:asset-2025-044",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-044-uk-2025-189.png",
+      "localisation_type": "full_reshoot",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-044-uk-2025-190",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-044 — UK variant",
+      "master_asset_id": "asset:asset-2025-044",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-044-uk-2025-190.png",
+      "localisation_type": "subtitled",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-044-uk-2025-191",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-044 — UK variant",
+      "master_asset_id": "asset:asset-2025-044",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-044-uk-2025-191.png",
+      "localisation_type": "voiced_over",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-041-us-2025-192",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-041 — US variant",
+      "master_asset_id": "asset:asset-2025-041",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-041-us-2025-192.png",
+      "localisation_type": "subtitled",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-041-us-2025-193",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-041 — US variant",
+      "master_asset_id": "asset:asset-2025-041",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-041-us-2025-193.png",
+      "localisation_type": "copy_only",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-041-us-2025-194",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-041 — US variant",
+      "master_asset_id": "asset:asset-2025-041",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-041-us-2025-194.png",
+      "localisation_type": "full_reshoot",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-038-us-2025-198",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-038 — US variant",
+      "master_asset_id": "asset:asset-2025-038",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-038-us-2025-198.png",
+      "localisation_type": "subtitled",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-038-us-2025-199",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-038 — US variant",
+      "master_asset_id": "asset:asset-2025-038",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-038-us-2025-199.png",
+      "localisation_type": "claims_adapted",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-042-us-2025-200",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-042 — US variant",
+      "master_asset_id": "asset:asset-2025-042",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-042-us-2025-200.png",
+      "localisation_type": "copy_only",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-044-us-2025-201",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-044 — US variant",
+      "master_asset_id": "asset:asset-2025-044",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-044-us-2025-201.png",
+      "localisation_type": "copy_only",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-044-us-2025-202",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-044 — US variant",
+      "master_asset_id": "asset:asset-2025-044",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-044-us-2025-202.png",
+      "localisation_type": "voiced_over",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-044-us-2025-203",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-044 — US variant",
+      "master_asset_id": "asset:asset-2025-044",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-044-us-2025-203.png",
+      "localisation_type": "voiced_over",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-041-de-2025-204",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-041 — DE variant",
+      "master_asset_id": "asset:asset-2025-041",
+      "market_id": "market:DE",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-041-de-2025-204.png",
+      "localisation_type": "copy_only",
+      "language_code": "de-DE"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-041-de-2025-205",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-041 — DE variant",
+      "master_asset_id": "asset:asset-2025-041",
+      "market_id": "market:DE",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-041-de-2025-205.png",
+      "localisation_type": "claims_adapted",
+      "language_code": "de-DE"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-041-de-2025-206",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-041 — DE variant",
+      "master_asset_id": "asset:asset-2025-041",
+      "market_id": "market:DE",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-041-de-2025-206.png",
+      "localisation_type": "subtitled",
+      "language_code": "de-DE"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-037-de-2025-210",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-037 — DE variant",
+      "master_asset_id": "asset:asset-2025-037",
+      "market_id": "market:DE",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-037-de-2025-210.png",
+      "localisation_type": "subtitled",
+      "language_code": "de-DE"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-038-de-2025-211",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-038 — DE variant",
+      "master_asset_id": "asset:asset-2025-038",
+      "market_id": "market:DE",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-038-de-2025-211.png",
+      "localisation_type": "claims_adapted",
+      "language_code": "de-DE"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-042-de-2025-212",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-042 — DE variant",
+      "master_asset_id": "asset:asset-2025-042",
+      "market_id": "market:DE",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-042-de-2025-212.png",
+      "localisation_type": "voiced_over",
+      "language_code": "de-DE"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-044-de-2025-213",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-044 — DE variant",
+      "master_asset_id": "asset:asset-2025-044",
+      "market_id": "market:DE",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-044-de-2025-213.png",
+      "localisation_type": "copy_only",
+      "language_code": "de-DE"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-044-de-2025-214",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-044 — DE variant",
+      "master_asset_id": "asset:asset-2025-044",
+      "market_id": "market:DE",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-044-de-2025-214.png",
+      "localisation_type": "copy_only",
+      "language_code": "de-DE"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-044-de-2025-215",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-044 — DE variant",
+      "master_asset_id": "asset:asset-2025-044",
+      "market_id": "market:DE",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-044-de-2025-215.png",
+      "localisation_type": "copy_only",
+      "language_code": "de-DE"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-041-fr-2025-216",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-041 — FR variant",
+      "master_asset_id": "asset:asset-2025-041",
+      "market_id": "market:FR",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-041-fr-2025-216.png",
+      "localisation_type": "copy_only",
+      "language_code": "fr-FR"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-041-fr-2025-217",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-041 — FR variant",
+      "master_asset_id": "asset:asset-2025-041",
+      "market_id": "market:FR",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-041-fr-2025-217.png",
+      "localisation_type": "copy_only",
+      "language_code": "fr-FR"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-041-fr-2025-218",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-041 — FR variant",
+      "master_asset_id": "asset:asset-2025-041",
+      "market_id": "market:FR",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-041-fr-2025-218.png",
+      "localisation_type": "subtitled",
+      "language_code": "fr-FR"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-039-fr-2025-222",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-039 — FR variant",
+      "master_asset_id": "asset:asset-2025-039",
+      "market_id": "market:FR",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-039-fr-2025-222.png",
+      "localisation_type": "copy_only",
+      "language_code": "fr-FR"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-040-fr-2025-223",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-040 — FR variant",
+      "master_asset_id": "asset:asset-2025-040",
+      "market_id": "market:FR",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-040-fr-2025-223.png",
+      "localisation_type": "full_reshoot",
+      "language_code": "fr-FR"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-040-fr-2025-224",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-040 — FR variant",
+      "master_asset_id": "asset:asset-2025-040",
+      "market_id": "market:FR",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-040-fr-2025-224.png",
+      "localisation_type": "voiced_over",
+      "language_code": "fr-FR"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-044-fr-2025-225",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-044 — FR variant",
+      "master_asset_id": "asset:asset-2025-044",
+      "market_id": "market:FR",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-044-fr-2025-225.png",
+      "localisation_type": "subtitled",
+      "language_code": "fr-FR"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-044-fr-2025-226",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-044 — FR variant",
+      "master_asset_id": "asset:asset-2025-044",
+      "market_id": "market:FR",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-044-fr-2025-226.png",
+      "localisation_type": "copy_only",
+      "language_code": "fr-FR"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-044-fr-2025-227",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-044 — FR variant",
+      "master_asset_id": "asset:asset-2025-044",
+      "market_id": "market:FR",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-044-fr-2025-227.png",
+      "localisation_type": "claims_adapted",
+      "language_code": "fr-FR"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-041-jp-2025-228",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-041 — JP variant",
+      "master_asset_id": "asset:asset-2025-041",
+      "market_id": "market:JP",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-041-jp-2025-228.png",
+      "localisation_type": "full_reshoot",
+      "language_code": "ja-JP"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-041-jp-2025-229",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-041 — JP variant",
+      "master_asset_id": "asset:asset-2025-041",
+      "market_id": "market:JP",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-041-jp-2025-229.png",
+      "localisation_type": "subtitled",
+      "language_code": "ja-JP"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-041-jp-2025-230",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-041 — JP variant",
+      "master_asset_id": "asset:asset-2025-041",
+      "market_id": "market:JP",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-041-jp-2025-230.png",
+      "localisation_type": "copy_only",
+      "language_code": "ja-JP"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-043-jp-2025-234",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-043 — JP variant",
+      "master_asset_id": "asset:asset-2025-043",
+      "market_id": "market:JP",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-043-jp-2025-234.png",
+      "localisation_type": "subtitled",
+      "language_code": "ja-JP"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-039-jp-2025-235",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-039 — JP variant",
+      "master_asset_id": "asset:asset-2025-039",
+      "market_id": "market:JP",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-039-jp-2025-235.png",
+      "localisation_type": "claims_adapted",
+      "language_code": "ja-JP"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-037-jp-2025-236",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-037 — JP variant",
+      "master_asset_id": "asset:asset-2025-037",
+      "market_id": "market:JP",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-037-jp-2025-236.png",
+      "localisation_type": "subtitled",
+      "language_code": "ja-JP"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-044-jp-2025-237",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-044 — JP variant",
+      "master_asset_id": "asset:asset-2025-044",
+      "market_id": "market:JP",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-044-jp-2025-237.png",
+      "localisation_type": "voiced_over",
+      "language_code": "ja-JP"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-044-jp-2025-238",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-044 — JP variant",
+      "master_asset_id": "asset:asset-2025-044",
+      "market_id": "market:JP",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-044-jp-2025-238.png",
+      "localisation_type": "subtitled",
+      "language_code": "ja-JP"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2025-044-jp-2025-239",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2025-044 — JP variant",
+      "master_asset_id": "asset:asset-2025-044",
+      "market_id": "market:JP",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-044-jp-2025-239.png",
+      "localisation_type": "claims_adapted",
+      "language_code": "ja-JP"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2026-047-uk-2026-005",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2026-047 — UK variant",
+      "master_asset_id": "asset:asset-2026-047",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2026-047-uk-2026-005.png",
+      "localisation_type": "subtitled",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2026-050-uk-2026-007",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2026-050 — UK variant",
+      "master_asset_id": "asset:asset-2026-050",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2026-050-uk-2026-007.png",
+      "localisation_type": "copy_only",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2026-046-uk-2026-008",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2026-046 — UK variant",
+      "master_asset_id": "asset:asset-2026-046",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2026-046-uk-2026-008.png",
+      "localisation_type": "copy_only",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2026-049-uk-2026-009",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2026-049 — UK variant",
+      "master_asset_id": "asset:asset-2026-049",
+      "market_id": "market:UK",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2026-049-uk-2026-009.png",
+      "localisation_type": "full_reshoot",
+      "language_code": "en-GB"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2026-048-us-2026-010",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2026-048 — US variant",
+      "master_asset_id": "asset:asset-2026-048",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2026-048-us-2026-010.png",
+      "localisation_type": "copy_only",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2026-051-us-2026-012",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2026-051 — US variant",
+      "master_asset_id": "asset:asset-2026-051",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2026-051-us-2026-012.png",
+      "localisation_type": "subtitled",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2026-046-us-2026-013",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2026-046 — US variant",
+      "master_asset_id": "asset:asset-2026-046",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2026-046-us-2026-013.png",
+      "localisation_type": "claims_adapted",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2026-049-us-2026-014",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2026-049 — US variant",
+      "master_asset_id": "asset:asset-2026-049",
+      "market_id": "market:US",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2026-049-us-2026-014.png",
+      "localisation_type": "copy_only",
+      "language_code": "en-US"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2026-047-de-2026-015",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2026-047 — DE variant",
+      "master_asset_id": "asset:asset-2026-047",
+      "market_id": "market:DE",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2026-047-de-2026-015.png",
+      "localisation_type": "voiced_over",
+      "language_code": "de-DE"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2026-050-de-2026-017",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2026-050 — DE variant",
+      "master_asset_id": "asset:asset-2026-050",
+      "market_id": "market:DE",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2026-050-de-2026-017.png",
+      "localisation_type": "subtitled",
+      "language_code": "de-DE"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2026-046-de-2026-018",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2026-046 — DE variant",
+      "master_asset_id": "asset:asset-2026-046",
+      "market_id": "market:DE",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2026-046-de-2026-018.png",
+      "localisation_type": "copy_only",
+      "language_code": "de-DE"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2026-049-de-2026-019",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2026-049 — DE variant",
+      "master_asset_id": "asset:asset-2026-049",
+      "market_id": "market:DE",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2026-049-de-2026-019.png",
+      "localisation_type": "full_reshoot",
+      "language_code": "de-DE"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2026-047-fr-2026-020",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2026-047 — FR variant",
+      "master_asset_id": "asset:asset-2026-047",
+      "market_id": "market:FR",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2026-047-fr-2026-020.png",
+      "localisation_type": "voiced_over",
+      "language_code": "fr-FR"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2026-051-fr-2026-022",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2026-051 — FR variant",
+      "master_asset_id": "asset:asset-2026-051",
+      "market_id": "market:FR",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2026-051-fr-2026-022.png",
+      "localisation_type": "subtitled",
+      "language_code": "fr-FR"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2026-046-fr-2026-023",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2026-046 — FR variant",
+      "master_asset_id": "asset:asset-2026-046",
+      "market_id": "market:FR",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2026-046-fr-2026-023.png",
+      "localisation_type": "subtitled",
+      "language_code": "fr-FR"
+    }
+  },
+  {
+    "id": "asset-variant:asset-2026-049-fr-2026-024",
+    "type": "AssetVariant",
+    "properties": {
+      "name": "asset-2026-049 — FR variant",
+      "master_asset_id": "asset:asset-2026-049",
+      "market_id": "market:FR",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2026-049-fr-2026-024.png",
+      "localisation_type": "copy_only",
+      "language_code": "fr-FR"
+    }
+  }
+]

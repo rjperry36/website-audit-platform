@@ -1,0 +1,162 @@
+[
+    {
+        "id": "product:retinoid-pm-serum",
+        "type": "Product",
+        "properties": {
+            "name": "Retinoid PM Serum",
+            "sku": "AUR-RPS-30",
+            "line": "PM",
+            "ritual": "PM phase — renewal",
+            "size_ml": 30,
+            "cogs_gbp": 22.50,
+            "rrp_gbp": 92.00,
+            "margin_pct": 0.755,
+            "hero_ingredients": ["0.3% encapsulated retinaldehyde", "plant peptides", "niacinamide"],
+            "launch_date": "2020-04-01"
+        }
+    },
+    {
+        "id": "product:bakuchiol-day-fluid",
+        "type": "Product",
+        "properties": {
+            "name": "Bakuchiol Day Fluid",
+            "sku": "AUR-BDF-30",
+            "line": "AM",
+            "ritual": "AM phase — protection + balance",
+            "size_ml": 30,
+            "cogs_gbp": 16.00,
+            "rrp_gbp": 62.00,
+            "margin_pct": 0.742,
+            "hero_ingredients": ["1.5% bakuchiol", "vitamin C derivative", "oat ceramides"],
+            "launch_date": "2020-04-01"
+        }
+    },
+    {
+        "id": "product:peptide-repair-cream",
+        "type": "Product",
+        "properties": {
+            "name": "Peptide Repair Cream",
+            "sku": "AUR-PRC-50",
+            "line": "PM",
+            "ritual": "PM phase — second step, overnight",
+            "size_ml": 50,
+            "cogs_gbp": 21.00,
+            "rrp_gbp": 85.00,
+            "margin_pct": 0.753,
+            "hero_ingredients": ["copper tripeptide-1", "ceramide complex", "squalane"],
+            "launch_date": "2020-09-15"
+        }
+    },
+    {
+        "id": "product:ceramide-repair-cream",
+        "type": "Product",
+        "properties": {
+            "name": "Ceramide Repair Cream",
+            "sku": "AUR-CRC-50",
+            "line": "Always-on",
+            "ritual": "Always-on — moisture and barrier",
+            "size_ml": 50,
+            "cogs_gbp": 17.00,
+            "rrp_gbp": 68.00,
+            "margin_pct": 0.750,
+            "hero_ingredients": ["ceramide NP", "ceramide AP", "phytosphingosine"],
+            "launch_date": "2019-11-01"
+        }
+    },
+    {
+        "id": "product:niacinamide-tone-veil",
+        "type": "Product",
+        "properties": {
+            "name": "Niacinamide Tone Veil",
+            "sku": "AUR-NTV-30",
+            "line": "AM",
+            "ritual": "AM phase — tone balance",
+            "size_ml": 30,
+            "cogs_gbp": 12.00,
+            "rrp_gbp": 48.00,
+            "margin_pct": 0.750,
+            "hero_ingredients": ["10% niacinamide", "zinc PCA", "panthenol"],
+            "launch_date": "2021-03-01"
+        }
+    },
+    {
+        "id": "product:mineral-defence-spf50",
+        "type": "Product",
+        "properties": {
+            "name": "Mineral Defence SPF50",
+            "sku": "AUR-MDS-50",
+            "line": "AM",
+            "ritual": "AM phase — final step",
+            "size_ml": 50,
+            "cogs_gbp": 15.00,
+            "rrp_gbp": 58.00,
+            "margin_pct": 0.741,
+            "hero_ingredients": ["non-nano zinc oxide", "titanium dioxide", "vitamin E"],
+            "launch_date": "2021-05-10"
+        }
+    },
+    {
+        "id": "product:resurfacing-ritual-oil",
+        "type": "Product",
+        "properties": {
+            "name": "Resurfacing Ritual Oil",
+            "sku": "AUR-RRO-30",
+            "line": "PM",
+            "ritual": "PM phase — twice weekly resurfacing",
+            "size_ml": 30,
+            "cogs_gbp": 20.00,
+            "rrp_gbp": 78.00,
+            "margin_pct": 0.744,
+            "hero_ingredients": ["bakuchiol", "rosehip oil", "0.5% lactic acid"],
+            "launch_date": "2022-02-14"
+        }
+    },
+    {
+        "id": "product:clearing-cleanser",
+        "type": "Product",
+        "properties": {
+            "name": "Clearing Cleanser",
+            "sku": "AUR-CC-150",
+            "line": "Always-on",
+            "ritual": "Always-on — daily cleansing",
+            "size_ml": 150,
+            "cogs_gbp": 10.00,
+            "rrp_gbp": 42.00,
+            "margin_pct": 0.762,
+            "hero_ingredients": ["amino acid surfactants", "centella asiatica", "glycerin"],
+            "launch_date": "2019-11-01"
+        }
+    },
+    {
+        "id": "product:hydrating-mist",
+        "type": "Product",
+        "properties": {
+            "name": "Hydrating Mist",
+            "sku": "AUR-HM-100",
+            "line": "Always-on",
+            "ritual": "Always-on — between phases",
+            "size_ml": 100,
+            "cogs_gbp": 10.50,
+            "rrp_gbp": 45.00,
+            "margin_pct": 0.767,
+            "hero_ingredients": ["hyaluronic acid (3 weights)", "rose water", "panthenol"],
+            "launch_date": "2022-07-20"
+        }
+    },
+    {
+        "id": "product:the-ritual-set",
+        "type": "Product",
+        "properties": {
+            "name": "The Ritual Set",
+            "sku": "AUR-SET-RTL",
+            "line": "Always-on",
+            "ritual": "Discovery — AM + PM starter ritual",
+            "size_ml": 0,
+            "cogs_gbp": 42.00,
+            "rrp_gbp": 180.00,
+            "margin_pct": 0.767,
+            "hero_ingredients": ["Bakuchiol Day Fluid (30ml)", "Retinoid PM Serum (30ml)", "Ceramide Repair Cream (50ml)"],
+            "launch_date": "2021-11-01"
+        }
+    }
+]

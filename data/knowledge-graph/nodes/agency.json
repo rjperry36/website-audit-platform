@@ -1,0 +1,33 @@
+[
+    {
+        "id": "agency:halo-helix",
+        "type": "Agency",
+        "properties": {
+            "name": "Halo & Helix",
+            "founded_year": 2014,
+            "headcount": 40,
+            "offices": [
+                {
+                    "city": "London",
+                    "country": "UK",
+                    "is_hq": true,
+                    "headcount": 26
+                },
+                {
+                    "city": "New York",
+                    "country": "US",
+                    "is_hq": false,
+                    "headcount": 9
+                },
+                {
+                    "city": "Singapore",
+                    "country": "SG",
+                    "is_hq": false,
+                    "headcount": 5
+                }
+            ],
+            "website": "https://www.haloandhelix.example",
+            "positioning": "Independent integrated agency for brands that take craft and evidence seriously."
+        }
+    }
+]

@@ -1,0 +1,563 @@
+[
+  {
+    "id": "asset:asset-2024-001",
+    "type": "Asset",
+    "properties": {
+      "name": "Bakuchiol Day Fluid — SOCIAL_MEDIA social_template",
+      "asset_type": "social_template",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-001.svg",
+      "format": "svg",
+      "depicts_product_id": "product:bakuchiol-day-fluid"
+    }
+  },
+  {
+    "id": "asset:asset-2024-002",
+    "type": "Asset",
+    "properties": {
+      "name": "Mineral Defence SPF50 — SOCIAL_MEDIA social_template",
+      "asset_type": "social_template",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-002.svg",
+      "format": "svg",
+      "depicts_product_id": "product:mineral-defence-spf50"
+    }
+  },
+  {
+    "id": "asset:asset-2024-003",
+    "type": "Asset",
+    "properties": {
+      "name": "Ceramide Repair Cream — D2C product_image",
+      "asset_type": "product_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-003.png",
+      "format": "png",
+      "depicts_product_id": "product:ceramide-repair-cream"
+    }
+  },
+  {
+    "id": "asset:asset-2024-004",
+    "type": "Asset",
+    "properties": {
+      "name": "Retinoid PM Serum — ECRM social_template",
+      "asset_type": "social_template",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-004.svg",
+      "format": "svg",
+      "depicts_product_id": "product:retinoid-pm-serum"
+    }
+  },
+  {
+    "id": "asset:asset-2024-005",
+    "type": "Asset",
+    "properties": {
+      "name": "Retinoid PM Serum — ECRM social_template",
+      "asset_type": "social_template",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-005.svg",
+      "format": "svg",
+      "depicts_product_id": "product:retinoid-pm-serum"
+    }
+  },
+  {
+    "id": "asset:asset-2024-006",
+    "type": "Asset",
+    "properties": {
+      "name": "The Ritual Set — D2C product_image",
+      "asset_type": "product_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-006.png",
+      "format": "png",
+      "depicts_product_id": "product:the-ritual-set"
+    }
+  },
+  {
+    "id": "asset:asset-2024-007",
+    "type": "Asset",
+    "properties": {
+      "name": "Clearing Cleanser — D2C product_image",
+      "asset_type": "product_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-007.png",
+      "format": "png",
+      "depicts_product_id": "product:clearing-cleanser"
+    }
+  },
+  {
+    "id": "asset:asset-2024-008",
+    "type": "Asset",
+    "properties": {
+      "name": "Clearing Cleanser — OOH lifestyle_image",
+      "asset_type": "lifestyle_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-008.png",
+      "format": "png",
+      "depicts_product_id": "product:clearing-cleanser"
+    }
+  },
+  {
+    "id": "asset:asset-2024-009",
+    "type": "Asset",
+    "properties": {
+      "name": "Peptide Repair Cream — OOH lifestyle_image",
+      "asset_type": "lifestyle_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-009.png",
+      "format": "png",
+      "depicts_product_id": "product:peptide-repair-cream"
+    }
+  },
+  {
+    "id": "asset:asset-2024-010",
+    "type": "Asset",
+    "properties": {
+      "name": "Mineral Defence SPF50 — ECRM social_template",
+      "asset_type": "social_template",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-010.svg",
+      "format": "svg",
+      "depicts_product_id": "product:mineral-defence-spf50"
+    }
+  },
+  {
+    "id": "asset:asset-2024-011",
+    "type": "Asset",
+    "properties": {
+      "name": "Retinoid PM Serum — ECRM social_template",
+      "asset_type": "social_template",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-011.svg",
+      "format": "svg",
+      "depicts_product_id": "product:retinoid-pm-serum"
+    }
+  },
+  {
+    "id": "asset:asset-2024-012",
+    "type": "Asset",
+    "properties": {
+      "name": "Clearing Cleanser — D2C product_image",
+      "asset_type": "product_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-012.png",
+      "format": "png",
+      "depicts_product_id": "product:clearing-cleanser"
+    }
+  },
+  {
+    "id": "asset:asset-2024-013",
+    "type": "Asset",
+    "properties": {
+      "name": "Niacinamide Tone Veil — D2C product_image",
+      "asset_type": "product_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-013.png",
+      "format": "png",
+      "depicts_product_id": "product:niacinamide-tone-veil"
+    }
+  },
+  {
+    "id": "asset:asset-2024-014",
+    "type": "Asset",
+    "properties": {
+      "name": "Mineral Defence SPF50 — SEO product_image",
+      "asset_type": "product_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-014.png",
+      "format": "png",
+      "depicts_product_id": "product:mineral-defence-spf50"
+    }
+  },
+  {
+    "id": "asset:asset-2024-015",
+    "type": "Asset",
+    "properties": {
+      "name": "Retinoid PM Serum — SEO product_image",
+      "asset_type": "product_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-015.png",
+      "format": "png",
+      "depicts_product_id": "product:retinoid-pm-serum"
+    }
+  },
+  {
+    "id": "asset:asset-2024-016",
+    "type": "Asset",
+    "properties": {
+      "name": "Mineral Defence SPF50 — PAID_MEDIA product_image",
+      "asset_type": "product_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-016.png",
+      "format": "png",
+      "depicts_product_id": "product:mineral-defence-spf50"
+    }
+  },
+  {
+    "id": "asset:asset-2024-017",
+    "type": "Asset",
+    "properties": {
+      "name": "Bakuchiol Day Fluid — SEO product_image",
+      "asset_type": "product_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-017.png",
+      "format": "png",
+      "depicts_product_id": "product:bakuchiol-day-fluid"
+    }
+  },
+  {
+    "id": "asset:asset-2024-018",
+    "type": "Asset",
+    "properties": {
+      "name": "The Ritual Set — SEO product_image",
+      "asset_type": "product_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2024-018.png",
+      "format": "png",
+      "depicts_product_id": "product:the-ritual-set"
+    }
+  },
+  {
+    "id": "asset:asset-2025-019",
+    "type": "Asset",
+    "properties": {
+      "name": "Ceramide Repair Cream — D2C product_image",
+      "asset_type": "product_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-019.png",
+      "format": "png",
+      "depicts_product_id": "product:ceramide-repair-cream"
+    }
+  },
+  {
+    "id": "asset:asset-2025-020",
+    "type": "Asset",
+    "properties": {
+      "name": "The Ritual Set — SOCIAL_MEDIA lifestyle_image",
+      "asset_type": "lifestyle_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-020.png",
+      "format": "png",
+      "depicts_product_id": "product:the-ritual-set"
+    }
+  },
+  {
+    "id": "asset:asset-2025-021",
+    "type": "Asset",
+    "properties": {
+      "name": "Bakuchiol Day Fluid — SOCIAL_MEDIA lifestyle_image",
+      "asset_type": "lifestyle_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-021.png",
+      "format": "png",
+      "depicts_product_id": "product:bakuchiol-day-fluid"
+    }
+  },
+  {
+    "id": "asset:asset-2025-022",
+    "type": "Asset",
+    "properties": {
+      "name": "Hydrating Mist — D2C product_image",
+      "asset_type": "product_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-022.png",
+      "format": "png",
+      "depicts_product_id": "product:hydrating-mist"
+    }
+  },
+  {
+    "id": "asset:asset-2025-023",
+    "type": "Asset",
+    "properties": {
+      "name": "Ceramide Repair Cream — D2C lifestyle_image",
+      "asset_type": "lifestyle_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-023.png",
+      "format": "png",
+      "depicts_product_id": "product:ceramide-repair-cream"
+    }
+  },
+  {
+    "id": "asset:asset-2025-024",
+    "type": "Asset",
+    "properties": {
+      "name": "Ceramide Repair Cream — D2C lifestyle_image",
+      "asset_type": "lifestyle_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-024.png",
+      "format": "png",
+      "depicts_product_id": "product:ceramide-repair-cream"
+    }
+  },
+  {
+    "id": "asset:asset-2025-025",
+    "type": "Asset",
+    "properties": {
+      "name": "Retinoid PM Serum — PAID_MEDIA product_image",
+      "asset_type": "product_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-025.png",
+      "format": "png",
+      "depicts_product_id": "product:retinoid-pm-serum"
+    }
+  },
+  {
+    "id": "asset:asset-2025-026",
+    "type": "Asset",
+    "properties": {
+      "name": "Ceramide Repair Cream — PAID_MEDIA product_image",
+      "asset_type": "product_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-026.png",
+      "format": "png",
+      "depicts_product_id": "product:ceramide-repair-cream"
+    }
+  },
+  {
+    "id": "asset:asset-2025-027",
+    "type": "Asset",
+    "properties": {
+      "name": "Retinoid PM Serum — EVENT product_image",
+      "asset_type": "product_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-027.png",
+      "format": "png",
+      "depicts_product_id": "product:retinoid-pm-serum"
+    }
+  },
+  {
+    "id": "asset:asset-2025-028",
+    "type": "Asset",
+    "properties": {
+      "name": "Niacinamide Tone Veil — PAID_MEDIA product_image",
+      "asset_type": "product_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-028.png",
+      "format": "png",
+      "depicts_product_id": "product:niacinamide-tone-veil"
+    }
+  },
+  {
+    "id": "asset:asset-2025-029",
+    "type": "Asset",
+    "properties": {
+      "name": "Ceramide Repair Cream — PAID_MEDIA product_image",
+      "asset_type": "product_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-029.png",
+      "format": "png",
+      "depicts_product_id": "product:ceramide-repair-cream"
+    }
+  },
+  {
+    "id": "asset:asset-2025-030",
+    "type": "Asset",
+    "properties": {
+      "name": "Ceramide Repair Cream — OOH ooh_template",
+      "asset_type": "ooh_template",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-030.svg",
+      "format": "svg",
+      "depicts_product_id": "product:ceramide-repair-cream"
+    }
+  },
+  {
+    "id": "asset:asset-2025-031",
+    "type": "Asset",
+    "properties": {
+      "name": "Peptide Repair Cream — PAID_MEDIA product_image",
+      "asset_type": "product_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-031.png",
+      "format": "png",
+      "depicts_product_id": "product:peptide-repair-cream"
+    }
+  },
+  {
+    "id": "asset:asset-2025-032",
+    "type": "Asset",
+    "properties": {
+      "name": "Hydrating Mist — PAID_MEDIA product_image",
+      "asset_type": "product_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-032.png",
+      "format": "png",
+      "depicts_product_id": "product:hydrating-mist"
+    }
+  },
+  {
+    "id": "asset:asset-2025-033",
+    "type": "Asset",
+    "properties": {
+      "name": "Mineral Defence SPF50 — PAID_MEDIA product_image",
+      "asset_type": "product_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-033.png",
+      "format": "png",
+      "depicts_product_id": "product:mineral-defence-spf50"
+    }
+  },
+  {
+    "id": "asset:asset-2025-034",
+    "type": "Asset",
+    "properties": {
+      "name": "Peptide Repair Cream — SOCIAL_MEDIA product_image",
+      "asset_type": "product_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-034.png",
+      "format": "png",
+      "depicts_product_id": "product:peptide-repair-cream"
+    }
+  },
+  {
+    "id": "asset:asset-2025-035",
+    "type": "Asset",
+    "properties": {
+      "name": "The Ritual Set — SOCIAL_MEDIA product_image",
+      "asset_type": "product_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-035.png",
+      "format": "png",
+      "depicts_product_id": "product:the-ritual-set"
+    }
+  },
+  {
+    "id": "asset:asset-2025-036",
+    "type": "Asset",
+    "properties": {
+      "name": "Peptide Repair Cream — SOCIAL_MEDIA lifestyle_image",
+      "asset_type": "lifestyle_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-036.png",
+      "format": "png",
+      "depicts_product_id": "product:peptide-repair-cream"
+    }
+  },
+  {
+    "id": "asset:asset-2025-037",
+    "type": "Asset",
+    "properties": {
+      "name": "The Ritual Set — SEO product_image",
+      "asset_type": "product_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-037.png",
+      "format": "png",
+      "depicts_product_id": "product:the-ritual-set"
+    }
+  },
+  {
+    "id": "asset:asset-2025-038",
+    "type": "Asset",
+    "properties": {
+      "name": "Peptide Repair Cream — SEO product_image",
+      "asset_type": "product_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-038.png",
+      "format": "png",
+      "depicts_product_id": "product:peptide-repair-cream"
+    }
+  },
+  {
+    "id": "asset:asset-2025-039",
+    "type": "Asset",
+    "properties": {
+      "name": "Resurfacing Ritual Oil — SEO product_image",
+      "asset_type": "product_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-039.png",
+      "format": "png",
+      "depicts_product_id": "product:resurfacing-ritual-oil"
+    }
+  },
+  {
+    "id": "asset:asset-2025-040",
+    "type": "Asset",
+    "properties": {
+      "name": "Resurfacing Ritual Oil — SEO product_image",
+      "asset_type": "product_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-040.png",
+      "format": "png",
+      "depicts_product_id": "product:resurfacing-ritual-oil"
+    }
+  },
+  {
+    "id": "asset:asset-2025-041",
+    "type": "Asset",
+    "properties": {
+      "name": "Clearing Cleanser — PAID_MEDIA product_image",
+      "asset_type": "product_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-041.png",
+      "format": "png",
+      "depicts_product_id": "product:clearing-cleanser"
+    }
+  },
+  {
+    "id": "asset:asset-2025-042",
+    "type": "Asset",
+    "properties": {
+      "name": "Niacinamide Tone Veil — SEO product_image",
+      "asset_type": "product_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-042.png",
+      "format": "png",
+      "depicts_product_id": "product:niacinamide-tone-veil"
+    }
+  },
+  {
+    "id": "asset:asset-2025-043",
+    "type": "Asset",
+    "properties": {
+      "name": "Niacinamide Tone Veil — SEO product_image",
+      "asset_type": "product_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-043.png",
+      "format": "png",
+      "depicts_product_id": "product:niacinamide-tone-veil"
+    }
+  },
+  {
+    "id": "asset:asset-2025-044",
+    "type": "Asset",
+    "properties": {
+      "name": "Ceramide Repair Cream — D2C product_image",
+      "asset_type": "product_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-044.png",
+      "format": "png",
+      "depicts_product_id": "product:ceramide-repair-cream"
+    }
+  },
+  {
+    "id": "asset:asset-2025-045",
+    "type": "Asset",
+    "properties": {
+      "name": "Clearing Cleanser — SEO product_image",
+      "asset_type": "product_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2025-045.png",
+      "format": "png",
+      "depicts_product_id": "product:clearing-cleanser"
+    }
+  },
+  {
+    "id": "asset:asset-2026-046",
+    "type": "Asset",
+    "properties": {
+      "name": "The Ritual Set — PAID_MEDIA product_image",
+      "asset_type": "product_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2026-046.png",
+      "format": "png",
+      "depicts_product_id": "product:the-ritual-set"
+    }
+  },
+  {
+    "id": "asset:asset-2026-047",
+    "type": "Asset",
+    "properties": {
+      "name": "Mineral Defence SPF50 — SOCIAL_MEDIA lifestyle_image",
+      "asset_type": "lifestyle_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2026-047.png",
+      "format": "png",
+      "depicts_product_id": "product:mineral-defence-spf50"
+    }
+  },
+  {
+    "id": "asset:asset-2026-048",
+    "type": "Asset",
+    "properties": {
+      "name": "Niacinamide Tone Veil — SOCIAL_MEDIA social_template",
+      "asset_type": "social_template",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2026-048.svg",
+      "format": "svg",
+      "depicts_product_id": "product:niacinamide-tone-veil"
+    }
+  },
+  {
+    "id": "asset:asset-2026-049",
+    "type": "Asset",
+    "properties": {
+      "name": "Resurfacing Ritual Oil — OOH lifestyle_image",
+      "asset_type": "lifestyle_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2026-049.png",
+      "format": "png",
+      "depicts_product_id": "product:resurfacing-ritual-oil"
+    }
+  },
+  {
+    "id": "asset:asset-2026-050",
+    "type": "Asset",
+    "properties": {
+      "name": "Clearing Cleanser — D2C product_image",
+      "asset_type": "product_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2026-050.png",
+      "format": "png",
+      "depicts_product_id": "product:clearing-cleanser"
+    }
+  },
+  {
+    "id": "asset:asset-2026-051",
+    "type": "Asset",
+    "properties": {
+      "name": "Clearing Cleanser — D2C product_image",
+      "asset_type": "product_image",
+      "file_path": "data/knowledge-graph/brand-book/assets/.placeholders/asset-2026-051.png",
+      "format": "png",
+      "depicts_product_id": "product:clearing-cleanser"
+    }
+  }
+]

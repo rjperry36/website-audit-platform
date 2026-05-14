@@ -1,0 +1,11 @@
+[
+    { "id": "category:beauty",        "type": "Category", "properties": { "name": "Beauty (umbrella)" } },
+    { "id": "category:skincare",      "type": "Category", "properties": { "name": "Skincare", "parent_category_id": "category:beauty" } },
+    { "id": "category:haircare",      "type": "Category", "properties": { "name": "Haircare", "parent_category_id": "category:beauty" } },
+    { "id": "category:fragrance",     "type": "Category", "properties": { "name": "Fragrance", "parent_category_id": "category:beauty" } },
+    { "id": "category:wellness",      "type": "Category", "properties": { "name": "Wellness & supplements" } },
+    { "id": "category:food-beverage", "type": "Category", "properties": { "name": "Food & beverage" } },
+    { "id": "category:fashion",       "type": "Category", "properties": { "name": "Fashion & apparel" } },
+    { "id": "category:tech",          "type": "Category", "properties": { "name": "Consumer technology" } },
+    { "id": "category:health-pharma", "type": "Category", "properties": { "name": "Health & pharma" } }
+]
