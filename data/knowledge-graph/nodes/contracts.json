@@ -1,0 +1,47 @@
+[
+    {
+        "id": "contract:aurelune-master-2024",
+        "type": "Contract",
+        "properties": {
+            "name": "Aurelune × Halo & Helix — Global Master Services Agreement",
+            "brand_id": "brand:aurelune",
+            "agency_id": "agency:halo-helix",
+            "start_date": "2024-01-01",
+            "end_date": "2026-12-31",
+            "currency": "GBP",
+            "annual_fee": 2400000,
+            "fx_policy": "Local cost lines invoiced in market currency; converted to GBP at month-end rate from the contract's fixed FX table. Variance ≤2% absorbed by agency.",
+            "scope_notes": "Global strategy, creative, production. Local-market activation in UK and US. In-market partner production in DE / FR / JP / CN. 3-year initial term, 12-month renewal options."
+        }
+    },
+    {
+        "id": "contract:aurelune-jp-addendum-2024",
+        "type": "Contract",
+        "properties": {
+            "name": "Aurelune Japan — Local Activation Addendum",
+            "brand_id": "brand:aurelune",
+            "agency_id": "agency:halo-helix",
+            "start_date": "2024-04-01",
+            "end_date": "2026-12-31",
+            "currency": "JPY",
+            "annual_fee": 48000000,
+            "fx_policy": "Invoiced in JPY. Subject to master MSA terms.",
+            "scope_notes": "Adds local-market production and channel activation in Japan, partnering with a Tokyo-based production house. Approval chain includes the JP brand team."
+        }
+    },
+    {
+        "id": "contract:aurelune-cn-addendum-2024",
+        "type": "Contract",
+        "properties": {
+            "name": "Aurelune Greater China — Cross-Border Activation Addendum",
+            "brand_id": "brand:aurelune",
+            "agency_id": "agency:halo-helix",
+            "start_date": "2024-09-01",
+            "end_date": "2026-12-31",
+            "currency": "CNY",
+            "annual_fee": 3600000,
+            "fx_policy": "Invoiced in CNY. Subject to master MSA terms.",
+            "scope_notes": "Cross-border activation only (no mainland on-the-ground media). Xiaohongshu UGC programme and Tier-1 airport OOH. All claims pre-cleared against cross-border regulation."
+        }
+    }
+]

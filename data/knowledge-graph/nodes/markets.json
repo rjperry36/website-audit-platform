@@ -1,0 +1,68 @@
+[
+    {
+        "id": "market:UK",
+        "type": "Market",
+        "properties": {
+            "ref_id": "UK",
+            "label": "United Kingdom",
+            "currency": "GBP",
+            "fx_to_gbp": 1.0,
+            "team_size_local": 8
+        }
+    },
+    {
+        "id": "market:US",
+        "type": "Market",
+        "properties": {
+            "ref_id": "US",
+            "label": "United States",
+            "currency": "USD",
+            "fx_to_gbp": 0.79,
+            "team_size_local": 9
+        }
+    },
+    {
+        "id": "market:DE",
+        "type": "Market",
+        "properties": {
+            "ref_id": "DE",
+            "label": "Germany",
+            "currency": "EUR",
+            "fx_to_gbp": 0.85,
+            "team_size_local": 4
+        }
+    },
+    {
+        "id": "market:FR",
+        "type": "Market",
+        "properties": {
+            "ref_id": "FR",
+            "label": "France",
+            "currency": "EUR",
+            "fx_to_gbp": 0.85,
+            "team_size_local": 4
+        }
+    },
+    {
+        "id": "market:JP",
+        "type": "Market",
+        "properties": {
+            "ref_id": "JP",
+            "label": "Japan",
+            "currency": "JPY",
+            "fx_to_gbp": 0.0052,
+            "team_size_local": 3
+        }
+    },
+    {
+        "id": "market:CN",
+        "type": "Market",
+        "properties": {
+            "ref_id": "CN",
+            "label": "China (cross-border)",
+            "currency": "CNY",
+            "fx_to_gbp": 0.11,
+            "team_size_local": 2
+        }
+    }
+]

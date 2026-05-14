@@ -1,0 +1,54 @@
+[
+    { "id": "kpi:aided-brand-awareness-uk",       "type": "KPI", "properties": { "name": "Aided brand awareness — UK",          "metric": "Aided awareness (consumer panel)",    "target_value": 14,    "unit": "%",   "baseline_value": 11 } },
+    { "id": "kpi:aided-brand-awareness-us",       "type": "KPI", "properties": { "name": "Aided brand awareness — US",          "metric": "Aided awareness (consumer panel)",    "target_value": 12,    "unit": "%",   "baseline_value": 7 } },
+    { "id": "kpi:aided-brand-awareness-de",       "type": "KPI", "properties": { "name": "Aided brand awareness — DE",          "metric": "Aided awareness (consumer panel)",    "target_value": 9,     "unit": "%",   "baseline_value": 4 } },
+    { "id": "kpi:aided-brand-awareness-fr",       "type": "KPI", "properties": { "name": "Aided brand awareness — FR",          "metric": "Aided awareness (consumer panel)",    "target_value": 8,     "unit": "%",   "baseline_value": 4 } },
+    { "id": "kpi:aided-brand-awareness-jp",       "type": "KPI", "properties": { "name": "Aided brand awareness — JP",          "metric": "Aided awareness (consumer panel)",    "target_value": 5,     "unit": "%",   "baseline_value": 1 } },
+    { "id": "kpi:share-of-voice-chronobiology",   "type": "KPI", "properties": { "name": "Share of voice — chronobiology / circadian skincare", "metric": "SoV (press + AI answer engines)", "target_value": 48,    "unit": "%",   "baseline_value": 22 } },
+    { "id": "kpi:editorial-features-tier-1",      "type": "KPI", "properties": { "name": "Tier-1 press features (Vogue / Allure / FT / Süddeutsche / Madame Figaro / Vogue Japan)", "metric": "Count", "target_value": 12, "unit": "features", "baseline_value": 4 } },
+    { "id": "kpi:white-paper-downloads",          "type": "KPI", "properties": { "name": "White-paper downloads",                "metric": "Annual count",                       "target_value": 18000, "unit": "downloads", "baseline_value": 7200 } },
+
+    { "id": "kpi:uk-d2c-revenue",                 "type": "KPI", "properties": { "name": "UK D2C revenue",                      "metric": "Revenue (GBP)",                       "target_value": 9800000,  "unit": "GBP", "baseline_value": 7250000 } },
+    { "id": "kpi:us-d2c-revenue",                 "type": "KPI", "properties": { "name": "US D2C revenue",                      "metric": "Revenue (GBP equiv.)",                "target_value": 12400000, "unit": "GBP", "baseline_value": 7900000 } },
+    { "id": "kpi:de-d2c-revenue",                 "type": "KPI", "properties": { "name": "DE D2C revenue",                      "metric": "Revenue (GBP equiv.)",                "target_value": 4800000,  "unit": "GBP", "baseline_value": 3650000 } },
+    { "id": "kpi:fr-d2c-revenue",                 "type": "KPI", "properties": { "name": "FR D2C revenue",                      "metric": "Revenue (GBP equiv.)",                "target_value": 4400000,  "unit": "GBP", "baseline_value": 3100000 } },
+    { "id": "kpi:jp-revenue",                     "type": "KPI", "properties": { "name": "JP revenue (D2C + retail)",            "metric": "Revenue (GBP equiv.)",                "target_value": 1250000,  "unit": "GBP", "baseline_value": 0 } },
+    { "id": "kpi:cn-revenue",                     "type": "KPI", "properties": { "name": "CN cross-border revenue",              "metric": "Revenue (GBP equiv.)",                "target_value": 480000,   "unit": "GBP", "baseline_value": 0 } },
+
+    { "id": "kpi:us-new-customers-2025",          "type": "KPI", "properties": { "name": "US new customers 2025",                "metric": "Annual count",                       "target_value": 60000, "unit": "customers", "baseline_value": 38000 } },
+    { "id": "kpi:sephora-door-count-us",          "type": "KPI", "properties": { "name": "Sephora US doors active",              "metric": "Door count",                          "target_value": 240,   "unit": "doors",     "baseline_value": 0 } },
+    { "id": "kpi:sephora-sell-through-y1",        "type": "KPI", "properties": { "name": "Sephora US Year-1 sell-through",       "metric": "Revenue (USD)",                       "target_value": 4500000, "unit": "USD",     "baseline_value": 0 } },
+    { "id": "kpi:sephora-rank-treatments",        "type": "KPI", "properties": { "name": "Sephora US rank — Skincare Treatments", "metric": "Category rank",                       "target_value": 15,    "unit": "rank",      "baseline_value": null } },
+
+    { "id": "kpi:retinoid-pm-share-of-revenue",   "type": "KPI", "properties": { "name": "Retinoid PM Serum share of revenue",   "metric": "% of revenue mix",                    "target_value": 35,    "unit": "%",         "baseline_value": 41 } },
+    { "id": "kpi:hero-set-attach-rate",           "type": "KPI", "properties": { "name": "Ritual Set attach rate",               "metric": "% of new customers buying set first", "target_value": 22,    "unit": "%",         "baseline_value": 14 } },
+
+    { "id": "kpi:loyalty-enrolment-pct",          "type": "KPI", "properties": { "name": "Loyalty enrolment %",                  "metric": "% of D2C buyers enrolled",            "target_value": 35,    "unit": "%",         "baseline_value": 18 } },
+    { "id": "kpi:loyalty-member-repeat-uplift",   "type": "KPI", "properties": { "name": "Loyalty member repeat uplift",         "metric": "pp uplift vs non-members",            "target_value": 12,    "unit": "pp",        "baseline_value": 6 } },
+    { "id": "kpi:loyalty-ltv-uplift",             "type": "KPI", "properties": { "name": "Loyalty member 12-month LTV uplift",   "metric": "%",                                   "target_value": 38,    "unit": "%",         "baseline_value": 22 } },
+
+    { "id": "kpi:content-articles-published",     "type": "KPI", "properties": { "name": "Editorial science articles published","metric": "Annual count",                       "target_value": 24,    "unit": "articles",  "baseline_value": 11 } },
+    { "id": "kpi:ai-citation-share",              "type": "KPI", "properties": { "name": "AI-engine citation share (skincare queries)", "metric": "%",                          "target_value": 18,    "unit": "%",         "baseline_value": 6 } },
+    { "id": "kpi:pdp-faq-schema-coverage",        "type": "KPI", "properties": { "name": "PDP FAQ schema coverage",              "metric": "% of PDPs with valid FAQ schema",     "target_value": 100,   "unit": "%",         "baseline_value": 30 } },
+
+    { "id": "kpi:ooh-prompted-recall-uk",         "type": "KPI", "properties": { "name": "OOH prompted recall — UK flagship",   "metric": "% of in-region survey panel",          "target_value": 28,    "unit": "%",         "baseline_value": null } },
+    { "id": "kpi:ooh-prompted-recall-us",         "type": "KPI", "properties": { "name": "OOH prompted recall — US flagship",   "metric": "% of in-region survey panel",          "target_value": 22,    "unit": "%",         "baseline_value": null } },
+
+    { "id": "kpi:blended-roas-global",            "type": "KPI", "properties": { "name": "Blended ROAS (global)",                "metric": "Revenue / paid spend",                "target_value": 3.2,   "unit": "x",         "baseline_value": 2.9 } },
+    { "id": "kpi:roas-uk",                        "type": "KPI", "properties": { "name": "Blended ROAS — UK",                    "metric": "Revenue / paid spend",                "target_value": 3.6,   "unit": "x",         "baseline_value": 3.4 } },
+    { "id": "kpi:roas-us",                        "type": "KPI", "properties": { "name": "Blended ROAS — US",                    "metric": "Revenue / paid spend",                "target_value": 3.0,   "unit": "x",         "baseline_value": 2.7 } },
+    { "id": "kpi:roas-de",                        "type": "KPI", "properties": { "name": "Blended ROAS — DE",                    "metric": "Revenue / paid spend",                "target_value": 2.8,   "unit": "x",         "baseline_value": 2.4 } },
+    { "id": "kpi:roas-fr",                        "type": "KPI", "properties": { "name": "Blended ROAS — FR",                    "metric": "Revenue / paid spend",                "target_value": 3.0,   "unit": "x",         "baseline_value": 2.5 } },
+    { "id": "kpi:roas-jp",                        "type": "KPI", "properties": { "name": "Blended ROAS — JP",                    "metric": "Revenue / paid spend",                "target_value": 2.6,   "unit": "x",         "baseline_value": null } },
+
+    { "id": "kpi:blended-cac-global",             "type": "KPI", "properties": { "name": "Blended CAC (global)",                 "metric": "GBP per acquired customer",           "target_value": 38,    "unit": "GBP",       "baseline_value": 46 } },
+    { "id": "kpi:repeat-purchase-90d",            "type": "KPI", "properties": { "name": "Repeat purchase rate within 90 days",  "metric": "%",                                   "target_value": 42,    "unit": "%",         "baseline_value": 35 } },
+    { "id": "kpi:aov-d2c-global",                 "type": "KPI", "properties": { "name": "AOV — D2C global",                     "metric": "GBP",                                 "target_value": 142,   "unit": "GBP",       "baseline_value": 128 } },
+    { "id": "kpi:email-opt-in-rate",              "type": "KPI", "properties": { "name": "Email opt-in rate (new visitor)",      "metric": "%",                                   "target_value": 22,    "unit": "%",         "baseline_value": 16 } },
+
+    { "id": "kpi:consumer-panels-completed",      "type": "KPI", "properties": { "name": "Consumer panels completed",            "metric": "Annual count (≥80 participants, ≥4 weeks)", "target_value": 4, "unit": "studies",   "baseline_value": 2 } },
+    { "id": "kpi:tier-a-claims-substantiated",    "type": "KPI", "properties": { "name": "Tier-A claims substantiated",          "metric": "Annual count",                       "target_value": 8,     "unit": "claims",    "baseline_value": 5 } },
+    { "id": "kpi:dermatologist-creators-roster",  "type": "KPI", "properties": { "name": "Dermatologist creators on active roster", "metric": "Count",                          "target_value": 22,    "unit": "creators",  "baseline_value": 11 } },
+    { "id": "kpi:xiaohongshu-organic-mentions",   "type": "KPI", "properties": { "name": "Xiaohongshu organic mentions (CN)",    "metric": "Monthly average",                     "target_value": 3500,  "unit": "mentions",  "baseline_value": 480 } },
+    { "id": "kpi:line-loyalty-jp",                "type": "KPI", "properties": { "name": "LINE loyalty enrolment — JP",          "metric": "Count",                               "target_value": 18000, "unit": "members",   "baseline_value": 0 } }
+]

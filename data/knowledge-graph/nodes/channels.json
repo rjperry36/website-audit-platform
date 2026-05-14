@@ -1,0 +1,62 @@
+[
+    {
+        "id": "channel:SEO",
+        "type": "Channel",
+        "properties": { "ref_id": "SEO", "label": "SEO", "description": "Search Engine Optimization (traditional + AEO + GEO)" }
+    },
+    {
+        "id": "channel:PAID_MEDIA",
+        "type": "Channel",
+        "properties": { "ref_id": "PAID_MEDIA", "label": "Paid Media", "description": "Paid advertising across search, social and programmatic" }
+    },
+    {
+        "id": "channel:SOCIAL_MEDIA",
+        "type": "Channel",
+        "properties": { "ref_id": "SOCIAL_MEDIA", "label": "Social Media", "description": "Organic social media content and community" }
+    },
+    {
+        "id": "channel:ECRM",
+        "type": "Channel",
+        "properties": { "ref_id": "ECRM", "label": "ECRM", "description": "Email and CRM lifecycle programmes" }
+    },
+    {
+        "id": "channel:D2C",
+        "type": "Channel",
+        "properties": { "ref_id": "D2C", "label": "D2C", "description": "Direct-to-consumer ecommerce (aurelune.com)" }
+    },
+    {
+        "id": "channel:B2B",
+        "type": "Channel",
+        "properties": { "ref_id": "B2B", "label": "B2B", "description": "Wholesale and professional channel — spa, salon, dermatology" }
+    },
+    {
+        "id": "channel:B2B2C",
+        "type": "Channel",
+        "properties": { "ref_id": "B2B2C", "label": "B2B2C", "description": "Premium retail distribution — Sephora, Selfridges, KaDeWe, Galeries Lafayette, Isetan" }
+    },
+    {
+        "id": "channel:POSM",
+        "type": "Channel",
+        "properties": { "ref_id": "POSM", "label": "POSM", "description": "Point-of-sale materials, in-store visual merchandising" }
+    },
+    {
+        "id": "channel:OOH",
+        "type": "Channel",
+        "properties": { "ref_id": "OOH", "label": "OOH", "description": "Out-of-home advertising — billboards, transit, digital OOH" }
+    },
+    {
+        "id": "channel:RESEARCH",
+        "type": "Channel",
+        "properties": { "ref_id": "RESEARCH", "label": "Research", "description": "Consumer research, panels, claim substantiation studies" }
+    },
+    {
+        "id": "channel:EVENT",
+        "type": "Channel",
+        "properties": { "ref_id": "EVENT", "label": "Event", "description": "Physical and virtual events — science panels, retail launches, formulator Q&As" }
+    },
+    {
+        "id": "channel:UX",
+        "type": "Channel",
+        "properties": { "ref_id": "UX", "label": "UX", "description": "Digital product, site experience, conversion optimisation" }
+    }
+]

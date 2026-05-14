@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 140" width="600" height="140" role="img" aria-label="Aurelune">
+  <title>Aurelune — primary lockup</title>
+  <!-- Crescent mark: AM/PM duality, skin-as-boundary -->
+  <g transform="translate(70, 70)">
+    <circle r="42" fill="none" stroke="#1B1B1F" stroke-width="3"/>
+    <path d="M -42 0 A 42 42 0 0 1 24 -33 A 30 30 0 0 0 24 33 A 42 42 0 0 1 -42 0 Z" fill="#1B1B1F"/>
+  </g>
+  <!-- Wordmark -->
+  <text x="150" y="88" font-family="'GT Sectra', 'Times New Roman', serif" font-size="56" font-weight="400" letter-spacing="2" fill="#1B1B1F">aurelune</text>
+</svg>

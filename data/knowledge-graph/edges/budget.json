@@ -1,0 +1,29 @@
+[
+    { "from": "budget:aurelune-global-2024", "to": "brand-team:aurelune-global", "type": "ALLOCATED_TO" },
+    { "from": "budget:aurelune-global-2025", "to": "brand-team:aurelune-global", "type": "ALLOCATED_TO" },
+    { "from": "budget:aurelune-global-2026", "to": "brand-team:aurelune-global", "type": "ALLOCATED_TO" },
+
+    { "from": "budget:aurelune-uk-2024",     "to": "brand-team:aurelune-uk",     "type": "ALLOCATED_TO" },
+    { "from": "budget:aurelune-uk-2025",     "to": "brand-team:aurelune-uk",     "type": "ALLOCATED_TO" },
+    { "from": "budget:aurelune-uk-2026",     "to": "brand-team:aurelune-uk",     "type": "ALLOCATED_TO" },
+
+    { "from": "budget:aurelune-us-2024",     "to": "brand-team:aurelune-us",     "type": "ALLOCATED_TO" },
+    { "from": "budget:aurelune-us-2025",     "to": "brand-team:aurelune-us",     "type": "ALLOCATED_TO" },
+    { "from": "budget:aurelune-us-2026",     "to": "brand-team:aurelune-us",     "type": "ALLOCATED_TO" },
+
+    { "from": "budget:aurelune-de-2024",     "to": "brand-team:aurelune-de",     "type": "ALLOCATED_TO" },
+    { "from": "budget:aurelune-de-2025",     "to": "brand-team:aurelune-de",     "type": "ALLOCATED_TO" },
+    { "from": "budget:aurelune-de-2026",     "to": "brand-team:aurelune-de",     "type": "ALLOCATED_TO" },
+
+    { "from": "budget:aurelune-fr-2024",     "to": "brand-team:aurelune-fr",     "type": "ALLOCATED_TO" },
+    { "from": "budget:aurelune-fr-2025",     "to": "brand-team:aurelune-fr",     "type": "ALLOCATED_TO" },
+    { "from": "budget:aurelune-fr-2026",     "to": "brand-team:aurelune-fr",     "type": "ALLOCATED_TO" },
+
+    { "from": "budget:aurelune-jp-2024",     "to": "brand-team:aurelune-jp",     "type": "ALLOCATED_TO" },
+    { "from": "budget:aurelune-jp-2025",     "to": "brand-team:aurelune-jp",     "type": "ALLOCATED_TO" },
+    { "from": "budget:aurelune-jp-2026",     "to": "brand-team:aurelune-jp",     "type": "ALLOCATED_TO" },
+
+    { "from": "budget:aurelune-cn-2024",     "to": "brand-team:aurelune-cn",     "type": "ALLOCATED_TO" },
+    { "from": "budget:aurelune-cn-2025",     "to": "brand-team:aurelune-cn",     "type": "ALLOCATED_TO" },
+    { "from": "budget:aurelune-cn-2026",     "to": "brand-team:aurelune-cn",     "type": "ALLOCATED_TO" }
+]

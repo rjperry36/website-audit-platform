@@ -1,0 +1,137 @@
+[
+    {
+        "id": "role:group-account-director",
+        "type": "Role",
+        "properties": { "name": "Group Account Director", "department_id": "dept:client-services", "seniority_band": "director", "default_daily_rate_gbp": 1200, "default_client_markup_pct": 0.85 }
+    },
+    {
+        "id": "role:account-director",
+        "type": "Role",
+        "properties": { "name": "Account Director", "department_id": "dept:client-services", "seniority_band": "senior", "default_daily_rate_gbp": 850, "default_client_markup_pct": 0.85 }
+    },
+    {
+        "id": "role:account-manager",
+        "type": "Role",
+        "properties": { "name": "Account Manager", "department_id": "dept:client-services", "seniority_band": "mid", "default_daily_rate_gbp": 550, "default_client_markup_pct": 0.85 }
+    },
+    {
+        "id": "role:account-executive",
+        "type": "Role",
+        "properties": { "name": "Account Executive", "department_id": "dept:client-services", "seniority_band": "junior", "default_daily_rate_gbp": 320, "default_client_markup_pct": 0.85 }
+    },
+    {
+        "id": "role:strategy-director",
+        "type": "Role",
+        "properties": { "name": "Strategy Director", "department_id": "dept:strategy", "seniority_band": "director", "default_daily_rate_gbp": 1300, "default_client_markup_pct": 0.85 }
+    },
+    {
+        "id": "role:senior-strategist",
+        "type": "Role",
+        "properties": { "name": "Senior Strategist", "department_id": "dept:strategy", "seniority_band": "senior", "default_daily_rate_gbp": 900, "default_client_markup_pct": 0.85 }
+    },
+    {
+        "id": "role:strategist",
+        "type": "Role",
+        "properties": { "name": "Strategist", "department_id": "dept:strategy", "seniority_band": "mid", "default_daily_rate_gbp": 600, "default_client_markup_pct": 0.85 }
+    },
+    {
+        "id": "role:head-of-project-planning",
+        "type": "Role",
+        "properties": { "name": "Head of Project Planning", "department_id": "dept:project-planning", "seniority_band": "director", "default_daily_rate_gbp": 1100, "default_client_markup_pct": 0.85 }
+    },
+    {
+        "id": "role:senior-project-manager",
+        "type": "Role",
+        "properties": { "name": "Senior Project Manager", "department_id": "dept:project-planning", "seniority_band": "senior", "default_daily_rate_gbp": 750, "default_client_markup_pct": 0.85 }
+    },
+    {
+        "id": "role:project-manager",
+        "type": "Role",
+        "properties": { "name": "Project Manager", "department_id": "dept:project-planning", "seniority_band": "mid", "default_daily_rate_gbp": 500, "default_client_markup_pct": 0.85 }
+    },
+    {
+        "id": "role:producer",
+        "type": "Role",
+        "properties": { "name": "Producer", "department_id": "dept:project-planning", "seniority_band": "mid", "default_daily_rate_gbp": 600, "default_client_markup_pct": 0.85 }
+    },
+    {
+        "id": "role:head-of-new-business",
+        "type": "Role",
+        "properties": { "name": "Head of New Business", "department_id": "dept:new-business", "seniority_band": "director", "default_daily_rate_gbp": 1400, "default_client_markup_pct": 0.85 }
+    },
+    {
+        "id": "role:new-business-manager",
+        "type": "Role",
+        "properties": { "name": "New Business Manager", "department_id": "dept:new-business", "seniority_band": "mid", "default_daily_rate_gbp": 650, "default_client_markup_pct": 0.85 }
+    },
+    {
+        "id": "role:finance-director",
+        "type": "Role",
+        "properties": { "name": "Finance Director", "department_id": "dept:accounts", "seniority_band": "director", "default_daily_rate_gbp": 1100, "default_client_markup_pct": 0.50 }
+    },
+    {
+        "id": "role:finance-manager",
+        "type": "Role",
+        "properties": { "name": "Finance Manager", "department_id": "dept:accounts", "seniority_band": "mid", "default_daily_rate_gbp": 500, "default_client_markup_pct": 0.50 }
+    },
+    {
+        "id": "role:bookkeeper",
+        "type": "Role",
+        "properties": { "name": "Bookkeeper", "department_id": "dept:accounts", "seniority_band": "junior", "default_daily_rate_gbp": 280, "default_client_markup_pct": 0.50 }
+    },
+    {
+        "id": "role:executive-creative-director",
+        "type": "Role",
+        "properties": { "name": "Executive Creative Director", "department_id": "dept:creative", "seniority_band": "director", "default_daily_rate_gbp": 1500, "default_client_markup_pct": 0.85 }
+    },
+    {
+        "id": "role:creative-director",
+        "type": "Role",
+        "properties": { "name": "Creative Director", "department_id": "dept:creative", "seniority_band": "lead", "default_daily_rate_gbp": 1100, "default_client_markup_pct": 0.85 }
+    },
+    {
+        "id": "role:associate-creative-director",
+        "type": "Role",
+        "properties": { "name": "Associate Creative Director", "department_id": "dept:creative", "seniority_band": "senior", "default_daily_rate_gbp": 850, "default_client_markup_pct": 0.85 }
+    },
+    {
+        "id": "role:senior-art-director",
+        "type": "Role",
+        "properties": { "name": "Senior Art Director", "department_id": "dept:creative", "seniority_band": "senior", "default_daily_rate_gbp": 750, "default_client_markup_pct": 0.85 }
+    },
+    {
+        "id": "role:senior-copywriter",
+        "type": "Role",
+        "properties": { "name": "Senior Copywriter", "department_id": "dept:creative", "seniority_band": "senior", "default_daily_rate_gbp": 700, "default_client_markup_pct": 0.85 }
+    },
+    {
+        "id": "role:designer",
+        "type": "Role",
+        "properties": { "name": "Designer", "department_id": "dept:creative", "seniority_band": "mid", "default_daily_rate_gbp": 500, "default_client_markup_pct": 0.85 }
+    },
+    {
+        "id": "role:copywriter",
+        "type": "Role",
+        "properties": { "name": "Copywriter", "department_id": "dept:creative", "seniority_band": "mid", "default_daily_rate_gbp": 480, "default_client_markup_pct": 0.85 }
+    },
+    {
+        "id": "role:head-of-channels",
+        "type": "Role",
+        "properties": { "name": "Head of Channels", "department_id": "dept:channel-experts", "seniority_band": "director", "default_daily_rate_gbp": 1200, "default_client_markup_pct": 0.85 }
+    },
+    {
+        "id": "role:channel-lead",
+        "type": "Role",
+        "properties": { "name": "Channel Lead", "department_id": "dept:channel-experts", "seniority_band": "lead", "default_daily_rate_gbp": 900, "default_client_markup_pct": 0.85 }
+    },
+    {
+        "id": "role:senior-channel-specialist",
+        "type": "Role",
+        "properties": { "name": "Senior Channel Specialist", "department_id": "dept:channel-experts", "seniority_band": "senior", "default_daily_rate_gbp": 700, "default_client_markup_pct": 0.85 }
+    },
+    {
+        "id": "role:channel-specialist",
+        "type": "Role",
+        "properties": { "name": "Channel Specialist", "department_id": "dept:channel-experts", "seniority_band": "mid", "default_daily_rate_gbp": 500, "default_client_markup_pct": 0.85 }
+    }
+]

@@ -1,0 +1,148 @@
+[
+    {
+        "id": "brand-asset:logo-primary",
+        "type": "BrandAsset",
+        "properties": {
+            "name": "Aurelune — primary lockup",
+            "asset_type": "logo",
+            "file_path": "brand-book/assets/logo-primary.svg",
+            "format": "svg",
+            "dimensions": "600x140",
+            "license": "Aurelune internal",
+            "created_date": "2024-01-15"
+        }
+    },
+    {
+        "id": "brand-asset:logo-mark",
+        "type": "BrandAsset",
+        "properties": {
+            "name": "Aurelune — crescent mark",
+            "asset_type": "logo",
+            "file_path": "brand-book/assets/logo-mark.svg",
+            "format": "svg",
+            "dimensions": "120x120",
+            "license": "Aurelune internal",
+            "created_date": "2024-01-15"
+        }
+    },
+    {
+        "id": "brand-asset:logo-wordmark",
+        "type": "BrandAsset",
+        "properties": {
+            "name": "Aurelune — wordmark only",
+            "asset_type": "logo",
+            "file_path": "brand-book/assets/logo-wordmark.svg",
+            "format": "svg",
+            "dimensions": "480x100",
+            "license": "Aurelune internal",
+            "created_date": "2024-01-15"
+        }
+    },
+    {
+        "id": "brand-asset:palette",
+        "type": "BrandAsset",
+        "properties": {
+            "name": "Aurelune — colour palette reference",
+            "asset_type": "palette",
+            "file_path": "brand-book/assets/palette.svg",
+            "format": "svg",
+            "dimensions": "720x220",
+            "created_date": "2024-01-15"
+        }
+    },
+    {
+        "id": "brand-asset:lifestyle-am-bathroom-shelf",
+        "type": "BrandAsset",
+        "properties": {
+            "name": "Lifestyle — AM bathroom shelf (hero)",
+            "asset_type": "lifestyle_image",
+            "file_path": "brand-book/assets/.placeholders/lifestyle-am-bathroom-shelf.png",
+            "format": "png",
+            "dimensions": "3000x1688",
+            "generation_prompt_ref": "lifestyle-am-bathroom-shelf",
+            "generation_model": "midjourney-v6",
+            "market_variants": {
+                "JP": { "generation_prompt_ref": "jp-variant-am-bathroom-shelf", "file_path": "brand-book/assets/.placeholders/lifestyle-am-bathroom-shelf-jp.png" }
+            }
+        }
+    },
+    {
+        "id": "brand-asset:lifestyle-pm-bedside",
+        "type": "BrandAsset",
+        "properties": {
+            "name": "Lifestyle — PM bedside (hero)",
+            "asset_type": "lifestyle_image",
+            "file_path": "brand-book/assets/.placeholders/lifestyle-pm-bedside.png",
+            "format": "png",
+            "dimensions": "3000x1688",
+            "generation_prompt_ref": "lifestyle-pm-bedside",
+            "generation_model": "midjourney-v6",
+            "market_variants": {
+                "FR": { "generation_prompt_ref": "fr-variant-pm-bedside", "file_path": "brand-book/assets/.placeholders/lifestyle-pm-bedside-fr.png" }
+            }
+        }
+    },
+    {
+        "id": "brand-asset:lifestyle-hands-applying",
+        "type": "BrandAsset",
+        "properties": {
+            "name": "Lifestyle — hands applying serum",
+            "asset_type": "lifestyle_image",
+            "file_path": "brand-book/assets/.placeholders/lifestyle-hands-applying.png",
+            "format": "png",
+            "dimensions": "2400x3000",
+            "generation_prompt_ref": "lifestyle-hands-applying",
+            "generation_model": "midjourney-v6",
+            "market_variants": {
+                "CN": { "generation_prompt_ref": "cn-variant-hands-applying", "file_path": "brand-book/assets/.placeholders/lifestyle-hands-applying-cn.png" }
+            }
+        }
+    },
+    {
+        "id": "brand-asset:lifestyle-bathroom-counter-mid-routine",
+        "type": "BrandAsset",
+        "properties": {
+            "name": "Lifestyle — bathroom counter mid-routine",
+            "asset_type": "lifestyle_image",
+            "file_path": "brand-book/assets/.placeholders/lifestyle-bathroom-counter-mid-routine.png",
+            "format": "png",
+            "dimensions": "3000x3000",
+            "generation_prompt_ref": "lifestyle-bathroom-counter-mid-routine",
+            "generation_model": "midjourney-v6",
+            "market_variants": {
+                "DE": { "generation_prompt_ref": "de-variant-bathroom-counter-mid-routine", "file_path": "brand-book/assets/.placeholders/lifestyle-bathroom-counter-mid-routine-de.png" }
+            }
+        }
+    },
+    {
+        "id": "brand-asset:lifestyle-window-light",
+        "type": "BrandAsset",
+        "properties": {
+            "name": "Lifestyle — window-light meditation",
+            "asset_type": "lifestyle_image",
+            "file_path": "brand-book/assets/.placeholders/lifestyle-window-light.png",
+            "format": "png",
+            "dimensions": "3000x1688",
+            "generation_prompt_ref": "lifestyle-window-light",
+            "generation_model": "midjourney-v6"
+        }
+    },
+
+    { "id": "brand-asset:product-retinoid-pm-serum-bone",       "type": "BrandAsset", "properties": { "name": "Product hero — Retinoid PM Serum (bone)",      "asset_type": "product_image", "file_path": "brand-book/assets/.placeholders/product-AUR-RPS-30-hero-bone.png", "depicts_product_id": "product:retinoid-pm-serum",       "format": "png", "dimensions": "3000x3000", "generation_prompt_ref": "product-hero-packshot-on-bone" } },
+    { "id": "brand-asset:product-retinoid-pm-serum-ink",        "type": "BrandAsset", "properties": { "name": "Product hero — Retinoid PM Serum (ink)",       "asset_type": "product_image", "file_path": "brand-book/assets/.placeholders/product-AUR-RPS-30-hero-ink.png",  "depicts_product_id": "product:retinoid-pm-serum",       "format": "png", "dimensions": "3000x3000", "generation_prompt_ref": "product-hero-packshot-on-ink" } },
+    { "id": "brand-asset:product-bakuchiol-day-fluid-bone",     "type": "BrandAsset", "properties": { "name": "Product hero — Bakuchiol Day Fluid (bone)",    "asset_type": "product_image", "file_path": "brand-book/assets/.placeholders/product-AUR-BDF-30-hero-bone.png", "depicts_product_id": "product:bakuchiol-day-fluid",     "format": "png", "dimensions": "3000x3000", "generation_prompt_ref": "product-hero-packshot-on-bone" } },
+    { "id": "brand-asset:product-peptide-repair-cream-bone",    "type": "BrandAsset", "properties": { "name": "Product hero — Peptide Repair Cream (bone)",   "asset_type": "product_image", "file_path": "brand-book/assets/.placeholders/product-AUR-PRC-50-hero-bone.png", "depicts_product_id": "product:peptide-repair-cream",    "format": "png", "dimensions": "3000x3000", "generation_prompt_ref": "product-hero-packshot-on-bone" } },
+    { "id": "brand-asset:product-ceramide-repair-cream-bone",   "type": "BrandAsset", "properties": { "name": "Product hero — Ceramide Repair Cream (bone)",  "asset_type": "product_image", "file_path": "brand-book/assets/.placeholders/product-AUR-CRC-50-hero-bone.png", "depicts_product_id": "product:ceramide-repair-cream",   "format": "png", "dimensions": "3000x3000", "generation_prompt_ref": "product-hero-packshot-on-bone" } },
+    { "id": "brand-asset:product-niacinamide-tone-veil-bone",   "type": "BrandAsset", "properties": { "name": "Product hero — Niacinamide Tone Veil (bone)",  "asset_type": "product_image", "file_path": "brand-book/assets/.placeholders/product-AUR-NTV-30-hero-bone.png", "depicts_product_id": "product:niacinamide-tone-veil",   "format": "png", "dimensions": "3000x3000", "generation_prompt_ref": "product-hero-packshot-on-bone" } },
+    { "id": "brand-asset:product-mineral-defence-spf50-bone",   "type": "BrandAsset", "properties": { "name": "Product hero — Mineral Defence SPF50 (bone)",  "asset_type": "product_image", "file_path": "brand-book/assets/.placeholders/product-AUR-MDS-50-hero-bone.png", "depicts_product_id": "product:mineral-defence-spf50",   "format": "png", "dimensions": "3000x3000", "generation_prompt_ref": "product-hero-packshot-on-bone" } },
+    { "id": "brand-asset:product-resurfacing-ritual-oil-bone",  "type": "BrandAsset", "properties": { "name": "Product hero — Resurfacing Ritual Oil (bone)", "asset_type": "product_image", "file_path": "brand-book/assets/.placeholders/product-AUR-RRO-30-hero-bone.png", "depicts_product_id": "product:resurfacing-ritual-oil",  "format": "png", "dimensions": "3000x3000", "generation_prompt_ref": "product-hero-packshot-on-bone" } },
+    { "id": "brand-asset:product-clearing-cleanser-bone",       "type": "BrandAsset", "properties": { "name": "Product hero — Clearing Cleanser (bone)",      "asset_type": "product_image", "file_path": "brand-book/assets/.placeholders/product-AUR-CC-150-hero-bone.png", "depicts_product_id": "product:clearing-cleanser",       "format": "png", "dimensions": "3000x3000", "generation_prompt_ref": "product-hero-packshot-on-bone" } },
+    { "id": "brand-asset:product-hydrating-mist-bone",          "type": "BrandAsset", "properties": { "name": "Product hero — Hydrating Mist (bone)",         "asset_type": "product_image", "file_path": "brand-book/assets/.placeholders/product-AUR-HM-100-hero-bone.png", "depicts_product_id": "product:hydrating-mist",          "format": "png", "dimensions": "3000x3000", "generation_prompt_ref": "product-hero-packshot-on-bone" } },
+    { "id": "brand-asset:product-the-ritual-set-bone",          "type": "BrandAsset", "properties": { "name": "Product hero — The Ritual Set (bone)",         "asset_type": "product_image", "file_path": "brand-book/assets/.placeholders/product-AUR-SET-RTL-hero-bone.png","depicts_product_id": "product:the-ritual-set",          "format": "png", "dimensions": "3000x3000", "generation_prompt_ref": "product-hero-packshot-on-bone" } },
+
+    { "id": "brand-asset:ingredient-retinaldehyde",  "type": "BrandAsset", "properties": { "name": "Ingredient — encapsulated retinaldehyde macro", "asset_type": "ingredient_illustration", "file_path": "brand-book/assets/.placeholders/ingredient-retinaldehyde-macro.png", "format": "png", "dimensions": "3000x3000", "generation_prompt_ref": "ingredient-macro-illustration" } },
+    { "id": "brand-asset:ingredient-bakuchiol",      "type": "BrandAsset", "properties": { "name": "Ingredient — bakuchiol macro",                  "asset_type": "ingredient_illustration", "file_path": "brand-book/assets/.placeholders/ingredient-bakuchiol-macro.png",      "format": "png", "dimensions": "3000x3000", "generation_prompt_ref": "ingredient-macro-illustration" } },
+    { "id": "brand-asset:ingredient-niacinamide",    "type": "BrandAsset", "properties": { "name": "Ingredient — niacinamide macro",                "asset_type": "ingredient_illustration", "file_path": "brand-book/assets/.placeholders/ingredient-niacinamide-macro.png",    "format": "png", "dimensions": "3000x3000", "generation_prompt_ref": "ingredient-macro-illustration" } },
+    { "id": "brand-asset:ingredient-plant-peptides", "type": "BrandAsset", "properties": { "name": "Ingredient — plant peptides macro",             "asset_type": "ingredient_illustration", "file_path": "brand-book/assets/.placeholders/ingredient-plant-peptides-macro.png", "format": "png", "dimensions": "3000x3000", "generation_prompt_ref": "ingredient-macro-illustration" } },
+    { "id": "brand-asset:ingredient-oat-ceramides",  "type": "BrandAsset", "properties": { "name": "Ingredient — oat ceramides macro",              "asset_type": "ingredient_illustration", "file_path": "brand-book/assets/.placeholders/ingredient-oat-ceramides-macro.png",  "format": "png", "dimensions": "3000x3000", "generation_prompt_ref": "ingredient-macro-illustration" } }
+]

@@ -1,0 +1,52 @@
+[
+    {
+        "id": "audience:millennial-skin-investors",
+        "type": "Audience",
+        "properties": {
+            "name": "Millennial skin investors",
+            "size_estimate": 4200000,
+            "geography": "Global — strongest in UK, US, DE, FR",
+            "platform_preferences": ["Instagram", "TikTok", "Substack newsletters", "Reddit (SkincareAddiction, AsianBeauty)"]
+        }
+    },
+    {
+        "id": "audience:gen-x-quiet-luxury",
+        "type": "Audience",
+        "properties": {
+            "name": "Gen X quiet-luxury buyers",
+            "size_estimate": 2600000,
+            "geography": "UK, US, DE, FR — moderate in JP",
+            "platform_preferences": ["Instagram", "long-form newsletters", "podcasts", "select print"]
+        }
+    },
+    {
+        "id": "audience:asia-pacific-ritualists",
+        "type": "Audience",
+        "properties": {
+            "name": "Asia-Pacific ritualists",
+            "size_estimate": 3800000,
+            "geography": "JP primarily, CN cross-border, KR adjacencies",
+            "platform_preferences": ["Instagram", "Line", "Xiaohongshu (cross-border)", "Cosme.net (JP review platform)"]
+        }
+    },
+    {
+        "id": "audience:dermatology-influencer-network",
+        "type": "Audience",
+        "properties": {
+            "name": "Dermatology influencer network",
+            "size_estimate": 850,
+            "geography": "Global B2B audience — practising derms + aestheticians",
+            "platform_preferences": ["LinkedIn", "X / Twitter (dermtwitter)", "industry conferences", "private Slack communities"]
+        }
+    },
+    {
+        "id": "audience:retail-buyers-prestige",
+        "type": "Audience",
+        "properties": {
+            "name": "Retail buyers — prestige",
+            "size_estimate": 220,
+            "geography": "Department-store and prestige-retail buyers across all markets",
+            "platform_preferences": ["LinkedIn", "trade press (WWD, Business of Beauty)", "in-person meetings"]
+        }
+    }
+]

@@ -1,0 +1,187 @@
+[
+    {
+        "id": "objective:global-brand-awareness",
+        "type": "Objective",
+        "properties": {
+            "name": "Build global brand awareness",
+            "definition": "Move Aurelune from prestige-niche to prestige-known among the global skincare-investor audience, with disproportionate share-of-voice on the AM/PM rhythm story.",
+            "standard_objective_ref": "Brand Awareness",
+            "horizon": "rolling"
+        }
+    },
+    {
+        "id": "objective:global-science-authority",
+        "type": "Objective",
+        "properties": {
+            "name": "Establish science authority",
+            "definition": "Be the prestige brand most associated with chronobiology and circadian-rhythm formulation in the press, professional channels, and AI answer engines.",
+            "horizon": "rolling"
+        }
+    },
+    {
+        "id": "objective:uk-d2c-growth",
+        "type": "Objective",
+        "properties": {
+            "name": "Grow UK D2C revenue",
+            "definition": "Grow aurelune.com revenue from UK customers by 35% YoY (2025 vs 2024), driven by acquisition + repeat.",
+            "standard_objective_ref": "Revenue Growth",
+            "horizon": "annual"
+        }
+    },
+    {
+        "id": "objective:us-acquisition",
+        "type": "Objective",
+        "properties": {
+            "name": "Accelerate US new-customer acquisition",
+            "definition": "Acquire 60,000 new customers in the US in 2025 (vs ~38,000 in 2024) — Sephora launch + paid social heavy.",
+            "standard_objective_ref": "User Acquisition",
+            "horizon": "annual"
+        }
+    },
+    {
+        "id": "objective:us-retail-expansion",
+        "type": "Objective",
+        "properties": {
+            "name": "Expand US prestige retail footprint",
+            "definition": "Launch in 240 Sephora US doors by end-2025. Hit $4.5M Sephora sell-through in Year 1.",
+            "horizon": "annual"
+        }
+    },
+    {
+        "id": "objective:de-rebuild-awareness",
+        "type": "Objective",
+        "properties": {
+            "name": "Rebuild DE awareness post-2024 dip",
+            "definition": "Lift aided brand awareness in DE from 4% to 9% among the millennial-investor cohort by end-2025, after a slower start than UK/US.",
+            "standard_objective_ref": "Brand Awareness",
+            "horizon": "annual"
+        }
+    },
+    {
+        "id": "objective:fr-ritual-story",
+        "type": "Objective",
+        "properties": {
+            "name": "Lead with ritual story in FR",
+            "definition": "Position Aurelune in the French market through the ritual lens rather than the clinical lens. Earn editorial coverage in Vogue France, Madame Figaro, AD Magazine.",
+            "horizon": "annual"
+        }
+    },
+    {
+        "id": "objective:jp-launch",
+        "type": "Objective",
+        "properties": {
+            "name": "Successful Japan launch",
+            "definition": "Launch Japan operations Q2 2024 with a Tokyo concept store residency and LINE loyalty programme. Hit ¥240M Year-1 revenue.",
+            "horizon": "annual"
+        }
+    },
+    {
+        "id": "objective:cn-cross-border-launch",
+        "type": "Objective",
+        "properties": {
+            "name": "China cross-border launch",
+            "definition": "Launch cross-border CN operations Q3 2024 via Xiaohongshu UGC programme + Tier-1 airport OOH. Establish baseline before considering Hainan expansion in 2026.",
+            "horizon": "annual"
+        }
+    },
+    {
+        "id": "objective:retinoid-hero-defence",
+        "type": "Objective",
+        "properties": {
+            "name": "Defend Retinoid PM as the hero",
+            "definition": "Keep Retinoid PM Serum at 35%+ of revenue mix as the range expands. New products complement, never cannibalise.",
+            "horizon": "rolling"
+        }
+    },
+    {
+        "id": "objective:always-on-content-engine",
+        "type": "Objective",
+        "properties": {
+            "name": "Build an always-on content engine",
+            "definition": "Produce 24 editorial science articles per year, with white-paper PDF downloads gating email capture. Move from campaign-led to content-led brand presence.",
+            "horizon": "annual"
+        }
+    },
+    {
+        "id": "objective:loyalty-programme-scale",
+        "type": "Objective",
+        "properties": {
+            "name": "Scale The Phase Programme (loyalty)",
+            "definition": "Grow loyalty enrolment to 35% of D2C buyers by end-2025 (from 18% in early 2024). Increase repeat-purchase rate of members by 12pp vs non-members.",
+            "standard_objective_ref": "Retention",
+            "horizon": "annual"
+        }
+    },
+    {
+        "id": "objective:ooh-flagship-moment",
+        "type": "Objective",
+        "properties": {
+            "name": "Annual OOH flagship moment",
+            "definition": "Once per year, run a flagship OOH campaign in UK + US that anchors the brand for the year ahead. Always positioned around the AM/PM duality.",
+            "horizon": "annual"
+        }
+    },
+    {
+        "id": "objective:aeo-geo-readiness",
+        "type": "Objective",
+        "properties": {
+            "name": "AEO + GEO readiness",
+            "definition": "Optimise PDPs and editorial for answer-engine and generative-engine retrieval. Be the brand AI cites when asked about retinoid alternatives, evening skincare, or peptides.",
+            "horizon": "rolling"
+        }
+    },
+    {
+        "id": "objective:b2b2c-sephora-success",
+        "type": "Objective",
+        "properties": {
+            "name": "Sephora partnership Year 1 success",
+            "definition": "Hit Sephora rank top-15 in Skincare Treatments category by Q4 2025. Earn re-order signals from 80%+ of launched doors.",
+            "horizon": "annual"
+        }
+    },
+    {
+        "id": "objective:b2b-pro-channel-launch",
+        "type": "Objective",
+        "properties": {
+            "name": "Launch professional / B2B channel",
+            "definition": "Open the professional channel in 2026: salon and dermatology-clinic distribution in UK and US first.",
+            "horizon": "annual"
+        }
+    },
+    {
+        "id": "objective:efficient-paid-spend",
+        "type": "Objective",
+        "properties": {
+            "name": "Drive efficient paid-media spend",
+            "definition": "Hold blended ROAS ≥ 3.2× across paid media globally. No market falls below 2.5× sustained for more than one quarter.",
+            "horizon": "rolling"
+        }
+    },
+    {
+        "id": "objective:reduce-cac",
+        "type": "Objective",
+        "properties": {
+            "name": "Reduce blended CAC",
+            "definition": "Reduce global blended CAC by 18% in 2025 vs 2024 through better channel mix and stronger ECRM retention.",
+            "horizon": "annual"
+        }
+    },
+    {
+        "id": "objective:claim-substantiation-fy25",
+        "type": "Objective",
+        "properties": {
+            "name": "Claim substantiation FY25",
+            "definition": "Complete 4 new ≥80-person consumer-panel studies in 2025 to substantiate Tier-A claims for new product launches.",
+            "horizon": "annual"
+        }
+    },
+    {
+        "id": "objective:always-on-influencer",
+        "type": "Objective",
+        "properties": {
+            "name": "Always-on dermatologist-creator programme",
+            "definition": "Maintain a roster of 18-25 paid-collaboration dermatologist creators globally. Earn never-pay-for-positive-coverage editorial integrity.",
+            "horizon": "rolling"
+        }
+    }
+]

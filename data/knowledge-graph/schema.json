@@ -1,0 +1,434 @@
+{
+    "$schema": "https://aurelune.example/kg-schema/v1",
+    "version": "1.0.0",
+    "description": "Knowledge graph schema for the Aurelune × Halo & Helix sample dataset. Defines node types, edge types, and the properties expected on each. All amounts are numbers (no currency symbols) — currency is declared per node/row.",
+    "id_pattern": "^[a-z-]+:[a-z0-9][a-z0-9-]*$",
+    "node_types": {
+        "Brand": {
+            "required": [
+                "name",
+                "category",
+                "founded_year",
+                "hq_city",
+                "tagline"
+            ],
+            "optional": [
+                "positioning",
+                "website"
+            ]
+        },
+        "BrandTeam": {
+            "required": [
+                "name",
+                "scope"
+            ],
+            "optional": [
+                "office_city",
+                "lead_brand_person_id"
+            ],
+            "notes": "scope = 'global' | 'local'. If 'local', expect an OPERATES_IN edge to a Market."
+        },
+        "BrandPerson": {
+            "required": [
+                "name",
+                "title",
+                "team_id"
+            ],
+            "optional": [
+                "email",
+                "phone",
+                "is_approver"
+            ]
+        },
+        "Product": {
+            "required": [
+                "name",
+                "sku",
+                "line",
+                "ritual",
+                "size_ml",
+                "cogs_gbp",
+                "rrp_gbp",
+                "margin_pct"
+            ],
+            "optional": [
+                "hero_ingredients",
+                "launch_date"
+            ]
+        },
+        "BrandAsset": {
+            "required": [
+                "name",
+                "asset_type",
+                "file_path"
+            ],
+            "optional": [
+                "depicts_product_id",
+                "format",
+                "dimensions",
+                "license",
+                "created_date",
+                "generation_prompt",
+                "negative_prompt",
+                "generation_prompt_ref",
+                "generation_model",
+                "market_variants"
+            ],
+            "asset_type_values": [
+                "logo",
+                "palette",
+                "product_image",
+                "lifestyle_image",
+                "packshot",
+                "ingredient_illustration",
+                "social_template",
+                "ooh_template"
+            ],
+            "notes": "generation_prompt = the model-ready prompt string for this asset (composited from the brand DNA + scene + variant). generation_prompt_ref = anchor link into brand-book/image-generation-prompts.md (e.g. 'lifestyle-am-bathroom-shelf'). market_variants = { marketId: { generation_prompt, file_path } } for localised renditions. The future Creative Director agent reads these fields directly when commissioning new imagery."
+        "BrandGuideline": {
+            "required": [
+                "name",
+                "doc_path",
+                "scope"
+            ],
+            "optional": [
+                "version",
+                "supersedes"
+            ]
+        },
+        "Persona": {
+            "required": [
+                "name",
+                "archetype",
+                "doc_path"
+            ],
+            "optional": [
+                "age_range",
+                "income_band",
+                "primary_motivation"
+            ]
+        },
+        "Audience": {
+            "required": [
+                "name",
+                "size_estimate"
+            ],
+            "optional": [
+                "geography",
+                "platform_preferences"
+            ]
+        },
+        "Segment": {
+            "required": [
+                "name",
+                "definition"
+            ],
+            "optional": [
+                "size_estimate",
+                "market_id"
+            ]
+        },
+        "Category": {
+            "required": [
+                "name"
+            ],
+            "optional": [
+                "parent_category_id"
+            ]
+        },
+        "Market": {
+            "required": [
+                "ref_id",
+                "label",
+                "currency"
+            ],
+            "optional": [
+                "fx_to_gbp",
+                "team_size_local"
+            ],
+            "notes": "ref_id mirrors Supabase markets.id (e.g. 'UK')."
+        },
+        "Channel": {
+            "required": [
+                "ref_id",
+                "label"
+            ],
+            "optional": [
+                "description"
+            ],
+            "notes": "ref_id mirrors Supabase channels.id (e.g. 'PAID_MEDIA')."
+        },
+        "Budget": {
+            "required": [
+                "name",
+                "year",
+                "brand_team_id",
+                "allocated_amount",
+                "currency"
+            ],
+            "optional": [
+                "spent_amount",
+                "notes"
+            ]
+        },
+        "Agency": {
+            "required": [
+                "name",
+                "founded_year",
+                "headcount"
+            ],
+            "optional": [
+                "offices",
+                "website"
+            ]
+        },
+        "Department": {
+            "required": [
+                "name",
+                "agency_id"
+            ],
+            "optional": [
+                "lead_person_id"
+            ]
+        },
+        "Role": {
+            "required": [
+                "name",
+                "department_id",
+                "seniority_band"
+            ],
+            "optional": [
+                "default_daily_rate_gbp",
+                "default_client_markup_pct"
+            ]
+        },
+        "Skill": {
+            "required": [
+                "name",
+                "domain"
+            ],
+            "optional": [
+                "description"
+            ],
+            "domain_values": [
+                "strategy",
+                "creative",
+                "production",
+                "channel",
+                "data",
+                "commercial",
+                "delivery",
+                "tools"
+            ]
+        },
+        "Person": {
+            "required": [
+                "name",
+                "department_id",
+                "role_id",
+                "seniority",
+                "office",
+                "start_date",
+                "daily_rate_gbp",
+                "client_markup_pct",
+                "capacity_hours_per_week"
+            ],
+            "optional": [
+                "utilisation_target_pct",
+                "email",
+                "is_active"
+            ],
+            "seniority_values": [
+                "junior",
+                "mid",
+                "senior",
+                "lead",
+                "director"
+            ]
+        },
+        "Contract": {
+            "required": [
+                "name",
+                "brand_id",
+                "agency_id",
+                "start_date",
+                "end_date",
+                "currency",
+                "annual_fee"
+            ],
+            "optional": [
+                "fx_policy",
+                "scope_notes"
+            ]
+        },
+        "Campaign": {
+            "required": [
+                "name",
+                "campaign_type",
+                "start_date",
+                "end_date",
+                "status",
+                "budget_planned",
+                "budget_actual",
+                "currency"
+            ],
+            "optional": [
+                "summary"
+            ],
+            "campaign_type_values": [
+                "global_launch",
+                "always_on",
+                "local_activation",
+                "seasonal",
+                "retail_partner"
+            ]
+        },
+        "Execution": {
+            "required": [
+                "name",
+                "execution_type",
+                "status",
+                "planned_start",
+                "planned_end",
+                "actual_start",
+                "actual_end",
+                "budget_planned",
+                "budget_actual",
+                "currency"
+            ],
+            "optional": [
+                "summary",
+                "internal_review_planned_days",
+                "client_review_planned_days"
+            ],
+            "execution_type_values": [
+                "global_asset_creation",
+                "localisation",
+                "local_campaign"
+            ],
+            "status_values": [
+                "planned",
+                "in_progress",
+                "in_review",
+                "shipped",
+                "cancelled"
+            ]
+        },
+        "ApprovalStep": {
+            "required": [
+                "gate",
+                "planned_duration_days",
+                "actual_duration_days",
+                "planned_start",
+                "planned_end",
+                "actual_start",
+                "actual_end",
+                "status"
+            ],
+            "optional": [
+                "outcome",
+                "notes"
+            ],
+            "gate_values": [
+                "internal_review",
+                "client_review"
+            ],
+            "status_values": [
+                "pending",
+                "approved",
+                "rejected",
+                "bypassed"
+            ]
+        },
+        "Asset": {
+            "required": [
+                "name",
+                "asset_type",
+                "file_path"
+            ],
+            "optional": [
+                "format",
+                "dimensions",
+                "duration_seconds",
+                "depicts_product_id"
+            ]
+        },
+        "AssetVariant": {
+            "required": [
+                "name",
+                "master_asset_id",
+                "market_id",
+                "file_path",
+                "localisation_type"
+            ],
+            "optional": [
+                "language_code",
+                "notes"
+            ],
+            "localisation_type_values": [
+                "full_reshoot",
+                "copy_only",
+                "subtitled",
+                "voiced_over",
+                "claims_adapted"
+            ]
+        },
+        "Objective": {
+            "required": [
+                "name",
+                "definition"
+            ],
+            "optional": [
+                "standard_objective_ref",
+                "horizon"
+            ]
+        },
+        "KPI": {
+            "required": [
+                "name",
+                "metric",
+                "target_value",
+                "unit"
+            ],
+            "optional": [
+                "baseline_value"
+            ]
+        }
+    },
+    "edge_types": {
+        "OWNS": { "from": "Brand", "to": "BrandTeam", "edge_props": [] },
+        "OPERATES_IN": { "from": "BrandTeam", "to": "Market", "edge_props": [] },
+        "STAKEHOLDER_OF": { "from": "BrandPerson", "to": "BrandTeam", "edge_props": [] },
+        "SELLS": { "from": "Brand", "to": "Product", "edge_props": [] },
+        "AVAILABLE_IN": { "from": "Product", "to": "Market", "edge_props": ["local_rrp", "local_currency", "launch_date_local"] },
+        "DEPICTS": { "from": "BrandAsset", "to": "Product", "edge_props": [] },
+        "GOVERNED_BY": { "from": "Brand", "to": "BrandGuideline", "edge_props": [] },
+        "TARGETS_AUDIENCE": { "from": ["Brand", "Campaign"], "to": "Audience", "edge_props": [] },
+        "INCLUDES_SEGMENT": { "from": "Audience", "to": "Segment", "edge_props": [] },
+        "EMBODIED_BY": { "from": "Brand", "to": "Persona", "edge_props": [] },
+        "ALLOCATED_TO": { "from": "Budget", "to": "BrandTeam", "edge_props": [] },
+        "DRAWS_FROM": { "from": "Campaign", "to": "Budget", "edge_props": ["draw_amount"] },
+        "GOVERNS": { "from": "Contract", "to": "Brand", "edge_props": [] },
+        "SIGNED_BY": { "from": "Contract", "to": "Agency", "edge_props": [] },
+        "EMPLOYED_BY": { "from": "Person", "to": "Agency", "edge_props": [] },
+        "BELONGS_TO": { "from": "Person", "to": "Department", "edge_props": [] },
+        "HAS_ROLE": { "from": "Person", "to": "Role", "edge_props": [] },
+        "HAS_SKILL": { "from": "Person", "to": "Skill", "edge_props": ["proficiency"] },
+        "EXPERIENCED_IN": { "from": "Person", "to": ["Channel", "Category"], "edge_props": ["years"] },
+        "ORCHESTRATES": { "from": "Agency", "to": "Campaign", "edge_props": [] },
+        "COMMISSIONED_BY": { "from": "Campaign", "to": "BrandTeam", "edge_props": [] },
+        "RUNS_IN": { "from": "Campaign", "to": "Market", "edge_props": [] },
+        "USES_CHANNEL": { "from": "Campaign", "to": "Channel", "edge_props": [] },
+        "HAS_OBJECTIVE": { "from": "Campaign", "to": "Objective", "edge_props": [] },
+        "MEASURED_BY": { "from": "Objective", "to": "KPI", "edge_props": [] },
+        "PART_OF": { "from": "Execution", "to": "Campaign", "edge_props": [] },
+        "TARGETS": { "from": "Execution", "to": "Market", "edge_props": [] },
+        "DELIVERS_IN": { "from": "Execution", "to": "Channel", "edge_props": [] },
+        "PRODUCES": { "from": "Execution", "to": "Asset", "edge_props": [] },
+        "LOCALISES": { "from": "AssetVariant", "to": "Asset", "edge_props": [] },
+        "REQUIRES_APPROVAL": { "from": "Execution", "to": "ApprovalStep", "edge_props": [] },
+        "APPROVED_BY": { "from": "ApprovalStep", "to": ["Person", "BrandPerson"], "edge_props": [] },
+        "LED_BY": { "from": "Execution", "to": "Person", "edge_props": [] },
+        "ASSIGNED_TO": { "from": "Person", "to": "Execution", "edge_props": ["role", "planned_hours", "actual_hours"] }
+    }
+}

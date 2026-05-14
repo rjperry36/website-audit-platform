@@ -1,0 +1,37 @@
+[
+    {
+        "id": "dept:client-services",
+        "type": "Department",
+        "properties": { "name": "Client Services", "agency_id": "agency:halo-helix" }
+    },
+    {
+        "id": "dept:strategy",
+        "type": "Department",
+        "properties": { "name": "Strategy", "agency_id": "agency:halo-helix" }
+    },
+    {
+        "id": "dept:project-planning",
+        "type": "Department",
+        "properties": { "name": "Project Planning", "agency_id": "agency:halo-helix" }
+    },
+    {
+        "id": "dept:new-business",
+        "type": "Department",
+        "properties": { "name": "New Business", "agency_id": "agency:halo-helix" }
+    },
+    {
+        "id": "dept:accounts",
+        "type": "Department",
+        "properties": { "name": "Accounts (Finance)", "agency_id": "agency:halo-helix" }
+    },
+    {
+        "id": "dept:creative",
+        "type": "Department",
+        "properties": { "name": "Creative", "agency_id": "agency:halo-helix" }
+    },
+    {
+        "id": "dept:channel-experts",
+        "type": "Department",
+        "properties": { "name": "Channel Experts", "agency_id": "agency:halo-helix" }
+    }
+]

@@ -1,0 +1,15 @@
+[
+    {
+        "id": "brand:aurelune",
+        "type": "Brand",
+        "properties": {
+            "name": "Aurelune",
+            "category": "Prestige skincare",
+            "founded_year": 2019,
+            "hq_city": "London",
+            "tagline": "Skincare in sync",
+            "positioning": "Prestige skincare designed around the skin's circadian rhythm. Two phases — AM and PM — backed by chronobiology research and visible after two cycles.",
+            "website": "https://www.aurelune.example"
+        }
+    }
+]
