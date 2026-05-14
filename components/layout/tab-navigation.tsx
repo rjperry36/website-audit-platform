@@ -11,7 +11,8 @@ import {
     ChevronDown,
     Layers,
     PlusCircle,
-    Globe
+    Globe,
+    Network
 } from 'lucide-react'
 
 // Map Channel IDs to Routes (Best Effort / Placeholder)
@@ -123,6 +124,11 @@ export function TabNavigation({ markets = [], channels = [] }: TabNavigationProp
             name: 'New Brief',
             href: '/briefing',
             icon: PlusCircle,
+        },
+        {
+            name: 'Knowledge Graph',
+            href: '/knowledge-graph',
+            icon: Network,
         },
     ]
 
