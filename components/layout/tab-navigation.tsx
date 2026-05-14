@@ -12,7 +12,8 @@ import {
     Layers,
     PlusCircle,
     Globe,
-    Network
+    Network,
+    Sparkles
 } from 'lucide-react'
 
 // Map Channel IDs to Routes (Best Effort / Placeholder)
@@ -122,8 +123,21 @@ export function TabNavigation({ markets = [], channels = [] }: TabNavigationProp
         },
         {
             name: 'New Brief',
-            href: '/briefing',
+            href: '#',
             icon: PlusCircle,
+            isDropdown: true,
+            children: [
+                {
+                    name: 'Briefing Assistant (AI)',
+                    href: '/briefing/assist',
+                    icon: '✨',
+                },
+                {
+                    name: 'Create brief manually',
+                    href: '/briefing',
+                    color: '#3B82F6',
+                },
+            ],
         },
         {
             name: 'Knowledge Graph',

@@ -1,0 +1,595 @@
+/**
+ * Briefing Assistant — KG-grounded recommendation engine
+ *
+ * Takes a new brief input, retrieves grounded context from the knowledge graph,
+ * and asks GPT-4o for a structured recommendation: budget range, suggested team,
+ * timeline, and risks. Every recommendation is citable back to specific KG nodes.
+ *
+ * Server-side only. Reads .env.local for OPENAI_API_KEY.
+ */
+
+import OpenAI from 'openai';
+import {
+    getCampaigns,
+    getExecutionsEnriched,
+    getApprovalSteps,
+    getTimeTracking,
+    getPeopleEnriched,
+    getMarkets,
+    getChannels,
+    getCostLines,
+    formatCurrency,
+} from '@/lib/kg/loader';
+
+// ===========================================================================
+// Public types
+// ===========================================================================
+
+export interface BriefInput {
+    /** Short identifier for the brief (e.g., "SPF Winter Launch DE") */
+    title: string;
+    /** KG market IDs, e.g., ['market:DE', 'market:FR'] */
+    market_ids: string[];
+    /** KG channel IDs, e.g., ['channel:PAID_MEDIA', 'channel:SOCIAL_MEDIA'] */
+    channel_ids: string[];
+    /** Planned start (ISO date) */
+    start_date: string;
+    /** Optional duration hint */
+    duration_weeks?: number;
+    /** Optional budget hint in GBP */
+    budget_hint_gbp?: number;
+    /** Free-text description of the brief */
+    summary: string;
+    /** Free-text objectives or KG objective IDs */
+    objectives?: string[];
+    /** Free-text constraints / notes */
+    notes?: string;
+}
+
+export interface CitedCampaign {
+    id: string;
+    name: string;
+    planned_gbp: number;
+    actual_gbp: number;
+    variance_pct: number;
+}
+
+export interface SuggestedPerson {
+    person_id: string;
+    person_name: string;
+    role_name: string;
+    proposed_role_on_brief: string;
+    seniority: string;
+    daily_rate_gbp: number;
+    rationale: string;
+    /** 0–100 — match score the agent assigned */
+    match_score: number;
+    /** Specific evidence — skills + channel/category years that justify the pick */
+    evidence: string[];
+}
+
+export interface Risk {
+    severity: 'low' | 'medium' | 'high';
+    title: string;
+    description: string;
+    /** Specific KG signals that triggered this risk */
+    cited_signals: string[];
+}
+
+export interface BriefRecommendation {
+    /** Budget range and rationale */
+    budget: {
+        recommended_low_gbp: number;
+        recommended_high_gbp: number;
+        rationale: string;
+        cited_campaigns: CitedCampaign[];
+    };
+    /** Timeline + approval buffers */
+    timeline: {
+        recommended_weeks: number;
+        internal_review_days_avg: number;
+        client_review_days_avg: number;
+        rationale: string;
+    };
+    /** Proposed team — 3-6 people */
+    team: SuggestedPerson[];
+    /** Top risks the agent identified */
+    risks: Risk[];
+    /** Past campaigns the agent considered most similar */
+    comparable_campaigns: Array<{
+        id: string;
+        name: string;
+        why_comparable: string;
+    }>;
+    /** Free-text headline summary, 2–3 sentences */
+    summary: string;
+    /** Diagnostics — context size sent, latency, model */
+    meta: {
+        model: string;
+        latency_ms: number;
+        context_campaigns: number;
+        context_people: number;
+        context_approvals: number;
+    };
+}
+
+// ===========================================================================
+// OpenAI client (lazy)
+// ===========================================================================
+
+let openaiClient: OpenAI | null = null;
+function getOpenAI(): OpenAI {
+    if (!openaiClient) {
+        const apiKey = process.env.OPENAI_API_KEY;
+        if (!apiKey) throw new Error('OPENAI_API_KEY is not set');
+        openaiClient = new OpenAI({ apiKey });
+    }
+    return openaiClient;
+}
+
+// ===========================================================================
+// Public entry point
+// ===========================================================================
+
+export async function adviseOnBrief(input: BriefInput): Promise<BriefRecommendation> {
+    const t0 = Date.now();
+
+    // 1. Retrieve a relevant slice of the KG
+    const context = await buildContext(input);
+
+    // 2. Build the prompt
+    const { systemPrompt, userPrompt } = buildPrompts(input, context);
+
+    // 3. Call GPT-4o with JSON-object response format
+    const openai = getOpenAI();
+    const completion = await openai.chat.completions.create({
+        model: 'gpt-4o',
+        temperature: 0.3,
+        max_tokens: 2200,
+        response_format: { type: 'json_object' },
+        messages: [
+            { role: 'system', content: systemPrompt },
+            { role: 'user', content: userPrompt },
+        ],
+    });
+
+    const raw = completion.choices[0]?.message?.content;
+    if (!raw) throw new Error('Briefing Assistant: empty response from model');
+
+    let parsed: any;
+    try {
+        parsed = JSON.parse(raw);
+    } catch (e) {
+        throw new Error(`Briefing Assistant: model returned invalid JSON. Raw: ${raw.slice(0, 400)}`);
+    }
+
+    // 4. Validate + assemble final shape
+    const recommendation: BriefRecommendation = {
+        budget: {
+            recommended_low_gbp: num(parsed?.budget?.recommended_low_gbp, context.budgetStats.p25),
+            recommended_high_gbp: num(parsed?.budget?.recommended_high_gbp, context.budgetStats.p75),
+            rationale: str(parsed?.budget?.rationale, 'Based on comparable historical campaigns.'),
+            cited_campaigns: arr(parsed?.budget?.cited_campaigns)
+                .map((c: any) => ({
+                    id: str(c?.id, ''),
+                    name: str(c?.name, ''),
+                    planned_gbp: num(c?.planned_gbp, 0),
+                    actual_gbp: num(c?.actual_gbp, 0),
+                    variance_pct: num(c?.variance_pct, 0),
+                }))
+                .filter((c: CitedCampaign) => !!c.id),
+        },
+        timeline: {
+            recommended_weeks: num(parsed?.timeline?.recommended_weeks, 8),
+            internal_review_days_avg: num(parsed?.timeline?.internal_review_days_avg, context.approvalStats.internalAvg),
+            client_review_days_avg: num(parsed?.timeline?.client_review_days_avg, context.approvalStats.clientAvg),
+            rationale: str(parsed?.timeline?.rationale, ''),
+        },
+        team: arr(parsed?.team)
+            .map((m: any) => {
+                const person = context.candidatePeople.find((p) => p.id === m?.person_id);
+                return {
+                    person_id: str(m?.person_id, ''),
+                    person_name: str(m?.person_name, person?.properties.name || ''),
+                    role_name: person?.role_name || str(m?.role_name, ''),
+                    proposed_role_on_brief: str(m?.proposed_role_on_brief, ''),
+                    seniority: str(person?.properties.seniority || m?.seniority, ''),
+                    daily_rate_gbp: num(person?.properties.daily_rate_gbp || m?.daily_rate_gbp, 0),
+                    rationale: str(m?.rationale, ''),
+                    match_score: clamp(num(m?.match_score, 70), 0, 100),
+                    evidence: arr(m?.evidence).map((e: any) => str(e, '')),
+                };
+            })
+            .filter((m: SuggestedPerson) => !!m.person_id)
+            .slice(0, 6),
+        risks: arr(parsed?.risks)
+            .map((r: any) => ({
+                severity: severity(r?.severity),
+                title: str(r?.title, ''),
+                description: str(r?.description, ''),
+                cited_signals: arr(r?.cited_signals).map((s: any) => str(s, '')),
+            }))
+            .filter((r: Risk) => !!r.title)
+            .slice(0, 5),
+        comparable_campaigns: arr(parsed?.comparable_campaigns)
+            .map((c: any) => ({
+                id: str(c?.id, ''),
+                name: str(c?.name, ''),
+                why_comparable: str(c?.why_comparable, ''),
+            }))
+            .filter((c) => !!c.id)
+            .slice(0, 5),
+        summary: str(parsed?.summary, 'Recommendation generated from historical KG patterns.'),
+        meta: {
+            model: 'gpt-4o',
+            latency_ms: Date.now() - t0,
+            context_campaigns: context.similarCampaigns.length,
+            context_people: context.candidatePeople.length,
+            context_approvals: context.approvalStats.sampleSize,
+        },
+    };
+
+    return recommendation;
+}
+
+// ===========================================================================
+// Context retrieval — filter the KG down to what's relevant
+// ===========================================================================
+
+async function buildContext(input: BriefInput) {
+    const [allCampaigns, allExecutions, allApprovals, allPeople, allMarkets, allChannels, allTimeTracking, allCostLines] = await Promise.all([
+        getCampaigns(),
+        getExecutionsEnriched(),
+        getApprovalSteps(),
+        getPeopleEnriched(),
+        getMarkets(),
+        getChannels(),
+        getTimeTracking(),
+        getCostLines(),
+    ]);
+
+    const inputMarketSet = new Set(input.market_ids);
+    const inputChannelSet = new Set(input.channel_ids);
+
+    // ----- Similar campaigns -----
+    // Score each campaign by how much it overlaps with the brief on (markets × channels)
+    const startDate = new Date(input.start_date);
+    const cutoff = new Date(startDate);
+    cutoff.setUTCFullYear(cutoff.getUTCFullYear() - 2);
+
+    const campaignScored = allCampaigns
+        .map((c) => {
+            const executions = allExecutions.filter((e) => e.campaign_id === c.id);
+            const campaignMarkets = new Set(executions.map((e) => e.market_id).filter(Boolean));
+            const campaignChannels = new Set(executions.map((e) => e.channel_id).filter(Boolean));
+            const marketOverlap = [...campaignMarkets].filter((m) => inputMarketSet.has(m as string)).length;
+            const channelOverlap = [...campaignChannels].filter((ch) => inputChannelSet.has(ch as string)).length;
+            const dateOk = new Date(c.properties.start_date) >= cutoff;
+            const score = (marketOverlap * 3 + channelOverlap * 2) * (dateOk ? 1 : 0.5);
+            return { campaign: c, executions, marketOverlap, channelOverlap, score };
+        })
+        .filter((c) => c.score > 0)
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 8);
+
+    const similarCampaigns = campaignScored.map(({ campaign, executions, marketOverlap, channelOverlap }) => ({
+        id: campaign.id,
+        name: campaign.properties.name,
+        type: campaign.properties.campaign_type,
+        start_date: campaign.properties.start_date,
+        end_date: campaign.properties.end_date,
+        budget_planned: campaign.properties.budget_planned,
+        budget_actual: campaign.properties.budget_actual,
+        variance_pct: pct(campaign.properties.budget_planned, campaign.properties.budget_actual),
+        executions_count: executions.length,
+        market_overlap: marketOverlap,
+        channel_overlap: channelOverlap,
+        summary: campaign.properties.summary,
+    }));
+
+    // ----- Budget stats from similar campaigns -----
+    const planned = similarCampaigns.map((c) => c.budget_planned).filter((n) => n > 0);
+    const actual = similarCampaigns.map((c) => c.budget_actual).filter((n) => n > 0);
+    const budgetStats = {
+        plannedMin: Math.min(...(planned.length ? planned : [0])),
+        plannedMax: Math.max(...(planned.length ? planned : [0])),
+        actualMin: Math.min(...(actual.length ? actual : [0])),
+        actualMax: Math.max(...(actual.length ? actual : [0])),
+        plannedAvg: avg(planned),
+        actualAvg: avg(actual),
+        p25: percentile(actual, 25),
+        p75: percentile(actual, 75),
+    };
+
+    // ----- Approval timing patterns -----
+    // Pull approval steps for executions that ran in the input markets / channels
+    const targetExecutionIds = new Set(
+        allExecutions
+            .filter((e) =>
+                inputMarketSet.has(e.market_id || '') &&
+                inputChannelSet.has(e.channel_id || ''),
+            )
+            .map((e) => e.id),
+    );
+    // Find approval steps via the REQUIRES_APPROVAL graph traversal
+    // Since approval_steps are already linked, we can use the enriched executions' approval_steps
+    const relevantApprovals: any[] = [];
+    for (const e of allExecutions) {
+        if (!targetExecutionIds.has(e.id)) continue;
+        for (const a of e.approval_steps) {
+            if (a) relevantApprovals.push(a);
+        }
+    }
+    const internalApprovals = relevantApprovals.filter((a: any) => a.properties.gate === 'internal_review');
+    const clientApprovals = relevantApprovals.filter((a: any) => a.properties.gate === 'client_review');
+    const approvalStats = {
+        internalAvg: avg(internalApprovals.map((a: any) => a.properties.actual_duration_days)),
+        clientAvg: avg(clientApprovals.map((a: any) => a.properties.actual_duration_days)),
+        internalSlipPct: internalApprovals.length
+            ? Math.round((internalApprovals.filter((a: any) => a.properties.actual_duration_days > 5).length / internalApprovals.length) * 100)
+            : 0,
+        clientSlipPct: clientApprovals.length
+            ? Math.round((clientApprovals.filter((a: any) => a.properties.actual_duration_days > 3).length / clientApprovals.length) * 100)
+            : 0,
+        sampleSize: relevantApprovals.length,
+    };
+
+    // ----- Candidate people -----
+    // Score people by relevant channel × category experience + skills
+    const targetSkillIds = channelToSkillIds(input.channel_ids);
+    const candidatePeople = allPeople
+        .map((p) => {
+            // Channel experience match
+            const channelMatch = p.channel_experience
+                .filter((c) => inputChannelSet.has(c.channel_id))
+                .reduce((s, c) => s + c.years, 0);
+            // Beauty / skincare category experience (this is Aurelune)
+            const categoryMatch = p.category_experience
+                .filter((c) => c.category_id === 'category:beauty' || c.category_id === 'category:skincare')
+                .reduce((s, c) => s + c.years, 0);
+            // Skill match
+            const skillMatch = p.skills
+                .filter((s) => targetSkillIds.has(s.skill_id))
+                .reduce((s, sk) => s + sk.proficiency, 0);
+            // Active in market — approximate via time-tracking presence in relevant period
+            // (skipped for performance — agent gets the metadata to reason about)
+            const score = channelMatch * 2 + categoryMatch * 2 + skillMatch * 1.5;
+            return { person: p, channelMatch, categoryMatch, skillMatch, score };
+        })
+        .filter((p) => p.score > 0)
+        .sort((a, b) => b.score - a.score)
+        .slice(0, 15)
+        .map(({ person, channelMatch, categoryMatch, skillMatch, score }) => ({
+            id: person.id,
+            properties: person.properties,
+            department_name: person.department_name,
+            role_name: person.role_name,
+            top_skills: person.skills.slice(0, 5),
+            channel_experience: person.channel_experience,
+            category_experience: person.category_experience,
+            channel_match_years: channelMatch,
+            category_match_years: categoryMatch,
+            skill_match_total: skillMatch,
+            score,
+        }));
+
+    // ----- Overload / availability heuristic -----
+    // Count overload weeks per candidate in trailing 6 months
+    const trailingCutoff = new Date(startDate);
+    trailingCutoff.setUTCMonth(trailingCutoff.getUTCMonth() - 6);
+    const overloadCount: Record<string, number> = {};
+    const personById = new Map(allPeople.map((p) => [p.id, p]));
+    const hoursByPersonWeek = new Map<string, number>();
+    for (const t of allTimeTracking) {
+        const wk = new Date(t.week_starting);
+        if (wk < trailingCutoff) continue;
+        const key = `${t.person_id}|${t.week_starting}`;
+        hoursByPersonWeek.set(key, (hoursByPersonWeek.get(key) || 0) + parseFloat(t.actual_hours || '0'));
+    }
+    for (const [key, hours] of hoursByPersonWeek) {
+        const personId = key.split('|')[0];
+        const p = personById.get(personId);
+        if (!p) continue;
+        const cap = p.properties.capacity_hours_per_week || 40;
+        if (hours > cap * 1.25) overloadCount[personId] = (overloadCount[personId] || 0) + 1;
+    }
+    const candidatePeopleWithLoad = candidatePeople.map((p) => ({
+        ...p,
+        recent_overload_weeks: overloadCount[p.id] || 0,
+    }));
+
+    return {
+        similarCampaigns,
+        budgetStats,
+        approvalStats,
+        candidatePeople: candidatePeopleWithLoad,
+        markets: allMarkets.filter((m) => inputMarketSet.has(m.id)),
+        channels: allChannels.filter((c) => inputChannelSet.has(c.id)),
+    };
+}
+
+// ===========================================================================
+// Prompt construction
+// ===========================================================================
+
+function buildPrompts(input: BriefInput, context: Awaited<ReturnType<typeof buildContext>>) {
+    const systemPrompt = `You are the Briefing Assistant for Halo & Helix, an independent marketing agency.
+
+Your job: given a new brief from the client (Aurelune, a prestige skincare brand) and grounded historical context from Halo & Helix's knowledge graph, produce a STRUCTURED RECOMMENDATION for budget, timeline, team, and risks.
+
+GROUNDING RULES — non-negotiable:
+1. Every budget number must be defensible by the CITED CAMPAIGNS you reference.
+2. Every team member you suggest MUST come from the CANDIDATE PEOPLE list in the context. Do not invent people.
+3. Every risk must cite a specific historical signal (campaign id, person id, approval pattern).
+4. Match scores (0–100) should reflect strength of relevant channel + category + skill match.
+5. If the historical signal is weak, say so — confidence over confidence-theatre.
+
+OUTPUT FORMAT — return STRICT JSON with this exact shape:
+
+{
+  "summary": "2–3 sentence headline that a brand director can read in 10 seconds.",
+  "budget": {
+    "recommended_low_gbp": number,
+    "recommended_high_gbp": number,
+    "rationale": "1–2 sentences explaining the range citing past campaigns.",
+    "cited_campaigns": [
+      { "id": "campaign:...", "name": "...", "planned_gbp": number, "actual_gbp": number, "variance_pct": number }
+    ]
+  },
+  "timeline": {
+    "recommended_weeks": number,
+    "internal_review_days_avg": number,
+    "client_review_days_avg": number,
+    "rationale": "1–2 sentences."
+  },
+  "team": [
+    {
+      "person_id": "person:...",
+      "person_name": "Maya Chen",
+      "role_name": "Strategy Director",
+      "proposed_role_on_brief": "Lead strategist",
+      "seniority": "director",
+      "daily_rate_gbp": 1380,
+      "rationale": "Why this person — 1–2 sentences specific to skills + experience.",
+      "match_score": 87,
+      "evidence": ["7 years on SOCIAL_MEDIA", "9 years on category:beauty", "proficiency 5 on positioning"]
+    }
+  ],
+  "risks": [
+    {
+      "severity": "low" | "medium" | "high",
+      "title": "Short title",
+      "description": "1–2 sentences.",
+      "cited_signals": ["campaign:...", "person:..."]
+    }
+  ],
+  "comparable_campaigns": [
+    { "id": "campaign:...", "name": "...", "why_comparable": "1 sentence." }
+  ]
+}
+
+TEAM SIZING:
+- Pick 3–6 people that cover: account lead, strategy/creative lead, channel specialist(s), project management.
+- Prefer people with high match scores AND low recent_overload_weeks.
+
+RISK CHECKLIST — flag any of these that apply:
+- Budget tight vs historical: range you recommend > budget_hint_gbp
+- Schedule risk: approval timing pattern in this market is historically slow
+- Capacity risk: top candidates have high recent_overload_weeks
+- Market-specific risk: regulation, channel mix, novel territory`;
+
+    const userPrompt = `BRIEF
+=====
+Title: ${input.title}
+Summary: ${input.summary}
+Markets: ${input.market_ids.join(', ')} (${context.markets.map((m) => m.properties.label).join(', ')})
+Channels: ${input.channel_ids.join(', ')} (${context.channels.map((c) => c.properties.label).join(', ')})
+Start date: ${input.start_date}
+Duration hint: ${input.duration_weeks ? `${input.duration_weeks} weeks` : 'unspecified'}
+Budget hint: ${input.budget_hint_gbp ? formatCurrency(input.budget_hint_gbp) : 'unspecified'}
+Objectives: ${(input.objectives || []).join('; ') || 'unspecified'}
+Notes: ${input.notes || '—'}
+
+HISTORICAL CONTEXT (from Halo & Helix knowledge graph)
+======================================================
+
+Similar past campaigns (ranked by market × channel overlap with this brief):
+${context.similarCampaigns.length === 0 ? 'NONE — no strong historical analogues for this combination.' :
+        context.similarCampaigns.map((c, i) => `${i + 1}. ${c.id}
+   Name: ${c.name}
+   Type: ${c.type}  Dates: ${c.start_date} → ${c.end_date}
+   Budget: planned ${formatCurrency(c.budget_planned)} → actual ${formatCurrency(c.budget_actual)} (variance ${c.variance_pct > 0 ? '+' : ''}${c.variance_pct}%)
+   Executions: ${c.executions_count}, overlap: ${c.market_overlap} mkts × ${c.channel_overlap} channels
+   Summary: ${c.summary || '—'}`).join('\n\n')}
+
+Budget benchmarks across the similar campaigns above:
+   Planned range: ${formatCurrency(context.budgetStats.plannedMin)} – ${formatCurrency(context.budgetStats.plannedMax)} (avg ${formatCurrency(context.budgetStats.plannedAvg)})
+   Actual range:  ${formatCurrency(context.budgetStats.actualMin)} – ${formatCurrency(context.budgetStats.actualMax)} (avg ${formatCurrency(context.budgetStats.actualAvg)})
+   Actual P25/P75: ${formatCurrency(context.budgetStats.p25)} – ${formatCurrency(context.budgetStats.p75)}
+
+Approval timing (for ${input.market_ids.join('+')} × ${input.channel_ids.join('+')}):
+   Sample size: ${context.approvalStats.sampleSize}
+   Internal review avg: ${context.approvalStats.internalAvg} days (planned 5)
+   Client review avg:   ${context.approvalStats.clientAvg} days (planned 3)
+   Internal slip rate:  ${context.approvalStats.internalSlipPct}% of executions slip past 5 days
+   Client slip rate:    ${context.approvalStats.clientSlipPct}% of executions slip past 3 days
+
+CANDIDATE PEOPLE (top ${context.candidatePeople.length} by relevant skill + experience):
+${context.candidatePeople.map((p, i) => `${i + 1}. ${p.id}
+   ${p.properties.name} — ${p.role_name}, ${p.department_name}, ${p.properties.office}
+   Seniority: ${p.properties.seniority}, Daily rate: £${p.properties.daily_rate_gbp}, Capacity: ${p.properties.capacity_hours_per_week}h/wk
+   Channel experience (matching): ${p.channel_match_years} years across the brief's channels
+   Category experience (matching): ${p.category_match_years} years in beauty/skincare
+   Top skills: ${p.top_skills.map((s) => `${s.skill_name} (${s.proficiency}/5)`).join(', ')}
+   Channel experience detail: ${p.channel_experience.map((c) => `${c.channel_label}:${c.years}y`).join(', ')}
+   Recent overload weeks (last 6mo): ${p.recent_overload_weeks}`).join('\n\n')}
+
+Now produce the JSON recommendation following the system prompt. Stay grounded in the data above.`;
+
+    return { systemPrompt, userPrompt };
+}
+
+// ===========================================================================
+// Skill mapping for channels — used to weight candidate people
+// ===========================================================================
+
+function channelToSkillIds(channelIds: string[]): Set<string> {
+    const map: Record<string, string[]> = {
+        'channel:PAID_MEDIA': ['skill:paid-search', 'skill:paid-social', 'skill:programmatic', 'skill:attribution', 'skill:analytics'],
+        'channel:SOCIAL_MEDIA': ['skill:social-organic', 'skill:influencer', 'skill:concept-development', 'skill:copywriting-short-form'],
+        'channel:SEO': ['skill:seo-traditional', 'skill:seo-aeo-geo', 'skill:content-strategy', 'skill:copywriting-long-form'],
+        'channel:ECRM': ['skill:ecrm-architecture', 'skill:ecrm-copy', 'skill:analytics'],
+        'channel:D2C': ['skill:experimentation', 'skill:analytics', 'skill:attribution'],
+        'channel:UX': ['skill:experimentation', 'skill:analytics'],
+        'channel:OOH': ['skill:ooh-planning', 'skill:art-direction', 'skill:print-production', 'skill:copywriting-short-form'],
+        'channel:POSM': ['skill:posm-execution', 'skill:print-production', 'skill:art-direction'],
+        'channel:EVENT': ['skill:events-production', 'skill:project-management'],
+        'channel:RESEARCH': ['skill:audience-strategy', 'skill:analytics'],
+        'channel:B2B': ['skill:negotiation', 'skill:brand-strategy'],
+        'channel:B2B2C': ['skill:negotiation', 'skill:brand-strategy', 'skill:print-production'],
+    };
+    const out = new Set<string>();
+    for (const ch of channelIds) {
+        for (const s of map[ch] || []) out.add(s);
+    }
+    // Always include foundational skills
+    out.add('skill:campaign-strategy');
+    out.add('skill:project-management');
+    return out;
+}
+
+// ===========================================================================
+// Tiny utility helpers
+// ===========================================================================
+
+function str(v: any, dflt: string): string {
+    return typeof v === 'string' ? v : dflt;
+}
+function num(v: any, dflt: number): number {
+    const n = typeof v === 'number' ? v : parseFloat(String(v));
+    return Number.isFinite(n) ? n : dflt;
+}
+function arr(v: any): any[] {
+    return Array.isArray(v) ? v : [];
+}
+function severity(v: any): 'low' | 'medium' | 'high' {
+    if (v === 'high' || v === 'medium' || v === 'low') return v;
+    return 'medium';
+}
+function clamp(n: number, lo: number, hi: number): number {
+    return Math.max(lo, Math.min(hi, n));
+}
+function avg(arr: number[]): number {
+    if (arr.length === 0) return 0;
+    return Math.round(arr.reduce((s, n) => s + n, 0) / arr.length);
+}
+function pct(planned: number, actual: number): number {
+    if (!planned) return 0;
+    return Math.round(((actual - planned) / planned) * 100);
+}
+function percentile(arr: number[], p: number): number {
+    if (arr.length === 0) return 0;
+    const sorted = [...arr].sort((a, b) => a - b);
+    const idx = Math.floor((p / 100) * (sorted.length - 1));
+    return sorted[idx];
+}
