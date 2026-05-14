@@ -1,5 +1,7 @@
+import Link from 'next/link';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
+import { FileText, ChevronRight } from 'lucide-react';
 import { getBrand, getProducts, getPersonas, getBrandAssets, getBrandGuidelines, formatCurrency } from '@/lib/kg/loader';
 
 export default async function BrandPage() {
@@ -182,17 +184,30 @@ export default async function BrandPage() {
                 <h2 className="text-lg font-semibold text-white mb-3">Brand guidelines</h2>
                 <div className="grid md:grid-cols-3 gap-3">
                     {guidelines.map((g) => (
-                        <Card key={g.id} variant="elevated" className="hover:border-primary-500/40 transition-colors">
-                            <CardHeader>
-                                <CardTitle className="text-sm">{g.properties.name}</CardTitle>
-                                <CardDescription className="text-xs font-mono mt-1">{g.properties.doc_path}</CardDescription>
-                            </CardHeader>
-                        </Card>
+                        <Link
+                            key={g.id}
+                            href={`/knowledge-graph/brand/guidelines/${encodeURIComponent(g.id)}`}
+                            className="block"
+                        >
+                            <Card variant="elevated" className="hover:border-primary-500/40 hover:bg-white/[0.02] transition-colors h-full">
+                                <CardHeader>
+                                    <div className="flex items-start justify-between gap-2">
+                                        <div className="min-w-0">
+                                            <div className="flex items-center gap-2 mb-1.5">
+                                                <FileText className="h-4 w-4 text-primary-400 flex-shrink-0" />
+                                                <CardTitle className="text-sm truncate">{g.properties.name}</CardTitle>
+                                            </div>
+                                            <CardDescription className="text-xs font-mono">{g.properties.doc_path}</CardDescription>
+                                        </div>
+                                        <ChevronRight className="h-4 w-4 text-neutral-500 flex-shrink-0 mt-1" />
+                                    </div>
+                                </CardHeader>
+                            </Card>
+                        </Link>
                     ))}
                 </div>
                 <p className="text-xs text-neutral-500 mt-3">
-                    Markdown sources at <code>/data/knowledge-graph/brand-book/</code>. The image-generation prompts file is ready
-                    for pasting into ChatGPT / Midjourney / FLUX.
+                    Markdown sources at <code>/data/knowledge-graph/brand-book/</code>. Click any guideline to read its full content.
                 </p>
             </section>
 
