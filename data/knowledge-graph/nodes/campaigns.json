@@ -1,0 +1,152 @@
+[
+  {
+    "id": "campaign:spring-2024-retinoid-pm-anniversary",
+    "type": "Campaign",
+    "properties": {
+      "name": "Retinoid PM 4-Year Anniversary",
+      "campaign_type": "global_launch",
+      "start_date": "2024-03-04",
+      "end_date": "2024-05-31",
+      "status": "shipped",
+      "budget_planned": 920000,
+      "budget_actual": 911200,
+      "currency": "GBP",
+      "summary": "Celebrate four years of Retinoid PM Serum with a science-led campaign that defends its hero position."
+    }
+  },
+  {
+    "id": "campaign:always-on-d2c-2024",
+    "type": "Campaign",
+    "properties": {
+      "name": "Always-On D2C Programme 2024",
+      "campaign_type": "always_on",
+      "start_date": "2024-01-15",
+      "end_date": "2024-12-31",
+      "status": "shipped",
+      "budget_planned": 1400000,
+      "budget_actual": 1361543,
+      "currency": "GBP",
+      "summary": "The always-on engine: paid acquisition + ECRM nurture + organic search."
+    }
+  },
+  {
+    "id": "campaign:sephora-us-launch-y1",
+    "type": "Campaign",
+    "properties": {
+      "name": "Sephora US Launch — Year 1",
+      "campaign_type": "retail_partner",
+      "start_date": "2024-08-01",
+      "end_date": "2025-07-31",
+      "status": "shipped",
+      "budget_planned": 1850000,
+      "budget_actual": 1839758,
+      "currency": "GBP",
+      "summary": "Launch and Year-1 activation across 240 Sephora US doors. POSM, in-store events, supporting paid + social."
+    }
+  },
+  {
+    "id": "campaign:jp-tokyo-launch-2024",
+    "type": "Campaign",
+    "properties": {
+      "name": "Japan Launch — Tokyo Residency",
+      "campaign_type": "local_activation",
+      "start_date": "2024-04-01",
+      "end_date": "2024-09-30",
+      "status": "shipped",
+      "budget_planned": 420000,
+      "budget_actual": 406906,
+      "currency": "GBP",
+      "summary": "Six-month Tokyo concept-store residency, LINE loyalty programme, supporting OOH + social."
+    }
+  },
+  {
+    "id": "campaign:spring-2025-hero-refresh",
+    "type": "Campaign",
+    "properties": {
+      "name": "Spring 2025 Hero Refresh — AM Phase Education",
+      "campaign_type": "global_launch",
+      "start_date": "2025-02-17",
+      "end_date": "2025-05-30",
+      "status": "shipped",
+      "budget_planned": 1180000,
+      "budget_actual": 1140380,
+      "currency": "GBP",
+      "summary": "Refresh the AM-phase narrative — Bakuchiol Day Fluid as the daily protector. Editorial-led, evidence-rich."
+    }
+  },
+  {
+    "id": "campaign:cn-xiaohongshu-always-on-2025",
+    "type": "Campaign",
+    "properties": {
+      "name": "CN Xiaohongshu Always-On 2025",
+      "campaign_type": "always_on",
+      "start_date": "2025-01-15",
+      "end_date": "2025-12-31",
+      "status": "shipped",
+      "budget_planned": 380000,
+      "budget_actual": 401437,
+      "currency": "GBP",
+      "summary": "Always-on Xiaohongshu UGC programme + Tier-1 airport OOH for cross-border buyers."
+    }
+  },
+  {
+    "id": "campaign:annual-ooh-flagship-2025",
+    "type": "Campaign",
+    "properties": {
+      "name": "Annual OOH Flagship 2025 — Two Phases. One Skin.",
+      "campaign_type": "global_launch",
+      "start_date": "2025-09-01",
+      "end_date": "2025-11-30",
+      "status": "shipped",
+      "budget_planned": 1450000,
+      "budget_actual": 1453646,
+      "currency": "GBP",
+      "summary": "The 2025 flagship OOH moment. London + NYC. Two phases. One skin."
+    }
+  },
+  {
+    "id": "campaign:always-on-d2c-2025",
+    "type": "Campaign",
+    "properties": {
+      "name": "Always-On D2C Programme 2025",
+      "campaign_type": "always_on",
+      "start_date": "2025-01-13",
+      "end_date": "2025-12-31",
+      "status": "shipped",
+      "budget_planned": 1850000,
+      "budget_actual": 1876638,
+      "currency": "GBP",
+      "summary": "The always-on engine continued — now with the AEO/GEO content layer baked in."
+    }
+  },
+  {
+    "id": "campaign:de-rebuild-2025",
+    "type": "Campaign",
+    "properties": {
+      "name": "DE Rebuild — Sensitive-Skin Focus",
+      "campaign_type": "local_activation",
+      "start_date": "2025-03-10",
+      "end_date": "2025-09-30",
+      "status": "shipped",
+      "budget_planned": 380000,
+      "budget_actual": 375159,
+      "currency": "GBP",
+      "summary": "Reset DE positioning around sensitive-skin and Gentle Gemma. Heavy on evidence, dermatology endorsements."
+    }
+  },
+  {
+    "id": "campaign:resurfacing-oil-launch-h1-2026",
+    "type": "Campaign",
+    "properties": {
+      "name": "Resurfacing Ritual Oil — Refresh H1 2026",
+      "campaign_type": "seasonal",
+      "start_date": "2026-02-10",
+      "end_date": "2026-05-15",
+      "status": "in_progress",
+      "budget_planned": 680000,
+      "budget_actual": 676867,
+      "currency": "GBP",
+      "summary": "H1 2026 refresh for the Resurfacing Ritual Oil — reposition as the twice-weekly PM enhancer."
+    }
+  }
+]

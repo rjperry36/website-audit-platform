@@ -12,7 +12,9 @@
     "init-test-site": "tsx scripts/init-test-site.ts",
     "browser-crawl": "tsx scripts/browser-crawl.ts",
     "production-crawl": "tsx scripts/production-crawl.ts",
-    "audit:security": "tsx scripts/security-audit.ts"
+    "audit:security": "tsx scripts/security-audit.ts",
+    "generate-kg-fixtures": "tsx scripts/generate-kg-fixtures.ts",
+    "validate-kg": "tsx scripts/validate-kg.ts"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.95.3",

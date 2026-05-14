@@ -1,0 +1,149 @@
+media_spend_id,execution_id,market_id,channel_id,platform,planned_spend,actual_spend,currency,period_start,period_end
+ms-2024-03-07-0001,execution:exec-2024-005,market:UK,channel:OOH,Clear Channel,161727,173396,GBP,2024-03-07,2024-03-26
+ms-2024-05-02-0002,execution:exec-2024-008,market:UK,channel:OOH,JCDecaux,183729,189748,GBP,2024-05-02,2024-05-18
+ms-2024-05-03-0003,execution:exec-2024-011,market:UK,channel:PAID_MEDIA,Pinterest,75589,83944,GBP,2024-05-03,2024-05-20
+ms-2024-04-22-0004,execution:exec-2024-013,market:US,channel:OOH,Clear Channel,199487,219600,GBP,2024-04-22,2024-05-18
+ms-2024-03-28-0005,execution:exec-2024-016,market:US,channel:PAID_MEDIA,Pinterest,58486,53217,GBP,2024-03-28,2024-04-09
+ms-2024-04-17-0006,execution:exec-2024-018,market:DE,channel:OOH,Ocean Outdoor,214979,222935,GBP,2024-04-17,2024-04-29
+ms-2024-05-15-0007,execution:exec-2024-021,market:DE,channel:PAID_MEDIA,Pinterest,21647,20866,GBP,2024-05-15,2024-06-09
+ms-2024-04-28-0008,execution:exec-2024-023,market:FR,channel:OOH,Clear Channel,112253,121885,GBP,2024-04-28,2024-05-09
+ms-2024-04-03-0009,execution:exec-2024-026,market:FR,channel:PAID_MEDIA,TikTok,53257,50287,GBP,2024-04-03,2024-04-29
+ms-2024-02-24-0010,execution:exec-2024-029,market:UK,channel:PAID_MEDIA,TikTok,53724,57199,GBP,2024-02-24,2024-04-06
+ms-2024-06-10-0011,execution:exec-2024-031,market:UK,channel:PAID_MEDIA,TikTok,19136,17512,GBP,2024-06-10,2024-06-29
+ms-2024-06-22-0012,execution:exec-2024-032,market:UK,channel:PAID_MEDIA,Pinterest,28901,29417,GBP,2024-06-22,2024-07-06
+ms-2024-07-10-0013,execution:exec-2024-033,market:UK,channel:PAID_MEDIA,Google,64995,57942,GBP,2024-07-10,2024-08-01
+ms-2024-05-02-0014,execution:exec-2024-043,market:US,channel:PAID_MEDIA,Google,34986,31035,GBP,2024-05-02,2024-05-17
+ms-2024-10-28-0015,execution:exec-2024-044,market:US,channel:PAID_MEDIA,Meta,39951,39959,GBP,2024-10-28,2024-11-22
+ms-2024-07-03-0016,execution:exec-2024-045,market:US,channel:PAID_MEDIA,Pinterest,31021,29861,GBP,2024-07-03,2024-08-04
+ms-2024-08-12-0017,execution:exec-2024-055,market:DE,channel:PAID_MEDIA,Google,34143,31377,GBP,2024-08-12,2024-09-08
+ms-2024-08-17-0018,execution:exec-2024-056,market:DE,channel:PAID_MEDIA,TikTok,71408,74933,GBP,2024-08-17,2024-09-12
+ms-2024-09-08-0019,execution:exec-2024-057,market:DE,channel:PAID_MEDIA,Google,37636,37908,GBP,2024-09-08,2024-09-20
+ms-2024-08-08-0020,execution:exec-2024-067,market:FR,channel:PAID_MEDIA,Google,66462,63584,GBP,2024-08-08,2024-08-26
+ms-2024-04-15-0021,execution:exec-2024-068,market:FR,channel:PAID_MEDIA,TikTok,67452,73469,GBP,2024-04-15,2024-05-07
+ms-2024-11-03-0022,execution:exec-2024-069,market:FR,channel:PAID_MEDIA,Google,54215,58802,GBP,2024-11-03,2024-12-02
+ms-2024-04-22-0023,execution:exec-2024-079,market:UK,channel:PAID_MEDIA,Pinterest,36264,34103,GBP,2024-04-22,2024-05-09
+ms-2024-03-15-0024,execution:exec-2024-083,market:US,channel:PAID_MEDIA,Pinterest,62837,66881,GBP,2024-03-15,2024-04-15
+ms-2024-03-20-0025,execution:exec-2024-087,market:DE,channel:PAID_MEDIA,Meta,70554,70337,GBP,2024-03-20,2024-04-02
+ms-2024-03-05-0026,execution:exec-2024-091,market:FR,channel:PAID_MEDIA,TikTok,64880,59451,GBP,2024-03-05,2024-03-21
+ms-2025-02-26-0027,execution:exec-2025-010,market:US,channel:OOH,Ocean Outdoor,208593,196100,GBP,2025-02-26,2025-03-10
+ms-2025-02-01-0028,execution:exec-2025-011,market:US,channel:OOH,Sapience,51959,47832,GBP,2025-02-01,2025-02-15
+ms-2024-11-10-0029,execution:exec-2024-099,market:US,channel:OOH,JCDecaux,42033,44514,GBP,2024-11-10,2024-11-26
+ms-2025-01-21-0030,execution:exec-2025-012,market:US,channel:OOH,Sapience,127920,129340,GBP,2025-01-21,2025-02-02
+ms-2024-11-29-0031,execution:exec-2024-100,market:US,channel:OOH,Sapience,60907,61588,GBP,2024-11-29,2024-12-19
+ms-2024-11-13-0032,execution:exec-2024-101,market:US,channel:OOH,Clear Channel,66366,63956,GBP,2024-11-13,2024-12-01
+ms-2025-01-30-0033,execution:exec-2025-013,market:US,channel:OOH,JCDecaux,209966,211425,GBP,2025-01-30,2025-02-20
+ms-2024-11-10-0034,execution:exec-2024-102,market:US,channel:PAID_MEDIA,Google,28454,29628,GBP,2024-11-10,2024-11-29
+ms-2025-06-02-0035,execution:exec-2025-014,market:US,channel:PAID_MEDIA,Pinterest,15703,15828,GBP,2025-06-02,2025-06-28
+ms-2025-02-06-0036,execution:exec-2025-015,market:US,channel:PAID_MEDIA,Meta,52200,52014,GBP,2025-02-06,2025-03-05
+ms-2025-01-31-0037,execution:exec-2025-016,market:US,channel:PAID_MEDIA,Pinterest,67418,68971,GBP,2025-01-31,2025-02-17
+ms-2025-06-04-0038,execution:exec-2025-017,market:US,channel:PAID_MEDIA,Meta,65924,68457,GBP,2025-06-04,2025-06-27
+ms-2024-12-26-0039,execution:exec-2024-103,market:US,channel:PAID_MEDIA,Google,63417,60146,GBP,2024-12-26,2025-01-09
+ms-2025-04-21-0040,execution:exec-2025-018,market:US,channel:PAID_MEDIA,Google,71331,67736,GBP,2025-04-21,2025-05-08
+ms-2024-12-30-0041,execution:exec-2024-112,market:US,channel:OOH,JCDecaux,179075,171706,GBP,2024-12-30,2025-01-27
+ms-2025-02-18-0042,execution:exec-2025-035,market:US,channel:OOH,Sapience,182354,179109,GBP,2025-02-18,2025-03-17
+ms-2024-12-24-0043,execution:exec-2024-113,market:US,channel:OOH,Ocean Outdoor,219752,229665,GBP,2024-12-24,2025-01-09
+ms-2024-12-25-0044,execution:exec-2024-114,market:US,channel:OOH,Ocean Outdoor,198301,190378,GBP,2024-12-25,2025-01-26
+ms-2024-12-30-0045,execution:exec-2024-115,market:US,channel:OOH,Sapience,98390,106337,GBP,2024-12-30,2025-01-23
+ms-2024-09-19-0046,execution:exec-2024-116,market:US,channel:OOH,JCDecaux,163166,145785,GBP,2024-09-19,2024-10-17
+ms-2025-01-21-0047,execution:exec-2025-036,market:US,channel:PAID_MEDIA,Pinterest,44507,39426,GBP,2025-01-21,2025-02-07
+ms-2025-01-03-0048,execution:exec-2025-037,market:US,channel:PAID_MEDIA,Google,69615,68506,GBP,2025-01-03,2025-01-30
+ms-2024-08-01-0049,execution:exec-2024-117,market:US,channel:PAID_MEDIA,Google,19256,19688,GBP,2024-08-01,2024-08-27
+ms-2025-03-10-0050,execution:exec-2025-038,market:US,channel:PAID_MEDIA,Meta,40505,38911,GBP,2025-03-10,2025-03-30
+ms-2024-09-18-0051,execution:exec-2024-118,market:US,channel:PAID_MEDIA,TikTok,73844,67658,GBP,2024-09-18,2024-10-03
+ms-2024-10-27-0052,execution:exec-2024-119,market:US,channel:PAID_MEDIA,TikTok,35583,33773,GBP,2024-10-27,2024-11-20
+ms-2024-08-25-0053,execution:exec-2024-131,market:JP,channel:OOH,Clear Channel,180104,194770,GBP,2024-08-25,2024-09-04
+ms-2024-08-14-0054,execution:exec-2024-132,market:JP,channel:OOH,Clear Channel,112527,104206,GBP,2024-08-14,2024-08-23
+ms-2024-05-24-0055,execution:exec-2024-133,market:JP,channel:OOH,Ocean Outdoor,156074,155089,GBP,2024-05-24,2024-06-16
+ms-2024-08-01-0056,execution:exec-2024-134,market:JP,channel:OOH,Ocean Outdoor,187962,188048,GBP,2024-08-01,2024-08-22
+ms-2024-08-24-0057,execution:exec-2024-135,market:JP,channel:OOH,Clear Channel,62788,63404,GBP,2024-08-24,2024-09-13
+ms-2024-05-07-0058,execution:exec-2024-159,market:JP,channel:OOH,Ocean Outdoor,46024,46420,GBP,2024-05-07,2024-06-10
+ms-2024-07-12-0059,execution:exec-2024-160,market:JP,channel:OOH,Sapience,127266,139771,GBP,2024-07-12,2024-08-05
+ms-2024-04-17-0060,execution:exec-2024-161,market:JP,channel:OOH,Ocean Outdoor,115078,125684,GBP,2024-04-17,2024-05-04
+ms-2024-04-14-0061,execution:exec-2024-162,market:JP,channel:OOH,Ocean Outdoor,72102,79002,GBP,2024-04-14,2024-05-06
+ms-2025-02-26-0062,execution:exec-2025-049,market:UK,channel:PAID_MEDIA,Google,30162,26641,GBP,2025-02-26,2025-03-16
+ms-2025-03-22-0063,execution:exec-2025-051,market:UK,channel:PAID_MEDIA,TikTok,35070,36576,GBP,2025-03-22,2025-04-27
+ms-2025-04-21-0064,execution:exec-2025-054,market:UK,channel:OOH,Clear Channel,91097,98606,GBP,2025-04-21,2025-05-02
+ms-2025-03-17-0065,execution:exec-2025-055,market:UK,channel:OOH,JCDecaux,165561,175071,GBP,2025-03-17,2025-03-30
+ms-2025-05-02-0066,execution:exec-2025-060,market:UK,channel:PAID_MEDIA,Google,19074,18085,GBP,2025-05-02,2025-05-25
+ms-2025-05-02-0067,execution:exec-2025-061,market:UK,channel:PAID_MEDIA,Google,23820,24957,GBP,2025-05-02,2025-05-31
+ms-2025-04-02-0068,execution:exec-2025-066,market:US,channel:OOH,Sapience,83786,89556,GBP,2025-04-02,2025-04-11
+ms-2025-03-27-0069,execution:exec-2025-067,market:US,channel:OOH,Clear Channel,104257,102576,GBP,2025-03-27,2025-04-29
+ms-2025-03-31-0070,execution:exec-2025-072,market:US,channel:PAID_MEDIA,Pinterest,40731,37454,GBP,2025-03-31,2025-04-18
+ms-2025-04-28-0071,execution:exec-2025-073,market:US,channel:PAID_MEDIA,Meta,34254,38200,GBP,2025-04-28,2025-05-08
+ms-2025-03-21-0072,execution:exec-2025-078,market:DE,channel:OOH,Ocean Outdoor,41171,37109,GBP,2025-03-21,2025-04-04
+ms-2025-03-27-0073,execution:exec-2025-079,market:DE,channel:OOH,JCDecaux,51263,52495,GBP,2025-03-27,2025-04-08
+ms-2025-04-04-0074,execution:exec-2025-084,market:DE,channel:PAID_MEDIA,TikTok,36430,34502,GBP,2025-04-04,2025-05-02
+ms-2025-05-05-0075,execution:exec-2025-085,market:DE,channel:PAID_MEDIA,Meta,71027,68721,GBP,2025-05-05,2025-05-30
+ms-2025-05-09-0076,execution:exec-2025-090,market:FR,channel:OOH,Clear Channel,201261,200101,GBP,2025-05-09,2025-05-25
+ms-2025-04-19-0077,execution:exec-2025-091,market:FR,channel:OOH,Clear Channel,204112,228099,GBP,2025-04-19,2025-05-02
+ms-2025-05-11-0078,execution:exec-2025-096,market:FR,channel:PAID_MEDIA,Google,21495,23810,GBP,2025-05-11,2025-05-27
+ms-2025-04-29-0079,execution:exec-2025-097,market:FR,channel:PAID_MEDIA,TikTok,42121,38074,GBP,2025-04-29,2025-05-28
+ms-2025-05-12-0080,execution:exec-2025-102,market:JP,channel:OOH,Ocean Outdoor,147659,138170,GBP,2025-05-12,2025-05-21
+ms-2025-03-22-0081,execution:exec-2025-103,market:JP,channel:OOH,Clear Channel,187086,187175,GBP,2025-03-22,2025-04-13
+ms-2025-04-03-0082,execution:exec-2025-108,market:JP,channel:PAID_MEDIA,TikTok,57579,63228,GBP,2025-04-03,2025-04-21
+ms-2025-04-20-0083,execution:exec-2025-109,market:JP,channel:PAID_MEDIA,Pinterest,63935,68800,GBP,2025-04-20,2025-05-22
+ms-2025-03-13-0084,execution:exec-2025-112,market:UK,channel:OOH,Sapience,147506,145635,GBP,2025-03-13,2025-04-02
+ms-2025-08-24-0085,execution:exec-2025-122,market:CN,channel:OOH,Ocean Outdoor,60056,66109,GBP,2025-08-24,2025-09-07
+ms-2025-07-13-0086,execution:exec-2025-123,market:CN,channel:OOH,Clear Channel,104795,115480,GBP,2025-07-13,2025-07-29
+ms-2025-05-02-0087,execution:exec-2025-124,market:CN,channel:OOH,Sapience,156335,164914,GBP,2025-05-02,2025-05-15
+ms-2025-07-24-0088,execution:exec-2025-125,market:CN,channel:OOH,Clear Channel,53024,55260,GBP,2025-07-24,2025-08-09
+ms-2025-04-26-0089,execution:exec-2025-126,market:CN,channel:OOH,Clear Channel,176385,177993,GBP,2025-04-26,2025-05-10
+ms-2025-02-10-0090,execution:exec-2025-139,market:CN,channel:OOH,Ocean Outdoor,157309,155378,GBP,2025-02-10,2025-03-05
+ms-2025-11-21-0091,execution:exec-2025-140,market:CN,channel:OOH,Clear Channel,210955,187791,GBP,2025-11-21,2025-12-08
+ms-2025-06-29-0092,execution:exec-2025-141,market:CN,channel:OOH,Clear Channel,172260,163547,GBP,2025-06-29,2025-07-31
+ms-2025-07-05-0093,execution:exec-2025-142,market:CN,channel:OOH,JCDecaux,176658,155580,GBP,2025-07-05,2025-07-24
+ms-2025-08-11-0094,execution:exec-2025-143,market:CN,channel:OOH,Sapience,67721,66425,GBP,2025-08-11,2025-08-28
+ms-2025-09-24-0095,execution:exec-2025-144,market:CN,channel:OOH,Ocean Outdoor,69253,69746,GBP,2025-09-24,2025-10-20
+ms-2025-09-20-0096,execution:exec-2025-145,market:UK,channel:PAID_MEDIA,TikTok,66914,63179,GBP,2025-09-20,2025-10-20
+ms-2025-09-16-0097,execution:exec-2025-146,market:UK,channel:PAID_MEDIA,Google,79598,87909,GBP,2025-09-16,2025-10-13
+ms-2025-09-29-0098,execution:exec-2025-150,market:UK,channel:OOH,Clear Channel,175138,170723,GBP,2025-09-29,2025-10-26
+ms-2025-10-02-0099,execution:exec-2025-151,market:UK,channel:OOH,Ocean Outdoor,82429,78790,GBP,2025-10-02,2025-10-16
+ms-2025-10-31-0100,execution:exec-2025-152,market:UK,channel:OOH,Clear Channel,131670,121451,GBP,2025-10-31,2025-11-13
+ms-2025-10-26-0101,execution:exec-2025-159,market:UK,channel:PAID_MEDIA,Google,69157,65155,GBP,2025-10-26,2025-11-12
+ms-2025-10-11-0102,execution:exec-2025-160,market:UK,channel:PAID_MEDIA,Pinterest,56512,53152,GBP,2025-10-11,2025-10-21
+ms-2025-09-30-0103,execution:exec-2025-161,market:UK,channel:PAID_MEDIA,Meta,17636,19198,GBP,2025-09-30,2025-10-10
+ms-2025-11-14-0104,execution:exec-2025-162,market:US,channel:OOH,Sapience,128747,138469,GBP,2025-11-14,2025-11-28
+ms-2025-11-06-0105,execution:exec-2025-163,market:US,channel:OOH,Sapience,130684,142081,GBP,2025-11-06,2025-11-17
+ms-2025-10-02-0106,execution:exec-2025-164,market:US,channel:OOH,Sapience,66473,67001,GBP,2025-10-02,2025-10-15
+ms-2025-11-02-0107,execution:exec-2025-171,market:US,channel:PAID_MEDIA,Google,58848,65400,GBP,2025-11-02,2025-12-02
+ms-2025-10-18-0108,execution:exec-2025-172,market:US,channel:PAID_MEDIA,Pinterest,35474,38792,GBP,2025-10-18,2025-10-29
+ms-2025-11-14-0109,execution:exec-2025-173,market:US,channel:PAID_MEDIA,Pinterest,48096,48935,GBP,2025-11-14,2025-12-02
+ms-2025-01-27-0110,execution:exec-2025-176,market:UK,channel:PAID_MEDIA,Meta,55832,60642,GBP,2025-01-27,2025-02-28
+ms-2025-09-06-0111,execution:exec-2025-180,market:UK,channel:PAID_MEDIA,Meta,22694,23076,GBP,2025-09-06,2025-09-18
+ms-2025-05-01-0112,execution:exec-2025-181,market:UK,channel:PAID_MEDIA,Pinterest,55227,57134,GBP,2025-05-01,2025-05-27
+ms-2025-10-11-0113,execution:exec-2025-182,market:UK,channel:PAID_MEDIA,Google,43776,39004,GBP,2025-10-11,2025-11-07
+ms-2025-06-04-0114,execution:exec-2025-192,market:US,channel:PAID_MEDIA,Google,28213,25542,GBP,2025-06-04,2025-06-19
+ms-2025-04-29-0115,execution:exec-2025-193,market:US,channel:PAID_MEDIA,Google,43626,44355,GBP,2025-04-29,2025-05-12
+ms-2025-07-21-0116,execution:exec-2025-194,market:US,channel:PAID_MEDIA,Pinterest,28731,25796,GBP,2025-07-21,2025-08-14
+ms-2025-06-16-0117,execution:exec-2025-204,market:DE,channel:PAID_MEDIA,TikTok,69589,63434,GBP,2025-06-16,2025-07-15
+ms-2025-04-23-0118,execution:exec-2025-205,market:DE,channel:PAID_MEDIA,Pinterest,73859,69981,GBP,2025-04-23,2025-05-02
+ms-2025-07-21-0119,execution:exec-2025-206,market:DE,channel:PAID_MEDIA,Google,23082,20890,GBP,2025-07-21,2025-08-25
+ms-2025-09-20-0120,execution:exec-2025-216,market:FR,channel:PAID_MEDIA,Meta,66415,70044,GBP,2025-09-20,2025-10-13
+ms-2025-04-15-0121,execution:exec-2025-217,market:FR,channel:PAID_MEDIA,Google,64279,65435,GBP,2025-04-15,2025-05-07
+ms-2025-05-12-0122,execution:exec-2025-218,market:FR,channel:PAID_MEDIA,Meta,28106,28178,GBP,2025-05-12,2025-05-25
+ms-2025-08-06-0123,execution:exec-2025-228,market:JP,channel:PAID_MEDIA,TikTok,44815,40422,GBP,2025-08-06,2025-08-23
+ms-2025-10-15-0124,execution:exec-2025-229,market:JP,channel:PAID_MEDIA,TikTok,22435,22164,GBP,2025-10-15,2025-11-09
+ms-2025-07-11-0125,execution:exec-2025-230,market:JP,channel:PAID_MEDIA,Pinterest,23602,22429,GBP,2025-07-11,2025-07-23
+ms-2025-03-23-0126,execution:exec-2025-240,market:UK,channel:PAID_MEDIA,Google,21703,20740,GBP,2025-03-23,2025-04-18
+ms-2025-09-08-0127,execution:exec-2025-244,market:US,channel:PAID_MEDIA,Pinterest,78889,80061,GBP,2025-09-08,2025-09-24
+ms-2025-11-13-0128,execution:exec-2025-248,market:DE,channel:PAID_MEDIA,Google,41978,38079,GBP,2025-11-13,2025-11-30
+ms-2025-08-07-0129,execution:exec-2025-252,market:FR,channel:PAID_MEDIA,Meta,75326,80970,GBP,2025-08-07,2025-08-19
+ms-2025-04-10-0130,execution:exec-2025-256,market:JP,channel:PAID_MEDIA,Pinterest,28527,28815,GBP,2025-04-10,2025-05-19
+ms-2025-06-01-0131,execution:exec-2025-260,market:DE,channel:PAID_MEDIA,TikTok,29172,27863,GBP,2025-06-01,2025-06-15
+ms-2025-08-10-0132,execution:exec-2025-261,market:DE,channel:PAID_MEDIA,Google,45131,48764,GBP,2025-08-10,2025-08-30
+ms-2025-06-08-0133,execution:exec-2025-262,market:DE,channel:PAID_MEDIA,Pinterest,22650,20370,GBP,2025-06-08,2025-06-27
+ms-2025-05-26-0134,execution:exec-2025-263,market:DE,channel:PAID_MEDIA,Pinterest,49376,51788,GBP,2025-05-26,2025-06-25
+ms-2025-09-02-0135,execution:exec-2025-280,market:DE,channel:PAID_MEDIA,Google,63650,70720,GBP,2025-09-02,2025-10-09
+ms-2025-08-13-0136,execution:exec-2025-281,market:DE,channel:PAID_MEDIA,Google,61776,68917,GBP,2025-08-13,2025-09-12
+ms-2025-06-21-0137,execution:exec-2025-282,market:DE,channel:PAID_MEDIA,Google,52709,58647,GBP,2025-06-21,2025-07-09
+ms-2025-06-22-0138,execution:exec-2025-283,market:DE,channel:PAID_MEDIA,Google,51015,49853,GBP,2025-06-22,2025-07-17
+ms-2026-02-13-0139,execution:exec-2026-001,market:UK,channel:PAID_MEDIA,TikTok,55398,57840,GBP,2026-02-13,2026-03-12
+ms-2026-03-11-0140,execution:exec-2026-003,market:UK,channel:OOH,Clear Channel,140823,148995,GBP,2026-03-11,2026-04-07
+ms-2026-04-02-0141,execution:exec-2026-008,market:UK,channel:PAID_MEDIA,TikTok,69820,76307,GBP,2026-04-02,2026-04-22
+ms-2026-03-11-0142,execution:exec-2026-009,market:UK,channel:OOH,Clear Channel,79733,71426,GBP,2026-03-11,2026-03-25
+ms-2026-03-29-0143,execution:exec-2026-013,market:US,channel:PAID_MEDIA,Pinterest,33588,30927,GBP,2026-03-29,2026-04-11
+ms-2026-03-05-0144,execution:exec-2026-014,market:US,channel:OOH,Sapience,97987,104354,GBP,2026-03-05,2026-03-28
+ms-2026-03-16-0145,execution:exec-2026-018,market:DE,channel:PAID_MEDIA,Google,38022,39404,GBP,2026-03-16,2026-04-12
+ms-2026-04-07-0146,execution:exec-2026-019,market:DE,channel:OOH,Clear Channel,67448,66512,GBP,2026-04-07,2026-04-29
+ms-2026-04-11-0147,execution:exec-2026-023,market:FR,channel:PAID_MEDIA,Pinterest,33904,36628,GBP,2026-04-11,2026-05-08
+ms-2026-03-06-0148,execution:exec-2026-024,market:FR,channel:OOH,JCDecaux,144627,146231,GBP,2026-03-06,2026-03-24

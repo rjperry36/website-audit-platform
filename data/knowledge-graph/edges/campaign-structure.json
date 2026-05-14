@@ -1,0 +1,990 @@
+[
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:spring-2024-retinoid-pm-anniversary",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:spring-2024-retinoid-pm-anniversary",
+    "to": "brand-team:aurelune-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:spring-2024-retinoid-pm-anniversary",
+    "to": "market:UK",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:spring-2024-retinoid-pm-anniversary",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:spring-2024-retinoid-pm-anniversary",
+    "to": "market:DE",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:spring-2024-retinoid-pm-anniversary",
+    "to": "market:FR",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:spring-2024-retinoid-pm-anniversary",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:spring-2024-retinoid-pm-anniversary",
+    "to": "channel:OOH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:spring-2024-retinoid-pm-anniversary",
+    "to": "channel:D2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:spring-2024-retinoid-pm-anniversary",
+    "to": "channel:ECRM",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:spring-2024-retinoid-pm-anniversary",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:spring-2024-retinoid-pm-anniversary",
+    "to": "objective:retinoid-hero-defence",
+    "type": "HAS_OBJECTIVE"
+  },
+  {
+    "from": "campaign:spring-2024-retinoid-pm-anniversary",
+    "to": "objective:global-brand-awareness",
+    "type": "HAS_OBJECTIVE"
+  },
+  {
+    "from": "campaign:spring-2024-retinoid-pm-anniversary",
+    "to": "objective:global-science-authority",
+    "type": "HAS_OBJECTIVE"
+  },
+  {
+    "from": "campaign:spring-2024-retinoid-pm-anniversary",
+    "to": "budget:aurelune-global-2024",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 920000
+    }
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:always-on-d2c-2024",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:always-on-d2c-2024",
+    "to": "brand-team:aurelune-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:always-on-d2c-2024",
+    "to": "market:UK",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:always-on-d2c-2024",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:always-on-d2c-2024",
+    "to": "market:DE",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:always-on-d2c-2024",
+    "to": "market:FR",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:always-on-d2c-2024",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:always-on-d2c-2024",
+    "to": "channel:ECRM",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:always-on-d2c-2024",
+    "to": "channel:SEO",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:always-on-d2c-2024",
+    "to": "channel:D2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:always-on-d2c-2024",
+    "to": "objective:efficient-paid-spend",
+    "type": "HAS_OBJECTIVE"
+  },
+  {
+    "from": "campaign:always-on-d2c-2024",
+    "to": "objective:reduce-cac",
+    "type": "HAS_OBJECTIVE"
+  },
+  {
+    "from": "campaign:always-on-d2c-2024",
+    "to": "objective:loyalty-programme-scale",
+    "type": "HAS_OBJECTIVE"
+  },
+  {
+    "from": "campaign:always-on-d2c-2024",
+    "to": "objective:aeo-geo-readiness",
+    "type": "HAS_OBJECTIVE"
+  },
+  {
+    "from": "campaign:always-on-d2c-2024",
+    "to": "budget:aurelune-global-2024",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 1400000
+    }
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:sephora-us-launch-y1",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:sephora-us-launch-y1",
+    "to": "brand-team:aurelune-us",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:sephora-us-launch-y1",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:sephora-us-launch-y1",
+    "to": "channel:B2B2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:sephora-us-launch-y1",
+    "to": "channel:POSM",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:sephora-us-launch-y1",
+    "to": "channel:OOH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:sephora-us-launch-y1",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:sephora-us-launch-y1",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:sephora-us-launch-y1",
+    "to": "channel:EVENT",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:sephora-us-launch-y1",
+    "to": "objective:us-retail-expansion",
+    "type": "HAS_OBJECTIVE"
+  },
+  {
+    "from": "campaign:sephora-us-launch-y1",
+    "to": "objective:b2b2c-sephora-success",
+    "type": "HAS_OBJECTIVE"
+  },
+  {
+    "from": "campaign:sephora-us-launch-y1",
+    "to": "objective:us-acquisition",
+    "type": "HAS_OBJECTIVE"
+  },
+  {
+    "from": "campaign:sephora-us-launch-y1",
+    "to": "budget:aurelune-us-2024",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 925000
+    }
+  },
+  {
+    "from": "campaign:sephora-us-launch-y1",
+    "to": "budget:aurelune-us-2025",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 925000
+    }
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:jp-tokyo-launch-2024",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:jp-tokyo-launch-2024",
+    "to": "brand-team:aurelune-jp",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:jp-tokyo-launch-2024",
+    "to": "market:JP",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:jp-tokyo-launch-2024",
+    "to": "channel:EVENT",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:jp-tokyo-launch-2024",
+    "to": "channel:OOH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:jp-tokyo-launch-2024",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:jp-tokyo-launch-2024",
+    "to": "channel:ECRM",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:jp-tokyo-launch-2024",
+    "to": "channel:D2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:jp-tokyo-launch-2024",
+    "to": "channel:RESEARCH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:jp-tokyo-launch-2024",
+    "to": "objective:jp-launch",
+    "type": "HAS_OBJECTIVE"
+  },
+  {
+    "from": "campaign:jp-tokyo-launch-2024",
+    "to": "objective:global-brand-awareness",
+    "type": "HAS_OBJECTIVE"
+  },
+  {
+    "from": "campaign:jp-tokyo-launch-2024",
+    "to": "budget:aurelune-jp-2024",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 420000
+    }
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:spring-2025-hero-refresh",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:spring-2025-hero-refresh",
+    "to": "brand-team:aurelune-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:spring-2025-hero-refresh",
+    "to": "market:UK",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:spring-2025-hero-refresh",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:spring-2025-hero-refresh",
+    "to": "market:DE",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:spring-2025-hero-refresh",
+    "to": "market:FR",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:spring-2025-hero-refresh",
+    "to": "market:JP",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:spring-2025-hero-refresh",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:spring-2025-hero-refresh",
+    "to": "channel:OOH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:spring-2025-hero-refresh",
+    "to": "channel:D2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:spring-2025-hero-refresh",
+    "to": "channel:ECRM",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:spring-2025-hero-refresh",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:spring-2025-hero-refresh",
+    "to": "channel:EVENT",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:spring-2025-hero-refresh",
+    "to": "objective:global-brand-awareness",
+    "type": "HAS_OBJECTIVE"
+  },
+  {
+    "from": "campaign:spring-2025-hero-refresh",
+    "to": "objective:global-science-authority",
+    "type": "HAS_OBJECTIVE"
+  },
+  {
+    "from": "campaign:spring-2025-hero-refresh",
+    "to": "objective:always-on-content-engine",
+    "type": "HAS_OBJECTIVE"
+  },
+  {
+    "from": "campaign:spring-2025-hero-refresh",
+    "to": "budget:aurelune-global-2025",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 1180000
+    }
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:cn-xiaohongshu-always-on-2025",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:cn-xiaohongshu-always-on-2025",
+    "to": "brand-team:aurelune-cn",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:cn-xiaohongshu-always-on-2025",
+    "to": "market:CN",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:cn-xiaohongshu-always-on-2025",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:cn-xiaohongshu-always-on-2025",
+    "to": "channel:D2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:cn-xiaohongshu-always-on-2025",
+    "to": "channel:OOH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:cn-xiaohongshu-always-on-2025",
+    "to": "objective:cn-cross-border-launch",
+    "type": "HAS_OBJECTIVE"
+  },
+  {
+    "from": "campaign:cn-xiaohongshu-always-on-2025",
+    "to": "objective:always-on-influencer",
+    "type": "HAS_OBJECTIVE"
+  },
+  {
+    "from": "campaign:cn-xiaohongshu-always-on-2025",
+    "to": "budget:aurelune-cn-2025",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 380000
+    }
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:annual-ooh-flagship-2025",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:annual-ooh-flagship-2025",
+    "to": "brand-team:aurelune-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:annual-ooh-flagship-2025",
+    "to": "market:UK",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:annual-ooh-flagship-2025",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:annual-ooh-flagship-2025",
+    "to": "channel:OOH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:annual-ooh-flagship-2025",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:annual-ooh-flagship-2025",
+    "to": "channel:D2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:annual-ooh-flagship-2025",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:annual-ooh-flagship-2025",
+    "to": "objective:ooh-flagship-moment",
+    "type": "HAS_OBJECTIVE"
+  },
+  {
+    "from": "campaign:annual-ooh-flagship-2025",
+    "to": "objective:global-brand-awareness",
+    "type": "HAS_OBJECTIVE"
+  },
+  {
+    "from": "campaign:annual-ooh-flagship-2025",
+    "to": "budget:aurelune-global-2025",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 1450000
+    }
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:always-on-d2c-2025",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:always-on-d2c-2025",
+    "to": "brand-team:aurelune-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:always-on-d2c-2025",
+    "to": "market:UK",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:always-on-d2c-2025",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:always-on-d2c-2025",
+    "to": "market:DE",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:always-on-d2c-2025",
+    "to": "market:FR",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:always-on-d2c-2025",
+    "to": "market:JP",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:always-on-d2c-2025",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:always-on-d2c-2025",
+    "to": "channel:ECRM",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:always-on-d2c-2025",
+    "to": "channel:SEO",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:always-on-d2c-2025",
+    "to": "channel:D2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:always-on-d2c-2025",
+    "to": "objective:efficient-paid-spend",
+    "type": "HAS_OBJECTIVE"
+  },
+  {
+    "from": "campaign:always-on-d2c-2025",
+    "to": "objective:reduce-cac",
+    "type": "HAS_OBJECTIVE"
+  },
+  {
+    "from": "campaign:always-on-d2c-2025",
+    "to": "objective:loyalty-programme-scale",
+    "type": "HAS_OBJECTIVE"
+  },
+  {
+    "from": "campaign:always-on-d2c-2025",
+    "to": "objective:aeo-geo-readiness",
+    "type": "HAS_OBJECTIVE"
+  },
+  {
+    "from": "campaign:always-on-d2c-2025",
+    "to": "objective:always-on-content-engine",
+    "type": "HAS_OBJECTIVE"
+  },
+  {
+    "from": "campaign:always-on-d2c-2025",
+    "to": "budget:aurelune-global-2025",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 1850000
+    }
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:de-rebuild-2025",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:de-rebuild-2025",
+    "to": "brand-team:aurelune-de",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:de-rebuild-2025",
+    "to": "market:DE",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:de-rebuild-2025",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:de-rebuild-2025",
+    "to": "channel:SEO",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:de-rebuild-2025",
+    "to": "channel:ECRM",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:de-rebuild-2025",
+    "to": "channel:D2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:de-rebuild-2025",
+    "to": "channel:RESEARCH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:de-rebuild-2025",
+    "to": "objective:de-rebuild-awareness",
+    "type": "HAS_OBJECTIVE"
+  },
+  {
+    "from": "campaign:de-rebuild-2025",
+    "to": "objective:reduce-cac",
+    "type": "HAS_OBJECTIVE"
+  },
+  {
+    "from": "campaign:de-rebuild-2025",
+    "to": "budget:aurelune-de-2025",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 380000
+    }
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:resurfacing-oil-launch-h1-2026",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:resurfacing-oil-launch-h1-2026",
+    "to": "brand-team:aurelune-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:resurfacing-oil-launch-h1-2026",
+    "to": "market:UK",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:resurfacing-oil-launch-h1-2026",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:resurfacing-oil-launch-h1-2026",
+    "to": "market:DE",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:resurfacing-oil-launch-h1-2026",
+    "to": "market:FR",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:resurfacing-oil-launch-h1-2026",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:resurfacing-oil-launch-h1-2026",
+    "to": "channel:ECRM",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:resurfacing-oil-launch-h1-2026",
+    "to": "channel:D2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:resurfacing-oil-launch-h1-2026",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:resurfacing-oil-launch-h1-2026",
+    "to": "channel:OOH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:resurfacing-oil-launch-h1-2026",
+    "to": "objective:global-brand-awareness",
+    "type": "HAS_OBJECTIVE"
+  },
+  {
+    "from": "campaign:resurfacing-oil-launch-h1-2026",
+    "to": "objective:global-science-authority",
+    "type": "HAS_OBJECTIVE"
+  },
+  {
+    "from": "campaign:resurfacing-oil-launch-h1-2026",
+    "to": "budget:aurelune-global-2026",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 680000
+    }
+  },
+  {
+    "from": "objective:global-brand-awareness",
+    "to": "kpi:aided-brand-awareness-uk",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:global-brand-awareness",
+    "to": "kpi:aided-brand-awareness-us",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:global-brand-awareness",
+    "to": "kpi:aided-brand-awareness-de",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:global-brand-awareness",
+    "to": "kpi:aided-brand-awareness-fr",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:global-brand-awareness",
+    "to": "kpi:aided-brand-awareness-jp",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:global-brand-awareness",
+    "to": "kpi:share-of-voice-chronobiology",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:global-brand-awareness",
+    "to": "kpi:editorial-features-tier-1",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:global-science-authority",
+    "to": "kpi:share-of-voice-chronobiology",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:global-science-authority",
+    "to": "kpi:editorial-features-tier-1",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:global-science-authority",
+    "to": "kpi:white-paper-downloads",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:global-science-authority",
+    "to": "kpi:ai-citation-share",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:global-science-authority",
+    "to": "kpi:dermatologist-creators-roster",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:uk-d2c-growth",
+    "to": "kpi:uk-d2c-revenue",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:uk-d2c-growth",
+    "to": "kpi:roas-uk",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:us-acquisition",
+    "to": "kpi:us-new-customers-2025",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:us-acquisition",
+    "to": "kpi:blended-cac-global",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:us-retail-expansion",
+    "to": "kpi:sephora-door-count-us",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:us-retail-expansion",
+    "to": "kpi:sephora-sell-through-y1",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:us-retail-expansion",
+    "to": "kpi:sephora-rank-treatments",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:de-rebuild-awareness",
+    "to": "kpi:aided-brand-awareness-de",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:de-rebuild-awareness",
+    "to": "kpi:de-d2c-revenue",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:de-rebuild-awareness",
+    "to": "kpi:roas-de",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:fr-ritual-story",
+    "to": "kpi:aided-brand-awareness-fr",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:fr-ritual-story",
+    "to": "kpi:fr-d2c-revenue",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:fr-ritual-story",
+    "to": "kpi:editorial-features-tier-1",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:jp-launch",
+    "to": "kpi:aided-brand-awareness-jp",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:jp-launch",
+    "to": "kpi:jp-revenue",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:jp-launch",
+    "to": "kpi:line-loyalty-jp",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:jp-launch",
+    "to": "kpi:roas-jp",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:cn-cross-border-launch",
+    "to": "kpi:cn-revenue",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:cn-cross-border-launch",
+    "to": "kpi:xiaohongshu-organic-mentions",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:retinoid-hero-defence",
+    "to": "kpi:retinoid-pm-share-of-revenue",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:always-on-content-engine",
+    "to": "kpi:content-articles-published",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:always-on-content-engine",
+    "to": "kpi:white-paper-downloads",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:always-on-content-engine",
+    "to": "kpi:ai-citation-share",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:loyalty-programme-scale",
+    "to": "kpi:loyalty-enrolment-pct",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:loyalty-programme-scale",
+    "to": "kpi:loyalty-member-repeat-uplift",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:loyalty-programme-scale",
+    "to": "kpi:loyalty-ltv-uplift",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:ooh-flagship-moment",
+    "to": "kpi:ooh-prompted-recall-uk",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:ooh-flagship-moment",
+    "to": "kpi:ooh-prompted-recall-us",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:aeo-geo-readiness",
+    "to": "kpi:ai-citation-share",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:aeo-geo-readiness",
+    "to": "kpi:pdp-faq-schema-coverage",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:b2b2c-sephora-success",
+    "to": "kpi:sephora-rank-treatments",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:b2b2c-sephora-success",
+    "to": "kpi:sephora-sell-through-y1",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:b2b-pro-channel-launch",
+    "to": "kpi:dermatologist-creators-roster",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:efficient-paid-spend",
+    "to": "kpi:blended-roas-global",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:efficient-paid-spend",
+    "to": "kpi:roas-uk",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:efficient-paid-spend",
+    "to": "kpi:roas-us",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:efficient-paid-spend",
+    "to": "kpi:roas-de",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:efficient-paid-spend",
+    "to": "kpi:roas-fr",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:efficient-paid-spend",
+    "to": "kpi:roas-jp",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:reduce-cac",
+    "to": "kpi:blended-cac-global",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:claim-substantiation-fy25",
+    "to": "kpi:consumer-panels-completed",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:claim-substantiation-fy25",
+    "to": "kpi:tier-a-claims-substantiated",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:always-on-influencer",
+    "to": "kpi:dermatologist-creators-roster",
+    "type": "MEASURED_BY"
+  },
+  {
+    "from": "objective:always-on-influencer",
+    "to": "kpi:xiaohongshu-organic-mentions",
+    "type": "MEASURED_BY"
+  }
+]
