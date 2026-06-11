@@ -1,0 +1,107 @@
+# {{PROJECT_NAME}} — Agent Instructions
+
+> This file is the orchestrator for any AI assistant working on this project. It is loaded automatically at the start of every session. Examples of compatible assistants are listed in `RECOMMENDED-TOOLS.md`.
+>
+> Rename this file from `CLAUDE.md.template` to `CLAUDE.md` at the project root after adopting the Dev Framework.
+
+---
+
+## 0. Mandatory — read before any non-trivial work
+
+Every piece of work follows the six-phase lifecycle in `dev-framework/00-lifecycle/lifecycle.md`:
+
+1. **Frame** — understand the problem and the success criteria
+2. **Plan** — choose an approach; write a scope under `scopes/`
+3. **Standards check** — read the discipline standards listed below that apply to this work
+4. **Execute** — do the work, step by step, using the Goal–Plan–Act engine (`dev-framework/00-lifecycle/goal-plan-act.md`)
+5. **Verify** — run the relevant checks
+6. **Land** — ship; update the scope; record decisions; close the loop
+
+Inside Plan + Execute, the engine is **Goal → Plan → Act**:
+
+- State the goal in one sentence. Flag every unknown.
+- Write the plan: exact files, functions, tests, decisions. Any `CONFIRM:` question is a hard stop.
+- Execute the plan one step at a time. If reality diverges, **stop and report** — do not improvise.
+
+Detailed conventions:
+- **Scopes:** `dev-framework/02-templates/scope.md` — what a scope file looks like; how it is versioned (`.v0` → `.v1` → `.v2`)
+- **Decision records:** `dev-framework/02-templates/decision-record.md` — when and how to capture an ADR
+- **Definition of done:** `dev-framework/02-templates/definition-of-done.md`
+
+---
+
+## 1. Disciplines Enabled
+
+This project uses the following discipline modules. Read the corresponding `_index.md` and the standards inside when the lifecycle phase calls for them.
+
+<!-- DISCIPLINES_START -->
+- `engineering` — `dev-framework/01-disciplines/engineering/_index.md`
+- `ui` — `dev-framework/01-disciplines/ui/_index.md`
+- `ux` — `dev-framework/01-disciplines/ux/_index.md`
+- `qa` — `dev-framework/01-disciplines/qa/_index.md`
+- `uat` — `dev-framework/01-disciplines/uat/_index.md`
+- `infosec` — `dev-framework/01-disciplines/infosec/_index.md` (always on)
+- `operations` — `dev-framework/01-disciplines/operations/_index.md`
+<!-- DISCIPLINES_END -->
+
+The full catalogue is in `dev-framework/01-disciplines/_index.md`. Disable a discipline by removing its line above.
+
+---
+
+## 2. Project-Specific Non-Negotiables
+
+Rules that apply across this entire project, regardless of discipline. Keep this list short — anything generalisable belongs in a discipline module or a decision record.
+
+<!-- NON_NEGOTIABLES_START -->
+- *(e.g. "all monetary values stored as integers, never floats")*
+- *(e.g. "no PII in repository or logs")*
+- *(e.g. "every public page has JSON-LD structured data")*
+<!-- NON_NEGOTIABLES_END -->
+
+---
+
+## 3. Project Context
+
+<!-- CONTEXT_START -->
+- **Project:** {{PROJECT_NAME}}
+- **Domain / URL:** {{PROJECT_DOMAIN}}
+- **Primary stakeholder:** {{PRIMARY_STAKEHOLDER}}
+- **Type of work:** {{PROJECT_TYPE}}
+- **Project brief:** `project-brief.md`
+<!-- CONTEXT_END -->
+
+---
+
+## 4. Companion Documents
+
+Project-specific reference docs that complement the discipline modules. Read these when they apply.
+
+<!-- COMPANIONS_START -->
+- *(e.g. `DESIGN_SYSTEM.md` — the project's canonical design rule book)*
+- *(e.g. `BRAND_BOOK.md` — voice, banned phrases, samples)*
+- *(e.g. `KNOWLEDGE_BASE.md` — domain tribal knowledge)*
+- *(e.g. `RUNBOOK.md` — list of active operational runbooks)*
+<!-- COMPANIONS_END -->
+
+---
+
+## 5. Anti-Hallucination Rules (apply at all times)
+
+| Rule | Prevents |
+|------|----------|
+| Never assume a DB column name — read the schema file | Wrong field references, runtime errors |
+| Never assume an API shape — read the route handler or types | Broken integrations |
+| Never assume a business rule — reference a decision record or scope | Decisions made twice, differently |
+| If uncertain, write `CONFIRM: <question>` and stop | Silent wrong assumptions |
+| Every non-obvious decision references a decision record number | Lost rationale |
+| Do not read full feature files when a scope summary will do | Context overload, token waste |
+
+---
+
+## 6. Daily Log
+
+`TODO.md` (see `dev-framework/02-templates/todo-log.md`) is the day-by-day execution log. Update it at the end of each working session with completed items, blockers, and next steps. Closed work links to its `scopes/<feature>.vN.md` file.
+
+---
+
+*This file references the Dev Framework at `dev-framework/`. Treat the framework as a vendored library — pin its version in `FRAMEWORK.md` and pull updates deliberately.*

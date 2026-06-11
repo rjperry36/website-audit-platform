@@ -1,118 +1,33 @@
-# Website Audit Platform
+# WEBChecker
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/rjperry36/website-audit-platform)
+A brand-intelligence platform combining an AI-driven web-audit pipeline (SEO / AEO / GEO / UX / Security / AI visual analysis) with a planning surface for briefs, market plans, and channel objectives.
 
-🚀 **[View Live Demo](https://website-audit-platform.vercel.app)** (Deployment in progress)
-
-An autonomous website auditing platform powered by Google Antigravity that crawls websites, captures screenshots, performs multi-dimensional audits, and presents findings through a local web dashboard.
-
-## Overview
-
-**SiteAudit Agent** is a specialist autonomous agent that provides end-to-end website auditing capabilities including:
-
-- 🔍 **Automated Crawling** - Discovers and crawls all pages from a root URL
-- 📸 **Screenshot Capture** - Full-page screenshots for both desktop and mobile viewports
-- 🎯 **Multi-Dimensional Audits** - SEO, Accessibility, Performance, and Brand Compliance
-- 📊 **Review Dashboard** - Local web interface for viewing results and trends
-- 📅 **Scheduled Crawls** - Configurable crawl frequency with historical tracking
-- 🎨 **Brand Guidelines** - Custom compliance rules with reference image comparison
-
-## Features
-
-### Audit Categories
-
-1. **SEO & Meta Tags**
-   - Title and meta description validation
-   - Heading hierarchy checks
-   - Open Graph and Twitter Card tags
-   - Structured data validation
-   - Internal link health
-
-2. **Accessibility (WCAG 2.1 AA)**
-   - Color contrast ratios
-   - ARIA roles and landmarks
-   - Keyboard navigation
-   - Form label associations
-   - Alt text validation
-
-3. **Performance & Core Web Vitals**
-   - LCP, CLS, INP measurements
-   - Image optimization checks
-   - Resource compression
-   - Render-blocking analysis
-
-4. **Brand & Visual Compliance**
-   - Custom brand guideline enforcement
-   - Visual comparison against reference images
-   - Font and color validation
-   - Layout consistency checks
-
-## Getting Started
-
-See [`SYSTEM_PROMPT.md`](./SYSTEM_PROMPT.md) for the complete system prompt and detailed implementation specifications.
-
-### Local Development
+## Quick start
 
 ```bash
-# Clone the repository
 git clone https://github.com/rjperry36/website-audit-platform.git
 cd website-audit-platform
-
-# Install dependencies
 npm install
-
-# Run the development server
+cp .env.example .env.local   # fill in Supabase, OpenAI, ScreenshotOne, CRON_SECRET
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) to view the landing page.
+Open <http://localhost:3000>.
 
-### Quick Start Commands
+## Where everything lives
 
-- `setup` — Configure a new site for auditing
-- `crawl` — Trigger an immediate crawl
-- `dashboard` — Start the review dashboard
-- `status` — Show crawl schedule and status
-- `guidelines` — Add or update brand guidelines
+| Topic | File |
+|---|---|
+| What the project is, who it's for, how it's run | `PROJECT_BRIEF.md` |
+| How work moves through the project (process, gates, templates) | `CLAUDE.md` and `dev-framework/` |
+| Decisions and their rationale | `decisions/NNNN-*.md` |
+| Active work | `scopes/<slug>.vN.md` |
+| Historical reference (original spec, study notes, pre-framework docs) | `archive/` |
 
-## Architecture
+## Process
 
-The platform consists of three main layers:
-
-1. **Admin Configuration Layer** - Manage root URLs, crawl schedules, and brand guidelines
-2. **Crawl & Audit Engine** - Automated crawling, screenshot capture, and analysis
-3. **Review Dashboard** - Web interface for viewing results and trends
-
-## Data Storage
-
-All audit data is stored locally in a structured format:
-
-```
-/audit-data/
-  /{site-id}/
-    /crawls/
-      /{YYYY-MM-DD}/
-        /screenshots/
-          /desktop/
-          /mobile/
-        /reports/
-          audit-report.json
-```
-
-## Technology Stack
-
-- **Framework**: Next.js 14 with App Router
-- **Frontend**: React 18 with TypeScript
-- **Styling**: Tailwind CSS
-- **Deployment**: Vercel
-- **Crawling**: Playwright/Puppeteer with Google Antigravity browser agent
-- **Backend**: Node.js Express server (for audit engine)
-- **Storage**: File-based JSON (no external database required)
+Every non-trivial piece of work follows the six-phase lifecycle defined in `dev-framework/00-lifecycle/lifecycle.md`. AI assistants working in this repo are oriented by `CLAUDE.md` and the agent personas under `.claude/agents/`.
 
 ## License
 
 MIT
-
-## Author
-
-Created with Google Antigravity

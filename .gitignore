@@ -27,4 +27,5 @@ next-env.d.ts
 
 # TypeScript
 *.tsbuildinfo
-.claude/
+# Claude Code — commit agent definitions; ignore only machine-local settings
+.claude/settings.local.json
