@@ -5,6 +5,7 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { AuditCategoryCard } from '@/components/dashboard/audit-category-card'
 import { SkeletonCard } from '@/components/ui/skeleton'
+import { AuditEmptyState } from '@/components/ui/audit-empty-state'
 import { staggerContainer, fadeInUp } from '@/lib/animations'
 import { TEST_SITE_CONFIG } from '@/lib/client-config'
 import { Palette, ArrowLeft, CheckCircle2, AlertTriangle, XCircle } from 'lucide-react'
@@ -47,7 +48,7 @@ export default function VisualAuditPage() {
         )
     }
 
-    if (!data) return null
+    if (!data) return <AuditEmptyState />
 
     const findings = data.findings.ux.visualDesign || []
 

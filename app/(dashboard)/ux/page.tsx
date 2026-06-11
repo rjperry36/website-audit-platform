@@ -7,6 +7,7 @@ import Image from 'next/image'
 import { ScoreCard } from '@/components/dashboard/score-card'
 import { AuditCategoryCard } from '@/components/dashboard/audit-category-card'
 import { SkeletonCard } from '@/components/ui/skeleton'
+import { AuditEmptyState } from '@/components/ui/audit-empty-state'
 import { staggerContainer } from '@/lib/animations'
 import { TEST_SITE_CONFIG } from '@/lib/client-config'
 import {
@@ -57,7 +58,7 @@ export default function UXDashboardPage() {
         )
     }
 
-    if (!data) return null
+    if (!data) return <AuditEmptyState />
 
     const uxScore = data.scores.ux
     const accessibilityFindings = data.findings.ux.accessibility
@@ -87,9 +88,13 @@ export default function UXDashboardPage() {
     const warnings = allFindings.filter((f: any) => f.status === 'warning').length
     const failures = allFindings.filter((f: any) => f.status === 'fail').length
 
-    // Construct screenshot URLs securely
+    // Construct screenshot URLs securely.
+    // Committed-snapshot screenshots are already web paths (/audit-demo/... or
+    // an absolute URL) — serve those directly. Live FS crawls use absolute
+    // filesystem paths, which are proxied through the screenshots API route.
     const getScreenshotUrl = (path: string) => {
         if (!path) return ''
+        if (path.startsWith('/audit-demo/') || /^https?:\/\//.test(path)) return path
         return `/api/screenshots?path=${encodeURIComponent(path)}`
     }
 

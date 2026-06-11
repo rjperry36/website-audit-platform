@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react'
 import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { SkeletonCard } from '@/components/ui/skeleton'
+import { AuditEmptyState } from '@/components/ui/audit-empty-state'
 import { staggerContainer, fadeInUp } from '@/lib/animations'
 import { TEST_SITE_CONFIG } from '@/lib/client-config'
 import { Heart, ArrowLeft, CheckCircle2, AlertTriangle, XCircle } from 'lucide-react'
@@ -45,7 +46,7 @@ export default function ExperienceAuditPage() {
         )
     }
 
-    if (!data) return null
+    if (!data) return <AuditEmptyState />
 
     const findings = data.findings.ux.userExperience || []
 

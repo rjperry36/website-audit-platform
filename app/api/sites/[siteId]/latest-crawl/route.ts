@@ -5,6 +5,28 @@ import { StorageManager } from '@/lib/storage'
 import path from 'path'
 import { promises as fs } from 'fs'
 
+/**
+ * Committed-snapshot fallback.
+ *
+ * The live filesystem crawl data (`audit-data/`) and the site list
+ * (`audit-config.json`) are gitignored and therefore absent on Vercel's
+ * read-only filesystem. When the live data cannot be found, fall back to a
+ * committed demo snapshot under `data/audit/<siteId>.json` so the CRO/UX audit
+ * surface still renders in production. Local dev keeps using fresh FS crawls.
+ *
+ * See scopes/restore-cro-audit-on-vercel.v0.md. The durable fix (Supabase
+ * persistence) is Phase 2.
+ */
+async function loadSnapshot(siteId: string) {
+    try {
+        const snapshotPath = path.join(process.cwd(), 'data', 'audit', `${siteId}.json`)
+        const content = await fs.readFile(snapshotPath, 'utf-8')
+        return JSON.parse(content)
+    } catch {
+        return null
+    }
+}
+
 export async function GET(
     request: Request,
     { params }: { params: { siteId: string } }
@@ -12,9 +34,21 @@ export async function GET(
     try {
         const { siteId } = params
 
-        // 1. Get site config to verify it exists
-        const site = await ConfigManager.getSite(siteId)
+        // 1. Get site config to verify it exists. On Vercel the config file is
+        //    absent AND the filesystem is read-only, so ConfigManager.load()
+        //    throws when it tries to write a default config. Treat any failure
+        //    (throw or null) as "no live config" and fall back to the snapshot.
+        let site = null
+        try {
+            site = await ConfigManager.getSite(siteId)
+        } catch (configErr) {
+            console.warn('Config unavailable (read-only FS?), will try snapshot:', configErr)
+        }
         if (!site) {
+            const snapshot = await loadSnapshot(siteId)
+            if (snapshot) {
+                return NextResponse.json({ ...snapshot, previousScores: null })
+            }
             return NextResponse.json(
                 { error: 'Site not found' },
                 { status: 404 }
@@ -37,6 +71,10 @@ export async function GET(
                 .sort((a, b) => b.localeCompare(a)) // Latest date first
 
             if (validCrawls.length === 0) {
+                const snapshot = await loadSnapshot(siteId)
+                if (snapshot) {
+                    return NextResponse.json({ ...snapshot, previousScores: null })
+                }
                 return NextResponse.json(
                     { error: 'No crawls found' },
                     { status: 404 }
@@ -71,7 +109,11 @@ export async function GET(
             })
 
         } catch (err) {
-            // Directory doesn't exist or other FS error
+            // Directory doesn't exist or other FS error (e.g. read-only Vercel).
+            const snapshot = await loadSnapshot(siteId)
+            if (snapshot) {
+                return NextResponse.json({ ...snapshot, previousScores: null })
+            }
             return NextResponse.json(
                 { error: 'No crawls found' },
                 { status: 404 }
@@ -80,6 +122,12 @@ export async function GET(
 
     } catch (error) {
         console.error('Error fetching latest crawl:', error)
+        // Last resort: serve the committed snapshot rather than a 500 so the
+        // audit surface degrades gracefully.
+        const snapshot = await loadSnapshot(params.siteId)
+        if (snapshot) {
+            return NextResponse.json({ ...snapshot, previousScores: null })
+        }
         return NextResponse.json(
             { error: 'Internal server error' },
             { status: 500 }

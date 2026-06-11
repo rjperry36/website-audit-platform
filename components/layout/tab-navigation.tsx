@@ -13,7 +13,8 @@ import {
     PlusCircle,
     Globe,
     Network,
-    Sparkles
+    Sparkles,
+    Gauge
 } from 'lucide-react'
 
 // Map Channel IDs to Routes (Best Effort / Placeholder)
@@ -182,6 +183,39 @@ export function TabNavigation({ markets = [], channels = [] }: TabNavigationProp
                 },
             ],
         },
+        {
+            name: 'CRO Audit',
+            href: '#',
+            icon: Gauge,
+            isDropdown: true,
+            children: [
+                {
+                    name: 'Overview',
+                    href: '/ux',
+                    color: '#9CA3AF',
+                },
+                {
+                    name: 'Visual Design',
+                    href: '/ux/visual',
+                    color: '#A855F7',
+                },
+                {
+                    name: 'Experience',
+                    href: '/ux/experience',
+                    color: '#06B6D4',
+                },
+                {
+                    name: 'Personas',
+                    href: '/ux/personas',
+                    color: '#F59E0B',
+                },
+                {
+                    name: 'Cialdini Principles',
+                    href: '/ux/cialdini',
+                    color: '#10B981',
+                },
+            ],
+        },
     ]
 
 
@@ -209,6 +243,7 @@ export function TabNavigation({ markets = [], channels = [] }: TabNavigationProp
                                             || (pathname.startsWith('/overview') && tab.name === 'Overview')
                                             || (pathname !== '/planner' && pathname !== '/overview' && tab.name === 'Channels')
                                             || (pathname.startsWith('/knowledge-graph') && tab.name === 'Knowledge Graph')
+                                            || (pathname.startsWith('/ux') && tab.name === 'CRO Audit')
                                                 ? "text-white"
                                                 : "text-neutral-400 hover:text-white"
                                         )}

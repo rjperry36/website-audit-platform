@@ -7,6 +7,7 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
 import { SkeletonCard } from '@/components/ui/skeleton'
+import { AuditEmptyState } from '@/components/ui/audit-empty-state'
 import { staggerContainer, fadeIn } from '@/lib/animations'
 import { TEST_SITE_CONFIG } from '@/lib/client-config'
 import { ArrowLeft, Brain, AlertTriangle, CheckCircle, XCircle, Info } from 'lucide-react'
@@ -33,7 +34,7 @@ export default function CialdiniAuditPage() {
     }, [])
 
     if (isLoading) return <SkeletonCard />
-    if (!data) return null
+    if (!data) return <AuditEmptyState title="No persuasion audit yet" />
 
     const findings = data.findings.ux.cialdini || []
     const passed = findings.filter((f: any) => f.status === 'pass').length
