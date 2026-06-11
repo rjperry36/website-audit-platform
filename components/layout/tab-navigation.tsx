@@ -141,8 +141,46 @@ export function TabNavigation({ markets = [], channels = [] }: TabNavigationProp
         },
         {
             name: 'Knowledge Graph',
-            href: '/knowledge-graph',
+            href: '#',
             icon: Network,
+            isDropdown: true,
+            children: [
+                {
+                    name: 'Overview',
+                    href: '/knowledge-graph',
+                    color: '#9CA3AF',
+                },
+                {
+                    name: 'Brand',
+                    href: '/knowledge-graph/brand',
+                    color: '#A855F7',
+                },
+                {
+                    name: 'Agency',
+                    href: '/knowledge-graph/agency',
+                    color: '#06B6D4',
+                },
+                {
+                    name: 'Availability',
+                    href: '/knowledge-graph/availability',
+                    color: '#F59E0B',
+                },
+                {
+                    name: 'Campaigns',
+                    href: '/knowledge-graph/campaigns',
+                    color: '#FB923C',
+                },
+                {
+                    name: 'Insights',
+                    href: '/knowledge-graph/insights',
+                    color: '#10B981',
+                },
+                {
+                    name: 'Visualisation',
+                    href: '/knowledge-graph/visualisation',
+                    color: '#8B5CF6',
+                },
+            ],
         },
     ]
 
@@ -167,7 +205,10 @@ export function TabNavigation({ markets = [], channels = [] }: TabNavigationProp
                                     <button
                                         className={cn(
                                             "relative flex items-center gap-2 px-4 py-4 text-sm font-medium transition-all duration-300 whitespace-nowrap outline-none",
-                                            isOpen || (pathname.startsWith('/overview') && tab.name === 'Overview') || (pathname !== '/planner' && pathname !== '/overview' && tab.name === 'Channels')
+                                            isOpen
+                                            || (pathname.startsWith('/overview') && tab.name === 'Overview')
+                                            || (pathname !== '/planner' && pathname !== '/overview' && tab.name === 'Channels')
+                                            || (pathname.startsWith('/knowledge-graph') && tab.name === 'Knowledge Graph')
                                                 ? "text-white"
                                                 : "text-neutral-400 hover:text-white"
                                         )}

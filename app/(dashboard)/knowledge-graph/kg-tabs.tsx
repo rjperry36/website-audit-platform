@@ -3,11 +3,13 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { cn } from '@/lib/utils';
-import { Sparkles, Users, Megaphone, BarChart3 } from 'lucide-react';
+import { Sparkles, Users, Megaphone, BarChart3, CalendarClock, Home } from 'lucide-react';
 
 const TABS = [
+    { name: 'Overview', href: '/knowledge-graph', icon: Home, exact: true },
     { name: 'Brand', href: '/knowledge-graph/brand', icon: Sparkles },
     { name: 'Agency', href: '/knowledge-graph/agency', icon: Users },
+    { name: 'Availability', href: '/knowledge-graph/availability', icon: CalendarClock },
     { name: 'Campaigns', href: '/knowledge-graph/campaigns', icon: Megaphone },
     { name: 'Insights', href: '/knowledge-graph/insights', icon: BarChart3 },
 ];
@@ -18,7 +20,9 @@ export function KgTabs() {
         <div className="mb-6 flex items-center gap-1 border-b border-white/10 overflow-x-auto">
             {TABS.map((tab) => {
                 const Icon = tab.icon;
-                const isActive = pathname?.startsWith(tab.href);
+                const isActive = tab.exact
+                    ? pathname === tab.href
+                    : pathname?.startsWith(tab.href);
                 return (
                     <Link
                         key={tab.href}

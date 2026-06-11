@@ -5,9 +5,9 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-    title: "Website Audit Platform | SiteAudit Agent",
-    description: "Autonomous website auditing platform powered by Google Antigravity - crawls websites, captures screenshots, and performs SEO, accessibility, performance, and brand compliance audits",
-    keywords: ["website audit", "SEO", "accessibility", "performance", "brand compliance", "web crawling"],
+    title: "Thoth — The Agency Operating System for Global Brand Work",
+    description: "One knowledge graph for every client brand, every team and every campaign — reasoned over by specialist AI agents that brief, plan, staff, audit and optimise across every market and channel.",
+    keywords: ["agency operating system", "client brand management", "knowledge graph", "AI agents", "campaign planning", "agency operations", "briefing assistant", "capacity planning", "media planning", "brand compliance"],
 };
 
 export default function RootLayout({
