@@ -1,14 +1,14 @@
 {
-  "siteId": "site-thebrandingjournal",
-  "crawlDate": "2026-02-17",
-  "url": "https://thebrandingjournal.com",
-  "timestamp": "2026-02-17T15:34:20.843Z",
+  "siteId": "site-adm-indicia",
+  "crawlDate": "2026-06-11",
+  "url": "https://adm-indicia.com/our-work/",
+  "timestamp": "2026-06-11T17:32:10.791Z",
   "scores": {
-    "overall": 70,
-    "seo": 70,
+    "overall": 75,
+    "seo": 89,
     "aeo": 55,
-    "geo": 75,
-    "ux": 81
+    "geo": 80,
+    "ux": 75
   },
   "findings": {
     "seo": [
@@ -17,7 +17,7 @@
         "description": "Title tag length",
         "level": "mandatory",
         "status": "warning",
-        "details": "Title is 9 characters: \"Test Page\"",
+        "details": "Title is 8 characters: \"Our work\"",
         "impact": "Title may be too short to be descriptive for search engines.",
         "recommendation": "Adjust title to be between 30-60 characters for optimal display in search results."
       },
@@ -25,26 +25,26 @@
         "ruleId": "SEO-002",
         "description": "Meta description length",
         "level": "mandatory",
-        "status": "warning",
-        "details": "Meta description is 16 characters",
-        "impact": "Description may be too short to be compelling in search results.",
-        "recommendation": "Adjust meta description to be between 120-160 characters."
+        "status": "pass",
+        "details": "Meta description is 151 characters",
+        "impact": "Meta description length is optimal.",
+        "recommendation": "Meta description length is good."
       },
       {
         "ruleId": "SEO-003",
         "description": "Canonical URL set",
         "level": "mandatory",
-        "status": "fail",
-        "details": "No canonical URL found",
-        "impact": "Missing canonical URL may cause duplicate content issues.",
-        "recommendation": "Add a canonical URL tag to specify the preferred version of this page."
+        "status": "pass",
+        "details": "Canonical URL: https://adm-indicia.com/our-work/",
+        "impact": "Canonical URL helps prevent duplicate content issues.",
+        "recommendation": "Canonical URL is properly set."
       },
       {
         "ruleId": "SEO-004",
         "description": "Robots meta tag not blocking",
         "level": "mandatory",
         "status": "pass",
-        "details": "No robots meta tag found",
+        "details": "Robots meta: index,follow",
         "impact": "Page is accessible to search engines.",
         "recommendation": "Robots meta tag is correctly configured."
       },
@@ -53,7 +53,7 @@
         "description": "H1 tag structure",
         "level": "mandatory",
         "status": "pass",
-        "details": "Found 1 H1 tag(s): Test Header",
+        "details": "Found 1 H1 tag(s): Our work",
         "impact": "H1 tag structure is optimal.",
         "recommendation": "H1 tag structure is good."
       },
@@ -70,10 +70,10 @@
         "ruleId": "SEO-007",
         "description": "Image alt attributes present",
         "level": "mandatory",
-        "status": "pass",
-        "details": "0 of 0 images missing alt text",
-        "impact": "All images have alt text for accessibility and SEO.",
-        "recommendation": "All images have alt attributes."
+        "status": "warning",
+        "details": "53 of 53 images missing alt text",
+        "impact": "Images without alt text are not accessible and miss SEO opportunities.",
+        "recommendation": "Add descriptive alt text to all images for accessibility and SEO."
       },
       {
         "ruleId": "SEO-008",
@@ -88,26 +88,26 @@
         "ruleId": "SEO-009",
         "description": "Open Graph tags present",
         "level": "advisory",
-        "status": "warning",
-        "details": "No Open Graph tags found",
-        "impact": "Missing Open Graph tags means poor social media sharing appearance.",
-        "recommendation": "Add Open Graph tags (og:title, og:description, og:image) for better social sharing."
+        "status": "pass",
+        "details": "Found 6 OG tags",
+        "impact": "Open Graph tags improve how the page appears when shared on social media.",
+        "recommendation": "Open Graph tags are present."
       },
       {
         "ruleId": "SEO-010",
         "description": "Twitter Card tags present",
         "level": "advisory",
-        "status": "warning",
-        "details": "No Twitter Card tags found",
-        "impact": "Missing Twitter Card tags means poor Twitter sharing appearance.",
-        "recommendation": "Add Twitter Card tags (twitter:card, twitter:title, twitter:description) for better Twitter sharing."
+        "status": "pass",
+        "details": "Found 1 Twitter tags",
+        "impact": "Twitter Card tags improve how the page appears when shared on Twitter.",
+        "recommendation": "Twitter Card tags are present."
       },
       {
         "ruleId": "SEO-011",
         "description": "URL structure",
         "level": "acceptable",
         "status": "pass",
-        "details": "URL: https://thebrandingjournal.com",
+        "details": "URL: https://adm-indicia.com/our-work/",
         "impact": "URL is clean and descriptive.",
         "recommendation": "URL structure is good."
       }
@@ -227,19 +227,19 @@
         "ruleId": "GEO-004",
         "description": "Statistics with context",
         "level": "advisory",
-        "status": "warning",
-        "details": "Few or no statistics detected",
-        "impact": "Lack of statistics reduces content authority for AI systems.",
-        "recommendation": "Add relevant statistics with context to increase content authority."
+        "status": "pass",
+        "details": "Statistics detected in content",
+        "impact": "Statistics make content more authoritative for AI systems.",
+        "recommendation": "Content includes statistics."
       },
       {
         "ruleId": "GEO-005",
         "description": "External citations present",
         "level": "advisory",
-        "status": "warning",
-        "details": "0 external link(s) found",
-        "impact": "Lack of external citations reduces content credibility.",
-        "recommendation": "Add citations to authoritative external sources to increase credibility."
+        "status": "pass",
+        "details": "5 external link(s) found",
+        "impact": "External citations increase content credibility for AI systems.",
+        "recommendation": "Content includes external citations."
       },
       {
         "ruleId": "GEO-006",
@@ -254,10 +254,10 @@
         "ruleId": "GEO-007",
         "description": "Descriptive image alt text for AI",
         "level": "advisory",
-        "status": "pass",
-        "details": "100% of images have quality alt text",
-        "impact": "Descriptive alt text helps AI systems understand and describe images.",
-        "recommendation": "Image alt text quality is good."
+        "status": "warning",
+        "details": "0% of images have quality alt text",
+        "impact": "Poor alt text quality limits AI understanding of visual content.",
+        "recommendation": "Use detailed, descriptive alt text (not filenames) for AI image understanding."
       },
       {
         "ruleId": "GEO-008",
@@ -312,7 +312,7 @@
           "description": "Form Labels",
           "level": "mandatory",
           "status": "pass",
-          "details": "0 of 0 inputs have labels",
+          "details": "22 of 22 inputs have labels",
           "impact": "Screen readers cannot identify unlabeled input purposes",
           "recommendation": "Add <label> elements or aria-label to all form inputs"
         },
@@ -320,8 +320,8 @@
           "ruleId": "UX-A11Y-007",
           "description": "ARIA Landmarks",
           "level": "advisory",
-          "status": "warning",
-          "details": "Found 0 landmark(s): ",
+          "status": "pass",
+          "details": "Found 7 landmark(s): header, nav, search, button, main, footer, tabpanel",
           "impact": "Screen readers can quickly navigate page sections",
           "recommendation": "Add semantic HTML5 elements (nav, main, footer) or ARIA roles"
         },
@@ -329,8 +329,8 @@
           "ruleId": "UX-A11Y-008",
           "description": "Skip to Content Link",
           "level": "advisory",
-          "status": "warning",
-          "details": "No skip link found",
+          "status": "pass",
+          "details": "Skip link detected",
           "impact": "Keyboard users must tab through entire nav on every page",
           "recommendation": "Add a 'skip to main content' link as the first focusable element"
         },
@@ -350,7 +350,7 @@
           "description": "Viewport Meta Tag",
           "level": "mandatory",
           "status": "pass",
-          "details": "Viewport: width=device-width, initial-scale=1",
+          "details": "Viewport: width=device-width, initial-scale=1, shrink-to-fit=no, maximum-scale=2",
           "impact": "Page will not be mobile-responsive without viewport tag",
           "recommendation": "Add <meta name='viewport' content='width=device-width, initial-scale=1'>"
         },
@@ -376,8 +376,8 @@
           "ruleId": "UX-MOB-010",
           "description": "Mobile CTA Visibility",
           "level": "mandatory",
-          "status": "warning",
-          "details": "No clear primary CTA found",
+          "status": "pass",
+          "details": "Primary CTA detected",
           "impact": "Users don't see primary action immediately",
           "recommendation": "Place primary CTA above the fold on mobile"
         }
@@ -387,8 +387,8 @@
           "ruleId": "UX-VIS-001",
           "description": "Visual Hierarchy",
           "level": "advisory",
-          "status": "pass",
-          "details": "Score: 8/10. Clear header, large main image sets importance, logical flow from top to bottom.",
+          "status": "warning",
+          "details": "Score: 7/10. Clear visual hierarchy with bold headlines and distinguishable sections, but some images are too prominent, slightly overwhelming text importance.",
           "impact": "Users cannot quickly scan and understand content",
           "recommendation": "Use size, color, and spacing to create clear hierarchy"
         },
@@ -397,7 +397,7 @@
           "description": "Whitespace Usage",
           "level": "advisory",
           "status": "warning",
-          "details": "Score: 7/10. Balanced use of whitespace improves readability, although some sections are slightly cramped.",
+          "details": "Score: 6/10. Adequate whitespace between sections and images, but some areas feel a bit cramped due to dense image placements.",
           "impact": "Cramped design is hard to read and scan",
           "recommendation": "Increase whitespace between sections (min 40px)"
         },
@@ -406,7 +406,7 @@
           "description": "Typography Consistency",
           "level": "advisory",
           "status": "pass",
-          "details": "Score: 8/10. Consistent font usage, headings stand out well against body text.",
+          "details": "Score: 8/10. Typography is clear and legible with good contrast, but could benefit from varied font sizes to enhance emphasis.",
           "impact": "Too many fonts create visual chaos",
           "recommendation": "Limit to 2-3 font families max"
         },
@@ -414,8 +414,8 @@
           "ruleId": "UX-VIS-004",
           "description": "Color Palette",
           "level": "advisory",
-          "status": "pass",
-          "details": "Score: 8/10. Color scheme is consistent and professional, with good contrast for readability.",
+          "status": "warning",
+          "details": "Score: 7/10. Consistent color scheme that matches the brand identity, though more contrast could help in certain text areas.",
           "impact": "Inconsistent colors confuse users and dilute brand",
           "recommendation": "Use a consistent palette of 3-5 primary colors"
         },
@@ -423,8 +423,8 @@
           "ruleId": "UX-VIS-009",
           "description": "Grid Alignment",
           "level": "advisory",
-          "status": "pass",
-          "details": "Score: 8/10. Content is well-aligned and structured, making use of a grid layout.",
+          "status": "warning",
+          "details": "Score: 7/10. Effective grid use aligns content well, but occasional misalignments in image placements detract slightly.",
           "impact": "Misaligned elements look unprofessional",
           "recommendation": "Align elements using a grid system"
         },
@@ -433,7 +433,7 @@
           "description": "Visual Balance",
           "level": "advisory",
           "status": "pass",
-          "details": "Score: 8/10. Visually balanced with a mix of text and imagery; no section overwhelms another.",
+          "details": "Score: 8/10. Overall balance is well-maintained across the page with a cohesive layout that draws the eye naturally through the content.",
           "impact": "Unbalanced layouts feel awkward and unfinished",
           "recommendation": "Distribute visual weight evenly across the page"
         }
@@ -443,8 +443,8 @@
           "ruleId": "UX-EXP-001",
           "description": "Above-the-Fold Content",
           "level": "mandatory",
-          "status": "pass",
-          "details": "Score: 8/10. Key elements are visible without scrolling, engaging headline and CTA.",
+          "status": "warning",
+          "details": "Score: 6/10. Above-the-fold content provides a clear brand message but lacks immediate CTAs or engagement points.",
           "impact": "Users might leave if they don't see value immediately",
           "recommendation": "Place value proposition and CTA above the fold"
         },
@@ -453,7 +453,7 @@
           "description": "Value Proposition",
           "level": "mandatory",
           "status": "warning",
-          "details": "Score: 7/10. Value proposition is implied but could be more explicit.",
+          "details": "Score: 7/10. Value proposition is clear yet might benefit from stronger calls to action or highlighted key benefits.",
           "impact": "Users don't understand what you offer",
           "recommendation": "Add a clear headline explaining your value proposition"
         },
@@ -462,7 +462,7 @@
           "description": "CTA Prominence",
           "level": "mandatory",
           "status": "warning",
-          "details": "Score: 7/10. Visible newsletter subscription CTA, but could benefit from more varied CTAs.",
+          "details": "Score: 5/10. Minimal CTAs present; potential missed opportunities for engagement and conversion.",
           "impact": "Users don't know what action to take",
           "recommendation": "Make primary CTA distinctive (color, size)"
         },
@@ -471,7 +471,7 @@
           "description": "Navigation Clarity",
           "level": "mandatory",
           "status": "pass",
-          "details": "Score: 9/10. Clear, well-labeled navigation menu with dropdown options for easy access.",
+          "details": "Score: 8/10. Intuitive navigation with clear labels, but sub-navigation might enhance user experience further.",
           "impact": "Users cannot find what they're looking for",
           "recommendation": "Use simple, descriptive labels for navigation"
         },
@@ -479,8 +479,8 @@
           "ruleId": "UX-EXP-007",
           "description": "Trust Indicators",
           "level": "advisory",
-          "status": "pass",
-          "details": "Score: 8/10. Professional design enhances trust; clear authorship could improve this further.",
+          "status": "warning",
+          "details": "Score: 7/10. Trust indicators are subtle; integrating testimonials or client logos could enhance credibility further.",
           "impact": "Users may not trust the site without social proof",
           "recommendation": "Add testimonials, partner logos, or trust seals"
         }
@@ -490,8 +490,8 @@
           "ruleId": "UX-PERSONA-LEARNER",
           "description": "Persona: The Learner",
           "level": "advisory",
-          "status": "pass",
-          "details": "Score: 8/10. Introductory topics and educational content are accessible and clearly labeled.",
+          "status": "warning",
+          "details": "Score: 6/10. The site includes ample content but lacks clear educational resources or glossaries for deeper learning.",
           "impact": "Site may not meet the needs of Aspiring Brand Strategist / Student.",
           "recommendation": "Optimize for: Clarity, educational value, glossaries, clear headings, easy navigation."
         },
@@ -500,7 +500,7 @@
           "description": "Persona: The Academic",
           "level": "advisory",
           "status": "warning",
-          "details": "Score: 6/10. Lacks visible citations or academic depth in this view; may improve with deeper pages.",
+          "details": "Score: 5/10. Limited academic references or citations provided; not ideal for rigorous research needs.",
           "impact": "Site may not meet the needs of Intern / Graduate Researcher.",
           "recommendation": "Optimize for: Citations, authorship, publication dates, depth of analysis, methodology."
         },
@@ -509,7 +509,7 @@
           "description": "Persona: The Manager",
           "level": "advisory",
           "status": "warning",
-          "details": "Score: 7/10. Case studies are mentioned, practical guides and ROI details are less visible.",
+          "details": "Score: 7/10. Practical examples and case studies are present, however, more implementation guides could be useful.",
           "impact": "Site may not meet the needs of Middle Management.",
           "recommendation": "Optimize for: Case studies, practical frameworks, ROI arguments, implementation guides."
         },
@@ -518,7 +518,7 @@
           "description": "Persona: The Consultant",
           "level": "advisory",
           "status": "warning",
-          "details": "Score: 7/10. Insights on trends suggested, but no visible proprietary data or white papers.",
+          "details": "Score: 6/10. Site presents trends in branding but offers limited unique data or proprietary insights for high-level consulting.",
           "impact": "Site may not meet the needs of Senior Brand Consultant.",
           "recommendation": "Optimize for: Unique insights, latest trends, proprietary data, expert opinions, white papers."
         }
@@ -529,7 +529,7 @@
           "description": "Principle: Reciprocity",
           "level": "advisory",
           "status": "warning",
-          "details": "Score: 7/10. Offers insights and articles for free, slight emphasis on newsletter subscription.",
+          "details": "Score: 5/10. Few upfront value offerings; more free resources could strengthen reciprocity principles.",
           "impact": "Missed opportunity for persuasion via Reciprocity.",
           "recommendation": "Does the site offer value upfront (e.g., free guides, templates, valuable content) before asking for anything (email, purchase)? Is the 'ask' balanced with the 'give'?"
         },
@@ -538,7 +538,7 @@
           "description": "Principle: Authority",
           "level": "advisory",
           "status": "pass",
-          "details": "Score: 8/10. Professional tone and structured content suggest expertise, although specific credentials are not visible.",
+          "details": "Score: 8/10. Content conveys expertise with authoritative tone; credentials could be highlighted more prominently.",
           "impact": "Missed opportunity for persuasion via Authority.",
           "recommendation": "Does the content demonstrate expertise? Are author credentials, awards, certifications, or partnerships visible? Is the tone authoritative and confident?"
         },
@@ -547,7 +547,7 @@
           "description": "Principle: Liking",
           "level": "advisory",
           "status": "warning",
-          "details": "Score: 7/10. Engaging visuals and straightforward content; could benefit from more personable touches.",
+          "details": "Score: 7/10. Relatable brand voice and appealing design, yet more personal stories or behind-the-scenes content could enhance relatability.",
           "impact": "Missed opportunity for persuasion via Liking.",
           "recommendation": "Is the brand voice relatable and human? Is the 'About Us' page engaging? excellent design and aesthetics? Do the images show real people?"
         },
@@ -555,8 +555,8 @@
           "ruleId": "UX-CIALDINI-SCARCITY",
           "description": "Principle: Scarcity",
           "level": "advisory",
-          "status": "warning",
-          "details": "Score: 5/10. No visible use of scarcity tactics; could incorporate limited-time offers or exclusive content.",
+          "status": "fail",
+          "details": "Score: 4/10. No obvious use of scarcity; limited-time offers or exclusive content may enhance urgency without being overused.",
           "impact": "Missed opportunity for persuasion via Scarcity.",
           "recommendation": "Are there limited-time offers, exclusive content, or indications of high demand? Is scarcity used ethically to encourage action?"
         }
@@ -564,13 +564,13 @@
     }
   },
   "metadata": {
-    "title": "Test Page",
-    "description": "Test description",
-    "h1": "Test Header"
+    "title": "Our work",
+    "description": "See how we're transforming marketing execution for the world\u2019s best brands with examples of our award-winning work from across a wide range of sectors.",
+    "h1": "Our work"
   },
   "screenshots": {
-    "desktop": "/audit-demo/site-thebrandingjournal/desktop.png",
-    "mobile": "/audit-demo/site-thebrandingjournal/mobile.png"
+    "desktop": "/audit-demo/site-adm-indicia/desktop.jpg",
+    "mobile": "/audit-demo/site-adm-indicia/mobile.jpg"
   },
-  "snapshotDate": "2026-02-17"
+  "snapshotDate": "2026-06-11"
 }

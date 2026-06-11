@@ -7,9 +7,9 @@ import { AuditConfig, SiteConfig } from './types';
  * Static test site configuration
  */
 export const TEST_SITE_CONFIG = {
-    id: 'site-thebrandingjournal',
-    name: 'The Branding Journal',
-    rootUrl: 'https://www.thebrandingjournal.com/',
+    id: 'site-adm-indicia',
+    name: 'ADM Indicia',
+    rootUrl: 'https://adm-indicia.com/our-work/',
     crawlIntervalDays: 3,
     maxPages: 1,
 } as const;

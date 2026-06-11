@@ -91,6 +91,28 @@ Out of scope / follow-ups noted: `/ux/accessibility` and `/ux/mobile` have no
 
 ---
 
+## 4b. Sample site changed to ADM Indicia (2026-06-11)
+
+Replaced the sample site from The Branding Journal with **ADM Indicia**
+(`https://adm-indicia.com/our-work/`). The new snapshot is a **fresh, real**
+crawl: ScreenshotOne captures + live gpt-4o scoring.
+- Scores: overall 75, seo 89, aeo 55, geo 80, ux 75.
+- Cialdini 4, visualDesign 6, userExperience 5, personas 4 — all real model output.
+- `TEST_SITE_CONFIG` → `site-adm-indicia`; old Branding Journal snapshot + public
+  screenshots removed. Screenshots downscaled + JPEG-encoded (desktop 1.3 MB,
+  mobile 3.1 MB) — raw full-page PNGs were 7 MB / 17 MB.
+
+**Important discovery (feeds Phase 2):** the live `production-crawler.ts` — the
+one the Vercel **cron** uses — does **not** run the gpt-4o visual analyzer; it
+only does DOM SEO/AEO/GEO/accessibility/mobile, so its `findings.ux` has no
+Cialdini/visual/persona data. Only `scripts/browser-crawl.ts` invokes
+`auditVisualDesign`. This is the "two parallel crawlers" risk from
+PROJECT_BRIEF.md §8, realised. Phase 2 must consolidate so the scheduled crawl
+includes the AI analysis — otherwise daily refresh would silently drop the CRO
+findings. (This crawl was produced with `browser-crawl`.)
+
+---
+
 ## 5. Phase 2 (separate scope, deferred)
 
 Durable persistence so the audit refreshes daily:
