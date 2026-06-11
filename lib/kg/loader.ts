@@ -48,6 +48,7 @@ export type MarketProps = { ref_id: string; label: string; currency: string; fx_
 export type ChannelProps = { ref_id: string; label: string; description?: string };
 export type PersonaProps = { name: string; archetype: string; doc_path: string; age_range?: string; income_band?: string; primary_motivation?: string };
 export type BrandAssetProps = { name: string; asset_type: string; file_path: string; depicts_product_id?: string; format?: string; dimensions?: string; generation_prompt_ref?: string; generation_model?: string; market_variants?: Record<string, { generation_prompt_ref?: string; file_path: string }> };
+export type AvailabilityProps = { person_id: string; start_date: string; end_date: string; allocation_pct: number; reason?: string };
 
 // CSV row shapes
 export type CostLineRow = { cost_line_id: string; execution_id: string; contract_id: string; person_id: string; role_id: string; line_type: string; units: string; unit_cost: string; markup_pct: string; currency: string; billed_date: string; notes: string };
@@ -144,6 +145,7 @@ export const getContracts = cache(async () => readJsonArray<KgNode>(path.join(NO
 export const getBrandGuidelines = cache(async () => readJsonArray<KgNode>(path.join(NODE_DIR, 'brand-guidelines.json')));
 export const getAssets = cache(async () => readJsonArray<KgNode>(path.join(NODE_DIR, 'assets.json')));
 export const getAssetVariants = cache(async () => readJsonArray<KgNode>(path.join(NODE_DIR, 'asset-variants.json')));
+export const getAvailability = cache(async () => readJsonArray<KgNode<AvailabilityProps>>(path.join(NODE_DIR, 'availability.json')));
 
 export const getAgencyStructureEdges = cache(async () => readJsonArray<KgEdge>(path.join(EDGE_DIR, 'agency-structure.json')));
 export const getBrandStructureEdges = cache(async () => readJsonArray<KgEdge>(path.join(EDGE_DIR, 'brand-structure.json')));
@@ -388,4 +390,54 @@ export function varianceClass(planned: number, actual: number): string {
     if (v <= 4) return 'text-neutral-300';
     if (v <= 12) return 'text-amber-400';
     return 'text-red-400';
+}
+
+// ===========================================================================
+// Availability helpers
+// ===========================================================================
+
+/**
+ * For a given person and date window, compute the average available capacity %
+ * across the window. Sums up all availability blocks that overlap, treats each
+ * block as consuming allocation_pct of that day. Returns 0–100.
+ *
+ * E.g., if a person has one block at allocation_pct=100 covering half the
+ * window, their available_pct = 50. If two blocks of 50% each cover the whole
+ * window, available_pct = 0.
+ */
+export function computeAvailablePctInWindow(
+    blocks: Array<KgNode<AvailabilityProps>>,
+    personId: string,
+    windowStart: string,
+    windowEnd: string,
+): { available_pct: number; conflicting_blocks: Array<{ reason: string; start: string; end: string; allocation_pct: number }> } {
+    const ws = new Date(windowStart).getTime();
+    const we = new Date(windowEnd).getTime();
+    if (we <= ws) return { available_pct: 100, conflicting_blocks: [] };
+    const windowDays = Math.max(1, (we - ws) / 86400000);
+
+    let allocatedDays = 0;
+    const conflicting: Array<{ reason: string; start: string; end: string; allocation_pct: number }> = [];
+
+    for (const b of blocks) {
+        if (b.properties.person_id !== personId) continue;
+        const bs = new Date(b.properties.start_date).getTime();
+        const be = new Date(b.properties.end_date).getTime();
+        // Overlap?
+        const overlapStart = Math.max(bs, ws);
+        const overlapEnd = Math.min(be, we);
+        if (overlapEnd < overlapStart) continue;
+        const overlapDays = (overlapEnd - overlapStart) / 86400000 + 1;
+        const alloc = b.properties.allocation_pct / 100;
+        allocatedDays += overlapDays * alloc;
+        conflicting.push({
+            reason: b.properties.reason || 'unspecified',
+            start: b.properties.start_date,
+            end: b.properties.end_date,
+            allocation_pct: b.properties.allocation_pct,
+        });
+    }
+
+    const availablePct = Math.max(0, Math.round((1 - allocatedDays / windowDays) * 100));
+    return { available_pct: availablePct, conflicting_blocks: conflicting };
 }

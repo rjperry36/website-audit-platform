@@ -513,9 +513,24 @@ Every candidate person has an AVAILABLE IN BRIEF WINDOW: X% value. Treat this as
 - Available 30–69%: only acceptable if they're for a part-time / supporting role on the brief. In rationale, surface the constraint explicitly: "Maya is 40% available — proposed for strategic oversight only, not day-to-day delivery."
 - Available 70–100%: acceptable for any role.
 
-When a brilliant first-choice candidate is unavailable, name them in the headline summary and explain the substitution. This is one of the most valuable signals you can surface — DO NOT silently swap. The brand director needs to see "we wanted Maya, she's not available, here's Wen Liu instead and why she works."
+SUBSTITUTION NARRATIVE — this is the single most valuable signal you can surface:
 
-CRITICAL CONSISTENCY: If you name a specific person as a substitute in the headline summary ("X is unavailable, so Y will lead Z"), then person Y MUST appear in the team array with the role you described. Never reference a person in the summary who isn't in the team. Cross-check before returning the JSON.
+When a top-match candidate (would have been ≥80% match if available) is blocked in the window, you SHOULD do this:
+
+1. Name them explicitly in the headline summary: "Maya Chen is the obvious strategic lead but she's 40% allocated to Sephora Y2 through November — Wen Liu steps in as lead strategist instead."
+2. Include the named substitute (Wen Liu) in the team array with proposed_role_on_brief reflecting that they're filling the gap.
+3. In the substitute's rationale, briefly acknowledge the role they're stepping into.
+
+Vague phrasing like "alternative team members have been proposed" is acceptable as a fallback only when NO good substitution story exists. If there's a credible named substitute available, USE THEIR NAME.
+
+The brand director needs to see _"we wanted Maya, she's not available, here's Wen Liu instead and why she works."_ That sentence is the moment that proves the agent is doing real work.
+
+HARD CONSTRAINT — Never reference a person in the summary who isn't in the team array. If you can't find a clean substitute in the candidate list, use vague phrasing instead. But always prefer the named version when possible.
+
+TEAM SIZE — bias toward more, not fewer:
+For LARGE / hero briefs (£500k+ or multi-channel with retail activation / events), the team MUST be at least 6 people. Coverage matters: one senior lead, project management, AND specialists for each major channel block. If you can't find a 100%-available specialist for a channel, include a partially-available one and flag the constraint in their rationale. Do not shrink the team to avoid partial-availability picks.
+
+For MEDIUM briefs, 4-6 people. For SMALL briefs (content piece, single-channel always-on tweak), 2-3 people.
 
 If 3+ of your team picks have availability < 70%, add a HIGH "Capacity overcommitment" risk citing the specific blocks (e.g. "Devon Ahmadi: parental leave Sep–Nov; Rachel Cohen: 60% on Sephora Y2 through Dec").
 

@@ -4,6 +4,18 @@
     "description": "Knowledge graph schema for the Aurelune × Halo & Helix sample dataset. Defines node types, edge types, and the properties expected on each. All amounts are numbers (no currency symbols) — currency is declared per node/row.",
     "id_pattern": "^[a-z-]+:[a-z0-9][a-z0-9-]*$",
     "node_types": {
+        "Availability": {
+            "required": [
+                "person_id",
+                "start_date",
+                "end_date",
+                "allocation_pct"
+            ],
+            "optional": [
+                "reason"
+            ],
+            "notes": "Forward-looking availability block. allocation_pct = how much of the person's normal capacity is consumed by this block (100 = fully unavailable, 50 = half-allocated to another commitment). reason is free text for human display only — the agent treats all blocks identically. Used by the Briefing Assistant to filter / reweight candidate people whose available capacity in the brief window is low."
+        },
         "Brand": {
             "required": [
                 "name",
