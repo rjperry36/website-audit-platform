@@ -66,6 +66,40 @@ before Verify.
 
 ---
 
-## 3. Execute / 4. Verify / 5. Land
+## 3. Execute (done)
 
-*(filled in as the work proceeds once C1/C2 are resolved and the migration is applied.)*
+- DB/Storage: `scripts/audit_reports_migration.sql` applied to Supabase project
+  `cyhqwmamlfjnvtqukzng` (table + bucket + RLS).
+- `lib/audit/report-store.ts` (saveReport / getLatestReport).
+- `production-crawler` consolidated (DOM + gpt-4o, in-memory screenshots,
+  Supabase persistence, site resolved from committed config); `visual-analyzer`
+  accepts a Buffer; `screenshot-capture` emits downscaled JPEG.
+- `latest-crawl` route reads Supabase → snapshot fallback; cron crawls the
+  committed sample with `maxDuration=300`; `vercel.json` weekly (`0 0 * * 0`).
+- CSP `img-src` extended to `https://*.supabase.co` (else Storage images blocked).
+
+## 4. Verify (done, 2026-06-12)
+
+First live crawl seeded via `npm run production-crawl`:
+- `audit_reports` row persisted: site-adm-indicia / 2026-06-12 / overall 75
+  (seo 89, aeo 55, geo 80, ux 74); 19 gpt-4o findings incl. 4 Cialdini.
+- Screenshots public-readable: desktop 784 KB, mobile 1.9 MB.
+- `GET /api/sites/site-adm-indicia/latest-crawl` returns the **Supabase** report
+  (supabase.co screenshot URLs, today's date) — not the snapshot.
+- `npm run build` exit 0.
+
+## 5. Land
+
+Shipped on `main` (commits through 90ca03f). The dashboard now reads live
+Supabase data; re-running the crawler updates it with no deploy.
+
+**Remaining for the *automatic* weekly refresh:** the Vercel project must be on a
+plan that honours `maxDuration` ≥120s (Pro). Until then, refresh is manual
+(`npm run production-crawl`) — the seeded crawl persists regardless.
+
+**Cost-governance (`_local/ai-agents`):** one gpt-4o vision call per crawl;
+weekly cadence ≈ 4–5 calls/month. Acceptable; revisit if cadence increases or
+more sites are added.
+
+**Follow-ups:** retire the now-redundant `scripts/browser-crawl.ts` and the
+filesystem `StorageManager` read paths; write `DATA_INVENTORY.md`.
