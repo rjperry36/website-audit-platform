@@ -1,55 +1,38 @@
 
 import { NextResponse } from 'next/server';
-import { ConfigManager } from '@/lib/config';
 import { crawlSite } from '@/lib/crawl/production-crawler';
 import { logger } from '@/lib/logger';
-import { addDays, isBefore, parseISO } from 'date-fns';
+import { TEST_SITE_CONFIG } from '@/lib/client-config';
+
+// The crawl (ScreenshotOne desktop+mobile + gpt-4o vision) takes ~60-90s, so the
+// function timeout must be raised. Requires a Vercel plan that allows this
+// (DR-0007 — Vercel Cron option). Schedule is weekly (see vercel.json).
+export const maxDuration = 300;
 
 export async function GET(request: Request) {
-    // 1. Verify Authentication
+    // 1. Verify the cron secret before any external-facing work.
     const authHeader = request.headers.get('authorization');
     if (authHeader !== `Bearer ${process.env.CRON_SECRET}`) {
         return new NextResponse('Unauthorized', { status: 401 });
     }
 
     try {
-        const sites = await ConfigManager.getSites();
-        const results = [];
-        let crawledCount = 0;
-
-        for (const site of sites) {
-            // 2. Check if due for crawl
-            let shouldCrawl = false;
-
-            if (!site.lastCrawlTimestamp) {
-                // Never crawled, so do it now
-                shouldCrawl = true;
-            } else {
-                const nextCrawlDate = addDays(parseISO(site.lastCrawlTimestamp), site.crawlIntervalDays);
-                if (isBefore(nextCrawlDate, new Date())) {
-                    shouldCrawl = true;
-                }
-            }
-
-            if (shouldCrawl) {
-                logger.info(`Cron: Starting crawl for ${site.name} (${site.id})`);
-                await crawlSite(site.id);
-                results.push({ id: site.id, name: site.name, status: 'crawled' });
-                crawledCount++;
-            } else {
-                results.push({ id: site.id, name: site.name, status: 'skipped', nextCrawl: addDays(parseISO(site.lastCrawlTimestamp!), site.crawlIntervalDays) });
-            }
-        }
+        // 2. Crawl the committed sample site. (audit-config.json is absent on
+        //    Vercel's read-only FS; the crawler resolves the site from the
+        //    committed TEST_SITE_CONFIG and persists results to Supabase.)
+        logger.info(`Cron: starting crawl for ${TEST_SITE_CONFIG.name} (${TEST_SITE_CONFIG.id})`);
+        const report = await crawlSite(TEST_SITE_CONFIG.id);
 
         return NextResponse.json({
             success: true,
-            crawled: crawledCount,
-            total: sites.length,
-            details: results
+            site: TEST_SITE_CONFIG.id,
+            scores: report.scores,
         });
-
     } catch (error) {
         logger.error('Cron job failed', error as Error);
-        return NextResponse.json({ success: false, error: (error as Error).message }, { status: 500 });
+        return NextResponse.json(
+            { success: false, error: (error as Error).message },
+            { status: 500 },
+        );
     }
 }

@@ -39,11 +39,11 @@ interface AIAnalysisResult {
 /**
  * Perform AI Visual Analysis on a screenshot
  */
-export async function auditVisualDesign(screenshotPath: string): Promise<{ score: number; findings: Finding[] }> {
+export async function auditVisualDesign(screenshot: string | Buffer): Promise<{ score: number; findings: Finding[] }> {
     const findings: Finding[] = [];
 
     try {
-        console.log(`🤖 Starting AI Visual Analysis on: ${path.basename(screenshotPath)}`);
+        console.log(`🤖 Starting AI Visual Analysis on: ${typeof screenshot === 'string' ? path.basename(screenshot) : 'in-memory screenshot'}`);
 
         // 0. Fetch Rules from DB
         const { data: rulesData, error: rulesError } = await supabase
@@ -58,10 +58,10 @@ export async function auditVisualDesign(screenshotPath: string): Promise<{ score
         // Create lookup map: RuleID -> Rule
         const rulesMap = new Map(rulesData?.map(r => [r.id, r]) || []);
 
-        // 1. Read screenshot file
-        const imageBuffer = await fs.readFile(screenshotPath);
+        // 1. Read screenshot (from disk path or an in-memory buffer)
+        const imageBuffer = typeof screenshot === 'string' ? await fs.readFile(screenshot) : screenshot;
         const base64Image = imageBuffer.toString('base64');
-        const dataUrl = `data:image/png;base64,${base64Image}`;
+        const dataUrl = `data:image/jpeg;base64,${base64Image}`;
 
         // 2. prompt for GPT-4o
         const personasText = personasConfig.personas.map(p =>

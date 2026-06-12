@@ -107,7 +107,10 @@ async function captureDesktopScreenshot(url: string): Promise<Buffer> {
         .viewportWidth(1920)
         .viewportHeight(1080)
         .fullPage(true)
-        .format('png')
+        // JPEG + downscale keeps full-page captures small for Storage (DR-0007).
+        .format('jpeg')
+        .imageQuality(72)
+        .imageWidth(1280)
         .blockAds(true)
         .blockCookieBanners(true)
         .blockTrackers(true)
@@ -128,7 +131,10 @@ async function captureMobileScreenshot(url: string): Promise<Buffer> {
         .viewportHeight(844)
         .deviceScaleFactor(3) // iPhone 13 has 3x scale factor
         .fullPage(true)
-        .format('png')
+        // JPEG + downscale keeps full-page captures small for Storage (DR-0007).
+        .format('jpeg')
+        .imageQuality(72)
+        .imageWidth(760)
         .blockAds(true)
         .blockCookieBanners(true)
         .blockTrackers(true)
