@@ -124,6 +124,9 @@ export interface SuggestedPerson {
     provider?: string;
     model_id?: string;
     est_cost_gbp?: number;
+    /** Agent-only: estimated human person-days the agent displaces, and £ of that human time */
+    man_days_saved?: number;
+    human_equiv_gbp?: number;
 }
 
 export interface Risk {
@@ -413,6 +416,36 @@ export async function adviseOnBrief(
         })
         .filter((m: SuggestedPerson) => !!m.person_id)
         .slice(0, 8);
+
+    // Man-days saved for each agent member — a grounded estimate of the human
+    // effort displaced. Built from REAL per-channel person-days (time-tracking)
+    // and a blended human day-rate, with two documented assumptions:
+    //   DRAFT_DISPLACEMENT — an agent first-drafts ~half the human effort (the
+    //     human still reviews/finishes), and
+    //   execsCovered — the agent supports roughly one execution per fortnight.
+    const DRAFT_DISPLACEMENT = 0.5;
+    const execsCovered = clamp(Math.round((input.duration_weeks || 8) / 2), 1, 12);
+    const blendedDailyRate = Math.round(avg(context.candidatePeople.map((p) => p.properties.daily_rate_gbp).filter((n) => n > 0))) || 800;
+    const chIdToLabel = new Map(context.channels.map((c) => [c.id, c.properties.label]));
+    const chLabelToDays = new Map(context.delivery.per_channel.map((c) => [c.channel, c.median_person_days]));
+    const maxChannelDays = Math.max(0, ...context.delivery.per_channel.map((c) => c.median_person_days));
+    for (const m of team) {
+        if (m.resource_type !== 'agent') continue;
+        const agent = context.candidateAgents.find((a) => a.id === m.person_id);
+        let personDays = 0;
+        if (agent) {
+            const fit = (agent.properties.channels || [])
+                .filter((c) => c.suitability >= 3 && chIdToLabel.has(c.channel_id))
+                .sort((x, y) => y.suitability - x.suitability);
+            for (const f of fit) {
+                const d = chLabelToDays.get(chIdToLabel.get(f.channel_id) || '');
+                if (d) { personDays = d; break; }
+            }
+        }
+        if (!personDays) personDays = maxChannelDays;
+        m.man_days_saved = Math.round(personDays * execsCovered * DRAFT_DISPLACEMENT);
+        m.human_equiv_gbp = Math.round(m.man_days_saved * blendedDailyRate);
+    }
 
     const confidence = computeConfidence(context, team);
     onEvent?.({

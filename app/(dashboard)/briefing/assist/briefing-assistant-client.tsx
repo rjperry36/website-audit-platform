@@ -521,6 +521,17 @@ function RecommendationPanel({
             <Card variant="elevated">
                 <CardContent className="p-5">
                     <SectionHeader icon={Users} title={`Proposed team (${r.team.length})`} />
+                    {(() => {
+                        const agents = r.team.filter((m) => m.resource_type === 'agent');
+                        const mdSaved = agents.reduce((s, a) => s + (a.man_days_saved || 0), 0);
+                        if (agents.length === 0 || mdSaved <= 0) return null;
+                        return (
+                            <div className="mt-2 text-xs text-fuchsia-300/90 flex items-center gap-1.5">
+                                <Bot className="h-3.5 w-3.5" />
+                                {agents.length} AI agent{agents.length > 1 ? 's' : ''} — ≈ {mdSaved} man-days saved <span className="text-neutral-500">(est.)</span>
+                            </div>
+                        );
+                    })()}
                     <div className="mt-3 space-y-2">
                         {r.team.map((m) => (
                             <div key={m.person_id} className={cn('rounded-lg border px-3 py-2.5 transition-colors', m.resource_type === 'agent' ? 'border-fuchsia-500/25 hover:border-fuchsia-500/40 bg-fuchsia-500/[0.04]' : 'border-white/5 hover:border-white/15 bg-white/[0.02]')}>
@@ -544,6 +555,11 @@ function RecommendationPanel({
                                             )}
                                         </div>
                                         <div className="text-xs text-neutral-400 mt-0.5">{m.role_name} → <span className="text-neutral-300">{m.proposed_role_on_brief}</span></div>
+                                        {m.resource_type === 'agent' && (m.man_days_saved ?? 0) > 0 && (
+                                            <div className="mt-1 text-xs text-fuchsia-300/90">
+                                                ≈ {m.man_days_saved} man-days saved <span className="text-neutral-500">(~£{fmt(m.human_equiv_gbp || 0)} human time vs ~£{fmt(m.est_cost_gbp || 0)} tokens)</span>
+                                            </div>
+                                        )}
                                         <p className="text-sm text-neutral-300 mt-1 leading-snug">{m.rationale}</p>
                                         {m.evidence.length > 0 && (
                                             <div className="mt-1.5 flex flex-wrap gap-1">
