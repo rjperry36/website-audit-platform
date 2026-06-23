@@ -9,6 +9,7 @@ import {
     Loader2, Sparkles, AlertTriangle, AlertCircle, TrendingUp, TrendingDown,
     Calendar, Banknote, Users, ShieldAlert, Link as LinkIcon, RotateCcw,
     Database, Brain, BarChart3, Cpu, CheckCircle2, Gauge, ChevronDown,
+    Truck, Workflow, Clock, ArrowRight,
 } from 'lucide-react';
 import type { BriefRecommendation, AgentEvent } from '@/lib/agents/briefing-assistant';
 
@@ -513,6 +514,9 @@ function RecommendationPanel({
                 </CardContent>
             </Card>
 
+            {/* Delivery dynamics */}
+            {r.delivery && <DeliveryCard delivery={r.delivery} />}
+
             {/* Team */}
             <Card variant="elevated">
                 <CardContent className="p-5">
@@ -805,6 +809,79 @@ function AgentTrace({ steps, tokens }: { steps: AgentStep[]; tokens: TokenUsage 
                 {open && (
                     <div className="px-5 pb-4 space-y-1 border-t border-white/5 pt-3">
                         {steps.map((s) => <StepRow key={s.id} step={s} />)}
+                    </div>
+                )}
+            </CardContent>
+        </Card>
+    );
+}
+
+function DeliveryCard({ delivery: d }: { delivery: BriefRecommendation['delivery'] }) {
+    const coverageColour = (s: string) => (s === 'ok' ? 'text-emerald-400 border-emerald-500/30 bg-emerald-500/10' : s === 'thin' ? 'text-amber-400 border-amber-500/30 bg-amber-500/10' : 'text-red-400 border-red-500/30 bg-red-500/10');
+    return (
+        <Card variant="elevated">
+            <CardContent className="p-5">
+                <SectionHeader icon={Truck} title="Delivery dynamics" />
+                <div className="flex items-baseline gap-2 mt-2">
+                    <span className="text-2xl font-semibold text-white">{d.expected_weeks_low}–{d.expected_weeks_high} weeks</span>
+                    <span className="text-xs text-neutral-500">expected end-to-end · {d.sample_executions.toLocaleString()} past executions</span>
+                </div>
+
+                {/* Relay */}
+                {d.relay.length > 0 && (
+                    <div className="mt-4">
+                        <div className="flex items-center gap-1.5 mb-2">
+                            <Workflow className="h-3.5 w-3.5 text-primary-400/80" />
+                            <span className="text-[10px] uppercase tracking-wider text-neutral-400 font-medium">The relay</span>
+                        </div>
+                        <div className="flex items-stretch gap-2 flex-wrap">
+                            {d.relay.map((r, i) => (
+                                <div key={r.stage} className="flex items-center gap-2">
+                                    <div className="rounded-md border border-white/10 bg-white/[0.03] px-3 py-2">
+                                        <div className="text-sm text-white">{r.stage}</div>
+                                        <div className="text-[11px] text-neutral-400 mt-0.5 flex items-center gap-1">
+                                            <Clock className="h-3 w-3" /> ~{r.median_days}d · {r.dominant_department}
+                                        </div>
+                                    </div>
+                                    {i < d.relay.length - 1 && <ArrowRight className="h-4 w-4 text-neutral-600 flex-shrink-0" />}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
+
+                {/* Per-channel lead times */}
+                {d.per_channel.length > 0 && (
+                    <div className="mt-4">
+                        <div className="text-[10px] uppercase tracking-wider text-neutral-500 mb-1.5">Lead time by channel</div>
+                        <div className="space-y-1">
+                            {d.per_channel.map((c) => (
+                                <div key={c.channel} className="flex items-center gap-2 text-xs">
+                                    <span className="text-neutral-300 w-28 flex-shrink-0">{c.channel}</span>
+                                    <span className="text-white tabular-nums">{c.median_calendar_days}d</span>
+                                    <span className="text-neutral-500">·</span>
+                                    <span className="text-neutral-400 tabular-nums">{c.median_person_days} person-days</span>
+                                    <span className="text-neutral-500">·</span>
+                                    <span className={cn('tabular-nums', c.on_time_pct >= 50 ? 'text-emerald-400' : 'text-amber-400')}>{c.on_time_pct}% on-time</span>
+                                    {c.avg_slip_days > 0 && <span className="text-neutral-600">+{c.avg_slip_days}d slip</span>}
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                )}
+
+                {/* Channel coverage */}
+                {d.channel_coverage.length > 0 && (
+                    <div className="mt-4">
+                        <div className="text-[10px] uppercase tracking-wider text-neutral-500 mb-1.5">Channel coverage (available / bench)</div>
+                        <div className="flex flex-wrap gap-1.5">
+                            {d.channel_coverage.map((c) => (
+                                <span key={c.channel} className={cn('text-[11px] px-2 py-1 rounded-md border', coverageColour(c.status))}>
+                                    {c.channel} {c.specialists_available}/{c.specialists_total}
+                                    {c.status === 'none' ? ' · no bench' : c.status === 'thin' ? ' · thin' : ''}
+                                </span>
+                            ))}
+                        </div>
                     </div>
                 )}
             </CardContent>

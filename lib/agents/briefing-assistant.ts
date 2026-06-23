@@ -68,6 +68,32 @@ export interface BudgetComposition {
     cost_line_samples: number;
 }
 
+export interface Delivery {
+    /** Expected end-to-end delivery, derived from real lead times + the relay */
+    expected_weeks_low: number;
+    expected_weeks_high: number;
+    /** Per-channel delivery dynamics for the brief's channels */
+    per_channel: Array<{
+        channel: string;
+        median_calendar_days: number;
+        avg_slip_days: number;
+        on_time_pct: number;
+        median_person_days: number;
+        sample: number;
+    }>;
+    /** The repeatable stage sequence (relay) with median duration + lead team */
+    relay: Array<{ stage: string; median_days: number; dominant_department: string; sample: number }>;
+    /** Can the bench cover the brief's channels, given availability in the window? */
+    channel_coverage: Array<{
+        channel: string;
+        specialists_total: number;
+        specialists_available: number;
+        status: 'ok' | 'thin' | 'none';
+    }>;
+    /** How many executions the delivery stats are built from */
+    sample_executions: number;
+}
+
 export interface CitedCampaign {
     id: string;
     name: string;
@@ -115,6 +141,8 @@ export interface BriefRecommendation {
         client_review_days_avg: number;
         rationale: string;
     };
+    /** Delivery dynamics — lead times, the relay, and channel coverage (derived) */
+    delivery: Delivery;
     /** Proposed team — 3-6 people */
     team: SuggestedPerson[];
     /** Top risks the agent identified */
@@ -386,6 +414,7 @@ export async function adviseOnBrief(
             client_review_days_avg: num(parsed?.timeline?.client_review_days_avg, context.approvalStats.clientAvg),
             rationale: str(parsed?.timeline?.rationale, ''),
         },
+        delivery: context.delivery,
         team,
         risks: arr(parsed?.risks)
             .map((r: any) => ({
@@ -448,7 +477,10 @@ function computeConfidence(
     const budgetCampaignScore = clamp((budgetSamples / 5) * 100, 0, 100);
     const budgetCostScore = clamp((costLineSamples / 50) * 100, 0, 100);
     const budget = Math.round(0.6 * budgetCampaignScore + 0.4 * budgetCostScore);
-    const timeline = Math.round(clamp((approvalSamples / 25) * 100, 0, 100));
+    // Timeline now blends approval-gate evidence with real delivery-execution evidence.
+    const approvalScoreForTimeline = clamp((approvalSamples / 25) * 100, 0, 100);
+    const deliveryScoreForTimeline = clamp((context.delivery.sample_executions / 40) * 100, 0, 100);
+    const timeline = Math.round(0.5 * approvalScoreForTimeline + 0.5 * deliveryScoreForTimeline);
 
     const teamScores = team.map((m) => m.match_score).filter((n) => n > 0);
     const team_match_avg = teamScores.length ? Math.round(avg(teamScores)) : 0;
@@ -770,11 +802,123 @@ async function buildContext(input: BriefInput, onEvent?: EmitFn) {
         count: candidatePeopleWithLoad.length,
     });
 
+    // ----- Delivery dynamics: lead time, the relay, and channel coverage -----
+    const dayDiff = (a?: string, b?: string): number | null =>
+        a && b ? Math.round((new Date(b).getTime() - new Date(a).getTime()) / 86_400_000) : null;
+    const channelLabelById = new Map(allChannels.map((c) => [c.id, c.properties.label]));
+
+    // Effort (person-days) per execution from time-tracking.
+    const hoursByExec: Record<string, number> = {};
+    for (const t of allTimeTracking) {
+        hoursByExec[t.execution_id] = (hoursByExec[t.execution_id] || 0) + (parseFloat(t.actual_hours) || 0);
+    }
+
+    // Per-channel delivery stats for the brief's channels.
+    let deliverySample = 0;
+    const deliveryPerChannel = input.channel_ids.map((chId) => {
+        const execs = allExecutions.filter(
+            (e) => e.channel_id === chId && e.properties.actual_start && e.properties.actual_end,
+        );
+        const cals = execs.map((e) => dayDiff(e.properties.actual_start, e.properties.actual_end)).filter((n): n is number => n != null);
+        const slips = execs
+            .map((e) => {
+                const cal = dayDiff(e.properties.actual_start, e.properties.actual_end);
+                const plan = dayDiff(e.properties.planned_start, e.properties.planned_end);
+                return cal != null && plan != null ? cal - plan : null;
+            })
+            .filter((n): n is number => n != null);
+        const pdays = execs.map((e) => (hoursByExec[e.id] || 0) / 8).filter((n) => n > 0);
+        deliverySample += execs.length;
+        return {
+            channel: channelLabelById.get(chId) || chId,
+            median_calendar_days: Math.round(percentile(cals, 50)),
+            avg_slip_days: Math.round(avg(slips)),
+            on_time_pct: slips.length ? Math.round((slips.filter((s) => s <= 0).length / slips.length) * 100) : 0,
+            median_person_days: Math.round(percentile(pdays, 50)),
+            sample: execs.length,
+        };
+    });
+
+    // The relay: execution-type stage sequence with median duration + lead team.
+    const STAGES: Array<{ key: string; label: string }> = [
+        { key: 'global_asset_creation', label: 'Global asset creation' },
+        { key: 'localisation', label: 'Localisation' },
+        { key: 'local_campaign', label: 'Local campaign' },
+    ];
+    const stageOfExec = new Map(allExecutions.map((e) => [e.id, e.properties.execution_type]));
+    const stageDeptCost: Record<string, Record<string, number>> = {};
+    for (const cl of allCostLines) {
+        if (cl.line_type === 'production_cost' || cl.line_type === 'localisation_cost') continue;
+        const st = stageOfExec.get(cl.execution_id);
+        if (!st) continue;
+        const amt = (parseFloat(cl.units) || 0) * (parseFloat(cl.unit_cost) || 0) * (1 + (parseFloat(cl.markup_pct) || 0));
+        const dept = roleDeptName.get(cl.role_id) || 'Other';
+        (stageDeptCost[st] = stageDeptCost[st] || {})[dept] = (stageDeptCost[st][dept] || 0) + amt;
+    }
+    const deliveryRelay = STAGES.map(({ key, label }) => {
+        const execs = allExecutions.filter((e) => e.properties.execution_type === key && e.properties.actual_start && e.properties.actual_end);
+        const cals = execs.map((e) => dayDiff(e.properties.actual_start, e.properties.actual_end)).filter((n): n is number => n != null);
+        const dominant = Object.entries(stageDeptCost[key] || {}).sort((a, b) => b[1] - a[1])[0]?.[0] || '—';
+        return { stage: label, median_days: Math.round(percentile(cals, 50)), dominant_department: dominant, sample: execs.length };
+    }).filter((r) => r.sample > 0);
+
+    // Channel coverage: bench specialists vs available-in-window specialists.
+    const channelCoverage = input.channel_ids.map((chId) => {
+        const specs = allPeople.filter((p) => p.channel_experience.some((ce) => ce.channel_id === chId && ce.years >= 2));
+        const available = specs.filter((p) => computeAvailablePctInWindow(allAvailability, p.id, briefStart, briefEnd).available_pct >= 50).length;
+        const total = specs.length;
+        const status: 'ok' | 'thin' | 'none' = total === 0 ? 'none' : available <= 1 ? 'thin' : 'ok';
+        return { channel: channelLabelById.get(chId) || chId, specialists_total: total, specialists_available: available, status };
+    });
+
+    // Expected end-to-end delivery from the relay (sequential), +30% for slip.
+    const relayDays = deliveryRelay.reduce((s, r) => s + r.median_days, 0);
+    const maxChannelDays = Math.max(0, ...deliveryPerChannel.map((c) => c.median_calendar_days));
+    const baseDays = relayDays > 0 ? relayDays : maxChannelDays;
+    const delivery = {
+        expected_weeks_low: Math.max(1, Math.round(baseDays / 7)),
+        expected_weeks_high: Math.max(2, Math.round((baseDays * 1.3) / 7)),
+        per_channel: deliveryPerChannel,
+        relay: deliveryRelay,
+        channel_coverage: channelCoverage,
+        sample_executions: deliverySample,
+    };
+
+    const thinChannels = channelCoverage.filter((c) => c.status !== 'ok');
+    onEvent?.({
+        type: 'step',
+        phase: 'analyse',
+        id: 'delivery',
+        label: `Measured delivery across ${deliverySample.toLocaleString()} past executions in these channels`,
+        detail: `expected ~${delivery.expected_weeks_low}–${delivery.expected_weeks_high} wks end-to-end`,
+        status: 'done',
+        count: deliverySample,
+    });
+    onEvent?.({
+        type: 'step',
+        phase: 'analyse',
+        id: 'relay',
+        label: `Reconstructed the delivery relay (${deliveryRelay.length} stages)`,
+        detail: deliveryRelay.map((r) => `${r.stage} ~${r.median_days}d`).join(' → ') || '—',
+        status: 'done',
+    });
+    onEvent?.({
+        type: 'step',
+        phase: 'analyse',
+        id: 'coverage',
+        label: `Checked channel coverage vs the bench`,
+        detail: thinChannels.length
+            ? `thin/none: ${thinChannels.map((c) => `${c.channel} (${c.specialists_available}/${c.specialists_total})`).join(', ')}`
+            : 'all channels covered with available specialists',
+        status: 'done',
+    });
+
     return {
         similarCampaigns,
         budgetStats,
         costComposition,
         approvalStats,
+        delivery,
         candidatePeople: candidatePeopleWithLoad,
         markets: allMarkets.filter((m) => inputMarketSet.has(m.id)),
         channels: allChannels.filter((c) => inputChannelSet.has(c.id)),
@@ -969,6 +1113,18 @@ Approval timing (for ${input.market_ids.join('+')} × ${input.channel_ids.join('
    Client review avg:   ${context.approvalStats.clientAvg} days (planned 3)
    Internal slip rate:  ${context.approvalStats.internalSlipPct}% of executions slip past 5 days
    Client slip rate:    ${context.approvalStats.clientSlipPct}% of executions slip past 3 days
+
+DELIVERY DYNAMICS (from ${context.delivery.sample_executions.toLocaleString()} past executions in these channels) — how long delivery ACTUALLY takes:
+   Expected end-to-end: ~${context.delivery.expected_weeks_low}–${context.delivery.expected_weeks_high} weeks (relay-based, includes typical slip)
+   Per channel:${context.delivery.per_channel.map((c) => `
+     ${c.channel}: median ${c.median_calendar_days}d calendar, ~${c.median_person_days} person-days, ${c.on_time_pct}% on-time, avg slip ${c.avg_slip_days > 0 ? '+' : ''}${c.avg_slip_days}d (n=${c.sample})`).join('')}
+   Delivery relay (the repeatable stage sequence):${context.delivery.relay.map((r) => `
+     ${r.stage}: ~${r.median_days}d median, led by ${r.dominant_department}`).join('')}
+   → Ground recommended_weeks in this. Don't recommend a timeline shorter than the expected end-to-end unless you justify why. If on-time % is low or slip is high, reflect it as a schedule risk.
+
+CHANNEL COVERAGE (specialists on the bench vs available in the brief window):${context.delivery.channel_coverage.map((c) => `
+   ${c.channel}: ${c.specialists_available} available / ${c.specialists_total} on bench — ${c.status.toUpperCase()}`).join('')}
+   → If any channel is THIN (≤1 available specialist) or NONE (no bench), raise it as a capacity/coverage risk and reflect it in the team (or flag the gap explicitly in the summary).
 
 BRIEF WINDOW for availability checks: ${context.brief_window.start} → ${context.brief_window.end}
 
