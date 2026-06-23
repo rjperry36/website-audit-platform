@@ -49,11 +49,28 @@ export type ChannelProps = { ref_id: string; label: string; description?: string
 export type PersonaProps = { name: string; archetype: string; doc_path: string; age_range?: string; income_band?: string; primary_motivation?: string };
 export type BrandAssetProps = { name: string; asset_type: string; file_path: string; depicts_product_id?: string; format?: string; dimensions?: string; generation_prompt_ref?: string; generation_model?: string; market_variants?: Record<string, { generation_prompt_ref?: string; file_path: string }> };
 export type AvailabilityProps = { person_id: string; start_date: string; end_date: string; allocation_pct: number; reason?: string };
+export type AgentProps = {
+    name: string;
+    provider: string;
+    model_id: string;
+    modality: string;
+    pricing_model: 'per_token' | 'per_seat';
+    input_price_gbp_per_mtok?: number;
+    output_price_gbp_per_mtok?: number;
+    seat_gbp_per_month?: number;
+    context_window_k: number;
+    released?: string;
+    status?: string;
+    best_for?: string;
+    skills: Array<{ skill_id: string; proficiency: number }>;
+    channels: Array<{ channel_id: string; suitability: number }>;
+};
 
 // CSV row shapes
 export type CostLineRow = { cost_line_id: string; execution_id: string; contract_id: string; person_id: string; role_id: string; line_type: string; units: string; unit_cost: string; markup_pct: string; currency: string; billed_date: string; notes: string };
 export type TimeEntryRow = { time_entry_id: string; execution_id: string; person_id: string; week_starting: string; planned_hours: string; actual_hours: string; notes: string };
 export type MediaSpendRow = { media_spend_id: string; execution_id: string; market_id: string; channel_id: string; platform: string; planned_spend: string; actual_spend: string; currency: string; period_start: string; period_end: string };
+export type AgentUsageRow = { agent_usage_id: string; execution_id: string; agent_id: string; model_id: string; input_tokens: string; output_tokens: string; total_tokens: string; cost_gbp: string; task_type: string; billed_date: string };
 
 // ===========================================================================
 // Generic loaders (cached per request)
@@ -146,6 +163,7 @@ export const getBrandGuidelines = cache(async () => readJsonArray<KgNode>(path.j
 export const getAssets = cache(async () => readJsonArray<KgNode>(path.join(NODE_DIR, 'assets.json')));
 export const getAssetVariants = cache(async () => readJsonArray<KgNode>(path.join(NODE_DIR, 'asset-variants.json')));
 export const getAvailability = cache(async () => readJsonArray<KgNode<AvailabilityProps>>(path.join(NODE_DIR, 'availability.json')));
+export const getAgents = cache(async () => readJsonArray<KgNode<AgentProps>>(path.join(NODE_DIR, 'agents.json')));
 
 export const getAgencyStructureEdges = cache(async () => readJsonArray<KgEdge>(path.join(EDGE_DIR, 'agency-structure.json')));
 export const getBrandStructureEdges = cache(async () => readJsonArray<KgEdge>(path.join(EDGE_DIR, 'brand-structure.json')));
@@ -157,6 +175,7 @@ export const getStaffingEdges = cache(async () => readJsonArray<KgEdge>(path.joi
 export const getCostLines = cache(async () => readCsv(path.join(TABLE_DIR, 'cost-lines.csv')) as Promise<CostLineRow[]>);
 export const getTimeTracking = cache(async () => readCsv(path.join(TABLE_DIR, 'time-tracking.csv')) as Promise<TimeEntryRow[]>);
 export const getMediaSpend = cache(async () => readCsv(path.join(TABLE_DIR, 'media-spend.csv')) as Promise<MediaSpendRow[]>);
+export const getAgentUsage = cache(async () => readCsv(path.join(TABLE_DIR, 'agent-usage.csv')) as Promise<AgentUsageRow[]>);
 
 // Brand book markdown (read & exposed as raw markdown strings)
 const BRAND_BOOK_DIR = path.join(KG_DIR, 'brand-book');

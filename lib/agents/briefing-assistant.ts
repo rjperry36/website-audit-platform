@@ -21,6 +21,8 @@ import {
     getMediaSpend,
     getRoles,
     getDepartments,
+    getAgents,
+    getAgentUsage,
     getAvailability,
     formatCurrency,
     computeAvailablePctInWindow,
@@ -58,10 +60,12 @@ export interface BudgetComposition {
     production_gbp: number;
     localisation_gbp: number;
     media_gbp: number;
+    ai_gbp: number;
     labour_pct: number;
     production_pct: number;
     localisation_pct: number;
     media_pct: number;
+    ai_pct: number;
     /** Labour split by agency department/discipline */
     by_department: Array<{ department: string; gbp: number; pct: number }>;
     /** How many cost-line records this is built from */
@@ -114,12 +118,20 @@ export interface SuggestedPerson {
     match_score: number;
     /** Specific evidence — skills + channel/category years that justify the pick */
     evidence: string[];
+    /** 'human' (default) or 'agent' — whether this is a person or an AI agent */
+    resource_type: 'human' | 'agent';
+    /** Agent-only: provider + model + estimated token cost for this brief */
+    provider?: string;
+    model_id?: string;
+    est_cost_gbp?: number;
 }
 
 export interface Risk {
     severity: 'low' | 'medium' | 'high';
     title: string;
     description: string;
+    /** Concrete mitigation / next step — may propose an AI agent */
+    mitigation: string;
     /** Specific KG signals that triggered this risk */
     cited_signals: string[];
 }
@@ -364,10 +376,30 @@ export async function adviseOnBrief(
     }
 
     const team: SuggestedPerson[] = arr(parsed?.team)
-        .map((m: any) => {
-            const person = context.candidatePeople.find((p) => p.id === m?.person_id);
+        .map((m: any): SuggestedPerson => {
+            const id = str(m?.person_id, '');
+            const agent = context.candidateAgents.find((a) => a.id === id);
+            if (agent || m?.resource_type === 'agent') {
+                const ap = agent?.properties;
+                return {
+                    person_id: id,
+                    person_name: str(m?.person_name, ap?.name || ''),
+                    role_name: ap ? `${ap.provider} · ${ap.model_id}` : str(m?.role_name, 'AI agent'),
+                    proposed_role_on_brief: str(m?.proposed_role_on_brief, ''),
+                    seniority: 'AI agent',
+                    daily_rate_gbp: 0,
+                    rationale: str(m?.rationale, ''),
+                    match_score: clamp(num(m?.match_score, 70), 0, 100),
+                    evidence: arr(m?.evidence).map((e: any) => str(e, '')),
+                    resource_type: 'agent',
+                    provider: ap?.provider,
+                    model_id: ap?.model_id,
+                    est_cost_gbp: num(m?.est_cost_gbp, agent?.avg_cost_per_execution_gbp || 0),
+                };
+            }
+            const person = context.candidatePeople.find((p) => p.id === id);
             return {
-                person_id: str(m?.person_id, ''),
+                person_id: id,
                 person_name: str(m?.person_name, person?.properties.name || ''),
                 role_name: person?.role_name || str(m?.role_name, ''),
                 proposed_role_on_brief: str(m?.proposed_role_on_brief, ''),
@@ -376,10 +408,11 @@ export async function adviseOnBrief(
                 rationale: str(m?.rationale, ''),
                 match_score: clamp(num(m?.match_score, 70), 0, 100),
                 evidence: arr(m?.evidence).map((e: any) => str(e, '')),
+                resource_type: 'human',
             };
         })
         .filter((m: SuggestedPerson) => !!m.person_id)
-        .slice(0, 6);
+        .slice(0, 8);
 
     const confidence = computeConfidence(context, team);
     onEvent?.({
@@ -421,6 +454,7 @@ export async function adviseOnBrief(
                 severity: severity(r?.severity),
                 title: str(r?.title, ''),
                 description: str(r?.description, ''),
+                mitigation: str(r?.mitigation, ''),
                 cited_signals: arr(r?.cited_signals).map((s: any) => str(s, '')),
             }))
             .filter((r: Risk) => !!r.title)
@@ -530,7 +564,7 @@ async function buildContext(input: BriefInput, onEvent?: EmitFn) {
     };
 
     const len = (r: any[]) => r.length;
-    const [allCampaigns, allExecutions, allApprovals, allPeople, allMarkets, allChannels, allTimeTracking, allCostLines, allMediaSpend, allRoles, allDepartments, allAvailability] = await Promise.all([
+    const [allCampaigns, allExecutions, allApprovals, allPeople, allMarkets, allChannels, allTimeTracking, allCostLines, allMediaSpend, allRoles, allDepartments, allAgents, allAgentUsage, allAvailability] = await Promise.all([
         track('campaigns', 'campaigns', getCampaigns(), len),
         track('executions', 'campaign executions', getExecutionsEnriched(), len),
         track('approvals', 'approval steps', getApprovalSteps(), len),
@@ -542,6 +576,8 @@ async function buildContext(input: BriefInput, onEvent?: EmitFn) {
         track('mediaspend', 'media-spend rows', getMediaSpend(), len),
         track('roles', 'roles', getRoles(), len),
         track('departments', 'departments', getDepartments(), len),
+        track('agents', 'AI agents', getAgents(), len),
+        track('agentusage', 'AI agent usage records', getAgentUsage(), len),
         track('availability', 'availability records', getAvailability(), len),
     ]);
 
@@ -643,7 +679,12 @@ async function buildContext(input: BriefInput, onEvent?: EmitFn) {
         if (!similarExecIds.has(ms.execution_id)) continue;
         media += parseFloat(ms.actual_spend) || 0;
     }
-    const compTotal = labour + production + localisation + media;
+    let ai = 0;
+    for (const u of allAgentUsage) {
+        if (!similarExecIds.has(u.execution_id)) continue;
+        ai += parseFloat(u.cost_gbp) || 0;
+    }
+    const compTotal = labour + production + localisation + media + ai;
     const safePct = (n: number) => (compTotal > 0 ? Math.round((n / compTotal) * 100) : 0);
     const costComposition = {
         total_gbp: Math.round(compTotal),
@@ -651,10 +692,12 @@ async function buildContext(input: BriefInput, onEvent?: EmitFn) {
         production_gbp: Math.round(production),
         localisation_gbp: Math.round(localisation),
         media_gbp: Math.round(media),
+        ai_gbp: Math.round(ai),
         labour_pct: safePct(labour),
         production_pct: safePct(production),
         localisation_pct: safePct(localisation),
         media_pct: safePct(media),
+        ai_pct: safePct(ai),
         by_department: Object.entries(labourByDept)
             .map(([department, gbp]) => ({ department, gbp: Math.round(gbp), pct: safePct(gbp) }))
             .sort((a, b) => b.gbp - a.gbp)
@@ -802,6 +845,55 @@ async function buildContext(input: BriefInput, onEvent?: EmitFn) {
         count: candidatePeopleWithLoad.length,
     });
 
+    // ----- Candidate AI agents (the hybrid bench) -----
+    // Score agents on the same channel + skill axes as humans, and attach their
+    // real historical token usage / cost from agent-usage.
+    const agentUsageByAgent: Record<string, { n: number; tokens: number; cost: number }> = {};
+    for (const u of allAgentUsage) {
+        const a = (agentUsageByAgent[u.agent_id] = agentUsageByAgent[u.agent_id] || { n: 0, tokens: 0, cost: 0 });
+        a.n++;
+        a.tokens += parseInt(u.total_tokens) || 0;
+        a.cost += parseFloat(u.cost_gbp) || 0;
+    }
+    const candidateAgents = allAgents
+        .map((a) => {
+            const channelFit = (a.properties.channels || [])
+                .filter((c) => inputChannelSet.has(c.channel_id))
+                .reduce((s, c) => s + c.suitability, 0);
+            const skillFit = (a.properties.skills || [])
+                .filter((s) => targetSkillIds.has(s.skill_id))
+                .reduce((s, sk) => s + sk.proficiency, 0);
+            const score = channelFit * 2 + skillFit;
+            const hist = agentUsageByAgent[a.id] || { n: 0, tokens: 0, cost: 0 };
+            return {
+                id: a.id,
+                properties: a.properties,
+                channel_fit: channelFit,
+                skill_fit: skillFit,
+                score,
+                hist_executions: hist.n,
+                hist_total_tokens: hist.tokens,
+                hist_total_cost_gbp: Math.round(hist.cost),
+                avg_cost_per_execution_gbp: hist.n ? +(hist.cost / hist.n).toFixed(2) : 0,
+                top_skills: (a.properties.skills || []).filter((s) => s.proficiency >= 3).sort((x, y) => y.proficiency - x.proficiency).slice(0, 5),
+            };
+        })
+        .filter((a) => a.score > 0)
+        .sort((x, y) => y.score - x.score)
+        .slice(0, 6);
+
+    onEvent?.({
+        type: 'step',
+        phase: 'analyse',
+        id: 'agents',
+        label: `Scored ${allAgents.length} AI agents on channel & skill fit`,
+        detail: candidateAgents.length
+            ? `top: ${candidateAgents.slice(0, 3).map((a) => a.properties.name).join(', ')}`
+            : 'no agent fit for these channels',
+        status: 'done',
+        count: candidateAgents.length,
+    });
+
     // ----- Delivery dynamics: lead time, the relay, and channel coverage -----
     const dayDiff = (a?: string, b?: string): number | null =>
         a && b ? Math.round((new Date(b).getTime() - new Date(a).getTime()) / 86_400_000) : null;
@@ -920,6 +1012,7 @@ async function buildContext(input: BriefInput, onEvent?: EmitFn) {
         approvalStats,
         delivery,
         candidatePeople: candidatePeopleWithLoad,
+        candidateAgents,
         markets: allMarkets.filter((m) => inputMarketSet.has(m.id)),
         channels: allChannels.filter((c) => inputChannelSet.has(c.id)),
         brief_window: { start: briefStart, end: briefEnd },
@@ -1016,6 +1109,15 @@ When a person has a partial allocation block (e.g., 60% on another campaign), re
 
 Availability evidence — the FIRST item in the evidence array for each team member MUST be their availability formatted as "NN% available in window" (e.g. "85% available in window"). This drives the chip surfacing in the UI.
 
+AI AGENTS — the hybrid bench (this is a core part of modern resource planning):
+You are given a CANDIDATE AI AGENTS list. Treat agents as real resources alongside people. They are strong at some disciplines (long-form copy, content, localisation, analysis, drafting) and weak/unusable at others (art direction, events, OOH/POSM physical production, negotiation). They bill in TOKENS (pennies-to-pounds), not day rates, and are effectively ALWAYS AVAILABLE.
+
+Use agents deliberately:
+1. Propose a HYBRID team. For suitable, high-volume or first-draft work (localisation variants, SEO/ECRM copy, research synthesis, data analysis), include a named agent from the candidate list with proposed_role_on_brief describing the task (e.g. "First-draft localisation across DE/FR", "SEO content drafting", "Performance analysis"). Pair agents with a human reviewer/lead rather than replacing senior judgement.
+2. Agents are the natural MITIGATION for capacity/coverage gaps. If a channel is THIN/NONE on human specialists, or a top human is unavailable, propose an agent to fill the gap and say so explicitly in the risk's mitigation and/or the summary (e.g. "SEO bench is thin — Claude Sonnet 4.6 drafts long-form SEO at proficiency 4 for ~£X in tokens, reviewed by [human]").
+3. For an agent team member: set resource_type:"agent", person_id to the agent's id from the candidate list, daily_rate_gbp:0, and est_cost_gbp to a sensible token cost for this brief (use the agent's avg cost/execution × the rough number of executions). The FIRST evidence item for an agent should be its cost basis (e.g. "~£12 in tokens vs £880/day human equiv"), NOT availability.
+4. Do not force the "% available in window" evidence rule on agents — that rule is for humans only.
+
 OUTPUT FORMAT — return STRICT JSON with this exact shape:
 
 {
@@ -1036,22 +1138,35 @@ OUTPUT FORMAT — return STRICT JSON with this exact shape:
   },
   "team": [
     {
-      "person_id": "person:...",
+      "person_id": "person:... or agent:... for AI agents",
       "person_name": "Maya Chen",
       "role_name": "Strategy Director",
       "proposed_role_on_brief": "Lead strategist",
       "seniority": "director",
       "daily_rate_gbp": 1380,
-      "rationale": "Why this person — be specific. 1–2 sentences citing concrete skills + experience + (if relevant) persona alignment.",
+      "rationale": "Why this resource — be specific. 1–2 sentences citing concrete skills + experience + (if relevant) persona alignment.",
       "match_score": 87,
-      "evidence": ["85% available in window", "7 years on SOCIAL_MEDIA", "9 years on category:beauty", "proficiency 5 on positioning"]
+      "evidence": ["85% available in window", "7 years on SOCIAL_MEDIA", "9 years on category:beauty", "proficiency 5 on positioning"],
+      "resource_type": "human",
+      "est_cost_gbp": 0
+    },
+    {
+      "person_id": "agent:anthropic-claude-sonnet-4-6",
+      "person_name": "Claude Sonnet 4.6",
+      "proposed_role_on_brief": "First-draft localisation across DE/FR",
+      "rationale": "Why this agent — the task it covers and why it fits.",
+      "match_score": 80,
+      "evidence": ["~£8 in tokens vs £480/day human equiv", "proficiency 5 on ecrm-copy", "always available"],
+      "resource_type": "agent",
+      "est_cost_gbp": 8
     }
   ],
   "risks": [
     {
       "severity": "low" | "medium" | "high",
       "title": "Short title",
-      "description": "1–2 sentences with a concrete next step or mitigation.",
+      "description": "1–2 sentences describing the risk and its impact.",
+      "mitigation": "1 sentence — the concrete next step to mitigate. Propose an AI agent here where it fits.",
       "cited_signals": ["campaign:...", "person:...", "date:2026-12-22"]
     }
   ],
@@ -1141,7 +1256,16 @@ ${context.candidatePeople.map((p, i) => `${i + 1}. ${p.id}
             ? ' — conflicts: ' + p.conflicting_blocks.map((b: any) => `${b.reason} ${b.start}→${b.end} (${b.allocation_pct}%)`).join('; ')
             : ' — fully available'}`).join('\n\n')}
 
-Now produce the JSON recommendation following the system prompt. Stay grounded in the data above.`;
+CANDIDATE AI AGENTS (the hybrid bench — token-priced, always available):
+${context.candidateAgents.length === 0 ? 'NONE fit these channels.' :
+        context.candidateAgents.map((a, i) => `${i + 1}. ${a.id}
+   ${a.properties.name} — ${a.properties.provider}, model ${a.properties.model_id}${a.properties.pricing_model === 'per_seat' ? `, £${a.properties.seat_gbp_per_month}/seat/mo` : `, £${a.properties.input_price_gbp_per_mtok}/£${a.properties.output_price_gbp_per_mtok} per Mtok (in/out)`}
+   Best for: ${a.properties.best_for || '—'}
+   Strong skills: ${a.top_skills.map((s) => `${s.skill_id.replace('skill:', '')} (${s.proficiency}/5)`).join(', ')}
+   Channel fit (this brief): ${a.channel_fit}, skill fit: ${a.skill_fit}
+   History: used on ${a.hist_executions} past executions, ${a.hist_total_tokens.toLocaleString()} tokens, ~£${a.avg_cost_per_execution_gbp}/execution`).join('\n\n')}
+
+Now produce the JSON recommendation following the system prompt. Propose a HYBRID team (humans + agents) and use agents as mitigation where coverage is thin. Stay grounded in the data above.`;
 
     return { systemPrompt, userPrompt };
 }

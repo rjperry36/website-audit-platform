@@ -1,0 +1,264 @@
+[
+  {
+    "id": "agent:anthropic-claude-opus-4-8",
+    "type": "Agent",
+    "properties": {
+      "name": "Claude Opus 4.8",
+      "provider": "Anthropic",
+      "model_id": "claude-opus-4-8",
+      "modality": "text+vision",
+      "pricing_model": "per_token",
+      "input_price_gbp_per_mtok": 11.85,
+      "output_price_gbp_per_mtok": 59.25,
+      "context_window_k": 1000,
+      "released": "2026-01",
+      "status": "active",
+      "best_for": "Premium reasoning, long-form copy, strategy and synthesis",
+      "skills": [
+        { "skill_id": "skill:copywriting-long-form", "proficiency": 5 },
+        { "skill_id": "skill:content-strategy", "proficiency": 5 },
+        { "skill_id": "skill:campaign-strategy", "proficiency": 4 },
+        { "skill_id": "skill:positioning", "proficiency": 4 },
+        { "skill_id": "skill:audience-strategy", "proficiency": 4 },
+        { "skill_id": "skill:brand-strategy", "proficiency": 4 },
+        { "skill_id": "skill:concept-development", "proficiency": 4 },
+        { "skill_id": "skill:seo-aeo-geo", "proficiency": 4 },
+        { "skill_id": "skill:ecrm-copy", "proficiency": 4 },
+        { "skill_id": "skill:analytics", "proficiency": 4 },
+        { "skill_id": "skill:art-direction", "proficiency": 1 },
+        { "skill_id": "skill:events-production", "proficiency": 1 },
+        { "skill_id": "skill:negotiation", "proficiency": 2 }
+      ],
+      "channels": [
+        { "channel_id": "channel:SEO", "suitability": 5 },
+        { "channel_id": "channel:ECRM", "suitability": 5 },
+        { "channel_id": "channel:RESEARCH", "suitability": 5 },
+        { "channel_id": "channel:SOCIAL_MEDIA", "suitability": 4 },
+        { "channel_id": "channel:D2C", "suitability": 4 },
+        { "channel_id": "channel:PAID_MEDIA", "suitability": 3 },
+        { "channel_id": "channel:B2B2C", "suitability": 3 },
+        { "channel_id": "channel:UX", "suitability": 3 },
+        { "channel_id": "channel:OOH", "suitability": 1 },
+        { "channel_id": "channel:POSM", "suitability": 1 },
+        { "channel_id": "channel:EVENT", "suitability": 1 }
+      ]
+    }
+  },
+  {
+    "id": "agent:anthropic-claude-sonnet-4-6",
+    "type": "Agent",
+    "properties": {
+      "name": "Claude Sonnet 4.6",
+      "provider": "Anthropic",
+      "model_id": "claude-sonnet-4-6",
+      "modality": "text+vision",
+      "pricing_model": "per_token",
+      "input_price_gbp_per_mtok": 2.37,
+      "output_price_gbp_per_mtok": 11.85,
+      "context_window_k": 1000,
+      "released": "2025-09",
+      "status": "active",
+      "best_for": "Balanced workhorse — copy, ECRM, SEO content at scale",
+      "skills": [
+        { "skill_id": "skill:copywriting-short-form", "proficiency": 5 },
+        { "skill_id": "skill:ecrm-copy", "proficiency": 5 },
+        { "skill_id": "skill:copywriting-long-form", "proficiency": 4 },
+        { "skill_id": "skill:content-strategy", "proficiency": 4 },
+        { "skill_id": "skill:seo-traditional", "proficiency": 4 },
+        { "skill_id": "skill:seo-aeo-geo", "proficiency": 4 },
+        { "skill_id": "skill:social-organic", "proficiency": 4 },
+        { "skill_id": "skill:analytics", "proficiency": 3 }
+      ],
+      "channels": [
+        { "channel_id": "channel:SEO", "suitability": 5 },
+        { "channel_id": "channel:ECRM", "suitability": 5 },
+        { "channel_id": "channel:SOCIAL_MEDIA", "suitability": 4 },
+        { "channel_id": "channel:D2C", "suitability": 4 },
+        { "channel_id": "channel:RESEARCH", "suitability": 4 },
+        { "channel_id": "channel:PAID_MEDIA", "suitability": 3 }
+      ]
+    }
+  },
+  {
+    "id": "agent:anthropic-claude-haiku-4-5",
+    "type": "Agent",
+    "properties": {
+      "name": "Claude Haiku 4.5",
+      "provider": "Anthropic",
+      "model_id": "claude-haiku-4-5",
+      "modality": "text",
+      "pricing_model": "per_token",
+      "input_price_gbp_per_mtok": 0.79,
+      "output_price_gbp_per_mtok": 3.95,
+      "context_window_k": 200,
+      "released": "2025-10",
+      "status": "active",
+      "best_for": "Fast, cheap, high-volume drafting and localisation",
+      "skills": [
+        { "skill_id": "skill:copywriting-short-form", "proficiency": 4 },
+        { "skill_id": "skill:ecrm-copy", "proficiency": 3 },
+        { "skill_id": "skill:social-organic", "proficiency": 3 },
+        { "skill_id": "skill:content-strategy", "proficiency": 2 },
+        { "skill_id": "skill:campaign-strategy", "proficiency": 1 }
+      ],
+      "channels": [
+        { "channel_id": "channel:ECRM", "suitability": 4 },
+        { "channel_id": "channel:SOCIAL_MEDIA", "suitability": 3 },
+        { "channel_id": "channel:SEO", "suitability": 3 },
+        { "channel_id": "channel:D2C", "suitability": 3 }
+      ]
+    }
+  },
+  {
+    "id": "agent:openai-gpt-4o",
+    "type": "Agent",
+    "properties": {
+      "name": "GPT-4o",
+      "provider": "OpenAI",
+      "model_id": "gpt-4o",
+      "modality": "text+vision",
+      "pricing_model": "per_token",
+      "input_price_gbp_per_mtok": 1.98,
+      "output_price_gbp_per_mtok": 7.9,
+      "context_window_k": 128,
+      "released": "2024-05",
+      "status": "active",
+      "best_for": "Multimodal generalist — ideation, social, image understanding",
+      "skills": [
+        { "skill_id": "skill:concept-development", "proficiency": 4 },
+        { "skill_id": "skill:copywriting-short-form", "proficiency": 4 },
+        { "skill_id": "skill:social-organic", "proficiency": 4 },
+        { "skill_id": "skill:paid-social", "proficiency": 3 },
+        { "skill_id": "skill:still-production", "proficiency": 3 },
+        { "skill_id": "skill:art-direction", "proficiency": 3 },
+        { "skill_id": "skill:analytics", "proficiency": 3 }
+      ],
+      "channels": [
+        { "channel_id": "channel:SOCIAL_MEDIA", "suitability": 5 },
+        { "channel_id": "channel:PAID_MEDIA", "suitability": 4 },
+        { "channel_id": "channel:D2C", "suitability": 4 },
+        { "channel_id": "channel:SEO", "suitability": 3 },
+        { "channel_id": "channel:ECRM", "suitability": 3 },
+        { "channel_id": "channel:UX", "suitability": 3 }
+      ]
+    }
+  },
+  {
+    "id": "agent:openai-o3",
+    "type": "Agent",
+    "properties": {
+      "name": "OpenAI o3",
+      "provider": "OpenAI",
+      "model_id": "o3",
+      "modality": "text",
+      "pricing_model": "per_token",
+      "input_price_gbp_per_mtok": 7.9,
+      "output_price_gbp_per_mtok": 31.6,
+      "context_window_k": 200,
+      "released": "2025-04",
+      "status": "active",
+      "best_for": "Deep reasoning — analytics, attribution, experimentation",
+      "skills": [
+        { "skill_id": "skill:analytics", "proficiency": 5 },
+        { "skill_id": "skill:attribution", "proficiency": 5 },
+        { "skill_id": "skill:experimentation", "proficiency": 5 },
+        { "skill_id": "skill:audience-strategy", "proficiency": 4 },
+        { "skill_id": "skill:campaign-strategy", "proficiency": 4 },
+        { "skill_id": "skill:copywriting-long-form", "proficiency": 2 }
+      ],
+      "channels": [
+        { "channel_id": "channel:RESEARCH", "suitability": 5 },
+        { "channel_id": "channel:PAID_MEDIA", "suitability": 4 },
+        { "channel_id": "channel:D2C", "suitability": 4 },
+        { "channel_id": "channel:ECRM", "suitability": 3 }
+      ]
+    }
+  },
+  {
+    "id": "agent:google-gemini-2-5-pro",
+    "type": "Agent",
+    "properties": {
+      "name": "Gemini 2.5 Pro",
+      "provider": "Google",
+      "model_id": "gemini-2.5-pro",
+      "modality": "text+vision",
+      "pricing_model": "per_token",
+      "input_price_gbp_per_mtok": 0.99,
+      "output_price_gbp_per_mtok": 7.9,
+      "context_window_k": 2000,
+      "released": "2025-06",
+      "status": "active",
+      "best_for": "Long-context research and multilingual localisation",
+      "skills": [
+        { "skill_id": "skill:audience-strategy", "proficiency": 4 },
+        { "skill_id": "skill:content-strategy", "proficiency": 4 },
+        { "skill_id": "skill:seo-traditional", "proficiency": 4 },
+        { "skill_id": "skill:seo-aeo-geo", "proficiency": 4 },
+        { "skill_id": "skill:analytics", "proficiency": 4 },
+        { "skill_id": "skill:copywriting-long-form", "proficiency": 3 }
+      ],
+      "channels": [
+        { "channel_id": "channel:RESEARCH", "suitability": 5 },
+        { "channel_id": "channel:SEO", "suitability": 5 },
+        { "channel_id": "channel:ECRM", "suitability": 4 },
+        { "channel_id": "channel:SOCIAL_MEDIA", "suitability": 3 },
+        { "channel_id": "channel:D2C", "suitability": 3 }
+      ]
+    }
+  },
+  {
+    "id": "agent:google-gemini-2-5-flash",
+    "type": "Agent",
+    "properties": {
+      "name": "Gemini 2.5 Flash",
+      "provider": "Google",
+      "model_id": "gemini-2.5-flash",
+      "modality": "text+vision",
+      "pricing_model": "per_token",
+      "input_price_gbp_per_mtok": 0.24,
+      "output_price_gbp_per_mtok": 1.98,
+      "context_window_k": 1000,
+      "released": "2025-06",
+      "status": "active",
+      "best_for": "Cheapest high-volume localisation and variant generation",
+      "skills": [
+        { "skill_id": "skill:copywriting-short-form", "proficiency": 4 },
+        { "skill_id": "skill:social-organic", "proficiency": 3 },
+        { "skill_id": "skill:ecrm-copy", "proficiency": 3 },
+        { "skill_id": "skill:content-strategy", "proficiency": 2 }
+      ],
+      "channels": [
+        { "channel_id": "channel:SOCIAL_MEDIA", "suitability": 4 },
+        { "channel_id": "channel:ECRM", "suitability": 3 },
+        { "channel_id": "channel:D2C", "suitability": 3 },
+        { "channel_id": "channel:SEO", "suitability": 3 }
+      ]
+    }
+  },
+  {
+    "id": "agent:microsoft-copilot",
+    "type": "Agent",
+    "properties": {
+      "name": "Microsoft 365 Copilot",
+      "provider": "Microsoft",
+      "model_id": "copilot-gpt-4-class",
+      "modality": "text",
+      "pricing_model": "per_seat",
+      "seat_gbp_per_month": 23.7,
+      "context_window_k": 128,
+      "released": "2024-01",
+      "status": "active",
+      "best_for": "Delivery & ops — project admin, docs, meeting synthesis",
+      "skills": [
+        { "skill_id": "skill:project-management", "proficiency": 4 },
+        { "skill_id": "skill:resource-planning", "proficiency": 3 },
+        { "skill_id": "skill:copywriting-short-form", "proficiency": 3 },
+        { "skill_id": "skill:ecrm-copy", "proficiency": 3 }
+      ],
+      "channels": [
+        { "channel_id": "channel:ECRM", "suitability": 3 },
+        { "channel_id": "channel:D2C", "suitability": 2 }
+      ]
+    }
+  }
+]

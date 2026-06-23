@@ -9,7 +9,7 @@ import {
     Loader2, Sparkles, AlertTriangle, AlertCircle, TrendingUp, TrendingDown,
     Calendar, Banknote, Users, ShieldAlert, Link as LinkIcon, RotateCcw,
     Database, Brain, BarChart3, Cpu, CheckCircle2, Gauge, ChevronDown,
-    Truck, Workflow, Clock, ArrowRight,
+    Truck, Workflow, Clock, ArrowRight, Bot, ShieldCheck,
 } from 'lucide-react';
 import type { BriefRecommendation, AgentEvent } from '@/lib/agents/briefing-assistant';
 
@@ -523,13 +523,25 @@ function RecommendationPanel({
                     <SectionHeader icon={Users} title={`Proposed team (${r.team.length})`} />
                     <div className="mt-3 space-y-2">
                         {r.team.map((m) => (
-                            <div key={m.person_id} className="rounded-lg border border-white/5 hover:border-white/15 bg-white/[0.02] px-3 py-2.5 transition-colors">
+                            <div key={m.person_id} className={cn('rounded-lg border px-3 py-2.5 transition-colors', m.resource_type === 'agent' ? 'border-fuchsia-500/25 hover:border-fuchsia-500/40 bg-fuchsia-500/[0.04]' : 'border-white/5 hover:border-white/15 bg-white/[0.02]')}>
                                 <div className="flex items-start justify-between gap-3">
                                     <div className="min-w-0">
                                         <div className="flex items-center gap-2 flex-wrap">
-                                            <span className="text-sm font-medium text-white">{m.person_name}</span>
-                                            <Badge variant="outline" className="text-[10px] normal-case">{m.seniority}</Badge>
-                                            <span className="text-xs text-neutral-400">£{m.daily_rate_gbp}/day</span>
+                                            <span className="text-sm font-medium text-white flex items-center gap-1.5">
+                                                {m.resource_type === 'agent' && <Bot className="h-3.5 w-3.5 text-fuchsia-400" />}
+                                                {m.person_name}
+                                            </span>
+                                            {m.resource_type === 'agent' ? (
+                                                <>
+                                                    <Badge variant="outline" className="text-[10px] normal-case border-fuchsia-500/40 text-fuchsia-300">AI agent</Badge>
+                                                    <span className="text-xs text-fuchsia-300/80">~£{fmt(m.est_cost_gbp || 0)} in tokens</span>
+                                                </>
+                                            ) : (
+                                                <>
+                                                    <Badge variant="outline" className="text-[10px] normal-case">{m.seniority}</Badge>
+                                                    <span className="text-xs text-neutral-400">£{m.daily_rate_gbp}/day</span>
+                                                </>
+                                            )}
                                         </div>
                                         <div className="text-xs text-neutral-400 mt-0.5">{m.role_name} → <span className="text-neutral-300">{m.proposed_role_on_brief}</span></div>
                                         <p className="text-sm text-neutral-300 mt-1 leading-snug">{m.rationale}</p>
@@ -567,6 +579,12 @@ function RecommendationPanel({
                                                 <Badge variant={severityToBadge(risk.severity)} className="text-[10px]">{risk.severity}</Badge>
                                             </div>
                                             <p className="text-sm text-neutral-300 mt-1 leading-snug">{risk.description}</p>
+                                            {risk.mitigation && (
+                                                <div className="mt-1.5 flex items-start gap-1.5 text-sm text-emerald-300/90">
+                                                    <ShieldCheck className="h-3.5 w-3.5 mt-0.5 flex-shrink-0 text-emerald-400" />
+                                                    <span><span className="text-emerald-400/70 text-[10px] uppercase tracking-wider mr-1">Mitigation</span>{risk.mitigation}</span>
+                                                </div>
+                                            )}
                                             {risk.cited_signals.length > 0 && (
                                                 <div className="mt-1.5 flex flex-wrap gap-1">
                                                     {risk.cited_signals.map((s, j) => (
@@ -753,6 +771,7 @@ const COMP_SEGMENTS = [
     { key: 'media', label: 'Media', colour: 'bg-emerald-500' },
     { key: 'production', label: 'Production', colour: 'bg-amber-500' },
     { key: 'localisation', label: 'Localisation', colour: 'bg-sky-500' },
+    { key: 'ai', label: 'AI / Agents', colour: 'bg-fuchsia-500' },
 ] as const;
 
 function BudgetComposition({ composition: c }: { composition: BriefRecommendation['budget']['composition'] }) {
