@@ -8,8 +8,27 @@ import { cn } from '@/lib/utils';
 import {
     Loader2, Sparkles, AlertTriangle, AlertCircle, TrendingUp, TrendingDown,
     Calendar, Banknote, Users, ShieldAlert, Link as LinkIcon, RotateCcw,
+    Database, Brain, BarChart3, Cpu, CheckCircle2, Gauge, ChevronDown,
 } from 'lucide-react';
-import type { BriefRecommendation } from '@/lib/agents/briefing-assistant';
+import type { BriefRecommendation, AgentEvent } from '@/lib/agents/briefing-assistant';
+
+// A single line in the live agent trace (the streamed 'step' events).
+interface AgentStep {
+    id: string;
+    phase: 'retrieve' | 'analyse' | 'reason';
+    label: string;
+    detail?: string;
+    status: 'active' | 'done';
+    count?: number;
+    ms?: number;
+}
+
+interface TokenUsage {
+    prompt?: number;
+    completion?: number;
+    total?: number;
+    estimated?: boolean;
+}
 
 interface MarketRef { id: string; label: string; ref_id: string }
 interface ChannelRef { id: string; label: string; ref_id: string }
@@ -84,6 +103,9 @@ export function BriefingAssistantClient({ markets, channels }: BriefingAssistant
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState<string | null>(null);
     const [recommendation, setRecommendation] = useState<BriefRecommendation | null>(null);
+    // Live agent trace
+    const [steps, setSteps] = useState<AgentStep[]>([]);
+    const [tokens, setTokens] = useState<TokenUsage>({});
 
     const toggle = (id: string, list: string[], setter: (v: string[]) => void) => {
         setter(list.includes(id) ? list.filter((x) => x !== id) : [...list, id]);
@@ -102,6 +124,8 @@ export function BriefingAssistantClient({ markets, channels }: BriefingAssistant
         setNotes(b.notes);
         setRecommendation(null);
         setError(null);
+        setSteps([]);
+        setTokens({});
     };
 
     const reset = () => {
@@ -116,18 +140,43 @@ export function BriefingAssistantClient({ markets, channels }: BriefingAssistant
         setNotes('');
         setRecommendation(null);
         setError(null);
+        setSteps([]);
+        setTokens({});
     };
 
     const submit = async () => {
         setError(null);
         setRecommendation(null);
+        setSteps([]);
+        setTokens({});
         if (!title || !summary || marketIds.length === 0 || channelIds.length === 0 || !startDate) {
             setError('Fill in title, summary, at least one market, at least one channel, and a start date.');
             return;
         }
         setIsLoading(true);
+
+        // Apply a streamed agent event to local state.
+        const apply = (evt: AgentEvent) => {
+            if (evt.type === 'step') {
+                const { type, ...step } = evt;
+                setSteps((prev) => {
+                    const i = prev.findIndex((s) => s.id === step.id);
+                    if (i === -1) return [...prev, step];
+                    const next = [...prev];
+                    next[i] = step; // upgrade active → done in place
+                    return next;
+                });
+            } else if (evt.type === 'tokens') {
+                setTokens({ prompt: evt.prompt, completion: evt.completion, total: evt.total, estimated: evt.estimated });
+            } else if (evt.type === 'done') {
+                setRecommendation(evt.recommendation);
+            } else if (evt.type === 'error') {
+                setError(evt.message);
+            }
+        };
+
         try {
-            const res = await fetch('/api/agents/briefing-assistant', {
+            const res = await fetch('/api/agents/briefing-assistant/stream', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
@@ -142,9 +191,35 @@ export function BriefingAssistantClient({ markets, channels }: BriefingAssistant
                     notes,
                 }),
             });
-            const data = await res.json();
-            if (!res.ok) throw new Error(data?.error || `Request failed (${res.status})`);
-            setRecommendation(data.recommendation);
+
+            if (!res.ok || !res.body) {
+                let msg = `Request failed (${res.status})`;
+                try {
+                    const data = await res.json();
+                    msg = data?.error || msg;
+                } catch {}
+                throw new Error(msg);
+            }
+
+            // Parse the SSE stream: events are separated by a blank line, each
+            // line prefixed with "data: ".
+            const reader = res.body.getReader();
+            const decoder = new TextDecoder();
+            let buffer = '';
+            for (;;) {
+                const { value, done } = await reader.read();
+                if (done) break;
+                buffer += decoder.decode(value, { stream: true });
+                const blocks = buffer.split('\n\n');
+                buffer = blocks.pop() ?? ''; // keep the trailing partial block
+                for (const block of blocks) {
+                    const line = block.split('\n').find((l) => l.startsWith('data:'));
+                    if (!line) continue;
+                    try {
+                        apply(JSON.parse(line.slice(5).trim()) as AgentEvent);
+                    } catch {}
+                }
+            }
         } catch (e: any) {
             setError(e?.message || 'Failed to get recommendation.');
         } finally {
@@ -313,23 +388,27 @@ export function BriefingAssistantClient({ markets, channels }: BriefingAssistant
                 <RecommendationPanel
                     recommendation={recommendation}
                     isLoading={isLoading}
+                    steps={steps}
+                    tokens={tokens}
                 />
             </div>
         </div>
     );
 }
 
-function RecommendationPanel({ recommendation, isLoading }: { recommendation: BriefRecommendation | null; isLoading: boolean }) {
+function RecommendationPanel({
+    recommendation,
+    isLoading,
+    steps,
+    tokens,
+}: {
+    recommendation: BriefRecommendation | null;
+    isLoading: boolean;
+    steps: AgentStep[];
+    tokens: TokenUsage;
+}) {
     if (isLoading) {
-        return (
-            <Card variant="elevated" className="h-full">
-                <CardContent className="p-8 flex flex-col items-center justify-center text-center min-h-[400px]">
-                    <Loader2 className="h-10 w-10 animate-spin text-primary-400 mb-4" />
-                    <p className="text-sm text-neutral-300">Reading 10 campaigns, 40 people, 1,000+ approvals…</p>
-                    <p className="text-xs text-neutral-500 mt-1">Usually 5–15 seconds.</p>
-                </CardContent>
-            </Card>
-        );
+        return <AgentActivityFeed steps={steps} tokens={tokens} running />;
     }
 
     if (!recommendation) {
@@ -362,10 +441,12 @@ function RecommendationPanel({ recommendation, isLoading }: { recommendation: Br
                         <div className="flex-1">
                             <h2 className="text-base font-semibold text-white mb-1">Recommendation</h2>
                             <p className="text-sm text-neutral-300 leading-relaxed">{r.summary}</p>
-                            <div className="mt-2 flex items-center gap-3 text-[11px] text-neutral-500">
+                            <div className="mt-2 flex items-center gap-3 text-[11px] text-neutral-500 flex-wrap">
                                 <span>Model: {r.meta.model}</span>
                                 <span>·</span>
                                 <span>{(r.meta.latency_ms / 1000).toFixed(1)}s</span>
+                                <span>·</span>
+                                <span>{r.meta.total_tokens.toLocaleString()} tokens ({r.meta.prompt_tokens.toLocaleString()} in / {r.meta.completion_tokens.toLocaleString()} out)</span>
                                 <span>·</span>
                                 <span>{r.meta.context_campaigns} campaigns · {r.meta.context_people} people · {r.meta.context_approvals} approvals analysed</span>
                             </div>
@@ -373,6 +454,9 @@ function RecommendationPanel({ recommendation, isLoading }: { recommendation: Br
                     </div>
                 </CardContent>
             </Card>
+
+            {/* Confidence read-out */}
+            <ConfidenceCard confidence={r.confidence} />
 
             {/* Budget */}
             <Card variant="elevated">
@@ -384,6 +468,9 @@ function RecommendationPanel({ recommendation, isLoading }: { recommendation: Br
                         <span className="text-2xl font-semibold text-white">£{fmt(r.budget.recommended_high_gbp)}</span>
                     </div>
                     <p className="text-sm text-neutral-300 mt-2 leading-relaxed">{r.budget.rationale}</p>
+                    {r.budget.composition && r.budget.composition.total_gbp > 0 && (
+                        <BudgetComposition composition={r.budget.composition} />
+                    )}
                     {r.budget.cited_campaigns.length > 0 && (
                         <div className="mt-3 space-y-1">
                             <div className="text-[10px] uppercase tracking-wider text-neutral-500 mb-1">Cited campaigns</div>
@@ -514,7 +601,214 @@ function RecommendationPanel({ recommendation, isLoading }: { recommendation: Br
                     </CardContent>
                 </Card>
             )}
+
+            {/* Agent trace (what actually ran) — collapsible */}
+            {steps.length > 0 && <AgentTrace steps={steps} tokens={tokens} />}
         </div>
+    );
+}
+
+// ===========================================================================
+// Live agent activity feed (shown while the agent works)
+// ===========================================================================
+
+const PHASES: { key: 'retrieve' | 'analyse' | 'reason'; label: string; icon: any }[] = [
+    { key: 'retrieve', label: 'Retrieve', icon: Database },
+    { key: 'analyse', label: 'Analyse', icon: BarChart3 },
+    { key: 'reason', label: 'Reason', icon: Brain },
+];
+
+function AgentActivityFeed({ steps, tokens, running }: { steps: AgentStep[]; tokens: TokenUsage; running?: boolean }) {
+    const liveCompletion = tokens.completion ?? 0;
+    const totalShown = tokens.total ?? (tokens.prompt ?? 0) + liveCompletion;
+    return (
+        <Card variant="elevated" className="h-full">
+            <CardContent className="p-5 min-h-[400px]">
+                <div className="flex items-center gap-2 mb-1">
+                    <div className="relative">
+                        <Cpu className="h-5 w-5 text-primary-400" />
+                        {running && <span className="absolute -right-0.5 -top-0.5 h-2 w-2 rounded-full bg-primary-400 animate-ping" />}
+                    </div>
+                    <h2 className="text-base font-semibold text-white">Briefing agent — live</h2>
+                    <span className="ml-auto text-[11px] text-neutral-500">retrieval-augmented · gpt-4o</span>
+                </div>
+                <p className="text-xs text-neutral-500 mb-4">
+                    One agent, three phases. Reading the knowledge graph, scoring evidence, then reasoning.
+                </p>
+
+                {/* Token meter */}
+                <div className="rounded-lg border border-white/10 bg-white/[0.03] px-4 py-3 mb-4">
+                    <div className="flex items-baseline justify-between">
+                        <span className="text-[10px] uppercase tracking-wider text-neutral-500">Tokens {tokens.estimated ? '(live est.)' : 'used'}</span>
+                        <span className="text-[11px] text-neutral-500">{(tokens.prompt ?? 0).toLocaleString()} in · {liveCompletion.toLocaleString()} out</span>
+                    </div>
+                    <div className="mt-1 font-mono text-2xl font-semibold text-white tabular-nums">
+                        {totalShown.toLocaleString()}
+                    </div>
+                </div>
+
+                {/* Phase-grouped steps */}
+                <div className="space-y-4">
+                    {PHASES.map((phase) => {
+                        const phaseSteps = steps.filter((s) => s.phase === phase.key);
+                        if (phaseSteps.length === 0 && !running) return null;
+                        const Icon = phase.icon;
+                        return (
+                            <div key={phase.key}>
+                                <div className="flex items-center gap-1.5 mb-1.5">
+                                    <Icon className="h-3.5 w-3.5 text-primary-400/80" />
+                                    <span className="text-[10px] uppercase tracking-wider text-neutral-400 font-medium">{phase.label}</span>
+                                </div>
+                                <div className="space-y-1 pl-1">
+                                    {phaseSteps.length === 0 ? (
+                                        <div className="flex items-center gap-2 text-xs text-neutral-600">
+                                            <span className="h-3.5 w-3.5 rounded-full border border-white/10 inline-block" />
+                                            waiting…
+                                        </div>
+                                    ) : (
+                                        phaseSteps.map((s) => <StepRow key={s.id} step={s} />)
+                                    )}
+                                </div>
+                            </div>
+                        );
+                    })}
+                </div>
+            </CardContent>
+        </Card>
+    );
+}
+
+function StepRow({ step }: { step: AgentStep }) {
+    return (
+        <div className="flex items-start gap-2 text-sm">
+            {step.status === 'done' ? (
+                <CheckCircle2 className="h-3.5 w-3.5 text-emerald-400 mt-0.5 flex-shrink-0" />
+            ) : (
+                <Loader2 className="h-3.5 w-3.5 text-primary-400 animate-spin mt-0.5 flex-shrink-0" />
+            )}
+            <div className="min-w-0 flex-1">
+                <span className={cn(step.status === 'done' ? 'text-neutral-300' : 'text-white')}>{step.label}</span>
+                {step.detail && <span className="text-neutral-500"> — {step.detail}</span>}
+            </div>
+            {typeof step.ms === 'number' && <span className="text-[10px] text-neutral-600 flex-shrink-0 tabular-nums">{step.ms}ms</span>}
+        </div>
+    );
+}
+
+function ConfidenceCard({ confidence: c }: { confidence: BriefRecommendation['confidence'] }) {
+    const colour = c.label === 'high' ? 'text-emerald-400' : c.label === 'medium' ? 'text-amber-400' : 'text-red-400';
+    const bar = c.label === 'high' ? 'bg-emerald-400' : c.label === 'medium' ? 'bg-amber-400' : 'bg-red-400';
+    return (
+        <Card variant="elevated">
+            <CardContent className="p-5">
+                <SectionHeader icon={Gauge} title="Confidence" />
+                <div className="mt-3 flex items-center gap-4">
+                    <div className="text-right">
+                        <div className={cn('text-3xl font-semibold leading-none tabular-nums', colour)}>{c.overall}</div>
+                        <div className={cn('text-[10px] uppercase tracking-wider mt-1', colour)}>{c.label} grounding</div>
+                    </div>
+                    <div className="flex-1">
+                        <div className="h-2 rounded-full bg-white/10 overflow-hidden">
+                            <div className={cn('h-full rounded-full', bar)} style={{ width: `${c.overall}%` }} />
+                        </div>
+                        <p className="text-xs text-neutral-400 mt-2 leading-snug">{c.basis}</p>
+                    </div>
+                </div>
+                <div className="mt-4 grid grid-cols-3 gap-2 text-center">
+                    <ConfidenceStat label="Budget" value={c.budget} />
+                    <ConfidenceStat label="Timeline" value={c.timeline} />
+                    <ConfidenceStat label="Team match" value={c.team_match_avg} />
+                </div>
+                <div className="mt-3 flex flex-wrap gap-1.5">
+                    <SignalChip label={`${c.signals.similar_campaigns} comparable campaigns`} />
+                    <SignalChip label={`${c.signals.cost_line_samples.toLocaleString()} cost lines`} />
+                    <SignalChip label={`${c.signals.approval_samples} approval samples`} />
+                    <SignalChip label={`${c.signals.candidate_people} candidates`} />
+                </div>
+            </CardContent>
+        </Card>
+    );
+}
+
+function ConfidenceStat({ label, value }: { label: string; value: number }) {
+    const colour = value >= 70 ? 'text-emerald-400' : value >= 40 ? 'text-amber-400' : 'text-neutral-400';
+    return (
+        <div className="rounded-md bg-white/5 border border-white/10 px-2 py-2">
+            <div className={cn('text-lg font-semibold leading-none tabular-nums', colour)}>{value}</div>
+            <div className="text-[10px] uppercase tracking-wider text-neutral-500 mt-1">{label}</div>
+        </div>
+    );
+}
+
+function SignalChip({ label }: { label: string }) {
+    return <span className="text-[10px] px-1.5 py-0.5 rounded bg-white/5 border border-white/10 text-neutral-400">{label}</span>;
+}
+
+const COMP_SEGMENTS = [
+    { key: 'labour', label: 'Labour', colour: 'bg-primary-500' },
+    { key: 'media', label: 'Media', colour: 'bg-emerald-500' },
+    { key: 'production', label: 'Production', colour: 'bg-amber-500' },
+    { key: 'localisation', label: 'Localisation', colour: 'bg-sky-500' },
+] as const;
+
+function BudgetComposition({ composition: c }: { composition: BriefRecommendation['budget']['composition'] }) {
+    const segs = COMP_SEGMENTS.map((s) => ({
+        ...s,
+        pct: c[`${s.key}_pct` as const] as number,
+        gbp: c[`${s.key}_gbp` as const] as number,
+    })).filter((s) => s.pct > 0);
+    return (
+        <div className="mt-3">
+            <div className="text-[10px] uppercase tracking-wider text-neutral-500 mb-1.5">
+                How comparable spend broke down ({c.cost_line_samples.toLocaleString()} cost lines)
+            </div>
+            {/* Stacked bar */}
+            <div className="flex h-2.5 rounded-full overflow-hidden bg-white/5">
+                {segs.map((s) => (
+                    <div key={s.key} className={cn('h-full', s.colour)} style={{ width: `${s.pct}%` }} title={`${s.label} ${s.pct}%`} />
+                ))}
+            </div>
+            {/* Legend */}
+            <div className="mt-2 flex flex-wrap gap-x-3 gap-y-1">
+                {segs.map((s) => (
+                    <span key={s.key} className="flex items-center gap-1.5 text-[11px] text-neutral-400">
+                        <span className={cn('h-2 w-2 rounded-sm', s.colour)} />
+                        {s.label} <span className="text-neutral-300 font-medium">{s.pct}%</span>
+                        <span className="text-neutral-600">£{fmt(s.gbp)}</span>
+                    </span>
+                ))}
+            </div>
+            {c.by_department.length > 0 && (
+                <div className="mt-2 text-[11px] text-neutral-500">
+                    Labour by team: {c.by_department.map((d) => `${d.department} ${d.pct}%`).join(' · ')}
+                </div>
+            )}
+        </div>
+    );
+}
+
+function AgentTrace({ steps, tokens }: { steps: AgentStep[]; tokens: TokenUsage }) {
+    const [open, setOpen] = useState(false);
+    return (
+        <Card variant="elevated">
+            <CardContent className="p-0">
+                <button
+                    type="button"
+                    onClick={() => setOpen((o) => !o)}
+                    className="w-full flex items-center gap-2 px-5 py-3 text-left"
+                >
+                    <Cpu className="h-4 w-4 text-primary-400" />
+                    <span className="text-sm font-semibold text-white">Agent trace</span>
+                    <span className="text-[11px] text-neutral-500">{steps.length} steps · {(tokens.total ?? 0).toLocaleString()} tokens</span>
+                    <ChevronDown className={cn('h-4 w-4 text-neutral-500 ml-auto transition-transform', open && 'rotate-180')} />
+                </button>
+                {open && (
+                    <div className="px-5 pb-4 space-y-1 border-t border-white/5 pt-3">
+                        {steps.map((s) => <StepRow key={s.id} step={s} />)}
+                    </div>
+                )}
+            </CardContent>
+        </Card>
     );
 }
 

@@ -18,6 +18,9 @@ import {
     getMarkets,
     getChannels,
     getCostLines,
+    getMediaSpend,
+    getRoles,
+    getDepartments,
     getAvailability,
     formatCurrency,
     computeAvailablePctInWindow,
@@ -46,6 +49,23 @@ export interface BriefInput {
     objectives?: string[];
     /** Free-text constraints / notes */
     notes?: string;
+}
+
+export interface BudgetComposition {
+    /** Total spend (labour + production + localisation + media) across comparable campaigns */
+    total_gbp: number;
+    labour_gbp: number;
+    production_gbp: number;
+    localisation_gbp: number;
+    media_gbp: number;
+    labour_pct: number;
+    production_pct: number;
+    localisation_pct: number;
+    media_pct: number;
+    /** Labour split by agency department/discipline */
+    by_department: Array<{ department: string; gbp: number; pct: number }>;
+    /** How many cost-line records this is built from */
+    cost_line_samples: number;
 }
 
 export interface CitedCampaign {
@@ -85,6 +105,8 @@ export interface BriefRecommendation {
         recommended_high_gbp: number;
         rationale: string;
         cited_campaigns: CitedCampaign[];
+        /** How comparable spend actually broke down — derived from cost lines + media spend */
+        composition: BudgetComposition;
     };
     /** Timeline + approval buffers */
     timeline: {
@@ -105,14 +127,68 @@ export interface BriefRecommendation {
     }>;
     /** Free-text headline summary, 2–3 sentences */
     summary: string;
-    /** Diagnostics — context size sent, latency, model */
+    /** How well-grounded the recommendation is — derived from retrieval coverage */
+    confidence: {
+        /** 0–100 overall grounding confidence */
+        overall: number;
+        label: 'high' | 'medium' | 'low';
+        /** Human-readable one-liner explaining what the score is based on */
+        basis: string;
+        /** The raw evidence counts the score is derived from */
+        signals: {
+            similar_campaigns: number;
+            approval_samples: number;
+            candidate_people: number;
+            budget_samples: number;
+            cost_line_samples: number;
+        };
+        /** Per-section confidence 0–100 */
+        budget: number;
+        timeline: number;
+        /** Average of the model's per-person match scores (model inference) */
+        team_match_avg: number;
+    };
+    /** Diagnostics — context size sent, latency, model, token usage */
     meta: {
         model: string;
         latency_ms: number;
         context_campaigns: number;
         context_people: number;
         context_approvals: number;
+        prompt_tokens: number;
+        completion_tokens: number;
+        total_tokens: number;
     };
+}
+
+// ===========================================================================
+// Live agent trace — events streamed to the UI as the agent works
+// ===========================================================================
+
+export type AgentEvent =
+    | {
+          type: 'step';
+          /** 'retrieve' | 'analyse' | 'reason' */
+          phase: 'retrieve' | 'analyse' | 'reason';
+          /** stable id so the client can upgrade an 'active' step to 'done' */
+          id: string;
+          label: string;
+          detail?: string;
+          status: 'active' | 'done';
+          /** real record count, where applicable */
+          count?: number;
+          /** elapsed ms for this step, where applicable */
+          ms?: number;
+      }
+    | { type: 'tokens'; prompt?: number; completion?: number; total?: number; estimated?: boolean }
+    | { type: 'done'; recommendation: BriefRecommendation }
+    | { type: 'error'; message: string };
+
+type EmitFn = (e: AgentEvent) => void;
+
+/** Rough token estimate (~4 chars/token) for pre-call display + live counter. */
+function estimateTokens(text: string): number {
+    return Math.max(1, Math.round(text.length / 4));
 }
 
 // ===========================================================================
@@ -133,29 +209,91 @@ function getOpenAI(): OpenAI {
 // Public entry point
 // ===========================================================================
 
-export async function adviseOnBrief(input: BriefInput): Promise<BriefRecommendation> {
+export async function adviseOnBrief(
+    input: BriefInput,
+    onEvent?: EmitFn,
+): Promise<BriefRecommendation> {
     const t0 = Date.now();
 
     // 1. Retrieve a relevant slice of the KG
-    const context = await buildContext(input);
+    const context = await buildContext(input, onEvent);
 
     // 2. Build the prompt
     const { systemPrompt, userPrompt } = buildPrompts(input, context);
+    const promptTokensEst = estimateTokens(systemPrompt + userPrompt);
+    onEvent?.({
+        type: 'step',
+        phase: 'reason',
+        id: 'prompt',
+        label: 'Composed reasoning prompt',
+        detail: `~${promptTokensEst.toLocaleString()} tokens of grounded context`,
+        status: 'done',
+        count: promptTokensEst,
+    });
+    onEvent?.({ type: 'tokens', prompt: promptTokensEst, estimated: true });
 
-    // 3. Call GPT-4o with JSON-object response format
+    // 3. Call GPT-4o (streaming, so we can surface live token usage)
     const openai = getOpenAI();
-    const completion = await openai.chat.completions.create({
+    onEvent?.({
+        type: 'step',
+        phase: 'reason',
+        id: 'model',
+        label: 'Reasoning with gpt-4o',
+        detail: 'generating recommendation…',
+        status: 'active',
+    });
+    const tModel = Date.now();
+    const stream = await openai.chat.completions.create({
         model: 'gpt-4o',
         temperature: 0.2,
         max_tokens: 2400,
         response_format: { type: 'json_object' },
+        stream: true,
+        stream_options: { include_usage: true },
         messages: [
             { role: 'system', content: systemPrompt },
             { role: 'user', content: userPrompt },
         ],
     });
 
-    const raw = completion.choices[0]?.message?.content;
+    let raw = '';
+    let completionEst = 0;
+    let usage: { prompt_tokens: number; completion_tokens: number; total_tokens: number } | null = null;
+    for await (const chunk of stream) {
+        const delta = chunk.choices[0]?.delta?.content;
+        if (delta) {
+            raw += delta;
+            completionEst += estimateTokens(delta);
+            onEvent?.({ type: 'tokens', prompt: promptTokensEst, completion: completionEst, estimated: true });
+        }
+        if (chunk.usage) {
+            usage = {
+                prompt_tokens: chunk.usage.prompt_tokens,
+                completion_tokens: chunk.usage.completion_tokens,
+                total_tokens: chunk.usage.total_tokens,
+            };
+        }
+    }
+    // Exact usage from the API supersedes our running estimate
+    if (usage) {
+        onEvent?.({
+            type: 'tokens',
+            prompt: usage.prompt_tokens,
+            completion: usage.completion_tokens,
+            total: usage.total_tokens,
+            estimated: false,
+        });
+    }
+    onEvent?.({
+        type: 'step',
+        phase: 'reason',
+        id: 'model',
+        label: 'Reasoning complete',
+        detail: usage ? `${usage.total_tokens.toLocaleString()} tokens used` : undefined,
+        status: 'done',
+        ms: Date.now() - tModel,
+    });
+
     if (!raw) throw new Error('Briefing Assistant: empty response from model');
 
     let parsed: any;
@@ -164,6 +302,14 @@ export async function adviseOnBrief(input: BriefInput): Promise<BriefRecommendat
     } catch (e) {
         throw new Error(`Briefing Assistant: model returned invalid JSON. Raw: ${raw.slice(0, 400)}`);
     }
+    onEvent?.({
+        type: 'step',
+        phase: 'reason',
+        id: 'parse',
+        label: 'Validated structured recommendation',
+        detail: 'budget · timeline · team · risks',
+        status: 'done',
+    });
 
     // 4. Validate + assemble final shape
     // Budget sanity check — guard against model serialising 1.2 instead of 1200000
@@ -189,6 +335,35 @@ export async function adviseOnBrief(input: BriefInput): Promise<BriefRecommendat
         }
     }
 
+    const team: SuggestedPerson[] = arr(parsed?.team)
+        .map((m: any) => {
+            const person = context.candidatePeople.find((p) => p.id === m?.person_id);
+            return {
+                person_id: str(m?.person_id, ''),
+                person_name: str(m?.person_name, person?.properties.name || ''),
+                role_name: person?.role_name || str(m?.role_name, ''),
+                proposed_role_on_brief: str(m?.proposed_role_on_brief, ''),
+                seniority: str(person?.properties.seniority || m?.seniority, ''),
+                daily_rate_gbp: num(person?.properties.daily_rate_gbp || m?.daily_rate_gbp, 0),
+                rationale: str(m?.rationale, ''),
+                match_score: clamp(num(m?.match_score, 70), 0, 100),
+                evidence: arr(m?.evidence).map((e: any) => str(e, '')),
+            };
+        })
+        .filter((m: SuggestedPerson) => !!m.person_id)
+        .slice(0, 6);
+
+    const confidence = computeConfidence(context, team);
+    onEvent?.({
+        type: 'step',
+        phase: 'analyse',
+        id: 'confidence',
+        label: `Grounding confidence: ${confidence.label.toUpperCase()} (${confidence.overall})`,
+        detail: confidence.basis,
+        status: 'done',
+        count: confidence.overall,
+    });
+
     const recommendation: BriefRecommendation = {
         budget: {
             recommended_low_gbp: Math.round(repairedLow),
@@ -203,6 +378,7 @@ export async function adviseOnBrief(input: BriefInput): Promise<BriefRecommendat
                     variance_pct: num(c?.variance_pct, 0),
                 }))
                 .filter((c: CitedCampaign) => !!c.id),
+            composition: context.costComposition,
         },
         timeline: {
             recommended_weeks: num(parsed?.timeline?.recommended_weeks, 8),
@@ -210,23 +386,7 @@ export async function adviseOnBrief(input: BriefInput): Promise<BriefRecommendat
             client_review_days_avg: num(parsed?.timeline?.client_review_days_avg, context.approvalStats.clientAvg),
             rationale: str(parsed?.timeline?.rationale, ''),
         },
-        team: arr(parsed?.team)
-            .map((m: any) => {
-                const person = context.candidatePeople.find((p) => p.id === m?.person_id);
-                return {
-                    person_id: str(m?.person_id, ''),
-                    person_name: str(m?.person_name, person?.properties.name || ''),
-                    role_name: person?.role_name || str(m?.role_name, ''),
-                    proposed_role_on_brief: str(m?.proposed_role_on_brief, ''),
-                    seniority: str(person?.properties.seniority || m?.seniority, ''),
-                    daily_rate_gbp: num(person?.properties.daily_rate_gbp || m?.daily_rate_gbp, 0),
-                    rationale: str(m?.rationale, ''),
-                    match_score: clamp(num(m?.match_score, 70), 0, 100),
-                    evidence: arr(m?.evidence).map((e: any) => str(e, '')),
-                };
-            })
-            .filter((m: SuggestedPerson) => !!m.person_id)
-            .slice(0, 6),
+        team,
         risks: arr(parsed?.risks)
             .map((r: any) => ({
                 severity: severity(r?.severity),
@@ -245,12 +405,16 @@ export async function adviseOnBrief(input: BriefInput): Promise<BriefRecommendat
             .filter((c) => !!c.id)
             .slice(0, 5),
         summary: str(parsed?.summary, 'Recommendation generated from historical KG patterns.'),
+        confidence,
         meta: {
             model: 'gpt-4o',
             latency_ms: Date.now() - t0,
             context_campaigns: context.similarCampaigns.length,
             context_people: context.candidatePeople.length,
             context_approvals: context.approvalStats.sampleSize,
+            prompt_tokens: usage?.prompt_tokens ?? promptTokensEst,
+            completion_tokens: usage?.completion_tokens ?? completionEst,
+            total_tokens: usage?.total_tokens ?? promptTokensEst + completionEst,
         },
     };
 
@@ -258,20 +422,95 @@ export async function adviseOnBrief(input: BriefInput): Promise<BriefRecommendat
 }
 
 // ===========================================================================
+// Confidence — derived from how much real evidence grounded the answer
+// ===========================================================================
+
+function computeConfidence(
+    context: Awaited<ReturnType<typeof buildContext>>,
+    team: SuggestedPerson[],
+): BriefRecommendation['confidence'] {
+    const similarCampaigns = context.similarCampaigns.length;
+    const approvalSamples = context.approvalStats.sampleSize;
+    const candidatePeople = context.candidatePeople.length;
+    const budgetSamples = context.similarCampaigns.filter((c) => c.budget_actual > 0).length;
+    const costLineSamples = context.costComposition.cost_line_samples;
+
+    // Each signal saturates at a sensible evidence threshold.
+    const campaignScore = clamp((similarCampaigns / 6) * 100, 0, 100);
+    const approvalScore = clamp((approvalSamples / 30) * 100, 0, 100);
+    const peopleScore = clamp((candidatePeople / 8) * 100, 0, 100);
+
+    const overall = Math.round(0.4 * campaignScore + 0.3 * approvalScore + 0.3 * peopleScore);
+    const label: 'high' | 'medium' | 'low' = overall >= 70 ? 'high' : overall >= 40 ? 'medium' : 'low';
+
+    // Per-section confidence: budget leans on comparable-campaign sample AND
+    // how granular the cost-line evidence is; timeline on approval-step sample.
+    const budgetCampaignScore = clamp((budgetSamples / 5) * 100, 0, 100);
+    const budgetCostScore = clamp((costLineSamples / 50) * 100, 0, 100);
+    const budget = Math.round(0.6 * budgetCampaignScore + 0.4 * budgetCostScore);
+    const timeline = Math.round(clamp((approvalSamples / 25) * 100, 0, 100));
+
+    const teamScores = team.map((m) => m.match_score).filter((n) => n > 0);
+    const team_match_avg = teamScores.length ? Math.round(avg(teamScores)) : 0;
+
+    const basis = `Grounded in ${similarCampaigns} comparable campaign${similarCampaigns === 1 ? '' : 's'}, ${costLineSamples.toLocaleString()} cost line${costLineSamples === 1 ? '' : 's'}, ${approvalSamples} approval step${approvalSamples === 1 ? '' : 's'}, and a ${candidatePeople}-person candidate pool.`;
+
+    return {
+        overall,
+        label,
+        basis,
+        signals: {
+            similar_campaigns: similarCampaigns,
+            approval_samples: approvalSamples,
+            candidate_people: candidatePeople,
+            budget_samples: budgetSamples,
+            cost_line_samples: costLineSamples,
+        },
+        budget,
+        timeline,
+        team_match_avg,
+    };
+}
+
+// ===========================================================================
 // Context retrieval — filter the KG down to what's relevant
 // ===========================================================================
 
-async function buildContext(input: BriefInput) {
-    const [allCampaigns, allExecutions, allApprovals, allPeople, allMarkets, allChannels, allTimeTracking, allCostLines, allAvailability] = await Promise.all([
-        getCampaigns(),
-        getExecutionsEnriched(),
-        getApprovalSteps(),
-        getPeopleEnriched(),
-        getMarkets(),
-        getChannels(),
-        getTimeTracking(),
-        getCostLines(),
-        getAvailability(),
+async function buildContext(input: BriefInput, onEvent?: EmitFn) {
+    // Wrap a KG fetch so the UI sees it start and finish with a real row count.
+    const track = <T>(id: string, label: string, p: Promise<T>, count: (r: T) => number): Promise<T> => {
+        const t = Date.now();
+        onEvent?.({ type: 'step', phase: 'retrieve', id, label: `Reading ${label}…`, status: 'active' });
+        return p.then((r) => {
+            const n = count(r);
+            onEvent?.({
+                type: 'step',
+                phase: 'retrieve',
+                id,
+                label: `Read ${label}`,
+                detail: `${n.toLocaleString()} record${n === 1 ? '' : 's'}`,
+                status: 'done',
+                count: n,
+                ms: Date.now() - t,
+            });
+            return r;
+        });
+    };
+
+    const len = (r: any[]) => r.length;
+    const [allCampaigns, allExecutions, allApprovals, allPeople, allMarkets, allChannels, allTimeTracking, allCostLines, allMediaSpend, allRoles, allDepartments, allAvailability] = await Promise.all([
+        track('campaigns', 'campaigns', getCampaigns(), len),
+        track('executions', 'campaign executions', getExecutionsEnriched(), len),
+        track('approvals', 'approval steps', getApprovalSteps(), len),
+        track('people', 'people', getPeopleEnriched(), len),
+        track('markets', 'markets', getMarkets(), len),
+        track('channels', 'channels', getChannels(), len),
+        track('timetracking', 'time-tracking entries', getTimeTracking(), len),
+        track('costlines', 'cost lines', getCostLines(), len),
+        track('mediaspend', 'media-spend rows', getMediaSpend(), len),
+        track('roles', 'roles', getRoles(), len),
+        track('departments', 'departments', getDepartments(), len),
+        track('availability', 'availability records', getAvailability(), len),
     ]);
 
     const inputMarketSet = new Set(input.market_ids);
@@ -313,6 +552,16 @@ async function buildContext(input: BriefInput) {
         summary: campaign.properties.summary,
     }));
 
+    onEvent?.({
+        type: 'step',
+        phase: 'analyse',
+        id: 'similar',
+        label: `Ranked ${allCampaigns.length} campaigns by market × channel overlap`,
+        detail: `${similarCampaigns.length} most comparable selected`,
+        status: 'done',
+        count: similarCampaigns.length,
+    });
+
     // ----- Budget stats from similar campaigns -----
     const planned = similarCampaigns.map((c) => c.budget_planned).filter((n) => n > 0);
     const actual = similarCampaigns.map((c) => c.budget_actual).filter((n) => n > 0);
@@ -326,6 +575,70 @@ async function buildContext(input: BriefInput) {
         p25: percentile(actual, 25),
         p75: percentile(actual, 75),
     };
+
+    // ----- Budget composition (where the money actually goes) -----
+    // Decompose comparable-campaign spend into labour / production / localisation
+    // / media using the cost-line and media-spend tables, and split labour by
+    // agency department so the agent can reason about the budget *mix*, not just
+    // the total.
+    const similarCampaignIds = new Set(similarCampaigns.map((c) => c.id));
+    const similarExecIds = new Set(
+        allExecutions.filter((e) => similarCampaignIds.has(e.campaign_id || '')).map((e) => e.id),
+    );
+    const deptNameById = new Map(allDepartments.map((d) => [d.id, d.properties.name]));
+    const roleDeptName = new Map(
+        allRoles.map((r) => [r.id, deptNameById.get(r.properties.department_id) || 'Other']),
+    );
+    let labour = 0;
+    let production = 0;
+    let localisation = 0;
+    const labourByDept: Record<string, number> = {};
+    let costLineSamples = 0;
+    for (const cl of allCostLines) {
+        if (!similarExecIds.has(cl.execution_id)) continue;
+        costLineSamples++;
+        const amt = (parseFloat(cl.units) || 0) * (parseFloat(cl.unit_cost) || 0) * (1 + (parseFloat(cl.markup_pct) || 0));
+        if (cl.line_type === 'production_cost') production += amt;
+        else if (cl.line_type === 'localisation_cost') localisation += amt;
+        else {
+            labour += amt; // fee_time (default)
+            const dept = roleDeptName.get(cl.role_id) || 'Other';
+            labourByDept[dept] = (labourByDept[dept] || 0) + amt;
+        }
+    }
+    let media = 0;
+    for (const ms of allMediaSpend) {
+        if (!similarExecIds.has(ms.execution_id)) continue;
+        media += parseFloat(ms.actual_spend) || 0;
+    }
+    const compTotal = labour + production + localisation + media;
+    const safePct = (n: number) => (compTotal > 0 ? Math.round((n / compTotal) * 100) : 0);
+    const costComposition = {
+        total_gbp: Math.round(compTotal),
+        labour_gbp: Math.round(labour),
+        production_gbp: Math.round(production),
+        localisation_gbp: Math.round(localisation),
+        media_gbp: Math.round(media),
+        labour_pct: safePct(labour),
+        production_pct: safePct(production),
+        localisation_pct: safePct(localisation),
+        media_pct: safePct(media),
+        by_department: Object.entries(labourByDept)
+            .map(([department, gbp]) => ({ department, gbp: Math.round(gbp), pct: safePct(gbp) }))
+            .sort((a, b) => b.gbp - a.gbp)
+            .slice(0, 6),
+        cost_line_samples: costLineSamples,
+    };
+
+    onEvent?.({
+        type: 'step',
+        phase: 'analyse',
+        id: 'composition',
+        label: `Decomposed ${formatCurrency(costComposition.total_gbp)} of comparable spend across ${costLineSamples.toLocaleString()} cost lines`,
+        detail: `labour ${costComposition.labour_pct}% · media ${costComposition.media_pct}% · production ${costComposition.production_pct}% · localisation ${costComposition.localisation_pct}%`,
+        status: 'done',
+        count: costLineSamples,
+    });
 
     // ----- Approval timing patterns -----
     // Pull approval steps for executions that ran in the input markets / channels
@@ -359,6 +672,16 @@ async function buildContext(input: BriefInput) {
             : 0,
         sampleSize: relevantApprovals.length,
     };
+
+    onEvent?.({
+        type: 'step',
+        phase: 'analyse',
+        id: 'approvals',
+        label: `Analysed ${relevantApprovals.length} approval steps for these markets/channels`,
+        detail: `internal ~${approvalStats.internalAvg}d · client ~${approvalStats.clientAvg}d avg`,
+        status: 'done',
+        count: relevantApprovals.length,
+    });
 
     // ----- Candidate people -----
     // Score people by relevant channel × category experience + skills
@@ -437,9 +760,20 @@ async function buildContext(input: BriefInput) {
         };
     });
 
+    onEvent?.({
+        type: 'step',
+        phase: 'analyse',
+        id: 'people',
+        label: `Scored ${allPeople.length} people on channel, category & skill fit`,
+        detail: `${candidatePeopleWithLoad.length} candidates shortlisted with live availability`,
+        status: 'done',
+        count: candidatePeopleWithLoad.length,
+    });
+
     return {
         similarCampaigns,
         budgetStats,
+        costComposition,
         approvalStats,
         candidatePeople: candidatePeopleWithLoad,
         markets: allMarkets.filter((m) => inputMarketSet.has(m.id)),
@@ -620,6 +954,14 @@ Budget benchmarks across the similar campaigns above:
    Planned range: ${formatCurrency(context.budgetStats.plannedMin)} – ${formatCurrency(context.budgetStats.plannedMax)} (avg ${formatCurrency(context.budgetStats.plannedAvg)})
    Actual range:  ${formatCurrency(context.budgetStats.actualMin)} – ${formatCurrency(context.budgetStats.actualMax)} (avg ${formatCurrency(context.budgetStats.actualAvg)})
    Actual P25/P75: ${formatCurrency(context.budgetStats.p25)} – ${formatCurrency(context.budgetStats.p75)}
+
+Budget COMPOSITION across these comparable campaigns (from ${context.costComposition.cost_line_samples.toLocaleString()} cost lines + media spend) — where the money actually went:
+   Labour (fee time): ${context.costComposition.labour_pct}% (${formatCurrency(context.costComposition.labour_gbp)})
+   Media spend:       ${context.costComposition.media_pct}% (${formatCurrency(context.costComposition.media_gbp)})
+   Production:        ${context.costComposition.production_pct}% (${formatCurrency(context.costComposition.production_gbp)})
+   Localisation:      ${context.costComposition.localisation_pct}% (${formatCurrency(context.costComposition.localisation_gbp)})
+   Labour split by department: ${context.costComposition.by_department.map((d) => `${d.department} ${d.pct}%`).join(', ') || '—'}
+   → Use this mix to sanity-check your recommended budget: a multi-channel paid brief should be media-heavy; a content/asset brief should be labour-heavy. Reference the split in your budget rationale where it informs the number.
 
 Approval timing (for ${input.market_ids.join('+')} × ${input.channel_ids.join('+')}):
    Sample size: ${context.approvalStats.sampleSize}
