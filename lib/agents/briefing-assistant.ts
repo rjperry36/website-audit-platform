@@ -430,14 +430,45 @@ export async function adviseOnBrief(
         .filter((m: SuggestedPerson) => !!m.person_id)
         .slice(0, 8);
 
+    // Hard guarantee: execution-heavy in-scope channels (events, retail POSM,
+    // OOH) must have a dedicated specialist — the model often under-staffs these,
+    // so enforce coverage from the candidate pool rather than trusting the prompt.
+    const EXEC_HEAVY = ['channel:EVENT', 'channel:POSM', 'channel:OOH'];
+    const candById = new Map(context.candidatePeople.map((p) => [p.id, p]));
+    const teamIds = new Set(team.map((m) => m.person_id));
+    for (const ch of input.channel_ids) {
+        if (!EXEC_HEAVY.includes(ch) || team.length >= 8) continue;
+        const covered = team.some((m) => m.resource_type === 'human' && candById.get(m.person_id)?.channel_experience?.some((ce: any) => ce.channel_id === ch));
+        if (covered) continue;
+        const cand = context.candidatePeople
+            .filter((p) => !teamIds.has(p.id) && p.channel_experience.some((ce: any) => ce.channel_id === ch && ce.years >= 2) && (p.available_pct_in_window ?? 100) >= 50)
+            .sort((a, b) => (b.available_pct_in_window ?? 100) - (a.available_pct_in_window ?? 100))[0];
+        if (!cand) continue;
+        const chName = ch.replace('channel:', '');
+        team.push({
+            person_id: cand.id,
+            person_name: cand.properties.name,
+            role_name: cand.role_name || '',
+            proposed_role_on_brief: `${chName} specialist`,
+            seniority: cand.properties.seniority || '',
+            daily_rate_gbp: cand.properties.daily_rate_gbp || 0,
+            rationale: `Added to own ${chName} execution — the brief includes ${chName}, which needs a dedicated specialist rather than being folded into another role.`,
+            match_score: 75,
+            evidence: [`${cand.available_pct_in_window ?? 100}% available in window`, `experienced in ${chName}`],
+            resource_type: 'human',
+        });
+        teamIds.add(cand.id);
+    }
+
     // Man-days saved for each agent member — a grounded estimate of the human
     // effort displaced. Built from REAL per-channel person-days (time-tracking)
     // and a blended human day-rate, with two documented assumptions:
     //   DRAFT_DISPLACEMENT — an agent first-drafts ~half the human effort (the
     //     human still reviews/finishes), and
     //   execsCovered — the agent supports roughly one execution per fortnight.
-    const DRAFT_DISPLACEMENT = 0.5;
-    const execsCovered = clamp(Math.round((input.duration_weeks || 8) / 2), 1, 12);
+    const DRAFT_DISPLACEMENT = 0.4; // an agent first-drafts ~40% of the human effort; humans review/finish
+    const MAX_MAN_DAYS = 60; // sanity ceiling so a single content agent isn't credited with implausible savings
+    const execsCovered = clamp(Math.round((input.duration_weeks || 8) / 4), 1, 6);
     const blendedDailyRate = Math.round(avg(context.candidatePeople.map((p) => p.properties.daily_rate_gbp).filter((n) => n > 0))) || 800;
     const chIdToLabel = new Map(context.channels.map((c) => [c.id, c.properties.label]));
     const chLabelToDays = new Map(context.delivery.per_channel.map((c) => [c.channel, c.median_person_days]));
@@ -456,7 +487,7 @@ export async function adviseOnBrief(
             }
         }
         if (!personDays) personDays = maxChannelDays;
-        m.man_days_saved = Math.round(personDays * execsCovered * DRAFT_DISPLACEMENT);
+        m.man_days_saved = Math.min(MAX_MAN_DAYS, Math.round(personDays * execsCovered * DRAFT_DISPLACEMENT));
         m.human_equiv_gbp = Math.round(m.man_days_saved * blendedDailyRate);
     }
 
@@ -550,28 +581,40 @@ function computeConfidence(
     const budgetSamples = context.similarCampaigns.filter((c) => c.budget_actual > 0).length;
     const costLineSamples = context.costComposition.cost_line_samples;
 
-    // Each signal saturates at a sensible evidence threshold.
-    const campaignScore = clamp((similarCampaigns / 6) * 100, 0, 100);
-    const approvalScore = clamp((approvalSamples / 30) * 100, 0, 100);
-    const peopleScore = clamp((candidatePeople / 8) * 100, 0, 100);
+    // Confidence reflects MATCH QUALITY, not raw data volume — with a big book of
+    // work, counts saturate and stop discriminating. So we score on how well the
+    // evidence actually fits this brief.
 
-    const overall = Math.round(0.4 * campaignScore + 0.3 * approvalScore + 0.3 * peopleScore);
-    const label: 'high' | 'medium' | 'low' = overall >= 70 ? 'high' : overall >= 40 ? 'medium' : 'low';
+    // 1) How closely the top comparables cover the brief's markets × channels.
+    const mCount = Math.max(1, context.markets.length);
+    const cCount = Math.max(1, context.channels.length);
+    const top = context.similarCampaigns.slice(0, 5);
+    const matchQuality = top.length
+        ? clamp(avg(top.map((c) => ((Math.min(c.market_overlap, mCount) / mCount) + (Math.min(c.channel_overlap, cCount) / cCount)) / 2)) * 100, 0, 100)
+        : 0;
+    // Bonus for genuine same-client precedent among the top comparables.
+    const sameBrandShare = top.length ? top.filter((c) => c.same_brand).length / top.length : 0;
 
-    // Per-section confidence: budget leans on comparable-campaign sample AND
-    // how granular the cost-line evidence is; timeline on approval-step sample.
-    const budgetCampaignScore = clamp((budgetSamples / 5) * 100, 0, 100);
-    const budgetCostScore = clamp((costLineSamples / 50) * 100, 0, 100);
-    const budget = Math.round(0.6 * budgetCampaignScore + 0.4 * budgetCostScore);
-    // Timeline now blends approval-gate evidence with real delivery-execution evidence.
-    const approvalScoreForTimeline = clamp((approvalSamples / 25) * 100, 0, 100);
-    const deliveryScoreForTimeline = clamp((context.delivery.sample_executions / 40) * 100, 0, 100);
-    const timeline = Math.round(0.5 * approvalScoreForTimeline + 0.5 * deliveryScoreForTimeline);
+    // 2) Budget: tight spread across comparable actuals = more confident.
+    const median = context.budgetStats.actualAvg || 0;
+    const spread = (context.budgetStats.p75 || 0) - (context.budgetStats.p25 || 0);
+    const spreadTightness = median > 0 ? clamp(1 - spread / median, 0, 1) : 0.4;
+    const budget = budgetSamples === 0 ? 0 : Math.round(clamp(0.6 * matchQuality + 0.4 * spreadTightness * 100, 0, 100));
+
+    // 3) Timeline: comparable fit + how reliably those channels ship on time.
+    const onTimes = context.delivery.per_channel.filter((c) => c.sample > 0).map((c) => c.on_time_pct);
+    const avgOnTime = onTimes.length ? avg(onTimes) : 50;
+    const timeline = context.delivery.sample_executions === 0 ? 0 : Math.round(clamp(0.6 * matchQuality + 0.4 * avgOnTime, 0, 100));
 
     const teamScores = team.map((m) => m.match_score).filter((n) => n > 0);
     const team_match_avg = teamScores.length ? Math.round(avg(teamScores)) : 0;
 
-    const basis = `Grounded in ${similarCampaigns} comparable campaign${similarCampaigns === 1 ? '' : 's'}, ${costLineSamples.toLocaleString()} cost line${costLineSamples === 1 ? '' : 's'}, ${approvalSamples} approval step${approvalSamples === 1 ? '' : 's'}, and a ${candidatePeople}-person candidate pool.`;
+    // Overall blends comparable fit, the two section scores, team match and a
+    // small same-client bonus — so a weakly-matched brief no longer reads 100.
+    const overall = Math.round(clamp(0.35 * matchQuality + 0.2 * budget + 0.2 * timeline + 0.2 * team_match_avg + 5 * sameBrandShare, 0, 100));
+    const label: 'high' | 'medium' | 'low' = overall >= 75 ? 'high' : overall >= 50 ? 'medium' : 'low';
+
+    const basis = `Top comparables cover ~${Math.round(matchQuality)}% of the brief's markets × channels (${Math.round(sameBrandShare * 100)}% same-client); budget spread ±${median > 0 ? Math.round((spread / 2 / median) * 100) : 0}%; team match ${team_match_avg}.`;
 
     return {
         overall,
@@ -844,7 +887,7 @@ async function buildContext(input: BriefInput, onEvent?: EmitFn) {
     // ----- Candidate people -----
     // Score people by relevant channel × category experience + skills
     const targetSkillIds = channelToSkillIds(input.channel_ids);
-    const candidatePeople = allPeople
+    const scoredPeople = allPeople
         .map((p) => {
             // Channel experience match
             const channelMatch = p.channel_experience
@@ -858,14 +901,23 @@ async function buildContext(input: BriefInput, onEvent?: EmitFn) {
             const skillMatch = p.skills
                 .filter((s) => targetSkillIds.has(s.skill_id))
                 .reduce((s, sk) => s + sk.proficiency, 0);
-            // Active in market — approximate via time-tracking presence in relevant period
-            // (skipped for performance — agent gets the metadata to reason about)
             const score = channelMatch * 2 + categoryMatch * 2 + skillMatch * 1.5;
             return { person: p, channelMatch, categoryMatch, skillMatch, score };
         })
         .filter((p) => p.score > 0)
-        .sort((a, b) => b.score - a.score)
-        .slice(0, 15)
+        .sort((a, b) => b.score - a.score);
+
+    const shortlist = scoredPeople.slice(0, 15);
+    // Guarantee the shortlist contains a specialist for each in-scope execution-
+    // heavy channel (events/POSM/OOH) — content-heavy briefs otherwise rank them
+    // out, leaving those channels impossible to staff downstream.
+    for (const ch of input.channel_ids) {
+        if (!['channel:EVENT', 'channel:POSM', 'channel:OOH'].includes(ch)) continue;
+        if (shortlist.some((x) => x.person.channel_experience.some((ce: any) => ce.channel_id === ch && ce.years >= 2))) continue;
+        const extra = scoredPeople.find((x) => !shortlist.includes(x) && x.person.channel_experience.some((ce: any) => ce.channel_id === ch && ce.years >= 2));
+        if (extra) shortlist.push(extra);
+    }
+    const candidatePeople = shortlist
         .map(({ person, channelMatch, categoryMatch, skillMatch, score }) => ({
             id: person.id,
             properties: person.properties,
@@ -1203,6 +1255,12 @@ Use agents deliberately:
 3. For an agent team member: set resource_type:"agent", person_id to the agent's id from the candidate list, daily_rate_gbp:0, and est_cost_gbp to a sensible token cost for this brief (use the agent's avg cost/execution × the rough number of executions). The FIRST evidence item for an agent should be its cost basis (e.g. "~£12 in tokens vs £880/day human equiv"), NOT availability.
 4. Do not force the "% available in window" evidence rule on agents — that rule is for humans only.
 
+STAFFING & SCOPE DISCIPLINE — non-negotiable:
+- Staff a capable resource (a human specialist, or an agent where suitable) for EVERY channel in the brief. Never leave an in-scope channel unstaffed — especially execution-heavy ones: Event, POSM and OOH need a producer/specialist, not just a director. If the brief includes Event, the team MUST include an events-capable person.
+- Match seniority to the work. Do NOT lead an always-on or high-volume content programme with only senior directors — include mid-level execution and reserve directors for genuine leadership/oversight.
+- Keep risks and their cited markets WITHIN the brief's target market(s). Do not raise risks about markets the brief does not target, even if a comparable campaign ran there.
+- Budget: do not simply echo budget_hint. Derive it from the comparables and the brief's scope; if your range lands near the hint, justify it with specific evidence. Scale DOWN for single-market vs multi-market scope — a single-market always-on programme should not cost the same as a multi-market launch.
+
 OUTPUT FORMAT — return STRICT JSON with this exact shape:
 
 {
@@ -1350,6 +1408,8 @@ ${context.candidateAgents.length === 0 ? 'NONE fit these channels.' :
    Strong skills: ${a.top_skills.map((s) => `${s.skill_id.replace('skill:', '')} (${s.proficiency}/5)`).join(', ')}
    Channel fit (this brief): ${a.channel_fit}, skill fit: ${a.skill_fit}
    History: used on ${a.hist_executions} past executions, ${a.hist_total_tokens.toLocaleString()} tokens, ~£${a.avg_cost_per_execution_gbp}/execution`).join('\n\n')}
+
+CHANNEL OWNERSHIP CHECK — before finalising the team, ensure EVERY channel in this brief has a named owner: ${input.channel_ids.map((c) => c.replace('channel:', '')).join(', ')}. Execution-heavy channels (EVENT, POSM, OOH) each REQUIRE a dedicated specialist from the candidate list — do not fold them into a director or omit them. If this brief includes EVENT, an events-capable person MUST be on the team.
 
 Now produce the JSON recommendation following the system prompt. Propose a HYBRID team (humans + agents) and use agents as mitigation where coverage is thin. Stay grounded in the data above.`;
 
