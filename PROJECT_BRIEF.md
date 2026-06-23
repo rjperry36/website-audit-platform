@@ -132,7 +132,7 @@ Stack-specific decisions live as ADRs under `decisions/`.
 
 **Assumptions:**
 - Vercel cron + ScreenshotOne + OpenAI API stay broadly stable through the planning horizon.
-- The active test target (`thebrandingjournal.com`) is fair game to crawl daily.
+- The active test target (`lyonsleaf.co.uk`) is fair game to crawl.
 - Solo-operator cadence — no external SLAs to meet.
 
 ---

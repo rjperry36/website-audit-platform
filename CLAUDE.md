@@ -77,7 +77,7 @@ Rules that apply across this entire project, regardless of discipline.
 - **Domain / URL:** Local dev + Vercel deployment (URL not yet pinned in repo)
 - **Primary stakeholder:** Russell Perry (rjperry36@gmail.com) — solo operator today
 - **Type of work:** Hybrid — AI-driven web-audit pipeline + brand-intelligence dashboard + planning suite
-- **Active crawl target:** `https://www.thebrandingjournal.com/` (`audit-config.json` → `site-thebrandingjournal`), single homepage, daily cron
+- **Active crawl target:** `https://lyonsleaf.co.uk/` (`audit-config.json` → `site-lyonsleaf`), single homepage, weekly cron
 - **Project brief:** `PROJECT_BRIEF.md`
 - **Framework version:** 1.0 (adopted 2026-05-21)
 <!-- CONTEXT_END -->
