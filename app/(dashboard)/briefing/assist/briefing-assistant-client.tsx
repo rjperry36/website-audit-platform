@@ -277,7 +277,7 @@ export function BriefingAssistantClient({ markets, channels }: BriefingAssistant
             <div className="lg:col-span-2 space-y-4">
                 <Card variant="elevated">
                     <CardContent className="p-4 space-y-4">
-                        <Field label="Client">
+                        <Field label="Who's this brief for?">
                             <div className="flex gap-1.5">
                                 {BRANDS.map((b) => (
                                     <button
@@ -694,7 +694,12 @@ function RecommendationPanel({
                                     href={`/knowledge-graph/campaigns/${encodeURIComponent(c.id)}`}
                                     className="block rounded-md border border-white/5 hover:border-white/20 px-3 py-2 transition-colors"
                                 >
-                                    <div className="text-sm text-white">{c.name}</div>
+                                    <div className="text-sm text-white flex items-center gap-2">
+                                        {c.name}
+                                        <span className={cn('text-[9px] px-1.5 py-0.5 rounded uppercase tracking-wider', c.same_brand ? 'bg-primary-500/20 text-primary-300' : 'bg-amber-500/15 text-amber-300')}>
+                                            {c.same_brand ? c.brand_name : `${c.brand_name} · cross-client`}
+                                        </span>
+                                    </div>
                                     <div className="text-xs text-neutral-400 mt-0.5">{c.why_comparable}</div>
                                 </Link>
                             ))}

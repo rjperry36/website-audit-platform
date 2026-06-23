@@ -178,6 +178,8 @@ export interface BriefRecommendation {
         id: string;
         name: string;
         why_comparable: string;
+        brand_name: string;
+        same_brand: boolean;
     }>;
     /** Free-text headline summary, 2–3 sentences */
     summary: string;
@@ -504,11 +506,17 @@ export async function adviseOnBrief(
             .filter((r: Risk) => !!r.title)
             .slice(0, 5),
         comparable_campaigns: arr(parsed?.comparable_campaigns)
-            .map((c: any) => ({
-                id: str(c?.id, ''),
-                name: str(c?.name, ''),
-                why_comparable: str(c?.why_comparable, ''),
-            }))
+            .map((c: any) => {
+                const id = str(c?.id, '');
+                const sc = context.similarCampaigns.find((s) => s.id === id);
+                return {
+                    id,
+                    name: str(c?.name, sc?.name || ''),
+                    why_comparable: str(c?.why_comparable, ''),
+                    brand_name: sc?.brand_name || 'Other client',
+                    same_brand: sc?.same_brand ?? false,
+                };
+            })
             .filter((c) => !!c.id)
             .slice(0, 5),
         summary: str(parsed?.summary, 'Recommendation generated from historical KG patterns.'),
@@ -637,13 +645,15 @@ async function buildContext(input: BriefInput, onEvent?: EmitFn) {
     for (const e of brandStructure) if (e.type === 'OWNS') teamToBrand.set(e.to, e.from);
     const campaignToBrand = new Map<string, string>();
     for (const e of campaignStructure) if (e.type === 'COMMISSIONED_BY') campaignToBrand.set(e.from, teamToBrand.get(e.to) || '');
+    const brandIdToName = new Map(allBrands.map((b) => [b.id, b.properties.name as string]));
     const isBrandCampaign = (campaignId: string | undefined) => !!campaignId && campaignToBrand.get(campaignId) === brandId;
+    const campaignBrandName = (campaignId: string | undefined) => brandIdToName.get(campaignToBrand.get(campaignId || '') || '') || 'Other client';
     onEvent?.({
         type: 'step',
         phase: 'analyse',
         id: 'brand',
-        label: `Scoped to ${brandName}`,
-        detail: brandCategory,
+        label: `Brief for ${brandName} — referencing the whole agency book`,
+        detail: `${brandCategory} · same-client work weighted higher, cross-client patterns still considered`,
         status: 'done',
     });
 
@@ -656,8 +666,11 @@ async function buildContext(input: BriefInput, onEvent?: EmitFn) {
     const cutoff = new Date(startDate);
     cutoff.setUTCFullYear(cutoff.getUTCFullYear() - 2);
 
+    // Score across ALL clients' campaigns — same-brand work is weighted higher,
+    // but strong cross-client matches still surface (the agency learns from its
+    // whole book, not just this client).
+    const SAME_BRAND_BONUS = 1.5;
     const campaignScored = allCampaigns
-        .filter((c) => isBrandCampaign(c.id))
         .map((c) => {
             const executions = allExecutions.filter((e) => e.campaign_id === c.id);
             const campaignMarkets = new Set(executions.map((e) => e.market_id).filter(Boolean));
@@ -665,17 +678,20 @@ async function buildContext(input: BriefInput, onEvent?: EmitFn) {
             const marketOverlap = [...campaignMarkets].filter((m) => inputMarketSet.has(m as string)).length;
             const channelOverlap = [...campaignChannels].filter((ch) => inputChannelSet.has(ch as string)).length;
             const dateOk = new Date(c.properties.start_date) >= cutoff;
-            const score = (marketOverlap * 3 + channelOverlap * 2) * (dateOk ? 1 : 0.5);
-            return { campaign: c, executions, marketOverlap, channelOverlap, score };
+            const sameBrand = isBrandCampaign(c.id);
+            const score = (marketOverlap * 3 + channelOverlap * 2) * (dateOk ? 1 : 0.5) * (sameBrand ? SAME_BRAND_BONUS : 1);
+            return { campaign: c, executions, marketOverlap, channelOverlap, score, sameBrand };
         })
         .filter((c) => c.score > 0)
         .sort((a, b) => b.score - a.score)
-        .slice(0, 8);
+        .slice(0, 10);
 
-    const similarCampaigns = campaignScored.map(({ campaign, executions, marketOverlap, channelOverlap }) => ({
+    const similarCampaigns = campaignScored.map(({ campaign, executions, marketOverlap, channelOverlap, sameBrand }) => ({
         id: campaign.id,
         name: campaign.properties.name,
         type: campaign.properties.campaign_type,
+        brand_name: campaignBrandName(campaign.id),
+        same_brand: sameBrand,
         start_date: campaign.properties.start_date,
         end_date: campaign.properties.end_date,
         budget_planned: campaign.properties.budget_planned,
@@ -691,8 +707,8 @@ async function buildContext(input: BriefInput, onEvent?: EmitFn) {
         type: 'step',
         phase: 'analyse',
         id: 'similar',
-        label: `Ranked ${allCampaigns.filter((c) => isBrandCampaign(c.id)).length} ${brandName} campaigns by market × channel overlap`,
-        detail: `${similarCampaigns.length} most comparable selected`,
+        label: `Ranked ${allCampaigns.length} campaigns across all clients by market × channel overlap`,
+        detail: `${similarCampaigns.length} most comparable selected (${similarCampaigns.filter((c) => c.same_brand).length} ${brandName}, ${similarCampaigns.filter((c) => !c.same_brand).length} cross-client)`,
         status: 'done',
         count: similarCampaigns.length,
     });
@@ -787,7 +803,6 @@ async function buildContext(input: BriefInput, onEvent?: EmitFn) {
     const targetExecutionIds = new Set(
         allExecutions
             .filter((e) =>
-                isBrandCampaign(e.campaign_id) &&
                 inputMarketSet.has(e.market_id || '') &&
                 inputChannelSet.has(e.channel_id || ''),
             )
@@ -977,7 +992,7 @@ async function buildContext(input: BriefInput, onEvent?: EmitFn) {
     let deliverySample = 0;
     const deliveryPerChannel = input.channel_ids.map((chId) => {
         const execs = allExecutions.filter(
-            (e) => isBrandCampaign(e.campaign_id) && e.channel_id === chId && e.properties.actual_start && e.properties.actual_end,
+            (e) => e.channel_id === chId && e.properties.actual_start && e.properties.actual_end,
         );
         const cals = execs.map((e) => dayDiff(e.properties.actual_start, e.properties.actual_end)).filter((n): n is number => n != null);
         const slips = execs
@@ -1016,7 +1031,7 @@ async function buildContext(input: BriefInput, onEvent?: EmitFn) {
         (stageDeptCost[st] = stageDeptCost[st] || {})[dept] = (stageDeptCost[st][dept] || 0) + amt;
     }
     const deliveryRelay = STAGES.map(({ key, label }) => {
-        const execs = allExecutions.filter((e) => isBrandCampaign(e.campaign_id) && e.properties.execution_type === key && e.properties.actual_start && e.properties.actual_end);
+        const execs = allExecutions.filter((e) => e.properties.execution_type === key && e.properties.actual_start && e.properties.actual_end);
         const cals = execs.map((e) => dayDiff(e.properties.actual_start, e.properties.actual_end)).filter((n): n is number => n != null);
         const dominant = Object.entries(stageDeptCost[key] || {}).sort((a, b) => b[1] - a[1])[0]?.[0] || '—';
         return { stage: label, median_days: Math.round(percentile(cals, 50)), dominant_department: dominant, sample: execs.length };
@@ -1270,14 +1285,15 @@ Notes: ${input.notes || '—'}
 HISTORICAL CONTEXT (from Halo & Helix knowledge graph)
 ======================================================
 
-Similar past campaigns (ranked by market × channel overlap with this brief):
+Similar past campaigns — ACROSS ALL CLIENTS (ranked by market × channel overlap; same-client work is weighted higher but cross-client analogues are included because the agency learns from its whole book):
 ${context.similarCampaigns.length === 0 ? 'NONE — no strong historical analogues for this combination.' :
-        context.similarCampaigns.map((c, i) => `${i + 1}. ${c.id}
+        context.similarCampaigns.map((c, i) => `${i + 1}. ${c.id}  [${c.brand_name}${c.same_brand ? ' — same client' : ' — cross-client'}]
    Name: ${c.name}
    Type: ${c.type}  Dates: ${c.start_date} → ${c.end_date}
    Budget: planned ${formatCurrency(c.budget_planned)} → actual ${formatCurrency(c.budget_actual)} (variance ${c.variance_pct > 0 ? '+' : ''}${c.variance_pct}%)
    Executions: ${c.executions_count}, overlap: ${c.market_overlap} mkts × ${c.channel_overlap} channels
    Summary: ${c.summary || '—'}`).join('\n\n')}
+   NOTE: cross-client campaigns are useful for delivery/timing/team patterns and channel execution, but adjust budget for category differences (e.g. apparel vs prestige skincare). When you cite a cross-client comparable, say which client it's from.
 
 Budget benchmarks across the similar campaigns above:
    Planned range: ${formatCurrency(context.budgetStats.plannedMin)} – ${formatCurrency(context.budgetStats.plannedMax)} (avg ${formatCurrency(context.budgetStats.plannedAvg)})
