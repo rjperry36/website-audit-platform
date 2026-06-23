@@ -181,6 +181,11 @@ export function TabNavigation({ markets = [], channels = [] }: TabNavigationProp
                     href: '/knowledge-graph/visualisation',
                     color: '#8B5CF6',
                 },
+                {
+                    name: 'Methodology',
+                    href: '/knowledge-graph/methodology',
+                    color: '#22D3EE',
+                },
             ],
         },
         {

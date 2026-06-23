@@ -532,6 +532,7 @@ function RecommendationPanel({
                         <span className="text-2xl font-semibold text-white">£{fmt(r.budget.recommended_high_gbp)}</span>
                     </div>
                     <p className="text-sm text-neutral-300 mt-2 leading-relaxed">{r.budget.rationale}</p>
+                    {r.budget.alert && <BudgetAlert alert={r.budget.alert} />}
                     {r.budget.composition && r.budget.composition.total_gbp > 0 && (
                         <BudgetComposition composition={r.budget.composition} />
                     )}
@@ -857,6 +858,23 @@ const COMP_SEGMENTS = [
     { key: 'localisation', label: 'Localisation', colour: 'bg-sky-500' },
     { key: 'ai', label: 'AI / Agents', colour: 'bg-fuchsia-500' },
 ] as const;
+
+function BudgetAlert({ alert }: { alert: BriefRecommendation['budget']['alert'] }) {
+    const style =
+        alert.stance === 'increase' ? { cls: 'border-amber-500/30 bg-amber-500/10 text-amber-200', Icon: TrendingUp, label: 'Consider increasing' }
+            : alert.stance === 'reduce' ? { cls: 'border-emerald-500/30 bg-emerald-500/10 text-emerald-200', Icon: TrendingDown, label: 'Saving opportunity' }
+                : { cls: 'border-white/10 bg-white/[0.03] text-neutral-300', Icon: Banknote, label: alert.stance === 'no_hint' ? 'No hint given' : 'Aligned with history' };
+    const { Icon } = style;
+    return (
+        <div className={cn('mt-3 rounded-md border px-3 py-2 flex items-start gap-2', style.cls)}>
+            <Icon className="h-4 w-4 mt-0.5 flex-shrink-0" />
+            <div className="text-xs leading-snug">
+                <span className="font-medium uppercase tracking-wider text-[10px] mr-1.5">{style.label}</span>
+                {alert.message}
+            </div>
+        </div>
+    );
+}
 
 function BudgetComposition({ composition: c }: { composition: BriefRecommendation['budget']['composition'] }) {
     const segs = COMP_SEGMENTS.map((s) => ({

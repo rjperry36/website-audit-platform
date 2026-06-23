@@ -159,6 +159,14 @@ export interface BriefRecommendation {
         cited_campaigns: CitedCampaign[];
         /** How comparable spend actually broke down — derived from cost lines + media spend */
         composition: BudgetComposition;
+        /** Over/under-run prediction vs the brief's budget hint */
+        alert: {
+            stance: 'increase' | 'reduce' | 'aligned' | 'no_hint';
+            /** Average over/under-run of comparable work (+ = over plan) */
+            historical_variance_pct: number;
+            overrun_share_pct: number;
+            message: string;
+        };
     };
     /** Timeline + approval buffers */
     timeline: {
@@ -502,6 +510,42 @@ export async function adviseOnBrief(
         count: confidence.overall,
     });
 
+    // Budget prediction: compare the recommended range (grounded in comparable
+    // ACTUALS, which already embed historical over/under-run) against the brief's
+    // hint, and surface the over/under-run tendency as an alert.
+    const budgetAlert = computeBudgetAlert(repairedLow, repairedHigh, input.budget_hint_gbp, context.budgetStats);
+    onEvent?.({
+        type: 'step',
+        phase: 'analyse',
+        id: 'budget-alert',
+        label: `Budget vs hint: ${budgetAlert.stance.replace('_', ' ')}`,
+        detail: `comparable work ran ${budgetAlert.historical_variance_pct >= 0 ? '+' : ''}${budgetAlert.historical_variance_pct}% vs plan`,
+        status: 'done',
+    });
+
+    // Deterministic resource-gap risks: any in-scope channel with no available
+    // internal specialist becomes an explicit "outsource / freelancer" risk.
+    const resourceGapRisks: Risk[] = context.delivery.channel_coverage
+        .filter((c) => c.specialists_available === 0)
+        .map((c) => ({
+            severity: (c.specialists_total === 0 ? 'high' : 'medium') as 'high' | 'medium',
+            title: `Resource gap — ${c.channel}`,
+            description: c.specialists_total === 0
+                ? `No internal ${c.channel} specialist on the bench.`
+                : `All ${c.specialists_total} internal ${c.channel} specialist${c.specialists_total === 1 ? '' : 's'} are booked in the brief window.`,
+            mitigation: `Outsource ${c.channel} to a freelancer / specialist partner and brief them early; budget for an external rate.`,
+            cited_signals: [`coverage:${c.channel}`],
+        }));
+    const modelRisks: Risk[] = arr(parsed?.risks)
+        .map((r: any) => ({
+            severity: severity(r?.severity),
+            title: str(r?.title, ''),
+            description: str(r?.description, ''),
+            mitigation: str(r?.mitigation, ''),
+            cited_signals: arr(r?.cited_signals).map((s: any) => str(s, '')),
+        }))
+        .filter((r: Risk) => !!r.title);
+
     const recommendation: BriefRecommendation = {
         budget: {
             recommended_low_gbp: Math.round(repairedLow),
@@ -517,6 +561,7 @@ export async function adviseOnBrief(
                 }))
                 .filter((c: CitedCampaign) => !!c.id),
             composition: context.costComposition,
+            alert: budgetAlert,
         },
         timeline: {
             recommended_weeks: num(parsed?.timeline?.recommended_weeks, 8),
@@ -526,16 +571,8 @@ export async function adviseOnBrief(
         },
         delivery: context.delivery,
         team,
-        risks: arr(parsed?.risks)
-            .map((r: any) => ({
-                severity: severity(r?.severity),
-                title: str(r?.title, ''),
-                description: str(r?.description, ''),
-                mitigation: str(r?.mitigation, ''),
-                cited_signals: arr(r?.cited_signals).map((s: any) => str(s, '')),
-            }))
-            .filter((r: Risk) => !!r.title)
-            .slice(0, 5),
+        // Resource-gap (outsourcing) risks first — they're hard, deterministic facts.
+        risks: [...resourceGapRisks, ...modelRisks].slice(0, 6),
         comparable_campaigns: arr(parsed?.comparable_campaigns)
             .map((c: any) => {
                 const id = str(c?.id, '');
@@ -570,6 +607,35 @@ export async function adviseOnBrief(
 // ===========================================================================
 // Confidence — derived from how much real evidence grounded the answer
 // ===========================================================================
+
+function computeBudgetAlert(
+    low: number,
+    high: number,
+    hint: number | undefined,
+    stats: { avgVariancePct: number; overrunSharePct: number; underrunSharePct: number },
+): BriefRecommendation['budget']['alert'] {
+    const mid = (low + high) / 2;
+    const v = stats.avgVariancePct;
+    const fmt = (n: number) => formatCurrency(Math.round(n));
+    // Over/under-run tendency note, independent of the hint.
+    const tendency =
+        v >= 5 ? ` Comparable work ran ~${v}% OVER plan (${stats.overrunSharePct}% of campaigns overran) — hold contingency.`
+            : v <= -5 ? ` Comparable work came in ~${Math.abs(v)}% UNDER plan — there may be room to trim.`
+                : ` Comparable work landed close to plan (avg ${v >= 0 ? '+' : ''}${v}%).`;
+
+    if (!hint || hint <= 0) {
+        return { stance: 'no_hint', historical_variance_pct: v, overrun_share_pct: stats.overrunSharePct, message: `No budget hint provided — recommendation derived from comparable actuals.${tendency}` };
+    }
+    if (mid > hint * 1.1) {
+        const over = Math.round((mid / hint - 1) * 100);
+        return { stance: 'increase', historical_variance_pct: v, overrun_share_pct: stats.overrunSharePct, message: `Caution: comparable actuals run ~${over}% above your ${fmt(hint)} hint — the brief looks under-budgeted. Consider increasing.${tendency}` };
+    }
+    if (mid < hint * 0.9) {
+        const under = Math.round((1 - mid / hint) * 100);
+        return { stance: 'reduce', historical_variance_pct: v, overrun_share_pct: stats.overrunSharePct, message: `Opportunity: comparable delivery suggests ~${under}% below your ${fmt(hint)} hint — you could reduce the budget without undue risk.${tendency}` };
+    }
+    return { stance: 'aligned', historical_variance_pct: v, overrun_share_pct: stats.overrunSharePct, message: `Your ${fmt(hint)} hint aligns with comparable actuals.${tendency}` };
+}
 
 function computeConfidence(
     context: Awaited<ReturnType<typeof buildContext>>,
@@ -759,6 +825,7 @@ async function buildContext(input: BriefInput, onEvent?: EmitFn) {
     // ----- Budget stats from similar campaigns -----
     const planned = similarCampaigns.map((c) => c.budget_planned).filter((n) => n > 0);
     const actual = similarCampaigns.map((c) => c.budget_actual).filter((n) => n > 0);
+    const variances = similarCampaigns.map((c) => c.variance_pct).filter((n) => Number.isFinite(n));
     const budgetStats = {
         plannedMin: Math.min(...(planned.length ? planned : [0])),
         plannedMax: Math.max(...(planned.length ? planned : [0])),
@@ -768,6 +835,10 @@ async function buildContext(input: BriefInput, onEvent?: EmitFn) {
         actualAvg: avg(actual),
         p25: percentile(actual, 25),
         p75: percentile(actual, 75),
+        // Over/under-run signal: + = comparable work tends to come in OVER plan.
+        avgVariancePct: variances.length ? Math.round(avg(variances)) : 0,
+        overrunSharePct: variances.length ? Math.round((variances.filter((v) => v > 2).length / variances.length) * 100) : 0,
+        underrunSharePct: variances.length ? Math.round((variances.filter((v) => v < -2).length / variances.length) * 100) : 0,
     };
 
     // ----- Budget composition (where the money actually goes) -----
@@ -1259,7 +1330,7 @@ STAFFING & SCOPE DISCIPLINE — non-negotiable:
 - Staff a capable resource (a human specialist, or an agent where suitable) for EVERY channel in the brief. Never leave an in-scope channel unstaffed — especially execution-heavy ones: Event, POSM and OOH need a producer/specialist, not just a director. If the brief includes Event, the team MUST include an events-capable person.
 - Match seniority to the work. Do NOT lead an always-on or high-volume content programme with only senior directors — include mid-level execution and reserve directors for genuine leadership/oversight.
 - Keep risks and their cited markets WITHIN the brief's target market(s). Do not raise risks about markets the brief does not target, even if a comparable campaign ran there.
-- Budget: do not simply echo budget_hint. Derive it from the comparables and the brief's scope; if your range lands near the hint, justify it with specific evidence. Scale DOWN for single-market vs multi-market scope — a single-market always-on programme should not cost the same as a multi-market launch.
+- Budget: base the recommendation on comparable ACTUAL spend (not just plan) — actuals already embed how this kind of work over- or under-ran. The context gives the average variance and the over-run share. If comparable work tended to OVERRUN, lean to the upper end and say so; if it consistently came in UNDER, you can be leaner. Then compare to budget_hint: if comparable actuals run materially ABOVE the hint, flag it as under-budgeted and recommend increasing — do NOT just match the hint; if actuals run BELOW, note the saving opportunity. Adjust for scope (single vs multi-market) but justify it with evidence, not a blanket cut.
 
 OUTPUT FORMAT — return STRICT JSON with this exact shape:
 
@@ -1357,6 +1428,7 @@ Budget benchmarks across the similar campaigns above:
    Planned range: ${formatCurrency(context.budgetStats.plannedMin)} – ${formatCurrency(context.budgetStats.plannedMax)} (avg ${formatCurrency(context.budgetStats.plannedAvg)})
    Actual range:  ${formatCurrency(context.budgetStats.actualMin)} – ${formatCurrency(context.budgetStats.actualMax)} (avg ${formatCurrency(context.budgetStats.actualAvg)})
    Actual P25/P75: ${formatCurrency(context.budgetStats.p25)} – ${formatCurrency(context.budgetStats.p75)}
+   Over/under-run: comparable work ran on average ${context.budgetStats.avgVariancePct >= 0 ? '+' : ''}${context.budgetStats.avgVariancePct}% vs plan (${context.budgetStats.overrunSharePct}% over, ${context.budgetStats.underrunSharePct}% under). Use this to predict whether THIS brief is likely to over- or under-run, and to judge the budget hint.
 
 Budget COMPOSITION across these comparable campaigns (from ${context.costComposition.cost_line_samples.toLocaleString()} cost lines + media spend) — where the money actually went:
    Labour (fee time): ${context.costComposition.labour_pct}% (${formatCurrency(context.costComposition.labour_gbp)})
