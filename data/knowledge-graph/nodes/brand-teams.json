@@ -1,65 +1,92 @@
 [
-    {
-        "id": "brand-team:aurelune-global",
-        "type": "BrandTeam",
-        "properties": {
-            "name": "Aurelune Global Brand Team",
-            "scope": "global",
-            "office_city": "London"
-        }
-    },
-    {
-        "id": "brand-team:aurelune-uk",
-        "type": "BrandTeam",
-        "properties": {
-            "name": "Aurelune UK",
-            "scope": "local",
-            "office_city": "London"
-        }
-    },
-    {
-        "id": "brand-team:aurelune-us",
-        "type": "BrandTeam",
-        "properties": {
-            "name": "Aurelune US",
-            "scope": "local",
-            "office_city": "New York"
-        }
-    },
-    {
-        "id": "brand-team:aurelune-de",
-        "type": "BrandTeam",
-        "properties": {
-            "name": "Aurelune DACH",
-            "scope": "local",
-            "office_city": "Berlin"
-        }
-    },
-    {
-        "id": "brand-team:aurelune-fr",
-        "type": "BrandTeam",
-        "properties": {
-            "name": "Aurelune France",
-            "scope": "local",
-            "office_city": "Paris"
-        }
-    },
-    {
-        "id": "brand-team:aurelune-jp",
-        "type": "BrandTeam",
-        "properties": {
-            "name": "Aurelune Japan",
-            "scope": "local",
-            "office_city": "Tokyo"
-        }
-    },
-    {
-        "id": "brand-team:aurelune-cn",
-        "type": "BrandTeam",
-        "properties": {
-            "name": "Aurelune Greater China (cross-border)",
-            "scope": "local",
-            "office_city": "Shanghai"
-        }
+  {
+    "id": "brand-team:aurelune-global",
+    "type": "BrandTeam",
+    "properties": {
+      "name": "Aurelune Global Brand Team",
+      "scope": "global",
+      "office_city": "London"
     }
+  },
+  {
+    "id": "brand-team:aurelune-uk",
+    "type": "BrandTeam",
+    "properties": {
+      "name": "Aurelune UK",
+      "scope": "local",
+      "office_city": "London"
+    }
+  },
+  {
+    "id": "brand-team:aurelune-us",
+    "type": "BrandTeam",
+    "properties": {
+      "name": "Aurelune US",
+      "scope": "local",
+      "office_city": "New York"
+    }
+  },
+  {
+    "id": "brand-team:aurelune-de",
+    "type": "BrandTeam",
+    "properties": {
+      "name": "Aurelune DACH",
+      "scope": "local",
+      "office_city": "Berlin"
+    }
+  },
+  {
+    "id": "brand-team:aurelune-fr",
+    "type": "BrandTeam",
+    "properties": {
+      "name": "Aurelune France",
+      "scope": "local",
+      "office_city": "Paris"
+    }
+  },
+  {
+    "id": "brand-team:aurelune-jp",
+    "type": "BrandTeam",
+    "properties": {
+      "name": "Aurelune Japan",
+      "scope": "local",
+      "office_city": "Tokyo"
+    }
+  },
+  {
+    "id": "brand-team:aurelune-cn",
+    "type": "BrandTeam",
+    "properties": {
+      "name": "Aurelune Greater China (cross-border)",
+      "scope": "local",
+      "office_city": "Shanghai"
+    }
+  },
+  {
+    "id": "brand-team:kestrel-global",
+    "type": "BrandTeam",
+    "properties": {
+      "name": "Kestrel Global Brand Team",
+      "scope": "global",
+      "office_city": "Manchester"
+    }
+  },
+  {
+    "id": "brand-team:kestrel-uk",
+    "type": "BrandTeam",
+    "properties": {
+      "name": "Kestrel UK",
+      "scope": "local",
+      "office_city": "London"
+    }
+  },
+  {
+    "id": "brand-team:kestrel-us",
+    "type": "BrandTeam",
+    "properties": {
+      "name": "Kestrel US",
+      "scope": "local",
+      "office_city": "Denver"
+    }
+  }
 ]

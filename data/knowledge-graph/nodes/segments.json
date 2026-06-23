@@ -1,118 +1,138 @@
 [
-    {
-        "id": "segment:high-loyalty-uk",
-        "type": "Segment",
-        "properties": {
-            "name": "High-loyalty UK (≥3 orders/yr)",
-            "definition": "UK customers who placed 3+ orders in the trailing 12 months, AOV ≥ £100",
-            "size_estimate": 24000,
-            "market_id": "market:UK"
-        }
-    },
-    {
-        "id": "segment:lapsed-uk-90d",
-        "type": "Segment",
-        "properties": {
-            "name": "Lapsed UK (no purchase 90+ days)",
-            "definition": "UK customers active in the last 18 months but with no purchase in the past 90 days",
-            "size_estimate": 38000,
-            "market_id": "market:UK"
-        }
-    },
-    {
-        "id": "segment:high-loyalty-us",
-        "type": "Segment",
-        "properties": {
-            "name": "High-loyalty US (≥3 orders/yr)",
-            "definition": "US customers who placed 3+ orders in the trailing 12 months, AOV ≥ $130",
-            "size_estimate": 41000,
-            "market_id": "market:US"
-        }
-    },
-    {
-        "id": "segment:retinoid-heroes-us",
-        "type": "Segment",
-        "properties": {
-            "name": "Retinoid heroes US",
-            "definition": "US customers who have purchased Retinoid PM Serum at least twice",
-            "size_estimate": 15500,
-            "market_id": "market:US"
-        }
-    },
-    {
-        "id": "segment:sensitive-skin-de",
-        "type": "Segment",
-        "properties": {
-            "name": "Sensitive-skin DE (Gentle Gemma proxy)",
-            "definition": "DE customers whose first purchase was Ceramide Repair Cream or Clearing Cleanser",
-            "size_estimate": 9200,
-            "market_id": "market:DE"
-        }
-    },
-    {
-        "id": "segment:ritual-set-fr",
-        "type": "Segment",
-        "properties": {
-            "name": "Ritual-set buyers FR",
-            "definition": "FR customers who purchased The Ritual Set as their first order",
-            "size_estimate": 6700,
-            "market_id": "market:FR"
-        }
-    },
-    {
-        "id": "segment:line-loyalty-jp",
-        "type": "Segment",
-        "properties": {
-            "name": "LINE loyalty JP",
-            "definition": "JP customers who opted into the LINE loyalty programme and have placed ≥2 orders",
-            "size_estimate": 12500,
-            "market_id": "market:JP"
-        }
-    },
-    {
-        "id": "segment:xiaohongshu-discovered-cn",
-        "type": "Segment",
-        "properties": {
-            "name": "Xiaohongshu-discovered CN",
-            "definition": "CN cross-border customers whose first session was attributed to Xiaohongshu UGC",
-            "size_estimate": 4400,
-            "market_id": "market:CN"
-        }
-    },
-    {
-        "id": "segment:gift-buyers-q4",
-        "type": "Segment",
-        "properties": {
-            "name": "Gift buyers Q4 (global)",
-            "definition": "Global customers who purchased a gift set in Q4 of any year",
-            "size_estimate": 28000
-        }
-    },
-    {
-        "id": "segment:science-readers-global",
-        "type": "Segment",
-        "properties": {
-            "name": "Science readers — global (Sven proxy)",
-            "definition": "Global subscribers who have downloaded ≥2 white-papers from the science hub",
-            "size_estimate": 8700
-        }
-    },
-    {
-        "id": "segment:high-aov-prestige-buyers",
-        "type": "Segment",
-        "properties": {
-            "name": "High-AOV prestige buyers",
-            "definition": "Customers whose trailing-12-month AOV exceeds £180 (or local equivalent)",
-            "size_estimate": 11200
-        }
-    },
-    {
-        "id": "segment:dermatologist-co-signed",
-        "type": "Segment",
-        "properties": {
-            "name": "Dermatologist co-signed acquisition",
-            "definition": "Customers whose first session was attributed to a dermatologist-creator referral",
-            "size_estimate": 3300
-        }
+  {
+    "id": "segment:high-loyalty-uk",
+    "type": "Segment",
+    "properties": {
+      "name": "High-loyalty UK (≥3 orders/yr)",
+      "definition": "UK customers who placed 3+ orders in the trailing 12 months, AOV ≥ £100",
+      "size_estimate": 24000,
+      "market_id": "market:UK"
     }
+  },
+  {
+    "id": "segment:lapsed-uk-90d",
+    "type": "Segment",
+    "properties": {
+      "name": "Lapsed UK (no purchase 90+ days)",
+      "definition": "UK customers active in the last 18 months but with no purchase in the past 90 days",
+      "size_estimate": 38000,
+      "market_id": "market:UK"
+    }
+  },
+  {
+    "id": "segment:high-loyalty-us",
+    "type": "Segment",
+    "properties": {
+      "name": "High-loyalty US (≥3 orders/yr)",
+      "definition": "US customers who placed 3+ orders in the trailing 12 months, AOV ≥ $130",
+      "size_estimate": 41000,
+      "market_id": "market:US"
+    }
+  },
+  {
+    "id": "segment:retinoid-heroes-us",
+    "type": "Segment",
+    "properties": {
+      "name": "Retinoid heroes US",
+      "definition": "US customers who have purchased Retinoid PM Serum at least twice",
+      "size_estimate": 15500,
+      "market_id": "market:US"
+    }
+  },
+  {
+    "id": "segment:sensitive-skin-de",
+    "type": "Segment",
+    "properties": {
+      "name": "Sensitive-skin DE (Gentle Gemma proxy)",
+      "definition": "DE customers whose first purchase was Ceramide Repair Cream or Clearing Cleanser",
+      "size_estimate": 9200,
+      "market_id": "market:DE"
+    }
+  },
+  {
+    "id": "segment:ritual-set-fr",
+    "type": "Segment",
+    "properties": {
+      "name": "Ritual-set buyers FR",
+      "definition": "FR customers who purchased The Ritual Set as their first order",
+      "size_estimate": 6700,
+      "market_id": "market:FR"
+    }
+  },
+  {
+    "id": "segment:line-loyalty-jp",
+    "type": "Segment",
+    "properties": {
+      "name": "LINE loyalty JP",
+      "definition": "JP customers who opted into the LINE loyalty programme and have placed ≥2 orders",
+      "size_estimate": 12500,
+      "market_id": "market:JP"
+    }
+  },
+  {
+    "id": "segment:xiaohongshu-discovered-cn",
+    "type": "Segment",
+    "properties": {
+      "name": "Xiaohongshu-discovered CN",
+      "definition": "CN cross-border customers whose first session was attributed to Xiaohongshu UGC",
+      "size_estimate": 4400,
+      "market_id": "market:CN"
+    }
+  },
+  {
+    "id": "segment:gift-buyers-q4",
+    "type": "Segment",
+    "properties": {
+      "name": "Gift buyers Q4 (global)",
+      "definition": "Global customers who purchased a gift set in Q4 of any year",
+      "size_estimate": 28000
+    }
+  },
+  {
+    "id": "segment:science-readers-global",
+    "type": "Segment",
+    "properties": {
+      "name": "Science readers — global (Sven proxy)",
+      "definition": "Global subscribers who have downloaded ≥2 white-papers from the science hub",
+      "size_estimate": 8700
+    }
+  },
+  {
+    "id": "segment:high-aov-prestige-buyers",
+    "type": "Segment",
+    "properties": {
+      "name": "High-AOV prestige buyers",
+      "definition": "Customers whose trailing-12-month AOV exceeds £180 (or local equivalent)",
+      "size_estimate": 11200
+    }
+  },
+  {
+    "id": "segment:dermatologist-co-signed",
+    "type": "Segment",
+    "properties": {
+      "name": "Dermatologist co-signed acquisition",
+      "definition": "Customers whose first session was attributed to a dermatologist-creator referral",
+      "size_estimate": 3300
+    }
+  },
+  {
+    "id": "segment:kestrel-uk-core",
+    "type": "Segment",
+    "properties": {
+      "name": "Kestrel UK core (≥2 purchases/yr)",
+      "definition": "UK customers with 2+ purchases in trailing 12 months, AOV ≥ £120",
+      "size_estimate": 31000,
+      "market_id": "market:UK"
+    }
+  },
+  {
+    "id": "segment:kestrel-us-trail",
+    "type": "Segment",
+    "properties": {
+      "name": "Kestrel US trail segment",
+      "definition": "US customers buying trail/footwear lines",
+      "size_estimate": 27000,
+      "market_id": "market:US"
+    }
+  }
 ]

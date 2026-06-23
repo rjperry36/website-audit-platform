@@ -148,5 +148,1055 @@
       "currency": "GBP",
       "summary": "H1 2026 refresh for the Resurfacing Ritual Oil — reposition as the twice-weekly PM enhancer."
     }
+  },
+  {
+    "id": "campaign:aurelune-gifting-season-0-26",
+    "type": "Campaign",
+    "properties": {
+      "name": "Gifting Season — JP/US SS26",
+      "campaign_type": "always_on",
+      "start_date": "2026-02-09",
+      "end_date": "2026-06-18",
+      "status": "shipped",
+      "budget_planned": 540834,
+      "budget_actual": 605734,
+      "currency": "GBP",
+      "summary": "Gifting Season always on for Aurelune across JP, US."
+    }
+  },
+  {
+    "id": "campaign:aurelune-vitamin-c-bright-1-25",
+    "type": "Campaign",
+    "properties": {
+      "name": "Vitamin C Bright — DE/JP/UK AW25",
+      "campaign_type": "market_entry",
+      "start_date": "2025-09-02",
+      "end_date": "2026-01-09",
+      "status": "shipped",
+      "budget_planned": 760952,
+      "budget_actual": 700076,
+      "currency": "GBP",
+      "summary": "Vitamin C Bright market entry for Aurelune across DE, JP, UK."
+    }
+  },
+  {
+    "id": "campaign:aurelune-gifting-season-2-25",
+    "type": "Campaign",
+    "properties": {
+      "name": "Gifting Season — CN/UK/DE AW25",
+      "campaign_type": "global_launch",
+      "start_date": "2025-03-06",
+      "end_date": "2025-05-22",
+      "status": "shipped",
+      "budget_planned": 340216,
+      "budget_actual": 370835,
+      "currency": "GBP",
+      "summary": "Gifting Season global launch for Aurelune across CN, UK, DE."
+    }
+  },
+  {
+    "id": "campaign:aurelune-gifting-season-3-24",
+    "type": "Campaign",
+    "properties": {
+      "name": "Gifting Season — UK/US AW24",
+      "campaign_type": "market_entry",
+      "start_date": "2024-08-01",
+      "end_date": "2024-09-23",
+      "status": "shipped",
+      "budget_planned": 131334,
+      "budget_actual": 132647,
+      "currency": "GBP",
+      "summary": "Gifting Season market entry for Aurelune across UK, US."
+    }
+  },
+  {
+    "id": "campaign:aurelune-hydration-ritual-4-26",
+    "type": "Campaign",
+    "properties": {
+      "name": "Hydration Ritual — US AW26",
+      "campaign_type": "market_entry",
+      "start_date": "2026-05-05",
+      "end_date": "2026-09-01",
+      "status": "in_production",
+      "budget_planned": 1383042,
+      "budget_actual": 1286229,
+      "currency": "GBP",
+      "summary": "Hydration Ritual market entry for Aurelune across US."
+    }
+  },
+  {
+    "id": "campaign:aurelune-sampling-drive-5-24",
+    "type": "Campaign",
+    "properties": {
+      "name": "Sampling Drive — JP/DE/CN SS24",
+      "campaign_type": "always_on",
+      "start_date": "2024-09-01",
+      "end_date": "2024-11-29",
+      "status": "shipped",
+      "budget_planned": 1151532,
+      "budget_actual": 1209109,
+      "currency": "GBP",
+      "summary": "Sampling Drive always on for Aurelune across JP, DE, CN."
+    }
+  },
+  {
+    "id": "campaign:aurelune-gifting-season-6-25",
+    "type": "Campaign",
+    "properties": {
+      "name": "Gifting Season — JP/DE SS25",
+      "campaign_type": "seasonal",
+      "start_date": "2025-03-05",
+      "end_date": "2025-06-15",
+      "status": "shipped",
+      "budget_planned": 1089674,
+      "budget_actual": 1209538,
+      "currency": "GBP",
+      "summary": "Gifting Season seasonal for Aurelune across JP, DE."
+    }
+  },
+  {
+    "id": "campaign:aurelune-sephora-activation-7-24",
+    "type": "Campaign",
+    "properties": {
+      "name": "Sephora Activation — DE/FR/CN SS24",
+      "campaign_type": "market_entry",
+      "start_date": "2024-04-06",
+      "end_date": "2024-06-27",
+      "status": "shipped",
+      "budget_planned": 1154956,
+      "budget_actual": 1178055,
+      "currency": "GBP",
+      "summary": "Sephora Activation market entry for Aurelune across DE, FR, CN."
+    }
+  },
+  {
+    "id": "campaign:aurelune-sampling-drive-8-25",
+    "type": "Campaign",
+    "properties": {
+      "name": "Sampling Drive — UK/JP SS25",
+      "campaign_type": "seasonal",
+      "start_date": "2025-07-06",
+      "end_date": "2025-10-22",
+      "status": "shipped",
+      "budget_planned": 1043448,
+      "budget_actual": 970407,
+      "currency": "GBP",
+      "summary": "Sampling Drive seasonal for Aurelune across UK, JP."
+    }
+  },
+  {
+    "id": "campaign:aurelune-barrier-repair-9-26",
+    "type": "Campaign",
+    "properties": {
+      "name": "Barrier Repair — UK SS26",
+      "campaign_type": "seasonal",
+      "start_date": "2026-03-03",
+      "end_date": "2026-07-06",
+      "status": "in_market",
+      "budget_planned": 632363,
+      "budget_actual": 657658,
+      "currency": "GBP",
+      "summary": "Barrier Repair seasonal for Aurelune across UK."
+    }
+  },
+  {
+    "id": "campaign:aurelune-tokyo-residency-10-25",
+    "type": "Campaign",
+    "properties": {
+      "name": "Tokyo Residency — UK/FR/DE AW25",
+      "campaign_type": "global_launch",
+      "start_date": "2025-01-09",
+      "end_date": "2025-03-22",
+      "status": "shipped",
+      "budget_planned": 702290,
+      "budget_actual": 639084,
+      "currency": "GBP",
+      "summary": "Tokyo Residency global launch for Aurelune across UK, FR, DE."
+    }
+  },
+  {
+    "id": "campaign:aurelune-sephora-activation-11-26",
+    "type": "Campaign",
+    "properties": {
+      "name": "Sephora Activation — JP SS26",
+      "campaign_type": "global_launch",
+      "start_date": "2026-05-06",
+      "end_date": "2026-07-23",
+      "status": "shipped",
+      "budget_planned": 826841,
+      "budget_actual": 892988,
+      "currency": "GBP",
+      "summary": "Sephora Activation global launch for Aurelune across JP."
+    }
+  },
+  {
+    "id": "campaign:aurelune-gifting-season-12-25",
+    "type": "Campaign",
+    "properties": {
+      "name": "Gifting Season — JP AW25",
+      "campaign_type": "always_on",
+      "start_date": "2025-05-06",
+      "end_date": "2025-08-20",
+      "status": "shipped",
+      "budget_planned": 1144501,
+      "budget_actual": 1167391,
+      "currency": "GBP",
+      "summary": "Gifting Season always on for Aurelune across JP."
+    }
+  },
+  {
+    "id": "campaign:aurelune-vitamin-c-bright-13-25",
+    "type": "Campaign",
+    "properties": {
+      "name": "Vitamin C Bright — DE/JP SS25",
+      "campaign_type": "seasonal",
+      "start_date": "2025-02-06",
+      "end_date": "2025-05-22",
+      "status": "shipped",
+      "budget_planned": 758371,
+      "budget_actual": 819041,
+      "currency": "GBP",
+      "summary": "Vitamin C Bright seasonal for Aurelune across DE, JP."
+    }
+  },
+  {
+    "id": "campaign:aurelune-sephora-activation-14-25",
+    "type": "Campaign",
+    "properties": {
+      "name": "Sephora Activation — CN SS25",
+      "campaign_type": "seasonal",
+      "start_date": "2025-07-01",
+      "end_date": "2025-09-10",
+      "status": "shipped",
+      "budget_planned": 706812,
+      "budget_actual": 770425,
+      "currency": "GBP",
+      "summary": "Sephora Activation seasonal for Aurelune across CN."
+    }
+  },
+  {
+    "id": "campaign:aurelune-sampling-drive-15-24",
+    "type": "Campaign",
+    "properties": {
+      "name": "Sampling Drive — CN/DE AW24",
+      "campaign_type": "market_entry",
+      "start_date": "2024-05-05",
+      "end_date": "2024-08-12",
+      "status": "shipped",
+      "budget_planned": 959279,
+      "budget_actual": 1045614,
+      "currency": "GBP",
+      "summary": "Sampling Drive market entry for Aurelune across CN, DE."
+    }
+  },
+  {
+    "id": "campaign:aurelune-dach-expansion-16-26",
+    "type": "Campaign",
+    "properties": {
+      "name": "DACH Expansion — JP SS26",
+      "campaign_type": "always_on",
+      "start_date": "2026-06-02",
+      "end_date": "2026-08-16",
+      "status": "in_market",
+      "budget_planned": 994095,
+      "budget_actual": 1053741,
+      "currency": "GBP",
+      "summary": "DACH Expansion always on for Aurelune across JP."
+    }
+  },
+  {
+    "id": "campaign:aurelune-cross-border-cn-17-26",
+    "type": "Campaign",
+    "properties": {
+      "name": "Cross-border CN — US/CN AW26",
+      "campaign_type": "seasonal",
+      "start_date": "2026-08-06",
+      "end_date": "2026-10-25",
+      "status": "shipped",
+      "budget_planned": 1319883,
+      "budget_actual": 1267088,
+      "currency": "GBP",
+      "summary": "Cross-border CN seasonal for Aurelune across US, CN."
+    }
+  },
+  {
+    "id": "campaign:aurelune-cross-border-cn-18-24",
+    "type": "Campaign",
+    "properties": {
+      "name": "Cross-border CN — FR/DE AW24",
+      "campaign_type": "seasonal",
+      "start_date": "2024-05-09",
+      "end_date": "2024-07-21",
+      "status": "shipped",
+      "budget_planned": 1071078,
+      "budget_actual": 1092500,
+      "currency": "GBP",
+      "summary": "Cross-border CN seasonal for Aurelune across FR, DE."
+    }
+  },
+  {
+    "id": "campaign:aurelune-cross-border-cn-19-25",
+    "type": "Campaign",
+    "properties": {
+      "name": "Cross-border CN — US/UK/FR SS25",
+      "campaign_type": "seasonal",
+      "start_date": "2025-04-01",
+      "end_date": "2025-07-18",
+      "status": "shipped",
+      "budget_planned": 182844,
+      "budget_actual": 166388,
+      "currency": "GBP",
+      "summary": "Cross-border CN seasonal for Aurelune across US, UK, FR."
+    }
+  },
+  {
+    "id": "campaign:aurelune-dach-expansion-20-26",
+    "type": "Campaign",
+    "properties": {
+      "name": "DACH Expansion — CN SS26",
+      "campaign_type": "global_launch",
+      "start_date": "2026-03-07",
+      "end_date": "2026-05-02",
+      "status": "in_production",
+      "budget_planned": 900342,
+      "budget_actual": 936356,
+      "currency": "GBP",
+      "summary": "DACH Expansion global launch for Aurelune across CN."
+    }
+  },
+  {
+    "id": "campaign:aurelune-tokyo-residency-21-26",
+    "type": "Campaign",
+    "properties": {
+      "name": "Tokyo Residency — CN AW26",
+      "campaign_type": "always_on",
+      "start_date": "2026-01-07",
+      "end_date": "2026-05-05",
+      "status": "in_production",
+      "budget_planned": 1354942,
+      "budget_actual": 1449788,
+      "currency": "GBP",
+      "summary": "Tokyo Residency always on for Aurelune across CN."
+    }
+  },
+  {
+    "id": "campaign:aurelune-pm-renewal-22-25",
+    "type": "Campaign",
+    "properties": {
+      "name": "PM Renewal — UK AW25",
+      "campaign_type": "always_on",
+      "start_date": "2025-03-06",
+      "end_date": "2025-06-16",
+      "status": "shipped",
+      "budget_planned": 878186,
+      "budget_actual": 930877,
+      "currency": "GBP",
+      "summary": "PM Renewal always on for Aurelune across UK."
+    }
+  },
+  {
+    "id": "campaign:aurelune-sephora-activation-23-26",
+    "type": "Campaign",
+    "properties": {
+      "name": "Sephora Activation — CN/UK SS26",
+      "campaign_type": "market_entry",
+      "start_date": "2026-04-07",
+      "end_date": "2026-07-18",
+      "status": "in_market",
+      "budget_planned": 465421,
+      "budget_actual": 498000,
+      "currency": "GBP",
+      "summary": "Sephora Activation market entry for Aurelune across CN, UK."
+    }
+  },
+  {
+    "id": "campaign:aurelune-cross-border-cn-24-25",
+    "type": "Campaign",
+    "properties": {
+      "name": "Cross-border CN — CN/US SS25",
+      "campaign_type": "always_on",
+      "start_date": "2025-03-06",
+      "end_date": "2025-06-25",
+      "status": "shipped",
+      "budget_planned": 1173175,
+      "budget_actual": 1079321,
+      "currency": "GBP",
+      "summary": "Cross-border CN always on for Aurelune across CN, US."
+    }
+  },
+  {
+    "id": "campaign:aurelune-sampling-drive-25-26",
+    "type": "Campaign",
+    "properties": {
+      "name": "Sampling Drive — CN SS26",
+      "campaign_type": "market_entry",
+      "start_date": "2026-03-02",
+      "end_date": "2026-05-21",
+      "status": "in_market",
+      "budget_planned": 1118232,
+      "budget_actual": 1107050,
+      "currency": "GBP",
+      "summary": "Sampling Drive market entry for Aurelune across CN."
+    }
+  },
+  {
+    "id": "campaign:aurelune-barrier-repair-26-24",
+    "type": "Campaign",
+    "properties": {
+      "name": "Barrier Repair — CN/FR/US AW24",
+      "campaign_type": "global_launch",
+      "start_date": "2024-07-05",
+      "end_date": "2024-10-13",
+      "status": "shipped",
+      "budget_planned": 361996,
+      "budget_actual": 380096,
+      "currency": "GBP",
+      "summary": "Barrier Repair global launch for Aurelune across CN, FR, US."
+    }
+  },
+  {
+    "id": "campaign:aurelune-dach-expansion-27-24",
+    "type": "Campaign",
+    "properties": {
+      "name": "DACH Expansion — US/JP/DE SS24",
+      "campaign_type": "market_entry",
+      "start_date": "2024-05-08",
+      "end_date": "2024-08-11",
+      "status": "shipped",
+      "budget_planned": 386985,
+      "budget_actual": 348287,
+      "currency": "GBP",
+      "summary": "DACH Expansion market entry for Aurelune across US, JP, DE."
+    }
+  },
+  {
+    "id": "campaign:kestrel-base-layer-drop-28-26",
+    "type": "Campaign",
+    "properties": {
+      "name": "Base Layer Drop — DE/US/FR AW26",
+      "campaign_type": "product_launch",
+      "start_date": "2026-06-08",
+      "end_date": "2026-08-29",
+      "status": "shipped",
+      "budget_planned": 1177991,
+      "budget_actual": 1071972,
+      "currency": "GBP",
+      "summary": "Base Layer Drop product launch for Kestrel across DE, US, FR."
+    }
+  },
+  {
+    "id": "campaign:kestrel-winter-layering-29-26",
+    "type": "Campaign",
+    "properties": {
+      "name": "Winter Layering — UK/JP SS26",
+      "campaign_type": "retail_activation",
+      "start_date": "2026-09-07",
+      "end_date": "2026-12-18",
+      "status": "shipped",
+      "budget_planned": 570581,
+      "budget_actual": 616227,
+      "currency": "GBP",
+      "summary": "Winter Layering retail activation for Kestrel across UK, JP."
+    }
+  },
+  {
+    "id": "campaign:kestrel-base-layer-drop-30-26",
+    "type": "Campaign",
+    "properties": {
+      "name": "Base Layer Drop — US SS26",
+      "campaign_type": "product_launch",
+      "start_date": "2026-04-06",
+      "end_date": "2026-07-18",
+      "status": "in_market",
+      "budget_planned": 1002676,
+      "budget_actual": 1032756,
+      "currency": "GBP",
+      "summary": "Base Layer Drop product launch for Kestrel across US."
+    }
+  },
+  {
+    "id": "campaign:kestrel-run-club-series-31-24",
+    "type": "Campaign",
+    "properties": {
+      "name": "Run Club Series — FR/UK/JP SS24",
+      "campaign_type": "always_on",
+      "start_date": "2024-08-03",
+      "end_date": "2024-09-25",
+      "status": "shipped",
+      "budget_planned": 513820,
+      "budget_actual": 560064,
+      "currency": "GBP",
+      "summary": "Run Club Series always on for Kestrel across FR, UK, JP."
+    }
+  },
+  {
+    "id": "campaign:kestrel-commuter-campaign-32-24",
+    "type": "Campaign",
+    "properties": {
+      "name": "Commuter Campaign — US SS24",
+      "campaign_type": "always_on",
+      "start_date": "2024-07-02",
+      "end_date": "2024-10-19",
+      "status": "shipped",
+      "budget_planned": 794823,
+      "budget_actual": 802771,
+      "currency": "GBP",
+      "summary": "Commuter Campaign always on for Kestrel across US."
+    }
+  },
+  {
+    "id": "campaign:kestrel-marathon-push-33-26",
+    "type": "Campaign",
+    "properties": {
+      "name": "Marathon Push — UK/US SS26",
+      "campaign_type": "product_launch",
+      "start_date": "2026-07-04",
+      "end_date": "2026-11-08",
+      "status": "in_production",
+      "budget_planned": 273242,
+      "budget_actual": 275974,
+      "currency": "GBP",
+      "summary": "Marathon Push product launch for Kestrel across UK, US."
+    }
+  },
+  {
+    "id": "campaign:kestrel-footwear-launch-34-26",
+    "type": "Campaign",
+    "properties": {
+      "name": "Footwear Launch — CN SS26",
+      "campaign_type": "product_launch",
+      "start_date": "2026-09-03",
+      "end_date": "2026-12-10",
+      "status": "shipped",
+      "budget_planned": 522147,
+      "budget_actual": 490818,
+      "currency": "GBP",
+      "summary": "Footwear Launch product launch for Kestrel across CN."
+    }
+  },
+  {
+    "id": "campaign:kestrel-gore-tex-launch-35-25",
+    "type": "Campaign",
+    "properties": {
+      "name": "Gore-Tex Launch — CN AW25",
+      "campaign_type": "product_launch",
+      "start_date": "2025-05-05",
+      "end_date": "2025-09-10",
+      "status": "shipped",
+      "budget_planned": 471125,
+      "budget_actual": 485259,
+      "currency": "GBP",
+      "summary": "Gore-Tex Launch product launch for Kestrel across CN."
+    }
+  },
+  {
+    "id": "campaign:kestrel-sustainability-story-36-25",
+    "type": "Campaign",
+    "properties": {
+      "name": "Sustainability Story — FR SS25",
+      "campaign_type": "product_launch",
+      "start_date": "2025-05-06",
+      "end_date": "2025-06-30",
+      "status": "shipped",
+      "budget_planned": 786281,
+      "budget_actual": 794144,
+      "currency": "GBP",
+      "summary": "Sustainability Story product launch for Kestrel across FR."
+    }
+  },
+  {
+    "id": "campaign:kestrel-commuter-campaign-37-24",
+    "type": "Campaign",
+    "properties": {
+      "name": "Commuter Campaign — DE SS24",
+      "campaign_type": "retail_activation",
+      "start_date": "2024-01-01",
+      "end_date": "2024-04-08",
+      "status": "shipped",
+      "budget_planned": 763634,
+      "budget_actual": 717816,
+      "currency": "GBP",
+      "summary": "Commuter Campaign retail activation for Kestrel across DE."
+    }
+  },
+  {
+    "id": "campaign:kestrel-commuter-campaign-38-25",
+    "type": "Campaign",
+    "properties": {
+      "name": "Commuter Campaign — US/UK SS25",
+      "campaign_type": "always_on",
+      "start_date": "2025-03-05",
+      "end_date": "2025-06-08",
+      "status": "shipped",
+      "budget_planned": 417255,
+      "budget_actual": 458981,
+      "currency": "GBP",
+      "summary": "Commuter Campaign always on for Kestrel across US, UK."
+    }
+  },
+  {
+    "id": "campaign:kestrel-flagship-opening-39-26",
+    "type": "Campaign",
+    "properties": {
+      "name": "Flagship Opening — DE/FR/UK SS26",
+      "campaign_type": "product_launch",
+      "start_date": "2026-05-02",
+      "end_date": "2026-08-19",
+      "status": "in_market",
+      "budget_planned": 766645,
+      "budget_actual": 789644,
+      "currency": "GBP",
+      "summary": "Flagship Opening product launch for Kestrel across DE, FR, UK."
+    }
+  },
+  {
+    "id": "campaign:kestrel-commuter-campaign-40-25",
+    "type": "Campaign",
+    "properties": {
+      "name": "Commuter Campaign — CN/JP SS25",
+      "campaign_type": "always_on",
+      "start_date": "2025-04-01",
+      "end_date": "2025-06-24",
+      "status": "shipped",
+      "budget_planned": 1093864,
+      "budget_actual": 1028232,
+      "currency": "GBP",
+      "summary": "Commuter Campaign always on for Kestrel across CN, JP."
+    }
+  },
+  {
+    "id": "campaign:kestrel-trail-season-41-25",
+    "type": "Campaign",
+    "properties": {
+      "name": "Trail Season — US AW25",
+      "campaign_type": "seasonal",
+      "start_date": "2025-09-07",
+      "end_date": "2025-12-22",
+      "status": "shipped",
+      "budget_planned": 153107,
+      "budget_actual": 154638,
+      "currency": "GBP",
+      "summary": "Trail Season seasonal for Kestrel across US."
+    }
+  },
+  {
+    "id": "campaign:kestrel-marathon-push-42-26",
+    "type": "Campaign",
+    "properties": {
+      "name": "Marathon Push — JP/US SS26",
+      "campaign_type": "always_on",
+      "start_date": "2026-09-06",
+      "end_date": "2026-10-27",
+      "status": "in_market",
+      "budget_planned": 1334144,
+      "budget_actual": 1360827,
+      "currency": "GBP",
+      "summary": "Marathon Push always on for Kestrel across JP, US."
+    }
+  },
+  {
+    "id": "campaign:kestrel-wholesale-roadshow-43-24",
+    "type": "Campaign",
+    "properties": {
+      "name": "Wholesale Roadshow — CN/UK/JP SS24",
+      "campaign_type": "retail_activation",
+      "start_date": "2024-07-06",
+      "end_date": "2024-08-23",
+      "status": "shipped",
+      "budget_planned": 906171,
+      "budget_actual": 860862,
+      "currency": "GBP",
+      "summary": "Wholesale Roadshow retail activation for Kestrel across CN, UK, JP."
+    }
+  },
+  {
+    "id": "campaign:kestrel-gore-tex-launch-44-25",
+    "type": "Campaign",
+    "properties": {
+      "name": "Gore-Tex Launch — FR/US/DE SS25",
+      "campaign_type": "always_on",
+      "start_date": "2025-04-09",
+      "end_date": "2025-07-31",
+      "status": "shipped",
+      "budget_planned": 303238,
+      "budget_actual": 291108,
+      "currency": "GBP",
+      "summary": "Gore-Tex Launch always on for Kestrel across FR, US, DE."
+    }
+  },
+  {
+    "id": "campaign:kestrel-footwear-launch-45-25",
+    "type": "Campaign",
+    "properties": {
+      "name": "Footwear Launch — UK AW25",
+      "campaign_type": "seasonal",
+      "start_date": "2025-04-03",
+      "end_date": "2025-08-06",
+      "status": "shipped",
+      "budget_planned": 970704,
+      "budget_actual": 970704,
+      "currency": "GBP",
+      "summary": "Footwear Launch seasonal for Kestrel across UK."
+    }
+  },
+  {
+    "id": "campaign:kestrel-black-friday-46-24",
+    "type": "Campaign",
+    "properties": {
+      "name": "Black Friday — FR SS24",
+      "campaign_type": "product_launch",
+      "start_date": "2024-08-07",
+      "end_date": "2024-11-06",
+      "status": "shipped",
+      "budget_planned": 813704,
+      "budget_actual": 829978,
+      "currency": "GBP",
+      "summary": "Black Friday product launch for Kestrel across FR."
+    }
+  },
+  {
+    "id": "campaign:kestrel-flagship-opening-47-24",
+    "type": "Campaign",
+    "properties": {
+      "name": "Flagship Opening — UK SS24",
+      "campaign_type": "retail_activation",
+      "start_date": "2024-09-03",
+      "end_date": "2024-11-08",
+      "status": "shipped",
+      "budget_planned": 1286958,
+      "budget_actual": 1261219,
+      "currency": "GBP",
+      "summary": "Flagship Opening retail activation for Kestrel across UK."
+    }
+  },
+  {
+    "id": "campaign:kestrel-black-friday-48-26",
+    "type": "Campaign",
+    "properties": {
+      "name": "Black Friday — DE SS26",
+      "campaign_type": "retail_activation",
+      "start_date": "2026-08-01",
+      "end_date": "2026-10-06",
+      "status": "shipped",
+      "budget_planned": 1220516,
+      "budget_actual": 1208311,
+      "currency": "GBP",
+      "summary": "Black Friday retail activation for Kestrel across DE."
+    }
+  },
+  {
+    "id": "campaign:kestrel-flagship-opening-49-24",
+    "type": "Campaign",
+    "properties": {
+      "name": "Flagship Opening — DE/US SS24",
+      "campaign_type": "seasonal",
+      "start_date": "2024-02-03",
+      "end_date": "2024-04-05",
+      "status": "shipped",
+      "budget_planned": 1078571,
+      "budget_actual": 1013857,
+      "currency": "GBP",
+      "summary": "Flagship Opening seasonal for Kestrel across DE, US."
+    }
+  },
+  {
+    "id": "campaign:kestrel-winter-layering-50-26",
+    "type": "Campaign",
+    "properties": {
+      "name": "Winter Layering — UK/DE AW26",
+      "campaign_type": "seasonal",
+      "start_date": "2026-07-01",
+      "end_date": "2026-09-27",
+      "status": "shipped",
+      "budget_planned": 186630,
+      "budget_actual": 188496,
+      "currency": "GBP",
+      "summary": "Winter Layering seasonal for Kestrel across UK, DE."
+    }
+  },
+  {
+    "id": "campaign:kestrel-sustainability-story-51-24",
+    "type": "Campaign",
+    "properties": {
+      "name": "Sustainability Story — US/FR/DE SS24",
+      "campaign_type": "retail_activation",
+      "start_date": "2024-04-08",
+      "end_date": "2024-06-09",
+      "status": "shipped",
+      "budget_planned": 734097,
+      "budget_actual": 822189,
+      "currency": "GBP",
+      "summary": "Sustainability Story retail activation for Kestrel across US, FR, DE."
+    }
+  },
+  {
+    "id": "campaign:kestrel-footwear-launch-52-25",
+    "type": "Campaign",
+    "properties": {
+      "name": "Footwear Launch — JP/US SS25",
+      "campaign_type": "retail_activation",
+      "start_date": "2025-04-07",
+      "end_date": "2025-08-14",
+      "status": "shipped",
+      "budget_planned": 1350966,
+      "budget_actual": 1405005,
+      "currency": "GBP",
+      "summary": "Footwear Launch retail activation for Kestrel across JP, US."
+    }
+  },
+  {
+    "id": "campaign:kestrel-sustainability-story-53-25",
+    "type": "Campaign",
+    "properties": {
+      "name": "Sustainability Story — CN/DE AW25",
+      "campaign_type": "product_launch",
+      "start_date": "2025-02-06",
+      "end_date": "2025-04-11",
+      "status": "shipped",
+      "budget_planned": 183691,
+      "budget_actual": 174506,
+      "currency": "GBP",
+      "summary": "Sustainability Story product launch for Kestrel across CN, DE."
+    }
+  },
+  {
+    "id": "campaign:kestrel-wholesale-roadshow-54-26",
+    "type": "Campaign",
+    "properties": {
+      "name": "Wholesale Roadshow — CN/US/JP AW26",
+      "campaign_type": "seasonal",
+      "start_date": "2026-09-02",
+      "end_date": "2026-11-26",
+      "status": "shipped",
+      "budget_planned": 986086,
+      "budget_actual": 1025529,
+      "currency": "GBP",
+      "summary": "Wholesale Roadshow seasonal for Kestrel across CN, US, JP."
+    }
+  },
+  {
+    "id": "campaign:kestrel-flagship-opening-55-24",
+    "type": "Campaign",
+    "properties": {
+      "name": "Flagship Opening — US SS24",
+      "campaign_type": "retail_activation",
+      "start_date": "2024-07-09",
+      "end_date": "2024-09-18",
+      "status": "shipped",
+      "budget_planned": 1075587,
+      "budget_actual": 1000296,
+      "currency": "GBP",
+      "summary": "Flagship Opening retail activation for Kestrel across US."
+    }
+  },
+  {
+    "id": "campaign:kestrel-marathon-push-56-25",
+    "type": "Campaign",
+    "properties": {
+      "name": "Marathon Push — US/JP/UK AW25",
+      "campaign_type": "always_on",
+      "start_date": "2025-06-02",
+      "end_date": "2025-10-02",
+      "status": "shipped",
+      "budget_planned": 699054,
+      "budget_actual": 685073,
+      "currency": "GBP",
+      "summary": "Marathon Push always on for Kestrel across US, JP, UK."
+    }
+  },
+  {
+    "id": "campaign:kestrel-footwear-launch-57-24",
+    "type": "Campaign",
+    "properties": {
+      "name": "Footwear Launch — US/JP/UK AW24",
+      "campaign_type": "seasonal",
+      "start_date": "2024-03-09",
+      "end_date": "2024-06-20",
+      "status": "shipped",
+      "budget_planned": 207326,
+      "budget_actual": 219766,
+      "currency": "GBP",
+      "summary": "Footwear Launch seasonal for Kestrel across US, JP, UK."
+    }
+  },
+  {
+    "id": "campaign:kestrel-black-friday-58-26",
+    "type": "Campaign",
+    "properties": {
+      "name": "Black Friday — CN/JP/DE AW26",
+      "campaign_type": "product_launch",
+      "start_date": "2026-08-03",
+      "end_date": "2026-10-30",
+      "status": "in_production",
+      "budget_planned": 1307509,
+      "budget_actual": 1399035,
+      "currency": "GBP",
+      "summary": "Black Friday product launch for Kestrel across CN, JP, DE."
+    }
+  },
+  {
+    "id": "campaign:kestrel-trail-season-59-26",
+    "type": "Campaign",
+    "properties": {
+      "name": "Trail Season — CN/DE/UK SS26",
+      "campaign_type": "retail_activation",
+      "start_date": "2026-02-07",
+      "end_date": "2026-05-04",
+      "status": "shipped",
+      "budget_planned": 799631,
+      "budget_actual": 791635,
+      "currency": "GBP",
+      "summary": "Trail Season retail activation for Kestrel across CN, DE, UK."
+    }
+  },
+  {
+    "id": "campaign:kestrel-black-friday-60-26",
+    "type": "Campaign",
+    "properties": {
+      "name": "Black Friday — US/UK/JP SS26",
+      "campaign_type": "always_on",
+      "start_date": "2026-08-01",
+      "end_date": "2026-11-23",
+      "status": "in_market",
+      "budget_planned": 859582,
+      "budget_actual": 782220,
+      "currency": "GBP",
+      "summary": "Black Friday always on for Kestrel across US, UK, JP."
+    }
+  },
+  {
+    "id": "campaign:kestrel-gore-tex-launch-61-26",
+    "type": "Campaign",
+    "properties": {
+      "name": "Gore-Tex Launch — FR/US/CN AW26",
+      "campaign_type": "seasonal",
+      "start_date": "2026-01-09",
+      "end_date": "2026-02-24",
+      "status": "in_production",
+      "budget_planned": 1079900,
+      "budget_actual": 971910,
+      "currency": "GBP",
+      "summary": "Gore-Tex Launch seasonal for Kestrel across FR, US, CN."
+    }
+  },
+  {
+    "id": "campaign:kestrel-marathon-push-62-25",
+    "type": "Campaign",
+    "properties": {
+      "name": "Marathon Push — UK/FR/US AW25",
+      "campaign_type": "product_launch",
+      "start_date": "2025-05-07",
+      "end_date": "2025-09-12",
+      "status": "shipped",
+      "budget_planned": 361633,
+      "budget_actual": 343551,
+      "currency": "GBP",
+      "summary": "Marathon Push product launch for Kestrel across UK, FR, US."
+    }
+  },
+  {
+    "id": "campaign:kestrel-gore-tex-launch-63-26",
+    "type": "Campaign",
+    "properties": {
+      "name": "Gore-Tex Launch — FR/UK AW26",
+      "campaign_type": "product_launch",
+      "start_date": "2026-07-09",
+      "end_date": "2026-11-10",
+      "status": "in_production",
+      "budget_planned": 230647,
+      "budget_actual": 246792,
+      "currency": "GBP",
+      "summary": "Gore-Tex Launch product launch for Kestrel across FR, UK."
+    }
+  },
+  {
+    "id": "campaign:kestrel-flagship-opening-64-26",
+    "type": "Campaign",
+    "properties": {
+      "name": "Flagship Opening — DE AW26",
+      "campaign_type": "seasonal",
+      "start_date": "2026-01-04",
+      "end_date": "2026-04-09",
+      "status": "in_market",
+      "budget_planned": 938336,
+      "budget_actual": 882036,
+      "currency": "GBP",
+      "summary": "Flagship Opening seasonal for Kestrel across DE."
+    }
+  },
+  {
+    "id": "campaign:kestrel-base-layer-drop-65-26",
+    "type": "Campaign",
+    "properties": {
+      "name": "Base Layer Drop — JP/DE/US AW26",
+      "campaign_type": "retail_activation",
+      "start_date": "2026-09-03",
+      "end_date": "2026-11-22",
+      "status": "shipped",
+      "budget_planned": 562346,
+      "budget_actual": 528605,
+      "currency": "GBP",
+      "summary": "Base Layer Drop retail activation for Kestrel across JP, DE, US."
+    }
+  },
+  {
+    "id": "campaign:kestrel-marathon-push-66-24",
+    "type": "Campaign",
+    "properties": {
+      "name": "Marathon Push — US/DE/CN SS24",
+      "campaign_type": "retail_activation",
+      "start_date": "2024-01-02",
+      "end_date": "2024-02-27",
+      "status": "shipped",
+      "budget_planned": 696533,
+      "budget_actual": 633845,
+      "currency": "GBP",
+      "summary": "Marathon Push retail activation for Kestrel across US, DE, CN."
+    }
+  },
+  {
+    "id": "campaign:kestrel-wholesale-roadshow-67-25",
+    "type": "Campaign",
+    "properties": {
+      "name": "Wholesale Roadshow — CN/US AW25",
+      "campaign_type": "seasonal",
+      "start_date": "2025-05-06",
+      "end_date": "2025-07-02",
+      "status": "shipped",
+      "budget_planned": 1048546,
+      "budget_actual": 1027575,
+      "currency": "GBP",
+      "summary": "Wholesale Roadshow seasonal for Kestrel across CN, US."
+    }
+  },
+  {
+    "id": "campaign:kestrel-marathon-push-68-26",
+    "type": "Campaign",
+    "properties": {
+      "name": "Marathon Push — DE AW26",
+      "campaign_type": "seasonal",
+      "start_date": "2026-05-08",
+      "end_date": "2026-08-04",
+      "status": "shipped",
+      "budget_planned": 857690,
+      "budget_actual": 823382,
+      "currency": "GBP",
+      "summary": "Marathon Push seasonal for Kestrel across DE."
+    }
+  },
+  {
+    "id": "campaign:kestrel-trail-season-69-24",
+    "type": "Campaign",
+    "properties": {
+      "name": "Trail Season — FR/DE/US SS24",
+      "campaign_type": "product_launch",
+      "start_date": "2024-01-07",
+      "end_date": "2024-04-06",
+      "status": "shipped",
+      "budget_planned": 496468,
+      "budget_actual": 506397,
+      "currency": "GBP",
+      "summary": "Trail Season product launch for Kestrel across FR, DE, US."
+    }
   }
 ]

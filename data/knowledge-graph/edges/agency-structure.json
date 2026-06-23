@@ -1,429 +1,7652 @@
 [
-    { "from": "person:aisha-bello", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:aisha-bello", "to": "dept:client-services", "type": "BELONGS_TO" },
-    { "from": "person:aisha-bello", "to": "role:group-account-director", "type": "HAS_ROLE" },
-    { "from": "person:aisha-bello", "to": "skill:brand-strategy", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:aisha-bello", "to": "skill:negotiation", "type": "HAS_SKILL", "properties": { "proficiency": 5 } },
-    { "from": "person:aisha-bello", "to": "skill:project-management", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:aisha-bello", "to": "skill:resource-planning", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:aisha-bello", "to": "channel:D2C", "type": "EXPERIENCED_IN", "properties": { "years": 9 } },
-    { "from": "person:aisha-bello", "to": "channel:B2B2C", "type": "EXPERIENCED_IN", "properties": { "years": 8 } },
-    { "from": "person:aisha-bello", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 10 } },
-    { "from": "person:aisha-bello", "to": "category:skincare", "type": "EXPERIENCED_IN", "properties": { "years": 7 } },
-
-    { "from": "person:niamh-oreilly", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:niamh-oreilly", "to": "dept:client-services", "type": "BELONGS_TO" },
-    { "from": "person:niamh-oreilly", "to": "role:account-director", "type": "HAS_ROLE" },
-    { "from": "person:niamh-oreilly", "to": "skill:brand-strategy", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:niamh-oreilly", "to": "skill:project-management", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:niamh-oreilly", "to": "skill:negotiation", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:niamh-oreilly", "to": "channel:D2C", "type": "EXPERIENCED_IN", "properties": { "years": 6 } },
-    { "from": "person:niamh-oreilly", "to": "channel:ECRM", "type": "EXPERIENCED_IN", "properties": { "years": 6 } },
-    { "from": "person:niamh-oreilly", "to": "channel:SOCIAL_MEDIA", "type": "EXPERIENCED_IN", "properties": { "years": 5 } },
-    { "from": "person:niamh-oreilly", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 6 } },
-    { "from": "person:niamh-oreilly", "to": "category:skincare", "type": "EXPERIENCED_IN", "properties": { "years": 4 } },
-
-    { "from": "person:jordan-reeves", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:jordan-reeves", "to": "dept:client-services", "type": "BELONGS_TO" },
-    { "from": "person:jordan-reeves", "to": "role:account-director", "type": "HAS_ROLE" },
-    { "from": "person:jordan-reeves", "to": "skill:brand-strategy", "type": "HAS_SKILL", "properties": { "proficiency": 3 } },
-    { "from": "person:jordan-reeves", "to": "skill:negotiation", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:jordan-reeves", "to": "skill:project-management", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:jordan-reeves", "to": "channel:D2C", "type": "EXPERIENCED_IN", "properties": { "years": 5 } },
-    { "from": "person:jordan-reeves", "to": "channel:B2B2C", "type": "EXPERIENCED_IN", "properties": { "years": 6 } },
-    { "from": "person:jordan-reeves", "to": "channel:PAID_MEDIA", "type": "EXPERIENCED_IN", "properties": { "years": 4 } },
-    { "from": "person:jordan-reeves", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 5 } },
-    { "from": "person:jordan-reeves", "to": "category:fashion", "type": "EXPERIENCED_IN", "properties": { "years": 4 } },
-
-    { "from": "person:holly-sutton", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:holly-sutton", "to": "dept:client-services", "type": "BELONGS_TO" },
-    { "from": "person:holly-sutton", "to": "role:account-manager", "type": "HAS_ROLE" },
-    { "from": "person:holly-sutton", "to": "skill:project-management", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:holly-sutton", "to": "skill:ecrm-copy", "type": "HAS_SKILL", "properties": { "proficiency": 3 } },
-    { "from": "person:holly-sutton", "to": "channel:ECRM", "type": "EXPERIENCED_IN", "properties": { "years": 4 } },
-    { "from": "person:holly-sutton", "to": "channel:D2C", "type": "EXPERIENCED_IN", "properties": { "years": 3 } },
-    { "from": "person:holly-sutton", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 4 } },
-
-    { "from": "person:marcus-thomas", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:marcus-thomas", "to": "dept:client-services", "type": "BELONGS_TO" },
-    { "from": "person:marcus-thomas", "to": "role:account-manager", "type": "HAS_ROLE" },
-    { "from": "person:marcus-thomas", "to": "skill:project-management", "type": "HAS_SKILL", "properties": { "proficiency": 3 } },
-    { "from": "person:marcus-thomas", "to": "channel:PAID_MEDIA", "type": "EXPERIENCED_IN", "properties": { "years": 5 } },
-    { "from": "person:marcus-thomas", "to": "channel:B2B2C", "type": "EXPERIENCED_IN", "properties": { "years": 2 } },
-    { "from": "person:marcus-thomas", "to": "category:tech", "type": "EXPERIENCED_IN", "properties": { "years": 4 } },
-    { "from": "person:marcus-thomas", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 2 } },
-
-    { "from": "person:priya-davies", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:priya-davies", "to": "dept:client-services", "type": "BELONGS_TO" },
-    { "from": "person:priya-davies", "to": "role:account-executive", "type": "HAS_ROLE" },
-    { "from": "person:priya-davies", "to": "skill:project-management", "type": "HAS_SKILL", "properties": { "proficiency": 2 } },
-    { "from": "person:priya-davies", "to": "channel:ECRM", "type": "EXPERIENCED_IN", "properties": { "years": 1 } },
-    { "from": "person:priya-davies", "to": "channel:SOCIAL_MEDIA", "type": "EXPERIENCED_IN", "properties": { "years": 1 } },
-    { "from": "person:priya-davies", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 1 } },
-
-    { "from": "person:maya-chen", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:maya-chen", "to": "dept:strategy", "type": "BELONGS_TO" },
-    { "from": "person:maya-chen", "to": "role:strategy-director", "type": "HAS_ROLE" },
-    { "from": "person:maya-chen", "to": "skill:brand-strategy", "type": "HAS_SKILL", "properties": { "proficiency": 5 } },
-    { "from": "person:maya-chen", "to": "skill:positioning", "type": "HAS_SKILL", "properties": { "proficiency": 5 } },
-    { "from": "person:maya-chen", "to": "skill:audience-strategy", "type": "HAS_SKILL", "properties": { "proficiency": 5 } },
-    { "from": "person:maya-chen", "to": "skill:campaign-strategy", "type": "HAS_SKILL", "properties": { "proficiency": 5 } },
-    { "from": "person:maya-chen", "to": "skill:content-strategy", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:maya-chen", "to": "channel:SOCIAL_MEDIA", "type": "EXPERIENCED_IN", "properties": { "years": 8 } },
-    { "from": "person:maya-chen", "to": "channel:OOH", "type": "EXPERIENCED_IN", "properties": { "years": 6 } },
-    { "from": "person:maya-chen", "to": "channel:D2C", "type": "EXPERIENCED_IN", "properties": { "years": 7 } },
-    { "from": "person:maya-chen", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 9 } },
-    { "from": "person:maya-chen", "to": "category:skincare", "type": "EXPERIENCED_IN", "properties": { "years": 5 } },
-    { "from": "person:maya-chen", "to": "category:fashion", "type": "EXPERIENCED_IN", "properties": { "years": 4 } },
-
-    { "from": "person:wen-liu", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:wen-liu", "to": "dept:strategy", "type": "BELONGS_TO" },
-    { "from": "person:wen-liu", "to": "role:senior-strategist", "type": "HAS_ROLE" },
-    { "from": "person:wen-liu", "to": "skill:audience-strategy", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:wen-liu", "to": "skill:campaign-strategy", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:wen-liu", "to": "skill:content-strategy", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:wen-liu", "to": "skill:brand-strategy", "type": "HAS_SKILL", "properties": { "proficiency": 3 } },
-    { "from": "person:wen-liu", "to": "channel:SOCIAL_MEDIA", "type": "EXPERIENCED_IN", "properties": { "years": 6 } },
-    { "from": "person:wen-liu", "to": "channel:ECRM", "type": "EXPERIENCED_IN", "properties": { "years": 4 } },
-    { "from": "person:wen-liu", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 5 } },
-    { "from": "person:wen-liu", "to": "category:food-beverage", "type": "EXPERIENCED_IN", "properties": { "years": 3 } },
-
-    { "from": "person:hannah-krause", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:hannah-krause", "to": "dept:strategy", "type": "BELONGS_TO" },
-    { "from": "person:hannah-krause", "to": "role:strategist", "type": "HAS_ROLE" },
-    { "from": "person:hannah-krause", "to": "skill:audience-strategy", "type": "HAS_SKILL", "properties": { "proficiency": 3 } },
-    { "from": "person:hannah-krause", "to": "skill:content-strategy", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:hannah-krause", "to": "skill:brand-strategy", "type": "HAS_SKILL", "properties": { "proficiency": 3 } },
-    { "from": "person:hannah-krause", "to": "channel:SEO", "type": "EXPERIENCED_IN", "properties": { "years": 3 } },
-    { "from": "person:hannah-krause", "to": "channel:ECRM", "type": "EXPERIENCED_IN", "properties": { "years": 3 } },
-    { "from": "person:hannah-krause", "to": "category:skincare", "type": "EXPERIENCED_IN", "properties": { "years": 2 } },
-    { "from": "person:hannah-krause", "to": "category:wellness", "type": "EXPERIENCED_IN", "properties": { "years": 3 } },
-
-    { "from": "person:carlos-mendoza", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:carlos-mendoza", "to": "dept:strategy", "type": "BELONGS_TO" },
-    { "from": "person:carlos-mendoza", "to": "role:strategist", "type": "HAS_ROLE" },
-    { "from": "person:carlos-mendoza", "to": "skill:audience-strategy", "type": "HAS_SKILL", "properties": { "proficiency": 3 } },
-    { "from": "person:carlos-mendoza", "to": "skill:campaign-strategy", "type": "HAS_SKILL", "properties": { "proficiency": 3 } },
-    { "from": "person:carlos-mendoza", "to": "skill:brand-strategy", "type": "HAS_SKILL", "properties": { "proficiency": 3 } },
-    { "from": "person:carlos-mendoza", "to": "channel:PAID_MEDIA", "type": "EXPERIENCED_IN", "properties": { "years": 4 } },
-    { "from": "person:carlos-mendoza", "to": "channel:SOCIAL_MEDIA", "type": "EXPERIENCED_IN", "properties": { "years": 4 } },
-    { "from": "person:carlos-mendoza", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 2 } },
-    { "from": "person:carlos-mendoza", "to": "category:fashion", "type": "EXPERIENCED_IN", "properties": { "years": 3 } },
-
-    { "from": "person:james-whittaker", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:james-whittaker", "to": "dept:project-planning", "type": "BELONGS_TO" },
-    { "from": "person:james-whittaker", "to": "role:head-of-project-planning", "type": "HAS_ROLE" },
-    { "from": "person:james-whittaker", "to": "skill:project-management", "type": "HAS_SKILL", "properties": { "proficiency": 5 } },
-    { "from": "person:james-whittaker", "to": "skill:resource-planning", "type": "HAS_SKILL", "properties": { "proficiency": 5 } },
-    { "from": "person:james-whittaker", "to": "skill:negotiation", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:james-whittaker", "to": "channel:OOH", "type": "EXPERIENCED_IN", "properties": { "years": 10 } },
-    { "from": "person:james-whittaker", "to": "channel:SOCIAL_MEDIA", "type": "EXPERIENCED_IN", "properties": { "years": 9 } },
-    { "from": "person:james-whittaker", "to": "channel:D2C", "type": "EXPERIENCED_IN", "properties": { "years": 9 } },
-    { "from": "person:james-whittaker", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 7 } },
-    { "from": "person:james-whittaker", "to": "category:fashion", "type": "EXPERIENCED_IN", "properties": { "years": 5 } },
-
-    { "from": "person:beatrix-almeida", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:beatrix-almeida", "to": "dept:project-planning", "type": "BELONGS_TO" },
-    { "from": "person:beatrix-almeida", "to": "role:senior-project-manager", "type": "HAS_ROLE" },
-    { "from": "person:beatrix-almeida", "to": "skill:project-management", "type": "HAS_SKILL", "properties": { "proficiency": 5 } },
-    { "from": "person:beatrix-almeida", "to": "skill:resource-planning", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:beatrix-almeida", "to": "channel:SOCIAL_MEDIA", "type": "EXPERIENCED_IN", "properties": { "years": 5 } },
-    { "from": "person:beatrix-almeida", "to": "channel:OOH", "type": "EXPERIENCED_IN", "properties": { "years": 4 } },
-    { "from": "person:beatrix-almeida", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 6 } },
-
-    { "from": "person:anita-vasquez", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:anita-vasquez", "to": "dept:project-planning", "type": "BELONGS_TO" },
-    { "from": "person:anita-vasquez", "to": "role:senior-project-manager", "type": "HAS_ROLE" },
-    { "from": "person:anita-vasquez", "to": "skill:project-management", "type": "HAS_SKILL", "properties": { "proficiency": 5 } },
-    { "from": "person:anita-vasquez", "to": "skill:resource-planning", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:anita-vasquez", "to": "channel:B2B2C", "type": "EXPERIENCED_IN", "properties": { "years": 4 } },
-    { "from": "person:anita-vasquez", "to": "channel:OOH", "type": "EXPERIENCED_IN", "properties": { "years": 5 } },
-    { "from": "person:anita-vasquez", "to": "channel:PAID_MEDIA", "type": "EXPERIENCED_IN", "properties": { "years": 3 } },
-    { "from": "person:anita-vasquez", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 3 } },
-
-    { "from": "person:hiroto-yamada", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:hiroto-yamada", "to": "dept:project-planning", "type": "BELONGS_TO" },
-    { "from": "person:hiroto-yamada", "to": "role:project-manager", "type": "HAS_ROLE" },
-    { "from": "person:hiroto-yamada", "to": "skill:project-management", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:hiroto-yamada", "to": "channel:OOH", "type": "EXPERIENCED_IN", "properties": { "years": 3 } },
-    { "from": "person:hiroto-yamada", "to": "channel:EVENT", "type": "EXPERIENCED_IN", "properties": { "years": 4 } },
-    { "from": "person:hiroto-yamada", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 2 } },
-
-    { "from": "person:felix-okafor", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:felix-okafor", "to": "dept:project-planning", "type": "BELONGS_TO" },
-    { "from": "person:felix-okafor", "to": "role:producer", "type": "HAS_ROLE" },
-    { "from": "person:felix-okafor", "to": "skill:video-production", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:felix-okafor", "to": "skill:still-production", "type": "HAS_SKILL", "properties": { "proficiency": 5 } },
-    { "from": "person:felix-okafor", "to": "skill:project-management", "type": "HAS_SKILL", "properties": { "proficiency": 3 } },
-    { "from": "person:felix-okafor", "to": "channel:SOCIAL_MEDIA", "type": "EXPERIENCED_IN", "properties": { "years": 5 } },
-    { "from": "person:felix-okafor", "to": "channel:OOH", "type": "EXPERIENCED_IN", "properties": { "years": 4 } },
-    { "from": "person:felix-okafor", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 4 } },
-
-    { "from": "person:caitlin-doyle", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:caitlin-doyle", "to": "dept:new-business", "type": "BELONGS_TO" },
-    { "from": "person:caitlin-doyle", "to": "role:head-of-new-business", "type": "HAS_ROLE" },
-    { "from": "person:caitlin-doyle", "to": "skill:new-business-pitching", "type": "HAS_SKILL", "properties": { "proficiency": 5 } },
-    { "from": "person:caitlin-doyle", "to": "skill:negotiation", "type": "HAS_SKILL", "properties": { "proficiency": 5 } },
-    { "from": "person:caitlin-doyle", "to": "skill:brand-strategy", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:caitlin-doyle", "to": "channel:D2C", "type": "EXPERIENCED_IN", "properties": { "years": 11 } },
-    { "from": "person:caitlin-doyle", "to": "channel:B2B2C", "type": "EXPERIENCED_IN", "properties": { "years": 9 } },
-    { "from": "person:caitlin-doyle", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 11 } },
-    { "from": "person:caitlin-doyle", "to": "category:fashion", "type": "EXPERIENCED_IN", "properties": { "years": 6 } },
-
-    { "from": "person:anuva-kapoor", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:anuva-kapoor", "to": "dept:new-business", "type": "BELONGS_TO" },
-    { "from": "person:anuva-kapoor", "to": "role:new-business-manager", "type": "HAS_ROLE" },
-    { "from": "person:anuva-kapoor", "to": "skill:new-business-pitching", "type": "HAS_SKILL", "properties": { "proficiency": 3 } },
-    { "from": "person:anuva-kapoor", "to": "skill:negotiation", "type": "HAS_SKILL", "properties": { "proficiency": 3 } },
-    { "from": "person:anuva-kapoor", "to": "channel:D2C", "type": "EXPERIENCED_IN", "properties": { "years": 4 } },
-    { "from": "person:anuva-kapoor", "to": "category:tech", "type": "EXPERIENCED_IN", "properties": { "years": 4 } },
-    { "from": "person:anuva-kapoor", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 2 } },
-
-    { "from": "person:ravi-nair", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:ravi-nair", "to": "dept:accounts", "type": "BELONGS_TO" },
-    { "from": "person:ravi-nair", "to": "role:finance-director", "type": "HAS_ROLE" },
-    { "from": "person:ravi-nair", "to": "skill:analytics", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:ravi-nair", "to": "skill:negotiation", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:ravi-nair", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 8 } },
-
-    { "from": "person:mei-fong", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:mei-fong", "to": "dept:accounts", "type": "BELONGS_TO" },
-    { "from": "person:mei-fong", "to": "role:finance-manager", "type": "HAS_ROLE" },
-    { "from": "person:mei-fong", "to": "skill:analytics", "type": "HAS_SKILL", "properties": { "proficiency": 3 } },
-    { "from": "person:mei-fong", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 5 } },
-
-    { "from": "person:pablo-romero", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:pablo-romero", "to": "dept:accounts", "type": "BELONGS_TO" },
-    { "from": "person:pablo-romero", "to": "role:bookkeeper", "type": "HAS_ROLE" },
-
-    { "from": "person:tom-hartley", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:tom-hartley", "to": "dept:creative", "type": "BELONGS_TO" },
-    { "from": "person:tom-hartley", "to": "role:executive-creative-director", "type": "HAS_ROLE" },
-    { "from": "person:tom-hartley", "to": "skill:creative-direction", "type": "HAS_SKILL", "properties": { "proficiency": 5 } },
-    { "from": "person:tom-hartley", "to": "skill:art-direction", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:tom-hartley", "to": "skill:concept-development", "type": "HAS_SKILL", "properties": { "proficiency": 5 } },
-    { "from": "person:tom-hartley", "to": "skill:copywriting-short-form", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:tom-hartley", "to": "channel:SOCIAL_MEDIA", "type": "EXPERIENCED_IN", "properties": { "years": 11 } },
-    { "from": "person:tom-hartley", "to": "channel:OOH", "type": "EXPERIENCED_IN", "properties": { "years": 11 } },
-    { "from": "person:tom-hartley", "to": "channel:D2C", "type": "EXPERIENCED_IN", "properties": { "years": 9 } },
-    { "from": "person:tom-hartley", "to": "channel:B2B2C", "type": "EXPERIENCED_IN", "properties": { "years": 8 } },
-    { "from": "person:tom-hartley", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 11 } },
-    { "from": "person:tom-hartley", "to": "category:fashion", "type": "EXPERIENCED_IN", "properties": { "years": 8 } },
-
-    { "from": "person:linus-schmidt", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:linus-schmidt", "to": "dept:creative", "type": "BELONGS_TO" },
-    { "from": "person:linus-schmidt", "to": "role:creative-director", "type": "HAS_ROLE" },
-    { "from": "person:linus-schmidt", "to": "skill:creative-direction", "type": "HAS_SKILL", "properties": { "proficiency": 5 } },
-    { "from": "person:linus-schmidt", "to": "skill:art-direction", "type": "HAS_SKILL", "properties": { "proficiency": 5 } },
-    { "from": "person:linus-schmidt", "to": "skill:concept-development", "type": "HAS_SKILL", "properties": { "proficiency": 5 } },
-    { "from": "person:linus-schmidt", "to": "skill:graphic-design", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:linus-schmidt", "to": "channel:SOCIAL_MEDIA", "type": "EXPERIENCED_IN", "properties": { "years": 7 } },
-    { "from": "person:linus-schmidt", "to": "channel:OOH", "type": "EXPERIENCED_IN", "properties": { "years": 6 } },
-    { "from": "person:linus-schmidt", "to": "channel:POSM", "type": "EXPERIENCED_IN", "properties": { "years": 5 } },
-    { "from": "person:linus-schmidt", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 6 } },
-    { "from": "person:linus-schmidt", "to": "category:skincare", "type": "EXPERIENCED_IN", "properties": { "years": 4 } },
-
-    { "from": "person:sophie-tremblay", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:sophie-tremblay", "to": "dept:creative", "type": "BELONGS_TO" },
-    { "from": "person:sophie-tremblay", "to": "role:associate-creative-director", "type": "HAS_ROLE" },
-    { "from": "person:sophie-tremblay", "to": "skill:art-direction", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:sophie-tremblay", "to": "skill:concept-development", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:sophie-tremblay", "to": "skill:copywriting-short-form", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:sophie-tremblay", "to": "skill:creative-direction", "type": "HAS_SKILL", "properties": { "proficiency": 3 } },
-    { "from": "person:sophie-tremblay", "to": "channel:SOCIAL_MEDIA", "type": "EXPERIENCED_IN", "properties": { "years": 6 } },
-    { "from": "person:sophie-tremblay", "to": "channel:OOH", "type": "EXPERIENCED_IN", "properties": { "years": 4 } },
-    { "from": "person:sophie-tremblay", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 5 } },
-    { "from": "person:sophie-tremblay", "to": "category:skincare", "type": "EXPERIENCED_IN", "properties": { "years": 3 } },
-
-    { "from": "person:olu-adesanya", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:olu-adesanya", "to": "dept:creative", "type": "BELONGS_TO" },
-    { "from": "person:olu-adesanya", "to": "role:senior-art-director", "type": "HAS_ROLE" },
-    { "from": "person:olu-adesanya", "to": "skill:art-direction", "type": "HAS_SKILL", "properties": { "proficiency": 5 } },
-    { "from": "person:olu-adesanya", "to": "skill:graphic-design", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:olu-adesanya", "to": "skill:still-production", "type": "HAS_SKILL", "properties": { "proficiency": 3 } },
-    { "from": "person:olu-adesanya", "to": "channel:SOCIAL_MEDIA", "type": "EXPERIENCED_IN", "properties": { "years": 6 } },
-    { "from": "person:olu-adesanya", "to": "channel:POSM", "type": "EXPERIENCED_IN", "properties": { "years": 4 } },
-    { "from": "person:olu-adesanya", "to": "channel:OOH", "type": "EXPERIENCED_IN", "properties": { "years": 4 } },
-    { "from": "person:olu-adesanya", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 5 } },
-    { "from": "person:olu-adesanya", "to": "category:fashion", "type": "EXPERIENCED_IN", "properties": { "years": 4 } },
-
-    { "from": "person:akira-tanaka", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:akira-tanaka", "to": "dept:creative", "type": "BELONGS_TO" },
-    { "from": "person:akira-tanaka", "to": "role:senior-art-director", "type": "HAS_ROLE" },
-    { "from": "person:akira-tanaka", "to": "skill:art-direction", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:akira-tanaka", "to": "skill:graphic-design", "type": "HAS_SKILL", "properties": { "proficiency": 5 } },
-    { "from": "person:akira-tanaka", "to": "skill:motion-design", "type": "HAS_SKILL", "properties": { "proficiency": 3 } },
-    { "from": "person:akira-tanaka", "to": "channel:SOCIAL_MEDIA", "type": "EXPERIENCED_IN", "properties": { "years": 7 } },
-    { "from": "person:akira-tanaka", "to": "channel:OOH", "type": "EXPERIENCED_IN", "properties": { "years": 5 } },
-    { "from": "person:akira-tanaka", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 3 } },
-    { "from": "person:akira-tanaka", "to": "category:tech", "type": "EXPERIENCED_IN", "properties": { "years": 4 } },
-
-    { "from": "person:pari-banerjee", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:pari-banerjee", "to": "dept:creative", "type": "BELONGS_TO" },
-    { "from": "person:pari-banerjee", "to": "role:senior-copywriter", "type": "HAS_ROLE" },
-    { "from": "person:pari-banerjee", "to": "skill:copywriting-long-form", "type": "HAS_SKILL", "properties": { "proficiency": 5 } },
-    { "from": "person:pari-banerjee", "to": "skill:copywriting-short-form", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:pari-banerjee", "to": "skill:content-strategy", "type": "HAS_SKILL", "properties": { "proficiency": 3 } },
-    { "from": "person:pari-banerjee", "to": "channel:D2C", "type": "EXPERIENCED_IN", "properties": { "years": 6 } },
-    { "from": "person:pari-banerjee", "to": "channel:ECRM", "type": "EXPERIENCED_IN", "properties": { "years": 5 } },
-    { "from": "person:pari-banerjee", "to": "channel:SOCIAL_MEDIA", "type": "EXPERIENCED_IN", "properties": { "years": 6 } },
-    { "from": "person:pari-banerjee", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 6 } },
-    { "from": "person:pari-banerjee", "to": "category:wellness", "type": "EXPERIENCED_IN", "properties": { "years": 3 } },
-
-    { "from": "person:naomi-brooks", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:naomi-brooks", "to": "dept:creative", "type": "BELONGS_TO" },
-    { "from": "person:naomi-brooks", "to": "role:senior-copywriter", "type": "HAS_ROLE" },
-    { "from": "person:naomi-brooks", "to": "skill:copywriting-short-form", "type": "HAS_SKILL", "properties": { "proficiency": 5 } },
-    { "from": "person:naomi-brooks", "to": "skill:copywriting-long-form", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:naomi-brooks", "to": "skill:concept-development", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:naomi-brooks", "to": "channel:SOCIAL_MEDIA", "type": "EXPERIENCED_IN", "properties": { "years": 6 } },
-    { "from": "person:naomi-brooks", "to": "channel:OOH", "type": "EXPERIENCED_IN", "properties": { "years": 4 } },
-    { "from": "person:naomi-brooks", "to": "channel:ECRM", "type": "EXPERIENCED_IN", "properties": { "years": 4 } },
-    { "from": "person:naomi-brooks", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 3 } },
-    { "from": "person:naomi-brooks", "to": "category:food-beverage", "type": "EXPERIENCED_IN", "properties": { "years": 4 } },
-
-    { "from": "person:daniel-carlsson", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:daniel-carlsson", "to": "dept:creative", "type": "BELONGS_TO" },
-    { "from": "person:daniel-carlsson", "to": "role:designer", "type": "HAS_ROLE" },
-    { "from": "person:daniel-carlsson", "to": "skill:graphic-design", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:daniel-carlsson", "to": "skill:motion-design", "type": "HAS_SKILL", "properties": { "proficiency": 3 } },
-    { "from": "person:daniel-carlsson", "to": "channel:SOCIAL_MEDIA", "type": "EXPERIENCED_IN", "properties": { "years": 4 } },
-    { "from": "person:daniel-carlsson", "to": "channel:D2C", "type": "EXPERIENCED_IN", "properties": { "years": 3 } },
-    { "from": "person:daniel-carlsson", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 3 } },
-    { "from": "person:daniel-carlsson", "to": "category:tech", "type": "EXPERIENCED_IN", "properties": { "years": 3 } },
-
-    { "from": "person:tara-lim", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:tara-lim", "to": "dept:creative", "type": "BELONGS_TO" },
-    { "from": "person:tara-lim", "to": "role:designer", "type": "HAS_ROLE" },
-    { "from": "person:tara-lim", "to": "skill:graphic-design", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:tara-lim", "to": "skill:motion-design", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:tara-lim", "to": "channel:SOCIAL_MEDIA", "type": "EXPERIENCED_IN", "properties": { "years": 3 } },
-    { "from": "person:tara-lim", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 2 } },
-    { "from": "person:tara-lim", "to": "category:fashion", "type": "EXPERIENCED_IN", "properties": { "years": 3 } },
-
-    { "from": "person:imani-ofori", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:imani-ofori", "to": "dept:creative", "type": "BELONGS_TO" },
-    { "from": "person:imani-ofori", "to": "role:copywriter", "type": "HAS_ROLE" },
-    { "from": "person:imani-ofori", "to": "skill:copywriting-short-form", "type": "HAS_SKILL", "properties": { "proficiency": 3 } },
-    { "from": "person:imani-ofori", "to": "skill:ecrm-copy", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:imani-ofori", "to": "channel:SOCIAL_MEDIA", "type": "EXPERIENCED_IN", "properties": { "years": 3 } },
-    { "from": "person:imani-ofori", "to": "channel:ECRM", "type": "EXPERIENCED_IN", "properties": { "years": 3 } },
-    { "from": "person:imani-ofori", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 3 } },
-
-    { "from": "person:beatriz-silva", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:beatriz-silva", "to": "dept:creative", "type": "BELONGS_TO" },
-    { "from": "person:beatriz-silva", "to": "role:copywriter", "type": "HAS_ROLE" },
-    { "from": "person:beatriz-silva", "to": "skill:copywriting-short-form", "type": "HAS_SKILL", "properties": { "proficiency": 3 } },
-    { "from": "person:beatriz-silva", "to": "skill:copywriting-long-form", "type": "HAS_SKILL", "properties": { "proficiency": 3 } },
-    { "from": "person:beatriz-silva", "to": "channel:SOCIAL_MEDIA", "type": "EXPERIENCED_IN", "properties": { "years": 4 } },
-    { "from": "person:beatriz-silva", "to": "channel:ECRM", "type": "EXPERIENCED_IN", "properties": { "years": 2 } },
-    { "from": "person:beatriz-silva", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 1 } },
-    { "from": "person:beatriz-silva", "to": "category:fashion", "type": "EXPERIENCED_IN", "properties": { "years": 2 } },
-
-    { "from": "person:ben-phillips", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:ben-phillips", "to": "dept:channel-experts", "type": "BELONGS_TO" },
-    { "from": "person:ben-phillips", "to": "role:head-of-channels", "type": "HAS_ROLE" },
-    { "from": "person:ben-phillips", "to": "skill:analytics", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:ben-phillips", "to": "skill:attribution", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:ben-phillips", "to": "skill:paid-search", "type": "HAS_SKILL", "properties": { "proficiency": 3 } },
-    { "from": "person:ben-phillips", "to": "skill:seo-traditional", "type": "HAS_SKILL", "properties": { "proficiency": 3 } },
-    { "from": "person:ben-phillips", "to": "channel:PAID_MEDIA", "type": "EXPERIENCED_IN", "properties": { "years": 9 } },
-    { "from": "person:ben-phillips", "to": "channel:SEO", "type": "EXPERIENCED_IN", "properties": { "years": 9 } },
-    { "from": "person:ben-phillips", "to": "channel:D2C", "type": "EXPERIENCED_IN", "properties": { "years": 8 } },
-    { "from": "person:ben-phillips", "to": "channel:SOCIAL_MEDIA", "type": "EXPERIENCED_IN", "properties": { "years": 6 } },
-    { "from": "person:ben-phillips", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 7 } },
-    { "from": "person:ben-phillips", "to": "category:tech", "type": "EXPERIENCED_IN", "properties": { "years": 6 } },
-
-    { "from": "person:mateusz-kowalski", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:mateusz-kowalski", "to": "dept:channel-experts", "type": "BELONGS_TO" },
-    { "from": "person:mateusz-kowalski", "to": "role:channel-lead", "type": "HAS_ROLE" },
-    { "from": "person:mateusz-kowalski", "to": "skill:seo-traditional", "type": "HAS_SKILL", "properties": { "proficiency": 5 } },
-    { "from": "person:mateusz-kowalski", "to": "skill:seo-aeo-geo", "type": "HAS_SKILL", "properties": { "proficiency": 5 } },
-    { "from": "person:mateusz-kowalski", "to": "skill:analytics", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:mateusz-kowalski", "to": "channel:SEO", "type": "EXPERIENCED_IN", "properties": { "years": 8 } },
-    { "from": "person:mateusz-kowalski", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 4 } },
-    { "from": "person:mateusz-kowalski", "to": "category:tech", "type": "EXPERIENCED_IN", "properties": { "years": 5 } },
-
-    { "from": "person:rachel-cohen", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:rachel-cohen", "to": "dept:channel-experts", "type": "BELONGS_TO" },
-    { "from": "person:rachel-cohen", "to": "role:channel-lead", "type": "HAS_ROLE" },
-    { "from": "person:rachel-cohen", "to": "skill:paid-search", "type": "HAS_SKILL", "properties": { "proficiency": 5 } },
-    { "from": "person:rachel-cohen", "to": "skill:paid-social", "type": "HAS_SKILL", "properties": { "proficiency": 5 } },
-    { "from": "person:rachel-cohen", "to": "skill:programmatic", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:rachel-cohen", "to": "skill:attribution", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:rachel-cohen", "to": "channel:PAID_MEDIA", "type": "EXPERIENCED_IN", "properties": { "years": 7 } },
-    { "from": "person:rachel-cohen", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 4 } },
-    { "from": "person:rachel-cohen", "to": "category:fashion", "type": "EXPERIENCED_IN", "properties": { "years": 3 } },
-
-    { "from": "person:devon-ahmadi", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:devon-ahmadi", "to": "dept:channel-experts", "type": "BELONGS_TO" },
-    { "from": "person:devon-ahmadi", "to": "role:channel-lead", "type": "HAS_ROLE" },
-    { "from": "person:devon-ahmadi", "to": "skill:social-organic", "type": "HAS_SKILL", "properties": { "proficiency": 5 } },
-    { "from": "person:devon-ahmadi", "to": "skill:influencer", "type": "HAS_SKILL", "properties": { "proficiency": 5 } },
-    { "from": "person:devon-ahmadi", "to": "skill:concept-development", "type": "HAS_SKILL", "properties": { "proficiency": 3 } },
-    { "from": "person:devon-ahmadi", "to": "channel:SOCIAL_MEDIA", "type": "EXPERIENCED_IN", "properties": { "years": 6 } },
-    { "from": "person:devon-ahmadi", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 5 } },
-
-    { "from": "person:lucas-muller", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:lucas-muller", "to": "dept:channel-experts", "type": "BELONGS_TO" },
-    { "from": "person:lucas-muller", "to": "role:channel-lead", "type": "HAS_ROLE" },
-    { "from": "person:lucas-muller", "to": "skill:ecrm-architecture", "type": "HAS_SKILL", "properties": { "proficiency": 5 } },
-    { "from": "person:lucas-muller", "to": "skill:ecrm-copy", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:lucas-muller", "to": "skill:analytics", "type": "HAS_SKILL", "properties": { "proficiency": 3 } },
-    { "from": "person:lucas-muller", "to": "channel:ECRM", "type": "EXPERIENCED_IN", "properties": { "years": 8 } },
-    { "from": "person:lucas-muller", "to": "channel:D2C", "type": "EXPERIENCED_IN", "properties": { "years": 5 } },
-    { "from": "person:lucas-muller", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 5 } },
-    { "from": "person:lucas-muller", "to": "category:food-beverage", "type": "EXPERIENCED_IN", "properties": { "years": 4 } },
-
-    { "from": "person:eshe-otieno", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:eshe-otieno", "to": "dept:channel-experts", "type": "BELONGS_TO" },
-    { "from": "person:eshe-otieno", "to": "role:channel-lead", "type": "HAS_ROLE" },
-    { "from": "person:eshe-otieno", "to": "skill:experimentation", "type": "HAS_SKILL", "properties": { "proficiency": 5 } },
-    { "from": "person:eshe-otieno", "to": "skill:analytics", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:eshe-otieno", "to": "skill:attribution", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:eshe-otieno", "to": "channel:D2C", "type": "EXPERIENCED_IN", "properties": { "years": 7 } },
-    { "from": "person:eshe-otieno", "to": "channel:UX", "type": "EXPERIENCED_IN", "properties": { "years": 6 } },
-    { "from": "person:eshe-otieno", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 4 } },
-    { "from": "person:eshe-otieno", "to": "category:tech", "type": "EXPERIENCED_IN", "properties": { "years": 5 } },
-
-    { "from": "person:lila-tan", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:lila-tan", "to": "dept:channel-experts", "type": "BELONGS_TO" },
-    { "from": "person:lila-tan", "to": "role:channel-lead", "type": "HAS_ROLE" },
-    { "from": "person:lila-tan", "to": "skill:ooh-planning", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:lila-tan", "to": "skill:posm-execution", "type": "HAS_SKILL", "properties": { "proficiency": 5 } },
-    { "from": "person:lila-tan", "to": "skill:events-production", "type": "HAS_SKILL", "properties": { "proficiency": 5 } },
-    { "from": "person:lila-tan", "to": "skill:print-production", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:lila-tan", "to": "channel:OOH", "type": "EXPERIENCED_IN", "properties": { "years": 6 } },
-    { "from": "person:lila-tan", "to": "channel:POSM", "type": "EXPERIENCED_IN", "properties": { "years": 6 } },
-    { "from": "person:lila-tan", "to": "channel:EVENT", "type": "EXPERIENCED_IN", "properties": { "years": 5 } },
-    { "from": "person:lila-tan", "to": "channel:B2B2C", "type": "EXPERIENCED_IN", "properties": { "years": 4 } },
-    { "from": "person:lila-tan", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 3 } },
-    { "from": "person:lila-tan", "to": "category:fashion", "type": "EXPERIENCED_IN", "properties": { "years": 5 } },
-
-    { "from": "person:sara-mehta", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:sara-mehta", "to": "dept:channel-experts", "type": "BELONGS_TO" },
-    { "from": "person:sara-mehta", "to": "role:senior-channel-specialist", "type": "HAS_ROLE" },
-    { "from": "person:sara-mehta", "to": "skill:paid-search", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:sara-mehta", "to": "skill:paid-social", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:sara-mehta", "to": "skill:analytics", "type": "HAS_SKILL", "properties": { "proficiency": 3 } },
-    { "from": "person:sara-mehta", "to": "channel:PAID_MEDIA", "type": "EXPERIENCED_IN", "properties": { "years": 5 } },
-    { "from": "person:sara-mehta", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 3 } },
-
-    { "from": "person:kieran-walsh", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:kieran-walsh", "to": "dept:channel-experts", "type": "BELONGS_TO" },
-    { "from": "person:kieran-walsh", "to": "role:senior-channel-specialist", "type": "HAS_ROLE" },
-    { "from": "person:kieran-walsh", "to": "skill:social-organic", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:kieran-walsh", "to": "skill:influencer", "type": "HAS_SKILL", "properties": { "proficiency": 4 } },
-    { "from": "person:kieran-walsh", "to": "channel:SOCIAL_MEDIA", "type": "EXPERIENCED_IN", "properties": { "years": 5 } },
-    { "from": "person:kieran-walsh", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 2 } },
-    { "from": "person:kieran-walsh", "to": "category:fashion", "type": "EXPERIENCED_IN", "properties": { "years": 4 } },
-
-    { "from": "person:marcus-reilly", "to": "agency:halo-helix", "type": "EMPLOYED_BY" },
-    { "from": "person:marcus-reilly", "to": "dept:channel-experts", "type": "BELONGS_TO" },
-    { "from": "person:marcus-reilly", "to": "role:channel-specialist", "type": "HAS_ROLE" },
-    { "from": "person:marcus-reilly", "to": "skill:posm-execution", "type": "HAS_SKILL", "properties": { "proficiency": 3 } },
-    { "from": "person:marcus-reilly", "to": "skill:ooh-planning", "type": "HAS_SKILL", "properties": { "proficiency": 2 } },
-    { "from": "person:marcus-reilly", "to": "channel:POSM", "type": "EXPERIENCED_IN", "properties": { "years": 2 } },
-    { "from": "person:marcus-reilly", "to": "channel:OOH", "type": "EXPERIENCED_IN", "properties": { "years": 2 } },
-    { "from": "person:marcus-reilly", "to": "category:beauty", "type": "EXPERIENCED_IN", "properties": { "years": 1 } }
+  {
+    "from": "person:aisha-bello",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:aisha-bello",
+    "to": "dept:client-services",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:aisha-bello",
+    "to": "role:group-account-director",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:aisha-bello",
+    "to": "skill:brand-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:aisha-bello",
+    "to": "skill:negotiation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:aisha-bello",
+    "to": "skill:project-management",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:aisha-bello",
+    "to": "skill:resource-planning",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:aisha-bello",
+    "to": "channel:D2C",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 9
+    }
+  },
+  {
+    "from": "person:aisha-bello",
+    "to": "channel:B2B2C",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 8
+    }
+  },
+  {
+    "from": "person:aisha-bello",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 10
+    }
+  },
+  {
+    "from": "person:aisha-bello",
+    "to": "category:skincare",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 7
+    }
+  },
+  {
+    "from": "person:niamh-oreilly",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:niamh-oreilly",
+    "to": "dept:client-services",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:niamh-oreilly",
+    "to": "role:account-director",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:niamh-oreilly",
+    "to": "skill:brand-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:niamh-oreilly",
+    "to": "skill:project-management",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:niamh-oreilly",
+    "to": "skill:negotiation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:niamh-oreilly",
+    "to": "channel:D2C",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:niamh-oreilly",
+    "to": "channel:ECRM",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:niamh-oreilly",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:niamh-oreilly",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:niamh-oreilly",
+    "to": "category:skincare",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:jordan-reeves",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:jordan-reeves",
+    "to": "dept:client-services",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:jordan-reeves",
+    "to": "role:account-director",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:jordan-reeves",
+    "to": "skill:brand-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:jordan-reeves",
+    "to": "skill:negotiation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:jordan-reeves",
+    "to": "skill:project-management",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:jordan-reeves",
+    "to": "channel:D2C",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:jordan-reeves",
+    "to": "channel:B2B2C",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:jordan-reeves",
+    "to": "channel:PAID_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:jordan-reeves",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:jordan-reeves",
+    "to": "category:fashion",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:holly-sutton",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:holly-sutton",
+    "to": "dept:client-services",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:holly-sutton",
+    "to": "role:account-manager",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:holly-sutton",
+    "to": "skill:project-management",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:holly-sutton",
+    "to": "skill:ecrm-copy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:holly-sutton",
+    "to": "channel:ECRM",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:holly-sutton",
+    "to": "channel:D2C",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:holly-sutton",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:marcus-thomas",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:marcus-thomas",
+    "to": "dept:client-services",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:marcus-thomas",
+    "to": "role:account-manager",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:marcus-thomas",
+    "to": "skill:project-management",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:marcus-thomas",
+    "to": "channel:PAID_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:marcus-thomas",
+    "to": "channel:B2B2C",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 2
+    }
+  },
+  {
+    "from": "person:marcus-thomas",
+    "to": "category:tech",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:marcus-thomas",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 2
+    }
+  },
+  {
+    "from": "person:priya-davies",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:priya-davies",
+    "to": "dept:client-services",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:priya-davies",
+    "to": "role:account-executive",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:priya-davies",
+    "to": "skill:project-management",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 2
+    }
+  },
+  {
+    "from": "person:priya-davies",
+    "to": "channel:ECRM",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 1
+    }
+  },
+  {
+    "from": "person:priya-davies",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 1
+    }
+  },
+  {
+    "from": "person:priya-davies",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 1
+    }
+  },
+  {
+    "from": "person:maya-chen",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:maya-chen",
+    "to": "dept:strategy",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:maya-chen",
+    "to": "role:strategy-director",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:maya-chen",
+    "to": "skill:brand-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:maya-chen",
+    "to": "skill:positioning",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:maya-chen",
+    "to": "skill:audience-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:maya-chen",
+    "to": "skill:campaign-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:maya-chen",
+    "to": "skill:content-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:maya-chen",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 8
+    }
+  },
+  {
+    "from": "person:maya-chen",
+    "to": "channel:OOH",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:maya-chen",
+    "to": "channel:D2C",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 7
+    }
+  },
+  {
+    "from": "person:maya-chen",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 9
+    }
+  },
+  {
+    "from": "person:maya-chen",
+    "to": "category:skincare",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:maya-chen",
+    "to": "category:fashion",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:wen-liu",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:wen-liu",
+    "to": "dept:strategy",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:wen-liu",
+    "to": "role:senior-strategist",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:wen-liu",
+    "to": "skill:audience-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:wen-liu",
+    "to": "skill:campaign-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:wen-liu",
+    "to": "skill:content-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:wen-liu",
+    "to": "skill:brand-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:wen-liu",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:wen-liu",
+    "to": "channel:ECRM",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:wen-liu",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:wen-liu",
+    "to": "category:food-beverage",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:hannah-krause",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:hannah-krause",
+    "to": "dept:strategy",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:hannah-krause",
+    "to": "role:strategist",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:hannah-krause",
+    "to": "skill:audience-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:hannah-krause",
+    "to": "skill:content-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:hannah-krause",
+    "to": "skill:brand-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:hannah-krause",
+    "to": "channel:SEO",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:hannah-krause",
+    "to": "channel:ECRM",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:hannah-krause",
+    "to": "category:skincare",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 2
+    }
+  },
+  {
+    "from": "person:hannah-krause",
+    "to": "category:wellness",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:carlos-mendoza",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:carlos-mendoza",
+    "to": "dept:strategy",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:carlos-mendoza",
+    "to": "role:strategist",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:carlos-mendoza",
+    "to": "skill:audience-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:carlos-mendoza",
+    "to": "skill:campaign-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:carlos-mendoza",
+    "to": "skill:brand-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:carlos-mendoza",
+    "to": "channel:PAID_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:carlos-mendoza",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:carlos-mendoza",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 2
+    }
+  },
+  {
+    "from": "person:carlos-mendoza",
+    "to": "category:fashion",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:james-whittaker",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:james-whittaker",
+    "to": "dept:project-planning",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:james-whittaker",
+    "to": "role:head-of-project-planning",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:james-whittaker",
+    "to": "skill:project-management",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:james-whittaker",
+    "to": "skill:resource-planning",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:james-whittaker",
+    "to": "skill:negotiation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:james-whittaker",
+    "to": "channel:OOH",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 10
+    }
+  },
+  {
+    "from": "person:james-whittaker",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 9
+    }
+  },
+  {
+    "from": "person:james-whittaker",
+    "to": "channel:D2C",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 9
+    }
+  },
+  {
+    "from": "person:james-whittaker",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 7
+    }
+  },
+  {
+    "from": "person:james-whittaker",
+    "to": "category:fashion",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:beatrix-almeida",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:beatrix-almeida",
+    "to": "dept:project-planning",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:beatrix-almeida",
+    "to": "role:senior-project-manager",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:beatrix-almeida",
+    "to": "skill:project-management",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:beatrix-almeida",
+    "to": "skill:resource-planning",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:beatrix-almeida",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:beatrix-almeida",
+    "to": "channel:OOH",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:beatrix-almeida",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:anita-vasquez",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:anita-vasquez",
+    "to": "dept:project-planning",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:anita-vasquez",
+    "to": "role:senior-project-manager",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:anita-vasquez",
+    "to": "skill:project-management",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:anita-vasquez",
+    "to": "skill:resource-planning",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:anita-vasquez",
+    "to": "channel:B2B2C",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:anita-vasquez",
+    "to": "channel:OOH",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:anita-vasquez",
+    "to": "channel:PAID_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:anita-vasquez",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:hiroto-yamada",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:hiroto-yamada",
+    "to": "dept:project-planning",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:hiroto-yamada",
+    "to": "role:project-manager",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:hiroto-yamada",
+    "to": "skill:project-management",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:hiroto-yamada",
+    "to": "channel:OOH",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:hiroto-yamada",
+    "to": "channel:EVENT",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:hiroto-yamada",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 2
+    }
+  },
+  {
+    "from": "person:felix-okafor",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:felix-okafor",
+    "to": "dept:project-planning",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:felix-okafor",
+    "to": "role:producer",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:felix-okafor",
+    "to": "skill:video-production",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:felix-okafor",
+    "to": "skill:still-production",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:felix-okafor",
+    "to": "skill:project-management",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:felix-okafor",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:felix-okafor",
+    "to": "channel:OOH",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:felix-okafor",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:caitlin-doyle",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:caitlin-doyle",
+    "to": "dept:new-business",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:caitlin-doyle",
+    "to": "role:head-of-new-business",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:caitlin-doyle",
+    "to": "skill:new-business-pitching",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:caitlin-doyle",
+    "to": "skill:negotiation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:caitlin-doyle",
+    "to": "skill:brand-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:caitlin-doyle",
+    "to": "channel:D2C",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 11
+    }
+  },
+  {
+    "from": "person:caitlin-doyle",
+    "to": "channel:B2B2C",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 9
+    }
+  },
+  {
+    "from": "person:caitlin-doyle",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 11
+    }
+  },
+  {
+    "from": "person:caitlin-doyle",
+    "to": "category:fashion",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:anuva-kapoor",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:anuva-kapoor",
+    "to": "dept:new-business",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:anuva-kapoor",
+    "to": "role:new-business-manager",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:anuva-kapoor",
+    "to": "skill:new-business-pitching",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:anuva-kapoor",
+    "to": "skill:negotiation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:anuva-kapoor",
+    "to": "channel:D2C",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:anuva-kapoor",
+    "to": "category:tech",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:anuva-kapoor",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 2
+    }
+  },
+  {
+    "from": "person:ravi-nair",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:ravi-nair",
+    "to": "dept:accounts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:ravi-nair",
+    "to": "role:finance-director",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:ravi-nair",
+    "to": "skill:analytics",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:ravi-nair",
+    "to": "skill:negotiation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:ravi-nair",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 8
+    }
+  },
+  {
+    "from": "person:mei-fong",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:mei-fong",
+    "to": "dept:accounts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:mei-fong",
+    "to": "role:finance-manager",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:mei-fong",
+    "to": "skill:analytics",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:mei-fong",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:pablo-romero",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:pablo-romero",
+    "to": "dept:accounts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:pablo-romero",
+    "to": "role:bookkeeper",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:tom-hartley",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:tom-hartley",
+    "to": "dept:creative",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:tom-hartley",
+    "to": "role:executive-creative-director",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:tom-hartley",
+    "to": "skill:creative-direction",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:tom-hartley",
+    "to": "skill:art-direction",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:tom-hartley",
+    "to": "skill:concept-development",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:tom-hartley",
+    "to": "skill:copywriting-short-form",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:tom-hartley",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 11
+    }
+  },
+  {
+    "from": "person:tom-hartley",
+    "to": "channel:OOH",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 11
+    }
+  },
+  {
+    "from": "person:tom-hartley",
+    "to": "channel:D2C",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 9
+    }
+  },
+  {
+    "from": "person:tom-hartley",
+    "to": "channel:B2B2C",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 8
+    }
+  },
+  {
+    "from": "person:tom-hartley",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 11
+    }
+  },
+  {
+    "from": "person:tom-hartley",
+    "to": "category:fashion",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 8
+    }
+  },
+  {
+    "from": "person:linus-schmidt",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:linus-schmidt",
+    "to": "dept:creative",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:linus-schmidt",
+    "to": "role:creative-director",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:linus-schmidt",
+    "to": "skill:creative-direction",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:linus-schmidt",
+    "to": "skill:art-direction",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:linus-schmidt",
+    "to": "skill:concept-development",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:linus-schmidt",
+    "to": "skill:graphic-design",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:linus-schmidt",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 7
+    }
+  },
+  {
+    "from": "person:linus-schmidt",
+    "to": "channel:OOH",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:linus-schmidt",
+    "to": "channel:POSM",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:linus-schmidt",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:linus-schmidt",
+    "to": "category:skincare",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:sophie-tremblay",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:sophie-tremblay",
+    "to": "dept:creative",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:sophie-tremblay",
+    "to": "role:associate-creative-director",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:sophie-tremblay",
+    "to": "skill:art-direction",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:sophie-tremblay",
+    "to": "skill:concept-development",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:sophie-tremblay",
+    "to": "skill:copywriting-short-form",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:sophie-tremblay",
+    "to": "skill:creative-direction",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:sophie-tremblay",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:sophie-tremblay",
+    "to": "channel:OOH",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:sophie-tremblay",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:sophie-tremblay",
+    "to": "category:skincare",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:olu-adesanya",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:olu-adesanya",
+    "to": "dept:creative",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:olu-adesanya",
+    "to": "role:senior-art-director",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:olu-adesanya",
+    "to": "skill:art-direction",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:olu-adesanya",
+    "to": "skill:graphic-design",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:olu-adesanya",
+    "to": "skill:still-production",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:olu-adesanya",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:olu-adesanya",
+    "to": "channel:POSM",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:olu-adesanya",
+    "to": "channel:OOH",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:olu-adesanya",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:olu-adesanya",
+    "to": "category:fashion",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:akira-tanaka",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:akira-tanaka",
+    "to": "dept:creative",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:akira-tanaka",
+    "to": "role:senior-art-director",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:akira-tanaka",
+    "to": "skill:art-direction",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:akira-tanaka",
+    "to": "skill:graphic-design",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:akira-tanaka",
+    "to": "skill:motion-design",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:akira-tanaka",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 7
+    }
+  },
+  {
+    "from": "person:akira-tanaka",
+    "to": "channel:OOH",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:akira-tanaka",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:akira-tanaka",
+    "to": "category:tech",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:pari-banerjee",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:pari-banerjee",
+    "to": "dept:creative",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:pari-banerjee",
+    "to": "role:senior-copywriter",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:pari-banerjee",
+    "to": "skill:copywriting-long-form",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:pari-banerjee",
+    "to": "skill:copywriting-short-form",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:pari-banerjee",
+    "to": "skill:content-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:pari-banerjee",
+    "to": "channel:D2C",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:pari-banerjee",
+    "to": "channel:ECRM",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:pari-banerjee",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:pari-banerjee",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:pari-banerjee",
+    "to": "category:wellness",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:naomi-brooks",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:naomi-brooks",
+    "to": "dept:creative",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:naomi-brooks",
+    "to": "role:senior-copywriter",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:naomi-brooks",
+    "to": "skill:copywriting-short-form",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:naomi-brooks",
+    "to": "skill:copywriting-long-form",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:naomi-brooks",
+    "to": "skill:concept-development",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:naomi-brooks",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:naomi-brooks",
+    "to": "channel:OOH",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:naomi-brooks",
+    "to": "channel:ECRM",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:naomi-brooks",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:naomi-brooks",
+    "to": "category:food-beverage",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:daniel-carlsson",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:daniel-carlsson",
+    "to": "dept:creative",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:daniel-carlsson",
+    "to": "role:designer",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:daniel-carlsson",
+    "to": "skill:graphic-design",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:daniel-carlsson",
+    "to": "skill:motion-design",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:daniel-carlsson",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:daniel-carlsson",
+    "to": "channel:D2C",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:daniel-carlsson",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:daniel-carlsson",
+    "to": "category:tech",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:tara-lim",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:tara-lim",
+    "to": "dept:creative",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:tara-lim",
+    "to": "role:designer",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:tara-lim",
+    "to": "skill:graphic-design",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:tara-lim",
+    "to": "skill:motion-design",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:tara-lim",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:tara-lim",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 2
+    }
+  },
+  {
+    "from": "person:tara-lim",
+    "to": "category:fashion",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:imani-ofori",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:imani-ofori",
+    "to": "dept:creative",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:imani-ofori",
+    "to": "role:copywriter",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:imani-ofori",
+    "to": "skill:copywriting-short-form",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:imani-ofori",
+    "to": "skill:ecrm-copy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:imani-ofori",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:imani-ofori",
+    "to": "channel:ECRM",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:imani-ofori",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:beatriz-silva",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:beatriz-silva",
+    "to": "dept:creative",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:beatriz-silva",
+    "to": "role:copywriter",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:beatriz-silva",
+    "to": "skill:copywriting-short-form",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:beatriz-silva",
+    "to": "skill:copywriting-long-form",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:beatriz-silva",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:beatriz-silva",
+    "to": "channel:ECRM",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 2
+    }
+  },
+  {
+    "from": "person:beatriz-silva",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 1
+    }
+  },
+  {
+    "from": "person:beatriz-silva",
+    "to": "category:fashion",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 2
+    }
+  },
+  {
+    "from": "person:ben-phillips",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:ben-phillips",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:ben-phillips",
+    "to": "role:head-of-channels",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:ben-phillips",
+    "to": "skill:analytics",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:ben-phillips",
+    "to": "skill:attribution",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:ben-phillips",
+    "to": "skill:paid-search",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:ben-phillips",
+    "to": "skill:seo-traditional",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:ben-phillips",
+    "to": "channel:PAID_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 9
+    }
+  },
+  {
+    "from": "person:ben-phillips",
+    "to": "channel:SEO",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 9
+    }
+  },
+  {
+    "from": "person:ben-phillips",
+    "to": "channel:D2C",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 8
+    }
+  },
+  {
+    "from": "person:ben-phillips",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:ben-phillips",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 7
+    }
+  },
+  {
+    "from": "person:ben-phillips",
+    "to": "category:tech",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:mateusz-kowalski",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:mateusz-kowalski",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:mateusz-kowalski",
+    "to": "role:channel-lead",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:mateusz-kowalski",
+    "to": "skill:seo-traditional",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:mateusz-kowalski",
+    "to": "skill:seo-aeo-geo",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:mateusz-kowalski",
+    "to": "skill:analytics",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:mateusz-kowalski",
+    "to": "channel:SEO",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 8
+    }
+  },
+  {
+    "from": "person:mateusz-kowalski",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:mateusz-kowalski",
+    "to": "category:tech",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:rachel-cohen",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:rachel-cohen",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:rachel-cohen",
+    "to": "role:channel-lead",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:rachel-cohen",
+    "to": "skill:paid-search",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:rachel-cohen",
+    "to": "skill:paid-social",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:rachel-cohen",
+    "to": "skill:programmatic",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:rachel-cohen",
+    "to": "skill:attribution",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:rachel-cohen",
+    "to": "channel:PAID_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 7
+    }
+  },
+  {
+    "from": "person:rachel-cohen",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:rachel-cohen",
+    "to": "category:fashion",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:devon-ahmadi",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:devon-ahmadi",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:devon-ahmadi",
+    "to": "role:channel-lead",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:devon-ahmadi",
+    "to": "skill:social-organic",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:devon-ahmadi",
+    "to": "skill:influencer",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:devon-ahmadi",
+    "to": "skill:concept-development",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:devon-ahmadi",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:devon-ahmadi",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:lucas-muller",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:lucas-muller",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:lucas-muller",
+    "to": "role:channel-lead",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:lucas-muller",
+    "to": "skill:ecrm-architecture",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:lucas-muller",
+    "to": "skill:ecrm-copy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:lucas-muller",
+    "to": "skill:analytics",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:lucas-muller",
+    "to": "channel:ECRM",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 8
+    }
+  },
+  {
+    "from": "person:lucas-muller",
+    "to": "channel:D2C",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:lucas-muller",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:lucas-muller",
+    "to": "category:food-beverage",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:eshe-otieno",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:eshe-otieno",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:eshe-otieno",
+    "to": "role:channel-lead",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:eshe-otieno",
+    "to": "skill:experimentation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:eshe-otieno",
+    "to": "skill:analytics",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:eshe-otieno",
+    "to": "skill:attribution",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:eshe-otieno",
+    "to": "channel:D2C",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 7
+    }
+  },
+  {
+    "from": "person:eshe-otieno",
+    "to": "channel:UX",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:eshe-otieno",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:eshe-otieno",
+    "to": "category:tech",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:lila-tan",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:lila-tan",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:lila-tan",
+    "to": "role:channel-lead",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:lila-tan",
+    "to": "skill:ooh-planning",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:lila-tan",
+    "to": "skill:posm-execution",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:lila-tan",
+    "to": "skill:events-production",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:lila-tan",
+    "to": "skill:print-production",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:lila-tan",
+    "to": "channel:OOH",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:lila-tan",
+    "to": "channel:POSM",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:lila-tan",
+    "to": "channel:EVENT",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:lila-tan",
+    "to": "channel:B2B2C",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:lila-tan",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:lila-tan",
+    "to": "category:fashion",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:sara-mehta",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:sara-mehta",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:sara-mehta",
+    "to": "role:senior-channel-specialist",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:sara-mehta",
+    "to": "skill:paid-search",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:sara-mehta",
+    "to": "skill:paid-social",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:sara-mehta",
+    "to": "skill:analytics",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:sara-mehta",
+    "to": "channel:PAID_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:sara-mehta",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:kieran-walsh",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:kieran-walsh",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:kieran-walsh",
+    "to": "role:senior-channel-specialist",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:kieran-walsh",
+    "to": "skill:social-organic",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:kieran-walsh",
+    "to": "skill:influencer",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:kieran-walsh",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:kieran-walsh",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 2
+    }
+  },
+  {
+    "from": "person:kieran-walsh",
+    "to": "category:fashion",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:marcus-reilly",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:marcus-reilly",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:marcus-reilly",
+    "to": "role:channel-specialist",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:marcus-reilly",
+    "to": "skill:posm-execution",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:marcus-reilly",
+    "to": "skill:ooh-planning",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 2
+    }
+  },
+  {
+    "from": "person:marcus-reilly",
+    "to": "channel:POSM",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 2
+    }
+  },
+  {
+    "from": "person:marcus-reilly",
+    "to": "channel:OOH",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 2
+    }
+  },
+  {
+    "from": "person:marcus-reilly",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 1
+    }
+  },
+  {
+    "from": "person:jonah-dunmore",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:jonah-dunmore",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:jonah-dunmore",
+    "to": "role:channel-specialist",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:jonah-dunmore",
+    "to": "skill:negotiation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:jonah-dunmore",
+    "to": "skill:brand-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:jonah-dunmore",
+    "to": "channel:B2B",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:jonah-dunmore",
+    "to": "category:food-beverage",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 8
+    }
+  },
+  {
+    "from": "person:jonah-dunmore",
+    "to": "category:wellness",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:sami-imani",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:sami-imani",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:sami-imani",
+    "to": "role:senior-channel-specialist",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:sami-imani",
+    "to": "skill:brand-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:sami-imani",
+    "to": "skill:negotiation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:sami-imani",
+    "to": "channel:B2B",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:sami-imani",
+    "to": "category:food-beverage",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 2
+    }
+  },
+  {
+    "from": "person:sami-imani",
+    "to": "category:tech",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 9
+    }
+  },
+  {
+    "from": "person:halle-gallo",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:halle-gallo",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:halle-gallo",
+    "to": "role:channel-specialist",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:halle-gallo",
+    "to": "skill:negotiation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:halle-gallo",
+    "to": "skill:brand-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:halle-gallo",
+    "to": "channel:B2B",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 9
+    }
+  },
+  {
+    "from": "person:halle-gallo",
+    "to": "category:food-beverage",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 2
+    }
+  },
+  {
+    "from": "person:halle-gallo",
+    "to": "category:fashion",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 9
+    }
+  },
+  {
+    "from": "person:kira-fischer",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:kira-fischer",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:kira-fischer",
+    "to": "role:head-of-channels",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:kira-fischer",
+    "to": "skill:negotiation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:kira-fischer",
+    "to": "skill:brand-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:kira-fischer",
+    "to": "channel:B2B",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:kira-fischer",
+    "to": "category:fashion",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 10
+    }
+  },
+  {
+    "from": "person:kira-fischer",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 7
+    }
+  },
+  {
+    "from": "person:fern-delaney",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:fern-delaney",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:fern-delaney",
+    "to": "role:head-of-channels",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:fern-delaney",
+    "to": "skill:brand-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:fern-delaney",
+    "to": "skill:negotiation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:fern-delaney",
+    "to": "channel:B2B",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 11
+    }
+  },
+  {
+    "from": "person:fern-delaney",
+    "to": "category:tech",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:fern-delaney",
+    "to": "category:food-beverage",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:pavel-imani",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:pavel-imani",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:pavel-imani",
+    "to": "role:channel-specialist",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:pavel-imani",
+    "to": "skill:brand-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:pavel-imani",
+    "to": "skill:copywriting-short-form",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:pavel-imani",
+    "to": "skill:influencer",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:pavel-imani",
+    "to": "skill:negotiation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:pavel-imani",
+    "to": "channel:B2B",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:pavel-imani",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 9
+    }
+  },
+  {
+    "from": "person:pavel-imani",
+    "to": "category:skincare",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 10
+    }
+  },
+  {
+    "from": "person:iris-imani",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:iris-imani",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:iris-imani",
+    "to": "role:channel-specialist",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:iris-imani",
+    "to": "skill:analytics",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:iris-imani",
+    "to": "skill:audience-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:iris-imani",
+    "to": "channel:RESEARCH",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 8
+    }
+  },
+  {
+    "from": "person:iris-imani",
+    "to": "category:fashion",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 7
+    }
+  },
+  {
+    "from": "person:priya-ibsen",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:priya-ibsen",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:priya-ibsen",
+    "to": "role:senior-channel-specialist",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:priya-ibsen",
+    "to": "skill:audience-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:priya-ibsen",
+    "to": "skill:ecrm-architecture",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:priya-ibsen",
+    "to": "skill:ecrm-copy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:priya-ibsen",
+    "to": "skill:analytics",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:priya-ibsen",
+    "to": "channel:RESEARCH",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:priya-ibsen",
+    "to": "channel:ECRM",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 2
+    }
+  },
+  {
+    "from": "person:priya-ibsen",
+    "to": "category:tech",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 7
+    }
+  },
+  {
+    "from": "person:priya-ibsen",
+    "to": "category:skincare",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 2
+    }
+  },
+  {
+    "from": "person:greta-imani",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:greta-imani",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:greta-imani",
+    "to": "role:senior-channel-specialist",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:greta-imani",
+    "to": "skill:analytics",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:greta-imani",
+    "to": "skill:audience-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:greta-imani",
+    "to": "channel:RESEARCH",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 8
+    }
+  },
+  {
+    "from": "person:greta-imani",
+    "to": "category:tech",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:greta-imani",
+    "to": "category:food-beverage",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:dami-fischer",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:dami-fischer",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:dami-fischer",
+    "to": "role:senior-channel-specialist",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:dami-fischer",
+    "to": "skill:audience-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:dami-fischer",
+    "to": "skill:analytics",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:dami-fischer",
+    "to": "skill:seo-aeo-geo",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:dami-fischer",
+    "to": "skill:content-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:dami-fischer",
+    "to": "skill:seo-traditional",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:dami-fischer",
+    "to": "channel:RESEARCH",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:dami-fischer",
+    "to": "channel:SEO",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 7
+    }
+  },
+  {
+    "from": "person:dami-fischer",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:dev-brandt",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:dev-brandt",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:dev-brandt",
+    "to": "role:senior-channel-specialist",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:dev-brandt",
+    "to": "skill:audience-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:dev-brandt",
+    "to": "skill:print-production",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:dev-brandt",
+    "to": "skill:posm-execution",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:dev-brandt",
+    "to": "skill:analytics",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:dev-brandt",
+    "to": "channel:RESEARCH",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:dev-brandt",
+    "to": "channel:POSM",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:dev-brandt",
+    "to": "category:wellness",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 8
+    }
+  },
+  {
+    "from": "person:dev-brandt",
+    "to": "category:food-beverage",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:theo-novak",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:theo-novak",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:theo-novak",
+    "to": "role:channel-lead",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:theo-novak",
+    "to": "skill:analytics",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:theo-novak",
+    "to": "skill:audience-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:theo-novak",
+    "to": "channel:RESEARCH",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 9
+    }
+  },
+  {
+    "from": "person:theo-novak",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:marlo-leroy",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:marlo-leroy",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:marlo-leroy",
+    "to": "role:senior-channel-specialist",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:marlo-leroy",
+    "to": "skill:experimentation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:marlo-leroy",
+    "to": "skill:analytics",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:marlo-leroy",
+    "to": "channel:UX",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:marlo-leroy",
+    "to": "category:tech",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 9
+    }
+  },
+  {
+    "from": "person:eli-moss",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:eli-moss",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:eli-moss",
+    "to": "role:channel-lead",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:eli-moss",
+    "to": "skill:art-direction",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:eli-moss",
+    "to": "skill:analytics",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:eli-moss",
+    "to": "skill:experimentation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:eli-moss",
+    "to": "skill:ooh-planning",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:eli-moss",
+    "to": "channel:UX",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 2
+    }
+  },
+  {
+    "from": "person:eli-moss",
+    "to": "channel:OOH",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 2
+    }
+  },
+  {
+    "from": "person:eli-moss",
+    "to": "category:food-beverage",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:nadia-dunmore",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:nadia-dunmore",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:nadia-dunmore",
+    "to": "role:channel-lead",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:nadia-dunmore",
+    "to": "skill:print-production",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:nadia-dunmore",
+    "to": "skill:experimentation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:nadia-dunmore",
+    "to": "skill:negotiation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:nadia-dunmore",
+    "to": "skill:analytics",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:nadia-dunmore",
+    "to": "skill:brand-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:nadia-dunmore",
+    "to": "channel:UX",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:nadia-dunmore",
+    "to": "channel:B2B2C",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 7
+    }
+  },
+  {
+    "from": "person:nadia-dunmore",
+    "to": "category:fashion",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 9
+    }
+  },
+  {
+    "from": "person:fern-kerr",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:fern-kerr",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:fern-kerr",
+    "to": "role:channel-specialist",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:fern-kerr",
+    "to": "skill:analytics",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:fern-kerr",
+    "to": "skill:experimentation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:fern-kerr",
+    "to": "channel:UX",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 8
+    }
+  },
+  {
+    "from": "person:fern-kerr",
+    "to": "category:fashion",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 9
+    }
+  },
+  {
+    "from": "person:fern-kerr",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 2
+    }
+  },
+  {
+    "from": "person:theo-gallo",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:theo-gallo",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:theo-gallo",
+    "to": "role:channel-specialist",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:theo-gallo",
+    "to": "skill:analytics",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:theo-gallo",
+    "to": "skill:experimentation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:theo-gallo",
+    "to": "channel:UX",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:theo-gallo",
+    "to": "category:skincare",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 8
+    }
+  },
+  {
+    "from": "person:theo-gallo",
+    "to": "category:food-beverage",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 8
+    }
+  },
+  {
+    "from": "person:quinn-hsu",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:quinn-hsu",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:quinn-hsu",
+    "to": "role:senior-channel-specialist",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:quinn-hsu",
+    "to": "skill:project-management",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:quinn-hsu",
+    "to": "skill:programmatic",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:quinn-hsu",
+    "to": "skill:paid-social",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:quinn-hsu",
+    "to": "skill:paid-search",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:quinn-hsu",
+    "to": "channel:EVENT",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 11
+    }
+  },
+  {
+    "from": "person:quinn-hsu",
+    "to": "channel:PAID_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 2
+    }
+  },
+  {
+    "from": "person:quinn-hsu",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 8
+    }
+  },
+  {
+    "from": "person:eli-lund",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:eli-lund",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:eli-lund",
+    "to": "role:senior-channel-specialist",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:eli-lund",
+    "to": "skill:events-production",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:eli-lund",
+    "to": "skill:project-management",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:eli-lund",
+    "to": "skill:brand-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:eli-lund",
+    "to": "skill:print-production",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:eli-lund",
+    "to": "skill:negotiation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:eli-lund",
+    "to": "channel:EVENT",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 11
+    }
+  },
+  {
+    "from": "person:eli-lund",
+    "to": "channel:B2B2C",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:eli-lund",
+    "to": "category:tech",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:dara-pike",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:dara-pike",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:dara-pike",
+    "to": "role:channel-lead",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:dara-pike",
+    "to": "skill:project-management",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:dara-pike",
+    "to": "skill:paid-social",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:dara-pike",
+    "to": "skill:events-production",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:dara-pike",
+    "to": "skill:programmatic",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:dara-pike",
+    "to": "skill:paid-search",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:dara-pike",
+    "to": "channel:EVENT",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 11
+    }
+  },
+  {
+    "from": "person:dara-pike",
+    "to": "channel:PAID_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 8
+    }
+  },
+  {
+    "from": "person:dara-pike",
+    "to": "category:food-beverage",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:hugo-holt",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:hugo-holt",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:hugo-holt",
+    "to": "role:channel-lead",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:hugo-holt",
+    "to": "skill:events-production",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:hugo-holt",
+    "to": "skill:project-management",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:hugo-holt",
+    "to": "channel:EVENT",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:hugo-holt",
+    "to": "category:tech",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 9
+    }
+  },
+  {
+    "from": "person:hugo-holt",
+    "to": "category:wellness",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:kira-brandt",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:kira-brandt",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:kira-brandt",
+    "to": "role:channel-lead",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:kira-brandt",
+    "to": "skill:events-production",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:kira-brandt",
+    "to": "skill:brand-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:kira-brandt",
+    "to": "skill:negotiation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:kira-brandt",
+    "to": "skill:project-management",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:kira-brandt",
+    "to": "channel:EVENT",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 2
+    }
+  },
+  {
+    "from": "person:kira-brandt",
+    "to": "channel:B2B",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 9
+    }
+  },
+  {
+    "from": "person:kira-brandt",
+    "to": "category:food-beverage",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:kira-brandt",
+    "to": "category:wellness",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:kira-esposito",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:kira-esposito",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:kira-esposito",
+    "to": "role:head-of-channels",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:kira-esposito",
+    "to": "skill:print-production",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:kira-esposito",
+    "to": "skill:influencer",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:kira-esposito",
+    "to": "skill:copywriting-short-form",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:kira-esposito",
+    "to": "skill:social-organic",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:kira-esposito",
+    "to": "skill:posm-execution",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:kira-esposito",
+    "to": "channel:POSM",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 2
+    }
+  },
+  {
+    "from": "person:kira-esposito",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 7
+    }
+  },
+  {
+    "from": "person:kira-esposito",
+    "to": "category:skincare",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 2
+    }
+  },
+  {
+    "from": "person:kira-esposito",
+    "to": "category:fashion",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:noor-kerr",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:noor-kerr",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:noor-kerr",
+    "to": "role:channel-specialist",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:noor-kerr",
+    "to": "skill:analytics",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:noor-kerr",
+    "to": "skill:ecrm-copy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:noor-kerr",
+    "to": "skill:print-production",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:noor-kerr",
+    "to": "channel:POSM",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 9
+    }
+  },
+  {
+    "from": "person:noor-kerr",
+    "to": "channel:ECRM",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 10
+    }
+  },
+  {
+    "from": "person:noor-kerr",
+    "to": "category:wellness",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 7
+    }
+  },
+  {
+    "from": "person:yusuf-ueda",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:yusuf-ueda",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:yusuf-ueda",
+    "to": "role:channel-lead",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:yusuf-ueda",
+    "to": "skill:paid-social",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:yusuf-ueda",
+    "to": "skill:posm-execution",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:yusuf-ueda",
+    "to": "skill:paid-search",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:yusuf-ueda",
+    "to": "skill:print-production",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:yusuf-ueda",
+    "to": "skill:attribution",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:yusuf-ueda",
+    "to": "channel:POSM",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 2
+    }
+  },
+  {
+    "from": "person:yusuf-ueda",
+    "to": "channel:PAID_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:yusuf-ueda",
+    "to": "category:fashion",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 8
+    }
+  },
+  {
+    "from": "person:yusuf-ueda",
+    "to": "category:food-beverage",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:greta-ueda",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:greta-ueda",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:greta-ueda",
+    "to": "role:channel-lead",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:greta-ueda",
+    "to": "skill:print-production",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:greta-ueda",
+    "to": "skill:posm-execution",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:greta-ueda",
+    "to": "channel:POSM",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 9
+    }
+  },
+  {
+    "from": "person:greta-ueda",
+    "to": "category:food-beverage",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 2
+    }
+  },
+  {
+    "from": "person:leon-imani",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:leon-imani",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:leon-imani",
+    "to": "role:channel-specialist",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:leon-imani",
+    "to": "skill:posm-execution",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:leon-imani",
+    "to": "skill:print-production",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:leon-imani",
+    "to": "channel:POSM",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:leon-imani",
+    "to": "category:wellness",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:ines-holt",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:ines-holt",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:ines-holt",
+    "to": "role:senior-channel-specialist",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:ines-holt",
+    "to": "skill:posm-execution",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:ines-holt",
+    "to": "skill:print-production",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:ines-holt",
+    "to": "channel:POSM",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 11
+    }
+  },
+  {
+    "from": "person:ines-holt",
+    "to": "category:skincare",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:nils-pike",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:nils-pike",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:nils-pike",
+    "to": "role:senior-channel-specialist",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:nils-pike",
+    "to": "skill:seo-traditional",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:nils-pike",
+    "to": "skill:seo-aeo-geo",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:nils-pike",
+    "to": "skill:content-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:nils-pike",
+    "to": "channel:SEO",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:nils-pike",
+    "to": "category:wellness",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 10
+    }
+  },
+  {
+    "from": "person:nils-pike",
+    "to": "category:skincare",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:esme-leroy",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:esme-leroy",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:esme-leroy",
+    "to": "role:senior-channel-specialist",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:esme-leroy",
+    "to": "skill:content-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:esme-leroy",
+    "to": "skill:seo-aeo-geo",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:esme-leroy",
+    "to": "skill:seo-traditional",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:esme-leroy",
+    "to": "channel:SEO",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 10
+    }
+  },
+  {
+    "from": "person:esme-leroy",
+    "to": "category:fashion",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:bo-brandt",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:bo-brandt",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:bo-brandt",
+    "to": "role:channel-lead",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:bo-brandt",
+    "to": "skill:art-direction",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:bo-brandt",
+    "to": "skill:seo-traditional",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:bo-brandt",
+    "to": "skill:content-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:bo-brandt",
+    "to": "skill:seo-aeo-geo",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:bo-brandt",
+    "to": "skill:ooh-planning",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:bo-brandt",
+    "to": "channel:SEO",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:bo-brandt",
+    "to": "channel:OOH",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 7
+    }
+  },
+  {
+    "from": "person:bo-brandt",
+    "to": "category:wellness",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 7
+    }
+  },
+  {
+    "from": "person:bo-brandt",
+    "to": "category:tech",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 8
+    }
+  },
+  {
+    "from": "person:esme-brandt",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:esme-brandt",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:esme-brandt",
+    "to": "role:senior-channel-specialist",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:esme-brandt",
+    "to": "skill:seo-aeo-geo",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:esme-brandt",
+    "to": "skill:content-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:esme-brandt",
+    "to": "skill:seo-traditional",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:esme-brandt",
+    "to": "channel:SEO",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:esme-brandt",
+    "to": "category:tech",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:esme-brandt",
+    "to": "category:skincare",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:orla-moss",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:orla-moss",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:orla-moss",
+    "to": "role:channel-lead",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:orla-moss",
+    "to": "skill:seo-traditional",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:orla-moss",
+    "to": "skill:content-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:orla-moss",
+    "to": "skill:seo-aeo-geo",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:orla-moss",
+    "to": "channel:SEO",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:orla-moss",
+    "to": "category:fashion",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 2
+    }
+  },
+  {
+    "from": "person:orla-moss",
+    "to": "category:tech",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:hana-nash",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:hana-nash",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:hana-nash",
+    "to": "role:head-of-channels",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:hana-nash",
+    "to": "skill:ooh-planning",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:hana-nash",
+    "to": "skill:art-direction",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:hana-nash",
+    "to": "channel:OOH",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:hana-nash",
+    "to": "category:fashion",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:otis-leroy",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:otis-leroy",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:otis-leroy",
+    "to": "role:channel-lead",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:otis-leroy",
+    "to": "skill:ooh-planning",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:otis-leroy",
+    "to": "skill:art-direction",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:otis-leroy",
+    "to": "channel:OOH",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 10
+    }
+  },
+  {
+    "from": "person:otis-leroy",
+    "to": "category:wellness",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 2
+    }
+  },
+  {
+    "from": "person:noor-lund",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:noor-lund",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:noor-lund",
+    "to": "role:head-of-channels",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:noor-lund",
+    "to": "skill:programmatic",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:noor-lund",
+    "to": "skill:art-direction",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:noor-lund",
+    "to": "skill:attribution",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:noor-lund",
+    "to": "channel:OOH",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:noor-lund",
+    "to": "channel:PAID_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:noor-lund",
+    "to": "category:fashion",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 2
+    }
+  },
+  {
+    "from": "person:noor-lund",
+    "to": "category:food-beverage",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 8
+    }
+  },
+  {
+    "from": "person:rosa-ashby",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:rosa-ashby",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:rosa-ashby",
+    "to": "role:senior-channel-specialist",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:rosa-ashby",
+    "to": "skill:print-production",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:rosa-ashby",
+    "to": "skill:negotiation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:rosa-ashby",
+    "to": "skill:brand-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:rosa-ashby",
+    "to": "channel:B2B2C",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:rosa-ashby",
+    "to": "category:skincare",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 10
+    }
+  },
+  {
+    "from": "person:milo-jansen",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:milo-jansen",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:milo-jansen",
+    "to": "role:channel-specialist",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:milo-jansen",
+    "to": "skill:art-direction",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:milo-jansen",
+    "to": "skill:brand-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:milo-jansen",
+    "to": "skill:print-production",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:milo-jansen",
+    "to": "channel:B2B2C",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 7
+    }
+  },
+  {
+    "from": "person:milo-jansen",
+    "to": "channel:OOH",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:milo-jansen",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 9
+    }
+  },
+  {
+    "from": "person:orla-frost",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:orla-frost",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:orla-frost",
+    "to": "role:channel-lead",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:orla-frost",
+    "to": "skill:negotiation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:orla-frost",
+    "to": "skill:analytics",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:orla-frost",
+    "to": "skill:attribution",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:orla-frost",
+    "to": "skill:experimentation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:orla-frost",
+    "to": "skill:print-production",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:orla-frost",
+    "to": "channel:B2B2C",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:orla-frost",
+    "to": "channel:D2C",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:orla-frost",
+    "to": "category:fashion",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 8
+    }
+  },
+  {
+    "from": "person:orla-frost",
+    "to": "category:food-beverage",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:rosa-ortega",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:rosa-ortega",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:rosa-ortega",
+    "to": "role:senior-channel-specialist",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:rosa-ortega",
+    "to": "skill:analytics",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:rosa-ortega",
+    "to": "skill:social-organic",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:rosa-ortega",
+    "to": "skill:ecrm-copy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:rosa-ortega",
+    "to": "skill:influencer",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:rosa-ortega",
+    "to": "channel:ECRM",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:rosa-ortega",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 7
+    }
+  },
+  {
+    "from": "person:rosa-ortega",
+    "to": "category:food-beverage",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 10
+    }
+  },
+  {
+    "from": "person:rosa-ortega",
+    "to": "category:skincare",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:felix-delaney",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:felix-delaney",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:felix-delaney",
+    "to": "role:head-of-channels",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:felix-delaney",
+    "to": "skill:analytics",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:felix-delaney",
+    "to": "skill:ecrm-architecture",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:felix-delaney",
+    "to": "skill:ecrm-copy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:felix-delaney",
+    "to": "channel:ECRM",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 2
+    }
+  },
+  {
+    "from": "person:felix-delaney",
+    "to": "category:skincare",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:quinn-dunmore",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:quinn-dunmore",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:quinn-dunmore",
+    "to": "role:channel-lead",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:quinn-dunmore",
+    "to": "skill:ecrm-architecture",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:quinn-dunmore",
+    "to": "skill:experimentation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:quinn-dunmore",
+    "to": "skill:analytics",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:quinn-dunmore",
+    "to": "channel:ECRM",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 7
+    }
+  },
+  {
+    "from": "person:quinn-dunmore",
+    "to": "channel:UX",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 11
+    }
+  },
+  {
+    "from": "person:quinn-dunmore",
+    "to": "category:fashion",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:kit-yates",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:kit-yates",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:kit-yates",
+    "to": "role:senior-channel-specialist",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:kit-yates",
+    "to": "skill:attribution",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:kit-yates",
+    "to": "skill:paid-social",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:kit-yates",
+    "to": "skill:paid-search",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:kit-yates",
+    "to": "skill:programmatic",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:kit-yates",
+    "to": "channel:PAID_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:kit-yates",
+    "to": "category:tech",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:kit-yates",
+    "to": "category:food-beverage",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 8
+    }
+  },
+  {
+    "from": "person:jad-novak",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:jad-novak",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:jad-novak",
+    "to": "role:senior-channel-specialist",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:jad-novak",
+    "to": "skill:attribution",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:jad-novak",
+    "to": "skill:paid-social",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:jad-novak",
+    "to": "skill:programmatic",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:jad-novak",
+    "to": "skill:paid-search",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:jad-novak",
+    "to": "channel:PAID_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 10
+    }
+  },
+  {
+    "from": "person:jad-novak",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 8
+    }
+  },
+  {
+    "from": "person:bea-tanaka",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:bea-tanaka",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:bea-tanaka",
+    "to": "role:head-of-channels",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:bea-tanaka",
+    "to": "skill:paid-social",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:bea-tanaka",
+    "to": "skill:attribution",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:bea-tanaka",
+    "to": "skill:programmatic",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:bea-tanaka",
+    "to": "skill:paid-search",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:bea-tanaka",
+    "to": "channel:PAID_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:bea-tanaka",
+    "to": "category:tech",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:dara-jansen",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:dara-jansen",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:dara-jansen",
+    "to": "role:head-of-channels",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:dara-jansen",
+    "to": "skill:influencer",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:dara-jansen",
+    "to": "skill:social-organic",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:dara-jansen",
+    "to": "skill:copywriting-short-form",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:dara-jansen",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 9
+    }
+  },
+  {
+    "from": "person:dara-jansen",
+    "to": "category:skincare",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 10
+    }
+  },
+  {
+    "from": "person:quinn-frost",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:quinn-frost",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:quinn-frost",
+    "to": "role:channel-lead",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:quinn-frost",
+    "to": "skill:influencer",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:quinn-frost",
+    "to": "skill:copywriting-short-form",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:quinn-frost",
+    "to": "skill:negotiation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:quinn-frost",
+    "to": "skill:brand-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:quinn-frost",
+    "to": "skill:social-organic",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:quinn-frost",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:quinn-frost",
+    "to": "channel:B2B",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:quinn-frost",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:quinn-frost",
+    "to": "category:skincare",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:kai-yates",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:kai-yates",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:kai-yates",
+    "to": "role:channel-specialist",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:kai-yates",
+    "to": "skill:attribution",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:kai-yates",
+    "to": "skill:experimentation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:kai-yates",
+    "to": "skill:analytics",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:kai-yates",
+    "to": "channel:D2C",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 7
+    }
+  },
+  {
+    "from": "person:kai-yates",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:dami-mercer",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:dami-mercer",
+    "to": "dept:channel-experts",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:dami-mercer",
+    "to": "role:senior-channel-specialist",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:dami-mercer",
+    "to": "skill:experimentation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:dami-mercer",
+    "to": "skill:analytics",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:dami-mercer",
+    "to": "skill:attribution",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:dami-mercer",
+    "to": "channel:D2C",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:dami-mercer",
+    "to": "category:fashion",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 9
+    }
+  },
+  {
+    "from": "person:dami-mercer",
+    "to": "category:wellness",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 2
+    }
+  },
+  {
+    "from": "person:halle-cho",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:halle-cho",
+    "to": "dept:strategy",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:halle-cho",
+    "to": "role:strategy-director",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:halle-cho",
+    "to": "skill:campaign-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:halle-cho",
+    "to": "skill:audience-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:halle-cho",
+    "to": "skill:attribution",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:halle-cho",
+    "to": "channel:PAID_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 9
+    }
+  },
+  {
+    "from": "person:halle-cho",
+    "to": "channel:B2B2C",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 7
+    }
+  },
+  {
+    "from": "person:halle-cho",
+    "to": "category:food-beverage",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 9
+    }
+  },
+  {
+    "from": "person:halle-cho",
+    "to": "category:skincare",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 7
+    }
+  },
+  {
+    "from": "person:bo-ortega",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:bo-ortega",
+    "to": "dept:strategy",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:bo-ortega",
+    "to": "role:strategy-director",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:bo-ortega",
+    "to": "skill:audience-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:bo-ortega",
+    "to": "skill:brand-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:bo-ortega",
+    "to": "skill:campaign-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:bo-ortega",
+    "to": "category:fashion",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:bo-ortega",
+    "to": "category:wellness",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:xan-tanaka",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:xan-tanaka",
+    "to": "dept:strategy",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:xan-tanaka",
+    "to": "role:strategy-director",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:xan-tanaka",
+    "to": "skill:art-direction",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:xan-tanaka",
+    "to": "skill:negotiation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:xan-tanaka",
+    "to": "skill:campaign-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:xan-tanaka",
+    "to": "channel:B2B",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:xan-tanaka",
+    "to": "channel:OOH",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 9
+    }
+  },
+  {
+    "from": "person:xan-tanaka",
+    "to": "category:fashion",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 8
+    }
+  },
+  {
+    "from": "person:xan-tanaka",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:jonah-ortega",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:jonah-ortega",
+    "to": "dept:strategy",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:jonah-ortega",
+    "to": "role:strategist",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:jonah-ortega",
+    "to": "skill:brand-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:jonah-ortega",
+    "to": "skill:positioning",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:jonah-ortega",
+    "to": "skill:copywriting-short-form",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:jonah-ortega",
+    "to": "skill:seo-aeo-geo",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:jonah-ortega",
+    "to": "skill:audience-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:jonah-ortega",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 11
+    }
+  },
+  {
+    "from": "person:jonah-ortega",
+    "to": "channel:SEO",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 11
+    }
+  },
+  {
+    "from": "person:jonah-ortega",
+    "to": "category:food-beverage",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 8
+    }
+  },
+  {
+    "from": "person:jonah-ortega",
+    "to": "category:tech",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 2
+    }
+  },
+  {
+    "from": "person:pavel-ibsen",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:pavel-ibsen",
+    "to": "dept:strategy",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:pavel-ibsen",
+    "to": "role:strategist",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:pavel-ibsen",
+    "to": "skill:campaign-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:pavel-ibsen",
+    "to": "skill:audience-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:pavel-ibsen",
+    "to": "skill:brand-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:pavel-ibsen",
+    "to": "skill:positioning",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:pavel-ibsen",
+    "to": "category:skincare",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 7
+    }
+  },
+  {
+    "from": "person:ada-leroy",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:ada-leroy",
+    "to": "dept:strategy",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:ada-leroy",
+    "to": "role:strategy-director",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:ada-leroy",
+    "to": "skill:positioning",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:ada-leroy",
+    "to": "skill:print-production",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:ada-leroy",
+    "to": "skill:audience-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:ada-leroy",
+    "to": "skill:brand-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:ada-leroy",
+    "to": "skill:posm-execution",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:ada-leroy",
+    "to": "channel:POSM",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 11
+    }
+  },
+  {
+    "from": "person:ada-leroy",
+    "to": "category:food-beverage",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 2
+    }
+  },
+  {
+    "from": "person:ada-leroy",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:eli-yates",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:eli-yates",
+    "to": "dept:creative",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:eli-yates",
+    "to": "role:associate-creative-director",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:eli-yates",
+    "to": "skill:copywriting-long-form",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:eli-yates",
+    "to": "skill:graphic-design",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:eli-yates",
+    "to": "skill:concept-development",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:eli-yates",
+    "to": "category:wellness",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 8
+    }
+  },
+  {
+    "from": "person:iris-xu",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:iris-xu",
+    "to": "dept:creative",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:iris-xu",
+    "to": "role:associate-creative-director",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:iris-xu",
+    "to": "skill:concept-development",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:iris-xu",
+    "to": "skill:art-direction",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:iris-xu",
+    "to": "skill:graphic-design",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:iris-xu",
+    "to": "category:food-beverage",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:fern-esposito",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:fern-esposito",
+    "to": "dept:creative",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:fern-esposito",
+    "to": "role:copywriter",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:fern-esposito",
+    "to": "skill:art-direction",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:fern-esposito",
+    "to": "skill:concept-development",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:fern-esposito",
+    "to": "skill:graphic-design",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:fern-esposito",
+    "to": "skill:copywriting-long-form",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:fern-esposito",
+    "to": "category:fashion",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 10
+    }
+  },
+  {
+    "from": "person:aaron-lund",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:aaron-lund",
+    "to": "dept:creative",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:aaron-lund",
+    "to": "role:creative-director",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:aaron-lund",
+    "to": "skill:concept-development",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:aaron-lund",
+    "to": "skill:copywriting-long-form",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:aaron-lund",
+    "to": "skill:graphic-design",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:aaron-lund",
+    "to": "skill:art-direction",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:aaron-lund",
+    "to": "category:tech",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 9
+    }
+  },
+  {
+    "from": "person:aaron-lund",
+    "to": "category:fashion",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 9
+    }
+  },
+  {
+    "from": "person:esme-garnett",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:esme-garnett",
+    "to": "dept:creative",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:esme-garnett",
+    "to": "role:associate-creative-director",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:esme-garnett",
+    "to": "skill:art-direction",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:esme-garnett",
+    "to": "skill:concept-development",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:esme-garnett",
+    "to": "skill:print-production",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:esme-garnett",
+    "to": "channel:POSM",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 11
+    }
+  },
+  {
+    "from": "person:esme-garnett",
+    "to": "category:tech",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 8
+    }
+  },
+  {
+    "from": "person:nadia-ashby",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:nadia-ashby",
+    "to": "dept:creative",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:nadia-ashby",
+    "to": "role:creative-director",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:nadia-ashby",
+    "to": "skill:graphic-design",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:nadia-ashby",
+    "to": "skill:experimentation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:nadia-ashby",
+    "to": "skill:analytics",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:nadia-ashby",
+    "to": "skill:concept-development",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:nadia-ashby",
+    "to": "skill:copywriting-long-form",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:nadia-ashby",
+    "to": "skill:attribution",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:nadia-ashby",
+    "to": "channel:D2C",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 10
+    }
+  },
+  {
+    "from": "person:nadia-ashby",
+    "to": "category:fashion",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 10
+    }
+  },
+  {
+    "from": "person:nadia-ashby",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:otis-stern",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:otis-stern",
+    "to": "dept:creative",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:otis-stern",
+    "to": "role:associate-creative-director",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:otis-stern",
+    "to": "skill:ecrm-architecture",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:otis-stern",
+    "to": "skill:concept-development",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:otis-stern",
+    "to": "skill:analytics",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:otis-stern",
+    "to": "channel:ECRM",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 7
+    }
+  },
+  {
+    "from": "person:otis-stern",
+    "to": "category:food-beverage",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:otis-stern",
+    "to": "category:wellness",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:nils-delaney",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:nils-delaney",
+    "to": "dept:creative",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:nils-delaney",
+    "to": "role:copywriter",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:nils-delaney",
+    "to": "skill:graphic-design",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:nils-delaney",
+    "to": "skill:copywriting-long-form",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:nils-delaney",
+    "to": "skill:ooh-planning",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:nils-delaney",
+    "to": "skill:concept-development",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:nils-delaney",
+    "to": "skill:analytics",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:nils-delaney",
+    "to": "skill:art-direction",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:nils-delaney",
+    "to": "channel:OOH",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 7
+    }
+  },
+  {
+    "from": "person:nils-delaney",
+    "to": "channel:UX",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 9
+    }
+  },
+  {
+    "from": "person:nils-delaney",
+    "to": "category:tech",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 2
+    }
+  },
+  {
+    "from": "person:theo-yates",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:theo-yates",
+    "to": "dept:creative",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:theo-yates",
+    "to": "role:senior-copywriter",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:theo-yates",
+    "to": "skill:copywriting-long-form",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:theo-yates",
+    "to": "skill:project-management",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:theo-yates",
+    "to": "skill:graphic-design",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:theo-yates",
+    "to": "skill:events-production",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:theo-yates",
+    "to": "skill:art-direction",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:theo-yates",
+    "to": "skill:concept-development",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:theo-yates",
+    "to": "channel:EVENT",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:theo-yates",
+    "to": "category:food-beverage",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:theo-yates",
+    "to": "category:wellness",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 2
+    }
+  },
+  {
+    "from": "person:sami-hsu",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:sami-hsu",
+    "to": "dept:project-planning",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:sami-hsu",
+    "to": "role:senior-project-manager",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:sami-hsu",
+    "to": "skill:project-management",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:sami-hsu",
+    "to": "skill:resource-planning",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:sami-hsu",
+    "to": "category:tech",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 10
+    }
+  },
+  {
+    "from": "person:sami-hsu",
+    "to": "category:fashion",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:sasha-leroy",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:sasha-leroy",
+    "to": "dept:project-planning",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:sasha-leroy",
+    "to": "role:producer",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:sasha-leroy",
+    "to": "skill:project-management",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:sasha-leroy",
+    "to": "skill:resource-planning",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:sasha-leroy",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:sasha-leroy",
+    "to": "category:food-beverage",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 7
+    }
+  },
+  {
+    "from": "person:eli-imani",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:eli-imani",
+    "to": "dept:project-planning",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:eli-imani",
+    "to": "role:project-manager",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:eli-imani",
+    "to": "skill:resource-planning",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:eli-imani",
+    "to": "skill:project-management",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:eli-imani",
+    "to": "category:skincare",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 8
+    }
+  },
+  {
+    "from": "person:rosa-esposito",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:rosa-esposito",
+    "to": "dept:project-planning",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:rosa-esposito",
+    "to": "role:senior-project-manager",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:rosa-esposito",
+    "to": "skill:resource-planning",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:rosa-esposito",
+    "to": "skill:project-management",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:rosa-esposito",
+    "to": "category:fashion",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:sami-fischer",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:sami-fischer",
+    "to": "dept:project-planning",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:sami-fischer",
+    "to": "role:senior-project-manager",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:sami-fischer",
+    "to": "skill:brand-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:sami-fischer",
+    "to": "skill:negotiation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:sami-fischer",
+    "to": "skill:audience-strategy",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:sami-fischer",
+    "to": "channel:RESEARCH",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:sami-fischer",
+    "to": "channel:B2B",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:sami-fischer",
+    "to": "category:food-beverage",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:sami-fischer",
+    "to": "category:fashion",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:jad-rourke",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:jad-rourke",
+    "to": "dept:project-planning",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:jad-rourke",
+    "to": "role:project-manager",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:jad-rourke",
+    "to": "skill:seo-traditional",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:jad-rourke",
+    "to": "skill:attribution",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:jad-rourke",
+    "to": "skill:seo-aeo-geo",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:jad-rourke",
+    "to": "channel:PAID_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 7
+    }
+  },
+  {
+    "from": "person:jad-rourke",
+    "to": "channel:SEO",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:jad-rourke",
+    "to": "category:tech",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 7
+    }
+  },
+  {
+    "from": "person:juno-ellery",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:juno-ellery",
+    "to": "dept:client-services",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:juno-ellery",
+    "to": "role:account-manager",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:juno-ellery",
+    "to": "skill:analytics",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:juno-ellery",
+    "to": "skill:attribution",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:juno-ellery",
+    "to": "skill:copywriting-short-form",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:juno-ellery",
+    "to": "skill:experimentation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:juno-ellery",
+    "to": "skill:project-management",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:juno-ellery",
+    "to": "skill:social-organic",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:juno-ellery",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:juno-ellery",
+    "to": "channel:D2C",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 11
+    }
+  },
+  {
+    "from": "person:juno-ellery",
+    "to": "category:fashion",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 10
+    }
+  },
+  {
+    "from": "person:juno-ellery",
+    "to": "category:skincare",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 7
+    }
+  },
+  {
+    "from": "person:quinn-vogel",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:quinn-vogel",
+    "to": "dept:client-services",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:quinn-vogel",
+    "to": "role:account-manager",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:quinn-vogel",
+    "to": "skill:print-production",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:quinn-vogel",
+    "to": "skill:negotiation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:quinn-vogel",
+    "to": "skill:posm-execution",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:quinn-vogel",
+    "to": "channel:POSM",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:quinn-vogel",
+    "to": "category:beauty",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:yusuf-brandt",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:yusuf-brandt",
+    "to": "dept:client-services",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:yusuf-brandt",
+    "to": "role:account-manager",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:yusuf-brandt",
+    "to": "skill:project-management",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:yusuf-brandt",
+    "to": "skill:negotiation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:yusuf-brandt",
+    "to": "category:wellness",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:yusuf-brandt",
+    "to": "category:tech",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 8
+    }
+  },
+  {
+    "from": "person:nils-quill",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:nils-quill",
+    "to": "dept:client-services",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:nils-quill",
+    "to": "role:account-executive",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:nils-quill",
+    "to": "skill:ooh-planning",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:nils-quill",
+    "to": "skill:art-direction",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:nils-quill",
+    "to": "skill:project-management",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:nils-quill",
+    "to": "skill:posm-execution",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:nils-quill",
+    "to": "skill:print-production",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:nils-quill",
+    "to": "channel:OOH",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 7
+    }
+  },
+  {
+    "from": "person:nils-quill",
+    "to": "channel:POSM",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:nils-quill",
+    "to": "category:food-beverage",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 4
+    }
+  },
+  {
+    "from": "person:tara-lund",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:tara-lund",
+    "to": "dept:client-services",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:tara-lund",
+    "to": "role:account-manager",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:tara-lund",
+    "to": "skill:print-production",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:tara-lund",
+    "to": "skill:analytics",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:tara-lund",
+    "to": "skill:posm-execution",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:tara-lund",
+    "to": "skill:experimentation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:tara-lund",
+    "to": "channel:UX",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 10
+    }
+  },
+  {
+    "from": "person:tara-lund",
+    "to": "channel:POSM",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 7
+    }
+  },
+  {
+    "from": "person:tara-lund",
+    "to": "category:wellness",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 3
+    }
+  },
+  {
+    "from": "person:tara-lund",
+    "to": "category:food-beverage",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 6
+    }
+  },
+  {
+    "from": "person:juno-vogel",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:juno-vogel",
+    "to": "dept:new-business",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:juno-vogel",
+    "to": "role:new-business-manager",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:juno-vogel",
+    "to": "skill:new-business-pitching",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:juno-vogel",
+    "to": "skill:negotiation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:juno-vogel",
+    "to": "category:tech",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 9
+    }
+  },
+  {
+    "from": "person:juno-vogel",
+    "to": "category:skincare",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 5
+    }
+  },
+  {
+    "from": "person:jonah-zane",
+    "to": "agency:halo-helix",
+    "type": "EMPLOYED_BY"
+  },
+  {
+    "from": "person:jonah-zane",
+    "to": "dept:new-business",
+    "type": "BELONGS_TO"
+  },
+  {
+    "from": "person:jonah-zane",
+    "to": "role:new-business-manager",
+    "type": "HAS_ROLE"
+  },
+  {
+    "from": "person:jonah-zane",
+    "to": "skill:attribution",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:jonah-zane",
+    "to": "skill:programmatic",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 4
+    }
+  },
+  {
+    "from": "person:jonah-zane",
+    "to": "skill:new-business-pitching",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 3
+    }
+  },
+  {
+    "from": "person:jonah-zane",
+    "to": "skill:negotiation",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:jonah-zane",
+    "to": "skill:paid-social",
+    "type": "HAS_SKILL",
+    "properties": {
+      "proficiency": 5
+    }
+  },
+  {
+    "from": "person:jonah-zane",
+    "to": "channel:PAID_MEDIA",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 2
+    }
+  },
+  {
+    "from": "person:jonah-zane",
+    "to": "category:wellness",
+    "type": "EXPERIENCED_IN",
+    "properties": {
+      "years": 9
+    }
+  }
 ]

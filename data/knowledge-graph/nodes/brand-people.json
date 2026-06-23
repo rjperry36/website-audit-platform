@@ -1,122 +1,162 @@
 [
-    {
-        "id": "brand-person:eleanor-marchetti",
-        "type": "BrandPerson",
-        "properties": {
-            "name": "Eleanor Marchetti",
-            "title": "Founder & Chief Brand Officer",
-            "team_id": "brand-team:aurelune-global",
-            "is_approver": true
-        }
-    },
-    {
-        "id": "brand-person:dr-jasper-okonkwo",
-        "type": "BrandPerson",
-        "properties": {
-            "name": "Dr. Jasper Okonkwo",
-            "title": "Chief Formulation Officer",
-            "team_id": "brand-team:aurelune-global",
-            "is_approver": true
-        }
-    },
-    {
-        "id": "brand-person:priya-iyengar",
-        "type": "BrandPerson",
-        "properties": {
-            "name": "Priya Iyengar",
-            "title": "Global VP Marketing",
-            "team_id": "brand-team:aurelune-global",
-            "is_approver": true
-        }
-    },
-    {
-        "id": "brand-person:tomas-ekberg",
-        "type": "BrandPerson",
-        "properties": {
-            "name": "Tomas Ekberg",
-            "title": "Global Head of Brand",
-            "team_id": "brand-team:aurelune-global",
-            "is_approver": true
-        }
-    },
-    {
-        "id": "brand-person:sarah-whitman",
-        "type": "BrandPerson",
-        "properties": {
-            "name": "Sarah Whitman",
-            "title": "Marketing Director, UK",
-            "team_id": "brand-team:aurelune-uk",
-            "is_approver": true
-        }
-    },
-    {
-        "id": "brand-person:rachel-park",
-        "type": "BrandPerson",
-        "properties": {
-            "name": "Rachel Park",
-            "title": "VP Marketing, US",
-            "team_id": "brand-team:aurelune-us",
-            "is_approver": true
-        }
-    },
-    {
-        "id": "brand-person:david-rosenberg",
-        "type": "BrandPerson",
-        "properties": {
-            "name": "David Rosenberg",
-            "title": "Senior Brand Manager, US",
-            "team_id": "brand-team:aurelune-us",
-            "is_approver": false
-        }
-    },
-    {
-        "id": "brand-person:lina-fischer",
-        "type": "BrandPerson",
-        "properties": {
-            "name": "Lina Fischer",
-            "title": "Brand Director, DACH",
-            "team_id": "brand-team:aurelune-de",
-            "is_approver": true
-        }
-    },
-    {
-        "id": "brand-person:camille-bernard",
-        "type": "BrandPerson",
-        "properties": {
-            "name": "Camille Bernard",
-            "title": "Directrice Marketing, France",
-            "team_id": "brand-team:aurelune-fr",
-            "is_approver": true
-        }
-    },
-    {
-        "id": "brand-person:yuki-saito",
-        "type": "BrandPerson",
-        "properties": {
-            "name": "Yuki Saito",
-            "title": "Brand Lead, Japan",
-            "team_id": "brand-team:aurelune-jp",
-            "is_approver": true
-        }
-    },
-    {
-        "id": "brand-person:hiroshi-watanabe",
-        "type": "BrandPerson",
-        "properties": {
-            "name": "Hiroshi Watanabe",
-            "title": "Senior Marketing Manager, Japan",
-            "team_id": "brand-team:aurelune-jp",
-            "is_approver": false
-        }
-    },
-    {
-        "id": "brand-person:wei-zhang",
-        "type": "BrandPerson",
-        "properties": {
-            "name": "Wei Zhang",
-            "title": "Cross-Border Lead, Greater China",
-            "team_id": "brand-team:aurelune-cn",
-            "is_approver": true
-        }
+  {
+    "id": "brand-person:eleanor-marchetti",
+    "type": "BrandPerson",
+    "properties": {
+      "name": "Eleanor Marchetti",
+      "title": "Founder & Chief Brand Officer",
+      "team_id": "brand-team:aurelune-global",
+      "is_approver": true
     }
+  },
+  {
+    "id": "brand-person:dr-jasper-okonkwo",
+    "type": "BrandPerson",
+    "properties": {
+      "name": "Dr. Jasper Okonkwo",
+      "title": "Chief Formulation Officer",
+      "team_id": "brand-team:aurelune-global",
+      "is_approver": true
+    }
+  },
+  {
+    "id": "brand-person:priya-iyengar",
+    "type": "BrandPerson",
+    "properties": {
+      "name": "Priya Iyengar",
+      "title": "Global VP Marketing",
+      "team_id": "brand-team:aurelune-global",
+      "is_approver": true
+    }
+  },
+  {
+    "id": "brand-person:tomas-ekberg",
+    "type": "BrandPerson",
+    "properties": {
+      "name": "Tomas Ekberg",
+      "title": "Global Head of Brand",
+      "team_id": "brand-team:aurelune-global",
+      "is_approver": true
+    }
+  },
+  {
+    "id": "brand-person:sarah-whitman",
+    "type": "BrandPerson",
+    "properties": {
+      "name": "Sarah Whitman",
+      "title": "Marketing Director, UK",
+      "team_id": "brand-team:aurelune-uk",
+      "is_approver": true
+    }
+  },
+  {
+    "id": "brand-person:rachel-park",
+    "type": "BrandPerson",
+    "properties": {
+      "name": "Rachel Park",
+      "title": "VP Marketing, US",
+      "team_id": "brand-team:aurelune-us",
+      "is_approver": true
+    }
+  },
+  {
+    "id": "brand-person:david-rosenberg",
+    "type": "BrandPerson",
+    "properties": {
+      "name": "David Rosenberg",
+      "title": "Senior Brand Manager, US",
+      "team_id": "brand-team:aurelune-us",
+      "is_approver": false
+    }
+  },
+  {
+    "id": "brand-person:lina-fischer",
+    "type": "BrandPerson",
+    "properties": {
+      "name": "Lina Fischer",
+      "title": "Brand Director, DACH",
+      "team_id": "brand-team:aurelune-de",
+      "is_approver": true
+    }
+  },
+  {
+    "id": "brand-person:camille-bernard",
+    "type": "BrandPerson",
+    "properties": {
+      "name": "Camille Bernard",
+      "title": "Directrice Marketing, France",
+      "team_id": "brand-team:aurelune-fr",
+      "is_approver": true
+    }
+  },
+  {
+    "id": "brand-person:yuki-saito",
+    "type": "BrandPerson",
+    "properties": {
+      "name": "Yuki Saito",
+      "title": "Brand Lead, Japan",
+      "team_id": "brand-team:aurelune-jp",
+      "is_approver": true
+    }
+  },
+  {
+    "id": "brand-person:hiroshi-watanabe",
+    "type": "BrandPerson",
+    "properties": {
+      "name": "Hiroshi Watanabe",
+      "title": "Senior Marketing Manager, Japan",
+      "team_id": "brand-team:aurelune-jp",
+      "is_approver": false
+    }
+  },
+  {
+    "id": "brand-person:wei-zhang",
+    "type": "BrandPerson",
+    "properties": {
+      "name": "Wei Zhang",
+      "title": "Cross-Border Lead, Greater China",
+      "team_id": "brand-team:aurelune-cn",
+      "is_approver": true
+    }
+  },
+  {
+    "id": "brand-person:darius-kane",
+    "type": "BrandPerson",
+    "properties": {
+      "name": "Darius Kane",
+      "title": "Chief Marketing Officer",
+      "team_id": "brand-team:kestrel-global",
+      "is_approver": true
+    }
+  },
+  {
+    "id": "brand-person:rhona-fielding",
+    "type": "BrandPerson",
+    "properties": {
+      "name": "Rhona Fielding",
+      "title": "Global Brand Director",
+      "team_id": "brand-team:kestrel-global",
+      "is_approver": true
+    }
+  },
+  {
+    "id": "brand-person:marcus-webb",
+    "type": "BrandPerson",
+    "properties": {
+      "name": "Marcus Webb",
+      "title": "UK Marketing Lead",
+      "team_id": "brand-team:kestrel-uk",
+      "is_approver": true
+    }
+  },
+  {
+    "id": "brand-person:dana-cole",
+    "type": "BrandPerson",
+    "properties": {
+      "name": "Dana Cole",
+      "title": "US Marketing Lead",
+      "team_id": "brand-team:kestrel-us",
+      "is_approver": true
+    }
+  }
 ]

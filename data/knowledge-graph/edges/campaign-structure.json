@@ -986,5 +986,3170 @@
     "from": "objective:always-on-influencer",
     "to": "kpi:xiaohongshu-organic-mentions",
     "type": "MEASURED_BY"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:aurelune-gifting-season-0-26",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-0-26",
+    "to": "brand-team:aurelune-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-0-26",
+    "to": "budget:aurelune-global-2026",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 540834
+    }
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-0-26",
+    "to": "market:JP",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-0-26",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-0-26",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-0-26",
+    "to": "channel:SEO",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-0-26",
+    "to": "channel:RESEARCH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:aurelune-vitamin-c-bright-1-25",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:aurelune-vitamin-c-bright-1-25",
+    "to": "brand-team:aurelune-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:aurelune-vitamin-c-bright-1-25",
+    "to": "budget:aurelune-global-2025",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 760952
+    }
+  },
+  {
+    "from": "campaign:aurelune-vitamin-c-bright-1-25",
+    "to": "market:DE",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-vitamin-c-bright-1-25",
+    "to": "market:JP",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-vitamin-c-bright-1-25",
+    "to": "market:UK",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-vitamin-c-bright-1-25",
+    "to": "channel:ECRM",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-vitamin-c-bright-1-25",
+    "to": "channel:OOH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-vitamin-c-bright-1-25",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-vitamin-c-bright-1-25",
+    "to": "channel:B2B2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-vitamin-c-bright-1-25",
+    "to": "channel:D2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:aurelune-gifting-season-2-25",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-2-25",
+    "to": "brand-team:aurelune-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-2-25",
+    "to": "budget:aurelune-global-2025",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 340216
+    }
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-2-25",
+    "to": "market:CN",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-2-25",
+    "to": "market:UK",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-2-25",
+    "to": "market:DE",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-2-25",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-2-25",
+    "to": "channel:SEO",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-2-25",
+    "to": "channel:OOH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-2-25",
+    "to": "channel:RESEARCH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:aurelune-gifting-season-3-24",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-3-24",
+    "to": "brand-team:aurelune-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-3-24",
+    "to": "budget:aurelune-global-2024",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 131334
+    }
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-3-24",
+    "to": "market:UK",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-3-24",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-3-24",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-3-24",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-3-24",
+    "to": "channel:RESEARCH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-3-24",
+    "to": "channel:ECRM",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:aurelune-hydration-ritual-4-26",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:aurelune-hydration-ritual-4-26",
+    "to": "brand-team:aurelune-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:aurelune-hydration-ritual-4-26",
+    "to": "budget:aurelune-global-2026",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 1383042
+    }
+  },
+  {
+    "from": "campaign:aurelune-hydration-ritual-4-26",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-hydration-ritual-4-26",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-hydration-ritual-4-26",
+    "to": "channel:SEO",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-hydration-ritual-4-26",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:aurelune-sampling-drive-5-24",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:aurelune-sampling-drive-5-24",
+    "to": "brand-team:aurelune-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:aurelune-sampling-drive-5-24",
+    "to": "budget:aurelune-global-2024",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 1151532
+    }
+  },
+  {
+    "from": "campaign:aurelune-sampling-drive-5-24",
+    "to": "market:JP",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-sampling-drive-5-24",
+    "to": "market:DE",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-sampling-drive-5-24",
+    "to": "market:CN",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-sampling-drive-5-24",
+    "to": "channel:B2B2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-sampling-drive-5-24",
+    "to": "channel:OOH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-sampling-drive-5-24",
+    "to": "channel:ECRM",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:aurelune-gifting-season-6-25",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-6-25",
+    "to": "brand-team:aurelune-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-6-25",
+    "to": "budget:aurelune-global-2025",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 1089674
+    }
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-6-25",
+    "to": "market:JP",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-6-25",
+    "to": "market:DE",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-6-25",
+    "to": "channel:SEO",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-6-25",
+    "to": "channel:B2B2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-6-25",
+    "to": "channel:D2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:aurelune-sephora-activation-7-24",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:aurelune-sephora-activation-7-24",
+    "to": "brand-team:aurelune-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:aurelune-sephora-activation-7-24",
+    "to": "budget:aurelune-global-2024",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 1154956
+    }
+  },
+  {
+    "from": "campaign:aurelune-sephora-activation-7-24",
+    "to": "market:DE",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-sephora-activation-7-24",
+    "to": "market:FR",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-sephora-activation-7-24",
+    "to": "market:CN",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-sephora-activation-7-24",
+    "to": "channel:RESEARCH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-sephora-activation-7-24",
+    "to": "channel:OOH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-sephora-activation-7-24",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-sephora-activation-7-24",
+    "to": "channel:D2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:aurelune-sampling-drive-8-25",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:aurelune-sampling-drive-8-25",
+    "to": "brand-team:aurelune-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:aurelune-sampling-drive-8-25",
+    "to": "budget:aurelune-global-2025",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 1043448
+    }
+  },
+  {
+    "from": "campaign:aurelune-sampling-drive-8-25",
+    "to": "market:UK",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-sampling-drive-8-25",
+    "to": "market:JP",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-sampling-drive-8-25",
+    "to": "channel:OOH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-sampling-drive-8-25",
+    "to": "channel:ECRM",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-sampling-drive-8-25",
+    "to": "channel:B2B2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:aurelune-barrier-repair-9-26",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:aurelune-barrier-repair-9-26",
+    "to": "brand-team:aurelune-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:aurelune-barrier-repair-9-26",
+    "to": "budget:aurelune-global-2026",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 632363
+    }
+  },
+  {
+    "from": "campaign:aurelune-barrier-repair-9-26",
+    "to": "market:UK",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-barrier-repair-9-26",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-barrier-repair-9-26",
+    "to": "channel:D2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-barrier-repair-9-26",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:aurelune-tokyo-residency-10-25",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:aurelune-tokyo-residency-10-25",
+    "to": "brand-team:aurelune-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:aurelune-tokyo-residency-10-25",
+    "to": "budget:aurelune-global-2025",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 702290
+    }
+  },
+  {
+    "from": "campaign:aurelune-tokyo-residency-10-25",
+    "to": "market:UK",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-tokyo-residency-10-25",
+    "to": "market:FR",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-tokyo-residency-10-25",
+    "to": "market:DE",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-tokyo-residency-10-25",
+    "to": "channel:SEO",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-tokyo-residency-10-25",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-tokyo-residency-10-25",
+    "to": "channel:B2B2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-tokyo-residency-10-25",
+    "to": "channel:RESEARCH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:aurelune-sephora-activation-11-26",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:aurelune-sephora-activation-11-26",
+    "to": "brand-team:aurelune-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:aurelune-sephora-activation-11-26",
+    "to": "budget:aurelune-global-2026",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 826841
+    }
+  },
+  {
+    "from": "campaign:aurelune-sephora-activation-11-26",
+    "to": "market:JP",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-sephora-activation-11-26",
+    "to": "channel:SEO",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-sephora-activation-11-26",
+    "to": "channel:ECRM",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-sephora-activation-11-26",
+    "to": "channel:D2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:aurelune-gifting-season-12-25",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-12-25",
+    "to": "brand-team:aurelune-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-12-25",
+    "to": "budget:aurelune-global-2025",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 1144501
+    }
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-12-25",
+    "to": "market:JP",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-12-25",
+    "to": "channel:SEO",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-12-25",
+    "to": "channel:RESEARCH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-12-25",
+    "to": "channel:B2B2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-gifting-season-12-25",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:aurelune-vitamin-c-bright-13-25",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:aurelune-vitamin-c-bright-13-25",
+    "to": "brand-team:aurelune-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:aurelune-vitamin-c-bright-13-25",
+    "to": "budget:aurelune-global-2025",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 758371
+    }
+  },
+  {
+    "from": "campaign:aurelune-vitamin-c-bright-13-25",
+    "to": "market:DE",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-vitamin-c-bright-13-25",
+    "to": "market:JP",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-vitamin-c-bright-13-25",
+    "to": "channel:OOH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-vitamin-c-bright-13-25",
+    "to": "channel:B2B2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-vitamin-c-bright-13-25",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-vitamin-c-bright-13-25",
+    "to": "channel:D2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-vitamin-c-bright-13-25",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:aurelune-sephora-activation-14-25",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:aurelune-sephora-activation-14-25",
+    "to": "brand-team:aurelune-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:aurelune-sephora-activation-14-25",
+    "to": "budget:aurelune-global-2025",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 706812
+    }
+  },
+  {
+    "from": "campaign:aurelune-sephora-activation-14-25",
+    "to": "market:CN",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-sephora-activation-14-25",
+    "to": "channel:ECRM",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-sephora-activation-14-25",
+    "to": "channel:B2B2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-sephora-activation-14-25",
+    "to": "channel:SEO",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:aurelune-sampling-drive-15-24",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:aurelune-sampling-drive-15-24",
+    "to": "brand-team:aurelune-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:aurelune-sampling-drive-15-24",
+    "to": "budget:aurelune-global-2024",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 959279
+    }
+  },
+  {
+    "from": "campaign:aurelune-sampling-drive-15-24",
+    "to": "market:CN",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-sampling-drive-15-24",
+    "to": "market:DE",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-sampling-drive-15-24",
+    "to": "channel:ECRM",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-sampling-drive-15-24",
+    "to": "channel:SEO",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-sampling-drive-15-24",
+    "to": "channel:RESEARCH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-sampling-drive-15-24",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:aurelune-dach-expansion-16-26",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:aurelune-dach-expansion-16-26",
+    "to": "brand-team:aurelune-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:aurelune-dach-expansion-16-26",
+    "to": "budget:aurelune-global-2026",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 994095
+    }
+  },
+  {
+    "from": "campaign:aurelune-dach-expansion-16-26",
+    "to": "market:JP",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-dach-expansion-16-26",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-dach-expansion-16-26",
+    "to": "channel:ECRM",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:aurelune-cross-border-cn-17-26",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:aurelune-cross-border-cn-17-26",
+    "to": "brand-team:aurelune-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:aurelune-cross-border-cn-17-26",
+    "to": "budget:aurelune-global-2026",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 1319883
+    }
+  },
+  {
+    "from": "campaign:aurelune-cross-border-cn-17-26",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-cross-border-cn-17-26",
+    "to": "market:CN",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-cross-border-cn-17-26",
+    "to": "channel:RESEARCH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-cross-border-cn-17-26",
+    "to": "channel:B2B2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-cross-border-cn-17-26",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-cross-border-cn-17-26",
+    "to": "channel:ECRM",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:aurelune-cross-border-cn-18-24",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:aurelune-cross-border-cn-18-24",
+    "to": "brand-team:aurelune-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:aurelune-cross-border-cn-18-24",
+    "to": "budget:aurelune-global-2024",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 1071078
+    }
+  },
+  {
+    "from": "campaign:aurelune-cross-border-cn-18-24",
+    "to": "market:FR",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-cross-border-cn-18-24",
+    "to": "market:DE",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-cross-border-cn-18-24",
+    "to": "channel:B2B2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-cross-border-cn-18-24",
+    "to": "channel:SEO",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-cross-border-cn-18-24",
+    "to": "channel:D2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:aurelune-cross-border-cn-19-25",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:aurelune-cross-border-cn-19-25",
+    "to": "brand-team:aurelune-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:aurelune-cross-border-cn-19-25",
+    "to": "budget:aurelune-global-2025",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 182844
+    }
+  },
+  {
+    "from": "campaign:aurelune-cross-border-cn-19-25",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-cross-border-cn-19-25",
+    "to": "market:UK",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-cross-border-cn-19-25",
+    "to": "market:FR",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-cross-border-cn-19-25",
+    "to": "channel:D2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-cross-border-cn-19-25",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-cross-border-cn-19-25",
+    "to": "channel:OOH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:aurelune-dach-expansion-20-26",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:aurelune-dach-expansion-20-26",
+    "to": "brand-team:aurelune-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:aurelune-dach-expansion-20-26",
+    "to": "budget:aurelune-global-2026",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 900342
+    }
+  },
+  {
+    "from": "campaign:aurelune-dach-expansion-20-26",
+    "to": "market:CN",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-dach-expansion-20-26",
+    "to": "channel:SEO",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-dach-expansion-20-26",
+    "to": "channel:B2B2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-dach-expansion-20-26",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-dach-expansion-20-26",
+    "to": "channel:OOH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-dach-expansion-20-26",
+    "to": "channel:RESEARCH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:aurelune-tokyo-residency-21-26",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:aurelune-tokyo-residency-21-26",
+    "to": "brand-team:aurelune-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:aurelune-tokyo-residency-21-26",
+    "to": "budget:aurelune-global-2026",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 1354942
+    }
+  },
+  {
+    "from": "campaign:aurelune-tokyo-residency-21-26",
+    "to": "market:CN",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-tokyo-residency-21-26",
+    "to": "channel:OOH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-tokyo-residency-21-26",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-tokyo-residency-21-26",
+    "to": "channel:ECRM",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-tokyo-residency-21-26",
+    "to": "channel:B2B2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:aurelune-pm-renewal-22-25",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:aurelune-pm-renewal-22-25",
+    "to": "brand-team:aurelune-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:aurelune-pm-renewal-22-25",
+    "to": "budget:aurelune-global-2025",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 878186
+    }
+  },
+  {
+    "from": "campaign:aurelune-pm-renewal-22-25",
+    "to": "market:UK",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-pm-renewal-22-25",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-pm-renewal-22-25",
+    "to": "channel:D2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-pm-renewal-22-25",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-pm-renewal-22-25",
+    "to": "channel:SEO",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:aurelune-sephora-activation-23-26",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:aurelune-sephora-activation-23-26",
+    "to": "brand-team:aurelune-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:aurelune-sephora-activation-23-26",
+    "to": "budget:aurelune-global-2026",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 465421
+    }
+  },
+  {
+    "from": "campaign:aurelune-sephora-activation-23-26",
+    "to": "market:CN",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-sephora-activation-23-26",
+    "to": "market:UK",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-sephora-activation-23-26",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-sephora-activation-23-26",
+    "to": "channel:SEO",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-sephora-activation-23-26",
+    "to": "channel:D2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-sephora-activation-23-26",
+    "to": "channel:ECRM",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-sephora-activation-23-26",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:aurelune-cross-border-cn-24-25",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:aurelune-cross-border-cn-24-25",
+    "to": "brand-team:aurelune-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:aurelune-cross-border-cn-24-25",
+    "to": "budget:aurelune-global-2025",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 1173175
+    }
+  },
+  {
+    "from": "campaign:aurelune-cross-border-cn-24-25",
+    "to": "market:CN",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-cross-border-cn-24-25",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-cross-border-cn-24-25",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-cross-border-cn-24-25",
+    "to": "channel:OOH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-cross-border-cn-24-25",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:aurelune-sampling-drive-25-26",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:aurelune-sampling-drive-25-26",
+    "to": "brand-team:aurelune-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:aurelune-sampling-drive-25-26",
+    "to": "budget:aurelune-global-2026",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 1118232
+    }
+  },
+  {
+    "from": "campaign:aurelune-sampling-drive-25-26",
+    "to": "market:CN",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-sampling-drive-25-26",
+    "to": "channel:SEO",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-sampling-drive-25-26",
+    "to": "channel:OOH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-sampling-drive-25-26",
+    "to": "channel:D2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:aurelune-barrier-repair-26-24",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:aurelune-barrier-repair-26-24",
+    "to": "brand-team:aurelune-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:aurelune-barrier-repair-26-24",
+    "to": "budget:aurelune-global-2024",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 361996
+    }
+  },
+  {
+    "from": "campaign:aurelune-barrier-repair-26-24",
+    "to": "market:CN",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-barrier-repair-26-24",
+    "to": "market:FR",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-barrier-repair-26-24",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-barrier-repair-26-24",
+    "to": "channel:B2B2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-barrier-repair-26-24",
+    "to": "channel:D2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:aurelune-dach-expansion-27-24",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:aurelune-dach-expansion-27-24",
+    "to": "brand-team:aurelune-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:aurelune-dach-expansion-27-24",
+    "to": "budget:aurelune-global-2024",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 386985
+    }
+  },
+  {
+    "from": "campaign:aurelune-dach-expansion-27-24",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-dach-expansion-27-24",
+    "to": "market:JP",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-dach-expansion-27-24",
+    "to": "market:DE",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:aurelune-dach-expansion-27-24",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-dach-expansion-27-24",
+    "to": "channel:B2B2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:aurelune-dach-expansion-27-24",
+    "to": "channel:ECRM",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-base-layer-drop-28-26",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-base-layer-drop-28-26",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-base-layer-drop-28-26",
+    "to": "budget:kestrel-global-2026",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 1177991
+    }
+  },
+  {
+    "from": "campaign:kestrel-base-layer-drop-28-26",
+    "to": "market:DE",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-base-layer-drop-28-26",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-base-layer-drop-28-26",
+    "to": "market:FR",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-base-layer-drop-28-26",
+    "to": "channel:SEO",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-base-layer-drop-28-26",
+    "to": "channel:OOH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-base-layer-drop-28-26",
+    "to": "channel:D2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-winter-layering-29-26",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-winter-layering-29-26",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-winter-layering-29-26",
+    "to": "budget:kestrel-global-2026",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 570581
+    }
+  },
+  {
+    "from": "campaign:kestrel-winter-layering-29-26",
+    "to": "market:UK",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-winter-layering-29-26",
+    "to": "market:JP",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-winter-layering-29-26",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-winter-layering-29-26",
+    "to": "channel:OOH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-base-layer-drop-30-26",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-base-layer-drop-30-26",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-base-layer-drop-30-26",
+    "to": "budget:kestrel-global-2026",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 1002676
+    }
+  },
+  {
+    "from": "campaign:kestrel-base-layer-drop-30-26",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-base-layer-drop-30-26",
+    "to": "channel:B2B",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-base-layer-drop-30-26",
+    "to": "channel:B2B2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-base-layer-drop-30-26",
+    "to": "channel:OOH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-base-layer-drop-30-26",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-run-club-series-31-24",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-run-club-series-31-24",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-run-club-series-31-24",
+    "to": "budget:kestrel-global-2024",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 513820
+    }
+  },
+  {
+    "from": "campaign:kestrel-run-club-series-31-24",
+    "to": "market:FR",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-run-club-series-31-24",
+    "to": "market:UK",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-run-club-series-31-24",
+    "to": "market:JP",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-run-club-series-31-24",
+    "to": "channel:SEO",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-run-club-series-31-24",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-commuter-campaign-32-24",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-commuter-campaign-32-24",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-commuter-campaign-32-24",
+    "to": "budget:kestrel-global-2024",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 794823
+    }
+  },
+  {
+    "from": "campaign:kestrel-commuter-campaign-32-24",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-commuter-campaign-32-24",
+    "to": "channel:RESEARCH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-commuter-campaign-32-24",
+    "to": "channel:SEO",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-commuter-campaign-32-24",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-marathon-push-33-26",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-33-26",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-33-26",
+    "to": "budget:kestrel-global-2026",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 273242
+    }
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-33-26",
+    "to": "market:UK",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-33-26",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-33-26",
+    "to": "channel:POSM",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-33-26",
+    "to": "channel:EVENT",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-33-26",
+    "to": "channel:SEO",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-footwear-launch-34-26",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-footwear-launch-34-26",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-footwear-launch-34-26",
+    "to": "budget:kestrel-global-2026",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 522147
+    }
+  },
+  {
+    "from": "campaign:kestrel-footwear-launch-34-26",
+    "to": "market:CN",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-footwear-launch-34-26",
+    "to": "channel:RESEARCH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-footwear-launch-34-26",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-gore-tex-launch-35-25",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-gore-tex-launch-35-25",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-gore-tex-launch-35-25",
+    "to": "budget:kestrel-global-2025",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 471125
+    }
+  },
+  {
+    "from": "campaign:kestrel-gore-tex-launch-35-25",
+    "to": "market:CN",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-gore-tex-launch-35-25",
+    "to": "channel:B2B2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-gore-tex-launch-35-25",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-gore-tex-launch-35-25",
+    "to": "channel:SEO",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-gore-tex-launch-35-25",
+    "to": "channel:B2B",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-sustainability-story-36-25",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-sustainability-story-36-25",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-sustainability-story-36-25",
+    "to": "budget:kestrel-global-2025",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 786281
+    }
+  },
+  {
+    "from": "campaign:kestrel-sustainability-story-36-25",
+    "to": "market:FR",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-sustainability-story-36-25",
+    "to": "channel:POSM",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-sustainability-story-36-25",
+    "to": "channel:D2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-sustainability-story-36-25",
+    "to": "channel:B2B",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-sustainability-story-36-25",
+    "to": "channel:B2B2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-commuter-campaign-37-24",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-commuter-campaign-37-24",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-commuter-campaign-37-24",
+    "to": "budget:kestrel-global-2024",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 763634
+    }
+  },
+  {
+    "from": "campaign:kestrel-commuter-campaign-37-24",
+    "to": "market:DE",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-commuter-campaign-37-24",
+    "to": "channel:SEO",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-commuter-campaign-37-24",
+    "to": "channel:OOH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-commuter-campaign-38-25",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-commuter-campaign-38-25",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-commuter-campaign-38-25",
+    "to": "budget:kestrel-global-2025",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 417255
+    }
+  },
+  {
+    "from": "campaign:kestrel-commuter-campaign-38-25",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-commuter-campaign-38-25",
+    "to": "market:UK",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-commuter-campaign-38-25",
+    "to": "channel:EVENT",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-commuter-campaign-38-25",
+    "to": "channel:RESEARCH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-commuter-campaign-38-25",
+    "to": "channel:SEO",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-commuter-campaign-38-25",
+    "to": "channel:POSM",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-flagship-opening-39-26",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-39-26",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-39-26",
+    "to": "budget:kestrel-global-2026",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 766645
+    }
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-39-26",
+    "to": "market:DE",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-39-26",
+    "to": "market:FR",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-39-26",
+    "to": "market:UK",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-39-26",
+    "to": "channel:RESEARCH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-39-26",
+    "to": "channel:B2B2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-39-26",
+    "to": "channel:SEO",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-39-26",
+    "to": "channel:OOH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-commuter-campaign-40-25",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-commuter-campaign-40-25",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-commuter-campaign-40-25",
+    "to": "budget:kestrel-global-2025",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 1093864
+    }
+  },
+  {
+    "from": "campaign:kestrel-commuter-campaign-40-25",
+    "to": "market:CN",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-commuter-campaign-40-25",
+    "to": "market:JP",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-commuter-campaign-40-25",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-commuter-campaign-40-25",
+    "to": "channel:B2B2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-commuter-campaign-40-25",
+    "to": "channel:OOH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-commuter-campaign-40-25",
+    "to": "channel:SEO",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-commuter-campaign-40-25",
+    "to": "channel:POSM",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-trail-season-41-25",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-trail-season-41-25",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-trail-season-41-25",
+    "to": "budget:kestrel-global-2025",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 153107
+    }
+  },
+  {
+    "from": "campaign:kestrel-trail-season-41-25",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-trail-season-41-25",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-trail-season-41-25",
+    "to": "channel:EVENT",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-trail-season-41-25",
+    "to": "channel:RESEARCH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-marathon-push-42-26",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-42-26",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-42-26",
+    "to": "budget:kestrel-global-2026",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 1334144
+    }
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-42-26",
+    "to": "market:JP",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-42-26",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-42-26",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-42-26",
+    "to": "channel:SEO",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-wholesale-roadshow-43-24",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-wholesale-roadshow-43-24",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-wholesale-roadshow-43-24",
+    "to": "budget:kestrel-global-2024",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 906171
+    }
+  },
+  {
+    "from": "campaign:kestrel-wholesale-roadshow-43-24",
+    "to": "market:CN",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-wholesale-roadshow-43-24",
+    "to": "market:UK",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-wholesale-roadshow-43-24",
+    "to": "market:JP",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-wholesale-roadshow-43-24",
+    "to": "channel:RESEARCH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-wholesale-roadshow-43-24",
+    "to": "channel:EVENT",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-gore-tex-launch-44-25",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-gore-tex-launch-44-25",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-gore-tex-launch-44-25",
+    "to": "budget:kestrel-global-2025",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 303238
+    }
+  },
+  {
+    "from": "campaign:kestrel-gore-tex-launch-44-25",
+    "to": "market:FR",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-gore-tex-launch-44-25",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-gore-tex-launch-44-25",
+    "to": "market:DE",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-gore-tex-launch-44-25",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-gore-tex-launch-44-25",
+    "to": "channel:RESEARCH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-gore-tex-launch-44-25",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-footwear-launch-45-25",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-footwear-launch-45-25",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-footwear-launch-45-25",
+    "to": "budget:kestrel-global-2025",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 970704
+    }
+  },
+  {
+    "from": "campaign:kestrel-footwear-launch-45-25",
+    "to": "market:UK",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-footwear-launch-45-25",
+    "to": "channel:B2B2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-footwear-launch-45-25",
+    "to": "channel:POSM",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-footwear-launch-45-25",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-footwear-launch-45-25",
+    "to": "channel:B2B",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-footwear-launch-45-25",
+    "to": "channel:D2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-black-friday-46-24",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-black-friday-46-24",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-black-friday-46-24",
+    "to": "budget:kestrel-global-2024",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 813704
+    }
+  },
+  {
+    "from": "campaign:kestrel-black-friday-46-24",
+    "to": "market:FR",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-black-friday-46-24",
+    "to": "channel:OOH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-black-friday-46-24",
+    "to": "channel:RESEARCH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-black-friday-46-24",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-black-friday-46-24",
+    "to": "channel:B2B",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-black-friday-46-24",
+    "to": "channel:SEO",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-flagship-opening-47-24",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-47-24",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-47-24",
+    "to": "budget:kestrel-global-2024",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 1286958
+    }
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-47-24",
+    "to": "market:UK",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-47-24",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-47-24",
+    "to": "channel:B2B",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-black-friday-48-26",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-black-friday-48-26",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-black-friday-48-26",
+    "to": "budget:kestrel-global-2026",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 1220516
+    }
+  },
+  {
+    "from": "campaign:kestrel-black-friday-48-26",
+    "to": "market:DE",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-black-friday-48-26",
+    "to": "channel:SEO",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-black-friday-48-26",
+    "to": "channel:B2B",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-black-friday-48-26",
+    "to": "channel:D2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-flagship-opening-49-24",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-49-24",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-49-24",
+    "to": "budget:kestrel-global-2024",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 1078571
+    }
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-49-24",
+    "to": "market:DE",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-49-24",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-49-24",
+    "to": "channel:B2B",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-49-24",
+    "to": "channel:D2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-49-24",
+    "to": "channel:OOH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-49-24",
+    "to": "channel:RESEARCH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-49-24",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-winter-layering-50-26",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-winter-layering-50-26",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-winter-layering-50-26",
+    "to": "budget:kestrel-global-2026",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 186630
+    }
+  },
+  {
+    "from": "campaign:kestrel-winter-layering-50-26",
+    "to": "market:UK",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-winter-layering-50-26",
+    "to": "market:DE",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-winter-layering-50-26",
+    "to": "channel:OOH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-winter-layering-50-26",
+    "to": "channel:D2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-sustainability-story-51-24",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-sustainability-story-51-24",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-sustainability-story-51-24",
+    "to": "budget:kestrel-global-2024",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 734097
+    }
+  },
+  {
+    "from": "campaign:kestrel-sustainability-story-51-24",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-sustainability-story-51-24",
+    "to": "market:FR",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-sustainability-story-51-24",
+    "to": "market:DE",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-sustainability-story-51-24",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-sustainability-story-51-24",
+    "to": "channel:D2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-sustainability-story-51-24",
+    "to": "channel:B2B",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-sustainability-story-51-24",
+    "to": "channel:EVENT",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-sustainability-story-51-24",
+    "to": "channel:SEO",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-footwear-launch-52-25",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-footwear-launch-52-25",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-footwear-launch-52-25",
+    "to": "budget:kestrel-global-2025",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 1350966
+    }
+  },
+  {
+    "from": "campaign:kestrel-footwear-launch-52-25",
+    "to": "market:JP",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-footwear-launch-52-25",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-footwear-launch-52-25",
+    "to": "channel:RESEARCH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-footwear-launch-52-25",
+    "to": "channel:B2B2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-sustainability-story-53-25",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-sustainability-story-53-25",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-sustainability-story-53-25",
+    "to": "budget:kestrel-global-2025",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 183691
+    }
+  },
+  {
+    "from": "campaign:kestrel-sustainability-story-53-25",
+    "to": "market:CN",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-sustainability-story-53-25",
+    "to": "market:DE",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-sustainability-story-53-25",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-sustainability-story-53-25",
+    "to": "channel:B2B2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-sustainability-story-53-25",
+    "to": "channel:OOH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-wholesale-roadshow-54-26",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-wholesale-roadshow-54-26",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-wholesale-roadshow-54-26",
+    "to": "budget:kestrel-global-2026",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 986086
+    }
+  },
+  {
+    "from": "campaign:kestrel-wholesale-roadshow-54-26",
+    "to": "market:CN",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-wholesale-roadshow-54-26",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-wholesale-roadshow-54-26",
+    "to": "market:JP",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-wholesale-roadshow-54-26",
+    "to": "channel:B2B2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-wholesale-roadshow-54-26",
+    "to": "channel:EVENT",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-flagship-opening-55-24",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-55-24",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-55-24",
+    "to": "budget:kestrel-global-2024",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 1075587
+    }
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-55-24",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-55-24",
+    "to": "channel:SEO",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-55-24",
+    "to": "channel:POSM",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-55-24",
+    "to": "channel:OOH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-marathon-push-56-25",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-56-25",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-56-25",
+    "to": "budget:kestrel-global-2025",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 699054
+    }
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-56-25",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-56-25",
+    "to": "market:JP",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-56-25",
+    "to": "market:UK",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-56-25",
+    "to": "channel:B2B",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-56-25",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-56-25",
+    "to": "channel:B2B2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-footwear-launch-57-24",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-footwear-launch-57-24",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-footwear-launch-57-24",
+    "to": "budget:kestrel-global-2024",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 207326
+    }
+  },
+  {
+    "from": "campaign:kestrel-footwear-launch-57-24",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-footwear-launch-57-24",
+    "to": "market:JP",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-footwear-launch-57-24",
+    "to": "market:UK",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-footwear-launch-57-24",
+    "to": "channel:EVENT",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-footwear-launch-57-24",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-footwear-launch-57-24",
+    "to": "channel:D2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-footwear-launch-57-24",
+    "to": "channel:B2B2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-black-friday-58-26",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-black-friday-58-26",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-black-friday-58-26",
+    "to": "budget:kestrel-global-2026",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 1307509
+    }
+  },
+  {
+    "from": "campaign:kestrel-black-friday-58-26",
+    "to": "market:CN",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-black-friday-58-26",
+    "to": "market:JP",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-black-friday-58-26",
+    "to": "market:DE",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-black-friday-58-26",
+    "to": "channel:B2B",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-black-friday-58-26",
+    "to": "channel:RESEARCH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-black-friday-58-26",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-black-friday-58-26",
+    "to": "channel:D2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-trail-season-59-26",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-trail-season-59-26",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-trail-season-59-26",
+    "to": "budget:kestrel-global-2026",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 799631
+    }
+  },
+  {
+    "from": "campaign:kestrel-trail-season-59-26",
+    "to": "market:CN",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-trail-season-59-26",
+    "to": "market:DE",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-trail-season-59-26",
+    "to": "market:UK",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-trail-season-59-26",
+    "to": "channel:RESEARCH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-trail-season-59-26",
+    "to": "channel:D2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-trail-season-59-26",
+    "to": "channel:SEO",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-trail-season-59-26",
+    "to": "channel:POSM",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-black-friday-60-26",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-black-friday-60-26",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-black-friday-60-26",
+    "to": "budget:kestrel-global-2026",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 859582
+    }
+  },
+  {
+    "from": "campaign:kestrel-black-friday-60-26",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-black-friday-60-26",
+    "to": "market:UK",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-black-friday-60-26",
+    "to": "market:JP",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-black-friday-60-26",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-black-friday-60-26",
+    "to": "channel:D2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-black-friday-60-26",
+    "to": "channel:RESEARCH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-gore-tex-launch-61-26",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-gore-tex-launch-61-26",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-gore-tex-launch-61-26",
+    "to": "budget:kestrel-global-2026",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 1079900
+    }
+  },
+  {
+    "from": "campaign:kestrel-gore-tex-launch-61-26",
+    "to": "market:FR",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-gore-tex-launch-61-26",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-gore-tex-launch-61-26",
+    "to": "market:CN",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-gore-tex-launch-61-26",
+    "to": "channel:B2B",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-gore-tex-launch-61-26",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-marathon-push-62-25",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-62-25",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-62-25",
+    "to": "budget:kestrel-global-2025",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 361633
+    }
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-62-25",
+    "to": "market:UK",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-62-25",
+    "to": "market:FR",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-62-25",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-62-25",
+    "to": "channel:POSM",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-62-25",
+    "to": "channel:OOH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-62-25",
+    "to": "channel:B2B2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-62-25",
+    "to": "channel:EVENT",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-gore-tex-launch-63-26",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-gore-tex-launch-63-26",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-gore-tex-launch-63-26",
+    "to": "budget:kestrel-global-2026",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 230647
+    }
+  },
+  {
+    "from": "campaign:kestrel-gore-tex-launch-63-26",
+    "to": "market:FR",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-gore-tex-launch-63-26",
+    "to": "market:UK",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-gore-tex-launch-63-26",
+    "to": "channel:OOH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-gore-tex-launch-63-26",
+    "to": "channel:B2B2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-gore-tex-launch-63-26",
+    "to": "channel:POSM",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-flagship-opening-64-26",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-64-26",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-64-26",
+    "to": "budget:kestrel-global-2026",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 938336
+    }
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-64-26",
+    "to": "market:DE",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-64-26",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-64-26",
+    "to": "channel:B2B2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-64-26",
+    "to": "channel:EVENT",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-64-26",
+    "to": "channel:POSM",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-flagship-opening-64-26",
+    "to": "channel:SEO",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-base-layer-drop-65-26",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-base-layer-drop-65-26",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-base-layer-drop-65-26",
+    "to": "budget:kestrel-global-2026",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 562346
+    }
+  },
+  {
+    "from": "campaign:kestrel-base-layer-drop-65-26",
+    "to": "market:JP",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-base-layer-drop-65-26",
+    "to": "market:DE",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-base-layer-drop-65-26",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-base-layer-drop-65-26",
+    "to": "channel:B2B",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-base-layer-drop-65-26",
+    "to": "channel:EVENT",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-base-layer-drop-65-26",
+    "to": "channel:RESEARCH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-marathon-push-66-24",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-66-24",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-66-24",
+    "to": "budget:kestrel-global-2024",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 696533
+    }
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-66-24",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-66-24",
+    "to": "market:DE",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-66-24",
+    "to": "market:CN",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-66-24",
+    "to": "channel:B2B",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-66-24",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-66-24",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-66-24",
+    "to": "channel:SEO",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-wholesale-roadshow-67-25",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-wholesale-roadshow-67-25",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-wholesale-roadshow-67-25",
+    "to": "budget:kestrel-global-2025",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 1048546
+    }
+  },
+  {
+    "from": "campaign:kestrel-wholesale-roadshow-67-25",
+    "to": "market:CN",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-wholesale-roadshow-67-25",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-wholesale-roadshow-67-25",
+    "to": "channel:B2B",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-wholesale-roadshow-67-25",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-wholesale-roadshow-67-25",
+    "to": "channel:D2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-wholesale-roadshow-67-25",
+    "to": "channel:OOH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-wholesale-roadshow-67-25",
+    "to": "channel:POSM",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-marathon-push-68-26",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-68-26",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-68-26",
+    "to": "budget:kestrel-global-2026",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 857690
+    }
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-68-26",
+    "to": "market:DE",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-68-26",
+    "to": "channel:B2B2C",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-68-26",
+    "to": "channel:RESEARCH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-68-26",
+    "to": "channel:SOCIAL_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-68-26",
+    "to": "channel:PAID_MEDIA",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-marathon-push-68-26",
+    "to": "channel:OOH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "agency:halo-helix",
+    "to": "campaign:kestrel-trail-season-69-24",
+    "type": "ORCHESTRATES"
+  },
+  {
+    "from": "campaign:kestrel-trail-season-69-24",
+    "to": "brand-team:kestrel-global",
+    "type": "COMMISSIONED_BY"
+  },
+  {
+    "from": "campaign:kestrel-trail-season-69-24",
+    "to": "budget:kestrel-global-2024",
+    "type": "DRAWS_FROM",
+    "properties": {
+      "draw_amount": 496468
+    }
+  },
+  {
+    "from": "campaign:kestrel-trail-season-69-24",
+    "to": "market:FR",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-trail-season-69-24",
+    "to": "market:DE",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-trail-season-69-24",
+    "to": "market:US",
+    "type": "RUNS_IN"
+  },
+  {
+    "from": "campaign:kestrel-trail-season-69-24",
+    "to": "channel:SEO",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-trail-season-69-24",
+    "to": "channel:OOH",
+    "type": "USES_CHANNEL"
+  },
+  {
+    "from": "campaign:kestrel-trail-season-69-24",
+    "to": "channel:B2B",
+    "type": "USES_CHANNEL"
   }
 ]

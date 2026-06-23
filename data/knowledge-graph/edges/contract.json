@@ -1,8 +1,37 @@
 [
-    { "from": "contract:aurelune-master-2024",      "to": "brand:aurelune",   "type": "GOVERNS" },
-    { "from": "contract:aurelune-master-2024",      "to": "agency:halo-helix","type": "SIGNED_BY" },
-    { "from": "contract:aurelune-jp-addendum-2024", "to": "brand:aurelune",   "type": "GOVERNS" },
-    { "from": "contract:aurelune-jp-addendum-2024", "to": "agency:halo-helix","type": "SIGNED_BY" },
-    { "from": "contract:aurelune-cn-addendum-2024", "to": "brand:aurelune",   "type": "GOVERNS" },
-    { "from": "contract:aurelune-cn-addendum-2024", "to": "agency:halo-helix","type": "SIGNED_BY" }
+  {
+    "from": "contract:aurelune-master-2024",
+    "to": "brand:aurelune",
+    "type": "GOVERNS"
+  },
+  {
+    "from": "contract:aurelune-master-2024",
+    "to": "agency:halo-helix",
+    "type": "SIGNED_BY"
+  },
+  {
+    "from": "contract:aurelune-jp-addendum-2024",
+    "to": "brand:aurelune",
+    "type": "GOVERNS"
+  },
+  {
+    "from": "contract:aurelune-jp-addendum-2024",
+    "to": "agency:halo-helix",
+    "type": "SIGNED_BY"
+  },
+  {
+    "from": "contract:aurelune-cn-addendum-2024",
+    "to": "brand:aurelune",
+    "type": "GOVERNS"
+  },
+  {
+    "from": "contract:aurelune-cn-addendum-2024",
+    "to": "agency:halo-helix",
+    "type": "SIGNED_BY"
+  },
+  {
+    "from": "contract:kestrel-master-2024",
+    "to": "brand:kestrel",
+    "type": "GOVERNS"
+  }
 ]

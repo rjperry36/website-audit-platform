@@ -1,148 +1,912 @@
 [
-    { "from": "brand:aurelune", "to": "brand-team:aurelune-global", "type": "OWNS" },
-    { "from": "brand:aurelune", "to": "brand-team:aurelune-uk",     "type": "OWNS" },
-    { "from": "brand:aurelune", "to": "brand-team:aurelune-us",     "type": "OWNS" },
-    { "from": "brand:aurelune", "to": "brand-team:aurelune-de",     "type": "OWNS" },
-    { "from": "brand:aurelune", "to": "brand-team:aurelune-fr",     "type": "OWNS" },
-    { "from": "brand:aurelune", "to": "brand-team:aurelune-jp",     "type": "OWNS" },
-    { "from": "brand:aurelune", "to": "brand-team:aurelune-cn",     "type": "OWNS" },
-
-    { "from": "brand-team:aurelune-uk", "to": "market:UK", "type": "OPERATES_IN" },
-    { "from": "brand-team:aurelune-us", "to": "market:US", "type": "OPERATES_IN" },
-    { "from": "brand-team:aurelune-de", "to": "market:DE", "type": "OPERATES_IN" },
-    { "from": "brand-team:aurelune-fr", "to": "market:FR", "type": "OPERATES_IN" },
-    { "from": "brand-team:aurelune-jp", "to": "market:JP", "type": "OPERATES_IN" },
-    { "from": "brand-team:aurelune-cn", "to": "market:CN", "type": "OPERATES_IN" },
-
-    { "from": "brand-person:eleanor-marchetti",  "to": "brand-team:aurelune-global", "type": "STAKEHOLDER_OF" },
-    { "from": "brand-person:dr-jasper-okonkwo",  "to": "brand-team:aurelune-global", "type": "STAKEHOLDER_OF" },
-    { "from": "brand-person:priya-iyengar",      "to": "brand-team:aurelune-global", "type": "STAKEHOLDER_OF" },
-    { "from": "brand-person:tomas-ekberg",       "to": "brand-team:aurelune-global", "type": "STAKEHOLDER_OF" },
-    { "from": "brand-person:sarah-whitman",      "to": "brand-team:aurelune-uk",     "type": "STAKEHOLDER_OF" },
-    { "from": "brand-person:rachel-park",        "to": "brand-team:aurelune-us",     "type": "STAKEHOLDER_OF" },
-    { "from": "brand-person:david-rosenberg",    "to": "brand-team:aurelune-us",     "type": "STAKEHOLDER_OF" },
-    { "from": "brand-person:lina-fischer",       "to": "brand-team:aurelune-de",     "type": "STAKEHOLDER_OF" },
-    { "from": "brand-person:camille-bernard",    "to": "brand-team:aurelune-fr",     "type": "STAKEHOLDER_OF" },
-    { "from": "brand-person:yuki-saito",         "to": "brand-team:aurelune-jp",     "type": "STAKEHOLDER_OF" },
-    { "from": "brand-person:hiroshi-watanabe",   "to": "brand-team:aurelune-jp",     "type": "STAKEHOLDER_OF" },
-    { "from": "brand-person:wei-zhang",          "to": "brand-team:aurelune-cn",     "type": "STAKEHOLDER_OF" },
-
-    { "from": "brand:aurelune", "to": "product:retinoid-pm-serum",      "type": "SELLS" },
-    { "from": "brand:aurelune", "to": "product:bakuchiol-day-fluid",    "type": "SELLS" },
-    { "from": "brand:aurelune", "to": "product:peptide-repair-cream",   "type": "SELLS" },
-    { "from": "brand:aurelune", "to": "product:ceramide-repair-cream",  "type": "SELLS" },
-    { "from": "brand:aurelune", "to": "product:niacinamide-tone-veil",  "type": "SELLS" },
-    { "from": "brand:aurelune", "to": "product:mineral-defence-spf50",  "type": "SELLS" },
-    { "from": "brand:aurelune", "to": "product:resurfacing-ritual-oil", "type": "SELLS" },
-    { "from": "brand:aurelune", "to": "product:clearing-cleanser",      "type": "SELLS" },
-    { "from": "brand:aurelune", "to": "product:hydrating-mist",         "type": "SELLS" },
-    { "from": "brand:aurelune", "to": "product:the-ritual-set",         "type": "SELLS" },
-
-    { "from": "product:retinoid-pm-serum",      "to": "market:UK", "type": "AVAILABLE_IN", "properties": { "local_rrp": 92,    "local_currency": "GBP", "launch_date_local": "2020-04-01" } },
-    { "from": "product:retinoid-pm-serum",      "to": "market:US", "type": "AVAILABLE_IN", "properties": { "local_rrp": 120,   "local_currency": "USD", "launch_date_local": "2021-09-15" } },
-    { "from": "product:retinoid-pm-serum",      "to": "market:DE", "type": "AVAILABLE_IN", "properties": { "local_rrp": 109,   "local_currency": "EUR", "launch_date_local": "2022-03-01" } },
-    { "from": "product:retinoid-pm-serum",      "to": "market:FR", "type": "AVAILABLE_IN", "properties": { "local_rrp": 109,   "local_currency": "EUR", "launch_date_local": "2022-03-01" } },
-    { "from": "product:retinoid-pm-serum",      "to": "market:JP", "type": "AVAILABLE_IN", "properties": { "local_rrp": 18000, "local_currency": "JPY", "launch_date_local": "2024-04-15" } },
-    { "from": "product:retinoid-pm-serum",      "to": "market:CN", "type": "AVAILABLE_IN", "properties": { "local_rrp": 880,   "local_currency": "CNY", "launch_date_local": "2024-09-01" } },
-
-    { "from": "product:bakuchiol-day-fluid",    "to": "market:UK", "type": "AVAILABLE_IN", "properties": { "local_rrp": 62,    "local_currency": "GBP", "launch_date_local": "2020-04-01" } },
-    { "from": "product:bakuchiol-day-fluid",    "to": "market:US", "type": "AVAILABLE_IN", "properties": { "local_rrp": 80,    "local_currency": "USD", "launch_date_local": "2021-09-15" } },
-    { "from": "product:bakuchiol-day-fluid",    "to": "market:DE", "type": "AVAILABLE_IN", "properties": { "local_rrp": 72,    "local_currency": "EUR", "launch_date_local": "2022-03-01" } },
-    { "from": "product:bakuchiol-day-fluid",    "to": "market:FR", "type": "AVAILABLE_IN", "properties": { "local_rrp": 72,    "local_currency": "EUR", "launch_date_local": "2022-03-01" } },
-    { "from": "product:bakuchiol-day-fluid",    "to": "market:JP", "type": "AVAILABLE_IN", "properties": { "local_rrp": 12000, "local_currency": "JPY", "launch_date_local": "2024-04-15" } },
-    { "from": "product:bakuchiol-day-fluid",    "to": "market:CN", "type": "AVAILABLE_IN", "properties": { "local_rrp": 590,   "local_currency": "CNY", "launch_date_local": "2024-09-01" } },
-
-    { "from": "product:peptide-repair-cream",   "to": "market:UK", "type": "AVAILABLE_IN", "properties": { "local_rrp": 85,    "local_currency": "GBP", "launch_date_local": "2020-09-15" } },
-    { "from": "product:peptide-repair-cream",   "to": "market:US", "type": "AVAILABLE_IN", "properties": { "local_rrp": 110,   "local_currency": "USD", "launch_date_local": "2021-11-01" } },
-    { "from": "product:peptide-repair-cream",   "to": "market:DE", "type": "AVAILABLE_IN", "properties": { "local_rrp": 100,   "local_currency": "EUR", "launch_date_local": "2022-05-01" } },
-    { "from": "product:peptide-repair-cream",   "to": "market:FR", "type": "AVAILABLE_IN", "properties": { "local_rrp": 100,   "local_currency": "EUR", "launch_date_local": "2022-05-01" } },
-    { "from": "product:peptide-repair-cream",   "to": "market:JP", "type": "AVAILABLE_IN", "properties": { "local_rrp": 16500, "local_currency": "JPY", "launch_date_local": "2024-04-15" } },
-
-    { "from": "product:ceramide-repair-cream",  "to": "market:UK", "type": "AVAILABLE_IN", "properties": { "local_rrp": 68,    "local_currency": "GBP", "launch_date_local": "2019-11-01" } },
-    { "from": "product:ceramide-repair-cream",  "to": "market:US", "type": "AVAILABLE_IN", "properties": { "local_rrp": 88,    "local_currency": "USD", "launch_date_local": "2021-09-15" } },
-    { "from": "product:ceramide-repair-cream",  "to": "market:DE", "type": "AVAILABLE_IN", "properties": { "local_rrp": 80,    "local_currency": "EUR", "launch_date_local": "2022-03-01" } },
-    { "from": "product:ceramide-repair-cream",  "to": "market:FR", "type": "AVAILABLE_IN", "properties": { "local_rrp": 80,    "local_currency": "EUR", "launch_date_local": "2022-03-01" } },
-    { "from": "product:ceramide-repair-cream",  "to": "market:JP", "type": "AVAILABLE_IN", "properties": { "local_rrp": 13500, "local_currency": "JPY", "launch_date_local": "2024-04-15" } },
-    { "from": "product:ceramide-repair-cream",  "to": "market:CN", "type": "AVAILABLE_IN", "properties": { "local_rrp": 650,   "local_currency": "CNY", "launch_date_local": "2024-09-01" } },
-
-    { "from": "product:niacinamide-tone-veil",  "to": "market:UK", "type": "AVAILABLE_IN", "properties": { "local_rrp": 48,    "local_currency": "GBP", "launch_date_local": "2021-03-01" } },
-    { "from": "product:niacinamide-tone-veil",  "to": "market:US", "type": "AVAILABLE_IN", "properties": { "local_rrp": 62,    "local_currency": "USD", "launch_date_local": "2021-09-15" } },
-    { "from": "product:niacinamide-tone-veil",  "to": "market:DE", "type": "AVAILABLE_IN", "properties": { "local_rrp": 56,    "local_currency": "EUR", "launch_date_local": "2022-03-01" } },
-    { "from": "product:niacinamide-tone-veil",  "to": "market:FR", "type": "AVAILABLE_IN", "properties": { "local_rrp": 56,    "local_currency": "EUR", "launch_date_local": "2022-03-01" } },
-
-    { "from": "product:mineral-defence-spf50",  "to": "market:UK", "type": "AVAILABLE_IN", "properties": { "local_rrp": 58,    "local_currency": "GBP", "launch_date_local": "2021-05-10" } },
-    { "from": "product:mineral-defence-spf50",  "to": "market:US", "type": "AVAILABLE_IN", "properties": { "local_rrp": 75,    "local_currency": "USD", "launch_date_local": "2022-04-01" } },
-    { "from": "product:mineral-defence-spf50",  "to": "market:DE", "type": "AVAILABLE_IN", "properties": { "local_rrp": 68,    "local_currency": "EUR", "launch_date_local": "2022-06-01" } },
-    { "from": "product:mineral-defence-spf50",  "to": "market:FR", "type": "AVAILABLE_IN", "properties": { "local_rrp": 68,    "local_currency": "EUR", "launch_date_local": "2022-06-01" } },
-    { "from": "product:mineral-defence-spf50",  "to": "market:JP", "type": "AVAILABLE_IN", "properties": { "local_rrp": 11000, "local_currency": "JPY", "launch_date_local": "2024-04-15" } },
-
-    { "from": "product:resurfacing-ritual-oil", "to": "market:UK", "type": "AVAILABLE_IN", "properties": { "local_rrp": 78,    "local_currency": "GBP", "launch_date_local": "2022-02-14" } },
-    { "from": "product:resurfacing-ritual-oil", "to": "market:US", "type": "AVAILABLE_IN", "properties": { "local_rrp": 100,   "local_currency": "USD", "launch_date_local": "2022-04-01" } },
-    { "from": "product:resurfacing-ritual-oil", "to": "market:DE", "type": "AVAILABLE_IN", "properties": { "local_rrp": 92,    "local_currency": "EUR", "launch_date_local": "2022-06-01" } },
-    { "from": "product:resurfacing-ritual-oil", "to": "market:FR", "type": "AVAILABLE_IN", "properties": { "local_rrp": 92,    "local_currency": "EUR", "launch_date_local": "2022-06-01" } },
-
-    { "from": "product:clearing-cleanser",      "to": "market:UK", "type": "AVAILABLE_IN", "properties": { "local_rrp": 42,    "local_currency": "GBP", "launch_date_local": "2019-11-01" } },
-    { "from": "product:clearing-cleanser",      "to": "market:US", "type": "AVAILABLE_IN", "properties": { "local_rrp": 55,    "local_currency": "USD", "launch_date_local": "2021-09-15" } },
-    { "from": "product:clearing-cleanser",      "to": "market:DE", "type": "AVAILABLE_IN", "properties": { "local_rrp": 50,    "local_currency": "EUR", "launch_date_local": "2022-03-01" } },
-    { "from": "product:clearing-cleanser",      "to": "market:FR", "type": "AVAILABLE_IN", "properties": { "local_rrp": 50,    "local_currency": "EUR", "launch_date_local": "2022-03-01" } },
-    { "from": "product:clearing-cleanser",      "to": "market:JP", "type": "AVAILABLE_IN", "properties": { "local_rrp": 8400,  "local_currency": "JPY", "launch_date_local": "2024-04-15" } },
-
-    { "from": "product:hydrating-mist",         "to": "market:UK", "type": "AVAILABLE_IN", "properties": { "local_rrp": 45,    "local_currency": "GBP", "launch_date_local": "2022-07-20" } },
-    { "from": "product:hydrating-mist",         "to": "market:US", "type": "AVAILABLE_IN", "properties": { "local_rrp": 58,    "local_currency": "USD", "launch_date_local": "2022-09-01" } },
-    { "from": "product:hydrating-mist",         "to": "market:DE", "type": "AVAILABLE_IN", "properties": { "local_rrp": 52,    "local_currency": "EUR", "launch_date_local": "2023-01-15" } },
-    { "from": "product:hydrating-mist",         "to": "market:FR", "type": "AVAILABLE_IN", "properties": { "local_rrp": 52,    "local_currency": "EUR", "launch_date_local": "2023-01-15" } },
-    { "from": "product:hydrating-mist",         "to": "market:JP", "type": "AVAILABLE_IN", "properties": { "local_rrp": 9000,  "local_currency": "JPY", "launch_date_local": "2024-04-15" } },
-
-    { "from": "product:the-ritual-set",         "to": "market:UK", "type": "AVAILABLE_IN", "properties": { "local_rrp": 180,   "local_currency": "GBP", "launch_date_local": "2021-11-01" } },
-    { "from": "product:the-ritual-set",         "to": "market:US", "type": "AVAILABLE_IN", "properties": { "local_rrp": 235,   "local_currency": "USD", "launch_date_local": "2021-11-01" } },
-    { "from": "product:the-ritual-set",         "to": "market:DE", "type": "AVAILABLE_IN", "properties": { "local_rrp": 215,   "local_currency": "EUR", "launch_date_local": "2022-03-01" } },
-    { "from": "product:the-ritual-set",         "to": "market:FR", "type": "AVAILABLE_IN", "properties": { "local_rrp": 215,   "local_currency": "EUR", "launch_date_local": "2022-03-01" } },
-    { "from": "product:the-ritual-set",         "to": "market:JP", "type": "AVAILABLE_IN", "properties": { "local_rrp": 36000, "local_currency": "JPY", "launch_date_local": "2024-04-15" } },
-
-    { "from": "brand-asset:product-retinoid-pm-serum-bone",      "to": "product:retinoid-pm-serum",      "type": "DEPICTS" },
-    { "from": "brand-asset:product-retinoid-pm-serum-ink",       "to": "product:retinoid-pm-serum",      "type": "DEPICTS" },
-    { "from": "brand-asset:product-bakuchiol-day-fluid-bone",    "to": "product:bakuchiol-day-fluid",    "type": "DEPICTS" },
-    { "from": "brand-asset:product-peptide-repair-cream-bone",   "to": "product:peptide-repair-cream",   "type": "DEPICTS" },
-    { "from": "brand-asset:product-ceramide-repair-cream-bone",  "to": "product:ceramide-repair-cream",  "type": "DEPICTS" },
-    { "from": "brand-asset:product-niacinamide-tone-veil-bone",  "to": "product:niacinamide-tone-veil",  "type": "DEPICTS" },
-    { "from": "brand-asset:product-mineral-defence-spf50-bone",  "to": "product:mineral-defence-spf50",  "type": "DEPICTS" },
-    { "from": "brand-asset:product-resurfacing-ritual-oil-bone", "to": "product:resurfacing-ritual-oil", "type": "DEPICTS" },
-    { "from": "brand-asset:product-clearing-cleanser-bone",      "to": "product:clearing-cleanser",      "type": "DEPICTS" },
-    { "from": "brand-asset:product-hydrating-mist-bone",         "to": "product:hydrating-mist",         "type": "DEPICTS" },
-    { "from": "brand-asset:product-the-ritual-set-bone",         "to": "product:the-ritual-set",         "type": "DEPICTS" },
-
-    { "from": "brand:aurelune", "to": "brand-guideline:positioning",                "type": "GOVERNED_BY" },
-    { "from": "brand:aurelune", "to": "brand-guideline:tone-of-voice",              "type": "GOVERNED_BY" },
-    { "from": "brand:aurelune", "to": "brand-guideline:visual-identity",            "type": "GOVERNED_BY" },
-    { "from": "brand:aurelune", "to": "brand-guideline:product-copy-framework",     "type": "GOVERNED_BY" },
-    { "from": "brand:aurelune", "to": "brand-guideline:image-generation-prompts",   "type": "GOVERNED_BY" },
-    { "from": "brand:aurelune", "to": "brand-guideline:channel-style-social",       "type": "GOVERNED_BY" },
-    { "from": "brand:aurelune", "to": "brand-guideline:channel-style-ooh",          "type": "GOVERNED_BY" },
-    { "from": "brand:aurelune", "to": "brand-guideline:channel-style-ecrm",         "type": "GOVERNED_BY" },
-    { "from": "brand:aurelune", "to": "brand-guideline:channel-style-d2c",          "type": "GOVERNED_BY" },
-
-    { "from": "brand:aurelune", "to": "audience:millennial-skin-investors",     "type": "TARGETS_AUDIENCE" },
-    { "from": "brand:aurelune", "to": "audience:gen-x-quiet-luxury",            "type": "TARGETS_AUDIENCE" },
-    { "from": "brand:aurelune", "to": "audience:asia-pacific-ritualists",       "type": "TARGETS_AUDIENCE" },
-    { "from": "brand:aurelune", "to": "audience:dermatology-influencer-network","type": "TARGETS_AUDIENCE" },
-    { "from": "brand:aurelune", "to": "audience:retail-buyers-prestige",        "type": "TARGETS_AUDIENCE" },
-
-    { "from": "audience:millennial-skin-investors", "to": "segment:high-loyalty-uk",          "type": "INCLUDES_SEGMENT" },
-    { "from": "audience:millennial-skin-investors", "to": "segment:high-loyalty-us",          "type": "INCLUDES_SEGMENT" },
-    { "from": "audience:millennial-skin-investors", "to": "segment:retinoid-heroes-us",       "type": "INCLUDES_SEGMENT" },
-    { "from": "audience:millennial-skin-investors", "to": "segment:science-readers-global",   "type": "INCLUDES_SEGMENT" },
-    { "from": "audience:millennial-skin-investors", "to": "segment:high-aov-prestige-buyers", "type": "INCLUDES_SEGMENT" },
-    { "from": "audience:gen-x-quiet-luxury",        "to": "segment:lapsed-uk-90d",            "type": "INCLUDES_SEGMENT" },
-    { "from": "audience:gen-x-quiet-luxury",        "to": "segment:gift-buyers-q4",           "type": "INCLUDES_SEGMENT" },
-    { "from": "audience:gen-x-quiet-luxury",        "to": "segment:high-aov-prestige-buyers", "type": "INCLUDES_SEGMENT" },
-    { "from": "audience:gen-x-quiet-luxury",        "to": "segment:sensitive-skin-de",        "type": "INCLUDES_SEGMENT" },
-    { "from": "audience:gen-x-quiet-luxury",        "to": "segment:ritual-set-fr",            "type": "INCLUDES_SEGMENT" },
-    { "from": "audience:asia-pacific-ritualists",   "to": "segment:line-loyalty-jp",          "type": "INCLUDES_SEGMENT" },
-    { "from": "audience:asia-pacific-ritualists",   "to": "segment:xiaohongshu-discovered-cn","type": "INCLUDES_SEGMENT" },
-    { "from": "audience:dermatology-influencer-network", "to": "segment:dermatologist-co-signed", "type": "INCLUDES_SEGMENT" },
-
-    { "from": "brand:aurelune", "to": "persona:performance-pip", "type": "EMBODIED_BY" },
-    { "from": "brand:aurelune", "to": "persona:ritual-rina",     "type": "EMBODIED_BY" },
-    { "from": "brand:aurelune", "to": "persona:science-sven",    "type": "EMBODIED_BY" },
-    { "from": "brand:aurelune", "to": "persona:gentle-gemma",    "type": "EMBODIED_BY" }
+  {
+    "from": "brand:aurelune",
+    "to": "brand-team:aurelune-global",
+    "type": "OWNS"
+  },
+  {
+    "from": "brand:aurelune",
+    "to": "brand-team:aurelune-uk",
+    "type": "OWNS"
+  },
+  {
+    "from": "brand:aurelune",
+    "to": "brand-team:aurelune-us",
+    "type": "OWNS"
+  },
+  {
+    "from": "brand:aurelune",
+    "to": "brand-team:aurelune-de",
+    "type": "OWNS"
+  },
+  {
+    "from": "brand:aurelune",
+    "to": "brand-team:aurelune-fr",
+    "type": "OWNS"
+  },
+  {
+    "from": "brand:aurelune",
+    "to": "brand-team:aurelune-jp",
+    "type": "OWNS"
+  },
+  {
+    "from": "brand:aurelune",
+    "to": "brand-team:aurelune-cn",
+    "type": "OWNS"
+  },
+  {
+    "from": "brand-team:aurelune-uk",
+    "to": "market:UK",
+    "type": "OPERATES_IN"
+  },
+  {
+    "from": "brand-team:aurelune-us",
+    "to": "market:US",
+    "type": "OPERATES_IN"
+  },
+  {
+    "from": "brand-team:aurelune-de",
+    "to": "market:DE",
+    "type": "OPERATES_IN"
+  },
+  {
+    "from": "brand-team:aurelune-fr",
+    "to": "market:FR",
+    "type": "OPERATES_IN"
+  },
+  {
+    "from": "brand-team:aurelune-jp",
+    "to": "market:JP",
+    "type": "OPERATES_IN"
+  },
+  {
+    "from": "brand-team:aurelune-cn",
+    "to": "market:CN",
+    "type": "OPERATES_IN"
+  },
+  {
+    "from": "brand-person:eleanor-marchetti",
+    "to": "brand-team:aurelune-global",
+    "type": "STAKEHOLDER_OF"
+  },
+  {
+    "from": "brand-person:dr-jasper-okonkwo",
+    "to": "brand-team:aurelune-global",
+    "type": "STAKEHOLDER_OF"
+  },
+  {
+    "from": "brand-person:priya-iyengar",
+    "to": "brand-team:aurelune-global",
+    "type": "STAKEHOLDER_OF"
+  },
+  {
+    "from": "brand-person:tomas-ekberg",
+    "to": "brand-team:aurelune-global",
+    "type": "STAKEHOLDER_OF"
+  },
+  {
+    "from": "brand-person:sarah-whitman",
+    "to": "brand-team:aurelune-uk",
+    "type": "STAKEHOLDER_OF"
+  },
+  {
+    "from": "brand-person:rachel-park",
+    "to": "brand-team:aurelune-us",
+    "type": "STAKEHOLDER_OF"
+  },
+  {
+    "from": "brand-person:david-rosenberg",
+    "to": "brand-team:aurelune-us",
+    "type": "STAKEHOLDER_OF"
+  },
+  {
+    "from": "brand-person:lina-fischer",
+    "to": "brand-team:aurelune-de",
+    "type": "STAKEHOLDER_OF"
+  },
+  {
+    "from": "brand-person:camille-bernard",
+    "to": "brand-team:aurelune-fr",
+    "type": "STAKEHOLDER_OF"
+  },
+  {
+    "from": "brand-person:yuki-saito",
+    "to": "brand-team:aurelune-jp",
+    "type": "STAKEHOLDER_OF"
+  },
+  {
+    "from": "brand-person:hiroshi-watanabe",
+    "to": "brand-team:aurelune-jp",
+    "type": "STAKEHOLDER_OF"
+  },
+  {
+    "from": "brand-person:wei-zhang",
+    "to": "brand-team:aurelune-cn",
+    "type": "STAKEHOLDER_OF"
+  },
+  {
+    "from": "brand:aurelune",
+    "to": "product:retinoid-pm-serum",
+    "type": "SELLS"
+  },
+  {
+    "from": "brand:aurelune",
+    "to": "product:bakuchiol-day-fluid",
+    "type": "SELLS"
+  },
+  {
+    "from": "brand:aurelune",
+    "to": "product:peptide-repair-cream",
+    "type": "SELLS"
+  },
+  {
+    "from": "brand:aurelune",
+    "to": "product:ceramide-repair-cream",
+    "type": "SELLS"
+  },
+  {
+    "from": "brand:aurelune",
+    "to": "product:niacinamide-tone-veil",
+    "type": "SELLS"
+  },
+  {
+    "from": "brand:aurelune",
+    "to": "product:mineral-defence-spf50",
+    "type": "SELLS"
+  },
+  {
+    "from": "brand:aurelune",
+    "to": "product:resurfacing-ritual-oil",
+    "type": "SELLS"
+  },
+  {
+    "from": "brand:aurelune",
+    "to": "product:clearing-cleanser",
+    "type": "SELLS"
+  },
+  {
+    "from": "brand:aurelune",
+    "to": "product:hydrating-mist",
+    "type": "SELLS"
+  },
+  {
+    "from": "brand:aurelune",
+    "to": "product:the-ritual-set",
+    "type": "SELLS"
+  },
+  {
+    "from": "product:retinoid-pm-serum",
+    "to": "market:UK",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 92,
+      "local_currency": "GBP",
+      "launch_date_local": "2020-04-01"
+    }
+  },
+  {
+    "from": "product:retinoid-pm-serum",
+    "to": "market:US",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 120,
+      "local_currency": "USD",
+      "launch_date_local": "2021-09-15"
+    }
+  },
+  {
+    "from": "product:retinoid-pm-serum",
+    "to": "market:DE",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 109,
+      "local_currency": "EUR",
+      "launch_date_local": "2022-03-01"
+    }
+  },
+  {
+    "from": "product:retinoid-pm-serum",
+    "to": "market:FR",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 109,
+      "local_currency": "EUR",
+      "launch_date_local": "2022-03-01"
+    }
+  },
+  {
+    "from": "product:retinoid-pm-serum",
+    "to": "market:JP",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 18000,
+      "local_currency": "JPY",
+      "launch_date_local": "2024-04-15"
+    }
+  },
+  {
+    "from": "product:retinoid-pm-serum",
+    "to": "market:CN",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 880,
+      "local_currency": "CNY",
+      "launch_date_local": "2024-09-01"
+    }
+  },
+  {
+    "from": "product:bakuchiol-day-fluid",
+    "to": "market:UK",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 62,
+      "local_currency": "GBP",
+      "launch_date_local": "2020-04-01"
+    }
+  },
+  {
+    "from": "product:bakuchiol-day-fluid",
+    "to": "market:US",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 80,
+      "local_currency": "USD",
+      "launch_date_local": "2021-09-15"
+    }
+  },
+  {
+    "from": "product:bakuchiol-day-fluid",
+    "to": "market:DE",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 72,
+      "local_currency": "EUR",
+      "launch_date_local": "2022-03-01"
+    }
+  },
+  {
+    "from": "product:bakuchiol-day-fluid",
+    "to": "market:FR",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 72,
+      "local_currency": "EUR",
+      "launch_date_local": "2022-03-01"
+    }
+  },
+  {
+    "from": "product:bakuchiol-day-fluid",
+    "to": "market:JP",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 12000,
+      "local_currency": "JPY",
+      "launch_date_local": "2024-04-15"
+    }
+  },
+  {
+    "from": "product:bakuchiol-day-fluid",
+    "to": "market:CN",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 590,
+      "local_currency": "CNY",
+      "launch_date_local": "2024-09-01"
+    }
+  },
+  {
+    "from": "product:peptide-repair-cream",
+    "to": "market:UK",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 85,
+      "local_currency": "GBP",
+      "launch_date_local": "2020-09-15"
+    }
+  },
+  {
+    "from": "product:peptide-repair-cream",
+    "to": "market:US",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 110,
+      "local_currency": "USD",
+      "launch_date_local": "2021-11-01"
+    }
+  },
+  {
+    "from": "product:peptide-repair-cream",
+    "to": "market:DE",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 100,
+      "local_currency": "EUR",
+      "launch_date_local": "2022-05-01"
+    }
+  },
+  {
+    "from": "product:peptide-repair-cream",
+    "to": "market:FR",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 100,
+      "local_currency": "EUR",
+      "launch_date_local": "2022-05-01"
+    }
+  },
+  {
+    "from": "product:peptide-repair-cream",
+    "to": "market:JP",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 16500,
+      "local_currency": "JPY",
+      "launch_date_local": "2024-04-15"
+    }
+  },
+  {
+    "from": "product:ceramide-repair-cream",
+    "to": "market:UK",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 68,
+      "local_currency": "GBP",
+      "launch_date_local": "2019-11-01"
+    }
+  },
+  {
+    "from": "product:ceramide-repair-cream",
+    "to": "market:US",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 88,
+      "local_currency": "USD",
+      "launch_date_local": "2021-09-15"
+    }
+  },
+  {
+    "from": "product:ceramide-repair-cream",
+    "to": "market:DE",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 80,
+      "local_currency": "EUR",
+      "launch_date_local": "2022-03-01"
+    }
+  },
+  {
+    "from": "product:ceramide-repair-cream",
+    "to": "market:FR",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 80,
+      "local_currency": "EUR",
+      "launch_date_local": "2022-03-01"
+    }
+  },
+  {
+    "from": "product:ceramide-repair-cream",
+    "to": "market:JP",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 13500,
+      "local_currency": "JPY",
+      "launch_date_local": "2024-04-15"
+    }
+  },
+  {
+    "from": "product:ceramide-repair-cream",
+    "to": "market:CN",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 650,
+      "local_currency": "CNY",
+      "launch_date_local": "2024-09-01"
+    }
+  },
+  {
+    "from": "product:niacinamide-tone-veil",
+    "to": "market:UK",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 48,
+      "local_currency": "GBP",
+      "launch_date_local": "2021-03-01"
+    }
+  },
+  {
+    "from": "product:niacinamide-tone-veil",
+    "to": "market:US",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 62,
+      "local_currency": "USD",
+      "launch_date_local": "2021-09-15"
+    }
+  },
+  {
+    "from": "product:niacinamide-tone-veil",
+    "to": "market:DE",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 56,
+      "local_currency": "EUR",
+      "launch_date_local": "2022-03-01"
+    }
+  },
+  {
+    "from": "product:niacinamide-tone-veil",
+    "to": "market:FR",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 56,
+      "local_currency": "EUR",
+      "launch_date_local": "2022-03-01"
+    }
+  },
+  {
+    "from": "product:mineral-defence-spf50",
+    "to": "market:UK",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 58,
+      "local_currency": "GBP",
+      "launch_date_local": "2021-05-10"
+    }
+  },
+  {
+    "from": "product:mineral-defence-spf50",
+    "to": "market:US",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 75,
+      "local_currency": "USD",
+      "launch_date_local": "2022-04-01"
+    }
+  },
+  {
+    "from": "product:mineral-defence-spf50",
+    "to": "market:DE",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 68,
+      "local_currency": "EUR",
+      "launch_date_local": "2022-06-01"
+    }
+  },
+  {
+    "from": "product:mineral-defence-spf50",
+    "to": "market:FR",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 68,
+      "local_currency": "EUR",
+      "launch_date_local": "2022-06-01"
+    }
+  },
+  {
+    "from": "product:mineral-defence-spf50",
+    "to": "market:JP",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 11000,
+      "local_currency": "JPY",
+      "launch_date_local": "2024-04-15"
+    }
+  },
+  {
+    "from": "product:resurfacing-ritual-oil",
+    "to": "market:UK",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 78,
+      "local_currency": "GBP",
+      "launch_date_local": "2022-02-14"
+    }
+  },
+  {
+    "from": "product:resurfacing-ritual-oil",
+    "to": "market:US",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 100,
+      "local_currency": "USD",
+      "launch_date_local": "2022-04-01"
+    }
+  },
+  {
+    "from": "product:resurfacing-ritual-oil",
+    "to": "market:DE",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 92,
+      "local_currency": "EUR",
+      "launch_date_local": "2022-06-01"
+    }
+  },
+  {
+    "from": "product:resurfacing-ritual-oil",
+    "to": "market:FR",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 92,
+      "local_currency": "EUR",
+      "launch_date_local": "2022-06-01"
+    }
+  },
+  {
+    "from": "product:clearing-cleanser",
+    "to": "market:UK",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 42,
+      "local_currency": "GBP",
+      "launch_date_local": "2019-11-01"
+    }
+  },
+  {
+    "from": "product:clearing-cleanser",
+    "to": "market:US",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 55,
+      "local_currency": "USD",
+      "launch_date_local": "2021-09-15"
+    }
+  },
+  {
+    "from": "product:clearing-cleanser",
+    "to": "market:DE",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 50,
+      "local_currency": "EUR",
+      "launch_date_local": "2022-03-01"
+    }
+  },
+  {
+    "from": "product:clearing-cleanser",
+    "to": "market:FR",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 50,
+      "local_currency": "EUR",
+      "launch_date_local": "2022-03-01"
+    }
+  },
+  {
+    "from": "product:clearing-cleanser",
+    "to": "market:JP",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 8400,
+      "local_currency": "JPY",
+      "launch_date_local": "2024-04-15"
+    }
+  },
+  {
+    "from": "product:hydrating-mist",
+    "to": "market:UK",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 45,
+      "local_currency": "GBP",
+      "launch_date_local": "2022-07-20"
+    }
+  },
+  {
+    "from": "product:hydrating-mist",
+    "to": "market:US",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 58,
+      "local_currency": "USD",
+      "launch_date_local": "2022-09-01"
+    }
+  },
+  {
+    "from": "product:hydrating-mist",
+    "to": "market:DE",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 52,
+      "local_currency": "EUR",
+      "launch_date_local": "2023-01-15"
+    }
+  },
+  {
+    "from": "product:hydrating-mist",
+    "to": "market:FR",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 52,
+      "local_currency": "EUR",
+      "launch_date_local": "2023-01-15"
+    }
+  },
+  {
+    "from": "product:hydrating-mist",
+    "to": "market:JP",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 9000,
+      "local_currency": "JPY",
+      "launch_date_local": "2024-04-15"
+    }
+  },
+  {
+    "from": "product:the-ritual-set",
+    "to": "market:UK",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 180,
+      "local_currency": "GBP",
+      "launch_date_local": "2021-11-01"
+    }
+  },
+  {
+    "from": "product:the-ritual-set",
+    "to": "market:US",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 235,
+      "local_currency": "USD",
+      "launch_date_local": "2021-11-01"
+    }
+  },
+  {
+    "from": "product:the-ritual-set",
+    "to": "market:DE",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 215,
+      "local_currency": "EUR",
+      "launch_date_local": "2022-03-01"
+    }
+  },
+  {
+    "from": "product:the-ritual-set",
+    "to": "market:FR",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 215,
+      "local_currency": "EUR",
+      "launch_date_local": "2022-03-01"
+    }
+  },
+  {
+    "from": "product:the-ritual-set",
+    "to": "market:JP",
+    "type": "AVAILABLE_IN",
+    "properties": {
+      "local_rrp": 36000,
+      "local_currency": "JPY",
+      "launch_date_local": "2024-04-15"
+    }
+  },
+  {
+    "from": "brand-asset:product-retinoid-pm-serum-bone",
+    "to": "product:retinoid-pm-serum",
+    "type": "DEPICTS"
+  },
+  {
+    "from": "brand-asset:product-retinoid-pm-serum-ink",
+    "to": "product:retinoid-pm-serum",
+    "type": "DEPICTS"
+  },
+  {
+    "from": "brand-asset:product-bakuchiol-day-fluid-bone",
+    "to": "product:bakuchiol-day-fluid",
+    "type": "DEPICTS"
+  },
+  {
+    "from": "brand-asset:product-peptide-repair-cream-bone",
+    "to": "product:peptide-repair-cream",
+    "type": "DEPICTS"
+  },
+  {
+    "from": "brand-asset:product-ceramide-repair-cream-bone",
+    "to": "product:ceramide-repair-cream",
+    "type": "DEPICTS"
+  },
+  {
+    "from": "brand-asset:product-niacinamide-tone-veil-bone",
+    "to": "product:niacinamide-tone-veil",
+    "type": "DEPICTS"
+  },
+  {
+    "from": "brand-asset:product-mineral-defence-spf50-bone",
+    "to": "product:mineral-defence-spf50",
+    "type": "DEPICTS"
+  },
+  {
+    "from": "brand-asset:product-resurfacing-ritual-oil-bone",
+    "to": "product:resurfacing-ritual-oil",
+    "type": "DEPICTS"
+  },
+  {
+    "from": "brand-asset:product-clearing-cleanser-bone",
+    "to": "product:clearing-cleanser",
+    "type": "DEPICTS"
+  },
+  {
+    "from": "brand-asset:product-hydrating-mist-bone",
+    "to": "product:hydrating-mist",
+    "type": "DEPICTS"
+  },
+  {
+    "from": "brand-asset:product-the-ritual-set-bone",
+    "to": "product:the-ritual-set",
+    "type": "DEPICTS"
+  },
+  {
+    "from": "brand:aurelune",
+    "to": "brand-guideline:positioning",
+    "type": "GOVERNED_BY"
+  },
+  {
+    "from": "brand:aurelune",
+    "to": "brand-guideline:tone-of-voice",
+    "type": "GOVERNED_BY"
+  },
+  {
+    "from": "brand:aurelune",
+    "to": "brand-guideline:visual-identity",
+    "type": "GOVERNED_BY"
+  },
+  {
+    "from": "brand:aurelune",
+    "to": "brand-guideline:product-copy-framework",
+    "type": "GOVERNED_BY"
+  },
+  {
+    "from": "brand:aurelune",
+    "to": "brand-guideline:image-generation-prompts",
+    "type": "GOVERNED_BY"
+  },
+  {
+    "from": "brand:aurelune",
+    "to": "brand-guideline:channel-style-social",
+    "type": "GOVERNED_BY"
+  },
+  {
+    "from": "brand:aurelune",
+    "to": "brand-guideline:channel-style-ooh",
+    "type": "GOVERNED_BY"
+  },
+  {
+    "from": "brand:aurelune",
+    "to": "brand-guideline:channel-style-ecrm",
+    "type": "GOVERNED_BY"
+  },
+  {
+    "from": "brand:aurelune",
+    "to": "brand-guideline:channel-style-d2c",
+    "type": "GOVERNED_BY"
+  },
+  {
+    "from": "brand:aurelune",
+    "to": "audience:millennial-skin-investors",
+    "type": "TARGETS_AUDIENCE"
+  },
+  {
+    "from": "brand:aurelune",
+    "to": "audience:gen-x-quiet-luxury",
+    "type": "TARGETS_AUDIENCE"
+  },
+  {
+    "from": "brand:aurelune",
+    "to": "audience:asia-pacific-ritualists",
+    "type": "TARGETS_AUDIENCE"
+  },
+  {
+    "from": "brand:aurelune",
+    "to": "audience:dermatology-influencer-network",
+    "type": "TARGETS_AUDIENCE"
+  },
+  {
+    "from": "brand:aurelune",
+    "to": "audience:retail-buyers-prestige",
+    "type": "TARGETS_AUDIENCE"
+  },
+  {
+    "from": "audience:millennial-skin-investors",
+    "to": "segment:high-loyalty-uk",
+    "type": "INCLUDES_SEGMENT"
+  },
+  {
+    "from": "audience:millennial-skin-investors",
+    "to": "segment:high-loyalty-us",
+    "type": "INCLUDES_SEGMENT"
+  },
+  {
+    "from": "audience:millennial-skin-investors",
+    "to": "segment:retinoid-heroes-us",
+    "type": "INCLUDES_SEGMENT"
+  },
+  {
+    "from": "audience:millennial-skin-investors",
+    "to": "segment:science-readers-global",
+    "type": "INCLUDES_SEGMENT"
+  },
+  {
+    "from": "audience:millennial-skin-investors",
+    "to": "segment:high-aov-prestige-buyers",
+    "type": "INCLUDES_SEGMENT"
+  },
+  {
+    "from": "audience:gen-x-quiet-luxury",
+    "to": "segment:lapsed-uk-90d",
+    "type": "INCLUDES_SEGMENT"
+  },
+  {
+    "from": "audience:gen-x-quiet-luxury",
+    "to": "segment:gift-buyers-q4",
+    "type": "INCLUDES_SEGMENT"
+  },
+  {
+    "from": "audience:gen-x-quiet-luxury",
+    "to": "segment:high-aov-prestige-buyers",
+    "type": "INCLUDES_SEGMENT"
+  },
+  {
+    "from": "audience:gen-x-quiet-luxury",
+    "to": "segment:sensitive-skin-de",
+    "type": "INCLUDES_SEGMENT"
+  },
+  {
+    "from": "audience:gen-x-quiet-luxury",
+    "to": "segment:ritual-set-fr",
+    "type": "INCLUDES_SEGMENT"
+  },
+  {
+    "from": "audience:asia-pacific-ritualists",
+    "to": "segment:line-loyalty-jp",
+    "type": "INCLUDES_SEGMENT"
+  },
+  {
+    "from": "audience:asia-pacific-ritualists",
+    "to": "segment:xiaohongshu-discovered-cn",
+    "type": "INCLUDES_SEGMENT"
+  },
+  {
+    "from": "audience:dermatology-influencer-network",
+    "to": "segment:dermatologist-co-signed",
+    "type": "INCLUDES_SEGMENT"
+  },
+  {
+    "from": "brand:aurelune",
+    "to": "persona:performance-pip",
+    "type": "EMBODIED_BY"
+  },
+  {
+    "from": "brand:aurelune",
+    "to": "persona:ritual-rina",
+    "type": "EMBODIED_BY"
+  },
+  {
+    "from": "brand:aurelune",
+    "to": "persona:science-sven",
+    "type": "EMBODIED_BY"
+  },
+  {
+    "from": "brand:aurelune",
+    "to": "persona:gentle-gemma",
+    "type": "EMBODIED_BY"
+  },
+  {
+    "from": "brand:kestrel",
+    "to": "brand-team:kestrel-global",
+    "type": "OWNS"
+  },
+  {
+    "from": "brand:kestrel",
+    "to": "brand-team:kestrel-uk",
+    "type": "OWNS"
+  },
+  {
+    "from": "brand:kestrel",
+    "to": "brand-team:kestrel-us",
+    "type": "OWNS"
+  }
 ]

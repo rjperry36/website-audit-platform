@@ -1,113 +1,1135 @@
 [
-    { "id": "availability:maya-chen-1",       "type": "Availability", "properties": { "person_id": "person:maya-chen",       "start_date": "2026-06-15", "end_date": "2026-06-21", "allocation_pct": 100, "reason": "Cannes Lions" } },
-    { "id": "availability:maya-chen-2",       "type": "Availability", "properties": { "person_id": "person:maya-chen",       "start_date": "2026-08-03", "end_date": "2026-08-21", "allocation_pct": 100, "reason": "Vacation — Italy" } },
-    { "id": "availability:maya-chen-3",       "type": "Availability", "properties": { "person_id": "person:maya-chen",       "start_date": "2026-09-01", "end_date": "2026-11-30", "allocation_pct": 60,  "reason": "Lead strategist on Sephora US Launch Y2" } },
-    { "id": "availability:maya-chen-4",       "type": "Availability", "properties": { "person_id": "person:maya-chen",       "start_date": "2026-12-21", "end_date": "2027-01-04", "allocation_pct": 100, "reason": "Vacation — holidays" } },
-
-    { "id": "availability:tom-hartley-1",     "type": "Availability", "properties": { "person_id": "person:tom-hartley",     "start_date": "2026-09-07", "end_date": "2026-10-18", "allocation_pct": 100, "reason": "Sabbatical (6 weeks)" } },
-    { "id": "availability:tom-hartley-2",     "type": "Availability", "properties": { "person_id": "person:tom-hartley",     "start_date": "2026-12-21", "end_date": "2027-01-04", "allocation_pct": 100, "reason": "Vacation — holidays" } },
-
-    { "id": "availability:caitlin-doyle-1",   "type": "Availability", "properties": { "person_id": "person:caitlin-doyle",   "start_date": "2026-06-15", "end_date": "2026-06-21", "allocation_pct": 100, "reason": "Cannes Lions" } },
-    { "id": "availability:caitlin-doyle-2",   "type": "Availability", "properties": { "person_id": "person:caitlin-doyle",   "start_date": "2026-08-10", "end_date": "2026-08-22", "allocation_pct": 100, "reason": "Vacation" } },
-    { "id": "availability:caitlin-doyle-3",   "type": "Availability", "properties": { "person_id": "person:caitlin-doyle",   "start_date": "2026-11-09", "end_date": "2026-11-13", "allocation_pct": 100, "reason": "Web Summit Lisbon" } },
-
-    { "id": "availability:aisha-bello-1",     "type": "Availability", "properties": { "person_id": "person:aisha-bello",     "start_date": "2026-08-03", "end_date": "2026-08-17", "allocation_pct": 100, "reason": "Vacation" } },
-    { "id": "availability:aisha-bello-2",     "type": "Availability", "properties": { "person_id": "person:aisha-bello",     "start_date": "2026-09-01", "end_date": "2027-01-31", "allocation_pct": 70,  "reason": "Account lead on Sephora US Launch Y2" } },
-
-    { "id": "availability:linus-schmidt-1",   "type": "Availability", "properties": { "person_id": "person:linus-schmidt",   "start_date": "2026-07-13", "end_date": "2026-07-27", "allocation_pct": 100, "reason": "Vacation — family" } },
-    { "id": "availability:linus-schmidt-2",   "type": "Availability", "properties": { "person_id": "person:linus-schmidt",   "start_date": "2026-09-01", "end_date": "2026-12-15", "allocation_pct": 50,  "reason": "Creative lead on Sephora US Launch Y2" } },
-
-    { "id": "availability:sophie-tremblay-1", "type": "Availability", "properties": { "person_id": "person:sophie-tremblay", "start_date": "2026-08-03", "end_date": "2026-08-14", "allocation_pct": 100, "reason": "Vacation" } },
-    { "id": "availability:sophie-tremblay-2", "type": "Availability", "properties": { "person_id": "person:sophie-tremblay", "start_date": "2026-10-05", "end_date": "2027-01-31", "allocation_pct": 40,  "reason": "Always-On D2C 2026" } },
-
-    { "id": "availability:olu-adesanya-1",    "type": "Availability", "properties": { "person_id": "person:olu-adesanya",    "start_date": "2026-08-17", "end_date": "2026-08-28", "allocation_pct": 100, "reason": "Vacation" } },
-    { "id": "availability:olu-adesanya-2",    "type": "Availability", "properties": { "person_id": "person:olu-adesanya",    "start_date": "2026-10-26", "end_date": "2026-10-30", "allocation_pct": 100, "reason": "OFFSCREEN Design Conference" } },
-
-    { "id": "availability:akira-tanaka-1",    "type": "Availability", "properties": { "person_id": "person:akira-tanaka",    "start_date": "2026-07-20", "end_date": "2026-08-02", "allocation_pct": 100, "reason": "Vacation — Japan family" } },
-    { "id": "availability:akira-tanaka-2",    "type": "Availability", "properties": { "person_id": "person:akira-tanaka",    "start_date": "2026-09-01", "end_date": "2026-12-31", "allocation_pct": 50,  "reason": "JP Tokyo Always-On Y2" } },
-
-    { "id": "availability:pari-banerjee-1",   "type": "Availability", "properties": { "person_id": "person:pari-banerjee",   "start_date": "2026-08-10", "end_date": "2026-08-21", "allocation_pct": 100, "reason": "Vacation" } },
-    { "id": "availability:pari-banerjee-2",   "type": "Availability", "properties": { "person_id": "person:pari-banerjee",   "start_date": "2026-10-12", "end_date": "2026-10-16", "allocation_pct": 100, "reason": "Brand Voice training" } },
-
-    { "id": "availability:naomi-brooks-1",    "type": "Availability", "properties": { "person_id": "person:naomi-brooks",    "start_date": "2026-09-01", "end_date": "2026-09-11", "allocation_pct": 100, "reason": "Vacation" } },
-    { "id": "availability:naomi-brooks-2",    "type": "Availability", "properties": { "person_id": "person:naomi-brooks",    "start_date": "2026-09-14", "end_date": "2026-12-15", "allocation_pct": 60,  "reason": "Senior copy on Sephora US Launch Y2" } },
-
-    { "id": "availability:daniel-carlsson-1", "type": "Availability", "properties": { "person_id": "person:daniel-carlsson", "start_date": "2026-08-03", "end_date": "2026-08-14", "allocation_pct": 100, "reason": "Vacation — Stockholm" } },
-
-    { "id": "availability:tara-lim-1",        "type": "Availability", "properties": { "person_id": "person:tara-lim",        "start_date": "2026-07-06", "end_date": "2026-07-17", "allocation_pct": 100, "reason": "Vacation" } },
-    { "id": "availability:tara-lim-2",        "type": "Availability", "properties": { "person_id": "person:tara-lim",        "start_date": "2026-09-01", "end_date": "2026-12-15", "allocation_pct": 50,  "reason": "Design support on Sephora US Launch Y2" } },
-
-    { "id": "availability:imani-ofori-1",     "type": "Availability", "properties": { "person_id": "person:imani-ofori",     "start_date": "2026-08-24", "end_date": "2026-09-04", "allocation_pct": 100, "reason": "Vacation" } },
-
-    { "id": "availability:beatriz-silva-1",   "type": "Availability", "properties": { "person_id": "person:beatriz-silva",   "start_date": "2026-09-07", "end_date": "2026-09-18", "allocation_pct": 100, "reason": "Vacation — Portugal" } },
-    { "id": "availability:beatriz-silva-2",   "type": "Availability", "properties": { "person_id": "person:beatriz-silva",   "start_date": "2026-10-01", "end_date": "2026-12-31", "allocation_pct": 40,  "reason": "JP Tokyo Always-On Y2 — copy support" } },
-
-    { "id": "availability:wen-liu-1",         "type": "Availability", "properties": { "person_id": "person:wen-liu",         "start_date": "2026-09-14", "end_date": "2026-09-25", "allocation_pct": 100, "reason": "Vacation" } },
-    { "id": "availability:wen-liu-2",         "type": "Availability", "properties": { "person_id": "person:wen-liu",         "start_date": "2026-07-01", "end_date": "2026-12-31", "allocation_pct": 60,  "reason": "Strategy lead on JP Tokyo Always-On Y2" } },
-
-    { "id": "availability:hannah-krause-1",   "type": "Availability", "properties": { "person_id": "person:hannah-krause",   "start_date": "2026-08-03", "end_date": "2026-08-14", "allocation_pct": 100, "reason": "Vacation — Berlin family" } },
-
-    { "id": "availability:carlos-mendoza-1",  "type": "Availability", "properties": { "person_id": "person:carlos-mendoza",  "start_date": "2026-07-13", "end_date": "2026-07-24", "allocation_pct": 100, "reason": "Vacation" } },
-    { "id": "availability:carlos-mendoza-2",  "type": "Availability", "properties": { "person_id": "person:carlos-mendoza",  "start_date": "2026-09-01", "end_date": "2026-12-15", "allocation_pct": 50,  "reason": "Strategy support on Sephora US Launch Y2" } },
-
-    { "id": "availability:james-whittaker-1", "type": "Availability", "properties": { "person_id": "person:james-whittaker", "start_date": "2026-06-22", "end_date": "2026-07-03", "allocation_pct": 100, "reason": "Vacation" } },
-    { "id": "availability:james-whittaker-2", "type": "Availability", "properties": { "person_id": "person:james-whittaker", "start_date": "2026-12-21", "end_date": "2027-01-04", "allocation_pct": 100, "reason": "Vacation — holidays" } },
-
-    { "id": "availability:beatrix-almeida-1", "type": "Availability", "properties": { "person_id": "person:beatrix-almeida", "start_date": "2026-08-03", "end_date": "2026-08-21", "allocation_pct": 100, "reason": "Vacation — Brazil family" } },
-    { "id": "availability:beatrix-almeida-2", "type": "Availability", "properties": { "person_id": "person:beatrix-almeida", "start_date": "2026-10-12", "end_date": "2026-10-16", "allocation_pct": 100, "reason": "PMP recertification" } },
-
-    { "id": "availability:anita-vasquez-1",   "type": "Availability", "properties": { "person_id": "person:anita-vasquez",   "start_date": "2026-09-01", "end_date": "2027-01-31", "allocation_pct": 70,  "reason": "PM lead on Sephora US Launch Y2" } },
-
-    { "id": "availability:hiroto-yamada-1",   "type": "Availability", "properties": { "person_id": "person:hiroto-yamada",   "start_date": "2026-09-14", "end_date": "2026-09-25", "allocation_pct": 100, "reason": "Vacation" } },
-    { "id": "availability:hiroto-yamada-2",   "type": "Availability", "properties": { "person_id": "person:hiroto-yamada",   "start_date": "2026-07-01", "end_date": "2026-12-31", "allocation_pct": 60,  "reason": "PM on JP Tokyo Always-On Y2" } },
-
-    { "id": "availability:felix-okafor-1",    "type": "Availability", "properties": { "person_id": "person:felix-okafor",    "start_date": "2026-08-10", "end_date": "2026-08-21", "allocation_pct": 100, "reason": "Vacation" } },
-    { "id": "availability:felix-okafor-2",    "type": "Availability", "properties": { "person_id": "person:felix-okafor",    "start_date": "2026-09-15", "end_date": "2026-12-15", "allocation_pct": 80,  "reason": "Producer on Sephora US Launch Y2 (6 events)" } },
-
-    { "id": "availability:anuva-kapoor-1",    "type": "Availability", "properties": { "person_id": "person:anuva-kapoor",    "start_date": "2026-08-17", "end_date": "2026-08-28", "allocation_pct": 100, "reason": "Vacation" } },
-
-    { "id": "availability:ravi-nair-1",       "type": "Availability", "properties": { "person_id": "person:ravi-nair",       "start_date": "2026-08-03", "end_date": "2026-08-14", "allocation_pct": 100, "reason": "Vacation" } },
-    { "id": "availability:ravi-nair-2",       "type": "Availability", "properties": { "person_id": "person:ravi-nair",       "start_date": "2026-12-21", "end_date": "2027-01-04", "allocation_pct": 100, "reason": "Vacation — holidays" } },
-
-    { "id": "availability:mei-fong-1",        "type": "Availability", "properties": { "person_id": "person:mei-fong",        "start_date": "2026-09-07", "end_date": "2026-09-18", "allocation_pct": 100, "reason": "Vacation" } },
-
-    { "id": "availability:pablo-romero-1",    "type": "Availability", "properties": { "person_id": "person:pablo-romero",    "start_date": "2026-08-10", "end_date": "2026-08-21", "allocation_pct": 100, "reason": "Vacation" } },
-
-    { "id": "availability:niamh-oreilly-1",   "type": "Availability", "properties": { "person_id": "person:niamh-oreilly",   "start_date": "2026-09-07", "end_date": "2026-09-18", "allocation_pct": 100, "reason": "Vacation" } },
-
-    { "id": "availability:jordan-reeves-1",   "type": "Availability", "properties": { "person_id": "person:jordan-reeves",   "start_date": "2026-09-21", "end_date": "2026-10-02", "allocation_pct": 100, "reason": "Vacation" } },
-    { "id": "availability:jordan-reeves-2",   "type": "Availability", "properties": { "person_id": "person:jordan-reeves",   "start_date": "2026-09-01", "end_date": "2027-01-31", "allocation_pct": 70,  "reason": "US lead on Sephora US Launch Y2" } },
-
-    { "id": "availability:holly-sutton-1",    "type": "Availability", "properties": { "person_id": "person:holly-sutton",    "start_date": "2026-08-17", "end_date": "2026-08-28", "allocation_pct": 100, "reason": "Vacation" } },
-
-    { "id": "availability:marcus-thomas-1",   "type": "Availability", "properties": { "person_id": "person:marcus-thomas",   "start_date": "2026-09-01", "end_date": "2026-12-15", "allocation_pct": 60,  "reason": "AM on Sephora US Launch Y2" } },
-
-    { "id": "availability:priya-davies-1",    "type": "Availability", "properties": { "person_id": "person:priya-davies",    "start_date": "2026-09-21", "end_date": "2026-10-02", "allocation_pct": 100, "reason": "Vacation" } },
-
-    { "id": "availability:ben-phillips-1",    "type": "Availability", "properties": { "person_id": "person:ben-phillips",    "start_date": "2026-08-03", "end_date": "2026-08-14", "allocation_pct": 100, "reason": "Vacation" } },
-    { "id": "availability:ben-phillips-2",    "type": "Availability", "properties": { "person_id": "person:ben-phillips",    "start_date": "2026-11-09", "end_date": "2026-11-13", "allocation_pct": 100, "reason": "Web Summit Lisbon" } },
-
-    { "id": "availability:mateusz-kowalski-1","type": "Availability", "properties": { "person_id": "person:mateusz-kowalski","start_date": "2026-08-17", "end_date": "2026-08-28", "allocation_pct": 100, "reason": "Vacation — Kraków" } },
-    { "id": "availability:mateusz-kowalski-2","type": "Availability", "properties": { "person_id": "person:mateusz-kowalski","start_date": "2026-10-19", "end_date": "2026-10-23", "allocation_pct": 100, "reason": "SearchLove conference" } },
-
-    { "id": "availability:rachel-cohen-1",    "type": "Availability", "properties": { "person_id": "person:rachel-cohen",    "start_date": "2026-08-10", "end_date": "2026-08-21", "allocation_pct": 100, "reason": "Vacation" } },
-    { "id": "availability:rachel-cohen-2",    "type": "Availability", "properties": { "person_id": "person:rachel-cohen",    "start_date": "2026-09-01", "end_date": "2026-12-31", "allocation_pct": 60,  "reason": "Paid media lead on Sephora US Launch Y2" } },
-
-    { "id": "availability:devon-ahmadi-1",    "type": "Availability", "properties": { "person_id": "person:devon-ahmadi",    "start_date": "2026-07-06", "end_date": "2026-07-17", "allocation_pct": 100, "reason": "Vacation" } },
-    { "id": "availability:devon-ahmadi-2",    "type": "Availability", "properties": { "person_id": "person:devon-ahmadi",    "start_date": "2026-09-01", "end_date": "2026-11-30", "allocation_pct": 100, "reason": "Parental leave" } },
-
-    { "id": "availability:lucas-muller-1",    "type": "Availability", "properties": { "person_id": "person:lucas-muller",    "start_date": "2026-07-20", "end_date": "2026-07-31", "allocation_pct": 100, "reason": "Vacation — Bavaria" } },
-    { "id": "availability:lucas-muller-2",    "type": "Availability", "properties": { "person_id": "person:lucas-muller",    "start_date": "2026-10-12", "end_date": "2026-10-16", "allocation_pct": 100, "reason": "Litmus Live ECRM training" } },
-
-    { "id": "availability:eshe-otieno-1",     "type": "Availability", "properties": { "person_id": "person:eshe-otieno",     "start_date": "2026-09-14", "end_date": "2026-09-25", "allocation_pct": 100, "reason": "Vacation" } },
-    { "id": "availability:eshe-otieno-2",     "type": "Availability", "properties": { "person_id": "person:eshe-otieno",     "start_date": "2026-10-01", "end_date": "2026-12-31", "allocation_pct": 40,  "reason": "D2C experimentation lead on Always-On 2026" } },
-
-    { "id": "availability:lila-tan-1",        "type": "Availability", "properties": { "person_id": "person:lila-tan",        "start_date": "2026-07-20", "end_date": "2026-07-31", "allocation_pct": 100, "reason": "Vacation" } },
-    { "id": "availability:lila-tan-2",        "type": "Availability", "properties": { "person_id": "person:lila-tan",        "start_date": "2026-09-15", "end_date": "2026-12-31", "allocation_pct": 80,  "reason": "Retail activation lead on Sephora US Launch Y2" } },
-
-    { "id": "availability:sara-mehta-1",      "type": "Availability", "properties": { "person_id": "person:sara-mehta",      "start_date": "2026-09-07", "end_date": "2026-09-18", "allocation_pct": 100, "reason": "Vacation — India family" } },
-
-    { "id": "availability:kieran-walsh-1",    "type": "Availability", "properties": { "person_id": "person:kieran-walsh",    "start_date": "2026-09-01", "end_date": "2026-12-15", "allocation_pct": 50,  "reason": "Social/influencer support on Sephora US Launch Y2" } },
-
-    { "id": "availability:marcus-reilly-1",   "type": "Availability", "properties": { "person_id": "person:marcus-reilly",   "start_date": "2026-08-10", "end_date": "2026-08-21", "allocation_pct": 100, "reason": "Vacation" } }
+  {
+    "id": "availability:maya-chen-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:maya-chen",
+      "start_date": "2026-06-15",
+      "end_date": "2026-06-21",
+      "allocation_pct": 100,
+      "reason": "Cannes Lions"
+    }
+  },
+  {
+    "id": "availability:maya-chen-2",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:maya-chen",
+      "start_date": "2026-08-03",
+      "end_date": "2026-08-21",
+      "allocation_pct": 100,
+      "reason": "Vacation — Italy"
+    }
+  },
+  {
+    "id": "availability:maya-chen-3",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:maya-chen",
+      "start_date": "2026-09-01",
+      "end_date": "2026-11-30",
+      "allocation_pct": 60,
+      "reason": "Lead strategist on Sephora US Launch Y2"
+    }
+  },
+  {
+    "id": "availability:maya-chen-4",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:maya-chen",
+      "start_date": "2026-12-21",
+      "end_date": "2027-01-04",
+      "allocation_pct": 100,
+      "reason": "Vacation — holidays"
+    }
+  },
+  {
+    "id": "availability:tom-hartley-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:tom-hartley",
+      "start_date": "2026-09-07",
+      "end_date": "2026-10-18",
+      "allocation_pct": 100,
+      "reason": "Sabbatical (6 weeks)"
+    }
+  },
+  {
+    "id": "availability:tom-hartley-2",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:tom-hartley",
+      "start_date": "2026-12-21",
+      "end_date": "2027-01-04",
+      "allocation_pct": 100,
+      "reason": "Vacation — holidays"
+    }
+  },
+  {
+    "id": "availability:caitlin-doyle-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:caitlin-doyle",
+      "start_date": "2026-06-15",
+      "end_date": "2026-06-21",
+      "allocation_pct": 100,
+      "reason": "Cannes Lions"
+    }
+  },
+  {
+    "id": "availability:caitlin-doyle-2",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:caitlin-doyle",
+      "start_date": "2026-08-10",
+      "end_date": "2026-08-22",
+      "allocation_pct": 100,
+      "reason": "Vacation"
+    }
+  },
+  {
+    "id": "availability:caitlin-doyle-3",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:caitlin-doyle",
+      "start_date": "2026-11-09",
+      "end_date": "2026-11-13",
+      "allocation_pct": 100,
+      "reason": "Web Summit Lisbon"
+    }
+  },
+  {
+    "id": "availability:aisha-bello-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:aisha-bello",
+      "start_date": "2026-08-03",
+      "end_date": "2026-08-17",
+      "allocation_pct": 100,
+      "reason": "Vacation"
+    }
+  },
+  {
+    "id": "availability:aisha-bello-2",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:aisha-bello",
+      "start_date": "2026-09-01",
+      "end_date": "2027-01-31",
+      "allocation_pct": 70,
+      "reason": "Account lead on Sephora US Launch Y2"
+    }
+  },
+  {
+    "id": "availability:linus-schmidt-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:linus-schmidt",
+      "start_date": "2026-07-13",
+      "end_date": "2026-07-27",
+      "allocation_pct": 100,
+      "reason": "Vacation — family"
+    }
+  },
+  {
+    "id": "availability:linus-schmidt-2",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:linus-schmidt",
+      "start_date": "2026-09-01",
+      "end_date": "2026-12-15",
+      "allocation_pct": 50,
+      "reason": "Creative lead on Sephora US Launch Y2"
+    }
+  },
+  {
+    "id": "availability:sophie-tremblay-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:sophie-tremblay",
+      "start_date": "2026-08-03",
+      "end_date": "2026-08-14",
+      "allocation_pct": 100,
+      "reason": "Vacation"
+    }
+  },
+  {
+    "id": "availability:sophie-tremblay-2",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:sophie-tremblay",
+      "start_date": "2026-10-05",
+      "end_date": "2027-01-31",
+      "allocation_pct": 40,
+      "reason": "Always-On D2C 2026"
+    }
+  },
+  {
+    "id": "availability:olu-adesanya-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:olu-adesanya",
+      "start_date": "2026-08-17",
+      "end_date": "2026-08-28",
+      "allocation_pct": 100,
+      "reason": "Vacation"
+    }
+  },
+  {
+    "id": "availability:olu-adesanya-2",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:olu-adesanya",
+      "start_date": "2026-10-26",
+      "end_date": "2026-10-30",
+      "allocation_pct": 100,
+      "reason": "OFFSCREEN Design Conference"
+    }
+  },
+  {
+    "id": "availability:akira-tanaka-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:akira-tanaka",
+      "start_date": "2026-07-20",
+      "end_date": "2026-08-02",
+      "allocation_pct": 100,
+      "reason": "Vacation — Japan family"
+    }
+  },
+  {
+    "id": "availability:akira-tanaka-2",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:akira-tanaka",
+      "start_date": "2026-09-01",
+      "end_date": "2026-12-31",
+      "allocation_pct": 50,
+      "reason": "JP Tokyo Always-On Y2"
+    }
+  },
+  {
+    "id": "availability:pari-banerjee-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:pari-banerjee",
+      "start_date": "2026-08-10",
+      "end_date": "2026-08-21",
+      "allocation_pct": 100,
+      "reason": "Vacation"
+    }
+  },
+  {
+    "id": "availability:pari-banerjee-2",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:pari-banerjee",
+      "start_date": "2026-10-12",
+      "end_date": "2026-10-16",
+      "allocation_pct": 100,
+      "reason": "Brand Voice training"
+    }
+  },
+  {
+    "id": "availability:naomi-brooks-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:naomi-brooks",
+      "start_date": "2026-09-01",
+      "end_date": "2026-09-11",
+      "allocation_pct": 100,
+      "reason": "Vacation"
+    }
+  },
+  {
+    "id": "availability:naomi-brooks-2",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:naomi-brooks",
+      "start_date": "2026-09-14",
+      "end_date": "2026-12-15",
+      "allocation_pct": 60,
+      "reason": "Senior copy on Sephora US Launch Y2"
+    }
+  },
+  {
+    "id": "availability:daniel-carlsson-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:daniel-carlsson",
+      "start_date": "2026-08-03",
+      "end_date": "2026-08-14",
+      "allocation_pct": 100,
+      "reason": "Vacation — Stockholm"
+    }
+  },
+  {
+    "id": "availability:tara-lim-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:tara-lim",
+      "start_date": "2026-07-06",
+      "end_date": "2026-07-17",
+      "allocation_pct": 100,
+      "reason": "Vacation"
+    }
+  },
+  {
+    "id": "availability:tara-lim-2",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:tara-lim",
+      "start_date": "2026-09-01",
+      "end_date": "2026-12-15",
+      "allocation_pct": 50,
+      "reason": "Design support on Sephora US Launch Y2"
+    }
+  },
+  {
+    "id": "availability:imani-ofori-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:imani-ofori",
+      "start_date": "2026-08-24",
+      "end_date": "2026-09-04",
+      "allocation_pct": 100,
+      "reason": "Vacation"
+    }
+  },
+  {
+    "id": "availability:beatriz-silva-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:beatriz-silva",
+      "start_date": "2026-09-07",
+      "end_date": "2026-09-18",
+      "allocation_pct": 100,
+      "reason": "Vacation — Portugal"
+    }
+  },
+  {
+    "id": "availability:beatriz-silva-2",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:beatriz-silva",
+      "start_date": "2026-10-01",
+      "end_date": "2026-12-31",
+      "allocation_pct": 40,
+      "reason": "JP Tokyo Always-On Y2 — copy support"
+    }
+  },
+  {
+    "id": "availability:wen-liu-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:wen-liu",
+      "start_date": "2026-09-14",
+      "end_date": "2026-09-25",
+      "allocation_pct": 100,
+      "reason": "Vacation"
+    }
+  },
+  {
+    "id": "availability:wen-liu-2",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:wen-liu",
+      "start_date": "2026-07-01",
+      "end_date": "2026-12-31",
+      "allocation_pct": 60,
+      "reason": "Strategy lead on JP Tokyo Always-On Y2"
+    }
+  },
+  {
+    "id": "availability:hannah-krause-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:hannah-krause",
+      "start_date": "2026-08-03",
+      "end_date": "2026-08-14",
+      "allocation_pct": 100,
+      "reason": "Vacation — Berlin family"
+    }
+  },
+  {
+    "id": "availability:carlos-mendoza-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:carlos-mendoza",
+      "start_date": "2026-07-13",
+      "end_date": "2026-07-24",
+      "allocation_pct": 100,
+      "reason": "Vacation"
+    }
+  },
+  {
+    "id": "availability:carlos-mendoza-2",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:carlos-mendoza",
+      "start_date": "2026-09-01",
+      "end_date": "2026-12-15",
+      "allocation_pct": 50,
+      "reason": "Strategy support on Sephora US Launch Y2"
+    }
+  },
+  {
+    "id": "availability:james-whittaker-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:james-whittaker",
+      "start_date": "2026-06-22",
+      "end_date": "2026-07-03",
+      "allocation_pct": 100,
+      "reason": "Vacation"
+    }
+  },
+  {
+    "id": "availability:james-whittaker-2",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:james-whittaker",
+      "start_date": "2026-12-21",
+      "end_date": "2027-01-04",
+      "allocation_pct": 100,
+      "reason": "Vacation — holidays"
+    }
+  },
+  {
+    "id": "availability:beatrix-almeida-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:beatrix-almeida",
+      "start_date": "2026-08-03",
+      "end_date": "2026-08-21",
+      "allocation_pct": 100,
+      "reason": "Vacation — Brazil family"
+    }
+  },
+  {
+    "id": "availability:beatrix-almeida-2",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:beatrix-almeida",
+      "start_date": "2026-10-12",
+      "end_date": "2026-10-16",
+      "allocation_pct": 100,
+      "reason": "PMP recertification"
+    }
+  },
+  {
+    "id": "availability:anita-vasquez-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:anita-vasquez",
+      "start_date": "2026-09-01",
+      "end_date": "2027-01-31",
+      "allocation_pct": 70,
+      "reason": "PM lead on Sephora US Launch Y2"
+    }
+  },
+  {
+    "id": "availability:hiroto-yamada-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:hiroto-yamada",
+      "start_date": "2026-09-14",
+      "end_date": "2026-09-25",
+      "allocation_pct": 100,
+      "reason": "Vacation"
+    }
+  },
+  {
+    "id": "availability:hiroto-yamada-2",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:hiroto-yamada",
+      "start_date": "2026-07-01",
+      "end_date": "2026-12-31",
+      "allocation_pct": 60,
+      "reason": "PM on JP Tokyo Always-On Y2"
+    }
+  },
+  {
+    "id": "availability:felix-okafor-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:felix-okafor",
+      "start_date": "2026-08-10",
+      "end_date": "2026-08-21",
+      "allocation_pct": 100,
+      "reason": "Vacation"
+    }
+  },
+  {
+    "id": "availability:felix-okafor-2",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:felix-okafor",
+      "start_date": "2026-09-15",
+      "end_date": "2026-12-15",
+      "allocation_pct": 80,
+      "reason": "Producer on Sephora US Launch Y2 (6 events)"
+    }
+  },
+  {
+    "id": "availability:anuva-kapoor-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:anuva-kapoor",
+      "start_date": "2026-08-17",
+      "end_date": "2026-08-28",
+      "allocation_pct": 100,
+      "reason": "Vacation"
+    }
+  },
+  {
+    "id": "availability:ravi-nair-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:ravi-nair",
+      "start_date": "2026-08-03",
+      "end_date": "2026-08-14",
+      "allocation_pct": 100,
+      "reason": "Vacation"
+    }
+  },
+  {
+    "id": "availability:ravi-nair-2",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:ravi-nair",
+      "start_date": "2026-12-21",
+      "end_date": "2027-01-04",
+      "allocation_pct": 100,
+      "reason": "Vacation — holidays"
+    }
+  },
+  {
+    "id": "availability:mei-fong-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:mei-fong",
+      "start_date": "2026-09-07",
+      "end_date": "2026-09-18",
+      "allocation_pct": 100,
+      "reason": "Vacation"
+    }
+  },
+  {
+    "id": "availability:pablo-romero-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:pablo-romero",
+      "start_date": "2026-08-10",
+      "end_date": "2026-08-21",
+      "allocation_pct": 100,
+      "reason": "Vacation"
+    }
+  },
+  {
+    "id": "availability:niamh-oreilly-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:niamh-oreilly",
+      "start_date": "2026-09-07",
+      "end_date": "2026-09-18",
+      "allocation_pct": 100,
+      "reason": "Vacation"
+    }
+  },
+  {
+    "id": "availability:jordan-reeves-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:jordan-reeves",
+      "start_date": "2026-09-21",
+      "end_date": "2026-10-02",
+      "allocation_pct": 100,
+      "reason": "Vacation"
+    }
+  },
+  {
+    "id": "availability:jordan-reeves-2",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:jordan-reeves",
+      "start_date": "2026-09-01",
+      "end_date": "2027-01-31",
+      "allocation_pct": 70,
+      "reason": "US lead on Sephora US Launch Y2"
+    }
+  },
+  {
+    "id": "availability:holly-sutton-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:holly-sutton",
+      "start_date": "2026-08-17",
+      "end_date": "2026-08-28",
+      "allocation_pct": 100,
+      "reason": "Vacation"
+    }
+  },
+  {
+    "id": "availability:marcus-thomas-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:marcus-thomas",
+      "start_date": "2026-09-01",
+      "end_date": "2026-12-15",
+      "allocation_pct": 60,
+      "reason": "AM on Sephora US Launch Y2"
+    }
+  },
+  {
+    "id": "availability:priya-davies-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:priya-davies",
+      "start_date": "2026-09-21",
+      "end_date": "2026-10-02",
+      "allocation_pct": 100,
+      "reason": "Vacation"
+    }
+  },
+  {
+    "id": "availability:ben-phillips-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:ben-phillips",
+      "start_date": "2026-08-03",
+      "end_date": "2026-08-14",
+      "allocation_pct": 100,
+      "reason": "Vacation"
+    }
+  },
+  {
+    "id": "availability:ben-phillips-2",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:ben-phillips",
+      "start_date": "2026-11-09",
+      "end_date": "2026-11-13",
+      "allocation_pct": 100,
+      "reason": "Web Summit Lisbon"
+    }
+  },
+  {
+    "id": "availability:mateusz-kowalski-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:mateusz-kowalski",
+      "start_date": "2026-08-17",
+      "end_date": "2026-08-28",
+      "allocation_pct": 100,
+      "reason": "Vacation — Kraków"
+    }
+  },
+  {
+    "id": "availability:mateusz-kowalski-2",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:mateusz-kowalski",
+      "start_date": "2026-10-19",
+      "end_date": "2026-10-23",
+      "allocation_pct": 100,
+      "reason": "SearchLove conference"
+    }
+  },
+  {
+    "id": "availability:rachel-cohen-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:rachel-cohen",
+      "start_date": "2026-08-10",
+      "end_date": "2026-08-21",
+      "allocation_pct": 100,
+      "reason": "Vacation"
+    }
+  },
+  {
+    "id": "availability:rachel-cohen-2",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:rachel-cohen",
+      "start_date": "2026-09-01",
+      "end_date": "2026-12-31",
+      "allocation_pct": 60,
+      "reason": "Paid media lead on Sephora US Launch Y2"
+    }
+  },
+  {
+    "id": "availability:devon-ahmadi-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:devon-ahmadi",
+      "start_date": "2026-07-06",
+      "end_date": "2026-07-17",
+      "allocation_pct": 100,
+      "reason": "Vacation"
+    }
+  },
+  {
+    "id": "availability:devon-ahmadi-2",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:devon-ahmadi",
+      "start_date": "2026-09-01",
+      "end_date": "2026-11-30",
+      "allocation_pct": 100,
+      "reason": "Parental leave"
+    }
+  },
+  {
+    "id": "availability:lucas-muller-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:lucas-muller",
+      "start_date": "2026-07-20",
+      "end_date": "2026-07-31",
+      "allocation_pct": 100,
+      "reason": "Vacation — Bavaria"
+    }
+  },
+  {
+    "id": "availability:lucas-muller-2",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:lucas-muller",
+      "start_date": "2026-10-12",
+      "end_date": "2026-10-16",
+      "allocation_pct": 100,
+      "reason": "Litmus Live ECRM training"
+    }
+  },
+  {
+    "id": "availability:eshe-otieno-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:eshe-otieno",
+      "start_date": "2026-09-14",
+      "end_date": "2026-09-25",
+      "allocation_pct": 100,
+      "reason": "Vacation"
+    }
+  },
+  {
+    "id": "availability:eshe-otieno-2",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:eshe-otieno",
+      "start_date": "2026-10-01",
+      "end_date": "2026-12-31",
+      "allocation_pct": 40,
+      "reason": "D2C experimentation lead on Always-On 2026"
+    }
+  },
+  {
+    "id": "availability:lila-tan-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:lila-tan",
+      "start_date": "2026-07-20",
+      "end_date": "2026-07-31",
+      "allocation_pct": 100,
+      "reason": "Vacation"
+    }
+  },
+  {
+    "id": "availability:lila-tan-2",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:lila-tan",
+      "start_date": "2026-09-15",
+      "end_date": "2026-12-31",
+      "allocation_pct": 80,
+      "reason": "Retail activation lead on Sephora US Launch Y2"
+    }
+  },
+  {
+    "id": "availability:sara-mehta-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:sara-mehta",
+      "start_date": "2026-09-07",
+      "end_date": "2026-09-18",
+      "allocation_pct": 100,
+      "reason": "Vacation — India family"
+    }
+  },
+  {
+    "id": "availability:kieran-walsh-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:kieran-walsh",
+      "start_date": "2026-09-01",
+      "end_date": "2026-12-15",
+      "allocation_pct": 50,
+      "reason": "Social/influencer support on Sephora US Launch Y2"
+    }
+  },
+  {
+    "id": "availability:marcus-reilly-1",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:marcus-reilly",
+      "start_date": "2026-08-10",
+      "end_date": "2026-08-21",
+      "allocation_pct": 100,
+      "reason": "Vacation"
+    }
+  },
+  {
+    "id": "availability:gen-72",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:jonah-dunmore",
+      "start_date": "2026-06-07",
+      "end_date": "2026-08-06",
+      "allocation_pct": 50,
+      "reason": "Kestrel US launch"
+    }
+  },
+  {
+    "id": "availability:gen-73",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:halle-gallo",
+      "start_date": "2026-08-06",
+      "end_date": "2026-10-02",
+      "allocation_pct": 80,
+      "reason": "Parental leave"
+    }
+  },
+  {
+    "id": "availability:gen-74",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:kira-fischer",
+      "start_date": "2026-09-03",
+      "end_date": "2026-11-28",
+      "allocation_pct": 50,
+      "reason": "Aurelune Sephora Y2"
+    }
+  },
+  {
+    "id": "availability:gen-75",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:fern-delaney",
+      "start_date": "2026-09-01",
+      "end_date": "2026-09-24",
+      "allocation_pct": 100,
+      "reason": "Kestrel wholesale roadshow"
+    }
+  },
+  {
+    "id": "availability:gen-76",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:pavel-imani",
+      "start_date": "2026-09-06",
+      "end_date": "2026-11-21",
+      "allocation_pct": 100,
+      "reason": "Aurelune DACH push"
+    }
+  },
+  {
+    "id": "availability:gen-77",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:priya-ibsen",
+      "start_date": "2026-06-06",
+      "end_date": "2026-07-04",
+      "allocation_pct": 80,
+      "reason": "Kestrel US launch"
+    }
+  },
+  {
+    "id": "availability:gen-78",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:greta-imani",
+      "start_date": "2026-08-08",
+      "end_date": "2026-10-10",
+      "allocation_pct": 50,
+      "reason": "Kestrel trail season"
+    }
+  },
+  {
+    "id": "availability:gen-79",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:fern-kerr",
+      "start_date": "2026-07-02",
+      "end_date": "2026-09-01",
+      "allocation_pct": 80,
+      "reason": "Aurelune Sephora Y2"
+    }
+  },
+  {
+    "id": "availability:gen-80",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:theo-gallo",
+      "start_date": "2026-06-08",
+      "end_date": "2026-08-12",
+      "allocation_pct": 100,
+      "reason": "Aurelune DACH push"
+    }
+  },
+  {
+    "id": "availability:gen-81",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:quinn-hsu",
+      "start_date": "2026-07-06",
+      "end_date": "2026-08-21",
+      "allocation_pct": 100,
+      "reason": "Aurelune DACH push"
+    }
+  },
+  {
+    "id": "availability:gen-82",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:hugo-holt",
+      "start_date": "2026-06-04",
+      "end_date": "2026-08-19",
+      "allocation_pct": 50,
+      "reason": "Kestrel wholesale roadshow"
+    }
+  },
+  {
+    "id": "availability:gen-83",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:kira-brandt",
+      "start_date": "2026-09-03",
+      "end_date": "2026-10-25",
+      "allocation_pct": 100,
+      "reason": "Aurelune Sephora Y2"
+    }
+  },
+  {
+    "id": "availability:gen-84",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:kira-esposito",
+      "start_date": "2026-08-07",
+      "end_date": "2026-10-19",
+      "allocation_pct": 50,
+      "reason": "Parental leave"
+    }
+  },
+  {
+    "id": "availability:gen-85",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:greta-ueda",
+      "start_date": "2026-08-04",
+      "end_date": "2026-10-16",
+      "allocation_pct": 100,
+      "reason": "Parental leave"
+    }
+  },
+  {
+    "id": "availability:gen-86",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:leon-imani",
+      "start_date": "2026-06-03",
+      "end_date": "2026-08-23",
+      "allocation_pct": 40,
+      "reason": "Kestrel US launch"
+    }
+  },
+  {
+    "id": "availability:gen-87",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:milo-jansen",
+      "start_date": "2026-08-07",
+      "end_date": "2026-11-03",
+      "allocation_pct": 80,
+      "reason": "Kestrel US launch"
+    }
+  },
+  {
+    "id": "availability:gen-88",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:quinn-dunmore",
+      "start_date": "2026-09-03",
+      "end_date": "2026-11-14",
+      "allocation_pct": 50,
+      "reason": "Kestrel US launch"
+    }
+  },
+  {
+    "id": "availability:gen-89",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:jad-novak",
+      "start_date": "2026-07-09",
+      "end_date": "2026-09-04",
+      "allocation_pct": 80,
+      "reason": "Aurelune Sephora Y2"
+    }
+  },
+  {
+    "id": "availability:gen-90",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:dara-jansen",
+      "start_date": "2026-09-08",
+      "end_date": "2026-10-31",
+      "allocation_pct": 60,
+      "reason": "Parental leave"
+    }
+  },
+  {
+    "id": "availability:gen-91",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:dami-mercer",
+      "start_date": "2026-07-06",
+      "end_date": "2026-08-28",
+      "allocation_pct": 100,
+      "reason": "Kestrel US launch"
+    }
+  },
+  {
+    "id": "availability:gen-92",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:halle-cho",
+      "start_date": "2026-06-08",
+      "end_date": "2026-07-16",
+      "allocation_pct": 40,
+      "reason": "Kestrel trail season"
+    }
+  },
+  {
+    "id": "availability:gen-93",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:pavel-ibsen",
+      "start_date": "2026-08-03",
+      "end_date": "2026-10-18",
+      "allocation_pct": 60,
+      "reason": "Kestrel US launch"
+    }
+  },
+  {
+    "id": "availability:gen-94",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:ada-leroy",
+      "start_date": "2026-06-01",
+      "end_date": "2026-07-04",
+      "allocation_pct": 50,
+      "reason": "Aurelune Sephora Y2"
+    }
+  },
+  {
+    "id": "availability:gen-95",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:aaron-lund",
+      "start_date": "2026-06-08",
+      "end_date": "2026-09-06",
+      "allocation_pct": 40,
+      "reason": "Kestrel wholesale roadshow"
+    }
+  },
+  {
+    "id": "availability:gen-96",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:otis-stern",
+      "start_date": "2026-07-09",
+      "end_date": "2026-08-01",
+      "allocation_pct": 80,
+      "reason": "Aurelune DACH push"
+    }
+  },
+  {
+    "id": "availability:gen-97",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:nils-delaney",
+      "start_date": "2026-06-06",
+      "end_date": "2026-08-25",
+      "allocation_pct": 60,
+      "reason": "Aurelune DACH push"
+    }
+  },
+  {
+    "id": "availability:gen-98",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:sami-hsu",
+      "start_date": "2026-08-07",
+      "end_date": "2026-09-28",
+      "allocation_pct": 60,
+      "reason": "Aurelune DACH push"
+    }
+  },
+  {
+    "id": "availability:gen-99",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:sasha-leroy",
+      "start_date": "2026-08-02",
+      "end_date": "2026-09-09",
+      "allocation_pct": 80,
+      "reason": "Aurelune Sephora Y2"
+    }
+  },
+  {
+    "id": "availability:gen-100",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:sami-fischer",
+      "start_date": "2026-07-01",
+      "end_date": "2026-08-09",
+      "allocation_pct": 100,
+      "reason": "Kestrel US launch"
+    }
+  },
+  {
+    "id": "availability:gen-101",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:quinn-vogel",
+      "start_date": "2026-08-03",
+      "end_date": "2026-09-24",
+      "allocation_pct": 40,
+      "reason": "Aurelune Sephora Y2"
+    }
+  },
+  {
+    "id": "availability:gen-102",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:nils-quill",
+      "start_date": "2026-08-08",
+      "end_date": "2026-09-17",
+      "allocation_pct": 50,
+      "reason": "Aurelune DACH push"
+    }
+  },
+  {
+    "id": "availability:gen-103",
+    "type": "Availability",
+    "properties": {
+      "person_id": "person:juno-vogel",
+      "start_date": "2026-06-04",
+      "end_date": "2026-08-11",
+      "allocation_pct": 60,
+      "reason": "Parental leave"
+    }
+  }
 ]

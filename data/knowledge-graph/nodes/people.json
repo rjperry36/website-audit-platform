@@ -1,49 +1,2126 @@
 [
-    { "id": "person:aisha-bello",      "type": "Person", "properties": { "name": "Aisha Bello",        "department_id": "dept:client-services", "role_id": "role:group-account-director",     "seniority": "director", "office": "London",   "start_date": "2016-04-04", "daily_rate_gbp": 1280, "client_markup_pct": 0.85, "capacity_hours_per_week": 36, "utilisation_target_pct": 0.65, "email": "aisha.bello@haloandhelix.example",      "is_active": true } },
-    { "id": "person:niamh-oreilly",    "type": "Person", "properties": { "name": "Niamh O'Reilly",     "department_id": "dept:client-services", "role_id": "role:account-director",            "seniority": "senior",   "office": "London",   "start_date": "2019-09-02", "daily_rate_gbp": 880,  "client_markup_pct": 0.85, "capacity_hours_per_week": 36, "utilisation_target_pct": 0.75, "email": "niamh.oreilly@haloandhelix.example",    "is_active": true } },
-    { "id": "person:jordan-reeves",    "type": "Person", "properties": { "name": "Jordan Reeves",      "department_id": "dept:client-services", "role_id": "role:account-director",            "seniority": "senior",   "office": "New York", "start_date": "2022-01-10", "daily_rate_gbp": 920,  "client_markup_pct": 0.85, "capacity_hours_per_week": 40, "utilisation_target_pct": 0.75, "email": "jordan.reeves@haloandhelix.example",    "is_active": true } },
-    { "id": "person:holly-sutton",     "type": "Person", "properties": { "name": "Holly Sutton",       "department_id": "dept:client-services", "role_id": "role:account-manager",             "seniority": "mid",      "office": "London",   "start_date": "2021-06-15", "daily_rate_gbp": 560,  "client_markup_pct": 0.85, "capacity_hours_per_week": 32, "utilisation_target_pct": 0.80, "email": "holly.sutton@haloandhelix.example",     "is_active": true } },
-    { "id": "person:marcus-thomas",    "type": "Person", "properties": { "name": "Marcus Thomas",      "department_id": "dept:client-services", "role_id": "role:account-manager",             "seniority": "mid",      "office": "New York", "start_date": "2023-03-20", "daily_rate_gbp": 580,  "client_markup_pct": 0.85, "capacity_hours_per_week": 40, "utilisation_target_pct": 0.80, "email": "marcus.thomas@haloandhelix.example",    "is_active": true } },
-    { "id": "person:priya-davies",     "type": "Person", "properties": { "name": "Priya Davies",       "department_id": "dept:client-services", "role_id": "role:account-executive",           "seniority": "junior",   "office": "London",   "start_date": "2024-09-01", "daily_rate_gbp": 320,  "client_markup_pct": 0.85, "capacity_hours_per_week": 40, "utilisation_target_pct": 0.85, "email": "priya.davies@haloandhelix.example",     "is_active": true } },
-
-    { "id": "person:maya-chen",        "type": "Person", "properties": { "name": "Maya Chen",          "department_id": "dept:strategy",        "role_id": "role:strategy-director",           "seniority": "director", "office": "London",   "start_date": "2017-03-15", "daily_rate_gbp": 1380, "client_markup_pct": 0.85, "capacity_hours_per_week": 32, "utilisation_target_pct": 0.60, "email": "maya.chen@haloandhelix.example",        "is_active": true } },
-    { "id": "person:wen-liu",          "type": "Person", "properties": { "name": "Wen Liu",            "department_id": "dept:strategy",        "role_id": "role:senior-strategist",           "seniority": "senior",   "office": "Singapore","start_date": "2021-11-08", "daily_rate_gbp": 920,  "client_markup_pct": 0.85, "capacity_hours_per_week": 40, "utilisation_target_pct": 0.75, "email": "wen.liu@haloandhelix.example",          "is_active": true } },
-    { "id": "person:hannah-krause",    "type": "Person", "properties": { "name": "Hannah Krause",      "department_id": "dept:strategy",        "role_id": "role:strategist",                  "seniority": "mid",      "office": "London",   "start_date": "2022-07-04", "daily_rate_gbp": 620,  "client_markup_pct": 0.85, "capacity_hours_per_week": 36, "utilisation_target_pct": 0.80, "email": "hannah.krause@haloandhelix.example",    "is_active": true } },
-    { "id": "person:carlos-mendoza",   "type": "Person", "properties": { "name": "Carlos Mendoza",     "department_id": "dept:strategy",        "role_id": "role:strategist",                  "seniority": "mid",      "office": "New York", "start_date": "2023-02-13", "daily_rate_gbp": 640,  "client_markup_pct": 0.85, "capacity_hours_per_week": 40, "utilisation_target_pct": 0.80, "email": "carlos.mendoza@haloandhelix.example",   "is_active": true } },
-
-    { "id": "person:james-whittaker",  "type": "Person", "properties": { "name": "James Whittaker",    "department_id": "dept:project-planning","role_id": "role:head-of-project-planning",   "seniority": "director", "office": "London",   "start_date": "2015-10-01", "daily_rate_gbp": 1180, "client_markup_pct": 0.85, "capacity_hours_per_week": 36, "utilisation_target_pct": 0.55, "email": "james.whittaker@haloandhelix.example",  "is_active": true } },
-    { "id": "person:beatrix-almeida",  "type": "Person", "properties": { "name": "Beatrix Almeida",    "department_id": "dept:project-planning","role_id": "role:senior-project-manager",     "seniority": "senior",   "office": "London",   "start_date": "2019-04-22", "daily_rate_gbp": 770,  "client_markup_pct": 0.85, "capacity_hours_per_week": 36, "utilisation_target_pct": 0.80, "email": "beatrix.almeida@haloandhelix.example",  "is_active": true } },
-    { "id": "person:anita-vasquez",    "type": "Person", "properties": { "name": "Anita Vasquez",      "department_id": "dept:project-planning","role_id": "role:senior-project-manager",     "seniority": "senior",   "office": "New York", "start_date": "2022-04-18", "daily_rate_gbp": 790,  "client_markup_pct": 0.85, "capacity_hours_per_week": 40, "utilisation_target_pct": 0.80, "email": "anita.vasquez@haloandhelix.example",    "is_active": true } },
-    { "id": "person:hiroto-yamada",    "type": "Person", "properties": { "name": "Hiroto Yamada",      "department_id": "dept:project-planning","role_id": "role:project-manager",            "seniority": "mid",      "office": "Singapore","start_date": "2023-08-07", "daily_rate_gbp": 540,  "client_markup_pct": 0.85, "capacity_hours_per_week": 40, "utilisation_target_pct": 0.85, "email": "hiroto.yamada@haloandhelix.example",    "is_active": true } },
-    { "id": "person:felix-okafor",     "type": "Person", "properties": { "name": "Felix Okafor",       "department_id": "dept:project-planning","role_id": "role:producer",                   "seniority": "mid",      "office": "London",   "start_date": "2020-11-12", "daily_rate_gbp": 640,  "client_markup_pct": 0.85, "capacity_hours_per_week": 36, "utilisation_target_pct": 0.80, "email": "felix.okafor@haloandhelix.example",     "is_active": true } },
-
-    { "id": "person:caitlin-doyle",    "type": "Person", "properties": { "name": "Caitlin Doyle",      "department_id": "dept:new-business",    "role_id": "role:head-of-new-business",       "seniority": "director", "office": "London",   "start_date": "2014-09-01", "daily_rate_gbp": 1450, "client_markup_pct": 0.85, "capacity_hours_per_week": 36, "utilisation_target_pct": 0.30, "email": "caitlin.doyle@haloandhelix.example",    "is_active": true } },
-    { "id": "person:anuva-kapoor",     "type": "Person", "properties": { "name": "Anuva Kapoor",       "department_id": "dept:new-business",    "role_id": "role:new-business-manager",       "seniority": "mid",      "office": "London",   "start_date": "2021-01-25", "daily_rate_gbp": 680,  "client_markup_pct": 0.85, "capacity_hours_per_week": 36, "utilisation_target_pct": 0.65, "email": "anuva.kapoor@haloandhelix.example",     "is_active": true } },
-
-    { "id": "person:ravi-nair",        "type": "Person", "properties": { "name": "Ravi Nair",          "department_id": "dept:accounts",        "role_id": "role:finance-director",           "seniority": "director", "office": "London",   "start_date": "2017-09-04", "daily_rate_gbp": 1140, "client_markup_pct": 0.50, "capacity_hours_per_week": 40, "utilisation_target_pct": 0.40, "email": "ravi.nair@haloandhelix.example",        "is_active": true } },
-    { "id": "person:mei-fong",         "type": "Person", "properties": { "name": "Mei Fong",           "department_id": "dept:accounts",        "role_id": "role:finance-manager",            "seniority": "mid",      "office": "London",   "start_date": "2020-03-30", "daily_rate_gbp": 520,  "client_markup_pct": 0.50, "capacity_hours_per_week": 40, "utilisation_target_pct": 0.60, "email": "mei.fong@haloandhelix.example",         "is_active": true } },
-    { "id": "person:pablo-romero",     "type": "Person", "properties": { "name": "Pablo Romero",       "department_id": "dept:accounts",        "role_id": "role:bookkeeper",                 "seniority": "junior",   "office": "London",   "start_date": "2023-06-12", "daily_rate_gbp": 290,  "client_markup_pct": 0.50, "capacity_hours_per_week": 32, "utilisation_target_pct": 0.70, "email": "pablo.romero@haloandhelix.example",     "is_active": true } },
-
-    { "id": "person:tom-hartley",      "type": "Person", "properties": { "name": "Tom Hartley",        "department_id": "dept:creative",        "role_id": "role:executive-creative-director","seniority": "director", "office": "London",   "start_date": "2014-09-01", "daily_rate_gbp": 1620, "client_markup_pct": 0.85, "capacity_hours_per_week": 32, "utilisation_target_pct": 0.50, "email": "tom.hartley@haloandhelix.example",      "is_active": true } },
-    { "id": "person:linus-schmidt",    "type": "Person", "properties": { "name": "Linus Schmidt",      "department_id": "dept:creative",        "role_id": "role:creative-director",          "seniority": "lead",     "office": "London",   "start_date": "2018-02-19", "daily_rate_gbp": 1180, "client_markup_pct": 0.85, "capacity_hours_per_week": 36, "utilisation_target_pct": 0.70, "email": "linus.schmidt@haloandhelix.example",    "is_active": true } },
-    { "id": "person:sophie-tremblay",  "type": "Person", "properties": { "name": "Sophie Tremblay",    "department_id": "dept:creative",        "role_id": "role:associate-creative-director","seniority": "senior",   "office": "London",   "start_date": "2020-07-06", "daily_rate_gbp": 880,  "client_markup_pct": 0.85, "capacity_hours_per_week": 36, "utilisation_target_pct": 0.78, "email": "sophie.tremblay@haloandhelix.example",  "is_active": true } },
-    { "id": "person:olu-adesanya",     "type": "Person", "properties": { "name": "Olu Adesanya",       "department_id": "dept:creative",        "role_id": "role:senior-art-director",        "seniority": "senior",   "office": "London",   "start_date": "2019-05-14", "daily_rate_gbp": 780,  "client_markup_pct": 0.85, "capacity_hours_per_week": 36, "utilisation_target_pct": 0.80, "email": "olu.adesanya@haloandhelix.example",     "is_active": true } },
-    { "id": "person:akira-tanaka",     "type": "Person", "properties": { "name": "Akira Tanaka",       "department_id": "dept:creative",        "role_id": "role:senior-art-director",        "seniority": "senior",   "office": "Singapore","start_date": "2022-09-19", "daily_rate_gbp": 760,  "client_markup_pct": 0.85, "capacity_hours_per_week": 40, "utilisation_target_pct": 0.80, "email": "akira.tanaka@haloandhelix.example",     "is_active": true } },
-    { "id": "person:pari-banerjee",    "type": "Person", "properties": { "name": "Pari Banerjee",      "department_id": "dept:creative",        "role_id": "role:senior-copywriter",          "seniority": "senior",   "office": "London",   "start_date": "2019-11-25", "daily_rate_gbp": 720,  "client_markup_pct": 0.85, "capacity_hours_per_week": 32, "utilisation_target_pct": 0.80, "email": "pari.banerjee@haloandhelix.example",    "is_active": true } },
-    { "id": "person:naomi-brooks",     "type": "Person", "properties": { "name": "Naomi Brooks",       "department_id": "dept:creative",        "role_id": "role:senior-copywriter",          "seniority": "senior",   "office": "New York", "start_date": "2022-05-09", "daily_rate_gbp": 740,  "client_markup_pct": 0.85, "capacity_hours_per_week": 40, "utilisation_target_pct": 0.80, "email": "naomi.brooks@haloandhelix.example",     "is_active": true } },
-    { "id": "person:daniel-carlsson",  "type": "Person", "properties": { "name": "Daniel Carlsson",    "department_id": "dept:creative",        "role_id": "role:designer",                   "seniority": "mid",      "office": "London",   "start_date": "2021-08-23", "daily_rate_gbp": 520,  "client_markup_pct": 0.85, "capacity_hours_per_week": 36, "utilisation_target_pct": 0.85, "email": "daniel.carlsson@haloandhelix.example",  "is_active": true } },
-    { "id": "person:tara-lim",         "type": "Person", "properties": { "name": "Tara Lim",           "department_id": "dept:creative",        "role_id": "role:designer",                   "seniority": "mid",      "office": "New York", "start_date": "2023-10-02", "daily_rate_gbp": 540,  "client_markup_pct": 0.85, "capacity_hours_per_week": 40, "utilisation_target_pct": 0.85, "email": "tara.lim@haloandhelix.example",         "is_active": true } },
-    { "id": "person:imani-ofori",      "type": "Person", "properties": { "name": "Imani Ofori",        "department_id": "dept:creative",        "role_id": "role:copywriter",                 "seniority": "mid",      "office": "London",   "start_date": "2022-03-07", "daily_rate_gbp": 500,  "client_markup_pct": 0.85, "capacity_hours_per_week": 32, "utilisation_target_pct": 0.85, "email": "imani.ofori@haloandhelix.example",      "is_active": true } },
-    { "id": "person:beatriz-silva",    "type": "Person", "properties": { "name": "Beatriz Silva",      "department_id": "dept:creative",        "role_id": "role:copywriter",                 "seniority": "mid",      "office": "Singapore","start_date": "2024-02-19", "daily_rate_gbp": 480,  "client_markup_pct": 0.85, "capacity_hours_per_week": 40, "utilisation_target_pct": 0.85, "email": "beatriz.silva@haloandhelix.example",    "is_active": true } },
-
-    { "id": "person:ben-phillips",     "type": "Person", "properties": { "name": "Ben Phillips",       "department_id": "dept:channel-experts", "role_id": "role:head-of-channels",           "seniority": "director", "office": "London",   "start_date": "2018-09-10", "daily_rate_gbp": 1240, "client_markup_pct": 0.85, "capacity_hours_per_week": 36, "utilisation_target_pct": 0.55, "email": "ben.phillips@haloandhelix.example",     "is_active": true } },
-    { "id": "person:mateusz-kowalski", "type": "Person", "properties": { "name": "Mateusz Kowalski",   "department_id": "dept:channel-experts", "role_id": "role:channel-lead",               "seniority": "lead",     "office": "London",   "start_date": "2020-01-20", "daily_rate_gbp": 940,  "client_markup_pct": 0.85, "capacity_hours_per_week": 36, "utilisation_target_pct": 0.80, "email": "mateusz.kowalski@haloandhelix.example", "is_active": true } },
-    { "id": "person:rachel-cohen",     "type": "Person", "properties": { "name": "Rachel Cohen",       "department_id": "dept:channel-experts", "role_id": "role:channel-lead",               "seniority": "lead",     "office": "New York", "start_date": "2021-06-28", "daily_rate_gbp": 960,  "client_markup_pct": 0.85, "capacity_hours_per_week": 40, "utilisation_target_pct": 0.80, "email": "rachel.cohen@haloandhelix.example",     "is_active": true } },
-    { "id": "person:devon-ahmadi",     "type": "Person", "properties": { "name": "Devon Ahmadi",       "department_id": "dept:channel-experts", "role_id": "role:channel-lead",               "seniority": "lead",     "office": "New York", "start_date": "2022-08-15", "daily_rate_gbp": 920,  "client_markup_pct": 0.85, "capacity_hours_per_week": 40, "utilisation_target_pct": 0.80, "email": "devon.ahmadi@haloandhelix.example",     "is_active": true } },
-    { "id": "person:lucas-muller",     "type": "Person", "properties": { "name": "Lucas Müller",       "department_id": "dept:channel-experts", "role_id": "role:channel-lead",               "seniority": "lead",     "office": "London",   "start_date": "2019-07-22", "daily_rate_gbp": 900,  "client_markup_pct": 0.85, "capacity_hours_per_week": 36, "utilisation_target_pct": 0.80, "email": "lucas.muller@haloandhelix.example",     "is_active": true } },
-    { "id": "person:eshe-otieno",      "type": "Person", "properties": { "name": "Eshe Otieno",        "department_id": "dept:channel-experts", "role_id": "role:channel-lead",               "seniority": "lead",     "office": "London",   "start_date": "2020-04-14", "daily_rate_gbp": 920,  "client_markup_pct": 0.85, "capacity_hours_per_week": 36, "utilisation_target_pct": 0.80, "email": "eshe.otieno@haloandhelix.example",      "is_active": true } },
-    { "id": "person:lila-tan",         "type": "Person", "properties": { "name": "Lila Tan",           "department_id": "dept:channel-experts", "role_id": "role:channel-lead",               "seniority": "lead",     "office": "Singapore","start_date": "2021-10-04", "daily_rate_gbp": 860,  "client_markup_pct": 0.85, "capacity_hours_per_week": 40, "utilisation_target_pct": 0.80, "email": "lila.tan@haloandhelix.example",         "is_active": true } },
-    { "id": "person:sara-mehta",       "type": "Person", "properties": { "name": "Sara Mehta",         "department_id": "dept:channel-experts", "role_id": "role:senior-channel-specialist",  "seniority": "senior",   "office": "London",   "start_date": "2021-04-12", "daily_rate_gbp": 720,  "client_markup_pct": 0.85, "capacity_hours_per_week": 36, "utilisation_target_pct": 0.85, "email": "sara.mehta@haloandhelix.example",       "is_active": true } },
-    { "id": "person:kieran-walsh",     "type": "Person", "properties": { "name": "Kieran Walsh",       "department_id": "dept:channel-experts", "role_id": "role:senior-channel-specialist",  "seniority": "senior",   "office": "New York", "start_date": "2022-11-07", "daily_rate_gbp": 740,  "client_markup_pct": 0.85, "capacity_hours_per_week": 40, "utilisation_target_pct": 0.85, "email": "kieran.walsh@haloandhelix.example",     "is_active": true } },
-    { "id": "person:marcus-reilly",    "type": "Person", "properties": { "name": "Marcus Reilly",      "department_id": "dept:channel-experts", "role_id": "role:channel-specialist",         "seniority": "mid",      "office": "London",   "start_date": "2023-04-03", "daily_rate_gbp": 510,  "client_markup_pct": 0.85, "capacity_hours_per_week": 36, "utilisation_target_pct": 0.85, "email": "marcus.reilly@haloandhelix.example",    "is_active": true } }
+  {
+    "id": "person:aisha-bello",
+    "type": "Person",
+    "properties": {
+      "name": "Aisha Bello",
+      "department_id": "dept:client-services",
+      "role_id": "role:group-account-director",
+      "seniority": "director",
+      "office": "London",
+      "start_date": "2016-04-04",
+      "daily_rate_gbp": 1280,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.65,
+      "email": "aisha.bello@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:niamh-oreilly",
+    "type": "Person",
+    "properties": {
+      "name": "Niamh O'Reilly",
+      "department_id": "dept:client-services",
+      "role_id": "role:account-director",
+      "seniority": "senior",
+      "office": "London",
+      "start_date": "2019-09-02",
+      "daily_rate_gbp": 880,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.75,
+      "email": "niamh.oreilly@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:jordan-reeves",
+    "type": "Person",
+    "properties": {
+      "name": "Jordan Reeves",
+      "department_id": "dept:client-services",
+      "role_id": "role:account-director",
+      "seniority": "senior",
+      "office": "New York",
+      "start_date": "2022-01-10",
+      "daily_rate_gbp": 920,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 40,
+      "utilisation_target_pct": 0.75,
+      "email": "jordan.reeves@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:holly-sutton",
+    "type": "Person",
+    "properties": {
+      "name": "Holly Sutton",
+      "department_id": "dept:client-services",
+      "role_id": "role:account-manager",
+      "seniority": "mid",
+      "office": "London",
+      "start_date": "2021-06-15",
+      "daily_rate_gbp": 560,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 32,
+      "utilisation_target_pct": 0.8,
+      "email": "holly.sutton@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:marcus-thomas",
+    "type": "Person",
+    "properties": {
+      "name": "Marcus Thomas",
+      "department_id": "dept:client-services",
+      "role_id": "role:account-manager",
+      "seniority": "mid",
+      "office": "New York",
+      "start_date": "2023-03-20",
+      "daily_rate_gbp": 580,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 40,
+      "utilisation_target_pct": 0.8,
+      "email": "marcus.thomas@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:priya-davies",
+    "type": "Person",
+    "properties": {
+      "name": "Priya Davies",
+      "department_id": "dept:client-services",
+      "role_id": "role:account-executive",
+      "seniority": "junior",
+      "office": "London",
+      "start_date": "2024-09-01",
+      "daily_rate_gbp": 320,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 40,
+      "utilisation_target_pct": 0.85,
+      "email": "priya.davies@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:maya-chen",
+    "type": "Person",
+    "properties": {
+      "name": "Maya Chen",
+      "department_id": "dept:strategy",
+      "role_id": "role:strategy-director",
+      "seniority": "director",
+      "office": "London",
+      "start_date": "2017-03-15",
+      "daily_rate_gbp": 1380,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 32,
+      "utilisation_target_pct": 0.6,
+      "email": "maya.chen@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:wen-liu",
+    "type": "Person",
+    "properties": {
+      "name": "Wen Liu",
+      "department_id": "dept:strategy",
+      "role_id": "role:senior-strategist",
+      "seniority": "senior",
+      "office": "Singapore",
+      "start_date": "2021-11-08",
+      "daily_rate_gbp": 920,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 40,
+      "utilisation_target_pct": 0.75,
+      "email": "wen.liu@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:hannah-krause",
+    "type": "Person",
+    "properties": {
+      "name": "Hannah Krause",
+      "department_id": "dept:strategy",
+      "role_id": "role:strategist",
+      "seniority": "mid",
+      "office": "London",
+      "start_date": "2022-07-04",
+      "daily_rate_gbp": 620,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.8,
+      "email": "hannah.krause@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:carlos-mendoza",
+    "type": "Person",
+    "properties": {
+      "name": "Carlos Mendoza",
+      "department_id": "dept:strategy",
+      "role_id": "role:strategist",
+      "seniority": "mid",
+      "office": "New York",
+      "start_date": "2023-02-13",
+      "daily_rate_gbp": 640,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 40,
+      "utilisation_target_pct": 0.8,
+      "email": "carlos.mendoza@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:james-whittaker",
+    "type": "Person",
+    "properties": {
+      "name": "James Whittaker",
+      "department_id": "dept:project-planning",
+      "role_id": "role:head-of-project-planning",
+      "seniority": "director",
+      "office": "London",
+      "start_date": "2015-10-01",
+      "daily_rate_gbp": 1180,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.55,
+      "email": "james.whittaker@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:beatrix-almeida",
+    "type": "Person",
+    "properties": {
+      "name": "Beatrix Almeida",
+      "department_id": "dept:project-planning",
+      "role_id": "role:senior-project-manager",
+      "seniority": "senior",
+      "office": "London",
+      "start_date": "2019-04-22",
+      "daily_rate_gbp": 770,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.8,
+      "email": "beatrix.almeida@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:anita-vasquez",
+    "type": "Person",
+    "properties": {
+      "name": "Anita Vasquez",
+      "department_id": "dept:project-planning",
+      "role_id": "role:senior-project-manager",
+      "seniority": "senior",
+      "office": "New York",
+      "start_date": "2022-04-18",
+      "daily_rate_gbp": 790,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 40,
+      "utilisation_target_pct": 0.8,
+      "email": "anita.vasquez@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:hiroto-yamada",
+    "type": "Person",
+    "properties": {
+      "name": "Hiroto Yamada",
+      "department_id": "dept:project-planning",
+      "role_id": "role:project-manager",
+      "seniority": "mid",
+      "office": "Singapore",
+      "start_date": "2023-08-07",
+      "daily_rate_gbp": 540,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 40,
+      "utilisation_target_pct": 0.85,
+      "email": "hiroto.yamada@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:felix-okafor",
+    "type": "Person",
+    "properties": {
+      "name": "Felix Okafor",
+      "department_id": "dept:project-planning",
+      "role_id": "role:producer",
+      "seniority": "mid",
+      "office": "London",
+      "start_date": "2020-11-12",
+      "daily_rate_gbp": 640,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.8,
+      "email": "felix.okafor@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:caitlin-doyle",
+    "type": "Person",
+    "properties": {
+      "name": "Caitlin Doyle",
+      "department_id": "dept:new-business",
+      "role_id": "role:head-of-new-business",
+      "seniority": "director",
+      "office": "London",
+      "start_date": "2014-09-01",
+      "daily_rate_gbp": 1450,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.3,
+      "email": "caitlin.doyle@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:anuva-kapoor",
+    "type": "Person",
+    "properties": {
+      "name": "Anuva Kapoor",
+      "department_id": "dept:new-business",
+      "role_id": "role:new-business-manager",
+      "seniority": "mid",
+      "office": "London",
+      "start_date": "2021-01-25",
+      "daily_rate_gbp": 680,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.65,
+      "email": "anuva.kapoor@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:ravi-nair",
+    "type": "Person",
+    "properties": {
+      "name": "Ravi Nair",
+      "department_id": "dept:accounts",
+      "role_id": "role:finance-director",
+      "seniority": "director",
+      "office": "London",
+      "start_date": "2017-09-04",
+      "daily_rate_gbp": 1140,
+      "client_markup_pct": 0.5,
+      "capacity_hours_per_week": 40,
+      "utilisation_target_pct": 0.4,
+      "email": "ravi.nair@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:mei-fong",
+    "type": "Person",
+    "properties": {
+      "name": "Mei Fong",
+      "department_id": "dept:accounts",
+      "role_id": "role:finance-manager",
+      "seniority": "mid",
+      "office": "London",
+      "start_date": "2020-03-30",
+      "daily_rate_gbp": 520,
+      "client_markup_pct": 0.5,
+      "capacity_hours_per_week": 40,
+      "utilisation_target_pct": 0.6,
+      "email": "mei.fong@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:pablo-romero",
+    "type": "Person",
+    "properties": {
+      "name": "Pablo Romero",
+      "department_id": "dept:accounts",
+      "role_id": "role:bookkeeper",
+      "seniority": "junior",
+      "office": "London",
+      "start_date": "2023-06-12",
+      "daily_rate_gbp": 290,
+      "client_markup_pct": 0.5,
+      "capacity_hours_per_week": 32,
+      "utilisation_target_pct": 0.7,
+      "email": "pablo.romero@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:tom-hartley",
+    "type": "Person",
+    "properties": {
+      "name": "Tom Hartley",
+      "department_id": "dept:creative",
+      "role_id": "role:executive-creative-director",
+      "seniority": "director",
+      "office": "London",
+      "start_date": "2014-09-01",
+      "daily_rate_gbp": 1620,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 32,
+      "utilisation_target_pct": 0.5,
+      "email": "tom.hartley@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:linus-schmidt",
+    "type": "Person",
+    "properties": {
+      "name": "Linus Schmidt",
+      "department_id": "dept:creative",
+      "role_id": "role:creative-director",
+      "seniority": "lead",
+      "office": "London",
+      "start_date": "2018-02-19",
+      "daily_rate_gbp": 1180,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.7,
+      "email": "linus.schmidt@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:sophie-tremblay",
+    "type": "Person",
+    "properties": {
+      "name": "Sophie Tremblay",
+      "department_id": "dept:creative",
+      "role_id": "role:associate-creative-director",
+      "seniority": "senior",
+      "office": "London",
+      "start_date": "2020-07-06",
+      "daily_rate_gbp": 880,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.78,
+      "email": "sophie.tremblay@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:olu-adesanya",
+    "type": "Person",
+    "properties": {
+      "name": "Olu Adesanya",
+      "department_id": "dept:creative",
+      "role_id": "role:senior-art-director",
+      "seniority": "senior",
+      "office": "London",
+      "start_date": "2019-05-14",
+      "daily_rate_gbp": 780,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.8,
+      "email": "olu.adesanya@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:akira-tanaka",
+    "type": "Person",
+    "properties": {
+      "name": "Akira Tanaka",
+      "department_id": "dept:creative",
+      "role_id": "role:senior-art-director",
+      "seniority": "senior",
+      "office": "Singapore",
+      "start_date": "2022-09-19",
+      "daily_rate_gbp": 760,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 40,
+      "utilisation_target_pct": 0.8,
+      "email": "akira.tanaka@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:pari-banerjee",
+    "type": "Person",
+    "properties": {
+      "name": "Pari Banerjee",
+      "department_id": "dept:creative",
+      "role_id": "role:senior-copywriter",
+      "seniority": "senior",
+      "office": "London",
+      "start_date": "2019-11-25",
+      "daily_rate_gbp": 720,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 32,
+      "utilisation_target_pct": 0.8,
+      "email": "pari.banerjee@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:naomi-brooks",
+    "type": "Person",
+    "properties": {
+      "name": "Naomi Brooks",
+      "department_id": "dept:creative",
+      "role_id": "role:senior-copywriter",
+      "seniority": "senior",
+      "office": "New York",
+      "start_date": "2022-05-09",
+      "daily_rate_gbp": 740,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 40,
+      "utilisation_target_pct": 0.8,
+      "email": "naomi.brooks@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:daniel-carlsson",
+    "type": "Person",
+    "properties": {
+      "name": "Daniel Carlsson",
+      "department_id": "dept:creative",
+      "role_id": "role:designer",
+      "seniority": "mid",
+      "office": "London",
+      "start_date": "2021-08-23",
+      "daily_rate_gbp": 520,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.85,
+      "email": "daniel.carlsson@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:tara-lim",
+    "type": "Person",
+    "properties": {
+      "name": "Tara Lim",
+      "department_id": "dept:creative",
+      "role_id": "role:designer",
+      "seniority": "mid",
+      "office": "New York",
+      "start_date": "2023-10-02",
+      "daily_rate_gbp": 540,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 40,
+      "utilisation_target_pct": 0.85,
+      "email": "tara.lim@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:imani-ofori",
+    "type": "Person",
+    "properties": {
+      "name": "Imani Ofori",
+      "department_id": "dept:creative",
+      "role_id": "role:copywriter",
+      "seniority": "mid",
+      "office": "London",
+      "start_date": "2022-03-07",
+      "daily_rate_gbp": 500,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 32,
+      "utilisation_target_pct": 0.85,
+      "email": "imani.ofori@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:beatriz-silva",
+    "type": "Person",
+    "properties": {
+      "name": "Beatriz Silva",
+      "department_id": "dept:creative",
+      "role_id": "role:copywriter",
+      "seniority": "mid",
+      "office": "Singapore",
+      "start_date": "2024-02-19",
+      "daily_rate_gbp": 480,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 40,
+      "utilisation_target_pct": 0.85,
+      "email": "beatriz.silva@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:ben-phillips",
+    "type": "Person",
+    "properties": {
+      "name": "Ben Phillips",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:head-of-channels",
+      "seniority": "director",
+      "office": "London",
+      "start_date": "2018-09-10",
+      "daily_rate_gbp": 1240,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.55,
+      "email": "ben.phillips@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:mateusz-kowalski",
+    "type": "Person",
+    "properties": {
+      "name": "Mateusz Kowalski",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:channel-lead",
+      "seniority": "lead",
+      "office": "London",
+      "start_date": "2020-01-20",
+      "daily_rate_gbp": 940,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.8,
+      "email": "mateusz.kowalski@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:rachel-cohen",
+    "type": "Person",
+    "properties": {
+      "name": "Rachel Cohen",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:channel-lead",
+      "seniority": "lead",
+      "office": "New York",
+      "start_date": "2021-06-28",
+      "daily_rate_gbp": 960,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 40,
+      "utilisation_target_pct": 0.8,
+      "email": "rachel.cohen@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:devon-ahmadi",
+    "type": "Person",
+    "properties": {
+      "name": "Devon Ahmadi",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:channel-lead",
+      "seniority": "lead",
+      "office": "New York",
+      "start_date": "2022-08-15",
+      "daily_rate_gbp": 920,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 40,
+      "utilisation_target_pct": 0.8,
+      "email": "devon.ahmadi@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:lucas-muller",
+    "type": "Person",
+    "properties": {
+      "name": "Lucas Müller",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:channel-lead",
+      "seniority": "lead",
+      "office": "London",
+      "start_date": "2019-07-22",
+      "daily_rate_gbp": 900,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.8,
+      "email": "lucas.muller@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:eshe-otieno",
+    "type": "Person",
+    "properties": {
+      "name": "Eshe Otieno",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:channel-lead",
+      "seniority": "lead",
+      "office": "London",
+      "start_date": "2020-04-14",
+      "daily_rate_gbp": 920,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.8,
+      "email": "eshe.otieno@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:lila-tan",
+    "type": "Person",
+    "properties": {
+      "name": "Lila Tan",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:channel-lead",
+      "seniority": "lead",
+      "office": "Singapore",
+      "start_date": "2021-10-04",
+      "daily_rate_gbp": 860,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 40,
+      "utilisation_target_pct": 0.8,
+      "email": "lila.tan@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:sara-mehta",
+    "type": "Person",
+    "properties": {
+      "name": "Sara Mehta",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:senior-channel-specialist",
+      "seniority": "senior",
+      "office": "London",
+      "start_date": "2021-04-12",
+      "daily_rate_gbp": 720,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.85,
+      "email": "sara.mehta@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:kieran-walsh",
+    "type": "Person",
+    "properties": {
+      "name": "Kieran Walsh",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:senior-channel-specialist",
+      "seniority": "senior",
+      "office": "New York",
+      "start_date": "2022-11-07",
+      "daily_rate_gbp": 740,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 40,
+      "utilisation_target_pct": 0.85,
+      "email": "kieran.walsh@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:marcus-reilly",
+    "type": "Person",
+    "properties": {
+      "name": "Marcus Reilly",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:channel-specialist",
+      "seniority": "mid",
+      "office": "London",
+      "start_date": "2023-04-03",
+      "daily_rate_gbp": 510,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.85,
+      "email": "marcus.reilly@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:jonah-dunmore",
+    "type": "Person",
+    "properties": {
+      "name": "Jonah Dunmore",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:channel-specialist",
+      "seniority": "mid",
+      "office": "London",
+      "start_date": "2020-02-13",
+      "daily_rate_gbp": 510,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.76,
+      "email": "jonah-dunmore@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:sami-imani",
+    "type": "Person",
+    "properties": {
+      "name": "Sami Imani",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:senior-channel-specialist",
+      "seniority": "senior",
+      "office": "London",
+      "start_date": "2015-07-13",
+      "daily_rate_gbp": 849,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 32,
+      "utilisation_target_pct": 0.76,
+      "email": "sami-imani@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:halle-gallo",
+    "type": "Person",
+    "properties": {
+      "name": "Halle Gallo",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:channel-specialist",
+      "seniority": "mid",
+      "office": "London",
+      "start_date": "2019-08-14",
+      "daily_rate_gbp": 381,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 32,
+      "utilisation_target_pct": 0.72,
+      "email": "halle-gallo@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:kira-fischer",
+    "type": "Person",
+    "properties": {
+      "name": "Kira Fischer",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:head-of-channels",
+      "seniority": "director",
+      "office": "New York",
+      "start_date": "2024-06-11",
+      "daily_rate_gbp": 1278,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 40,
+      "utilisation_target_pct": 0.74,
+      "email": "kira-fischer@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:fern-delaney",
+    "type": "Person",
+    "properties": {
+      "name": "Fern Delaney",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:head-of-channels",
+      "seniority": "director",
+      "office": "London",
+      "start_date": "2022-07-14",
+      "daily_rate_gbp": 1189,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 35,
+      "utilisation_target_pct": 0.63,
+      "email": "fern-delaney@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:pavel-imani",
+    "type": "Person",
+    "properties": {
+      "name": "Pavel Imani",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:channel-specialist",
+      "seniority": "mid",
+      "office": "New York",
+      "start_date": "2020-02-11",
+      "daily_rate_gbp": 532,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.71,
+      "email": "pavel-imani@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:iris-imani",
+    "type": "Person",
+    "properties": {
+      "name": "Iris Imani",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:channel-specialist",
+      "seniority": "mid",
+      "office": "New York",
+      "start_date": "2017-09-15",
+      "daily_rate_gbp": 410,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 40,
+      "utilisation_target_pct": 0.72,
+      "email": "iris-imani@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:priya-ibsen",
+    "type": "Person",
+    "properties": {
+      "name": "Priya Ibsen",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:senior-channel-specialist",
+      "seniority": "senior",
+      "office": "Berlin",
+      "start_date": "2020-08-15",
+      "daily_rate_gbp": 788,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 32,
+      "utilisation_target_pct": 0.72,
+      "email": "priya-ibsen@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:greta-imani",
+    "type": "Person",
+    "properties": {
+      "name": "Greta Imani",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:senior-channel-specialist",
+      "seniority": "senior",
+      "office": "London",
+      "start_date": "2018-04-12",
+      "daily_rate_gbp": 946,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.62,
+      "email": "greta-imani@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:dami-fischer",
+    "type": "Person",
+    "properties": {
+      "name": "Dami Fischer",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:senior-channel-specialist",
+      "seniority": "senior",
+      "office": "London",
+      "start_date": "2015-04-12",
+      "daily_rate_gbp": 901,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 32,
+      "utilisation_target_pct": 0.72,
+      "email": "dami-fischer@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:dev-brandt",
+    "type": "Person",
+    "properties": {
+      "name": "Dev Brandt",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:senior-channel-specialist",
+      "seniority": "senior",
+      "office": "Berlin",
+      "start_date": "2024-06-11",
+      "daily_rate_gbp": 888,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 32,
+      "utilisation_target_pct": 0.71,
+      "email": "dev-brandt@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:theo-novak",
+    "type": "Person",
+    "properties": {
+      "name": "Theo Novak",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:channel-lead",
+      "seniority": "lead",
+      "office": "Berlin",
+      "start_date": "2021-02-14",
+      "daily_rate_gbp": 975,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 35,
+      "utilisation_target_pct": 0.69,
+      "email": "theo-novak@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:marlo-leroy",
+    "type": "Person",
+    "properties": {
+      "name": "Marlo Leroy",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:senior-channel-specialist",
+      "seniority": "senior",
+      "office": "New York",
+      "start_date": "2020-02-12",
+      "daily_rate_gbp": 988,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 32,
+      "utilisation_target_pct": 0.78,
+      "email": "marlo-leroy@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:eli-moss",
+    "type": "Person",
+    "properties": {
+      "name": "Eli Moss",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:channel-lead",
+      "seniority": "lead",
+      "office": "Berlin",
+      "start_date": "2022-03-15",
+      "daily_rate_gbp": 928,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.75,
+      "email": "eli-moss@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:nadia-dunmore",
+    "type": "Person",
+    "properties": {
+      "name": "Nadia Dunmore",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:channel-lead",
+      "seniority": "lead",
+      "office": "London",
+      "start_date": "2015-05-15",
+      "daily_rate_gbp": 936,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.75,
+      "email": "nadia-dunmore@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:fern-kerr",
+    "type": "Person",
+    "properties": {
+      "name": "Fern Kerr",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:channel-specialist",
+      "seniority": "mid",
+      "office": "London",
+      "start_date": "2019-01-12",
+      "daily_rate_gbp": 499,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 32,
+      "utilisation_target_pct": 0.62,
+      "email": "fern-kerr@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:theo-gallo",
+    "type": "Person",
+    "properties": {
+      "name": "Theo Gallo",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:channel-specialist",
+      "seniority": "mid",
+      "office": "Berlin",
+      "start_date": "2015-05-14",
+      "daily_rate_gbp": 549,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.68,
+      "email": "theo-gallo@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:quinn-hsu",
+    "type": "Person",
+    "properties": {
+      "name": "Quinn Hsu",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:senior-channel-specialist",
+      "seniority": "senior",
+      "office": "Manchester",
+      "start_date": "2017-02-10",
+      "daily_rate_gbp": 834,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 32,
+      "utilisation_target_pct": 0.61,
+      "email": "quinn-hsu@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:eli-lund",
+    "type": "Person",
+    "properties": {
+      "name": "Eli Lund",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:senior-channel-specialist",
+      "seniority": "senior",
+      "office": "New York",
+      "start_date": "2023-08-14",
+      "daily_rate_gbp": 870,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 35,
+      "utilisation_target_pct": 0.77,
+      "email": "eli-lund@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:dara-pike",
+    "type": "Person",
+    "properties": {
+      "name": "Dara Pike",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:channel-lead",
+      "seniority": "lead",
+      "office": "London",
+      "start_date": "2015-06-12",
+      "daily_rate_gbp": 915,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 32,
+      "utilisation_target_pct": 0.79,
+      "email": "dara-pike@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:hugo-holt",
+    "type": "Person",
+    "properties": {
+      "name": "Hugo Holt",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:channel-lead",
+      "seniority": "lead",
+      "office": "Manchester",
+      "start_date": "2021-08-13",
+      "daily_rate_gbp": 786,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 32,
+      "utilisation_target_pct": 0.79,
+      "email": "hugo-holt@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:kira-brandt",
+    "type": "Person",
+    "properties": {
+      "name": "Kira Brandt",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:channel-lead",
+      "seniority": "lead",
+      "office": "New York",
+      "start_date": "2024-03-11",
+      "daily_rate_gbp": 914,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.64,
+      "email": "kira-brandt@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:kira-esposito",
+    "type": "Person",
+    "properties": {
+      "name": "Kira Esposito",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:head-of-channels",
+      "seniority": "director",
+      "office": "Manchester",
+      "start_date": "2018-03-13",
+      "daily_rate_gbp": 1307,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 35,
+      "utilisation_target_pct": 0.61,
+      "email": "kira-esposito@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:noor-kerr",
+    "type": "Person",
+    "properties": {
+      "name": "Noor Kerr",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:channel-specialist",
+      "seniority": "mid",
+      "office": "New York",
+      "start_date": "2017-05-14",
+      "daily_rate_gbp": 544,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 40,
+      "utilisation_target_pct": 0.77,
+      "email": "noor-kerr@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:yusuf-ueda",
+    "type": "Person",
+    "properties": {
+      "name": "Yusuf Ueda",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:channel-lead",
+      "seniority": "lead",
+      "office": "Manchester",
+      "start_date": "2024-09-12",
+      "daily_rate_gbp": 961,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.79,
+      "email": "yusuf-ueda@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:greta-ueda",
+    "type": "Person",
+    "properties": {
+      "name": "Greta Ueda",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:channel-lead",
+      "seniority": "lead",
+      "office": "London",
+      "start_date": "2024-04-10",
+      "daily_rate_gbp": 863,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.72,
+      "email": "greta-ueda@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:leon-imani",
+    "type": "Person",
+    "properties": {
+      "name": "Leon Imani",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:channel-specialist",
+      "seniority": "mid",
+      "office": "New York",
+      "start_date": "2024-07-14",
+      "daily_rate_gbp": 527,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.73,
+      "email": "leon-imani@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:ines-holt",
+    "type": "Person",
+    "properties": {
+      "name": "Ines Holt",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:senior-channel-specialist",
+      "seniority": "senior",
+      "office": "London",
+      "start_date": "2020-09-11",
+      "daily_rate_gbp": 964,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 35,
+      "utilisation_target_pct": 0.77,
+      "email": "ines-holt@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:nils-pike",
+    "type": "Person",
+    "properties": {
+      "name": "Nils Pike",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:senior-channel-specialist",
+      "seniority": "senior",
+      "office": "Berlin",
+      "start_date": "2019-02-10",
+      "daily_rate_gbp": 891,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.62,
+      "email": "nils-pike@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:esme-leroy",
+    "type": "Person",
+    "properties": {
+      "name": "Esme Leroy",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:senior-channel-specialist",
+      "seniority": "senior",
+      "office": "Berlin",
+      "start_date": "2022-08-12",
+      "daily_rate_gbp": 933,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.62,
+      "email": "esme-leroy@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:bo-brandt",
+    "type": "Person",
+    "properties": {
+      "name": "Bo Brandt",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:channel-lead",
+      "seniority": "lead",
+      "office": "Manchester",
+      "start_date": "2023-03-10",
+      "daily_rate_gbp": 963,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 32,
+      "utilisation_target_pct": 0.74,
+      "email": "bo-brandt@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:esme-brandt",
+    "type": "Person",
+    "properties": {
+      "name": "Esme Brandt",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:senior-channel-specialist",
+      "seniority": "senior",
+      "office": "New York",
+      "start_date": "2020-08-14",
+      "daily_rate_gbp": 829,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 40,
+      "utilisation_target_pct": 0.74,
+      "email": "esme-brandt@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:orla-moss",
+    "type": "Person",
+    "properties": {
+      "name": "Orla Moss",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:channel-lead",
+      "seniority": "lead",
+      "office": "Manchester",
+      "start_date": "2017-07-11",
+      "daily_rate_gbp": 793,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.65,
+      "email": "orla-moss@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:hana-nash",
+    "type": "Person",
+    "properties": {
+      "name": "Hana Nash",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:head-of-channels",
+      "seniority": "director",
+      "office": "New York",
+      "start_date": "2018-03-13",
+      "daily_rate_gbp": 1398,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 35,
+      "utilisation_target_pct": 0.68,
+      "email": "hana-nash@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:otis-leroy",
+    "type": "Person",
+    "properties": {
+      "name": "Otis Leroy",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:channel-lead",
+      "seniority": "lead",
+      "office": "New York",
+      "start_date": "2021-07-14",
+      "daily_rate_gbp": 861,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 40,
+      "utilisation_target_pct": 0.74,
+      "email": "otis-leroy@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:noor-lund",
+    "type": "Person",
+    "properties": {
+      "name": "Noor Lund",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:head-of-channels",
+      "seniority": "director",
+      "office": "Berlin",
+      "start_date": "2019-07-11",
+      "daily_rate_gbp": 1241,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 40,
+      "utilisation_target_pct": 0.76,
+      "email": "noor-lund@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:rosa-ashby",
+    "type": "Person",
+    "properties": {
+      "name": "Rosa Ashby",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:senior-channel-specialist",
+      "seniority": "senior",
+      "office": "New York",
+      "start_date": "2019-03-14",
+      "daily_rate_gbp": 922,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 35,
+      "utilisation_target_pct": 0.75,
+      "email": "rosa-ashby@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:milo-jansen",
+    "type": "Person",
+    "properties": {
+      "name": "Milo Jansen",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:channel-specialist",
+      "seniority": "mid",
+      "office": "Manchester",
+      "start_date": "2022-01-14",
+      "daily_rate_gbp": 474,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 35,
+      "utilisation_target_pct": 0.68,
+      "email": "milo-jansen@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:orla-frost",
+    "type": "Person",
+    "properties": {
+      "name": "Orla Frost",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:channel-lead",
+      "seniority": "lead",
+      "office": "London",
+      "start_date": "2022-06-14",
+      "daily_rate_gbp": 925,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 40,
+      "utilisation_target_pct": 0.74,
+      "email": "orla-frost@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:rosa-ortega",
+    "type": "Person",
+    "properties": {
+      "name": "Rosa Ortega",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:senior-channel-specialist",
+      "seniority": "senior",
+      "office": "New York",
+      "start_date": "2020-02-11",
+      "daily_rate_gbp": 944,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 35,
+      "utilisation_target_pct": 0.63,
+      "email": "rosa-ortega@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:felix-delaney",
+    "type": "Person",
+    "properties": {
+      "name": "Felix Delaney",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:head-of-channels",
+      "seniority": "director",
+      "office": "London",
+      "start_date": "2024-08-13",
+      "daily_rate_gbp": 1357,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 32,
+      "utilisation_target_pct": 0.75,
+      "email": "felix-delaney@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:quinn-dunmore",
+    "type": "Person",
+    "properties": {
+      "name": "Quinn Dunmore",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:channel-lead",
+      "seniority": "lead",
+      "office": "Berlin",
+      "start_date": "2024-01-10",
+      "daily_rate_gbp": 836,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.72,
+      "email": "quinn-dunmore@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:kit-yates",
+    "type": "Person",
+    "properties": {
+      "name": "Kit Yates",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:senior-channel-specialist",
+      "seniority": "senior",
+      "office": "London",
+      "start_date": "2024-05-11",
+      "daily_rate_gbp": 967,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 32,
+      "utilisation_target_pct": 0.63,
+      "email": "kit-yates@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:jad-novak",
+    "type": "Person",
+    "properties": {
+      "name": "Jad Novak",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:senior-channel-specialist",
+      "seniority": "senior",
+      "office": "Manchester",
+      "start_date": "2020-04-13",
+      "daily_rate_gbp": 896,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 32,
+      "utilisation_target_pct": 0.62,
+      "email": "jad-novak@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:bea-tanaka",
+    "type": "Person",
+    "properties": {
+      "name": "Bea Tanaka",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:head-of-channels",
+      "seniority": "director",
+      "office": "Berlin",
+      "start_date": "2015-08-10",
+      "daily_rate_gbp": 1364,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 40,
+      "utilisation_target_pct": 0.76,
+      "email": "bea-tanaka@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:dara-jansen",
+    "type": "Person",
+    "properties": {
+      "name": "Dara Jansen",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:head-of-channels",
+      "seniority": "director",
+      "office": "New York",
+      "start_date": "2022-09-12",
+      "daily_rate_gbp": 1278,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.77,
+      "email": "dara-jansen@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:quinn-frost",
+    "type": "Person",
+    "properties": {
+      "name": "Quinn Frost",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:channel-lead",
+      "seniority": "lead",
+      "office": "Berlin",
+      "start_date": "2016-01-11",
+      "daily_rate_gbp": 847,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.68,
+      "email": "quinn-frost@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:kai-yates",
+    "type": "Person",
+    "properties": {
+      "name": "Kai Yates",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:channel-specialist",
+      "seniority": "mid",
+      "office": "Manchester",
+      "start_date": "2017-02-13",
+      "daily_rate_gbp": 447,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.62,
+      "email": "kai-yates@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:dami-mercer",
+    "type": "Person",
+    "properties": {
+      "name": "Dami Mercer",
+      "department_id": "dept:channel-experts",
+      "role_id": "role:senior-channel-specialist",
+      "seniority": "senior",
+      "office": "Berlin",
+      "start_date": "2024-09-12",
+      "daily_rate_gbp": 963,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.74,
+      "email": "dami-mercer@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:halle-cho",
+    "type": "Person",
+    "properties": {
+      "name": "Halle Cho",
+      "department_id": "dept:strategy",
+      "role_id": "role:strategy-director",
+      "seniority": "director",
+      "office": "New York",
+      "start_date": "2023-07-15",
+      "daily_rate_gbp": 1182,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 40,
+      "utilisation_target_pct": 0.75,
+      "email": "halle-cho@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:bo-ortega",
+    "type": "Person",
+    "properties": {
+      "name": "Bo Ortega",
+      "department_id": "dept:strategy",
+      "role_id": "role:strategy-director",
+      "seniority": "director",
+      "office": "London",
+      "start_date": "2020-01-14",
+      "daily_rate_gbp": 1267,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.68,
+      "email": "bo-ortega@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:xan-tanaka",
+    "type": "Person",
+    "properties": {
+      "name": "Xan Tanaka",
+      "department_id": "dept:strategy",
+      "role_id": "role:strategy-director",
+      "seniority": "director",
+      "office": "New York",
+      "start_date": "2024-07-15",
+      "daily_rate_gbp": 1379,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 35,
+      "utilisation_target_pct": 0.73,
+      "email": "xan-tanaka@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:jonah-ortega",
+    "type": "Person",
+    "properties": {
+      "name": "Jonah Ortega",
+      "department_id": "dept:strategy",
+      "role_id": "role:strategist",
+      "seniority": "lead",
+      "office": "Manchester",
+      "start_date": "2017-05-15",
+      "daily_rate_gbp": 618,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 40,
+      "utilisation_target_pct": 0.79,
+      "email": "jonah-ortega@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:pavel-ibsen",
+    "type": "Person",
+    "properties": {
+      "name": "Pavel Ibsen",
+      "department_id": "dept:strategy",
+      "role_id": "role:strategist",
+      "seniority": "lead",
+      "office": "London",
+      "start_date": "2022-03-10",
+      "daily_rate_gbp": 596,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 32,
+      "utilisation_target_pct": 0.74,
+      "email": "pavel-ibsen@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:ada-leroy",
+    "type": "Person",
+    "properties": {
+      "name": "Ada Leroy",
+      "department_id": "dept:strategy",
+      "role_id": "role:strategy-director",
+      "seniority": "director",
+      "office": "London",
+      "start_date": "2016-01-12",
+      "daily_rate_gbp": 1117,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 35,
+      "utilisation_target_pct": 0.71,
+      "email": "ada-leroy@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:eli-yates",
+    "type": "Person",
+    "properties": {
+      "name": "Eli Yates",
+      "department_id": "dept:creative",
+      "role_id": "role:associate-creative-director",
+      "seniority": "director",
+      "office": "New York",
+      "start_date": "2017-05-14",
+      "daily_rate_gbp": 1269,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 35,
+      "utilisation_target_pct": 0.68,
+      "email": "eli-yates@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:iris-xu",
+    "type": "Person",
+    "properties": {
+      "name": "Iris Xu",
+      "department_id": "dept:creative",
+      "role_id": "role:associate-creative-director",
+      "seniority": "director",
+      "office": "Manchester",
+      "start_date": "2022-06-10",
+      "daily_rate_gbp": 1187,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 40,
+      "utilisation_target_pct": 0.6,
+      "email": "iris-xu@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:fern-esposito",
+    "type": "Person",
+    "properties": {
+      "name": "Fern Esposito",
+      "department_id": "dept:creative",
+      "role_id": "role:copywriter",
+      "seniority": "mid",
+      "office": "Berlin",
+      "start_date": "2022-04-12",
+      "daily_rate_gbp": 437,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 35,
+      "utilisation_target_pct": 0.65,
+      "email": "fern-esposito@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:aaron-lund",
+    "type": "Person",
+    "properties": {
+      "name": "Aaron Lund",
+      "department_id": "dept:creative",
+      "role_id": "role:creative-director",
+      "seniority": "director",
+      "office": "Manchester",
+      "start_date": "2018-06-12",
+      "daily_rate_gbp": 1148,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.61,
+      "email": "aaron-lund@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:esme-garnett",
+    "type": "Person",
+    "properties": {
+      "name": "Esme Garnett",
+      "department_id": "dept:creative",
+      "role_id": "role:associate-creative-director",
+      "seniority": "director",
+      "office": "New York",
+      "start_date": "2018-09-10",
+      "daily_rate_gbp": 1199,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 35,
+      "utilisation_target_pct": 0.74,
+      "email": "esme-garnett@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:nadia-ashby",
+    "type": "Person",
+    "properties": {
+      "name": "Nadia Ashby",
+      "department_id": "dept:creative",
+      "role_id": "role:creative-director",
+      "seniority": "director",
+      "office": "London",
+      "start_date": "2024-03-14",
+      "daily_rate_gbp": 1193,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 32,
+      "utilisation_target_pct": 0.68,
+      "email": "nadia-ashby@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:otis-stern",
+    "type": "Person",
+    "properties": {
+      "name": "Otis Stern",
+      "department_id": "dept:creative",
+      "role_id": "role:associate-creative-director",
+      "seniority": "director",
+      "office": "New York",
+      "start_date": "2015-09-14",
+      "daily_rate_gbp": 1214,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 35,
+      "utilisation_target_pct": 0.66,
+      "email": "otis-stern@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:nils-delaney",
+    "type": "Person",
+    "properties": {
+      "name": "Nils Delaney",
+      "department_id": "dept:creative",
+      "role_id": "role:copywriter",
+      "seniority": "mid",
+      "office": "Manchester",
+      "start_date": "2019-08-12",
+      "daily_rate_gbp": 573,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 32,
+      "utilisation_target_pct": 0.77,
+      "email": "nils-delaney@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:theo-yates",
+    "type": "Person",
+    "properties": {
+      "name": "Theo Yates",
+      "department_id": "dept:creative",
+      "role_id": "role:senior-copywriter",
+      "seniority": "senior",
+      "office": "London",
+      "start_date": "2021-02-12",
+      "daily_rate_gbp": 881,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 32,
+      "utilisation_target_pct": 0.78,
+      "email": "theo-yates@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:sami-hsu",
+    "type": "Person",
+    "properties": {
+      "name": "Sami Hsu",
+      "department_id": "dept:project-planning",
+      "role_id": "role:senior-project-manager",
+      "seniority": "senior",
+      "office": "Berlin",
+      "start_date": "2017-03-11",
+      "daily_rate_gbp": 816,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 40,
+      "utilisation_target_pct": 0.68,
+      "email": "sami-hsu@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:sasha-leroy",
+    "type": "Person",
+    "properties": {
+      "name": "Sasha Leroy",
+      "department_id": "dept:project-planning",
+      "role_id": "role:producer",
+      "seniority": "lead",
+      "office": "Manchester",
+      "start_date": "2015-06-14",
+      "daily_rate_gbp": 966,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 40,
+      "utilisation_target_pct": 0.64,
+      "email": "sasha-leroy@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:eli-imani",
+    "type": "Person",
+    "properties": {
+      "name": "Eli Imani",
+      "department_id": "dept:project-planning",
+      "role_id": "role:project-manager",
+      "seniority": "lead",
+      "office": "Manchester",
+      "start_date": "2024-09-13",
+      "daily_rate_gbp": 685,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 32,
+      "utilisation_target_pct": 0.78,
+      "email": "eli-imani@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:rosa-esposito",
+    "type": "Person",
+    "properties": {
+      "name": "Rosa Esposito",
+      "department_id": "dept:project-planning",
+      "role_id": "role:senior-project-manager",
+      "seniority": "senior",
+      "office": "Berlin",
+      "start_date": "2020-05-10",
+      "daily_rate_gbp": 905,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 32,
+      "utilisation_target_pct": 0.67,
+      "email": "rosa-esposito@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:sami-fischer",
+    "type": "Person",
+    "properties": {
+      "name": "Sami Fischer",
+      "department_id": "dept:project-planning",
+      "role_id": "role:senior-project-manager",
+      "seniority": "senior",
+      "office": "New York",
+      "start_date": "2021-04-10",
+      "daily_rate_gbp": 896,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 35,
+      "utilisation_target_pct": 0.79,
+      "email": "sami-fischer@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:jad-rourke",
+    "type": "Person",
+    "properties": {
+      "name": "Jad Rourke",
+      "department_id": "dept:project-planning",
+      "role_id": "role:project-manager",
+      "seniority": "lead",
+      "office": "London",
+      "start_date": "2017-06-14",
+      "daily_rate_gbp": 809,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.76,
+      "email": "jad-rourke@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:juno-ellery",
+    "type": "Person",
+    "properties": {
+      "name": "Juno Ellery",
+      "department_id": "dept:client-services",
+      "role_id": "role:account-manager",
+      "seniority": "lead",
+      "office": "Berlin",
+      "start_date": "2020-05-12",
+      "daily_rate_gbp": 566,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 32,
+      "utilisation_target_pct": 0.68,
+      "email": "juno-ellery@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:quinn-vogel",
+    "type": "Person",
+    "properties": {
+      "name": "Quinn Vogel",
+      "department_id": "dept:client-services",
+      "role_id": "role:account-manager",
+      "seniority": "lead",
+      "office": "London",
+      "start_date": "2018-06-11",
+      "daily_rate_gbp": 651,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.69,
+      "email": "quinn-vogel@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:yusuf-brandt",
+    "type": "Person",
+    "properties": {
+      "name": "Yusuf Brandt",
+      "department_id": "dept:client-services",
+      "role_id": "role:account-manager",
+      "seniority": "lead",
+      "office": "New York",
+      "start_date": "2019-04-12",
+      "daily_rate_gbp": 670,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.68,
+      "email": "yusuf-brandt@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:nils-quill",
+    "type": "Person",
+    "properties": {
+      "name": "Nils Quill",
+      "department_id": "dept:client-services",
+      "role_id": "role:account-executive",
+      "seniority": "director",
+      "office": "Manchester",
+      "start_date": "2019-04-13",
+      "daily_rate_gbp": 472,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 36,
+      "utilisation_target_pct": 0.64,
+      "email": "nils-quill@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:tara-lund",
+    "type": "Person",
+    "properties": {
+      "name": "Tara Lund",
+      "department_id": "dept:client-services",
+      "role_id": "role:account-manager",
+      "seniority": "lead",
+      "office": "Manchester",
+      "start_date": "2024-08-13",
+      "daily_rate_gbp": 708,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 40,
+      "utilisation_target_pct": 0.75,
+      "email": "tara-lund@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:juno-vogel",
+    "type": "Person",
+    "properties": {
+      "name": "Juno Vogel",
+      "department_id": "dept:new-business",
+      "role_id": "role:new-business-manager",
+      "seniority": "lead",
+      "office": "Berlin",
+      "start_date": "2020-01-15",
+      "daily_rate_gbp": 697,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 32,
+      "utilisation_target_pct": 0.61,
+      "email": "juno-vogel@haloandhelix.example",
+      "is_active": true
+    }
+  },
+  {
+    "id": "person:jonah-zane",
+    "type": "Person",
+    "properties": {
+      "name": "Jonah Zane",
+      "department_id": "dept:new-business",
+      "role_id": "role:new-business-manager",
+      "seniority": "lead",
+      "office": "Berlin",
+      "start_date": "2023-03-11",
+      "daily_rate_gbp": 695,
+      "client_markup_pct": 0.85,
+      "capacity_hours_per_week": 40,
+      "utilisation_target_pct": 0.75,
+      "email": "jonah-zane@haloandhelix.example",
+      "is_active": true
+    }
+  }
 ]

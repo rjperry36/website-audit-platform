@@ -1,50 +1,86 @@
 [
-    {
-        "id": "persona:performance-pip",
-        "type": "Persona",
-        "properties": {
-            "name": "Performance Pip",
-            "archetype": "The skin-invested optimiser",
-            "doc_path": "brand-book/personas/performance-pip.md",
-            "age_range": "32-45",
-            "income_band": "£70k-£140k",
-            "primary_motivation": "Visible, measurable results"
-        }
-    },
-    {
-        "id": "persona:ritual-rina",
-        "type": "Persona",
-        "properties": {
-            "name": "Ritual Rina",
-            "archetype": "The mindful sensorialist",
-            "doc_path": "brand-book/personas/ritual-rina.md",
-            "age_range": "28-40",
-            "income_band": "£50k-£100k",
-            "primary_motivation": "Daily ritual and sensorial pleasure"
-        }
-    },
-    {
-        "id": "persona:science-sven",
-        "type": "Persona",
-        "properties": {
-            "name": "Science Sven",
-            "archetype": "The ingredient researcher",
-            "doc_path": "brand-book/personas/science-sven.md",
-            "age_range": "25-55",
-            "income_band": "£40k-£120k",
-            "primary_motivation": "Knowing exactly what's in the product and why"
-        }
-    },
-    {
-        "id": "persona:gentle-gemma",
-        "type": "Persona",
-        "properties": {
-            "name": "Gentle Gemma",
-            "archetype": "The sensitive-skin loyalist",
-            "doc_path": "brand-book/personas/gentle-gemma.md",
-            "age_range": "24-58",
-            "income_band": "£35k-£90k",
-            "primary_motivation": "Reliably non-irritating skincare"
-        }
+  {
+    "id": "persona:performance-pip",
+    "type": "Persona",
+    "properties": {
+      "name": "Performance Pip",
+      "archetype": "The skin-invested optimiser",
+      "doc_path": "brand-book/personas/performance-pip.md",
+      "age_range": "32-45",
+      "income_band": "£70k-£140k",
+      "primary_motivation": "Visible, measurable results"
     }
+  },
+  {
+    "id": "persona:ritual-rina",
+    "type": "Persona",
+    "properties": {
+      "name": "Ritual Rina",
+      "archetype": "The mindful sensorialist",
+      "doc_path": "brand-book/personas/ritual-rina.md",
+      "age_range": "28-40",
+      "income_band": "£50k-£100k",
+      "primary_motivation": "Daily ritual and sensorial pleasure"
+    }
+  },
+  {
+    "id": "persona:science-sven",
+    "type": "Persona",
+    "properties": {
+      "name": "Science Sven",
+      "archetype": "The ingredient researcher",
+      "doc_path": "brand-book/personas/science-sven.md",
+      "age_range": "25-55",
+      "income_band": "£40k-£120k",
+      "primary_motivation": "Knowing exactly what's in the product and why"
+    }
+  },
+  {
+    "id": "persona:gentle-gemma",
+    "type": "Persona",
+    "properties": {
+      "name": "Gentle Gemma",
+      "archetype": "The sensitive-skin loyalist",
+      "doc_path": "brand-book/personas/gentle-gemma.md",
+      "age_range": "24-58",
+      "income_band": "£35k-£90k",
+      "primary_motivation": "Reliably non-irritating skincare"
+    }
+  },
+  {
+    "id": "persona:trailhead-tom",
+    "type": "Persona",
+    "properties": {
+      "name": "Trailhead Tom",
+      "archetype": "The weekend ultra-runner",
+      "doc_path": "brand-book/personas/trailhead-tom.md",
+      "age_range": "34-48",
+      "income_band": "£60k-£110k",
+      "primary_motivation": "Performance that survives real conditions"
+    }
+  },
+  {
+    "id": "persona:commuter-cass",
+    "type": "Persona",
+    "properties": {
+      "name": "Commuter Cass",
+      "archetype": "The all-weather city cyclist",
+      "doc_path": "brand-book/personas/commuter-cass.md",
+      "age_range": "28-40",
+      "income_band": "£45k-£85k",
+      "primary_motivation": "Versatile kit for daily miles"
+    }
+  },
+  {
+    "id": "persona:summit-sara",
+    "type": "Persona",
+    "properties": {
+      "name": "Summit Sara",
+      "archetype": "The technical alpinist",
+      "doc_path": "brand-book/personas/summit-sara.md",
+      "age_range": "30-45",
+      "income_band": "£70k-£130k",
+      "primary_motivation": "Trust at altitude, zero failures"
+    }
+  }
 ]

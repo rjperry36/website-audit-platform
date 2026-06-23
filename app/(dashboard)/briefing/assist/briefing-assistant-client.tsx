@@ -39,10 +39,16 @@ interface BriefingAssistantClientProps {
     channels: ChannelRef[];
 }
 
+const BRANDS = [
+    { id: 'brand:aurelune', label: 'Aurelune', hint: 'Prestige skincare' },
+    { id: 'brand:kestrel', label: 'Kestrel', hint: 'Performance outdoor apparel' },
+] as const;
+
 // Demo briefs preloadable with one click — useful for the live demo
 const DEMO_BRIEFS = [
     {
         label: 'Mineral SPF Push — DACH H2 2026',
+        brand_id: 'brand:aurelune',
         brief: {
             title: 'Mineral SPF Push — DACH H2 2026',
             summary:
@@ -58,6 +64,7 @@ const DEMO_BRIEFS = [
     },
     {
         label: 'Retinoid PM Anniversary — US Sephora 2026',
+        brand_id: 'brand:aurelune',
         brief: {
             title: 'Retinoid PM Anniversary — US Sephora 2026',
             summary:
@@ -73,6 +80,7 @@ const DEMO_BRIEFS = [
     },
     {
         label: 'JP Tokyo Always-On 2026',
+        brand_id: 'brand:aurelune',
         brief: {
             title: 'JP Tokyo Always-On 2026',
             summary:
@@ -86,10 +94,43 @@ const DEMO_BRIEFS = [
             notes: 'Ritual Rina is the JP lead. Approvals through Yuki Saito + global brand sign-off on hero work.',
         },
     },
+    {
+        label: 'Kestrel — Gore-Tex Launch UK/DE AW26',
+        brand_id: 'brand:kestrel',
+        brief: {
+            title: 'Stratus Shell Gore-Tex Launch — UK/DE AW26',
+            summary:
+                'Launch the new Stratus Shell Gore-Tex jacket into UK and Germany for autumn/winter. Retail-led: flagship POSM, OOH in transport hubs, wholesale push to outdoor retailers, plus paid + social. Hero film + run-club activations.',
+            market_ids: ['market:UK', 'market:DE'],
+            channel_ids: ['channel:POSM', 'channel:OOH', 'channel:B2B', 'channel:PAID_MEDIA', 'channel:SOCIAL_MEDIA', 'channel:EVENT'],
+            start_date: '2026-09-01',
+            duration_weeks: 14,
+            budget_hint_gbp: 900000,
+            objectives: ['Sell-through ≥ 60% in 8 weeks', 'Win 40 new wholesale doors', 'Lift aided awareness in DE by 3pp'],
+            notes: 'Trailhead Tom is the lead persona. Sustainability (PFC-free) is a key proof point. Heavy physical/retail execution.',
+        },
+    },
+    {
+        label: 'Kestrel — Run Club Always-On US 2026',
+        brand_id: 'brand:kestrel',
+        brief: {
+            title: 'Run Club Always-On — US 2026',
+            summary:
+                'Year-round community programme in the US around Cadence Run Tee + Vector trail shoe. Organic social, D2C content/SEO, ECRM loyalty, and monthly city run-club events. Lots of high-volume localised content.',
+            market_ids: ['market:US'],
+            channel_ids: ['channel:SOCIAL_MEDIA', 'channel:D2C', 'channel:SEO', 'channel:ECRM', 'channel:EVENT'],
+            start_date: '2026-07-01',
+            duration_weeks: 24,
+            budget_hint_gbp: 520000,
+            objectives: ['Grow US D2C revenue 25%', 'Build 30k-member run-club list', 'Hit 12% repeat-purchase rate'],
+            notes: 'Commuter Cass + Trailhead Tom personas. Content volume is high — good candidate for AI-agent drafting.',
+        },
+    },
 ] as const;
 
 export function BriefingAssistantClient({ markets, channels }: BriefingAssistantClientProps) {
     // Form state
+    const [brandId, setBrandId] = useState<string>('brand:aurelune');
     const [title, setTitle] = useState('');
     const [summary, setSummary] = useState('');
     const [marketIds, setMarketIds] = useState<string[]>([]);
@@ -114,6 +155,7 @@ export function BriefingAssistantClient({ markets, channels }: BriefingAssistant
 
     const loadDemo = (i: number) => {
         const b = DEMO_BRIEFS[i].brief;
+        setBrandId(DEMO_BRIEFS[i].brand_id);
         setTitle(b.title);
         setSummary(b.summary);
         setMarketIds([...b.market_ids]);
@@ -181,6 +223,7 @@ export function BriefingAssistantClient({ markets, channels }: BriefingAssistant
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
+                    brand_id: brandId,
                     title,
                     summary,
                     market_ids: marketIds,
@@ -234,6 +277,26 @@ export function BriefingAssistantClient({ markets, channels }: BriefingAssistant
             <div className="lg:col-span-2 space-y-4">
                 <Card variant="elevated">
                     <CardContent className="p-4 space-y-4">
+                        <Field label="Client">
+                            <div className="flex gap-1.5">
+                                {BRANDS.map((b) => (
+                                    <button
+                                        key={b.id}
+                                        type="button"
+                                        onClick={() => setBrandId(b.id)}
+                                        className={cn(
+                                            'flex-1 text-left px-3 py-2 rounded-md border transition-colors',
+                                            brandId === b.id
+                                                ? 'bg-primary-500/20 border-primary-500/50 text-white'
+                                                : 'bg-white/5 border-white/10 text-neutral-400 hover:bg-white/10 hover:text-white',
+                                        )}
+                                    >
+                                        <div className="text-sm font-medium">{b.label}</div>
+                                        <div className="text-[10px] text-neutral-500">{b.hint}</div>
+                                    </button>
+                                ))}
+                            </div>
+                        </Field>
                         <div className="flex items-center gap-2 flex-wrap">
                             <span className="text-xs text-neutral-400 mr-auto">Quick-load a demo brief:</span>
                             {DEMO_BRIEFS.map((b, i) => (

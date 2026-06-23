@@ -137,6 +137,7 @@ export const getBrand = cache(async () => {
     const arr = await readJsonArray<KgNode<BrandProps>>(path.join(NODE_DIR, 'brand.json'));
     return arr[0] || null;
 });
+export const getBrands = cache(async () => readJsonArray<KgNode<BrandProps>>(path.join(NODE_DIR, 'brand.json')));
 
 export const getProducts = cache(async () => readJsonArray<KgNode<ProductProps>>(path.join(NODE_DIR, 'products.json')));
 export const getPersonas = cache(async () => readJsonArray<KgNode<PersonaProps>>(path.join(NODE_DIR, 'personas.json')));

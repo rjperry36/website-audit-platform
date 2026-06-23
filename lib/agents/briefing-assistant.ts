@@ -24,15 +24,26 @@ import {
     getAgents,
     getAgentUsage,
     getAvailability,
+    getBrands,
+    getCampaignStructureEdges,
+    getBrandStructureEdges,
     formatCurrency,
     computeAvailablePctInWindow,
 } from '@/lib/kg/loader';
+
+/** Which KG categories define "category experience" for each brand. */
+const BRAND_CATEGORIES: Record<string, string[]> = {
+    'brand:aurelune': ['category:beauty', 'category:skincare'],
+    'brand:kestrel': ['category:fashion', 'category:wellness'],
+};
 
 // ===========================================================================
 // Public types
 // ===========================================================================
 
 export interface BriefInput {
+    /** KG brand id this brief is for, e.g. 'brand:aurelune' | 'brand:kestrel'. Defaults to Aurelune. */
+    brand_id?: string;
     /** Short identifier for the brief (e.g., "SPF Winter Launch DE") */
     title: string;
     /** KG market IDs, e.g., ['market:DE', 'market:FR'] */
@@ -614,6 +625,28 @@ async function buildContext(input: BriefInput, onEvent?: EmitFn) {
         track('availability', 'availability records', getAvailability(), len),
     ]);
 
+    // Resolve the brand and which campaigns/executions belong to it.
+    const [allBrands, campaignStructure, brandStructure] = await Promise.all([getBrands(), getCampaignStructureEdges(), getBrandStructureEdges()]);
+    const brandId = input.brand_id && allBrands.some((b) => b.id === input.brand_id) ? input.brand_id : 'brand:aurelune';
+    const brand = allBrands.find((b) => b.id === brandId);
+    const brandName = brand?.properties.name || 'the client';
+    const brandCategory = brand?.properties.category || '';
+    const brandCategories = new Set(BRAND_CATEGORIES[brandId] || ['category:beauty', 'category:skincare']);
+    // team -> brand (brand-structure OWNS), then campaign -> team (COMMISSIONED_BY) -> brand
+    const teamToBrand = new Map<string, string>();
+    for (const e of brandStructure) if (e.type === 'OWNS') teamToBrand.set(e.to, e.from);
+    const campaignToBrand = new Map<string, string>();
+    for (const e of campaignStructure) if (e.type === 'COMMISSIONED_BY') campaignToBrand.set(e.from, teamToBrand.get(e.to) || '');
+    const isBrandCampaign = (campaignId: string | undefined) => !!campaignId && campaignToBrand.get(campaignId) === brandId;
+    onEvent?.({
+        type: 'step',
+        phase: 'analyse',
+        id: 'brand',
+        label: `Scoped to ${brandName}`,
+        detail: brandCategory,
+        status: 'done',
+    });
+
     const inputMarketSet = new Set(input.market_ids);
     const inputChannelSet = new Set(input.channel_ids);
 
@@ -624,6 +657,7 @@ async function buildContext(input: BriefInput, onEvent?: EmitFn) {
     cutoff.setUTCFullYear(cutoff.getUTCFullYear() - 2);
 
     const campaignScored = allCampaigns
+        .filter((c) => isBrandCampaign(c.id))
         .map((c) => {
             const executions = allExecutions.filter((e) => e.campaign_id === c.id);
             const campaignMarkets = new Set(executions.map((e) => e.market_id).filter(Boolean));
@@ -657,7 +691,7 @@ async function buildContext(input: BriefInput, onEvent?: EmitFn) {
         type: 'step',
         phase: 'analyse',
         id: 'similar',
-        label: `Ranked ${allCampaigns.length} campaigns by market × channel overlap`,
+        label: `Ranked ${allCampaigns.filter((c) => isBrandCampaign(c.id)).length} ${brandName} campaigns by market × channel overlap`,
         detail: `${similarCampaigns.length} most comparable selected`,
         status: 'done',
         count: similarCampaigns.length,
@@ -753,6 +787,7 @@ async function buildContext(input: BriefInput, onEvent?: EmitFn) {
     const targetExecutionIds = new Set(
         allExecutions
             .filter((e) =>
+                isBrandCampaign(e.campaign_id) &&
                 inputMarketSet.has(e.market_id || '') &&
                 inputChannelSet.has(e.channel_id || ''),
             )
@@ -800,9 +835,9 @@ async function buildContext(input: BriefInput, onEvent?: EmitFn) {
             const channelMatch = p.channel_experience
                 .filter((c) => inputChannelSet.has(c.channel_id))
                 .reduce((s, c) => s + c.years, 0);
-            // Beauty / skincare category experience (this is Aurelune)
+            // Category experience relevant to this brand
             const categoryMatch = p.category_experience
-                .filter((c) => c.category_id === 'category:beauty' || c.category_id === 'category:skincare')
+                .filter((c) => brandCategories.has(c.category_id))
                 .reduce((s, c) => s + c.years, 0);
             // Skill match
             const skillMatch = p.skills
@@ -942,7 +977,7 @@ async function buildContext(input: BriefInput, onEvent?: EmitFn) {
     let deliverySample = 0;
     const deliveryPerChannel = input.channel_ids.map((chId) => {
         const execs = allExecutions.filter(
-            (e) => e.channel_id === chId && e.properties.actual_start && e.properties.actual_end,
+            (e) => isBrandCampaign(e.campaign_id) && e.channel_id === chId && e.properties.actual_start && e.properties.actual_end,
         );
         const cals = execs.map((e) => dayDiff(e.properties.actual_start, e.properties.actual_end)).filter((n): n is number => n != null);
         const slips = execs
@@ -981,7 +1016,7 @@ async function buildContext(input: BriefInput, onEvent?: EmitFn) {
         (stageDeptCost[st] = stageDeptCost[st] || {})[dept] = (stageDeptCost[st][dept] || 0) + amt;
     }
     const deliveryRelay = STAGES.map(({ key, label }) => {
-        const execs = allExecutions.filter((e) => e.properties.execution_type === key && e.properties.actual_start && e.properties.actual_end);
+        const execs = allExecutions.filter((e) => isBrandCampaign(e.campaign_id) && e.properties.execution_type === key && e.properties.actual_start && e.properties.actual_end);
         const cals = execs.map((e) => dayDiff(e.properties.actual_start, e.properties.actual_end)).filter((n): n is number => n != null);
         const dominant = Object.entries(stageDeptCost[key] || {}).sort((a, b) => b[1] - a[1])[0]?.[0] || '—';
         return { stage: label, median_days: Math.round(percentile(cals, 50)), dominant_department: dominant, sample: execs.length };
@@ -1049,6 +1084,8 @@ async function buildContext(input: BriefInput, onEvent?: EmitFn) {
         markets: allMarkets.filter((m) => inputMarketSet.has(m.id)),
         channels: allChannels.filter((c) => inputChannelSet.has(c.id)),
         brief_window: { start: briefStart, end: briefEnd },
+        brandName,
+        brandCategory,
     };
 }
 
@@ -1059,7 +1096,7 @@ async function buildContext(input: BriefInput, onEvent?: EmitFn) {
 function buildPrompts(input: BriefInput, context: Awaited<ReturnType<typeof buildContext>>) {
     const systemPrompt = `You are the Briefing Assistant for Halo & Helix, an independent marketing agency.
 
-Your job: given a new brief from the client (Aurelune, a prestige skincare brand) and grounded historical context from Halo & Helix's knowledge graph, produce a STRUCTURED RECOMMENDATION for budget, timeline, team, and risks.
+Your job: given a new brief from the client (${context.brandName}${context.brandCategory ? `, ${context.brandCategory}` : ''}) and grounded historical context from Halo & Helix's knowledge graph, produce a STRUCTURED RECOMMENDATION for budget, timeline, team, and risks.
 
 GROUNDING RULES — non-negotiable:
 1. Every budget number must be defensible by the CITED CAMPAIGNS you reference AND match the apparent scope of the brief.
@@ -1281,7 +1318,7 @@ ${context.candidatePeople.map((p, i) => `${i + 1}. ${p.id}
    ${p.properties.name} — ${p.role_name}, ${p.department_name}, ${p.properties.office}
    Seniority: ${p.properties.seniority}, Daily rate: £${p.properties.daily_rate_gbp}, Capacity: ${p.properties.capacity_hours_per_week}h/wk
    Channel experience (matching): ${p.channel_match_years} years across the brief's channels
-   Category experience (matching): ${p.category_match_years} years in beauty/skincare
+   Category experience (matching): ${p.category_match_years} years in ${context.brandCategory || 'the brand category'}
    Top skills: ${p.top_skills.map((s) => `${s.skill_name} (${s.proficiency}/5)`).join(', ')}
    Channel experience detail: ${p.channel_experience.map((c) => `${c.channel_label}:${c.years}y`).join(', ')}
    Recent overload weeks (last 6mo): ${p.recent_overload_weeks}
